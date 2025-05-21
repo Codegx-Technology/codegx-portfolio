@@ -17,10 +17,13 @@ export function Navbar() {
   const [location] = useLocation();
   const [isHomePage, setIsHomePage] = useState(false);
 
+  // Get the base path from Vite config
+  const basePath = import.meta.env.BASE_URL || "/";
+
   // Check if we're on the home page
   useEffect(() => {
-    setIsHomePage(location === "/");
-  }, [location]);
+    setIsHomePage(location === basePath || location === "/");
+  }, [location, basePath]);
 
   const navLinks = [
     { href: "#about", label: "About" },

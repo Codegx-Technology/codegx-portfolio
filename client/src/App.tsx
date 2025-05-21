@@ -16,9 +16,12 @@ import "@/styles/globals.css";
 function Router() {
   const [location] = useLocation();
 
+  // Get the base path from Vite config
+  const basePath = import.meta.env.BASE_URL || "/";
+
   return (
     <AnimatePresence mode="wait" initial={false}>
-      <Switch key={location}>
+      <Switch key={location} base={basePath}>
         <Route path="/" component={Home} />
         <Route path="/portfolio" component={PersonalPortfolio} />
         <Route path="/agency" component={AgencyPage} />
