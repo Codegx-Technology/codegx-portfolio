@@ -1,0 +1,158 @@
+{
+  "name": "Codegx Technology",
+  "tagline": "Transforming Ideas into Digital Reality",
+  "description": "Codegx Technology is a forward-thinking software development agency specializing in creating innovative digital solutions for businesses across various industries. We combine cutting-edge technologies with creative problem-solving to deliver exceptional products that drive growth and efficiency.",
+  "logo": "/assets/logo.png",
+  "website": "https://codegx.tech",
+  "services": [
+    {
+      "title": "Web Development",
+      "description": "Custom web applications and responsive websites built with modern frameworks and best practices.",
+      "icon": "code"
+    },
+    {
+      "title": "Mobile App Development",
+      "description": "Native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences.",
+      "icon": "mobile"
+    },
+    {
+      "title": "AI & Machine Learning",
+      "description": "Intelligent solutions that leverage data analytics, predictive modeling, and automation to solve complex business problems.",
+      "icon": "brain"
+    },
+    {
+      "title": "Blockchain Solutions",
+      "description": "Secure, transparent, and decentralized applications using blockchain technology for various use cases.",
+      "icon": "link"
+    },
+    {
+      "title": "UI/UX Design",
+      "description": "User-centered design that combines aesthetics with functionality to create intuitive and engaging digital experiences.",
+      "icon": "palette"
+    },
+    {
+      "title": "DevOps & Cloud Services",
+      "description": "Streamlined development operations and cloud infrastructure management for optimal performance and scalability.",
+      "icon": "cloud"
+    }
+  ],
+  "socials": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/company/codegx-technology"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/codegxtech"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/Codegx-Technology"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/codegxtech"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://facebook.com/codegxtechnology"
+    }
+  ],
+  "team": [
+    {
+      "name": "Peter Oduor",
+      "position": "Founder & CEO",
+      "bio": "Software engineer with over 10 years of experience in building enterprise solutions and leading development teams.",
+      "photo": "/assets/team/peter.jpg",
+      "socials": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/peteroduor"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/peteroduor"
+        }
+      ]
+    },
+    {
+      "name": "Sarah Johnson",
+      "position": "CTO",
+      "bio": "Full-stack developer and systems architect with expertise in scalable applications and emerging technologies.",
+      "photo": "/assets/team/sarah.jpg",
+      "socials": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/sarahjohnson"
+        },
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/sarahjohnson"
+        }
+      ]
+    },
+    {
+      "name": "Michael Chen",
+      "position": "Lead Designer",
+      "bio": "Creative professional with a passion for crafting beautiful and functional user interfaces and digital experiences.",
+      "photo": "/assets/team/michael.jpg",
+      "socials": [
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/michaelchen"
+        },
+        {
+          "platform": "Dribbble",
+          "url": "https://dribbble.com/michaelchen"
+        }
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "name": "TechCorp International",
+      "logo": "/assets/clients/techcorp.png",
+      "industry": "Technology"
+    },
+    {
+      "name": "FinServe Solutions",
+      "logo": "/assets/clients/finserve.png",
+      "industry": "Finance"
+    },
+    {
+      "name": "HealthPlus",
+      "logo": "/assets/clients/healthplus.png",
+      "industry": "Healthcare"
+    },
+    {
+      "name": "EduLearn",
+      "logo": "/assets/clients/edulearn.png",
+      "industry": "Education"
+    },
+    {
+      "name": "RetailNow",
+      "logo": "/assets/clients/retailnow.png",
+      "industry": "Retail"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Codegx Technology transformed our business with their innovative solutions. Their team's expertise and dedication exceeded our expectations.",
+      "author": "John Smith",
+      "position": "CTO, TechCorp International",
+      "photo": "/assets/testimonials/john.jpg"
+    },
+    {
+      "quote": "Working with Codegx has been a game-changer for our digital presence. Their attention to detail and commitment to quality is unmatched.",
+      "author": "Lisa Wong",
+      "position": "Marketing Director, RetailNow",
+      "photo": "/assets/testimonials/lisa.jpg"
+    },
+    {
+      "quote": "The blockchain solution developed by Codegx revolutionized our payment processing system, making it more secure and efficient.",
+      "author": "Robert Johnson",
+      "position": "CEO, FinServe Solutions",
+      "photo": "/assets/testimonials/robert.jpg"
+    }
+  ]
+}
