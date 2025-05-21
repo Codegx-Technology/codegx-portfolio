@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peter Oduor Oluoch - Enterprise Solutions Architect specializing in AI/ML, Blockchain, and Quantum Computing">
+    <meta name="keywords" content="Enterprise Solutions, AI/ML, Blockchain, Quantum Computing, Django, Python, React, Flutter">
+    <meta name="author" content="Peter Oduor Oluoch">
+    <title>{% block title %}Peter Oduor Oluoch | Enterprise Solutions Architect{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e40af',
+                        dark: '#1f2937',
+                        light: '#f9fafb',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    boxShadow: {
+                        'custom': '0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #1e40af;
+            --dark-color: #1f2937;
+            --light-color: #f9fafb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --border-radius: 0.5rem;
+            --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .font-fira {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Card Styles */
+        .card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Styles */
+        .btn {
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Progress Bar */
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+
+        /* Section Transitions */
+        section {
+            transition: opacity 0.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Custom Badge Styles */
+        .bg-ai {
+            background-color: #8b5cf6;
+        }
+
+        .bg-blockchain {
+            background-color: #3b82f6;
+        }
+
+        .bg-data {
+            background-color: #10b981;
+        }
+
+        .bg-web {
+            background-color: #f59e0b;
+        }
+
+        .bg-quantum {
+            background-color: #6366f1;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader-content {
+            text-align: center;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Brand Logo */
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
+        }
+
+        .brand-icon:hover {
+            transform: rotate(0deg) scale(1.1);
+        }
+
+        .brand-letter {
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1031; /* Higher than navbar */
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Page Transitions */
+        #pageContent {
+            opacity: 0;
+            animation: fadeInContent 0.5s ease forwards 0.5s;
+        }
+
+        @keyframes fadeInContent {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Section Transitions */
+        .section-transition {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-transition.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background-color: white;
+                border-radius: 0 0 1rem 1rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                margin-top: 0.5rem;
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .nav-link:hover {
+                background-color: rgba(59, 130, 246, 0.1);
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Loading Spinners */
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .spinner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="mt-3 text-gradient fw-bold">Peter Oduor Oluoch</div>
+            <div class="small text-muted">Enterprise Solutions Architect</div>
+        </div>
+    </div>
+
+    <!-- Corporate Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top corporate-nav">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="{% url 'core:home' %}">
+                <div class="brand-logo me-2">
+                    <div class="brand-icon">
+                        <span class="brand-letter">P</span>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="text-gradient d-none d-sm-inline brand-text">Peter Oduor Oluoch</span>
+                    <span class="text-gradient d-inline d-sm-none brand-text-small">P.O.O</span>
+                    <span class="brand-subtitle d-none d-md-inline">Enterprise Solutions Architect</span>
+                </div>
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="toggle-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" data-section="home">
+                            <i class="fas fa-home d-inline d-lg-none me-2"></i>Home
+                        </a>
+                    </li>
+
+                    <!-- About Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user d-inline d-lg-none me-2"></i>About
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animate slideIn shadow-lg border-0 rounded-3" aria-labelledby="aboutDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#about">
+                                    <i class="fas fa-id-card text-primary me-2"></i> Professional Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#about">
+                                    <i class="fas fa-user-graduate text-primary me-2"></i> Education
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#about">
+                                    <i class="fas fa-briefcase text-primary me-2"></i> Experience
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#about">
+                                    <i class="fas fa-file-pdf text-primary me-2"></i> Download Resume
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Skills Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#skills" id="skillsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-cogs d-inline d-lg-none me-2"></i>Expertise
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animate slideIn shadow-lg border-0 rounded-3" aria-labelledby="skillsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#skills">
+                                    <i class="fas fa-brain text-primary me-2"></i> AI & Machine Learning
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#skills">
+                                    <i class="fas fa-link text-primary me-2"></i> Blockchain Technology
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#skills">
+                                    <i class="fas fa-code text-primary me-2"></i> Software Development
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#skills">
+                                    <i class="fas fa-mobile-alt text-primary me-2"></i> Mobile Applications
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#skills">
+                                    <i class="fas fa-atom text-primary me-2"></i> Quantum Computing
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Projects Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#projects" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-briefcase d-inline d-lg-none me-2"></i>Solutions
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animate slideIn shadow-lg border-0 rounded-3" aria-labelledby="projectsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#projects">
+                                    <i class="fas fa-star text-primary me-2"></i> Featured Projects
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <h6 class="dropdown-header">By Category</h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#projects" data-filter="ai">
+                                    <i class="fas fa-brain text-primary me-2"></i> AI & ML Solutions
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#projects" data-filter="blockchain">
+                                    <i class="fas fa-link text-primary me-2"></i> Blockchain Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#projects" data-filter="data">
+                                    <i class="fas fa-city text-primary me-2"></i> Smart City Initiatives
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#projects" data-filter="quantum">
+                                    <i class="fas fa-atom text-primary me-2"></i> Quantum Applications
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#projects" data-filter="web">
+                                    <i class="fas fa-globe text-primary me-2"></i> Enterprise Web
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Contact Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#contact" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-envelope d-inline d-lg-none me-2"></i>Contact
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end animate slideIn shadow-lg border-0 rounded-3" aria-labelledby="contactDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#contact">
+                                    <i class="fas fa-paper-plane text-primary me-2"></i> Contact Form
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#contact">
+                                    <i class="fas fa-handshake text-primary me-2"></i> Partnership Inquiries
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#contact">
+                                    <i class="fas fa-calendar-alt text-primary me-2"></i> Schedule a Call
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="mailto:enterprise@peteroduor.com">
+                                    <i class="fas fa-envelope text-primary me-2"></i> enterprise@peteroduor.com
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CTA Button -->
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2 w-100 nav-cta">
+                            <i class="fas fa-paper-plane me-2"></i> Get In Touch
+                            <span class="btn-hover-overlay"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar Spacer -->
+    <div class="navbar-spacer"></div>
+
+    <!-- Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Corporate Nav Styles -->
+    <style>
+        /* Corporate Nav Styling */
+        .corporate-nav {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1030;
+        }
+
+        .corporate-nav.navbar-scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Navbar spacer to prevent content from hiding behind fixed navbar */
+        .navbar-spacer {
+            height: 80px; /* Adjust based on your navbar height */
+        }
+
+        .brand-text {
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .brand-text-small {
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .brand-subtitle {
+            font-size: 0.7rem;
+            color: #6c757d;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: -5px;
+        }
+
+        /* Toggle Button Animation */
+        .toggle-icon {
+            width: 30px;
+            height: 25px;
+            position: relative;
+            transform: rotate(0deg);
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .toggle-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--primary-color);
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .toggle-icon span:nth-child(1) {
+            top: 0px;
+        }
+
+        .toggle-icon span:nth-child(2) {
+            top: 10px;
+            width: 75%;
+        }
+
+        .toggle-icon span:nth-child(3) {
+            top: 20px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggle-icon span:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggle-icon span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .toggle-icon span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-135deg);
+        }
+
+        /* Dropdown Styling */
+        .dropdown-menu {
+            padding: 1rem;
+            border: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+        }
+
+        .dropdown-item {
+            padding: 0.7rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .dropdown-divider {
+            margin: 0.5rem 0;
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dropdown-header {
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Dropdown Animation */
+        .animate {
+            animation-duration: 0.3s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(1rem);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0rem);
+                opacity: 1;
+            }
+        }
+
+        .slideIn {
+            animation-name: slideIn;
+        }
+
+        /* CTA Button Hover Effect */
+        .nav-cta {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover .btn-hover-overlay {
+            transform: translateX(0);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 992px) {
+            /* Fixed navbar height for mobile to prevent jumpiness */
+            .navbar-spacer {
+                height: 70px;
+            }
+
+            /* Improved mobile dropdown styling */
+            .dropdown-menu {
+                border: none;
+                box-shadow: none;
+                padding: 0.5rem;
+                background-color: rgba(59, 130, 246, 0.05);
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                position: static !important;
+                transform: none !important;
+                animation: none !important;
+                transition: opacity 0.2s ease !important;
+            }
+
+            .dropdown-item {
+                padding: 0.5rem 1rem;
+            }
+
+            /* Improved mobile navbar collapse */
+            .navbar-collapse {
+                max-height: 80vh;
+                overflow-y: auto;
+                background-color: white;
+                border-radius: 0 0 1rem 1rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+                margin-top: 0.5rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 1030;
+                transition: all 0.3s ease-in-out !important;
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            .navbar-collapse.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Prevent body scroll when mobile menu is open */
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            /* Adjust dropdown toggle arrows */
+            .dropdown-toggle::after {
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            /* Make nav items full width on mobile */
+            .nav-item {
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 0.75rem 1rem;
+                border-radius: 0.5rem;
+            }
+        }
+
+        /* Tablet Optimizations */
+        @media (min-width: 768px) and (max-width: 992px) {
+            .navbar-spacer {
+                height: 75px;
+            }
+        }
+    </style>
+
+    <!-- Main Content -->
+    <main id="pageContent">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preloader
+            const preloader = document.getElementById('preloader');
+
+            // Hide preloader after page loads
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    preloader.classList.add('fade-out');
+
+                    // Enable scrolling after preloader is hidden
+                    document.body.style.overflow = 'auto';
+
+                    // Initialize section transitions
+                    initSectionTransitions();
+                }, 800);
+            });
+
+            // Disable scrolling while preloader is visible
+            document.body.style.overflow = 'hidden';
+
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                disable: 'mobile'
+            });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+
+            // Scroll progress bar
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+            window.addEventListener('scroll', function() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+                scrollProgressBar.style.width = scrollPercentage + '%';
+            });
+
+            // Active nav link
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveNavLink() {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+
+            // Handle all navigation links including dropdown items
+            document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+
+                        // Get filter attribute if it exists (for project filtering)
+                        const filterValue = this.getAttribute('data-filter');
+
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Add loading spinner
+                            const navSpinner = document.createElement('div');
+                            navSpinner.className = 'spinner-border spinner-border-sm text-primary ms-2';
+                            navSpinner.setAttribute('role', 'status');
+                            this.appendChild(navSpinner);
+
+                            // Close dropdown if open
+                            if (this.classList.contains('dropdown-item')) {
+                                const dropdownMenu = this.closest('.dropdown-menu');
+                                if (dropdownMenu) {
+                                    const dropdownToggle = document.querySelector(`[aria-controls="${dropdownMenu.getAttribute('aria-labelledby')}"]`);
+                                    if (dropdownToggle && window.innerWidth < 992) {
+                                        dropdownToggle.click();
+                                    }
+                                }
+                            }
+
+                            // Scroll to target section with delay for transition effect
+                            setTimeout(() => {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 80,
+                                    behavior: 'smooth'
+                                });
+
+                                // Remove spinner after scrolling
+                                setTimeout(() => {
+                                    if (this.contains(navSpinner)) {
+                                        this.removeChild(navSpinner);
+                                    }
+                                }, 500);
+
+                                // Update URL hash without scrolling
+                                history.pushState(null, null, targetId);
+
+                                // Update active nav link
+                                updateActiveNavLink();
+
+                                // Apply filter if it exists
+                                if (filterValue) {
+                                    setTimeout(() => {
+                                        const filterButton = document.querySelector(`[data-filter="${filterValue}"]`);
+                                        if (filterButton && !filterButton.classList.contains('active')) {
+                                            filterButton.click();
+                                        }
+                                    }, 800);
+                                }
+                            }, 300);
+                        }
+                    });
+                }
+            });
+
+            // Handle dropdown hover on desktop
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            if (window.innerWidth >= 992) { // Only on desktop
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('mouseenter', function() {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        const dropdownToggle = this.querySelector('.dropdown-toggle');
+
+                        if (dropdownMenu && dropdownToggle) {
+                            dropdownToggle.setAttribute('aria-expanded', 'true');
+                            dropdownMenu.classList.add('show');
+                        }
+                    });
+
+                    dropdown.addEventListener('mouseleave', function() {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        const dropdownToggle = this.querySelector('.dropdown-toggle');
+
+                        if (dropdownMenu && dropdownToggle) {
+                            dropdownToggle.setAttribute('aria-expanded', 'false');
+                            dropdownMenu.classList.remove('show');
+                        }
+                    });
+                });
+            }
+
+            // Section transitions
+            function initSectionTransitions() {
+                const sectionElements = document.querySelectorAll('section');
+
+                // Add transition class to all sections
+                sectionElements.forEach(section => {
+                    section.classList.add('section-transition');
+                });
+
+                // Check which sections are in viewport
+                function checkSections() {
+                    sectionElements.forEach(section => {
+                        const sectionTop = section.getBoundingClientRect().top;
+                        const windowHeight = window.innerHeight;
+
+                        if (sectionTop < windowHeight * 0.75) {
+                            section.classList.add('active');
+                        }
+                    });
+                }
+
+                // Initial check
+                checkSections();
+
+                // Check on scroll
+                window.addEventListener('scroll', checkSections);
+            }
+
+            // Enhanced mobile menu handling
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            // Toggle body scroll when mobile menu is opened/closed
+            navbarToggler.addEventListener('click', function() {
+                // Small delay to match Bootstrap's collapse animation
+                setTimeout(() => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        document.body.classList.add('menu-open');
+                    } else {
+                        document.body.classList.remove('menu-open');
+                    }
+                }, 10);
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+
+                if (!isClickInside && navbarCollapse.classList.contains('show') && window.innerWidth < 992) {
+                    navbarToggler.click();
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarCollapse.classList.contains('show') && window.innerWidth < 992) {
+                        navbarToggler.click();
+                    }
+                });
+            });
+
+            // Fix for iOS Safari 100vh issue
+            function setMobileHeight() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+
+            setMobileHeight();
+            window.addEventListener('resize', setMobileHeight);
+
+            // Add loading spinners to project filter buttons
+            document.querySelectorAll('[data-filter]').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add spinner
+                    const spinner = document.createElement('span');
+                    spinner.className = 'spinner-border spinner-border-sm ms-2';
+                    spinner.setAttribute('role', 'status');
+                    this.appendChild(spinner);
+
+                    // Remove spinner after filtering
+                    setTimeout(() => {
+                        this.removeChild(spinner);
+                    }, 800);
+                });
+            });
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- 3D Effects JS -->
+    <script src="{% static 'js/3d-effects.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

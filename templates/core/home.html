@@ -1,0 +1,1811 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ name }} | {{ title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="position-relative overflow-hidden py-0" data-aos="fade-in">
+    <!-- Animated background elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-light" style="z-index: -2;"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(30, 64, 175, 0.05) 100%); z-index: -1;"></div>
+
+    <!-- Animated background shapes with parallax -->
+    <div class="position-absolute top-0 end-0 w-50 h-50 bg-primary opacity-5 rounded-circle parallax-element" data-parallax-speed="-0.2" style="transform: translate(25%, -25%); filter: blur(80px); animation: pulse 8s infinite alternate;"></div>
+    <div class="position-absolute bottom-0 start-0 w-50 h-50 bg-primary opacity-5 rounded-circle parallax-element" data-parallax-speed="0.3" style="transform: translate(-25%, 25%); filter: blur(80px); animation: pulse 8s infinite alternate-reverse;"></div>
+
+    <!-- 3D Floating elements (visible on desktop) -->
+    <div class="position-absolute d-none d-xl-block parallax-element" data-parallax-speed="-0.5" style="top: 15%; left: 15%; animation: float 6s ease-in-out infinite; z-index: 5;">
+        <div class="bg-white rounded-circle shadow-sm p-3 tech-icon-3d" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; transform: perspective(500px) rotateY(15deg) rotateX(5deg);">
+            <i class="fas fa-brain text-primary fa-2x"></i>
+        </div>
+    </div>
+    <div class="position-absolute d-none d-xl-block parallax-element" data-parallax-speed="0.4" style="bottom: 20%; right: 10%; animation: float 8s ease-in-out infinite; z-index: 5;">
+        <div class="bg-white rounded-circle shadow-sm p-3 tech-icon-3d" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; transform: perspective(500px) rotateY(-15deg) rotateX(-5deg);">
+            <i class="fas fa-link text-primary fa-2x"></i>
+        </div>
+    </div>
+
+    <!-- Additional 3D floating elements -->
+    <div class="position-absolute d-none d-xl-block parallax-element" data-parallax-speed="0.6" style="top: 30%; right: 20%; animation: float 7s ease-in-out infinite alternate; z-index: 5;">
+        <div class="bg-white rounded-circle shadow-sm p-3 tech-icon-3d" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; transform: perspective(500px) rotateY(10deg) rotateX(-10deg);">
+            <i class="fas fa-code text-primary fa-lg"></i>
+        </div>
+    </div>
+    <div class="position-absolute d-none d-xl-block parallax-element" data-parallax-speed="-0.3" style="bottom: 35%; left: 25%; animation: float 9s ease-in-out infinite alternate-reverse; z-index: 5;">
+        <div class="bg-white rounded-circle shadow-sm p-3 tech-icon-3d" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; transform: perspective(500px) rotateY(-10deg) rotateX(15deg);">
+            <i class="fas fa-mobile-alt text-primary fa-lg"></i>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5" data-aos="fade-right" data-aos-delay="300">
+                <div class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill d-inline-flex align-items-center">
+                    <i class="fas fa-building me-1"></i>
+                    <span class="d-none d-sm-inline">Enterprise Solutions Architect</span>
+                    <span class="d-inline d-sm-none">Solutions Architect</span>
+                    <div class="spinner-grow spinner-grow-sm text-primary ms-2" role="status" style="animation-duration: 1.5s;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <h1 class="display-3 fw-bold mb-4 lh-sm">
+                    Transforming <span class="text-gradient position-relative">
+                        Enterprise
+                        <span class="position-absolute start-0 bottom-0 w-100 bg-primary" style="height: 4px; opacity: 0.3; border-radius: 2px;"></span>
+                    </span> Through Technology
+                </h1>
+
+                <p class="lead mb-4 text-secondary">
+                    I'm <span class="fw-bold">{{ name }}</span>, specializing in enterprise-grade solutions using Django, Python, React, Flutter, AI/ML, and Blockchain technologies. Delivering measurable business impact through innovative digital transformation.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <a href="#projects" class="btn btn-primary px-4 py-3 rounded-pill shadow-sm position-relative overflow-hidden">
+                        <span class="position-relative z-1">
+                            <i class="fas fa-briefcase me-2"></i> Enterprise Solutions
+                        </span>
+                        <span class="position-absolute top-0 start-0 bg-white w-100 h-100 opacity-20" style="transform: translateX(-100%); transition: all 0.3s ease; clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);"></span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline-primary px-4 py-3 rounded-pill position-relative overflow-hidden">
+                        <span class="position-relative z-1">
+                            <i class="fas fa-handshake me-2"></i> Strategic Partnerships
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Stats with counters -->
+                <div class="row g-4 mb-4">
+                    <div class="col-4">
+                        <div class="border-start border-primary border-3 ps-3">
+                            <h3 class="fw-bold mb-0 counter" data-target="10">0</h3>
+                            <p class="text-muted mb-0">Years Experience</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="border-start border-primary border-3 ps-3">
+                            <h3 class="fw-bold mb-0 counter" data-target="50">0</h3>
+                            <p class="text-muted mb-0">Enterprise Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="border-start border-primary border-3 ps-3">
+                            <h3 class="fw-bold mb-0 counter" data-target="100">0</h3>
+                            <p class="text-muted mb-0">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm social-icon">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="500">
+                <div class="position-relative">
+                    <!-- Decorative elements with animation -->
+                    <div class="position-absolute top-0 end-0 w-75 h-75 bg-primary opacity-10 rounded-4" style="transform: rotate(-5deg); animation: pulse 4s infinite alternate;"></div>
+                    <div class="position-absolute bottom-0 start-0 w-75 h-75 bg-primary opacity-10 rounded-4" style="transform: rotate(5deg); animation: pulse 4s infinite alternate-reverse;"></div>
+
+                    <!-- 3D Image Slider with Code Overlay -->
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-body p-0 position-relative">
+                            <!-- Image loading spinner -->
+                            <div class="spinner-overlay image-loading">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+
+                            <!-- 3D Image Slider -->
+                            <div id="hero3dSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#hero3dSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#hero3dSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#hero3dSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#hero3dSlider" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                </div>
+
+                                <div class="carousel-inner">
+                                    <!-- Slide 1: AI/ML -->
+                                    <div class="carousel-item active">
+                                        <div class="hero-3d-image" style="background: url('{% static 'images/project2.jpg' %}') center/cover; height: 400px; transform-style: preserve-3d; transform: perspective(1000px) rotateX(5deg) rotateY(5deg); transition: transform 0.5s ease;">
+                                            <div class="position-absolute top-0 start-0 m-3">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill shadow-sm">AI & Machine Learning</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2: Blockchain -->
+                                    <div class="carousel-item">
+                                        <div class="hero-3d-image" style="background: url('{% static 'images/project3.jpg' %}') center/cover; height: 400px; transform-style: preserve-3d; transform: perspective(1000px) rotateX(5deg) rotateY(-5deg); transition: transform 0.5s ease;">
+                                            <div class="position-absolute top-0 start-0 m-3">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill shadow-sm">Blockchain Technology</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3: Digital Transformation -->
+                                    <div class="carousel-item">
+                                        <div class="hero-3d-image" style="background: url('{% static 'images/project4.jpg' %}') center/cover; height: 400px; transform-style: preserve-3d; transform: perspective(1000px) rotateX(-5deg) rotateY(5deg); transition: transform 0.5s ease;">
+                                            <div class="position-absolute top-0 start-0 m-3">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill shadow-sm">Digital Transformation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4: Enterprise Solutions -->
+                                    <div class="carousel-item">
+                                        <div class="hero-3d-image" style="background: url('{% static 'images/project5.jpg' %}') center/cover; height: 400px; transform-style: preserve-3d; transform: perspective(1000px) rotateX(-5deg) rotateY(-5deg); transition: transform 0.5s ease;">
+                                            <div class="position-absolute top-0 start-0 m-3">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill shadow-sm">Enterprise Solutions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slider Controls -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#hero3dSlider" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#hero3dSlider" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                            <!-- Code overlay with typing effect -->
+                            <div class="position-absolute bottom-0 start-0 end-0 p-4 bg-dark bg-opacity-80">
+                                <pre class="text-light mb-0 font-fira typing-code" style="font-size: 0.8rem; overflow: hidden; min-height: 100px;">
+<span class="text-warning">class</span> <span class="text-success">EnterpriseArchitect</span>:
+    <span class="text-warning">def</span> <span class="text-primary">transform_business</span>(self, enterprise):
+        <span class="text-warning">return</span> {
+            <span class="text-danger">"ai_solutions"</span>: self.implement_deep_learning(enterprise),
+            <span class="text-danger">"blockchain"</span>: self.secure_enterprise_data(enterprise),
+            <span class="text-danger">"digital_transformation"</span>: self.modernize_systems(enterprise)
+        }
+                                </pre>
+                                <span class="typing-cursor">|</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D Floating Elements -->
+                    <div class="position-absolute" style="top: 20%; right: -30px; z-index: 10; transform-style: preserve-3d; animation: float 6s ease-in-out infinite;">
+                        <div class="tech-icon-3d bg-white rounded-circle shadow-lg p-3" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transform: perspective(500px) rotateY(15deg) rotateX(5deg);">
+                            <i class="fas fa-brain text-primary fa-2x"></i>
+                        </div>
+                    </div>
+
+                    <div class="position-absolute" style="bottom: 25%; left: -20px; z-index: 10; transform-style: preserve-3d; animation: float 8s ease-in-out infinite alternate;">
+                        <div class="tech-icon-3d bg-white rounded-circle shadow-lg p-3" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; transform: perspective(500px) rotateY(-15deg) rotateX(-5deg);">
+                            <i class="fas fa-link text-primary fa-2x"></i>
+                        </div>
+                    </div>
+
+                    <!-- Technologies badges with hover effect -->
+                    <div class="position-absolute top-0 start-0 translate-middle-y d-none d-xl-block">
+                        <div class="d-flex flex-column gap-2">
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">Django</span>
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">Python</span>
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">React</span>
+                        </div>
+                    </div>
+                    <div class="position-absolute top-50 end-0 translate-middle-y d-none d-xl-block">
+                        <div class="d-flex flex-column gap-2">
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">AI/ML</span>
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">Blockchain</span>
+                            <span class="badge bg-white text-primary shadow-sm px-3 py-2 tech-badge">Flutter</span>
+                        </div>
+                    </div>
+
+                    <!-- Mobile tech badges (visible only on mobile) -->
+                    <div class="d-flex flex-wrap gap-2 justify-content-center mt-4 d-block d-xl-none">
+                        <span class="badge bg-white text-primary shadow-sm px-3 py-2">Django</span>
+                        <span class="badge bg-white text-primary shadow-sm px-3 py-2">Python</span>
+                        <span class="badge bg-white text-primary shadow-sm px-3 py-2">React</span>
+                        <span class="badge bg-white text-primary shadow-sm px-3 py-2">AI/ML</span>
+                        <span class="badge bg-white text-primary shadow-sm px-3 py-2">Blockchain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll indicator with animation -->
+    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 d-none d-lg-block">
+        <a href="#about" class="text-primary d-flex flex-column align-items-center text-decoration-none">
+            <span class="small mb-2">Scroll to explore</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </a>
+    </div>
+
+    <!-- Add animation keyframes -->
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: var(--primary-color);
+        }
+
+        .tech-badge {
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            transform: translateX(5px);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .scroll-arrow {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .typing-cursor {
+            position: absolute;
+            bottom: 1rem;
+            right: 2rem;
+            color: white;
+            font-family: 'Fira Code', monospace;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Button hover effect */
+        .btn-primary:hover .position-absolute {
+            transform: translateX(0);
+        }
+
+        /* 3D Image Slider Styles */
+        .hero-3d-image {
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-3d-image:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.02) !important;
+        }
+
+        /* Custom carousel indicators */
+        .carousel-indicators {
+            bottom: -5px;
+        }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            margin: 0 4px;
+        }
+
+        .carousel-indicators button.active {
+            background-color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* 3D Floating Elements */
+        .tech-icon-3d {
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-icon-3d:hover {
+            transform: perspective(500px) rotateY(0deg) rotateX(0deg) scale(1.1) !important;
+        }
+
+        /* 3D Parallax Effect */
+        @keyframes rotate3d {
+            0% { transform: perspective(1000px) rotateX(2deg) rotateY(2deg); }
+            50% { transform: perspective(1000px) rotateX(-2deg) rotateY(-2deg); }
+            100% { transform: perspective(1000px) rotateX(2deg) rotateY(2deg); }
+        }
+    </style>
+
+    <!-- Counter and 3D effects animation script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                        if (target === 100) {
+                            counter.innerText = target + '%';
+                        }
+                    }
+                });
+            }
+
+            // 3D Mouse Parallax Effect for Hero Images
+            const heroSection = document.querySelector('#home');
+            const hero3dImages = document.querySelectorAll('.hero-3d-image');
+            const techIcons3d = document.querySelectorAll('.tech-icon-3d');
+
+            // Mouse move parallax effect
+            heroSection.addEventListener('mousemove', function(e) {
+                // Get mouse position relative to the container
+                const xPos = (e.clientX / window.innerWidth) - 0.5;
+                const yPos = (e.clientY / window.innerHeight) - 0.5;
+
+                // Apply parallax effect to 3D images
+                hero3dImages.forEach(image => {
+                    const baseTransform = image.getAttribute('data-base-transform') || image.style.transform;
+                    if (!image.getAttribute('data-base-transform')) {
+                        image.setAttribute('data-base-transform', baseTransform);
+                    }
+
+                    // Calculate rotation based on mouse position
+                    const rotateX = yPos * -10; // Inverse Y axis for natural feel
+                    const rotateY = xPos * 10;
+
+                    // Apply transform with base transform and mouse-based rotation
+                    image.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+
+                // Apply parallax effect to 3D tech icons
+                techIcons3d.forEach(icon => {
+                    // Calculate rotation based on mouse position but with less intensity
+                    const rotateX = yPos * -5;
+                    const rotateY = xPos * 5;
+
+                    // Apply transform
+                    icon.style.transform = `perspective(500px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+                });
+            });
+
+            // Reset transforms when mouse leaves the section
+            heroSection.addEventListener('mouseleave', function() {
+                hero3dImages.forEach(image => {
+                    const baseTransform = image.getAttribute('data-base-transform');
+                    if (baseTransform) {
+                        image.style.transform = baseTransform;
+                    }
+                });
+
+                techIcons3d.forEach(icon => {
+                    icon.style.transform = 'perspective(500px) rotateY(0deg) rotateX(0deg)';
+                });
+            });
+
+            // Handle carousel slide events for better 3D effect
+            const carousel = document.getElementById('hero3dSlider');
+            if (carousel) {
+                carousel.addEventListener('slide.bs.carousel', function(e) {
+                    // Add animation to the outgoing slide
+                    const outgoingSlide = e.from;
+                    const incomingSlide = e.to;
+
+                    // Get the slides
+                    const slides = carousel.querySelectorAll('.carousel-item');
+
+                    // Add exit animation to outgoing slide
+                    if (slides[outgoingSlide]) {
+                        const outgoingImage = slides[outgoingSlide].querySelector('.hero-3d-image');
+                        if (outgoingImage) {
+                            // Determine direction based on slide index
+                            const direction = outgoingSlide < incomingSlide ? -1 : 1;
+                            outgoingImage.style.transform = `perspective(1000px) rotateY(${direction * 20}deg) scale(0.9)`;
+                            outgoingImage.style.opacity = '0.5';
+                            outgoingImage.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                        }
+                    }
+
+                    // Add entrance animation to incoming slide
+                    carousel.addEventListener('slid.bs.carousel', function onSlide() {
+                        if (slides[incomingSlide]) {
+                            const incomingImage = slides[incomingSlide].querySelector('.hero-3d-image');
+                            if (incomingImage) {
+                                incomingImage.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+                                incomingImage.style.opacity = '1';
+                                incomingImage.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                            }
+                        }
+
+                        // Remove the event listener to prevent multiple calls
+                        carousel.removeEventListener('slid.bs.carousel', onSlide);
+                    });
+                });
+            }
+
+            // Start counter animation when section is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(animateCounters, 500);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            if (heroSection) {
+                observer.observe(heroSection);
+            }
+        });
+    </script>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-gradient-to-r from-background to-card/30 relative overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h6 class="text-primary fw-bold mb-2">EXECUTIVE PROFILE</h6>
+                <h2 class="display-5 fw-bold mb-4">Professional Background</h2>
+                <div class="w-50 mx-auto border-bottom border-primary mb-4"></div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="rounded-xl overflow-hidden shadow-xl bg-white p-2 border border-primary/10 hover:shadow-primary/10 transition-all">
+                    <img src="{% static 'images/about.jpg' %}" alt="About {{ name }}" class="img-fluid rounded-3">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h3 class="mb-4 text-gradient d-inline-block">Enterprise Solutions Architect</h3>
+                <p class="lead mb-4">
+                    I partner with Fortune 500 companies and innovative organizations to deliver transformative digital solutions that create measurable business impact. Specializing in AI/ML, blockchain, and emerging technologies integration for enterprise applications.
+                </p>
+                <p class="mb-4">
+                    With a strong foundation in Python, Django, JavaScript, React, and Flutter, I develop applications
+                    that are not only functional but also maintainable and scalable. I believe in clean code, thorough testing,
+                    and continuous learning.
+                </p>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-brain text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">AI & Machine Learning</h5>
+                                <p class="mb-0 text-muted">Deep Learning, Computer Vision, NLP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-link text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Blockchain</h5>
+                                <p class="mb-0 text-muted">Enterprise Solutions, DeFi, Zero-Knowledge</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-code text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Web Development</h5>
+                                <p class="mb-0 text-muted">Django, React, JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-mobile-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Mobile Development</h5>
+                                <p class="mb-0 text-muted">Flutter, React Native</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user-graduate text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Education</h5>
+                                <p class="mb-0 text-muted">Interdisciplinary PhD Fellow</p>
+                                <p class="mb-0 text-muted small">Computer Science & Quantum Computing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-briefcase text-primary me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Experience</h5>
+                                <p class="mb-0 text-muted">5+ Years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn btn-primary px-4 py-2 rounded-pill">
+                    <i class="fas fa-paper-plane me-2"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="position-absolute top-0 end-0 w-50 h-50 bg-primary opacity-5 rounded-circle" style="transform: translate(25%, -25%);"></div>
+    <div class="position-absolute bottom-0 start-0 w-25 h-25 bg-primary opacity-5 rounded-circle" style="transform: translate(-25%, 25%);"></div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h6 class="text-primary fw-bold mb-2">MY SKILLS</h6>
+                <h2 class="display-5 fw-bold mb-4">Technical Expertise</h2>
+                <div class="w-50 mx-auto border-bottom border-primary mb-4"></div>
+            </div>
+        </div>
+
+        <!-- Programming Skills -->
+        <div class="row mb-5">
+            <div class="col-lg-6 mb-4">
+                <h3 class="mb-4">Programming Languages</h3>
+                {% if programming_skills %}
+                    {% for skill in programming_skills %}
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">{{ skill.name }}</span>
+                            <span>{{ skill.level }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ skill.level }}%"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Default skills when no database entries exist -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">Python</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 98%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">TensorFlow/PyTorch</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">JavaScript/TypeScript</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">Solidity</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-medium">Go</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-6">
+                <h3 class="mb-4">Databases & Tools</h3>
+                <div class="row">
+                    {% if database_skills %}
+                        {% for skill in database_skills %}
+                        <div class="col-md-6 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm h-100">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                        <i class="fas fa-database text-primary"></i>
+                                    </div>
+                                    <h5 class="mb-0">{{ skill.name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <!-- Default database skills when no database entries exist -->
+                        <div class="col-md-6 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm h-100">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                        <i class="fas fa-database text-primary"></i>
+                                    </div>
+                                    <h5 class="mb-0">PostgreSQL</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm h-100">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                        <i class="fas fa-database text-primary"></i>
+                                    </div>
+                                    <h5 class="mb-0">MongoDB</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm h-100">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                        <i class="fas fa-database text-primary"></i>
+                                    </div>
+                                    <h5 class="mb-0">Neo4j</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm h-100">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
+                                        <i class="fas fa-database text-primary"></i>
+                                    </div>
+                                    <h5 class="mb-0">Redis</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Skills -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h3 class="mb-4">Frameworks & Technologies</h3>
+            </div>
+
+            {% if ai_ml_skills %}
+                {% for skill in ai_ml_skills %}
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-{{ skill.icon|default:'brain' }} text-primary"></i>
+                        </div>
+                        <h4>{{ skill.name }}</h4>
+                        <p class="text-muted mb-0">{{ skill.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default AI/ML skills when no database entries exist -->
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-brain text-primary"></i>
+                        </div>
+                        <h4>Deep Learning</h4>
+                        <p class="text-muted mb-0">Neural networks & model optimization</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-eye text-primary"></i>
+                        </div>
+                        <h4>Computer Vision</h4>
+                        <p class="text-muted mb-0">Object detection & image analysis</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-comments text-primary"></i>
+                        </div>
+                        <h4>NLP</h4>
+                        <p class="text-muted mb-0">Text analysis & language models</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-robot text-primary"></i>
+                        </div>
+                        <h4>Reinforcement Learning</h4>
+                        <p class="text-muted mb-0">Autonomous agents & optimization</p>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if blockchain_skills %}
+                {% for skill in blockchain_skills %}
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-{{ skill.icon|default:'link' }} text-primary"></i>
+                        </div>
+                        <h4>{{ skill.name }}</h4>
+                        <p class="text-muted mb-0">{{ skill.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default Blockchain skills when no database entries exist -->
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-building text-primary"></i>
+                        </div>
+                        <h4>Enterprise Blockchain</h4>
+                        <p class="text-muted mb-0">Solutions for Fortune 500 companies</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-user-secret text-primary"></i>
+                        </div>
+                        <h4>Zero-Knowledge Proofs</h4>
+                        <p class="text-muted mb-0">Privacy-preserving computation</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-coins text-primary"></i>
+                        </div>
+                        <h4>DeFi Architecture</h4>
+                        <p class="text-muted mb-0">Financial protocol design</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle mb-3 d-inline-block">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                        </div>
+                        <h4>Quantum Resistance</h4>
+                        <p class="text-muted mb-0">Post-quantum cryptography</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 position-relative">
+    <!-- Background elements with animation -->
+    <div class="position-absolute top-0 end-0 w-25 h-25 bg-primary opacity-5 rounded-circle" style="transform: translate(25%, -25%); filter: blur(80px); animation: pulse 8s infinite alternate;"></div>
+    <div class="position-absolute bottom-0 start-0 w-25 h-25 bg-primary opacity-5 rounded-circle" style="transform: translate(-25%, 25%); filter: blur(80px); animation: pulse 8s infinite alternate-reverse;"></div>
+
+    <div class="container">
+        <div class="row justify-content-center mb-5" data-aos="fade-up">
+            <div class="col-lg-8 text-center">
+                <h6 class="text-primary fw-bold mb-2">ENTERPRISE SOLUTIONS</h6>
+                <h2 class="display-4 fw-bold mb-4">Transformative Projects</h2>
+                <div class="w-50 mx-auto border-bottom border-primary mb-4"></div>
+                <p class="lead text-secondary mb-5">Delivering innovative solutions for Fortune 500 companies and leading organizations worldwide</p>
+            </div>
+        </div>
+
+        <!-- Featured Project with loading effect -->
+        <div class="row mb-5" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-12">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-6 position-relative">
+                                <!-- Loading spinner for background image -->
+                                <div class="spinner-overlay featured-project-loading">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>
+
+                                <!-- Background image with onload event to hide spinner -->
+                                <div class="h-100 position-relative" style="min-height: 400px;">
+                                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('{% static 'images/project1.jpg' %}') center/cover no-repeat; opacity: 0; transition: opacity 0.5s ease;" onload="this.style.opacity='1'; this.parentElement.parentElement.querySelector('.featured-project-loading').style.display='none';"></div>
+
+                                    <!-- Fallback for onload not working on background images -->
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            setTimeout(function() {
+                                                const bgElement = document.querySelector('.featured-project-loading');
+                                                if (bgElement) bgElement.style.display = 'none';
+
+                                                const imgElement = document.querySelector('.col-lg-6.position-relative .position-absolute');
+                                                if (imgElement) imgElement.style.opacity = '1';
+                                            }, 800);
+                                        });
+                                    </script>
+                                </div>
+
+                                <!-- Badge with pulse animation -->
+                                <div class="position-absolute top-0 start-0 m-4">
+                                    <span class="badge bg-primary px-3 py-2 rounded-pill shadow-sm d-flex align-items-center">
+                                        <span class="pulse-dot me-2"></span>
+                                        Featured Project
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                                <div class="mb-3">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Enterprise AI</span>
+                                </div>
+                                <h3 class="fw-bold mb-3 text-gradient">Quantum-Secured Financial Infrastructure</h3>
+                                <p class="text-secondary mb-4">Developed a revolutionary financial infrastructure for a global banking consortium, implementing quantum-resistant cryptography and AI-powered fraud detection that reduced security incidents by 99.7% while processing over $2 trillion in daily transactions.</p>
+                                <div class="mb-4">
+                                    <span class="badge bg-light text-dark me-2 mb-2 tech-badge">Quantum Computing</span>
+                                    <span class="badge bg-light text-dark me-2 mb-2 tech-badge">Post-Quantum Cryptography</span>
+                                    <span class="badge bg-light text-dark me-2 mb-2 tech-badge">Distributed Systems</span>
+                                    <span class="badge bg-light text-dark me-2 mb-2 tech-badge">AI/ML</span>
+                                    <span class="badge bg-light text-dark me-2 mb-2 tech-badge">Blockchain</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3 position-relative">
+                                        <i class="fas fa-external-link-alt me-2"></i> Case Study
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            New
+                                        </span>
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3 demo-btn">
+                                        <i class="fas fa-play-circle me-2"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project filters with active indicator and mobile optimization -->
+        <div class="row mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-12 text-center">
+                <div class="filter-container p-2 bg-white rounded-4 shadow-sm d-inline-block">
+                    <div class="d-inline-flex flex-wrap justify-content-center gap-2 mb-4 position-relative">
+                        <!-- Active filter indicator (moves based on active filter) -->
+                        <span class="filter-indicator"></span>
+
+                        <!-- Filter buttons -->
+                        <button type="button" class="btn btn-filter active rounded-pill px-4" data-filter="all">
+                            <i class="fas fa-th-large d-none d-md-inline-block me-2"></i>All Solutions
+                        </button>
+                        <button type="button" class="btn btn-filter rounded-pill px-4" data-filter="ai">
+                            <i class="fas fa-brain d-none d-md-inline-block me-2"></i>AI & ML
+                        </button>
+                        <button type="button" class="btn btn-filter rounded-pill px-4" data-filter="blockchain">
+                            <i class="fas fa-link d-none d-md-inline-block me-2"></i>Blockchain
+                        </button>
+                        <button type="button" class="btn btn-filter rounded-pill px-4" data-filter="data">
+                            <i class="fas fa-city d-none d-md-inline-block me-2"></i>Smart City
+                        </button>
+                        <button type="button" class="btn btn-filter rounded-pill px-4" data-filter="quantum">
+                            <i class="fas fa-atom d-none d-md-inline-block me-2"></i>Quantum
+                        </button>
+                        <button type="button" class="btn btn-filter rounded-pill px-4" data-filter="web">
+                            <i class="fas fa-globe d-none d-md-inline-block me-2"></i>Enterprise Web
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading spinner for projects (shown during filtering) -->
+        <div id="projects-loading" class="spinner-container mb-4" style="display: none;">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <style>
+            /* Pulse dot animation for featured badge */
+            .pulse-dot {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #fff;
+                animation: pulse-animation 2s infinite;
+            }
+
+            @keyframes pulse-animation {
+                0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+            }
+
+            /* Filter buttons styling */
+            .filter-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+            }
+
+            .filter-container::-webkit-scrollbar {
+                display: none; /* Chrome, Safari, Edge */
+            }
+
+            .btn-filter {
+                position: relative;
+                z-index: 2;
+                background: transparent;
+                border: none;
+                color: #6c757d;
+                transition: all 0.3s ease;
+            }
+
+            .btn-filter:hover {
+                color: var(--primary-color);
+            }
+
+            .btn-filter.active {
+                color: var(--primary-color);
+                font-weight: 500;
+            }
+
+            .filter-indicator {
+                position: absolute;
+                height: 80%;
+                top: 10%;
+                left: 0;
+                background-color: rgba(59, 130, 246, 0.1);
+                border-radius: 50px;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                z-index: 1;
+            }
+
+            /* Demo button hover effect */
+            .demo-btn {
+                overflow: hidden;
+                position: relative;
+            }
+
+            .demo-btn::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 5px;
+                height: 5px;
+                background: rgba(59, 130, 246, 0.3);
+                opacity: 0;
+                border-radius: 100%;
+                transform: scale(1, 1) translate(-50%);
+                transform-origin: 50% 50%;
+            }
+
+            .demo-btn:hover::after {
+                animation: ripple 1s ease-out;
+            }
+
+            @keyframes ripple {
+                0% {
+                    transform: scale(0, 0);
+                    opacity: 0.5;
+                }
+                100% {
+                    transform: scale(20, 20);
+                    opacity: 0;
+                }
+            }
+
+            /* Mobile optimizations */
+            @media (max-width: 768px) {
+                .filter-container {
+                    width: 100%;
+                    padding: 0.5rem;
+                }
+
+                .btn-filter {
+                    font-size: 0.85rem;
+                    padding: 0.5rem 1rem !important;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Set up filter indicator position
+                const filterButtons = document.querySelectorAll('.btn-filter');
+                const filterIndicator = document.querySelector('.filter-indicator');
+
+                function positionIndicator(activeButton) {
+                    if (!filterIndicator || !activeButton) return;
+
+                    filterIndicator.style.width = `${activeButton.offsetWidth}px`;
+                    filterIndicator.style.left = `${activeButton.offsetLeft}px`;
+                }
+
+                // Initial position
+                const activeButton = document.querySelector('.btn-filter.active');
+                setTimeout(() => positionIndicator(activeButton), 100);
+
+                // Update on filter click
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Show loading spinner
+                        const projectsLoading = document.getElementById('projects-loading');
+                        if (projectsLoading) projectsLoading.style.display = 'flex';
+
+                        // Update active class
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+
+                        // Move indicator
+                        positionIndicator(this);
+
+                        // Hide loading spinner after filtering (with delay for effect)
+                        setTimeout(() => {
+                            if (projectsLoading) projectsLoading.style.display = 'none';
+                        }, 800);
+                    });
+                });
+
+                // Update indicator position on window resize
+                window.addEventListener('resize', () => {
+                    const activeButton = document.querySelector('.btn-filter.active');
+                    positionIndicator(activeButton);
+                });
+            });
+        </script>
+
+        <div class="row g-4">
+            {% if featured_projects %}
+                {% for project in featured_projects %}
+                <div class="col-lg-4 col-md-6 mb-4 project-card" data-category="{{ project.category }}">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-{{ project.category }} rounded-pill px-3 py-2 shadow-sm">{{ project.get_category_display }}</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">{{ project.title }}</h4>
+                            <p class="card-text text-secondary mb-4">{{ project.description|truncatechars:120 }}</p>
+                            <div class="mb-4">
+                                {% for tech in project.get_technologies_list %}
+                                <span class="badge bg-light text-dark me-2 mb-2">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    {% if project.live_url %}
+                                    <a href="{{ project.live_url }}" class="btn btn-sm btn-primary rounded-pill px-3" target="_blank">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    {% endif %}
+                                    {% if project.github_url %}
+                                    <a href="{{ project.github_url }}" class="btn btn-sm btn-outline-primary rounded-pill px-3" target="_blank">
+                                        <i class="fab fa-github me-1"></i> Code
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                <span class="text-muted small">{{ project.completion_date|default:"2023" }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default projects when no database entries exist -->
+                <div class="col-lg-4 col-md-6 project-card" data-category="ai">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift" style="transform-style: preserve-3d; transform: perspective(1000px)">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project2.jpg' %}" class="card-img-top" alt="AI-Powered Healthcare Analytics">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-ai rounded-pill px-3 py-2 shadow-sm">AI & ML</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">AI-Powered Healthcare Analytics</h4>
+                            <p class="card-text text-secondary mb-4">Developed a comprehensive healthcare analytics platform for a leading hospital network, leveraging deep learning to predict patient outcomes with 94% accuracy and reducing readmission rates by 32%.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">TensorFlow</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Python</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Computer Vision</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">NLP</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Django</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-file-alt me-1"></i> Case Study
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-card" data-category="blockchain">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project3.jpg' %}" class="card-img-top" alt="Enterprise Blockchain Platform">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-blockchain rounded-pill px-3 py-2 shadow-sm">Blockchain</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">Supply Chain Transparency Platform</h4>
+                            <p class="card-text text-secondary mb-4">Architected a blockchain-based supply chain platform for a Fortune 100 retailer, enabling end-to-end product traceability and reducing verification time from days to seconds.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">Hyperledger</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Smart Contracts</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Zero-Knowledge Proofs</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">React</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Node.js</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-play-circle me-1"></i> Demo
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-card" data-category="data">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project1.jpg' %}" class="card-img-top" alt="Smart City Infrastructure">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-data rounded-pill px-3 py-2 shadow-sm">Smart City</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">Intelligent Urban Infrastructure</h4>
+                            <p class="card-text text-secondary mb-4">Led the development of an integrated smart city platform for a major metropolitan area, connecting 50,000+ IoT devices and reducing energy consumption by 27% while improving emergency response times by 42%.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">IoT</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Big Data</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">AI/ML</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Digital Twin</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Python</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-file-alt me-1"></i> Case Study
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-card" data-category="quantum">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project4.jpg' %}" class="card-img-top" alt="Quantum Computing Platform">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-primary rounded-pill px-3 py-2 shadow-sm">Quantum</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">Quantum Algorithm Optimization</h4>
+                            <p class="card-text text-secondary mb-4">Pioneered quantum algorithm optimization for a leading financial institution, achieving a 200x speedup in portfolio risk analysis and developing novel quantum machine learning techniques.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">Qiskit</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Quantum ML</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Python</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Linear Algebra</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Financial Modeling</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-file-alt me-1"></i> Research Paper
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-card" data-category="web">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project5.jpg' %}" class="card-img-top" alt="Enterprise Web Platform">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-web rounded-pill px-3 py-2 shadow-sm">Enterprise Web</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">Global Enterprise Portal</h4>
+                            <p class="card-text text-secondary mb-4">Designed and implemented a comprehensive enterprise portal for a multinational corporation, serving 120,000+ employees across 60 countries with 99.99% uptime and advanced security features.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">Django</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">React</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">GraphQL</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">PostgreSQL</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Kubernetes</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-play-circle me-1"></i> Demo
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 project-card" data-category="ai">
+                    <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden hover-lift">
+                        <div class="position-relative">
+                            <img src="{% static 'images/project6.jpg' %}" class="card-img-top" alt="AI Research Platform">
+                            <span class="position-absolute top-0 end-0 m-3 badge bg-ai rounded-pill px-3 py-2 shadow-sm">AI & ML</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold mb-3">Autonomous Research Assistant</h4>
+                            <p class="card-text text-secondary mb-4">Created an AI-powered research platform for a leading pharmaceutical company, accelerating drug discovery by 65% through automated literature analysis and molecular property prediction.</p>
+                            <div class="mb-4">
+                                <span class="badge bg-light text-dark me-2 mb-2">PyTorch</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">NLP</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Transformers</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Graph Neural Networks</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Django</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-sm btn-primary rounded-pill px-3">
+                                        <i class="fas fa-external-link-alt me-1"></i> View
+                                    </a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                        <i class="fas fa-file-alt me-1"></i> Case Study
+                                    </a>
+                                </div>
+                                <span class="text-muted small">2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-outline-primary px-4 py-3 rounded-pill">
+                View All Enterprise Solutions <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 position-relative">
+    <!-- Background elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-light" style="z-index: -2;"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(30, 64, 175, 0.05) 100%); z-index: -1;"></div>
+    <div class="position-absolute top-0 end-0 w-25 h-25 bg-primary opacity-5 rounded-circle" style="transform: translate(25%, -25%); filter: blur(80px);"></div>
+    <div class="position-absolute bottom-0 start-0 w-25 h-25 bg-primary opacity-5 rounded-circle" style="transform: translate(-25%, 25%); filter: blur(80px);"></div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h6 class="text-primary fw-bold mb-2">STRATEGIC PARTNERSHIPS</h6>
+                <h2 class="display-4 fw-bold mb-4">Let's Transform Your Enterprise</h2>
+                <div class="w-50 mx-auto border-bottom border-primary mb-4"></div>
+                <p class="lead text-secondary mb-5">Schedule a consultation to discuss how my expertise can drive your organization's digital transformation journey</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 hover-lift">
+                    <div class="card-body p-4 text-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-flex mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-handshake text-primary fa-2x m-auto"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Enterprise Consulting</h3>
+                        <p class="text-secondary mb-4">Strategic technology consulting for Fortune 500 companies and innovative organizations seeking digital transformation.</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 hover-lift">
+                    <div class="card-body p-4 text-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-flex mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-project-diagram text-primary fa-2x m-auto"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Solution Architecture</h3>
+                        <p class="text-secondary mb-4">End-to-end solution design and implementation leveraging cutting-edge technologies for complex enterprise challenges.</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-lg rounded-4 h-100 hover-lift">
+                    <div class="card-body p-4 text-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-flex mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-graduation-cap text-primary fa-2x m-auto"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Executive Training</h3>
+                        <p class="text-secondary mb-4">Specialized workshops and training programs for executive teams on emerging technologies and digital transformation.</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-lg rounded-4 h-100">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="fw-bold mb-4 text-gradient">Enterprise Contact</h3>
+                        <p class="text-secondary mb-5">Reach out to discuss large-scale deployments, enterprise solutions, and technology consulting services.</p>
+
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Business Inquiries</h5>
+                                <p class="mb-0 text-secondary">enterprise@peteroduor.com</p>
+                                <p class="mb-0 text-secondary">partnerships@peteroduor.com</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Corporate Office</h5>
+                                <p class="mb-0 text-secondary">Corporate Plaza, 5th Avenue</p>
+                                <p class="mb-0 text-secondary">New York, NY 10022</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Direct Line</h5>
+                                <p class="mb-0 text-secondary">+1 (555) 123-4567</p>
+                                <p class="mb-0 text-secondary">Business Hours: 9am-5pm EST</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-5">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                <i class="fas fa-calendar-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Schedule a Call</h5>
+                                <p class="mb-0 text-secondary">Book a 30-minute consultation</p>
+                                <a href="#" class="text-primary">View Calendar <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-bold mb-3">Professional Profiles</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 shadow-sm">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-lg rounded-4">
+                    <div class="card-body p-4 p-lg-5">
+                        <h3 class="fw-bold mb-4 text-gradient">Request a Consultation</h3>
+                        <p class="text-secondary mb-4">Fill out this form to discuss potential collaborations, technology partnerships, or consulting opportunities.</p>
+
+                        <form method="post" action="{% url 'contact:contact_form' %}">
+                            {% csrf_token %}
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="{{ contact_form.name.id_for_label }}" class="form-label fw-medium">Full Name*</label>
+                                    {{ contact_form.name }}
+                                    {% if contact_form.name.errors %}
+                                    <div class="text-danger mt-1 small">
+                                        {{ contact_form.name.errors }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="{{ contact_form.email.id_for_label }}" class="form-label fw-medium">Business Email*</label>
+                                    {{ contact_form.email }}
+                                    {% if contact_form.email.errors %}
+                                    <div class="text-danger mt-1 small">
+                                        {{ contact_form.email.errors }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="{{ contact_form.company.id_for_label }}" class="form-label fw-medium">Organization</label>
+                                    {{ contact_form.company }}
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="{{ contact_form.position.id_for_label }}" class="form-label fw-medium">Job Title</label>
+                                    {{ contact_form.position }}
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="{{ contact_form.subject.id_for_label }}" class="form-label fw-medium">Subject*</label>
+                                    {{ contact_form.subject }}
+                                    {% if contact_form.subject.errors %}
+                                    <div class="text-danger mt-1 small">
+                                        {{ contact_form.subject.errors }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="{{ contact_form.message.id_for_label }}" class="form-label fw-medium">Project Details*</label>
+                                    {{ contact_form.message }}
+                                    {% if contact_form.message.errors %}
+                                    <div class="text-danger mt-1 small">
+                                        {{ contact_form.message.errors }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="privacyPolicy" required>
+                                        <label class="form-check-label small text-secondary" for="privacyPolicy">
+                                            I agree to the <a href="#" class="text-primary">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill">
+                                        <i class="fas fa-paper-plane me-2"></i> Submit Inquiry
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-gradient fw-bold mb-4">Peter Oduor Oluoch</h4>
+                <p class="text-secondary mb-4">Enterprise Solutions Architect specializing in AI/ML, Blockchain, and Quantum Computing. Delivering measurable business impact through innovative digital transformation.</p>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline-light btn-sm rounded-circle">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+                <p class="small text-secondary">© 2023 Peter Oduor Oluoch. All rights reserved.</p>
+            </div>
+
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white fw-bold mb-4">Navigation</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#home" class="text-secondary text-decoration-none hover-text">Home</a></li>
+                    <li class="mb-2"><a href="#about" class="text-secondary text-decoration-none hover-text">About</a></li>
+                    <li class="mb-2"><a href="#skills" class="text-secondary text-decoration-none hover-text">Skills</a></li>
+                    <li class="mb-2"><a href="#projects" class="text-secondary text-decoration-none hover-text">Projects</a></li>
+                    <li class="mb-2"><a href="#contact" class="text-secondary text-decoration-none hover-text">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white fw-bold mb-4">Services</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-text">Enterprise Consulting</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-text">Solution Architecture</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-text">AI/ML Implementation</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-text">Blockchain Development</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none hover-text">Quantum Computing Research</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white fw-bold mb-4">Contact</h5>
+                <ul class="list-unstyled">
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                        <span class="text-secondary">enterprise@peteroduor.com</span>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-phone text-primary me-3 mt-1"></i>
+                        <span class="text-secondary">+1 (555) 123-4567</span>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                        <span class="text-secondary">Corporate Plaza, 5th Avenue<br>New York, NY 10022</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2 mt-3">
+                    <i class="fas fa-paper-plane me-2"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="small text-secondary mb-md-0">© 2023 Peter Oduor Oluoch. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="#" class="text-secondary small">Privacy Policy</a></li>
+                    <li class="list-inline-item mx-3"><a href="#" class="text-secondary small">Terms of Service</a></li>
+                    <li class="list-inline-item"><a href="#" class="text-secondary small">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top position-fixed bottom-0 end-0 m-4 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-lg" style="width: 45px; height: 45px; opacity: 0; transition: all 0.3s ease; z-index: 1000;">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Add JavaScript for SPA-like smooth transitions -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Add fade-out effect to current section
+                    const currentSection = document.querySelector('section:not(.d-none)');
+                    if (currentSection) {
+                        currentSection.style.opacity = '0';
+                        setTimeout(() => {
+                            // Scroll to target section
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+
+                            // Add fade-in effect to target section
+                            setTimeout(() => {
+                                targetElement.style.opacity = '1';
+                            }, 300);
+                        }, 300);
+                    }
+
+                    // Update URL hash without scrolling
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.bottom = '20px';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.bottom = '0';
+            }
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                // Show/hide projects based on filter with animation
+                projectCards.forEach(card => {
+                    card.style.transition = 'all 0.3s ease';
+
+                    if (filter === 'all') {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 50);
+                        }, 300);
+                    } else {
+                        const category = card.getAttribute('data-category');
+                        if (category === filter) {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                }, 50);
+                            }, 300);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Add hover effects for links
+        document.querySelectorAll('.hover-text').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.classList.add('text-white');
+                this.classList.remove('text-secondary');
+            });
+
+            link.addEventListener('mouseleave', function() {
+                this.classList.remove('text-white');
+                this.classList.add('text-secondary');
+            });
+        });
+
+        // Add hover lift effect for cards
+        document.querySelectorAll('.hover-lift').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+            });
+        });
+    });
+</script>
+{% endblock %}
