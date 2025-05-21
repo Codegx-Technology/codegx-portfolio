@@ -9,6 +9,9 @@ import Home from "@/pages/index";
 import PersonalPortfolio from "@/pages/home";
 import AgencyPage from "@/pages/agency";
 import Contact from "@/pages/contact";
+import CaseStudies from "@/pages/case-studies";
+import Blog from "@/pages/blog";
+import WhyAstella from "@/pages/why-astella";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "@/hooks/use-theme";
 import "@/styles/globals.css";
@@ -28,6 +31,10 @@ function Router() {
         <Route path="/agency/services" component={() => import("@/pages/agency/services").then(mod => <mod.default />)} />
         <Route path="/agency/projects" component={() => import("@/pages/agency/projects").then(mod => <mod.default />)} />
         <Route path="/contact" component={Contact} />
+        <Route path="/case-studies" component={CaseStudies} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={() => import("@/pages/blog/[slug]").then(mod => <mod.default />)} />
+        <Route path="/why-astella" component={WhyAstella} />
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
