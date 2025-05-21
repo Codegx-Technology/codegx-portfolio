@@ -1,0 +1,114 @@
+{
+  "projects": [
+    {
+      "id": "ai-customer-service",
+      "title": "AI-Powered Customer Service Platform",
+      "description": "An intelligent customer service platform that uses natural language processing to automate responses and improve customer satisfaction. The system analyzes customer inquiries, categorizes them, and provides appropriate responses or routes them to the right department. It also includes sentiment analysis to detect customer emotions and prioritize urgent issues.",
+      "image": "/assets/projects/ai-customer-service.jpg",
+      "category": "AI/ML",
+      "techStack": ["Python", "TensorFlow", "React", "Node.js", "MongoDB", "Docker"],
+      "githubUrl": "https://github.com/Codegx-Technology/ai-customer-service",
+      "liveUrl": "https://ai-customer-service-demo.codegx.tech",
+      "featured": true,
+      "order": 1,
+      "client": "TechCorp International",
+      "year": 2023,
+      "challenge": "TechCorp was struggling with a high volume of customer inquiries, leading to long response times and customer dissatisfaction. They needed a solution that could handle routine inquiries automatically while ensuring complex issues were properly escalated.",
+      "solution": "We developed an AI-powered platform that uses natural language processing to understand customer inquiries and provide instant responses to common questions. The system learns from interactions over time, continuously improving its accuracy. For complex issues, it intelligently routes tickets to the appropriate department with relevant context.",
+      "results": [
+        "85% reduction in response time for common inquiries",
+        "40% decrease in support ticket volume",
+        "92% customer satisfaction rating",
+        "Significant cost savings in customer support operations"
+      ]
+    },
+    {
+      "id": "blockchain-supply-chain",
+      "title": "Blockchain-Based Supply Chain Solution",
+      "description": "A transparent and secure supply chain management system built on blockchain technology for improved traceability and efficiency. The platform enables real-time tracking of products from manufacturer to consumer, ensuring authenticity and reducing fraud. Smart contracts automate payments and enforce compliance with business rules.",
+      "image": "/assets/projects/blockchain-supply.jpg",
+      "category": "Blockchain",
+      "techStack": ["Solidity", "Ethereum", "React", "Web3.js", "Node.js", "AWS"],
+      "githubUrl": "https://github.com/Codegx-Technology/blockchain-supply-chain",
+      "liveUrl": "https://blockchain-supply-demo.codegx.tech",
+      "featured": true,
+      "order": 2,
+      "client": "LogisticsPro",
+      "year": 2023,
+      "challenge": "LogisticsPro faced challenges with supply chain transparency, product authenticity verification, and inefficient payment processes. They needed a solution that could provide end-to-end visibility and automate key processes.",
+      "solution": "We implemented a blockchain-based platform that creates an immutable record of each product's journey through the supply chain. QR codes and RFID tags link physical products to their digital records. Smart contracts automate payments when predefined conditions are met, reducing administrative overhead.",
+      "results": [
+        "100% traceability of products from source to consumer",
+        "60% reduction in payment processing time",
+        "Eliminated counterfeit products in the supply chain",
+        "Increased consumer trust through transparent product history"
+      ]
+    },
+    {
+      "id": "smart-city-traffic",
+      "title": "Smart City Traffic Management System",
+      "description": "An intelligent traffic management system that uses IoT sensors and AI to optimize traffic flow and reduce congestion in urban areas. The platform collects real-time data from various sources, analyzes traffic patterns, and dynamically adjusts traffic signals to improve flow. It also provides predictive analytics to anticipate congestion before it occurs.",
+      "image": "/assets/projects/smart-city-traffic.jpg",
+      "category": "GovTech",
+      "techStack": ["IoT", "Python", "TensorFlow", "React", "Node.js", "PostgreSQL", "Kafka"],
+      "githubUrl": "https://github.com/Codegx-Technology/smart-city-traffic",
+      "liveUrl": "https://smart-city-traffic-demo.codegx.tech",
+      "featured": true,
+      "order": 3,
+      "client": "Metropolitan Transport Authority",
+      "year": 2022,
+      "challenge": "The Metropolitan Transport Authority was dealing with increasing traffic congestion, long commute times, and high pollution levels. Traditional traffic management systems were reactive rather than proactive, leading to inefficient responses to changing traffic conditions.",
+      "solution": "We developed a comprehensive traffic management system that integrates data from traffic cameras, IoT sensors, GPS devices, and weather services. Our AI algorithms analyze this data in real-time to optimize traffic signal timing and provide alternative route recommendations. The system also predicts traffic patterns based on historical data and current conditions.",
+      "results": [
+        "25% reduction in average commute times",
+        "30% decrease in traffic congestion during peak hours",
+        "15% reduction in vehicle emissions",
+        "Real-time visibility into city-wide traffic conditions"
+      ]
+    },
+    {
+      "id": "healthcare-analytics",
+      "title": "Healthcare Data Analytics Dashboard",
+      "description": "A comprehensive analytics dashboard for healthcare providers to visualize patient data and improve clinical decision-making. The platform integrates with existing electronic health record systems to provide insights on patient outcomes, treatment effectiveness, resource utilization, and operational efficiency. Advanced visualizations make complex data accessible to healthcare professionals.",
+      "image": "/assets/projects/healthcare-analytics.jpg",
+      "category": "Dashboard",
+      "techStack": ["Python", "React", "D3.js", "PostgreSQL", "TensorFlow", "Docker"],
+      "githubUrl": "https://github.com/Codegx-Technology/healthcare-analytics",
+      "liveUrl": "https://healthcare-analytics-demo.codegx.tech",
+      "featured": false,
+      "order": 4,
+      "client": "HealthPlus",
+      "year": 2022,
+      "challenge": "HealthPlus struggled with fragmented data across multiple systems, making it difficult to gain insights into patient care, resource allocation, and operational efficiency. They needed a unified view of their data to support evidence-based decision making.",
+      "solution": "We created a centralized analytics dashboard that integrates data from various sources including electronic health records, billing systems, and scheduling platforms. The system provides customizable visualizations and reports tailored to different stakeholders, from clinicians to administrators. Machine learning models identify patterns and anomalies to support proactive interventions.",
+      "results": [
+        "Improved clinical outcomes through data-driven decision making",
+        "20% reduction in average length of stay",
+        "Optimized resource allocation saving $2.5M annually",
+        "Enhanced ability to identify and address quality issues"
+      ]
+    },
+    {
+      "id": "e-learning-platform",
+      "title": "Adaptive E-Learning Platform",
+      "description": "A personalized learning platform that adapts to each student's learning style, pace, and preferences. The system uses AI to analyze student performance and behavior, then customizes content delivery to optimize learning outcomes. Features include interactive lessons, progress tracking, automated assessments, and personalized recommendations.",
+      "image": "/assets/projects/e-learning-platform.jpg",
+      "category": "Web",
+      "techStack": ["React", "Node.js", "MongoDB", "Python", "TensorFlow", "AWS"],
+      "githubUrl": "https://github.com/Codegx-Technology/adaptive-learning",
+      "liveUrl": "https://adaptive-learning-demo.codegx.tech",
+      "featured": false,
+      "order": 5,
+      "client": "EduLearn",
+      "year": 2021,
+      "challenge": "EduLearn wanted to move beyond one-size-fits-all online courses to provide truly personalized learning experiences. They needed a platform that could adapt to individual learning styles and provide targeted support to maximize student success.",
+      "solution": "We developed an adaptive learning platform that uses AI to create personalized learning pathways. The system continuously assesses student understanding, identifies knowledge gaps, and adjusts content difficulty and presentation accordingly. It also incorporates gamification elements to increase engagement and motivation.",
+      "results": [
+        "35% improvement in course completion rates",
+        "28% increase in student assessment scores",
+        "Significantly higher student engagement metrics",
+        "Positive feedback from both educators and students"
+      ]
+    }
+  ]
+}
