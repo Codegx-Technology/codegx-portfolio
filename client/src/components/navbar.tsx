@@ -13,21 +13,30 @@ export function Navbar() {
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
+    { href: "/agency", label: "Agency", isPage: true },
   ];
 
-  const handleNavLinkClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 80,
-        behavior: "smooth",
-      });
+  const handleNavLinkClick = (href: string, isPage: boolean = false) => {
+    if (isPage) {
+      // Let the Link component handle navigation
+      setIsOpen(false);
+      return true;
+    } else {
+      // Handle anchor links with smooth scrolling
+      const element = document.querySelector(href);
+      if (element) {
+        window.scrollTo({
+          top: element.getBoundingClientRect().top + window.scrollY - 80,
+          behavior: "smooth",
+        });
+      }
+      setIsOpen(false);
+      return false;
     }
-    setIsOpen(false);
   };
 
   return (
-    <motion.nav 
+    <motion.nav
       className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -42,22 +51,32 @@ export function Navbar() {
               </span>
             </Link>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.href}
-                href={link.href}
-                className="font-medium hover:text-primary transition"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavLinkClick(link.href);
-                }}
-              >
-                {link.label}
-              </a>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-medium hover:text-primary transition"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-medium hover:text-primary transition"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavLinkClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </a>
+              )
             ))}
-            <a 
+            <a
               href="/resume.pdf"
               className="font-medium text-primary hover:text-primary/80 flex items-center gap-1"
               target="_blank"
@@ -67,7 +86,7 @@ export function Navbar() {
             </a>
             <ThemeToggle />
           </div>
-          
+
           <div className="flex items-center md:hidden">
             <ThemeToggle className="mr-2" />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -79,19 +98,30 @@ export function Navbar() {
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavLinkClick(link.href);
-                      }}
-                    >
-                      {link.label}
-                    </a>
+                    link.isPage ? (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavLinkClick(link.href);
+                        }}
+                      >
+                        {link.label}
+                      </a>
+                    )
                   ))}
-                  <a 
+                  <a
                     href="/resume.pdf"
                     className="px-3 py-2 rounded-md font-medium text-primary hover:bg-primary/10 flex items-center gap-1"
                     target="_blank"
