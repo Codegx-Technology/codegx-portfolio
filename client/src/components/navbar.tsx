@@ -1,19 +1,32 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location] = useLocation();
 
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
-    { href: "/agency", label: "Agency", isPage: true },
+  ];
+
+  const agencyLinks = [
+    { href: "/agency", label: "Overview" },
+    { href: "/agency/services", label: "Services" },
+    { href: "/agency/projects", label: "Projects" },
   ];
 
   const handleNavLinkClick = (href: string, isPage: boolean = false) => {
@@ -54,28 +67,45 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              link.isPage ? (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium hover:text-primary transition"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium hover:text-primary transition"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavLinkClick(link.href);
-                  }}
-                >
-                  {link.label}
-                </a>
-              )
+              <a
+                key={link.href}
+                href={link.href}
+                className="font-medium hover:text-primary transition"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavLinkClick(link.href);
+                }}
+              >
+                {link.label}
+              </a>
             ))}
+
+            {/* Agency Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={`font-medium flex items-center gap-1 px-0 ${
+                    location.startsWith("/agency") ? "text-primary" : ""
+                  }`}
+                >
+                  Agency <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {agencyLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link
+                      href={link.href}
+                      className={`w-full ${location === link.href ? "text-primary font-medium" : ""}`}
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <a
               href="/resume.pdf"
               className="font-medium text-primary hover:text-primary/80 flex items-center gap-1"
@@ -98,29 +128,38 @@ export function Navbar() {
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navLinks.map((link) => (
-                    link.isPage ? (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavLinkClick(link.href);
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    )
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavLinkClick(link.href);
+                      }}
+                    >
+                      {link.label}
+                    </a>
                   ))}
+
+                  {/* Agency Section */}
+                  <div className="px-3 py-2">
+                    <div className="font-medium mb-2">Agency</div>
+                    <div className="pl-3 border-l-2 border-muted space-y-2">
+                      {agencyLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={`block py-1 px-2 rounded hover:bg-primary/10 ${
+                            location === link.href ? "text-primary font-medium" : ""
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
                   <a
                     href="/resume.pdf"
                     className="px-3 py-2 rounded-md font-medium text-primary hover:bg-primary/10 flex items-center gap-1"

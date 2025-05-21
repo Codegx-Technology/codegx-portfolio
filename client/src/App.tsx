@@ -14,6 +14,8 @@ function Router() {
       <Route path="/" component={MainHome} />
       <Route path="/portfolio" component={Home} />
       <Route path="/agency" component={AgencyPage} />
+      <Route path="/agency/services" component={() => import("@/pages/agency/services").then(mod => <mod.default />)} />
+      <Route path="/agency/projects" component={() => import("@/pages/agency/projects").then(mod => <mod.default />)} />
       <Route component={NotFound} />
     </Switch>
   );
