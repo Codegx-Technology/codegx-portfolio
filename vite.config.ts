@@ -30,6 +30,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(__dirname, "client"),
+  base: "/codegx-portfolio/", // Base path for GitHub Pages
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -15,12 +15,19 @@ import { ChevronDown } from "lucide-react";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  // Check if we're on the home page
+  useEffect(() => {
+    setIsHomePage(location === "/");
+  }, [location]);
 
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "#agency", label: "Agency" },
+    { href: "/contact", label: "Contact", isPage: true },
   ];
 
   const agencyLinks = [
@@ -35,6 +42,14 @@ export function Navbar() {
       setIsOpen(false);
       return true;
     } else {
+      // If we're not on the home page and trying to navigate to an anchor,
+      // redirect to home page with the anchor
+      if (!isHomePage && href.startsWith('#')) {
+        window.location.href = `/${href}`;
+        setIsOpen(false);
+        return false;
+      }
+
       // Handle anchor links with smooth scrolling
       const element = document.querySelector(href);
       if (element) {
@@ -67,17 +82,29 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="font-medium hover:text-primary transition"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavLinkClick(link.href);
-                }}
-              >
-                {link.label}
-              </a>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`font-medium hover:text-primary transition ${
+                    location === link.href ? "text-primary" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-medium hover:text-primary transition"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavLinkClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </a>
+              )
             ))}
 
             {/* Agency Dropdown */}
@@ -86,14 +113,37 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   className={`font-medium flex items-center gap-1 px-0 ${
-                    location.startsWith("/agency") ? "text-primary" : ""
+                    location.startsWith("/agency") || (isHomePage && location === "/") ? "text-primary" : ""
                   }`}
                 >
                   Agency <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {agencyLinks.map((link) => (
+                {isHomePage ? (
+                  <DropdownMenuItem asChild>
+                    <a
+                      href="#agency"
+                      className="w-full"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavLinkClick("#agency");
+                      }}
+                    >
+                      Overview
+                    </a>
+                  </DropdownMenuItem>
+                ) : (
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/agency"
+                      className={`w-full ${location === "/agency" ? "text-primary font-medium" : ""}`}
+                    >
+                      Overview
+                    </Link>
+                  </DropdownMenuItem>
+                )}
+                {agencyLinks.slice(1).map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link
                       href={link.href}
@@ -128,17 +178,30 @@ export function Navbar() {
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
                   {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavLinkClick(link.href);
-                      }}
-                    >
-                      {link.label}
-                    </a>
+                    link.isPage ? (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
+                          location === link.href ? "text-primary" : ""
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavLinkClick(link.href);
+                        }}
+                      >
+                        {link.label}
+                      </a>
+                    )
                   ))}
 
                   {/* Agency Section */}

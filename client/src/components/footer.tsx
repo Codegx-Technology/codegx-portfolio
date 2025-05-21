@@ -1,16 +1,32 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useEffect, useState } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [location] = useLocation();
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  // Check if we're on the home page
+  useEffect(() => {
+    setIsHomePage(location === "/");
+  }, [location]);
 
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
+    { href: "#agency", label: "Agency" },
     { href: "#contact", label: "Contact" },
   ];
 
   const handleNavLinkClick = (href: string) => {
+    // If we're not on the home page and trying to navigate to an anchor,
+    // redirect to home page with the anchor
+    if (!isHomePage && href.startsWith('#')) {
+      window.location.href = `/${href}`;
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       window.scrollTo({
@@ -30,7 +46,7 @@ export function Footer() {
                 Peter<span className="text-primary">.dev</span>
               </span>
             </Link>
-            <p className="mt-2 text-sm text-muted-foreground">Software & Blockchain Engineer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Founder of Astella AI | Software & Blockchain Engineer</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -50,7 +66,7 @@ export function Footer() {
           </div>
 
           <div className="mt-6 md:mt-0">
-            <p className="text-sm text-muted-foreground">&copy; {currentYear} Peter O. Oluoch. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">&copy; {currentYear} Codegx Technology | Peter O. Oluoch. All rights reserved.</p>
           </div>
         </div>
       </div>

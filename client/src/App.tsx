@@ -5,9 +5,10 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "@/components/ui/toaster";
 import { AnimatePresence } from "framer-motion";
 import { Head } from "@/components/head";
-import MainHome from "@/pages/main-home";
-import Home from "@/pages/home";
+import Home from "@/pages/index";
+import PersonalPortfolio from "@/pages/home";
 import AgencyPage from "@/pages/agency";
+import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "@/hooks/use-theme";
 import "@/styles/globals.css";
@@ -18,11 +19,12 @@ function Router() {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Switch key={location}>
-        <Route path="/" component={MainHome} />
-        <Route path="/portfolio" component={Home} />
+        <Route path="/" component={Home} />
+        <Route path="/portfolio" component={PersonalPortfolio} />
         <Route path="/agency" component={AgencyPage} />
         <Route path="/agency/services" component={() => import("@/pages/agency/services").then(mod => <mod.default />)} />
         <Route path="/agency/projects" component={() => import("@/pages/agency/projects").then(mod => <mod.default />)} />
+        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
