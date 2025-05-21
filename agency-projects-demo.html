@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Projects Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .badge-secondary {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            backdrop-filter: blur(4px);
+        }
+        .badge-outline {
+            border: 1px solid #d1d5db;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Codegx<span class="text-blue-500">.Tech</span></a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-blue-500 transition">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition">Agency</a></li>
+                    <li><a href="#" class="text-blue-500 font-medium">Projects</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition">Services</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-16">
+            <div class="container">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4">Our Projects</h1>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Explore our portfolio of innovative solutions that have helped businesses transform and grow.
+                    </p>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-md mb-2">All</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md mb-2">AI/ML</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md mb-2">Blockchain</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md mb-2">GovTech</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md mb-2">Dashboard</button>
+                    <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md mb-2">Web</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-gray-200">
+                        <div class="relative aspect-video">
+                            <img src="https://via.placeholder.com/600x400?text=AI+Customer+Service" alt="AI-Powered Customer Service Platform" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2">
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                            <div class="absolute bottom-2 left-2">
+                                <span class="badge badge-secondary">AI/ML</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-2 flex items-center justify-between">
+                                <h3 class="text-xl font-semibold truncate">AI-Powered Customer Service Platform</h3>
+                                <span class="text-sm text-gray-500">2023</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">
+                                <span class="font-medium">Client:</span> TechCorp International
+                            </p>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                An intelligent customer service platform that uses natural language processing to automate responses and improve customer satisfaction. The system analyzes customer inquiries, categorizes them, and provides appropriate responses.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="badge badge-outline">Python</span>
+                                <span class="badge badge-outline">TensorFlow</span>
+                                <span class="badge badge-outline">React</span>
+                                <span class="badge badge-outline">Node.js</span>
+                            </div>
+                            <div class="flex gap-2 mt-2">
+                                <a href="#" class="flex-1 bg-blue-500 text-white text-center py-2 px-4 rounded-md hover:bg-blue-600 transition text-sm">
+                                    View Details
+                                </a>
+                                <div class="flex gap-2">
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View on GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-gray-200">
+                        <div class="relative aspect-video">
+                            <img src="https://via.placeholder.com/600x400?text=Blockchain+Supply+Chain" alt="Blockchain-Based Supply Chain Solution" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2">
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                            <div class="absolute bottom-2 left-2">
+                                <span class="badge badge-secondary">Blockchain</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-2 flex items-center justify-between">
+                                <h3 class="text-xl font-semibold truncate">Blockchain-Based Supply Chain Solution</h3>
+                                <span class="text-sm text-gray-500">2023</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">
+                                <span class="font-medium">Client:</span> LogisticsPro
+                            </p>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                A transparent and secure supply chain management system built on blockchain technology for improved traceability and efficiency. The platform enables real-time tracking of products from manufacturer to consumer.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="badge badge-outline">Solidity</span>
+                                <span class="badge badge-outline">Ethereum</span>
+                                <span class="badge badge-outline">React</span>
+                                <span class="badge badge-outline">Web3.js</span>
+                            </div>
+                            <div class="flex gap-2 mt-2">
+                                <a href="#" class="flex-1 bg-blue-500 text-white text-center py-2 px-4 rounded-md hover:bg-blue-600 transition text-sm">
+                                    View Details
+                                </a>
+                                <div class="flex gap-2">
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View on GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg border border-gray-200">
+                        <div class="relative aspect-video">
+                            <img src="https://via.placeholder.com/600x400?text=Smart+City+Traffic" alt="Smart City Traffic Management System" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2">
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                            <div class="absolute bottom-2 left-2">
+                                <span class="badge badge-secondary">GovTech</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-2 flex items-center justify-between">
+                                <h3 class="text-xl font-semibold truncate">Smart City Traffic Management System</h3>
+                                <span class="text-sm text-gray-500">2022</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">
+                                <span class="font-medium">Client:</span> Metropolitan Transport Authority
+                            </p>
+                            <p class="text-gray-600 mb-4 line-clamp-3">
+                                An intelligent traffic management system that uses IoT sensors and AI to optimize traffic flow and reduce congestion in urban areas. The platform collects real-time data from various sources.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="badge badge-outline">IoT</span>
+                                <span class="badge badge-outline">Python</span>
+                                <span class="badge badge-outline">TensorFlow</span>
+                                <span class="badge badge-outline">React</span>
+                            </div>
+                            <div class="flex gap-2 mt-2">
+                                <a href="#" class="flex-1 bg-blue-500 text-white text-center py-2 px-4 rounded-md hover:bg-blue-600 transition text-sm">
+                                    View Details
+                                </a>
+                                <div class="flex gap-2">
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View on GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-100 transition" title="View Live Demo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Codegx<span class="text-blue-400">.Tech</span></h3>
+                    <p class="max-w-md text-gray-400">Transforming Ideas into Digital Reality. We build innovative solutions that help businesses grow and succeed in the digital world.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i> info@codegx.tech</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i> +1 (123) 456-7890</p>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> 123 Tech Street, San Francisco, CA</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Codegx Technology. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
