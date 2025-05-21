@@ -60,7 +60,7 @@ export function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold font-inter">
-                John<span className="text-primary">.dev</span>
+                Peter<span className="text-primary">.dev</span>
               </span>
             </Link>
           </div>

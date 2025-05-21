@@ -13,10 +13,10 @@ export function Hero() {
       });
     }
   };
-  
+
   const pythonCode = `class EnterpriseArchitect:
     def __init__(self):
-        self.name = "John Doe"
+        self.name = "Peter O. Oluoch"
         self.role = "Enterprise Solutions Architect"
         self.expertise = {
             "AI/ML": ["Deep Learning", "Computer Vision", "NLP"],
@@ -24,20 +24,20 @@ export function Hero() {
             "Sustainability": ["Smart Cities", "Digital Twins", "IoT Architecture"]
         }
         self.current_project = "EcoSmart City Infrastructure"
-    
+
     def design_enterprise_solution(self, business_challenge):
         architecture = self.analyze_requirements(business_challenge)
         technology_stack = self.select_optimal_technologies(architecture)
         implementation = self.architect_scalable_solution(technology_stack)
         return measure_business_impact(implementation)
-    
+
     def deliver_sustainable_city(self):
         """Building a highly sustainable smart city with emerging technologies"""
         digital_twin = create_city_digital_twin()
         smart_grid = implement_renewable_energy_system()
         ai_systems = deploy_predictive_urban_planning()
         return integrate_systems([digital_twin, smart_grid, ai_systems])
-            
+
 architect = EnterpriseArchitect()
 sustainable_city = architect.deliver_sustainable_city()`;
 
@@ -49,10 +49,10 @@ sustainable_city = architect.deliver_sustainable_city()`;
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="md:flex md:items-center md:justify-between">
-          <motion.div 
+          <motion.div
             className="md:w-1/2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,16 +68,16 @@ sustainable_city = architect.deliver_sustainable_city()`;
               Empowering Fortune 500 companies with cutting-edge AI, blockchain, and smart city technologies. Delivering measurable business impact through innovative digital solutions.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={() => scrollToSection("projects")}
                 className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-8"
               >
                 <i className="fas fa-briefcase mr-2"></i>Enterprise Solutions
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 onClick={() => scrollToSection("contact")}
                 className="border-primary text-primary hover:bg-primary/10 rounded-full px-8"
               >
@@ -99,14 +99,14 @@ sustainable_city = architect.deliver_sustainable_city()`;
               </a>
             </div>
           </motion.div>
-          
+
           <div className="hidden md:block md:w-1/2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <CodeBlock 
+              <CodeBlock
                 code={pythonCode}
                 language="python"
                 filename="smart_city.py"

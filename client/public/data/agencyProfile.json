@@ -60,7 +60,7 @@
   ],
   "team": [
     {
-      "name": "Peter Oduor",
+      "name": "Peter O. Oluoch",
       "position": "Founder & CEO",
       "bio": "Software engineer with over 10 years of experience in building enterprise solutions and leading development teams.",
       "photo": "/assets/team/peter.jpg",
@@ -138,7 +138,7 @@
   "testimonials": [
     {
       "quote": "Codegx Technology transformed our business with their innovative solutions. Their team's expertise and dedication exceeded our expectations.",
-      "author": "John Smith",
+      "author": "David Smith",
       "position": "CTO, TechCorp International",
       "photo": "/assets/testimonials/john.jpg"
     },
