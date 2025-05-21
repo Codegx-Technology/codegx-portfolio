@@ -10,7 +10,7 @@ import Home from "@/pages/home";
 import AgencyPage from "@/pages/agency";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "@/hooks/use-theme";
-import "./styles/globals.css";
+import "@/styles/globals.css";
 
 function Router() {
   const [location] = useLocation();
