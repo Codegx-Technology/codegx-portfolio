@@ -6,6 +6,8 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import { Button } from "@/components/ui/button";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
+import { EnterpriseGrid } from "@/components/ui/enterprise-container";
+import { EnterpriseCard } from "@/components/ui/enterprise-card";
 import {
   Dialog,
   DialogContent,
@@ -164,22 +166,25 @@ export default function CaseStudies() {
                       }}
                       initial="hidden"
                       animate="show"
-                      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                      className="w-full"
                     >
-                      {filteredCaseStudies.map((caseStudy) => (
-                        <motion.div
-                          key={caseStudy.id}
-                          variants={{
-                            hidden: { opacity: 0, y: 20 },
-                            show: { opacity: 1, y: 0 },
-                          }}
-                        >
-                          <CaseStudyCard
-                            {...caseStudy}
-                            onClick={() => openCaseStudy(caseStudy)}
-                          />
-                        </motion.div>
-                      ))}
+                      <EnterpriseGrid cols={3} gap="lg">
+                        {filteredCaseStudies.map((caseStudy) => (
+                          <motion.div
+                            key={caseStudy.id}
+                            variants={{
+                              hidden: { opacity: 0, y: 20 },
+                              show: { opacity: 1, y: 0 },
+                            }}
+                            className="h-full"
+                          >
+                            <CaseStudyCard
+                              {...caseStudy}
+                              onClick={() => openCaseStudy(caseStudy)}
+                            />
+                          </motion.div>
+                        ))}
+                      </EnterpriseGrid>
                     </motion.div>
                   )}
                 </TabsContent>
@@ -195,28 +200,31 @@ export default function CaseStudies() {
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <div className="flex items-center gap-2 mb-2">
-                  <Badge>{selectedCaseStudy.industry}</Badge>
+                  <Badge className="bg-primary/90 text-white">{selectedCaseStudy.industry}</Badge>
                   {selectedCaseStudy.year && (
                     <Badge variant="outline">{selectedCaseStudy.year}</Badge>
                   )}
                 </div>
-                <DialogTitle className="text-2xl">{selectedCaseStudy.title}</DialogTitle>
+                <DialogTitle className="text-2xl font-bold">{selectedCaseStudy.title}</DialogTitle>
                 <DialogDescription className="text-lg font-medium text-primary">
                   {selectedCaseStudy.client}
                 </DialogDescription>
               </DialogHeader>
 
               <div className="mt-4">
-                <div className="relative h-64 md:h-80 mb-6 rounded-lg overflow-hidden">
-                  <img
-                    src={selectedCaseStudy.image}
-                    alt={selectedCaseStudy.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Case+Study";
-                    }}
-                  />
-                </div>
+                <EnterpriseCard className="p-0 overflow-hidden mb-6 border-0">
+                  <div className="relative h-64 md:h-80 overflow-hidden">
+                    <img
+                      src={selectedCaseStudy.image}
+                      alt={selectedCaseStudy.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Case+Study";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                </EnterpriseCard>
 
                 <div className="space-y-6">
                   <div>
@@ -244,37 +252,47 @@ export default function CaseStudies() {
                   </div>
 
                   {selectedCaseStudy.testimonial && (
-                    <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                      <blockquote className="text-muted-foreground italic">
-                        "{selectedCaseStudy.testimonial.quote}"
-                      </blockquote>
-                      <div className="mt-4 font-medium">
-                        {selectedCaseStudy.testimonial.author}
+                    <EnterpriseCard className="bg-primary/5 p-6 border border-primary/20">
+                      <div className="flex items-start">
+                        <div className="text-3xl text-primary mr-3">
+                          <i className="fas fa-quote-left"></i>
+                        </div>
+                        <div>
+                          <blockquote className="text-muted-foreground italic mb-4">
+                            "{selectedCaseStudy.testimonial.quote}"
+                          </blockquote>
+                          <div className="flex items-center">
+                            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-3">
+                              <i className="fas fa-user"></i>
+                            </div>
+                            <div>
+                              <div className="font-medium">{selectedCaseStudy.testimonial.author}</div>
+                              <div className="text-sm text-muted-foreground">{selectedCaseStudy.testimonial.position}</div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        {selectedCaseStudy.testimonial.position}
-                      </div>
-                    </div>
+                    </EnterpriseCard>
                   )}
 
-                  <div>
-                    <Heading3 className="text-xl font-semibold mb-2">Technologies Used</Heading3>
+                  <EnterpriseCard className="p-6">
+                    <Heading3 className="text-xl font-semibold mb-3">Technologies Used</Heading3>
                     <div className="flex flex-wrap gap-2">
                       {selectedCaseStudy.technologies.map((tech, index) => (
-                        <Badge key={index} variant="secondary">
-                          {tech}
+                        <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                          <i className="fas fa-code-branch mr-1.5"></i> {tech}
                         </Badge>
                       ))}
                     </div>
-                  </div>
+                  </EnterpriseCard>
                 </div>
               </div>
 
-              <DialogFooter className="mt-6">
-                <Button variant="outline" onClick={closeCaseStudy}>
-                  Close
+              <DialogFooter className="mt-6 flex flex-col sm:flex-row gap-3">
+                <Button variant="outline" onClick={closeCaseStudy} className="w-full sm:w-auto order-2 sm:order-1">
+                  <i className="fas fa-times mr-2"></i> Close
                 </Button>
-                <Button>
+                <Button className="w-full sm:w-auto order-1 sm:order-2">
                   <i className="fas fa-envelope mr-2"></i>
                   Contact Us About This Project
                 </Button>
