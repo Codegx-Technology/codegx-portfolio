@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 import { useLocation } from "wouter";
-import { env } from "@/utils/env";
 
 interface HeadProps {
   title?: string;
@@ -23,7 +22,7 @@ export function Head({
 }: HeadProps) {
   const [location] = useLocation();
   const siteTitle = title.includes(" - ") ? title : `${title} - Codegx Technology`;
-  const siteUrl = env.SITE_URL || "https://codegx-technology.github.io/codegx-portfolio";
+  const siteUrl = "https://codegx-technology.github.io/codegx-portfolio";
   const currentUrl = canonical || location;
   const fullUrl = `${siteUrl}${currentUrl}`;
   const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;

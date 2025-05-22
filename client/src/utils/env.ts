@@ -14,9 +14,11 @@ const serverSchema = z.object({
 /**
  * Specify your client-side environment variables schema here.
  * This way you can ensure the app isn't built with invalid env vars.
+ *
+ * Note: All client-side variables must be prefixed with VITE_ to be accessible in the browser
  */
 const clientSchema = z.object({
-  SITE_URL: z.string().url().optional().default("https://codegx-technology.github.io/codegx-portfolio"),
+  VITE_SITE_URL: z.string().url().optional().default("https://codegx-technology.github.io/codegx-portfolio"),
 });
 
 /**
@@ -31,9 +33,9 @@ const processEnv = {
   FOUNDER_INBOX: process.env.FOUNDER_INBOX,
   FROM_EMAIL: process.env.FROM_EMAIL,
   FROM_NAME: process.env.FROM_NAME,
-  
+
   // Client-side env vars
-  SITE_URL: process.env.SITE_URL,
+  VITE_SITE_URL: import.meta.env.VITE_SITE_URL,
 };
 
 // Don't touch the part below
@@ -65,7 +67,7 @@ if (!!process.env.SKIP_ENV_VALIDATION == false) {
       if (typeof prop !== 'string') return undefined;
       // Throw a descriptive error if a server-side env var is accessed on the client
       // Otherwise it would just be returning `undefined` and be annoying to debug
-      if (!isServer && !prop.startsWith('NEXT_PUBLIC_'))
+      if (!isServer && !prop.startsWith('VITE_'))
         throw new Error(
           process.env.NODE_ENV === 'production'
             ? '❌ Attempted to access a server-side environment variable on the client'

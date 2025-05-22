@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const SITE_URL = process.env.SITE_URL || 'https://codegx-technology.github.io/codegx-portfolio';
+const SITE_URL = process.env.VITE_SITE_URL || 'https://codegx-technology.github.io/codegx-portfolio';
 const PAGES_DIR = path.join(__dirname, '../client/src/pages');
 const OUTPUT_PATH = path.join(__dirname, '../public/sitemap.xml');
 
