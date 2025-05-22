@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Layout } from "@/components/layout";
+import { AnimatePresence } from "framer-motion";
+import { PageWrapper, PageSection, PageDivider } from "@/components/layouts/PageWrapper";
 import { Contact } from "@/components/contact";
 import AgencyIntro from "@/components/Agency/AgencyIntro";
 import AgencyServices from "@/components/Agency/AgencyServices";
 import FeaturedProjects from "@/components/Landing/FeaturedProjects";
 import CallToAction from "@/components/Landing/CallToAction";
 import HomeHero from "@/components/Landing/HomeHero";
+import { Heading2, Paragraph } from "@/components/ui/typography";
 
 export default function Home() {
   // Scroll to top when component mounts
@@ -14,93 +15,65 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Animation variants for sections
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
-    <Layout className="overflow-hidden">
+    <PageWrapper className="overflow-hidden" withContainer={false}>
       <AnimatePresence mode="wait">
         {/* Hero Section - Home */}
         <HomeHero />
 
         {/* Agency Intro Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
+        <PageSection
           id="agency"
-        >
-          <div className="py-10 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-inter mb-4">Meet Our Agency</h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  Astella AI is the technology wing of Codegx Technology, specializing in cutting-edge solutions for businesses.
-                </p>
-              </div>
+          title={
+            <div className="text-center">
+              <Heading2 className="font-inter mb-4">Meet Our Agency</Heading2>
+              <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Astella AI is the technology wing of Codegx Technology, specializing in cutting-edge solutions for businesses.
+              </Paragraph>
             </div>
-          </div>
+          }
+          withDivider
+          dividerVariant="gradient"
+        >
           <AgencyIntro />
-        </motion.div>
+        </PageSection>
 
         {/* Featured Projects Section - Combined */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
+        <PageSection>
           <FeaturedProjects />
-        </motion.div>
+        </PageSection>
+
+        <PageDivider />
 
         {/* Agency Services Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="py-10 bg-background">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-inter mb-4">Our Services</h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  We offer a comprehensive range of technology services to help businesses thrive in the digital age.
-                </p>
-              </div>
+        <PageSection
+          title={
+            <div className="text-center">
+              <Heading2 className="font-inter mb-4">Our Services</Heading2>
+              <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                We offer a comprehensive range of technology services to help businesses thrive in the digital age.
+              </Paragraph>
             </div>
-          </div>
+          }
+          withDivider
+          dividerVariant="dots"
+          dividerColor="primary"
+        >
           <AgencyServices />
-        </motion.div>
+        </PageSection>
 
         {/* Call to Action Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
+        <PageSection>
           <CallToAction />
-        </motion.div>
+        </PageSection>
+
+        <PageDivider />
 
         {/* Contact Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
+        <PageSection>
           <Contact />
-        </motion.div>
+        </PageSection>
       </AnimatePresence>
-    </Layout>
+    </PageWrapper>
   );
 }
