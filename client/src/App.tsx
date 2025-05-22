@@ -166,6 +166,24 @@ function Router() {
             return <LazyRoute component={EnhancedNavbarDemo} />;
           }}
         </Route>
+        <Route path="/enhanced-home">
+          {() => {
+            const EnhancedHome = React.lazy(() => import("@/pages/enhanced-home"));
+            return <LazyRoute component={EnhancedHome} />;
+          }}
+        </Route>
+        <Route path="/enhanced-agency">
+          {() => {
+            const EnhancedAgency = React.lazy(() => import("@/pages/enhanced-agency"));
+            return <LazyRoute component={EnhancedAgency} />;
+          }}
+        </Route>
+        <Route path="/enhanced-services">
+          {() => {
+            const EnhancedServices = React.lazy(() => import("@/pages/enhanced-services"));
+            return <LazyRoute component={EnhancedServices} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
