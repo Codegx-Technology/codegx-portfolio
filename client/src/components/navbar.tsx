@@ -81,36 +81,38 @@ export function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold font-inter">
-                Peter<span className="text-primary">.dev</span>
+                Codegx<span className="text-primary">Tech</span>
               </span>
             </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              link.isPage ? (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`font-medium hover:text-primary transition ${
-                    location === link.href ? "text-primary" : ""
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-medium hover:text-primary transition"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavLinkClick(link.href);
-                  }}
-                >
-                  {link.label}
-                </a>
-              )
+            <Link
+              href="/home"
+              className={`font-medium hover:text-primary transition ${
+                location === "/home" ? "text-primary" : ""
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/portfolio"
+              className={`font-medium hover:text-primary transition ${
+                location === "/portfolio" ? "text-primary" : ""
+              }`}
+            >
+              Portfolio
+            </Link>
+            {navLinks.filter(link => link.isPage).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium hover:text-primary transition ${
+                  location === link.href ? "text-primary" : ""
+                }`}
+              >
+                {link.label}
+              </Link>
             ))}
 
             {/* Agency Dropdown */}
@@ -196,31 +198,35 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent>
                 <div className="flex flex-col space-y-4 mt-8">
-                  {navLinks.map((link) => (
-                    link.isPage ? (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
-                          location === link.href ? "text-primary" : ""
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        className="px-3 py-2 rounded-md font-medium hover:bg-primary/10"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavLinkClick(link.href);
-                        }}
-                      >
-                        {link.label}
-                      </a>
-                    )
+                  <Link
+                    href="/home"
+                    className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
+                      location === "/home" ? "text-primary" : ""
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/portfolio"
+                    className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
+                      location === "/portfolio" ? "text-primary" : ""
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Portfolio
+                  </Link>
+                  {navLinks.filter(link => link.isPage).map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
+                        location === link.href ? "text-primary" : ""
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
                   ))}
 
                   {/* Agency Section */}
