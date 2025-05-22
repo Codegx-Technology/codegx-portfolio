@@ -34,12 +34,11 @@ export function Navbar() {
   ];
 
   const agencyLinks = [
-    { href: "/agency", label: "Overview" },
+    { href: "/why-astella", label: "Why Astella" },
     { href: "/agency/services", label: "Services" },
     { href: "/agency/projects", label: "Projects" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },
-    { href: "/why-astella", label: "Why Astella" },
   ];
 
   const handleNavLinkClick = (href: string, isPage: boolean = false) => {
@@ -128,29 +127,16 @@ export function Navbar() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {isHomePage ? (
-                  <DropdownMenuItem asChild>
-                    <a
-                      href="#agency"
-                      className="w-full"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavLinkClick("#agency");
-                      }}
-                    >
-                      Overview
-                    </a>
-                  </DropdownMenuItem>
-                ) : (
-                  <DropdownMenuItem asChild>
+                {agencyLinks.slice(0, 1).map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
                     <Link
-                      href="/agency"
-                      className={`w-full ${location === "/agency" ? "text-primary font-medium" : ""}`}
+                      href={link.href}
+                      className={`w-full ${location === link.href ? "text-primary font-medium" : ""}`}
                     >
-                      Overview
+                      {link.label}
                     </Link>
                   </DropdownMenuItem>
-                )}
+                ))}
                 {agencyLinks.slice(1, 3).map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link

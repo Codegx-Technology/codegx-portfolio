@@ -27,7 +27,13 @@ function Router() {
         <Route path="/" component={CodegxLanding} />
         <Route path="/home" component={Home} />
         <Route path="/portfolio" component={PersonalPortfolio} />
-        <Route path="/agency" component={AgencyPage} />
+        <Route path="/agency">
+          {() => {
+            // Redirect from /agency to /why-astella
+            window.location.href = "/why-astella";
+            return null;
+          }}
+        </Route>
         <Route path="/agency/services">
           {() => {
             const AgencyServices = React.lazy(() => import("@/pages/agency/services"));
