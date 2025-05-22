@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { BackToTop } from "@/components/back-to-top";
 import { useQuery } from "@tanstack/react-query";
+import { PageWrapper, PageSection, PageHeader } from "@/components/layouts/PageWrapper";
 import AgencyProjectCard from "@/components/Agency/AgencyProjectCard";
 import ProjectFilterMenu from "@/components/Projects/ProjectFilterMenu";
+import { Paragraph } from "@/components/ui/typography";
 
 interface AgencyProject {
   id: string;
@@ -118,100 +117,76 @@ export default function ProjectsPage() {
   };
 
   return (
-    <motion.div
-      className="min-h-screen bg-background text-foreground"
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={pageVariants}
-    >
-      <Navbar />
+    <PageWrapper>
+      <PageHeader
+        title="Our Projects"
+        description="Explore our portfolio of innovative solutions that have helped businesses transform and grow."
+        className="text-center"
+      />
 
-      <main>
-        <motion.section
-          className="py-16 bg-background"
-          variants={sectionVariants}
-        >
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Projects</h1>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Explore our portfolio of innovative solutions that have helped businesses transform and grow.
-              </p>
-            </motion.div>
-
-            {/* Loading State */}
-            {isLoading ? (
-              <div className="flex justify-center items-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-              </div>
-            ) : (
-              <>
-                {/* Category Filter */}
-                <ProjectFilterMenu
-                  categories={categories}
-                  activeCategory={activeFilter}
-                  onCategoryChange={handleCategoryChange}
-                  className="mb-12"
-                />
-
-                {/* Projects Grid */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeFilter}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                  >
-                    {filteredProjects.length > 0 ? (
-                      filteredProjects
-                        .sort((a, b) => {
-                          // Sort by featured first, then by order
-                          if (a.featured && !b.featured) return -1;
-                          if (!a.featured && b.featured) return 1;
-                          return (a.order || 999) - (b.order || 999);
-                        })
-                        .map((project) => (
-                          <AgencyProjectCard
-                            key={project.id}
-                            id={project.id}
-                            title={project.title}
-                            description={project.description}
-                            image={project.image}
-                            category={project.category}
-                            techStack={project.techStack}
-                            githubUrl={project.githubUrl}
-                            liveUrl={project.liveUrl}
-                            featured={project.featured}
-                            client={project.client}
-                            year={project.year}
-                          />
-                        ))
-                    ) : (
-                      <div className="col-span-3 text-center py-20">
-                        <h3 className="text-xl font-medium mb-2">No projects found</h3>
-                        <p className="text-muted-foreground">
-                          No projects match the selected category. Try selecting a different category.
-                        </p>
-                      </div>
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </>
-            )}
+      {/* Loading State */}
+      {isLoading ? (
+        <PageSection>
+          <div className="flex justify-center items-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
           </div>
-        </motion.section>
-      </main>
+        </PageSection>
+      ) : (
+        <PageSection>
+          {/* Category Filter */}
+          <ProjectFilterMenu
+            categories={categories}
+            activeCategory={activeFilter}
+            onCategoryChange={handleCategoryChange}
+            className="mb-12"
+          />
 
-      <Footer />
-      <BackToTop />
-    </motion.div>
+          {/* Projects Grid */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeFilter}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {filteredProjects.length > 0 ? (
+                filteredProjects
+                  .sort((a, b) => {
+                    // Sort by featured first, then by order
+                    if (a.featured && !b.featured) return -1;
+                    if (!a.featured && b.featured) return 1;
+                    return (a.order || 999) - (b.order || 999);
+                  })
+                  .map((project) => (
+                    <AgencyProjectCard
+                      key={project.id}
+                      id={project.id}
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                      category={project.category}
+                      techStack={project.techStack}
+                      githubUrl={project.githubUrl}
+                      liveUrl={project.liveUrl}
+                      featured={project.featured}
+                      client={project.client}
+                      year={project.year}
+                    />
+                  ))
+              ) : (
+                <div className="col-span-3 text-center py-20">
+                  <h3 className="text-xl font-medium mb-2">No projects found</h3>
+                  <Paragraph className="text-muted-foreground">
+                    No projects match the selected category. Try selecting a different category.
+                  </Paragraph>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </PageSection>
+      )}
+    </PageWrapper>
   );
 }
