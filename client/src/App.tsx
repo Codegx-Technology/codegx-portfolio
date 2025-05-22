@@ -18,7 +18,6 @@ import CaseStudies from "@/pages/case-studies";
 import Blog from "@/pages/blog";
 import WhyAstella from "@/pages/why-astella";
 import NotFound from "@/pages/not-found";
-import { ThemeProvider } from "@/hooks/use-theme";
 import "@/styles/globals.css";
 
 function Router() {
