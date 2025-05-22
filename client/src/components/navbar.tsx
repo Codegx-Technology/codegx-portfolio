@@ -37,6 +37,7 @@ export function Navbar() {
     { href: "/why-astella", label: "Why Astella" },
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Pricing" },
+    { href: "/quote", label: "Get a Quote" },
     { href: "/agency/projects", label: "Projects" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },

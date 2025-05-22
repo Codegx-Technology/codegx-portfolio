@@ -8,12 +8,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
-  
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Pricing data
   const pricingPlans = [
     {
@@ -77,7 +77,7 @@ export default function Pricing() {
       popular: false
     }
   ];
-  
+
   // FAQ data
   const faqItems = [
     {
@@ -123,7 +123,7 @@ export default function Pricing() {
               From initial AI implementation to enterprise-scale solutions.
             </p>
           </motion.div>
-          
+
           {/* Billing Cycle Toggle */}
           <div className="flex justify-center mb-12">
             <Tabs
@@ -137,7 +137,7 @@ export default function Pricing() {
               </TabsList>
             </Tabs>
           </div>
-          
+
           {/* Pricing Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {pricingPlans.map((plan, index) => (
@@ -154,7 +154,7 @@ export default function Pricing() {
               />
             ))}
           </div>
-          
+
           {/* Custom Quote CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,7 +169,7 @@ export default function Pricing() {
               Get in touch for a personalized quote or use our interactive quote builder.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/quote">
                 <Button size="lg">
                   <i className="fas fa-envelope mr-2"></i>
                   Request Custom Quote
@@ -183,7 +183,7 @@ export default function Pricing() {
               </Link>
             </div>
           </motion.div>
-          
+
           {/* FAQ Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,7 +210,7 @@ export default function Pricing() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
