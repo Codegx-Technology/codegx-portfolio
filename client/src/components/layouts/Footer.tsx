@@ -451,7 +451,13 @@ export function Footer({
           <div className="mb-4 md:mb-0 text-center">
             <span className="flex items-center justify-center">
               <i className="fas fa-code text-[10px] mr-1 text-[#c8a951] dark:text-[#9f7b42]"></i>
-              Developed by Codegx Technology, Progressive Village
+              Developed by <Link href="/">
+                <a className="mx-1 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
+                  Codegx Technology
+                </a>
+              </Link>, <a href="https://progressivevillage.org" target="_blank" rel="noopener noreferrer" className="mx-1 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
+                Progressive Village
+              </a>
             </span>
           </div>
 

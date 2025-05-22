@@ -70,21 +70,14 @@ export function About() {
                 <i className="fas fa-briefcase text-primary mr-3 text-xl"></i>
                 <div>
                   <h4 className="font-medium">Experience</h4>
-                  <p className="text-muted-foreground">5+ Years</p>
+                  <p className="text-muted-foreground">10+ Years</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-map-marker-alt text-primary mr-3 text-xl"></i>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground">New York, USA</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-language text-primary mr-3 text-xl"></i>
-                <div>
-                  <h4 className="font-medium">Languages</h4>
-                  <p className="text-muted-foreground">English, Spanish</p>
+                  <p className="text-muted-foreground">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
