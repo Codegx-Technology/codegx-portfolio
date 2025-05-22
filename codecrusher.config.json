@@ -1,0 +1,9 @@
+{
+    "provider": "mistral",
+    "model": "mistral-7b",
+    "max_retries": 3,
+    "timeout": 30,
+    "use_cache": true,
+    "default_prompt_text": "Generate a Python function that sorts a list of integers",
+    "default_tags": ["python", "sorting", "algorithm"]
+}
