@@ -174,19 +174,29 @@ export function ExecutiveNavbar({
                 transition={{ delay: 0.1, duration: 0.3 }}
                 className="flex items-center"
               >
-                {/* Logo image */}
-                <div className="mr-2">
-                  {theme === "dark" ? (
-                    <img src={logo.dark} alt={logo.alt} className="h-9 sm:h-10" />
-                  ) : (
-                    <img src={logo.light} alt={logo.alt} className="h-9 sm:h-10" />
-                  )}
-                </div>
+                {/* Logo monogram */}
+                <motion.div
+                  className="mr-3 bg-[#64ffda] text-[#0a192f] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 15px rgba(100, 255, 218, 0.5)"
+                  }}
+                >
+                  <span className="font-extrabold text-xl sm:text-2xl tracking-tighter">CT</span>
+                </motion.div>
 
                 {/* Logo text */}
-                <div className="font-bold text-lg sm:text-xl tracking-tight text-white">
+                <motion.div
+                  className="font-extrabold text-lg sm:text-xl tracking-tight text-white"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
                   {logo.alt}
-                </div>
+                </motion.div>
               </motion.div>
               <motion.div
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#64ffda] w-0"
@@ -400,12 +410,22 @@ export function ExecutiveNavbar({
             >
               <div className="flex justify-between items-center mb-6 pr-6">
                 <div className="flex-shrink-0 flex items-center">
-                  <div className="mr-2">
-                    <img src={logo.dark} alt={logo.alt} className="h-7" />
-                  </div>
-                  <div className="font-bold text-base tracking-tight text-white">
+                  <motion.div
+                    className="mr-2 bg-[#64ffda] text-[#0a192f] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
+                    initial={{ scale: 0.9 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <span className="font-extrabold text-lg tracking-tighter">CT</span>
+                  </motion.div>
+                  <motion.div
+                    className="font-extrabold text-base tracking-tight text-white"
+                    initial={{ opacity: 0, x: -5 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
                     {logo.alt}
-                  </div>
+                  </motion.div>
                 </div>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 text-slate-200 hover:text-[#64ffda] hover:bg-[#233554]">
