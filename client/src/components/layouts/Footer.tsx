@@ -170,129 +170,302 @@ export function Footer({
   return (
     <footer
       className={cn(
-        "border-t py-12 px-4 sm:px-6 lg:px-8",
+        "relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8",
         variant === "default"
-          ? "bg-[#2c1a22] dark:bg-[#1f1a2c] border-[#4d2c35] dark:border-[#3d2a5d] text-slate-200"
+          ? "bg-[#2c1a22] dark:bg-[#1f1a2c] text-slate-200"
           : variant === "minimal"
-            ? "bg-background border-border"
-            : "bg-[#2c1a22] dark:bg-[#1f1a2c] border-[#4d2c35] dark:border-[#3d2a5d] text-slate-200 py-20",
+            ? "bg-background border-t border-border"
+            : "bg-[#2c1a22] dark:bg-[#1f1a2c] text-slate-200 py-24",
         className
       )}
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-        >
-          {/* Company Info */}
-          <motion.div className="lg:col-span-4" variants={itemVariants}>
-            <div className="flex items-center mb-4">
-              <div className="mr-3 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 rounded-md flex items-center justify-center shadow-md">
-                <span className="font-extrabold text-xl tracking-tighter">
-                  {isAgencyPage ? "AI" : "CT"}
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white">{activeCompanyName}</h3>
-            </div>
+      {/* AI-themed background elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        {/* Circuit board pattern */}
+        <div className="absolute inset-0 z-0">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
+              <circle cx="50" cy="50" r="3" fill="currentColor" />
+              <circle cx="25" cy="25" r="2" fill="currentColor" />
+              <circle cx="75" cy="25" r="2" fill="currentColor" />
+              <circle cx="25" cy="75" r="2" fill="currentColor" />
+              <circle cx="75" cy="75" r="2" fill="currentColor" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+          </svg>
+        </div>
 
-            <p className="text-sm text-slate-300 mb-6 max-w-md">
-              {activeCompanyDescription}
-            </p>
+        {/* Neural network nodes */}
+        <div className="absolute inset-0 z-10">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <g fill="currentColor" opacity="0.5">
+              {Array.from({ length: 20 }).map((_, i) => (
+                <circle
+                  key={i}
+                  cx={`${Math.random() * 100}%`}
+                  cy={`${Math.random() * 100}%`}
+                  r={Math.random() * 3 + 1}
+                />
+              ))}
+            </g>
+          </svg>
+        </div>
+      </div>
 
-            {/* Social Links */}
-            {showSocial && (
-              <div className="flex space-x-4 mb-6">
-                {activeSocialLinks.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#4d2c35]/50 dark:bg-[#3d2a5d]/50 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] hover:bg-[#4d2c35] dark:hover:bg-[#3d2a5d] transition-colors"
-                    aria-label={social.platform}
-                  >
-                    <i className={social.icon}></i>
-                  </a>
-                ))}
-              </div>
-            )}
+      {/* Diagonal divider at the top */}
+      <div className="absolute top-0 left-0 right-0 h-12 overflow-hidden">
+        <div className="absolute inset-0 bg-background dark:bg-background transform -skew-y-2"></div>
+      </div>
 
-            {/* Newsletter Signup */}
-            {showNewsletter && variant === "expanded" && (
-              <div className="mt-6">
-                <h4 className="font-semibold mb-3 text-[#c8a951] dark:text-[#9f7b42]">Subscribe to our newsletter</h4>
-                <div className="flex">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="bg-[#4d2c35]/30 dark:bg-[#3d2a5d]/30 border border-[#4d2c35] dark:border-[#3d2a5d] rounded-l-md px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-[#c8a951] dark:focus:ring-[#9f7b42]"
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Hexagonal grid layout for main content */}
+        <div className="relative">
+          {/* Company Info - Centered at the top with hexagonal shape */}
+          <motion.div
+            className="relative z-20 mb-16 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            <motion.div
+              className="inline-block"
+              variants={itemVariants}
+            >
+              <div className="relative">
+                <div className="bg-[#c8a951] dark:bg-[#9f7b42] w-20 h-20 mx-auto mb-6 flex items-center justify-center transform rotate-45 relative overflow-hidden shadow-lg">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f] opacity-80"></div>
+                  <div className="transform -rotate-45 relative z-10">
+                    <span className="font-extrabold text-3xl tracking-tighter text-[#2c1a22] dark:text-[#1f1a2c]">
+                      {isAgencyPage ? "AI" : "CT"}
+                    </span>
+                  </div>
+
+                  {/* Pulsing effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-[#c8a951] dark:bg-[#9f7b42]"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0, 0.3, 0]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "loop"
+                    }}
                   />
-                  <button className="bg-[#c8a951] dark:bg-[#9f7b42] text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-r-md font-medium text-sm hover:bg-[#c8a951]/90 dark:hover:bg-[#9f7b42]/90 transition-colors">
-                    Subscribe
-                  </button>
                 </div>
+
+                {/* Connecting lines */}
+                <svg className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-2 w-40 h-8" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="50%" y1="0" x2="20%" y2="100%" stroke="#c8a951" strokeWidth="1" strokeDasharray="2 2" />
+                  <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#c8a951" strokeWidth="1" strokeDasharray="2 2" />
+                  <line x1="50%" y1="0" x2="80%" y2="100%" stroke="#c8a951" strokeWidth="1" strokeDasharray="2 2" />
+                </svg>
               </div>
-            )}
+
+              <motion.h3
+                className="text-2xl font-bold text-white mt-2"
+                variants={itemVariants}
+              >
+                {activeCompanyName}
+              </motion.h3>
+
+              <motion.p
+                className="text-sm text-slate-300 mt-3 max-w-lg mx-auto"
+                variants={itemVariants}
+              >
+                {activeCompanyDescription}
+              </motion.p>
+            </motion.div>
           </motion.div>
 
-          {/* Footer Sections */}
-          <motion.div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" variants={containerVariants}>
-            {activeSections.map((section, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <h4 className="font-semibold mb-4 text-[#c8a951] dark:text-[#9f7b42]">{section.title}</h4>
-                <ul className="space-y-3 text-sm">
-                  {section.links.map((link, linkIndex) => (
-                    <motion.li
-                      key={linkIndex}
-                      whileHover={{ x: 3 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
-                        >
-                          {link.icon && <i className={`${link.icon} mr-2 w-5 text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>}
-                          {link.label}
-                        </a>
-                      ) : (
-                        <Link href={link.href}>
-                          <a className="flex items-center text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
-                            {link.icon && <i className={`${link.icon} mr-2 w-5 text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>}
-                            {link.label}
+          {/* Main content in a neural network-inspired layout */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            {/* Left side - Newsletter */}
+            {showNewsletter && (
+              <motion.div
+                className="md:col-span-4 relative"
+                variants={itemVariants}
+              >
+                <div className="bg-[#4d2c35]/30 dark:bg-[#3d2a5d]/30 backdrop-blur-sm p-6 rounded-lg border border-[#4d2c35] dark:border-[#3d2a5d] relative overflow-hidden">
+                  {/* Neural network background */}
+                  <div className="absolute inset-0 opacity-10">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                      <pattern id="neural-pattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <circle cx="25" cy="25" r="1" fill="currentColor" />
+                        <circle cx="12.5" cy="12.5" r="1" fill="currentColor" />
+                        <circle cx="37.5" cy="12.5" r="1" fill="currentColor" />
+                        <circle cx="12.5" cy="37.5" r="1" fill="currentColor" />
+                        <circle cx="37.5" cy="37.5" r="1" fill="currentColor" />
+                        <path d="M25 25 L12.5 12.5 M25 25 L37.5 12.5 M25 25 L12.5 37.5 M25 25 L37.5 37.5" stroke="currentColor" strokeWidth="0.5" />
+                      </pattern>
+                      <rect width="100%" height="100%" fill="url(#neural-pattern)" />
+                    </svg>
+                  </div>
+
+                  <h4 className="font-semibold mb-3 text-[#c8a951] dark:text-[#9f7b42] relative z-10">
+                    <i className="fas fa-robot mr-2"></i>
+                    AI-Powered Updates
+                  </h4>
+
+                  <p className="text-sm text-slate-300 mb-4 relative z-10">
+                    Subscribe to receive the latest AI insights and technology updates from our team.
+                  </p>
+
+                  <div className="relative z-10">
+                    <div className="flex flex-col space-y-2">
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        className="bg-[#2c1a22]/70 dark:bg-[#1f1a2c]/70 border border-[#4d2c35] dark:border-[#3d2a5d] rounded-md px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-[#c8a951] dark:focus:ring-[#9f7b42]"
+                      />
+                      <button className="bg-[#c8a951] dark:bg-[#9f7b42] text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-md font-medium text-sm hover:bg-[#c8a951]/90 dark:hover:bg-[#9f7b42]/90 transition-colors w-full">
+                        <i className="fas fa-paper-plane mr-2"></i>
+                        Subscribe
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Social Links */}
+                  {showSocial && (
+                    <div className="mt-6 relative z-10">
+                      <h5 className="text-xs uppercase tracking-wider text-slate-400 mb-3">Connect With Us</h5>
+                      <div className="flex space-x-3">
+                        {activeSocialLinks.map((social, index) => (
+                          <a
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-9 h-9 rounded-full bg-[#4d2c35]/50 dark:bg-[#3d2a5d]/50 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] hover:bg-[#4d2c35] dark:hover:bg-[#3d2a5d] transition-colors"
+                            aria-label={social.platform}
+                          >
+                            <i className={social.icon}></i>
                           </a>
-                        </Link>
-                      )}
-                    </motion.li>
-                  ))}
-                </ul>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+            )}
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-[#4d2c35]/50 dark:border-[#3d2a5d]/50 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-          <div className="mb-4 md:mb-0">
+            {/* Center/Right - Footer Sections in a neural network layout */}
+            <motion.div
+              className={cn(
+                "grid gap-8",
+                showNewsletter
+                  ? "md:col-span-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                  : "md:col-span-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              )}
+              variants={containerVariants}
+            >
+              {activeSections.map((section, index) => (
+                <motion.div
+                  key={index}
+                  className="relative"
+                  variants={itemVariants}
+                  custom={index}
+                >
+                  {/* Hexagonal connector at the top */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-4 w-8 h-8 flex items-center justify-center">
+                    <div className="w-3 h-3 bg-[#c8a951] dark:bg-[#9f7b42] transform rotate-45"></div>
+                  </div>
+
+                  <div className="pt-6">
+                    <h4 className="font-semibold mb-4 text-[#c8a951] dark:text-[#9f7b42] flex items-center">
+                      <i className={section.isAgencySection ? "fas fa-robot mr-2" : "fas fa-network-wired mr-2"}></i>
+                      {section.title}
+                    </h4>
+
+                    <ul className="space-y-3 text-sm relative">
+                      {/* Vertical connector line */}
+                      <div className="absolute top-0 bottom-0 left-2.5 w-px bg-[#4d2c35] dark:bg-[#3d2a5d]"></div>
+
+                      {section.links.map((link, linkIndex) => (
+                        <motion.li
+                          key={linkIndex}
+                          className="relative"
+                          whileHover={{ x: 5 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {/* Horizontal connector */}
+                          <div className="absolute top-1/2 left-2.5 w-3 h-px bg-[#4d2c35] dark:bg-[#3d2a5d]"></div>
+
+                          {link.external ? (
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center pl-7 text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
+                            >
+                              <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                                <i className={`${link.icon || "fas fa-link"} text-xs text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>
+                              </span>
+                              {link.label}
+                            </a>
+                          ) : (
+                            <Link href={link.href}>
+                              <a className="flex items-center pl-7 text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
+                                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                                  <i className={`${link.icon || "fas fa-link"} text-xs text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>
+                                </span>
+                                {link.label}
+                              </a>
+                            </Link>
+                          )}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Bar with circuit board pattern */}
+        <div className="mt-16 pt-8 border-t border-[#4d2c35]/50 dark:border-[#3d2a5d]/50 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 relative">
+          {/* Circuit pattern */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c8a951]/30 dark:via-[#9f7b42]/30 to-transparent"></div>
+
+          <div className="mb-4 md:mb-0 flex items-center">
+            <div className="w-5 h-5 mr-2 relative">
+              <div className="absolute inset-0 bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 rounded-full animate-ping"></div>
+              <div className="relative w-full h-full bg-[#c8a951] dark:bg-[#9f7b42] rounded-full flex items-center justify-center">
+                <i className="fas fa-microchip text-[8px] text-[#2c1a22] dark:text-[#1f1a2c]"></i>
+              </div>
+            </div>
             &copy; {currentYear} {activeCompanyName}. All rights reserved.
           </div>
 
           {showLegal && (
             <div className="flex space-x-6">
               <Link href="/privacy">
-                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">Privacy Policy</a>
+                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors flex items-center">
+                  <i className="fas fa-shield-alt mr-1 text-[10px]"></i>
+                  Privacy
+                </a>
               </Link>
               <Link href="/terms">
-                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">Terms of Service</a>
+                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors flex items-center">
+                  <i className="fas fa-gavel mr-1 text-[10px]"></i>
+                  Terms
+                </a>
               </Link>
               <Link href="/cookies">
-                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">Cookie Policy</a>
+                <a className="hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors flex items-center">
+                  <i className="fas fa-cookie mr-1 text-[10px]"></i>
+                  Cookies
+                </a>
               </Link>
             </div>
           )}
@@ -303,7 +476,10 @@ export function Footer({
           <div className="mt-6 text-center text-xs text-slate-500">
             <span>Astella AI is a division of </span>
             <Link href="/">
-              <a className="text-[#c8a951] dark:text-[#9f7b42] hover:underline">Codegx Technologies</a>
+              <a className="text-[#c8a951] dark:text-[#9f7b42] hover:underline">
+                <i className="fas fa-building mr-1"></i>
+                Codegx Technologies
+              </a>
             </Link>
           </div>
         )}
