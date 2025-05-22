@@ -44,7 +44,7 @@ export function SimpleQuoteForm2() {
 
       if (response.ok) {
         toast.success("Quote request sent!");
-        setLocation("/quote/simple-thank-you");
+        setLocation("/quote/simple-thank-you2");
       } else {
         const errorData = await response.json();
         toast.error(errorData.error || "Something went wrong. Try again.");
