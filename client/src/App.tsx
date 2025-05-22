@@ -190,6 +190,12 @@ function Router() {
             return <LazyRoute component={FooterDemo} />;
           }}
         </Route>
+        <Route path="/modern-home">
+          {() => {
+            const ModernHome = React.lazy(() => import("@/pages/modern-home"));
+            return <LazyRoute component={ModernHome} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

@@ -234,9 +234,9 @@ export function Footer({
               variants={itemVariants}
             >
               <div className="relative">
-                <div className="bg-[#c8a951] dark:bg-[#9f7b42] w-20 h-20 mx-auto mb-6 flex items-center justify-center transform rotate-45 relative overflow-hidden shadow-lg">
+                <div className="bg-[#c8a951] dark:bg-[#9f7b42] w-20 h-20 mx-auto mb-6 flex items-center justify-center relative overflow-hidden shadow-lg rounded-md">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f] opacity-80"></div>
-                  <div className="transform -rotate-45 relative z-10">
+                  <div className="relative z-10">
                     <span className="font-extrabold text-3xl tracking-tighter text-[#2c1a22] dark:text-[#1f1a2c]">
                       {isAgencyPage ? "AI" : "CT"}
                     </span>
