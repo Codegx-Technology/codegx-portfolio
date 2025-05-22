@@ -35,10 +35,11 @@ export function Navbar() {
 
   const agencyLinks = [
     { href: "/why-astella", label: "Why Astella" },
-    { href: "/agency/services", label: "Services" },
+    { href: "/services", label: "Services" },
     { href: "/agency/projects", label: "Projects" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },
+    { href: "/quiz", label: "Service Finder" },
   ];
 
   const handleNavLinkClick = (href: string, isPage: boolean = false) => {

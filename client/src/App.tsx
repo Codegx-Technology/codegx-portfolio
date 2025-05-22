@@ -68,6 +68,27 @@ function Router() {
           }}
         </Route>
         <Route path="/why-astella" component={WhyAstella} />
+        <Route path="/services" component={() => import("@/pages/services").then(mod => <mod.default />)} />
+        <Route path="/services/:slug">
+          {({slug}) => {
+            const ServiceDetail = React.lazy(() => import("@/pages/services/[slug]"));
+            return (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <ServiceDetail />
+              </React.Suspense>
+            );
+          }}
+        </Route>
+        <Route path="/quiz">
+          {() => {
+            const Quiz = React.lazy(() => import("@/pages/quiz"));
+            return (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Quiz />
+              </React.Suspense>
+            );
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
