@@ -230,8 +230,19 @@ export function QuoteForm() {
         estimatedRange: getEstimatedRange()
       };
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Submit to API endpoint
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to submit quote request');
+      }
 
       // Show success toast
       toast({
@@ -241,7 +252,7 @@ export function QuoteForm() {
       });
 
       // Navigate to thank you page
-      navigate("/thank-you");
+      navigate("/quote/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({

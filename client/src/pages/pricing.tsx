@@ -1,110 +1,46 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
 import { Layout } from "@/components/layout";
 import PricingCard from "@/components/Pricing/PricingCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+interface PricingData {
+  plans: {
+    id: string;
+    title: string;
+    monthlyPrice: string;
+    annualPrice: string;
+    description: string;
+    features: {
+      text: string;
+      included: boolean;
+    }[];
+    ctaLabel: string;
+    ctaLink: string;
+    popular: boolean;
+  }[];
+  faqs: {
+    question: string;
+    answer: string;
+  }[];
+}
+
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
+
+  // Fetch pricing data
+  const { data, isLoading, error } = useQuery<PricingData>({
+    queryKey: ["/data/pricing.json"],
+    staleTime: Infinity,
+  });
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Pricing data
-  const pricingPlans = [
-    {
-      title: "Starter",
-      monthlyPrice: "$5,000 - $15,000",
-      annualPrice: "$48,000 - $144,000",
-      description: "Perfect for startups and small businesses looking to implement their first AI solution.",
-      features: [
-        { text: "Single AI service implementation", included: true },
-        { text: "Basic integration with existing systems", included: true },
-        { text: "Standard documentation", included: true },
-        { text: "Email support", included: true },
-        { text: "1 revision round", included: true },
-        { text: "Dedicated project manager", included: false },
-        { text: "Custom AI model training", included: false },
-        { text: "Advanced analytics dashboard", included: false },
-        { text: "24/7 priority support", included: false }
-      ],
-      ctaLabel: "Get Started",
-      ctaLink: "/contact",
-      popular: false
-    },
-    {
-      title: "Growth",
-      monthlyPrice: "$15,000 - $50,000",
-      annualPrice: "$144,000 - $480,000",
-      description: "Ideal for growing businesses ready to leverage AI for competitive advantage.",
-      features: [
-        { text: "Multiple AI service implementation", included: true },
-        { text: "Advanced integration capabilities", included: true },
-        { text: "Comprehensive documentation", included: true },
-        { text: "Email and phone support", included: true },
-        { text: "3 revision rounds", included: true },
-        { text: "Dedicated project manager", included: true },
-        { text: "Custom AI model training", included: true },
-        { text: "Advanced analytics dashboard", included: false },
-        { text: "24/7 priority support", included: false }
-      ],
-      ctaLabel: "Talk to Sales",
-      ctaLink: "/contact",
-      popular: true
-    },
-    {
-      title: "Enterprise",
-      monthlyPrice: "$50,000+",
-      annualPrice: "$480,000+",
-      description: "For organizations requiring comprehensive, custom AI solutions at scale.",
-      features: [
-        { text: "Full suite of AI services", included: true },
-        { text: "Enterprise-grade integrations", included: true },
-        { text: "Complete documentation & knowledge transfer", included: true },
-        { text: "Dedicated support team", included: true },
-        { text: "Unlimited revision rounds", included: true },
-        { text: "Dedicated project manager", included: true },
-        { text: "Custom AI model training", included: true },
-        { text: "Advanced analytics dashboard", included: true },
-        { text: "24/7 priority support", included: true }
-      ],
-      ctaLabel: "Contact Us",
-      ctaLink: "/contact",
-      popular: false
-    }
-  ];
-
-  // FAQ data
-  const faqItems = [
-    {
-      question: "How do you determine the exact price for my project?",
-      answer: "We assess several factors including project complexity, timeline, required AI services, integration needs, and ongoing support requirements. After an initial consultation, we provide a detailed quote tailored to your specific needs."
-    },
-    {
-      question: "Do you offer discounts for startups or non-profits?",
-      answer: "Yes, we offer special pricing for qualified startups and non-profit organizations. Please contact us to discuss your specific situation and learn about our startup and non-profit programs."
-    },
-    {
-      question: "What's included in the implementation cost?",
-      answer: "Our implementation costs typically include requirements analysis, solution design, development, testing, deployment, documentation, and initial training. Ongoing support and maintenance are usually covered under separate agreements."
-    },
-    {
-      question: "Do you offer ongoing maintenance and support?",
-      answer: "Yes, we offer various support and maintenance packages to ensure your AI solutions continue to perform optimally. These can be customized based on your needs and can include regular updates, performance monitoring, and technical support."
-    },
-    {
-      question: "Can I upgrade my plan as my business grows?",
-      answer: "Absolutely! Our pricing tiers are designed to scale with your business. You can start with a Starter plan and upgrade to Growth or Enterprise as your AI needs expand. We'll work with you to ensure a smooth transition."
-    },
-    {
-      question: "Do you offer a money-back guarantee?",
-      answer: "We work with clearly defined milestones and deliverables. While we don't offer a traditional money-back guarantee, our contracts include specific performance criteria and acceptance testing to ensure you're satisfied with the delivered solution."
-    }
-  ];
 
   return (
     <Layout>
@@ -139,21 +75,31 @@ export default function Pricing() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {pricingPlans.map((plan, index) => (
-              <PricingCard
-                key={plan.title}
-                title={plan.title}
-                priceRange={billingCycle === "monthly" ? plan.monthlyPrice : plan.annualPrice}
-                description={plan.description}
-                features={plan.features}
-                ctaLabel={plan.ctaLabel}
-                ctaLink={plan.ctaLink}
-                popular={plan.popular}
-                index={index}
-              />
-            ))}
-          </div>
+          {isLoading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin w-10 h-10 border-4 border-primary border-t-transparent rounded-full"></div>
+            </div>
+          ) : error ? (
+            <div className="text-center py-10">
+              <p className="text-red-500">Error loading pricing data. Please try again later.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {data?.plans.map((plan, index) => (
+                <PricingCard
+                  key={plan.id}
+                  title={plan.title}
+                  priceRange={billingCycle === "monthly" ? plan.monthlyPrice : plan.annualPrice}
+                  description={plan.description}
+                  features={plan.features}
+                  ctaLabel={plan.ctaLabel}
+                  ctaLink={plan.ctaLink}
+                  popular={plan.popular}
+                  index={index}
+                />
+              ))}
+            </div>
+          )}
 
           {/* Custom Quote CTA */}
           <motion.div
@@ -193,7 +139,7 @@ export default function Pricing() {
           >
             <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {faqItems.map((item, index) => (
+              {data?.faqs.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
