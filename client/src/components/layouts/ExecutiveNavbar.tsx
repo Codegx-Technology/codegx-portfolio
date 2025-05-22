@@ -104,6 +104,7 @@ export function ExecutiveNavbar({
   // Navigation links
   const navLinks: NavLink[] = [
     { href: "/", label: "Home" },
+    { href: "/portfolio", label: "Portfolio" },
     {
       href: "/agency",
       label: "Agency",
