@@ -5,51 +5,28 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Head } from "@/components/head";
 import { CTASection } from "@/components/layouts/CTASection";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { FeedbackSection } from "@/components/sections/FeedbackSection";
 import { CaseStudyGrid } from "@/components/ui/CaseStudyCard";
 import { Badge } from "@/components/ui/badge";
 
 export default function ProfessionalHome() {
   // Refs for scroll animations
   const heroRef = useRef<HTMLDivElement>(null);
-  
+
   // Animation controls
   const controls = useAnimation();
-  
+
   // Scroll animations
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
   });
-  
+
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, 50]);
-  
-  // Sample testimonials
-  const testimonials = [
-    {
-      quote: "Codegx Technologies delivered exceptional results that exceeded our expectations. Their AI solutions have revolutionized our business processes.",
-      name: "David Chen",
-      title: "CTO",
-      company: "Global Innovations Inc.",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    },
-    {
-      quote: "Working with Codegx has been a game-changer for our organization. Their expertise in AI and digital transformation is unparalleled.",
-      name: "Sarah Johnson",
-      title: "Director of Operations",
-      company: "TechForward Solutions",
-      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    },
-    {
-      quote: "The team at Codegx Technologies consistently delivers high-quality solutions that drive real business value. They're true partners in our success.",
-      name: "Michael Rodriguez",
-      title: "CEO",
-      company: "NextGen Enterprises",
-      avatar: "https://randomuser.me/api/portraits/men/22.jpg",
-    },
-  ];
+
+  // Removed testimonials as they're replaced by the dynamic feedback section
 
   // Sample case studies
   const caseStudies = [
@@ -106,17 +83,17 @@ export default function ProfessionalHome() {
         title="Codegx Technologies | Enterprise Technology Solutions"
         description="Codegx Technologies delivers innovative technology solutions that drive business growth and digital transformation."
       />
-      
-      <MainLayout 
-        withContainer={false} 
+
+      <MainLayout
+        withContainer={false}
         navbarVariant="transparent"
         showSearch={false}
       >
         {/* Hero Section */}
-        <motion.section 
+        <motion.section
           ref={heroRef}
           className="relative min-h-[90vh] flex items-center overflow-hidden"
-          style={{ 
+          style={{
             opacity: heroOpacity,
             scale: heroScale,
             y: heroY
@@ -124,7 +101,7 @@ export default function ProfessionalHome() {
         >
           {/* Background Elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] z-0"></div>
-          
+
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 z-0 opacity-5">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +111,7 @@ export default function ProfessionalHome() {
               <rect width="100%" height="100%" fill="url(#grid-pattern)" />
             </svg>
           </div>
-          
+
           {/* Hero Content */}
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -156,7 +133,7 @@ export default function ProfessionalHome() {
                   </span>
                   Innovation Through Technology
                 </motion.div>
-                
+
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -166,7 +143,7 @@ export default function ProfessionalHome() {
                   Transforming Businesses <br />
                   Through <span className="text-[#c8a951] dark:text-[#9f7b42]">Advanced</span> Technology
                 </motion.h1>
-                
+
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -175,23 +152,23 @@ export default function ProfessionalHome() {
                 >
                   Codegx Technologies delivers innovative solutions that drive digital transformation, operational efficiency, and sustainable growth for enterprises worldwide.
                 </motion.p>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="flex flex-col sm:flex-row gap-4 pt-4"
                 >
-                  <Button 
-                    asChild 
-                    size="lg" 
+                  <Button
+                    asChild
+                    size="lg"
                     className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c]"
                   >
                     <Link href="/contact">Schedule a Consultation</Link>
                   </Button>
-                  <Button 
-                    asChild 
-                    size="lg" 
+                  <Button
+                    asChild
+                    size="lg"
                     variant="outline"
                     className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
                   >
@@ -199,7 +176,7 @@ export default function ProfessionalHome() {
                   </Button>
                 </motion.div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -211,13 +188,13 @@ export default function ProfessionalHome() {
                   <div className="absolute -left-6 -top-6 right-6 bottom-6 border-2 border-[#c8a951]/20 dark:border-[#9f7b42]/20 rounded-xl"></div>
                   <div className="absolute -left-3 -top-3 right-9 bottom-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
                   <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                      alt="Digital Transformation" 
+                    <img
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Digital Transformation"
                       className="w-full h-auto object-cover rounded-xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
-                    
+
                     {/* Floating badge */}
                     <div className="absolute bottom-6 left-6 bg-[#c8a951]/90 dark:bg-[#9f7b42]/90 text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-lg font-medium shadow-lg">
                       Enterprise Solutions
@@ -227,9 +204,9 @@ export default function ProfessionalHome() {
               </motion.div>
             </div>
           </div>
-          
+
           {/* Scroll indicator */}
-          <motion.div 
+          <motion.div
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -240,7 +217,7 @@ export default function ProfessionalHome() {
             </svg>
           </motion.div>
         </motion.section>
-        
+
         {/* About Section */}
         <section className="py-20 bg-white dark:bg-[#121212]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -279,7 +256,7 @@ export default function ProfessionalHome() {
                   </div>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -325,7 +302,7 @@ export default function ProfessionalHome() {
             </div>
           </div>
         </section>
-        
+
         {/* Services Section */}
         <section className="py-20 bg-gray-50 dark:bg-[#1a1a1a]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -349,7 +326,7 @@ export default function ProfessionalHome() {
                 We offer a comprehensive suite of technology solutions designed to address your most pressing business challenges.
               </motion.p>
             </div>
-            
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -384,15 +361,14 @@ export default function ProfessionalHome() {
             </motion.div>
           </div>
         </section>
-        
-        {/* Testimonials Section */}
-        <Testimonials
-          title="Client Success Stories"
-          description="Hear from organizations that have transformed their operations with our solutions."
-          testimonials={testimonials}
+
+        {/* Feedback Section */}
+        <FeedbackSection
+          title="Client Feedback"
+          description="See what our clients have to say and share your own experience with our services."
           className="py-20"
         />
-        
+
         {/* Case Studies Section */}
         <CaseStudyGrid
           title="Featured Case Studies"
@@ -400,7 +376,7 @@ export default function ProfessionalHome() {
           caseStudies={caseStudies}
           className="py-20 bg-gray-50 dark:bg-[#1a1a1a]"
         />
-        
+
         {/* CTA Section */}
         <CTASection
           title="Ready to transform your business?"
