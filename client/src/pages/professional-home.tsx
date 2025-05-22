@@ -218,42 +218,102 @@ export default function ProfessionalHome() {
           </motion.div>
         </motion.section>
 
-        {/* About Section */}
-        <section className="py-20 bg-white dark:bg-[#121212]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* About Section - Enterprise Grade */}
+        <section className="py-24 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-[#121212] dark:to-[#1a1a1a] z-0"></div>
+
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="about-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#about-pattern)" />
+            </svg>
+          </div>
+
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 translate-y-1/3 z-0"></div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+              >
+                Our Identity
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
+              >
+                Who We <span className="text-[#c8a951] dark:text-[#9f7b42]">Are</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16"
+              >
+                Codegx Technologies is a premier enterprise technology solutions provider, delivering cutting-edge AI, digital transformation, and custom software development services to forward-thinking organizations worldwide.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="lg:col-span-5"
               >
-                <h2 className="text-3xl font-bold mb-6 text-[#2c1a22] dark:text-white">Who We Are</h2>
-                <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
-                  Codegx Technologies is a leading technology solutions provider specializing in AI, digital transformation, and custom software development. We partner with enterprises to solve complex business challenges and drive innovation.
-                </p>
-                <p className="text-lg mb-8 text-gray-700 dark:text-gray-300">
-                  With a team of experienced engineers, data scientists, and business consultants, we deliver end-to-end solutions that create measurable business value and competitive advantage.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mr-4">
-                      <i className="fas fa-users text-xl"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-[#2c1a22] dark:text-white">Expert Team</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Industry-leading professionals</p>
+                <div className="relative">
+                  {/* Background layers for depth */}
+                  <div className="absolute -right-6 -bottom-6 left-6 top-6 border-2 border-[#c8a951]/20 dark:border-[#9f7b42]/20 rounded-xl"></div>
+                  <div className="absolute -right-3 -bottom-3 left-9 top-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
+
+                  {/* Main image with overlay */}
+                  <div className="relative rounded-xl overflow-hidden shadow-2xl">
+                    <img
+                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Codegx Team"
+                      className="w-full h-auto object-cover rounded-xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
+
+                    {/* Stats overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 grid grid-cols-2 gap-4">
+                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
+                        <div className="text-3xl font-bold text-white mb-1">15+</div>
+                        <div className="text-sm text-white/80">Years Experience</div>
+                      </div>
+                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
+                        <div className="text-3xl font-bold text-white mb-1">250+</div>
+                        <div className="text-sm text-white/80">Enterprise Clients</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mr-4">
-                      <i className="fas fa-cogs text-xl"></i>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-[#2c1a22] dark:text-white">Proven Process</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Reliable, repeatable results</p>
-                    </div>
+                </div>
+
+                {/* Mission statement */}
+                <div className="mt-8 bg-white dark:bg-[#2c1a22] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
+                  <div className="absolute top-0 left-8 transform -translate-y-1/2 bg-[#c8a951] dark:bg-[#9f7b42] text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Our Mission
                   </div>
+                  <p className="text-gray-700 dark:text-gray-300 mt-2">
+                    "To empower organizations through innovative technology solutions that drive meaningful business transformation and sustainable growth."
+                  </p>
                 </div>
               </motion.div>
 
@@ -261,40 +321,96 @@ export default function ProfessionalHome() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="lg:col-span-7"
               >
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4">
-                    <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 p-6 rounded-lg">
-                      <div className="w-12 h-12 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4">
-                        <i className="fas fa-lightbulb text-xl"></i>
+                <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
+                  <h3 className="text-2xl font-bold mb-6 text-[#2c1a22] dark:text-white">Enterprise Excellence</h3>
+
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-700 dark:text-gray-300">
+                      With a team of industry-leading engineers, data scientists, and business consultants, we deliver end-to-end solutions that create measurable business value and competitive advantage for Fortune 500 companies and ambitious growth-stage enterprises alike.
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-lightbulb text-xl"></i>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Innovation DNA</h4>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                            We pioneer cutting-edge solutions that address the most complex enterprise challenges, staying ahead of technological trends.
+                          </p>
+                        </div>
                       </div>
-                      <h3 className="font-semibold mb-2 text-[#2c1a22] dark:text-white">Innovation</h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">Cutting-edge solutions for modern challenges</p>
+
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-shield-alt text-xl"></i>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Enterprise Security</h4>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                            Our solutions adhere to the highest security standards, ensuring your data and systems remain protected at all times.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-chart-line text-xl"></i>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Measurable Results</h4>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                            We focus on delivering quantifiable business outcomes with clear ROI metrics that demonstrate tangible value.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-handshake text-xl"></i>
+                          </div>
+                        </div>
+                        <div className="ml-4">
+                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Strategic Partnership</h4>
+                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                            We build long-term relationships, serving as trusted advisors who are invested in your organization's success.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 p-6 rounded-lg">
-                      <div className="w-12 h-12 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4">
-                        <i className="fas fa-shield-alt text-xl"></i>
+
+                    {/* Enterprise certifications */}
+                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white mb-4">Enterprise Certifications</h4>
+                      <div className="flex flex-wrap gap-4">
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          ISO 27001
+                        </div>
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          CMMI Level 5
+                        </div>
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          SOC 2 Type II
+                        </div>
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          GDPR Compliant
+                        </div>
                       </div>
-                      <h3 className="font-semibold mb-2 text-[#2c1a22] dark:text-white">Security</h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">Enterprise-grade security in everything we build</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4 mt-8">
-                    <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 p-6 rounded-lg">
-                      <div className="w-12 h-12 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4">
-                        <i className="fas fa-chart-line text-xl"></i>
-                      </div>
-                      <h3 className="font-semibold mb-2 text-[#2c1a22] dark:text-white">Results</h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">Measurable outcomes and ROI</p>
-                    </div>
-                    <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 p-6 rounded-lg">
-                      <div className="w-12 h-12 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4">
-                        <i className="fas fa-handshake text-xl"></i>
-                      </div>
-                      <h3 className="font-semibold mb-2 text-[#2c1a22] dark:text-white">Partnership</h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">Long-term relationships built on trust</p>
                     </div>
                   </div>
                 </div>
@@ -303,61 +419,221 @@ export default function ProfessionalHome() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-20 bg-gray-50 dark:bg-[#1a1a1a]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Services Section - Enterprise Grade */}
+        <section className="py-24 relative overflow-hidden">
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-[#1a1a1a] dark:to-[#121212] z-0"></div>
+
+          {/* Decorative elements */}
+          <div className="absolute top-40 right-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/2 z-0"></div>
+          <div className="absolute bottom-20 left-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/2 z-0"></div>
+
+          {/* Circuit board pattern */}
+          <div className="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                <circle cx="50" cy="50" r="3" fill="currentColor" />
+                <circle cx="25" cy="25" r="2" fill="currentColor" />
+                <circle cx="75" cy="25" r="2" fill="currentColor" />
+                <circle cx="25" cy="75" r="2" fill="currentColor" />
+                <circle cx="75" cy="75" r="2" fill="currentColor" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+            </svg>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <motion.h2
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl font-bold mb-4 text-[#2c1a22] dark:text-white"
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
-                Our Services
-              </motion.h2>
-              <motion.p
+                Enterprise Solutions
+              </motion.div>
+
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
+                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
               >
-                We offer a comprehensive suite of technology solutions designed to address your most pressing business challenges.
+                Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Services</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+              >
+                We deliver a comprehensive suite of enterprise-grade technology solutions designed to address your organization's most complex challenges and drive sustainable growth.
               </motion.p>
             </div>
 
+            {/* Featured Service */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                  },
-                },
-              }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-16"
             >
+              <div className="bg-white dark:bg-[#2c1a22] rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-[#3d2128]">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="inline-flex items-center px-3 py-1 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 self-start">
+                      Featured Service
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-4 text-[#2c1a22] dark:text-white">
+                      Enterprise AI Solutions
+                    </h3>
+
+                    <p className="text-gray-700 dark:text-gray-300 mb-6">
+                      Our flagship AI solutions leverage cutting-edge machine learning, natural language processing, and computer vision technologies to transform your business operations, enhance decision-making, and create competitive advantage.
+                    </p>
+
+                    <ul className="space-y-3 mb-8">
+                      {[
+                        "Custom AI model development and deployment",
+                        "Predictive analytics and forecasting systems",
+                        "Intelligent process automation",
+                        "Computer vision for quality control and monitoring",
+                        "Natural language processing for document analysis"
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center mt-1 mr-3">
+                            <i className="fas fa-check text-xs text-[#c8a951] dark:text-[#9f7b42]"></i>
+                          </div>
+                          <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Button
+                      asChild
+                      className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] self-start"
+                    >
+                      <Link href="/solutions/ai">Learn More</Link>
+                    </Button>
+                  </div>
+
+                  <div className="relative h-64 lg:h-auto">
+                    <img
+                      src="https://images.unsplash.com/photo-1677442135968-6d89469c6409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
+                      alt="Enterprise AI Solutions"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#2c1a22]/80 to-transparent"></div>
+
+                    {/* Stats overlay */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
+                          <div className="text-2xl font-bold text-white mb-1">40%</div>
+                          <div className="text-xs text-white/80">Average Efficiency Gain</div>
+                        </div>
+                        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
+                          <div className="text-2xl font-bold text-white mb-1">3.5x</div>
+                          <div className="text-xs text-white/80">ROI Within 12 Months</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Service Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-                  }}
-                  className="bg-white dark:bg-[#2c1a22] rounded-xl p-8 shadow-lg border border-gray-100 dark:border-[#3d2128] hover:shadow-xl transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
-                    <i className={`${service.icon} text-2xl`}></i>
+                  {/* Service header with gradient */}
+                  <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
+
+                  <div className="p-8">
+                    <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
+                      <i className={`${service.icon} text-2xl`}></i>
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
+
+                    <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
+
+                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                      <Link
+                        href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
+                      >
+                        Learn More
+                        <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                      </Link>
+
+                      {/* Enterprise badge */}
+                      <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
+                        Enterprise
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Enterprise solutions banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-16 bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] rounded-2xl p-8 md:p-12 relative overflow-hidden"
+            >
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <pattern id="enterprise-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <circle cx="20" cy="20" r="1" fill="currentColor" />
+                    <circle cx="0" cy="0" r="1" fill="currentColor" />
+                    <circle cx="0" cy="40" r="1" fill="currentColor" />
+                    <circle cx="40" cy="0" r="1" fill="currentColor" />
+                    <circle cx="40" cy="40" r="1" fill="currentColor" />
+                  </pattern>
+                  <rect width="100%" height="100%" fill="url(#enterprise-pattern)" />
+                </svg>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div className="lg:col-span-8">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                    Ready for Enterprise-Grade Solutions?
+                  </h3>
+                  <p className="text-slate-300 mb-6 lg:mb-0 max-w-2xl">
+                    Our team of experts is ready to help you identify the right solutions for your organization's unique challenges and objectives.
+                  </p>
+                </div>
+                <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c]"
+                  >
+                    <Link href="/contact">Schedule a Consultation</Link>
+                  </Button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
