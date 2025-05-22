@@ -1,11 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MainLayout } from "@/components/layouts/MainLayout";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import { Button } from "@/components/ui/button";
 import { Head } from "@/components/head";
 import { Badge } from "@/components/ui/badge";
 import { CTASection } from "@/components/layouts/CTASection";
+import { EnterpriseGrid } from "@/components/ui/enterprise-container";
+import { EnterpriseCard } from "@/components/ui/enterprise-card";
+import { Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 
 // Define project types
 interface Project {
@@ -36,6 +39,11 @@ export default function Portfolio() {
   // Filter state
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Scroll animations
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -45,6 +53,22 @@ export default function Portfolio() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, 50]);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   // Sample projects data
   const projects: Project[] = [
@@ -147,7 +171,7 @@ export default function Portfolio() {
         description="Explore my portfolio of software engineering and blockchain projects."
       />
 
-      <MainLayout
+      <PageWrapper
         withContainer={false}
         navbarVariant="transparent"
         showSearch={false}
@@ -289,125 +313,124 @@ export default function Portfolio() {
           </motion.div>
         </motion.section>
         {/* Skills Section */}
-        <section className="py-20 bg-white dark:bg-[#121212] relative overflow-hidden">
+        <PageSection
+          background="muted"
+          spacing="xl"
+          className="relative overflow-hidden"
+        >
           {/* Background elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative z-10">
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 border border-primary/20"
               >
                 Technical Expertise
               </motion.div>
 
-              <motion.h2
+              <Heading2
+                className="mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
               >
-                My <span className="text-[#c8a951] dark:text-[#9f7b42]">Skills</span>
-              </motion.h2>
+                My <span className="text-primary">Skills</span>
+              </Heading2>
 
-              <motion.p
+              <Paragraph
+                className="text-lg max-w-3xl mx-auto mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16"
               >
                 I specialize in a range of technologies across the full stack, with particular expertise in blockchain, AI, and modern web development.
-              </motion.p>
+              </Paragraph>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {skills.map((skill, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 + index * 0.05 }}
-                  className="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-6 shadow-md border border-gray-100 dark:border-[#2c1a22]/50"
+                  variants={itemVariants}
+                  className="h-full"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mr-4">
-                      <i className={`${skill.icon} text-xl`}></i>
+                  <EnterpriseCard className="p-6 h-full">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mr-4">
+                        <i className={`${skill.icon} text-xl`}></i>
+                      </div>
+                      <div>
+                        <Heading3 className="text-base font-semibold">{skill.name}</Heading3>
+                        <Paragraph className="text-sm text-muted-foreground">{skill.category}</Paragraph>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-[#2c1a22] dark:text-white">{skill.name}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{skill.category}</p>
-                    </div>
-                  </div>
 
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-1">
-                    <div
-                      className="bg-[#c8a951] dark:bg-[#9f7b42] h-2.5 rounded-full"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                  <div className="text-right text-xs text-gray-500 dark:text-gray-400">{skill.level}%</div>
+                    <div className="w-full bg-muted rounded-full h-2.5 mb-1">
+                      <div
+                        className="bg-primary h-2.5 rounded-full"
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                    <div className="text-right text-xs text-muted-foreground">{skill.level}%</div>
+                  </EnterpriseCard>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </PageSection>
 
         {/* Projects Section */}
-        <section id="projects" className="py-20 bg-gray-50 dark:bg-[#1a1a1a] relative overflow-hidden">
-          {/* Background elements */}
-          <div className="absolute inset-0 z-0 opacity-5">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                <circle cx="50" cy="50" r="3" fill="currentColor" />
-                <circle cx="25" cy="25" r="2" fill="currentColor" />
-                <circle cx="75" cy="25" r="2" fill="currentColor" />
-                <circle cx="25" cy="75" r="2" fill="currentColor" />
-                <circle cx="75" cy="75" r="2" fill="currentColor" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
-            </svg>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <PageSection
+          id="projects"
+          background="pattern"
+          spacing="xl"
+          className="relative overflow-hidden"
+        >
+          <div className="relative z-10">
             <div className="text-center mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 border border-primary/20"
               >
                 My Work
               </motion.div>
 
-              <motion.h2
+              <Heading2
+                className="mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
               >
-                Featured <span className="text-[#c8a951] dark:text-[#9f7b42]">Projects</span>
-              </motion.h2>
+                Featured <span className="text-primary">Projects</span>
+              </Heading2>
 
-              <motion.p
+              <Paragraph
+                className="text-lg max-w-3xl mx-auto mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
               >
                 Explore a selection of my most impactful projects across various domains and technologies.
-              </motion.p>
+              </Paragraph>
             </div>
 
             {/* Project Filters */}
@@ -422,8 +445,8 @@ export default function Portfolio() {
                   onClick={() => setActiveFilter(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     activeFilter === category
-                      ? "bg-[#c8a951] dark:bg-[#9f7b42] text-white"
-                      : "bg-white dark:bg-[#2c1a22] text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#3d2128]"
+                      ? "bg-primary text-white"
+                      : "bg-card text-foreground hover:bg-muted"
                   }`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -432,111 +455,110 @@ export default function Portfolio() {
             </div>
 
             {/* Projects Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <EnterpriseGrid cols={3} gap="lg">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 + index * 0.05 }}
+                  variants={itemVariants}
                   whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                  className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group"
+                  className="h-full"
                 >
-                  {/* Project Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 to-transparent"></div>
+                  <EnterpriseCard className="overflow-hidden h-full group" interactive>
+                    {/* Project Image */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
 
-                    {/* Category Badge */}
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-[#c8a951]/90 dark:bg-[#9f7b42]/90 text-[#2c1a22] dark:text-[#1f1a2c] border-0">
-                        {project.category}
-                      </Badge>
-                    </div>
-
-                    {/* Featured Badge */}
-                    {project.featured && (
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-white/90 text-[#2c1a22] border-0 flex items-center gap-1">
-                          <i className="fas fa-star text-[#c8a951] dark:text-[#9f7b42] text-xs"></i>
-                          Featured
+                      {/* Category Badge */}
+                      <div className="absolute top-4 right-4">
+                        <Badge className="bg-primary/90 text-white border-0">
+                          {project.category}
                         </Badge>
                       </div>
-                    )}
-                  </div>
 
-                  {/* Project Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-[#2c1a22] dark:text-white">{project.title}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">{project.description}</p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-gray-100 dark:bg-[#1a1a1a] rounded text-xs font-medium text-gray-700 dark:text-gray-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      {/* Featured Badge */}
+                      {project.featured && (
+                        <div className="absolute top-4 left-4">
+                          <Badge className="bg-white/90 text-foreground border-0 flex items-center gap-1">
+                            <i className="fas fa-star text-primary text-xs"></i>
+                            Featured
+                          </Badge>
+                        </div>
+                      )}
                     </div>
 
-                    {/* Action Links */}
-                    <div className="flex justify-between items-center pt-4 border-t border-gray-100 dark:border-gray-800">
-                      <Link
-                        href={project.detailsUrl}
-                        className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
-                      >
-                        View Details
-                        <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                      </Link>
+                    {/* Project Content */}
+                    <div className="p-6">
+                      <Heading3 className="mb-2">{project.title}</Heading3>
+                      <Paragraph className="mb-4 line-clamp-2">{project.description}</Paragraph>
 
-                      <div className="flex gap-3">
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2 py-1 bg-muted rounded text-xs font-medium text-muted-foreground"
                           >
-                            <i className="fab fa-github"></i>
-                          </a>
-                        )}
-                        {project.demoUrl && (
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
-                          >
-                            <i className="fas fa-external-link-alt"></i>
-                          </a>
-                        )}
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Action Links */}
+                      <div className="flex justify-between items-center pt-4 border-t border-border">
+                        <Link
+                          href={project.detailsUrl}
+                          className="text-primary font-medium text-sm hover:underline flex items-center"
+                        >
+                          View Details
+                          <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                        </Link>
+
+                        <div className="flex gap-3">
+                          {project.githubUrl && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground hover:text-primary"
+                            >
+                              <i className="fab fa-github"></i>
+                            </a>
+                          )}
+                          {project.demoUrl && (
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground hover:text-primary"
+                            >
+                              <i className="fas fa-external-link-alt"></i>
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </EnterpriseCard>
                 </motion.div>
               ))}
-            </div>
+            </EnterpriseGrid>
 
             {/* Show More Button */}
             <div className="text-center mt-12">
               <Button
                 asChild
                 variant="outline"
-                className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
+                className="border-primary text-primary hover:bg-primary/10"
               >
                 <Link href="/portfolio/all">View All Projects</Link>
               </Button>
             </div>
           </div>
-        </section>
+        </PageSection>
 
         {/* CTA Section */}
         <CTASection
@@ -546,7 +568,7 @@ export default function Portfolio() {
           buttonLink="/contact"
           variant="gradient"
         />
-      </MainLayout>
+      </PageWrapper>
     </>
   );
 }

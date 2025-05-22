@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { Layout } from "@/components/layout";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import { Link } from "wouter";
+import { Head } from "@/components/head";
+import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
+import { EnterpriseCard } from "@/components/ui/enterprise-card";
+import { EnterpriseGrid } from "@/components/ui/enterprise-container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,121 +32,141 @@ interface BlogPostsData {
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  
+
   // Fetch blog posts data
   const { data, isLoading, error } = useQuery<BlogPostsData>({
     queryKey: ["/data/blogPosts.json"],
     staleTime: Infinity,
   });
-  
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Format date
   const formatDate = (dateString: string) => {
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
-  
+
   // Get all unique tags
   const allTags = data?.blogPosts
     ? Array.from(new Set(data.blogPosts.flatMap(post => post.tags)))
     : [];
-  
+
   // Filter blog posts by search query and tag
   const filteredPosts = data?.blogPosts
     ? data.blogPosts.filter(post => {
-        const matchesSearch = searchQuery === "" || 
+        const matchesSearch = searchQuery === "" ||
           post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
           post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-        
+
         const matchesTag = activeTag === null || post.tags.includes(activeTag);
-        
+
         return matchesSearch && matchesTag;
       })
     : [];
-  
+
   // Sort posts by date (newest first)
-  const sortedPosts = [...(filteredPosts || [])].sort((a, b) => 
+  const sortedPosts = [...(filteredPosts || [])].sort((a, b) =>
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
-  
+
   // Featured posts
   const featuredPosts = sortedPosts.filter(post => post.featured);
-  
+
   // Regular posts (excluding featured)
   const regularPosts = sortedPosts.filter(post => !post.featured);
 
   return (
-    <Layout>
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold font-inter mb-4">Thought Leadership</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Insights, perspectives, and analysis on AI, blockchain, and emerging technologies
-              from our team of experts.
-            </p>
-          </motion.div>
-          
+    <PageWrapper>
+      <Head
+        title="Blog | Astella AI"
+        description="Insights, perspectives, and analysis on AI, blockchain, and emerging technologies from our team of experts."
+      />
+
+      <PageSection
+        background="pattern"
+        spacing="xl"
+        className="relative overflow-hidden"
+      >
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 relative z-10"
+        >
+          <Heading1 className="mb-4">Thought Leadership</Heading1>
+          <Paragraph className="text-xl max-w-3xl mx-auto">
+            Insights, perspectives, and analysis on AI, blockchain, and emerging technologies
+            from our team of experts.
+          </Paragraph>
+        </motion.div>
+
           {/* Search and Filter */}
-          <div className="mb-10">
-            <div className="flex flex-col md:flex-row gap-4 mb-6">
-              <div className="flex-1">
-                <Input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full"
-                />
-              </div>
-              <Button
-                variant={activeTag === null ? "default" : "outline"}
-                onClick={() => setActiveTag(null)}
-                className="whitespace-nowrap"
-              >
-                All Topics
-              </Button>
-            </div>
-            
-            <div className="flex flex-wrap gap-2">
-              {allTags.map(tag => (
-                <Badge
-                  key={tag}
-                  variant={activeTag === tag ? "default" : "outline"}
-                  className={`cursor-pointer ${activeTag === tag ? 'bg-primary text-white' : 'hover:bg-primary/10'}`}
-                  onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+          <div className="mb-10 relative z-10">
+            <EnterpriseCard className="p-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 mb-6">
+                <div className="flex-1">
+                  <Input
+                    type="text"
+                    placeholder="Search articles..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full"
+                  />
+                </div>
+                <Button
+                  variant={activeTag === null ? "default" : "outline"}
+                  onClick={() => setActiveTag(null)}
+                  className="whitespace-nowrap"
                 >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+                  All Topics
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {allTags.map(tag => (
+                  <Badge
+                    key={tag}
+                    variant={activeTag === tag ? "default" : "outline"}
+                    className={`cursor-pointer ${activeTag === tag ? 'bg-primary text-white' : 'hover:bg-primary/10'}`}
+                    onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </EnterpriseCard>
           </div>
-          
+
           {isLoading ? (
-            <div className="text-center py-20">
+            <div className="text-center py-20 relative z-10">
               <div className="animate-spin w-10 h-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading articles...</p>
+              <Paragraph className="text-muted-foreground">Loading articles...</Paragraph>
             </div>
           ) : error ? (
-            <div className="text-center py-20">
-              <p className="text-red-500">Error loading articles. Please try again later.</p>
+            <div className="text-center py-20 relative z-10">
+              <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-exclamation-triangle text-2xl"></i>
+              </div>
+              <Heading3 className="text-red-500 mb-2">Error Loading Data</Heading3>
+              <Paragraph className="text-muted-foreground">Unable to load articles. Please try again later.</Paragraph>
             </div>
           ) : filteredPosts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground">No articles found matching your criteria.</p>
-              <Button 
-                variant="outline" 
-                className="mt-4"
+            <div className="text-center py-20 relative z-10">
+              <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="fas fa-search text-2xl"></i>
+              </div>
+              <Heading3 className="mb-2">No Results Found</Heading3>
+              <Paragraph className="text-muted-foreground mb-4">No articles found matching your criteria.</Paragraph>
+              <Button
+                variant="outline"
                 onClick={() => {
                   setSearchQuery("");
                   setActiveTag(null);
@@ -155,9 +179,9 @@ export default function Blog() {
             <>
               {/* Featured Posts */}
               {featuredPosts.length > 0 && (
-                <div className="mb-16">
-                  <h2 className="text-2xl font-bold mb-6">Featured Articles</h2>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="mb-16 relative z-10">
+                  <Heading2 className="text-2xl mb-6">Featured Articles</Heading2>
+                  <EnterpriseGrid cols={2} gap="lg">
                     {featuredPosts.map((post) => (
                       <motion.div
                         key={post.slug}
@@ -215,14 +239,14 @@ export default function Blog() {
                         </Link>
                       </motion.div>
                     ))}
-                  </div>
+                  </EnterpriseGrid>
                 </div>
               )}
-              
+
               {/* Regular Posts */}
-              <div>
-                <h2 className="text-2xl font-bold mb-6">All Articles</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="relative z-10">
+                <Heading2 className="text-2xl mb-6">All Articles</Heading2>
+                <EnterpriseGrid cols={3} gap="lg">
                   {regularPosts.map((post) => (
                     <motion.div
                       key={post.slug}
@@ -277,12 +301,11 @@ export default function Blog() {
                       </Link>
                     </motion.div>
                   ))}
-                </div>
+                </EnterpriseGrid>
               </div>
             </>
           )}
-        </div>
-      </section>
-    </Layout>
+      </PageSection>
+    </PageWrapper>
   );
 }

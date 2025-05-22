@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { Layout } from "@/components/layout";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { Button } from "@/components/ui/button";
+import { Head } from "@/components/head";
+import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 import {
   Dialog,
   DialogContent,
@@ -77,24 +79,35 @@ export default function CaseStudies() {
   };
 
   return (
-    <Layout>
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold font-inter mb-4">Case Studies</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore our portfolio of successful projects and discover how we've helped organizations
-              across various industries solve complex challenges with innovative technology solutions.
-            </p>
-          </motion.div>
+    <PageWrapper>
+      <Head
+        title="Case Studies | Astella AI"
+        description="Explore our portfolio of successful AI and blockchain projects across various industries."
+      />
+
+      <PageSection
+        background="pattern"
+        spacing="xl"
+        className="relative overflow-hidden"
+      >
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 relative z-10"
+        >
+          <Heading1 className="mb-4">Case Studies</Heading1>
+          <Paragraph className="text-xl max-w-3xl mx-auto">
+            Explore our portfolio of successful projects and discover how we've helped organizations
+            across various industries solve complex challenges with innovative technology solutions.
+          </Paragraph>
+        </motion.div>
 
           {/* Industry Filter */}
-          <div className="mb-10">
+          <div className="mb-10 relative z-10">
             <Tabs
               defaultValue="all"
               value={activeIndustry}
@@ -102,7 +115,7 @@ export default function CaseStudies() {
               className="w-full"
             >
               <div className="flex justify-center mb-6">
-                <TabsList className="bg-background border border-border p-1">
+                <TabsList className="bg-card border border-border p-1 shadow-sm">
                   {industries.map((industry) => (
                     <TabsTrigger
                       key={industry}
@@ -120,15 +133,23 @@ export default function CaseStudies() {
                   {isLoading ? (
                     <div className="text-center py-20">
                       <div className="animate-spin w-10 h-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-                      <p className="text-muted-foreground">Loading case studies...</p>
+                      <Paragraph className="text-muted-foreground">Loading case studies...</Paragraph>
                     </div>
                   ) : error ? (
                     <div className="text-center py-20">
-                      <p className="text-red-500">Error loading case studies. Please try again later.</p>
+                      <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i className="fas fa-exclamation-triangle text-2xl"></i>
+                      </div>
+                      <Heading3 className="text-red-500 mb-2">Error Loading Data</Heading3>
+                      <Paragraph className="text-muted-foreground">Unable to load case studies. Please try again later.</Paragraph>
                     </div>
                   ) : filteredCaseStudies.length === 0 ? (
                     <div className="text-center py-20">
-                      <p className="text-muted-foreground">No case studies found for this industry.</p>
+                      <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i className="fas fa-search text-2xl"></i>
+                      </div>
+                      <Heading3 className="mb-2">No Results Found</Heading3>
+                      <Paragraph className="text-muted-foreground">No case studies found for this industry.</Paragraph>
                     </div>
                   ) : (
                     <motion.div
@@ -165,8 +186,7 @@ export default function CaseStudies() {
               ))}
             </Tabs>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* Case Study Modal */}
       <AnimatePresence>
@@ -200,22 +220,22 @@ export default function CaseStudies() {
 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Overview</h3>
-                    <p className="text-muted-foreground">{selectedCaseStudy.summary}</p>
+                    <Heading3 className="text-xl font-semibold mb-2">Overview</Heading3>
+                    <Paragraph className="text-muted-foreground">{selectedCaseStudy.summary}</Paragraph>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Challenge</h3>
-                    <p className="text-muted-foreground">{selectedCaseStudy.challenge}</p>
+                    <Heading3 className="text-xl font-semibold mb-2">Challenge</Heading3>
+                    <Paragraph className="text-muted-foreground">{selectedCaseStudy.challenge}</Paragraph>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Solution</h3>
-                    <p className="text-muted-foreground">{selectedCaseStudy.solution}</p>
+                    <Heading3 className="text-xl font-semibold mb-2">Solution</Heading3>
+                    <Paragraph className="text-muted-foreground">{selectedCaseStudy.solution}</Paragraph>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Impact</h3>
+                    <Heading3 className="text-xl font-semibold mb-2">Impact</Heading3>
                     <ul className="list-disc list-inside text-muted-foreground space-y-2 pl-4">
                       {selectedCaseStudy.impact.map((item, index) => (
                         <li key={index}>{item}</li>
@@ -238,7 +258,7 @@ export default function CaseStudies() {
                   )}
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Technologies Used</h3>
+                    <Heading3 className="text-xl font-semibold mb-2">Technologies Used</Heading3>
                     <div className="flex flex-wrap gap-2">
                       {selectedCaseStudy.technologies.map((tech, index) => (
                         <Badge key={index} variant="secondary">
@@ -263,6 +283,6 @@ export default function CaseStudies() {
           </Dialog>
         )}
       </AnimatePresence>
-    </Layout>
+    </PageWrapper>
   );
 }

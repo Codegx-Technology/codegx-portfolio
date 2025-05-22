@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Layout } from "@/components/layout";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import ContactForm from "@/components/Forms/ContactForm";
+import { Head } from "@/components/head";
+import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
+import { EnterpriseCard } from "@/components/ui/enterprise-card";
 import { z } from "zod";
 
 // Define the contact form schema
@@ -75,23 +78,34 @@ export default function Contact() {
   ];
 
   return (
-    <Layout>
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold font-inter mb-4">Get in Touch</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Have a project in mind or want to collaborate? We'd love to hear from you.
-              Fill out the form below and we'll get back to you as soon as possible.
-            </p>
-          </motion.div>
+    <PageWrapper>
+      <Head
+        title="Contact Us | Codegx Technologies"
+        description="Get in touch with our team to discuss your project or collaboration opportunities."
+      />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <PageSection
+        background="pattern"
+        spacing="xl"
+        className="relative overflow-hidden"
+      >
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 relative z-10"
+        >
+          <Heading1 className="mb-4">Get in Touch</Heading1>
+          <Paragraph className="text-xl max-w-3xl mx-auto">
+            Have a project in mind or want to collaborate? We'd love to hear from you.
+            Fill out the form below and we'll get back to you as soon as possible.
+          </Paragraph>
+        </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 relative z-10">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -99,9 +113,9 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <div className="bg-card rounded-lg p-6 shadow-md border border-border h-full">
-                <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
-                
+              <EnterpriseCard className="p-6 h-full">
+                <Heading2 className="text-2xl mb-6">Contact Information</Heading2>
+
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start">
@@ -109,9 +123,9 @@ export default function Contact() {
                         <i className={`${info.icon} text-primary`}></i>
                       </div>
                       <div>
-                        <h4 className="font-medium mb-1">{info.title}</h4>
+                        <Heading3 className="text-base font-medium mb-1">{info.title}</Heading3>
                         {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-muted-foreground">{detail}</p>
+                          <Paragraph key={idx} className="text-sm text-muted-foreground">{detail}</Paragraph>
                         ))}
                       </div>
                     </div>
@@ -119,7 +133,7 @@ export default function Contact() {
                 </div>
 
                 <div className="mt-8">
-                  <h4 className="font-medium mb-3">Connect With Us</h4>
+                  <Heading3 className="text-base font-medium mb-3">Connect With Us</Heading3>
                   <div className="flex space-x-4">
                     {socialLinks.map((link, index) => (
                       <a
@@ -135,7 +149,7 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </EnterpriseCard>
             </motion.div>
 
             {/* Contact Form */}
@@ -145,14 +159,13 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="lg:col-span-2"
             >
-              <div className="bg-card rounded-lg p-6 shadow-md border border-border">
-                <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
+              <EnterpriseCard className="p-6">
+                <Heading2 className="text-2xl mb-6">Send Us a Message</Heading2>
                 <ContactForm onSubmit={handleSubmit} />
-              </div>
+              </EnterpriseCard>
             </motion.div>
           </div>
-        </div>
-      </section>
-    </Layout>
+      </PageSection>
+    </PageWrapper>
   );
 }

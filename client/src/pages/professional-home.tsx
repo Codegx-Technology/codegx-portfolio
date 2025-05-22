@@ -5,7 +5,7 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Head } from "@/components/head";
 import { CTASection } from "@/components/layouts/CTASection";
-import { FeedbackSection } from "@/components/sections/FeedbackSection";
+
 import { CaseStudyGrid } from "@/components/ui/CaseStudyCard";
 import { Badge } from "@/components/ui/badge";
 
@@ -266,7 +266,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16"
               >
-                Codegx Technologies is a premier enterprise technology solutions provider, delivering cutting-edge AI, digital transformation, and custom software development services to forward-thinking organizations worldwide.
+                Codegx Technologies is an innovative technology startup focused on delivering cutting-edge AI, digital transformation, and custom software development solutions that help businesses thrive in the digital age.
               </motion.p>
             </div>
 
@@ -292,15 +292,11 @@ export default function ProfessionalHome() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
 
-                    {/* Stats overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 grid grid-cols-2 gap-4">
+                    {/* Vision overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
-                        <div className="text-3xl font-bold text-white mb-1">15+</div>
-                        <div className="text-sm text-white/80">Years Experience</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
-                        <div className="text-3xl font-bold text-white mb-1">250+</div>
-                        <div className="text-sm text-white/80">Enterprise Clients</div>
+                        <div className="text-lg font-bold text-white mb-1">Innovative Solutions for Tomorrow's Challenges</div>
+                        <div className="text-sm text-white/80">Driving Digital Transformation</div>
                       </div>
                     </div>
                   </div>
@@ -329,7 +325,7 @@ export default function ProfessionalHome() {
 
                   <div className="space-y-6">
                     <p className="text-lg text-gray-700 dark:text-gray-300">
-                      With a team of industry-leading engineers, data scientists, and business consultants, we deliver end-to-end solutions that create measurable business value and competitive advantage for Fortune 500 companies and ambitious growth-stage enterprises alike.
+                      As an innovative technology startup, we bring fresh perspectives and cutting-edge approaches to solving business challenges. Our agile team of talented engineers, data scientists, and creative problem-solvers is passionate about helping organizations of all sizes harness the power of technology.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -390,25 +386,25 @@ export default function ProfessionalHome() {
                       </div>
                     </div>
 
-                    {/* Enterprise certifications */}
+                    {/* Core values */}
                     <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white mb-4">Enterprise Certifications</h4>
+                      <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white mb-4">Our Core Values</h4>
                       <div className="flex flex-wrap gap-4">
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
-                          ISO 27001
+                          <i className="fas fa-lightbulb text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          Innovation
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
-                          CMMI Level 5
+                          <i className="fas fa-users text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          Collaboration
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
-                          SOC 2 Type II
+                          <i className="fas fa-rocket text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          Agility
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-check-circle text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
-                          GDPR Compliant
+                          <i className="fas fa-handshake text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          Integrity
                         </div>
                       </div>
                     </div>
@@ -593,12 +589,34 @@ export default function ProfessionalHome() {
               ))}
             </div>
 
-            {/* Enterprise solutions banner */}
+            {/* Services illustration */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-16 relative overflow-hidden"
+            >
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="AI Technology Solutions"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/90 via-[#2c1a22]/50 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Transforming Ideas into Intelligent Solutions</h3>
+                  <p className="text-slate-300 max-w-2xl mb-6">Our AI-powered technologies help businesses automate processes, gain insights, and create exceptional customer experiences.</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Enterprise solutions banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
               className="mt-16 bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] rounded-2xl p-8 md:p-12 relative overflow-hidden"
             >
               {/* Background pattern */}
@@ -638,12 +656,7 @@ export default function ProfessionalHome() {
           </div>
         </section>
 
-        {/* Feedback Section */}
-        <FeedbackSection
-          title="Client Feedback"
-          description="See what our clients have to say and share your own experience with our services."
-          className="py-20"
-        />
+
 
         {/* Case Studies Section */}
         <CaseStudyGrid

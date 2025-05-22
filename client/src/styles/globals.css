@@ -1,9 +1,9 @@
+/* Import enterprise typography system */
+@import './typography.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import enterprise typography system */
-@import './typography.css';
 
 @layer base {
   :root {
