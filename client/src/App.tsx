@@ -148,6 +148,12 @@ function Router() {
             return <LazyRoute component={EnterpriseLayoutDemo} />;
           }}
         </Route>
+        <Route path="/executive-navbar-demo">
+          {() => {
+            const ExecutiveNavbarDemo = React.lazy(() => import("@/pages/executive-navbar-demo"));
+            return <LazyRoute component={ExecutiveNavbarDemo} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
