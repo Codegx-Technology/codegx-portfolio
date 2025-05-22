@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -6,6 +6,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "@/components/ui/toaster";
 import { AnimatePresence } from "framer-motion";
 import { Head } from "@/components/head";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import LazyRoute from "@/components/LazyRoute";
 import CodegxLanding from "@/pages/codegx";
 import Home from "@/pages/index";
 import PersonalPortfolio from "@/pages/home";
@@ -37,21 +39,13 @@ function Router() {
         <Route path="/agency/services">
           {() => {
             const AgencyServices = React.lazy(() => import("@/pages/agency/services"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <AgencyServices />
-              </React.Suspense>
-            );
+            return <LazyRoute component={AgencyServices} />;
           }}
         </Route>
         <Route path="/agency/projects">
           {() => {
             const AgencyProjects = React.lazy(() => import("@/pages/agency/projects"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <AgencyProjects />
-              </React.Suspense>
-            );
+            return <LazyRoute component={AgencyProjects} />;
           }}
         </Route>
         <Route path="/contact" component={Contact} />
@@ -60,132 +54,80 @@ function Router() {
         <Route path="/blog/:slug">
           {({slug}) => {
             const BlogPost = React.lazy(() => import("@/pages/blog/[slug]"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <BlogPost />
-              </React.Suspense>
-            );
+            return <LazyRoute component={BlogPost} />;
           }}
         </Route>
         <Route path="/why-astella" component={WhyAstella} />
         <Route path="/services">
           {() => {
             const Services = React.lazy(() => import("@/pages/services"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Services />
-              </React.Suspense>
-            );
+            return <LazyRoute component={Services} />;
           }}
         </Route>
         <Route path="/services/:slug">
           {({slug}) => {
             const ServiceDetail = React.lazy(() => import("@/pages/services/[slug]"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <ServiceDetail />
-              </React.Suspense>
-            );
+            return <LazyRoute component={ServiceDetail} />;
           }}
         </Route>
         <Route path="/quiz">
           {() => {
             const Quiz = React.lazy(() => import("@/pages/quiz"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Quiz />
-              </React.Suspense>
-            );
+            return <LazyRoute component={Quiz} />;
           }}
         </Route>
         <Route path="/pricing">
           {() => {
             const Pricing = React.lazy(() => import("@/pages/pricing"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Pricing />
-              </React.Suspense>
-            );
+            return <LazyRoute component={Pricing} />;
           }}
         </Route>
         <Route path="/quote-builder">
           {() => {
             const QuoteBuilder = React.lazy(() => import("@/pages/quote-builder"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <QuoteBuilder />
-              </React.Suspense>
-            );
+            return <LazyRoute component={QuoteBuilder} />;
           }}
         </Route>
         <Route path="/quote">
           {() => {
             const Quote = React.lazy(() => import("@/pages/quote"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Quote />
-              </React.Suspense>
-            );
+            return <LazyRoute component={Quote} />;
           }}
         </Route>
         <Route path="/thank-you">
           {() => {
             const ThankYou = React.lazy(() => import("@/pages/thank-you"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <ThankYou />
-              </React.Suspense>
-            );
+            return <LazyRoute component={ThankYou} />;
           }}
         </Route>
         <Route path="/quote/thank-you">
           {() => {
             const QuoteThankYou = React.lazy(() => import("@/pages/quote/thank-you"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <QuoteThankYou />
-              </React.Suspense>
-            );
+            return <LazyRoute component={QuoteThankYou} />;
           }}
         </Route>
         <Route path="/simple-quote">
           {() => {
             const SimpleQuote = React.lazy(() => import("@/pages/simple-quote"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <SimpleQuote />
-              </React.Suspense>
-            );
+            return <LazyRoute component={SimpleQuote} />;
           }}
         </Route>
         <Route path="/simple-quote2">
           {() => {
             const SimpleQuote2 = React.lazy(() => import("@/pages/simple-quote2"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <SimpleQuote2 />
-              </React.Suspense>
-            );
+            return <LazyRoute component={SimpleQuote2} />;
           }}
         </Route>
         <Route path="/quote/simple-thank-you">
           {() => {
             const SimpleThankYou = React.lazy(() => import("@/pages/quote/simple-thank-you"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <SimpleThankYou />
-              </React.Suspense>
-            );
+            return <LazyRoute component={SimpleThankYou} />;
           }}
         </Route>
         <Route path="/quote/simple-thank-you2">
           {() => {
             const SimpleThankYou2 = React.lazy(() => import("@/pages/quote/simple-thank-you2"));
-            return (
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <SimpleThankYou2 />
-              </React.Suspense>
-            );
+            return <LazyRoute component={SimpleThankYou2} />;
           }}
         </Route>
         <Route component={NotFound} />
@@ -194,16 +136,36 @@ function Router() {
   );
 }
 
+// Loading component with skeleton UI
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-pulse space-y-4">
+      <div className="h-12 w-48 bg-gray-200 rounded"></div>
+      <div className="h-4 w-64 bg-gray-200 rounded"></div>
+      <div className="h-4 w-56 bg-gray-200 rounded"></div>
+      <div className="h-4 w-60 bg-gray-200 rounded"></div>
+    </div>
+  </div>
+);
+
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <Head />
-        <Router />
-        <Toaster />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <Head />
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingFallback />}>
+              <Router />
+            </Suspense>
+          </ErrorBoundary>
+          <Toaster />
+          {process.env.NODE_ENV !== 'production' && (
+            <ReactQueryDevtools initialIsOpen={false} />
+          )}
+        </ThemeProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

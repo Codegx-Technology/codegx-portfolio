@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { env } from "@/utils/env";
 
 const quoteSchema = z.object({
   businessType: z.string().min(1, "Business type is required"),
@@ -12,7 +13,7 @@ const quoteSchema = z.object({
 });
 
 // Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(env.RESEND_API_KEY);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -25,13 +26,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Send email via Resend
     const { data: emailData, error } = await resend.emails.send({
-      from: "Codegx Technologies <quotes@codegxtechnologies.com>",
-      to: process.env.FOUNDER_INBOX || "info@codegxtechnologies.com", // Fallback to a default email
+      from: `${env.FROM_NAME} <${env.FROM_EMAIL}>`,
+      to: env.FOUNDER_INBOX,
       subject: `New Simple Quote Request from ${data.name}`,
       html: `
         <h2>Quote Request</h2>
         <p><strong>Submitted on:</strong> ${new Date().toLocaleString()}</p>
-        
+
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Business Type:</strong> ${data.businessType}</p>
@@ -48,14 +49,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Return success response
-    return res.status(200).json({ 
+    return res.status(200).json({
       success: true,
       message: 'Quote request submitted successfully'
     });
 
   } catch (err) {
     console.error('Error processing quote request:', err);
-    
+
     // Handle validation errors
     if (err instanceof z.ZodError) {
       return res.status(400).json({
@@ -63,7 +64,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         details: err.errors
       });
     }
-    
+
     // Handle other errors
     return res.status(500).json({
       error: 'Internal server error',

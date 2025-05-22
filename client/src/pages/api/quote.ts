@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
+import { env } from "@/utils/env";
 
 const quoteSchema = z.object({
   businessType: z.string().min(1),
@@ -12,7 +13,7 @@ const quoteSchema = z.object({
 });
 
 // Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(env.RESEND_API_KEY);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -23,8 +24,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const data = quoteSchema.parse(req.body);
 
     await resend.emails.send({
-      from: "Astella AI <no-reply@astella.ai>",
-      to: process.env.FOUNDER_INBOX || "info@codegxtechnologies.com",
+      from: `${env.FROM_NAME} <${env.FROM_EMAIL}>`,
+      to: env.FOUNDER_INBOX,
       subject: `New Quote Request from ${data.name}`,
       html: `
         <h2>Quote Request</h2>
