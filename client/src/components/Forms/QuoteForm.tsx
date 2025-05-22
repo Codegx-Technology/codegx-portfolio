@@ -12,7 +12,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 // Business types
 const businessTypes = [
@@ -72,16 +72,16 @@ const serviceRecommendations: Record<string, string> = {
 const formSchema = z.object({
   // Step 1: Business Type
   businessType: z.string().min(1, "Please select your business type"),
-  
+
   // Step 2: Project Goals
   projectGoals: z.array(z.string()).min(1, "Please select at least one goal"),
-  
+
   // Step 3: Budget
   budget: z.string().min(1, "Please select your budget range"),
-  
+
   // Step 4: Urgency
   urgency: z.string().min(1, "Please select your timeline"),
-  
+
   // Step 5: Contact Info
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Please enter a valid email"),
@@ -96,7 +96,8 @@ export function QuoteForm() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [, navigate] = useNavigate();
-  
+  const { toast } = useToast();
+
   // Initialize form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -112,18 +113,18 @@ export function QuoteForm() {
       message: ""
     }
   });
-  
+
   const { register, handleSubmit, watch, setValue, formState: { errors, isValid } } = form;
-  
+
   // Watch form values for validation
   const watchBusinessType = watch("businessType");
   const watchProjectGoals = watch("projectGoals");
   const watchBudget = watch("budget");
   const watchUrgency = watch("urgency");
-  
+
   // Calculate progress
   const progress = (step / 5) * 100;
-  
+
   // Handle next step
   const handleNextStep = () => {
     if (step < 5) {
@@ -131,7 +132,7 @@ export function QuoteForm() {
       window.scrollTo(0, 0);
     }
   };
-  
+
   // Handle previous step
   const handlePrevStep = () => {
     if (step > 1) {
@@ -139,7 +140,7 @@ export function QuoteForm() {
       window.scrollTo(0, 0);
     }
   };
-  
+
   // Check if current step is valid
   const isStepValid = () => {
     switch (step) {
@@ -157,11 +158,11 @@ export function QuoteForm() {
         return false;
     }
   };
-  
+
   // Handle checkbox change for project goals
   const handleGoalChange = (checked: boolean | "indeterminate", goalId: string) => {
     const currentGoals = watchProjectGoals || [];
-    
+
     if (checked && !currentGoals.includes(goalId)) {
       setValue("projectGoals", [...currentGoals, goalId], { shouldValidate: true });
     } else if (!checked && currentGoals.includes(goalId)) {
@@ -172,38 +173,38 @@ export function QuoteForm() {
       );
     }
   };
-  
+
   // Get recommended service based on goals
   const getRecommendedService = () => {
     const goals = watchProjectGoals || [];
     if (goals.length === 0) return "AI Strategy & Consulting";
-    
+
     // Count occurrences of each recommendation
     const recommendationCounts: Record<string, number> = {};
     goals.forEach(goal => {
       const recommendation = serviceRecommendations[goal] || "AI Strategy & Consulting";
       recommendationCounts[recommendation] = (recommendationCounts[recommendation] || 0) + 1;
     });
-    
+
     // Find the most frequent recommendation
     let maxCount = 0;
     let topRecommendation = "AI Strategy & Consulting";
-    
+
     Object.entries(recommendationCounts).forEach(([service, count]) => {
       if (count > maxCount) {
         maxCount = count;
         topRecommendation = service;
       }
     });
-    
+
     return topRecommendation;
   };
-  
+
   // Get estimated price range based on budget and goals
   const getEstimatedRange = () => {
     const budget = watchBudget;
     const goals = watchProjectGoals?.length || 0;
-    
+
     // Base ranges
     const ranges = {
       under10k: "5,000 - 10,000",
@@ -213,14 +214,14 @@ export function QuoteForm() {
       over100k: "100,000+",
       flexible: "15,000 - 50,000"
     };
-    
+
     return ranges[budget as keyof typeof ranges] || "15,000 - 50,000";
   };
-  
+
   // Handle form submission
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
+
     try {
       // Add recommendation data
       const submissionData = {
@@ -228,21 +229,25 @@ export function QuoteForm() {
         recommendedService: getRecommendedService(),
         estimatedRange: getEstimatedRange()
       };
-      
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       // Show success toast
-      toast.success("Quote request submitted successfully!", {
-        description: "We'll be in touch with you shortly."
+      toast({
+        title: "Quote request submitted successfully!",
+        description: "We'll be in touch with you shortly.",
+        variant: "default",
       });
-      
+
       // Navigate to thank you page
       navigate("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast.error("Failed to submit quote request", {
-        description: "Please try again or contact us directly."
+      toast({
+        title: "Failed to submit quote request",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -259,7 +264,7 @@ export function QuoteForm() {
         </div>
         <Progress value={progress} className="h-2" />
       </div>
-      
+
       {/* Step 1: Business Type */}
       <AnimatePresence mode="wait">
         {step === 1 && (
@@ -275,7 +280,7 @@ export function QuoteForm() {
             <p className="text-muted-foreground mb-6">
               This helps us understand your specific needs and tailor our solutions accordingly.
             </p>
-            
+
             <div className="space-y-4">
               <Label htmlFor="businessType">Business Type</Label>
               <Select
@@ -299,7 +304,7 @@ export function QuoteForm() {
             </div>
           </motion.div>
         )}
-        
+
         {/* Step 2: Project Goals */}
         {step === 2 && (
           <motion.div
@@ -314,7 +319,7 @@ export function QuoteForm() {
             <p className="text-muted-foreground mb-6">
               Select all that apply. This helps us recommend the right AI services for your needs.
             </p>
-            
+
             <div className="space-y-4">
               {projectGoals.map((goal) => (
                 <div key={goal.id} className="flex items-start space-x-2">
@@ -337,7 +342,7 @@ export function QuoteForm() {
             </div>
           </motion.div>
         )}
-        
+
         {/* Step 3: Budget */}
         {step === 3 && (
           <motion.div
@@ -352,7 +357,7 @@ export function QuoteForm() {
             <p className="text-muted-foreground mb-6">
               This helps us recommend solutions that align with your financial considerations.
             </p>
-            
+
             <RadioGroup
               value={watchBudget}
               onValueChange={(value) => setValue("budget", value, { shouldValidate: true })}
@@ -372,7 +377,7 @@ export function QuoteForm() {
             )}
           </motion.div>
         )}
-        
+
         {/* Step 4: Urgency */}
         {step === 4 && (
           <motion.div
@@ -387,7 +392,7 @@ export function QuoteForm() {
             <p className="text-muted-foreground mb-6">
               Let us know when you're looking to start and complete your project.
             </p>
-            
+
             <RadioGroup
               value={watchUrgency}
               onValueChange={(value) => setValue("urgency", value, { shouldValidate: true })}
@@ -407,7 +412,7 @@ export function QuoteForm() {
             )}
           </motion.div>
         )}
-        
+
         {/* Step 5: Contact Info & Summary */}
         {step === 5 && (
           <motion.div
@@ -425,7 +430,7 @@ export function QuoteForm() {
                 <p className="text-muted-foreground mb-4">
                   Please provide your details so we can get back to you with a personalized quote.
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="name">Full Name *</Label>
@@ -438,7 +443,7 @@ export function QuoteForm() {
                       <p className="text-sm text-red-500">{errors.name.message}</p>
                     )}
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
@@ -451,7 +456,7 @@ export function QuoteForm() {
                       <p className="text-sm text-red-500">{errors.email.message}</p>
                     )}
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="phone">Phone Number (optional)</Label>
                     <Input
@@ -460,7 +465,7 @@ export function QuoteForm() {
                       placeholder="Your phone number"
                     />
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="company">Company Name (optional)</Label>
                     <Input
@@ -469,7 +474,7 @@ export function QuoteForm() {
                       placeholder="Your company"
                     />
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="message">Additional Details (optional)</Label>
                     <Textarea
@@ -481,11 +486,11 @@ export function QuoteForm() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Quote Summary */}
               <div className="bg-card rounded-lg border border-border p-6">
                 <h3 className="text-xl font-bold mb-4">Your Quote Summary</h3>
-                
+
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Business Type</h4>
@@ -493,7 +498,7 @@ export function QuoteForm() {
                       {businessTypes.find(t => t.value === watchBusinessType)?.label || "Not specified"}
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Project Goals</h4>
                     <ul className="list-disc pl-5">
@@ -504,26 +509,26 @@ export function QuoteForm() {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Budget Range</h4>
                     <p>
                       {budgetRanges.find(b => b.value === watchBudget)?.label || "Not specified"}
                     </p>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Timeline</h4>
                     <p>
                       {urgencyOptions.find(u => u.value === watchUrgency)?.label || "Not specified"}
                     </p>
                   </div>
-                  
+
                   <div className="pt-4 border-t">
                     <h4 className="font-medium text-sm text-muted-foreground">Recommended Service</h4>
                     <p className="font-bold text-primary">{getRecommendedService()}</p>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Estimated Price Range</h4>
                     <p className="font-bold">${getEstimatedRange()}</p>
@@ -537,7 +542,7 @@ export function QuoteForm() {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       {/* Navigation Buttons */}
       <div className="flex justify-between mt-8">
         {step > 1 ? (
@@ -548,7 +553,7 @@ export function QuoteForm() {
         ) : (
           <div></div>
         )}
-        
+
         {step < 5 ? (
           <Button
             type="button"

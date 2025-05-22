@@ -4,7 +4,6 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as SonnerToaster } from "sonner";
 import { AnimatePresence } from "framer-motion";
 import { Head } from "@/components/head";
 import CodegxLanding from "@/pages/codegx";
@@ -152,7 +151,6 @@ function App() {
         <Head />
         <Router />
         <Toaster />
-        <SonnerToaster position="top-right" />
         <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </QueryClientProvider>
