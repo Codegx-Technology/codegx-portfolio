@@ -266,9 +266,9 @@ export function QuoteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full max-w-md mx-auto">
       {/* Progress Bar */}
-      <div className="mb-8">
+      <div className="mb-6">
         <div className="flex justify-between text-sm mb-2">
           <span>Step {step} of 5</span>
           <span>{Math.round(progress)}%</span>
@@ -287,8 +287,8 @@ export function QuoteForm() {
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold">Tell us about your business</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">Tell us about your business</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
               This helps us understand your specific needs and tailor our solutions accordingly.
             </p>
 
@@ -298,7 +298,7 @@ export function QuoteForm() {
                 value={watchBusinessType}
                 onValueChange={(value) => setValue("businessType", value, { shouldValidate: true })}
               >
-                <SelectTrigger id="businessType" className="w-full">
+                <SelectTrigger id="businessType" className="w-full min-h-[44px]">
                   <SelectValue placeholder="Select your business type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -326,22 +326,23 @@ export function QuoteForm() {
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold">What are your project goals?</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">What are your project goals?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
               Select all that apply. This helps us recommend the right AI services for your needs.
             </p>
 
             <div className="space-y-4">
               {projectGoals.map((goal) => (
-                <div key={goal.id} className="flex items-start space-x-2">
+                <div key={goal.id} className="flex items-start space-x-2 min-h-[44px] py-1">
                   <Checkbox
                     id={goal.id}
                     checked={watchProjectGoals?.includes(goal.id)}
                     onCheckedChange={(checked) => handleGoalChange(checked, goal.id)}
+                    className="mt-1"
                   />
                   <Label
                     htmlFor={goal.id}
-                    className="cursor-pointer"
+                    className="cursor-pointer text-sm sm:text-base"
                   >
                     {goal.label}
                   </Label>
@@ -364,8 +365,8 @@ export function QuoteForm() {
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold">What's your budget range?</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">What's your budget range?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
               This helps us recommend solutions that align with your financial considerations.
             </p>
 
@@ -375,9 +376,9 @@ export function QuoteForm() {
               className="space-y-3"
             >
               {budgetRanges.map((range) => (
-                <div key={range.value} className="flex items-center space-x-2">
+                <div key={range.value} className="flex items-center space-x-2 min-h-[44px] py-1">
                   <RadioGroupItem value={range.value} id={`budget-${range.value}`} />
-                  <Label htmlFor={`budget-${range.value}`} className="cursor-pointer">
+                  <Label htmlFor={`budget-${range.value}`} className="cursor-pointer text-sm sm:text-base">
                     {range.label}
                   </Label>
                 </div>
@@ -399,8 +400,8 @@ export function QuoteForm() {
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            <h2 className="text-2xl font-bold">What's your timeline?</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold">What's your timeline?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
               Let us know when you're looking to start and complete your project.
             </p>
 
@@ -410,9 +411,9 @@ export function QuoteForm() {
               className="space-y-3"
             >
               {urgencyOptions.map((option) => (
-                <div key={option.value} className="flex items-center space-x-2">
+                <div key={option.value} className="flex items-center space-x-2 min-h-[44px] py-1">
                   <RadioGroupItem value={option.value} id={`urgency-${option.value}`} />
-                  <Label htmlFor={`urgency-${option.value}`} className="cursor-pointer">
+                  <Label htmlFor={`urgency-${option.value}`} className="cursor-pointer text-sm sm:text-base">
                     {option.label}
                   </Label>
                 </div>
@@ -434,11 +435,11 @@ export function QuoteForm() {
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {/* Contact Form */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">Your Contact Information</h2>
-                <p className="text-muted-foreground mb-4">
+                <h2 className="text-xl sm:text-2xl font-bold">Your Contact Information</h2>
+                <p className="text-sm sm:text-base text-muted-foreground mb-4">
                   Please provide your details so we can get back to you with a personalized quote.
                 </p>
 
@@ -449,6 +450,7 @@ export function QuoteForm() {
                       id="name"
                       {...register("name")}
                       placeholder="Your name"
+                      className="min-h-[44px]"
                     />
                     {errors.name && (
                       <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -462,6 +464,7 @@ export function QuoteForm() {
                       type="email"
                       {...register("email")}
                       placeholder="your.email@example.com"
+                      className="min-h-[44px]"
                     />
                     {errors.email && (
                       <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -474,6 +477,7 @@ export function QuoteForm() {
                       id="phone"
                       {...register("phone")}
                       placeholder="Your phone number"
+                      className="min-h-[44px]"
                     />
                   </div>
 
@@ -483,6 +487,7 @@ export function QuoteForm() {
                       id="company"
                       {...register("company")}
                       placeholder="Your company"
+                      className="min-h-[44px]"
                     />
                   </div>
 
@@ -493,6 +498,7 @@ export function QuoteForm() {
                       {...register("message")}
                       placeholder="Tell us more about your project"
                       rows={4}
+                      className="min-h-[100px]"
                     />
                   </div>
                 </div>
@@ -555,14 +561,19 @@ export function QuoteForm() {
       </AnimatePresence>
 
       {/* Navigation Buttons */}
-      <div className="flex justify-between mt-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between gap-3 mt-6">
         {step > 1 ? (
-          <Button type="button" variant="outline" onClick={handlePrevStep}>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handlePrevStep}
+            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl"
+          >
             <i className="fas fa-arrow-left mr-2"></i>
             Previous
           </Button>
         ) : (
-          <div></div>
+          <div className="hidden sm:block"></div>
         )}
 
         {step < 5 ? (
@@ -570,6 +581,7 @@ export function QuoteForm() {
             type="button"
             onClick={handleNextStep}
             disabled={!isStepValid()}
+            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl"
           >
             Next
             <i className="fas fa-arrow-right ml-2"></i>
@@ -578,7 +590,7 @@ export function QuoteForm() {
           <Button
             type="submit"
             disabled={!isStepValid() || isSubmitting}
-            className="min-w-[120px]"
+            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl min-w-[120px]"
           >
             {isSubmitting ? (
               <>

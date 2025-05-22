@@ -86,5 +86,33 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.pt-safe': {
+          paddingTop: 'env(safe-area-inset-top)'
+        },
+        '.pr-safe': {
+          paddingRight: 'env(safe-area-inset-right)'
+        },
+        '.pb-safe': {
+          paddingBottom: 'env(safe-area-inset-bottom)'
+        },
+        '.pl-safe': {
+          paddingLeft: 'env(safe-area-inset-left)'
+        },
+        '.px-safe': {
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)'
+        },
+        '.py-safe': {
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)'
+        }
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 } satisfies Config;

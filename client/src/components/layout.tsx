@@ -18,9 +18,11 @@ export function Layout({ children, className = "" }: LayoutProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
-        className={`flex-grow ${className}`}
+        className={`flex-grow pt-safe pb-safe ${className}`}
       >
-        {children}
+        <div className="px-safe">
+          {children}
+        </div>
       </motion.main>
       <Footer />
       <BackToTop />

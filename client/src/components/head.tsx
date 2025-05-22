@@ -55,6 +55,7 @@ export function Head({
       {/* Basic metadata */}
       <title>{siteTitle}</title>
       <meta name="description" content={description} />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph */}
