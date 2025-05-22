@@ -8,6 +8,7 @@ import { AnimatePresence } from "framer-motion";
 import { Head } from "@/components/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import LazyRoute from "@/components/LazyRoute";
+import { ThemeProvider } from "@/components/theme-provider";
 import CodegxLanding from "@/pages/codegx";
 import Home from "@/pages/index";
 import PersonalPortfolio from "@/pages/home";
@@ -134,6 +135,12 @@ function Router() {
           {() => {
             const UIKit = React.lazy(() => import("@/pages/ui-kit"));
             return <LazyRoute component={UIKit} />;
+          }}
+        </Route>
+        <Route path="/augment-demo">
+          {() => {
+            const AugmentDemo = React.lazy(() => import("@/pages/augment-demo"));
+            return <LazyRoute component={AugmentDemo} />;
           }}
         </Route>
         <Route component={NotFound} />

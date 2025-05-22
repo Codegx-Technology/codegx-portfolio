@@ -8,13 +8,13 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className = "" }: ThemeToggleProps) {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => toggleTheme()}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={`relative h-9 w-9 rounded-full ${className}`}
       aria-label="Toggle theme"
     >
