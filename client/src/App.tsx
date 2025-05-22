@@ -184,6 +184,12 @@ function Router() {
             return <LazyRoute component={EnhancedServices} />;
           }}
         </Route>
+        <Route path="/footer-demo">
+          {() => {
+            const FooterDemo = React.lazy(() => import("@/pages/footer-demo"));
+            return <LazyRoute component={FooterDemo} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

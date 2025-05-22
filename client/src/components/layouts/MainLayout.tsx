@@ -119,8 +119,9 @@ export function MainLayout({
       </motion.main>
 
       <Footer
-        companyName="Astella AI"
-        companyDescription="A stellar force for AI innovation in enterprise, education, and public service."
+        isAgencyPage={isAgencyPage}
+        variant="default"
+        showNewsletter={false}
       />
       <BackToTop />
     </div>
