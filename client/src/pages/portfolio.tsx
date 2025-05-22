@@ -219,9 +219,9 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-sm text-[#c8a951]/80 dark:text-[#9f7b42]/80 font-medium"
+                  className="text-xs text-[#c8a951]/80 dark:text-[#9f7b42]/80 font-medium"
                 >
-                  Founder of Astella AI & Codegx Technologies
+                  Founder of Codegx Technologies & Astella AI
                 </motion.p>
 
                 <motion.div
