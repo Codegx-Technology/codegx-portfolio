@@ -117,42 +117,49 @@ export default function CaseStudies() {
               className="w-full"
             >
               <div className="flex justify-center mb-6">
-                <TabsList className="bg-card border border-border p-1 shadow-sm">
-                  {industries.map((industry) => (
-                    <TabsTrigger
-                      key={industry}
-                      value={industry}
-                      className="px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-white"
-                    >
-                      {industry === "all" ? "All Industries" : industry}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+                <EnterpriseCard className="p-1 shadow-md border-primary/20">
+                  <TabsList className="bg-transparent border-0 shadow-none">
+                    {industries.map((industry) => (
+                      <TabsTrigger
+                        key={industry}
+                        value={industry}
+                        className="px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200"
+                      >
+                        {industry === "all" ? "All Industries" : industry}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </EnterpriseCard>
               </div>
 
               {industries.map((industry) => (
                 <TabsContent key={industry} value={industry} className="mt-0">
                   {isLoading ? (
-                    <div className="text-center py-20">
-                      <div className="animate-spin w-10 h-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-                      <Paragraph className="text-muted-foreground">Loading case studies...</Paragraph>
-                    </div>
+                    <EnterpriseCard className="py-20 text-center border-dashed">
+                      <div className="animate-spin w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-6"></div>
+                      <Heading3 className="text-xl mb-2">Loading Case Studies</Heading3>
+                      <Paragraph className="text-muted-foreground">Please wait while we fetch the latest case studies...</Paragraph>
+                    </EnterpriseCard>
                   ) : error ? (
-                    <div className="text-center py-20">
-                      <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i className="fas fa-exclamation-triangle text-2xl"></i>
+                    <EnterpriseCard className="py-20 text-center border-red-200 dark:border-red-900/30">
+                      <div className="w-20 h-20 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i className="fas fa-exclamation-triangle text-3xl"></i>
                       </div>
-                      <Heading3 className="text-red-500 mb-2">Error Loading Data</Heading3>
-                      <Paragraph className="text-muted-foreground">Unable to load case studies. Please try again later.</Paragraph>
-                    </div>
+                      <Heading3 className="text-red-500 mb-3">Error Loading Data</Heading3>
+                      <Paragraph className="text-muted-foreground max-w-md mx-auto">
+                        We encountered an issue while loading the case studies. Please try again later or contact our support team.
+                      </Paragraph>
+                    </EnterpriseCard>
                   ) : filteredCaseStudies.length === 0 ? (
-                    <div className="text-center py-20">
-                      <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i className="fas fa-search text-2xl"></i>
+                    <EnterpriseCard className="py-20 text-center border-primary/20">
+                      <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i className="fas fa-search text-3xl"></i>
                       </div>
-                      <Heading3 className="mb-2">No Results Found</Heading3>
-                      <Paragraph className="text-muted-foreground">No case studies found for this industry.</Paragraph>
-                    </div>
+                      <Heading3 className="mb-3">No Results Found</Heading3>
+                      <Paragraph className="text-muted-foreground max-w-md mx-auto">
+                        No case studies found for this industry. Try selecting a different industry from the filters above.
+                      </Paragraph>
+                    </EnterpriseCard>
                   ) : (
                     <motion.div
                       variants={{
