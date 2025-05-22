@@ -36,6 +36,7 @@ export function Navbar() {
   const agencyLinks = [
     { href: "/why-astella", label: "Why Astella" },
     { href: "/services", label: "Services" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/agency/projects", label: "Projects" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },
@@ -138,6 +139,9 @@ export function Navbar() {
                     </Link>
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem className="px-2 py-1.5 text-xs text-muted-foreground" asChild>
+                  <div>Services & Pricing</div>
+                </DropdownMenuItem>
                 {agencyLinks.slice(1, 3).map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link
@@ -151,7 +155,7 @@ export function Navbar() {
                 <DropdownMenuItem className="px-2 py-1.5 text-xs text-muted-foreground" asChild>
                   <div>Resources</div>
                 </DropdownMenuItem>
-                {agencyLinks.slice(3).map((link) => (
+                {agencyLinks.slice(3, 6).map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link
                       href={link.href}
@@ -220,7 +224,20 @@ export function Navbar() {
                   <div className="px-3 py-2">
                     <div className="font-medium mb-2">Agency</div>
                     <div className="pl-3 border-l-2 border-muted space-y-2">
-                      {agencyLinks.slice(0, 3).map((link) => (
+                      {agencyLinks.slice(0, 1).map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={`block py-1 px-2 rounded hover:bg-primary/10 ${
+                            location === link.href ? "text-primary font-medium" : ""
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                      <div className="py-1 px-2 text-xs text-muted-foreground mt-2">Services & Pricing</div>
+                      {agencyLinks.slice(1, 3).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
@@ -233,7 +250,7 @@ export function Navbar() {
                         </Link>
                       ))}
                       <div className="py-1 px-2 text-xs text-muted-foreground mt-2">Resources</div>
-                      {agencyLinks.slice(3).map((link) => (
+                      {agencyLinks.slice(3, 6).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}

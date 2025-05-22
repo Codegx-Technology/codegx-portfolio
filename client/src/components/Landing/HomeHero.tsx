@@ -56,7 +56,7 @@ export function HomeHero() {
           >
             <div className="inline-block px-4 py-1 rounded-full bg-primary/10 mb-4 backdrop-blur-sm">
               <span className="text-sm font-semibold text-primary">
-                {agencyProfile?.name || "Codegx Technology"}
+                {agencyProfile?.name || "Codegx Technologies"}
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter leading-tight">
@@ -135,7 +135,7 @@ export function HomeHero() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-xl font-bold mb-2">Codegx Technology</h3>
+                  <h3 className="text-xl font-bold mb-2">Codegx Technologies</h3>
                   <p className="text-muted-foreground mb-4">
                     Innovative technology solutions for businesses and organizations
                   </p>
