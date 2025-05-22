@@ -26,8 +26,14 @@ function Router() {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <Switch key={location}>
-        <Route path="/" component={CodegxLanding} />
+        <Route path="/">
+          {() => {
+            const ProfessionalHome = React.lazy(() => import("@/pages/professional-home"));
+            return <LazyRoute component={ProfessionalHome} />;
+          }}
+        </Route>
         <Route path="/home" component={Home} />
+        <Route path="/codegx-landing" component={CodegxLanding} />
         <Route path="/portfolio" component={PersonalPortfolio} />
         <Route path="/agency">
           {() => {
