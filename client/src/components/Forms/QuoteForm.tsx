@@ -266,15 +266,16 @@ export function QuoteForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full max-w-md mx-auto">
-      {/* Progress Bar */}
-      <div className="mb-6">
-        <div className="flex justify-between text-sm mb-2">
-          <span>Step {step} of 5</span>
-          <span>{Math.round(progress)}%</span>
+    <div className="max-w-md mx-auto w-full space-y-4 px-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full">
+        {/* Progress Bar */}
+        <div className="mb-6">
+          <div className="flex justify-between text-sm mb-2">
+            <span>Step {step} of 5</span>
+            <span>{Math.round(progress)}%</span>
+          </div>
+          <Progress value={progress} className="h-2 rounded-full" />
         </div>
-        <Progress value={progress} className="h-2" />
-      </div>
 
       {/* Step 1: Business Type */}
       <AnimatePresence mode="wait">
@@ -298,7 +299,7 @@ export function QuoteForm() {
                 value={watchBusinessType}
                 onValueChange={(value) => setValue("businessType", value, { shouldValidate: true })}
               >
-                <SelectTrigger id="businessType" className="w-full min-h-[44px]">
+                <SelectTrigger id="businessType" className="w-full min-h-[44px] py-3 px-4 rounded-xl focus:outline-none text-sm">
                   <SelectValue placeholder="Select your business type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -333,16 +334,16 @@ export function QuoteForm() {
 
             <div className="space-y-4">
               {projectGoals.map((goal) => (
-                <div key={goal.id} className="flex items-start space-x-2 min-h-[44px] py-1">
+                <div key={goal.id} className="flex items-start space-x-3 min-h-[44px] py-1">
                   <Checkbox
                     id={goal.id}
                     checked={watchProjectGoals?.includes(goal.id)}
                     onCheckedChange={(checked) => handleGoalChange(checked, goal.id)}
-                    className="mt-1"
+                    className="mt-1 focus:outline-none rounded"
                   />
                   <Label
                     htmlFor={goal.id}
-                    className="cursor-pointer text-sm sm:text-base"
+                    className="cursor-pointer text-sm"
                   >
                     {goal.label}
                   </Label>
@@ -376,9 +377,9 @@ export function QuoteForm() {
               className="space-y-3"
             >
               {budgetRanges.map((range) => (
-                <div key={range.value} className="flex items-center space-x-2 min-h-[44px] py-1">
-                  <RadioGroupItem value={range.value} id={`budget-${range.value}`} />
-                  <Label htmlFor={`budget-${range.value}`} className="cursor-pointer text-sm sm:text-base">
+                <div key={range.value} className="flex items-center space-x-3 min-h-[44px] py-1">
+                  <RadioGroupItem value={range.value} id={`budget-${range.value}`} className="focus:outline-none" />
+                  <Label htmlFor={`budget-${range.value}`} className="cursor-pointer text-sm">
                     {range.label}
                   </Label>
                 </div>
@@ -411,9 +412,9 @@ export function QuoteForm() {
               className="space-y-3"
             >
               {urgencyOptions.map((option) => (
-                <div key={option.value} className="flex items-center space-x-2 min-h-[44px] py-1">
-                  <RadioGroupItem value={option.value} id={`urgency-${option.value}`} />
-                  <Label htmlFor={`urgency-${option.value}`} className="cursor-pointer text-sm sm:text-base">
+                <div key={option.value} className="flex items-center space-x-3 min-h-[44px] py-1">
+                  <RadioGroupItem value={option.value} id={`urgency-${option.value}`} className="focus:outline-none" />
+                  <Label htmlFor={`urgency-${option.value}`} className="cursor-pointer text-sm">
                     {option.label}
                   </Label>
                 </div>
@@ -450,7 +451,7 @@ export function QuoteForm() {
                       id="name"
                       {...register("name")}
                       placeholder="Your name"
-                      className="min-h-[44px]"
+                      className="w-full min-h-[44px] py-3 px-4 rounded-xl text-sm focus:outline-none"
                     />
                     {errors.name && (
                       <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -464,7 +465,7 @@ export function QuoteForm() {
                       type="email"
                       {...register("email")}
                       placeholder="your.email@example.com"
-                      className="min-h-[44px]"
+                      className="w-full min-h-[44px] py-3 px-4 rounded-xl text-sm focus:outline-none"
                     />
                     {errors.email && (
                       <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -477,7 +478,7 @@ export function QuoteForm() {
                       id="phone"
                       {...register("phone")}
                       placeholder="Your phone number"
-                      className="min-h-[44px]"
+                      className="w-full min-h-[44px] py-3 px-4 rounded-xl text-sm focus:outline-none"
                     />
                   </div>
 
@@ -487,7 +488,7 @@ export function QuoteForm() {
                       id="company"
                       {...register("company")}
                       placeholder="Your company"
-                      className="min-h-[44px]"
+                      className="w-full min-h-[44px] py-3 px-4 rounded-xl text-sm focus:outline-none"
                     />
                   </div>
 
@@ -498,29 +499,29 @@ export function QuoteForm() {
                       {...register("message")}
                       placeholder="Tell us more about your project"
                       rows={4}
-                      className="min-h-[100px]"
+                      className="w-full min-h-[100px] py-3 px-4 rounded-xl text-sm focus:outline-none"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Quote Summary */}
-              <div className="bg-card rounded-lg border border-border p-6">
-                <h3 className="text-xl font-bold mb-4">Your Quote Summary</h3>
+              <div className="bg-card rounded-xl border border-border p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-4">Your Quote Summary</h3>
 
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Business Type</h4>
-                    <p>
+                    <p className="text-sm">
                       {businessTypes.find(t => t.value === watchBusinessType)?.label || "Not specified"}
                     </p>
                   </div>
 
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Project Goals</h4>
-                    <ul className="list-disc pl-5">
+                    <ul className="list-disc pl-5 text-sm">
                       {watchProjectGoals.map(goalId => (
-                        <li key={goalId}>
+                        <li key={goalId} className="mb-1">
                           {projectGoals.find(g => g.id === goalId)?.label}
                         </li>
                       ))}
@@ -529,26 +530,26 @@ export function QuoteForm() {
 
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Budget Range</h4>
-                    <p>
+                    <p className="text-sm">
                       {budgetRanges.find(b => b.value === watchBudget)?.label || "Not specified"}
                     </p>
                   </div>
 
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Timeline</h4>
-                    <p>
+                    <p className="text-sm">
                       {urgencyOptions.find(u => u.value === watchUrgency)?.label || "Not specified"}
                     </p>
                   </div>
 
                   <div className="pt-4 border-t">
                     <h4 className="font-medium text-sm text-muted-foreground">Recommended Service</h4>
-                    <p className="font-bold text-primary">{getRecommendedService()}</p>
+                    <p className="font-bold text-primary text-sm">{getRecommendedService()}</p>
                   </div>
 
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">Estimated Price Range</h4>
-                    <p className="font-bold">${getEstimatedRange()}</p>
+                    <p className="font-bold text-sm">${getEstimatedRange()}</p>
                     <p className="text-xs text-muted-foreground mt-1">
                       This is an estimate based on your inputs. Your final quote may vary based on specific requirements.
                     </p>
@@ -567,7 +568,7 @@ export function QuoteForm() {
             type="button"
             variant="outline"
             onClick={handlePrevStep}
-            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl"
+            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl focus:outline-none"
           >
             <i className="fas fa-arrow-left mr-2"></i>
             Previous
@@ -581,7 +582,7 @@ export function QuoteForm() {
             type="button"
             onClick={handleNextStep}
             disabled={!isStepValid()}
-            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl"
+            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl focus:outline-none"
           >
             Next
             <i className="fas fa-arrow-right ml-2"></i>
@@ -590,7 +591,7 @@ export function QuoteForm() {
           <Button
             type="submit"
             disabled={!isStepValid() || isSubmitting}
-            className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl min-w-[120px]"
+            className="w-full sm:w-auto min-h-[44px] py-3 px-6 rounded-xl min-w-[120px] focus:outline-none"
           >
             {isSubmitting ? (
               <>
@@ -609,6 +610,7 @@ export function QuoteForm() {
         )}
       </div>
     </form>
+    </div>
   );
 }
 

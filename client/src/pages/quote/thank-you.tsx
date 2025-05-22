@@ -85,8 +85,8 @@ export default function ThankYou() {
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6">
               <i className="fas fa-check-circle text-4xl"></i>
             </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-inter mb-3 sm:mb-4">Thanks! We'll Review Your Project</h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold font-inter mb-3 sm:mb-4">Thanks! We'll Review Your Project</h1>
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8">
               We've received your quote request and will get back to you shortly with a detailed proposal.
               Our team is excited to learn more about your project and how we can help bring your AI vision to life.
             </p>
@@ -166,15 +166,15 @@ export default function ThankYou() {
               )}
             </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-6">
               <Link href="/services">
-                <Button className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl">
+                <Button className="w-full sm:w-auto min-h-[44px] py-3 px-6 rounded-xl focus:outline-none">
                   <i className="fas fa-th-large mr-2"></i>
                   Explore Our Services
                 </Button>
               </Link>
               <Link href="/blog">
-                <Button variant="outline" className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl">
+                <Button variant="outline" className="w-full sm:w-auto min-h-[44px] py-3 px-6 rounded-xl focus:outline-none">
                   <i className="fas fa-book mr-2"></i>
                   Read Our Blog
                 </Button>
