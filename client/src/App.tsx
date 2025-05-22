@@ -68,7 +68,16 @@ function Router() {
           }}
         </Route>
         <Route path="/why-astella" component={WhyAstella} />
-        <Route path="/services" component={() => import("@/pages/services").then(mod => <mod.default />)} />
+        <Route path="/services">
+          {() => {
+            const Services = React.lazy(() => import("@/pages/services"));
+            return (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Services />
+              </React.Suspense>
+            );
+          }}
+        </Route>
         <Route path="/services/:slug">
           {({slug}) => {
             const ServiceDetail = React.lazy(() => import("@/pages/services/[slug]"));
