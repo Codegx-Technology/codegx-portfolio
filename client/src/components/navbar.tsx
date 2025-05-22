@@ -38,6 +38,7 @@ export function Navbar() {
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Pricing" },
     { href: "/quote", label: "Get a Quote" },
+    { href: "/simple-quote", label: "Quick Quote" },
     { href: "/agency/projects", label: "Projects" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/blog", label: "Blog" },
