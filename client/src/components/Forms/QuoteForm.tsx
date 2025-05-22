@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useNavigate } from "wouter";
+import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -95,7 +95,7 @@ type FormValues = z.infer<typeof formSchema>;
 export function QuoteForm() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [, navigate] = useNavigate();
+  const [, setLocation] = useLocation();
   const { toast } = useToast();
 
   // Initialize form
@@ -252,7 +252,7 @@ export function QuoteForm() {
       });
 
       // Navigate to thank you page
-      navigate("/quote/thank-you");
+      setLocation("/quote/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({
