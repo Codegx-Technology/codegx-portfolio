@@ -196,6 +196,12 @@ function Router() {
             return <LazyRoute component={ModernHome} />;
           }}
         </Route>
+        <Route path="/professional-home">
+          {() => {
+            const ProfessionalHome = React.lazy(() => import("@/pages/professional-home"));
+            return <LazyRoute component={ProfessionalHome} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
