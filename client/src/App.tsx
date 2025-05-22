@@ -142,6 +142,12 @@ function Router() {
             return <LazyRoute component={AugmentDemo} />;
           }}
         </Route>
+        <Route path="/enterprise-layout-demo">
+          {() => {
+            const EnterpriseLayoutDemo = React.lazy(() => import("@/pages/enterprise-layout-demo"));
+            return <LazyRoute component={EnterpriseLayoutDemo} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>
