@@ -107,7 +107,7 @@ export function ExecutiveNavbar({
     { href: "/portfolio", label: "Portfolio" },
     {
       href: "/agency",
-      label: "Agency",
+      label: "Astella AI",
       children: [
         { href: "/agency", label: "Why Astella", icon: <ChevronRight className="h-4 w-4" /> },
         { href: "/agency/projects", label: "Projects", icon: <ChevronRight className="h-4 w-4" /> },

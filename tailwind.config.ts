@@ -5,10 +5,10 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      jakarta: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      heading: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      heading: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      body: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      jakarta: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
     },
     extend: {
       borderRadius: {
