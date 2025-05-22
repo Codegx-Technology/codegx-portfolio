@@ -83,7 +83,7 @@ export default function AgencyPage() {
 
   return (
     <motion.div
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen bg-white dark:bg-[#121212] text-[#2c1a22] dark:text-white"
       initial="initial"
       animate="animate"
       exit="exit"
@@ -103,18 +103,30 @@ export default function AgencyPage() {
           {/* Team Section */}
           {agencyProfile?.team && agencyProfile.team.length > 0 && (
             <motion.section
-              className="py-16 bg-background"
+              className="py-20 bg-white dark:bg-[#121212] relative overflow-hidden"
               variants={sectionVariants}
             >
-              <div className="container mx-auto px-4">
+              {/* Background Elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
+
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-center mb-12"
+                  className="text-center mb-16"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+                    Our Experts
+                  </div>
+
+                  <h2 className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white">
+                    Meet Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Team</span>
+                  </h2>
+
+                  <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                     Meet the talented professionals behind our innovative solutions.
                   </p>
                 </motion.div>
@@ -127,32 +139,39 @@ export default function AgencyPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="bg-background rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-border"
+                      whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                      className="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-[#2c1a22]/50 group"
                     >
                       <div className="flex flex-col items-center text-center">
-                        <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
-                          <img
-                            src={member.photo}
-                            alt={member.name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).src = "https://via.placeholder.com/150?text=Team";
-                            }}
-                          />
+                        <div className="relative mb-6">
+                          {/* Background layers for depth */}
+                          <div className="absolute -inset-1 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 blur-sm"></div>
+
+                          <div className="w-28 h-28 rounded-full overflow-hidden relative border-2 border-[#c8a951]/30 dark:border-[#9f7b42]/30">
+                            <img
+                              src={member.photo}
+                              alt={member.name}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src = "https://via.placeholder.com/150?text=Team";
+                              }}
+                            />
+                          </div>
                         </div>
-                        <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                        <p className="text-primary text-sm mb-3">{member.position}</p>
-                        <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
+
+                        <h3 className="text-xl font-bold mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">{member.name}</h3>
+                        <p className="text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4">{member.position}</p>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm mb-6">{member.bio}</p>
 
                         {member.socials && member.socials.length > 0 && (
-                          <div className="flex space-x-3">
+                          <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800 w-full">
                             {member.socials.map((social, idx) => (
                               <motion.a
                                 key={idx}
                                 href={social.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-8 h-8 flex items-center justify-center rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+                                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10 text-gray-600 dark:text-gray-400 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                                 aria-label={`${member.name}'s ${social.platform}`}
@@ -173,18 +192,41 @@ export default function AgencyPage() {
           {/* Testimonials Section */}
           {agencyProfile?.testimonials && agencyProfile.testimonials.length > 0 && (
             <motion.section
-              className="py-16 bg-muted/30"
+              className="py-20 bg-gray-50 dark:bg-[#1a1a1a] relative overflow-hidden"
               variants={sectionVariants}
             >
-              <div className="container mx-auto px-4">
+              {/* Circuit pattern overlay */}
+              <div className="absolute inset-0 z-0 opacity-5">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                    <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                    <circle cx="50" cy="50" r="3" fill="currentColor" />
+                    <circle cx="25" cy="25" r="2" fill="currentColor" />
+                    <circle cx="75" cy="25" r="2" fill="currentColor" />
+                    <circle cx="25" cy="75" r="2" fill="currentColor" />
+                    <circle cx="75" cy="75" r="2" fill="currentColor" />
+                  </pattern>
+                  <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+                </svg>
+              </div>
+
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-center mb-12"
+                  className="text-center mb-16"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+                    Client Success
+                  </div>
+
+                  <h2 className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white">
+                    What Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Clients Say</span>
+                  </h2>
+
+                  <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                     Hear from the businesses and organizations we've helped transform.
                   </p>
                 </motion.div>
@@ -197,13 +239,14 @@ export default function AgencyPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="bg-background rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-border"
+                      whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                      className="bg-white dark:bg-[#2c1a22] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-[#3d2128] group"
                     >
-                      <div className="flex flex-col">
-                        <div className="text-4xl text-primary mb-4">"</div>
-                        <p className="text-muted-foreground mb-6 italic">{testimonial.quote}</p>
-                        <div className="mt-auto flex items-center">
-                          <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <div className="flex flex-col h-full">
+                        <div className="text-4xl text-[#c8a951] dark:text-[#9f7b42] mb-6 opacity-50 group-hover:opacity-100 transition-opacity">"</div>
+                        <p className="text-gray-700 dark:text-gray-300 mb-8 italic flex-grow">{testimonial.quote}</p>
+                        <div className="mt-auto flex items-center pt-6 border-t border-gray-200 dark:border-gray-800">
+                          <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-[#c8a951]/20 dark:border-[#9f7b42]/20">
                             <img
                               src={testimonial.photo}
                               alt={testimonial.author}
@@ -214,8 +257,8 @@ export default function AgencyPage() {
                             />
                           </div>
                           <div>
-                            <h4 className="font-semibold">{testimonial.author}</h4>
-                            <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                            <h4 className="font-bold text-[#2c1a22] dark:text-white">{testimonial.author}</h4>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.position}</p>
                           </div>
                         </div>
                       </div>
@@ -228,23 +271,40 @@ export default function AgencyPage() {
 
           {/* CTA Section */}
           <motion.section
-            className="py-16 bg-primary text-primary-foreground"
+            className="py-20 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c]"
             variants={sectionVariants}
           >
-            <div className="container mx-auto px-4 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-primary-foreground/90 max-w-2xl mx-auto mb-8">
-                Let's discuss how our innovative solutions can help you achieve your business goals.
-              </p>
-              <motion.a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-background text-foreground px-6 py-3 rounded-md hover:bg-background/90 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            {/* Subtle pattern overlay */}
+            <div className="absolute inset-0 z-0 opacity-5">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="grid-pattern-cta" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#grid-pattern-cta)" />
+              </svg>
+            </div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                <i className="fas fa-envelope"></i>
-                <span>Get in Touch</span>
-              </motion.a>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="text-[#c8a951] dark:text-[#9f7b42]">Transform</span> Your Business?</h2>
+                <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
+                  Let's discuss how our innovative solutions can help you achieve your business goals.
+                </p>
+                <motion.a
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] px-8 py-4 rounded-md font-medium transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <i className="fas fa-envelope"></i>
+                  <span>Get in Touch</span>
+                </motion.a>
+              </motion.div>
             </div>
           </motion.section>
         </main>
