@@ -14,37 +14,37 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 // Service options with pricing factors
 const serviceOptions = [
-  { 
-    id: "chatbot", 
-    name: "AI Chatbot & Assistant", 
+  {
+    id: "chatbot",
+    name: "AI Chatbot & Assistant",
     description: "Intelligent conversational agents for customer service and operations",
     basePrice: 10000,
     icon: "fas fa-comment-dots"
   },
-  { 
-    id: "analytics", 
-    name: "Predictive Analytics", 
+  {
+    id: "analytics",
+    name: "Predictive Analytics",
     description: "Data-driven forecasting and business intelligence solutions",
     basePrice: 15000,
     icon: "fas fa-chart-line"
   },
-  { 
-    id: "vision", 
-    name: "Computer Vision", 
+  {
+    id: "vision",
+    name: "Computer Vision",
     description: "Visual recognition and analysis for automation and insights",
     basePrice: 20000,
     icon: "fas fa-eye"
   },
-  { 
-    id: "automation", 
-    name: "Process Automation", 
+  {
+    id: "automation",
+    name: "Process Automation",
     description: "Streamline operations with intelligent workflow automation",
     basePrice: 12000,
     icon: "fas fa-cogs"
   },
-  { 
-    id: "strategy", 
-    name: "AI Strategy & Consulting", 
+  {
+    id: "strategy",
+    name: "AI Strategy & Consulting",
     description: "Expert guidance on AI implementation and roadmap development",
     basePrice: 25000,
     icon: "fas fa-lightbulb"
@@ -86,7 +86,7 @@ export default function QuoteBuilder() {
     company: "",
     message: ""
   });
-  
+
   // Calculate quote
   const calculateQuote = () => {
     // Base price from selected services
@@ -94,27 +94,27 @@ export default function QuoteBuilder() {
       const service = serviceOptions.find(s => s.id === serviceId);
       return total + (service?.basePrice || 0);
     }, 0);
-    
+
     // Apply complexity multiplier
     const complexityMultiplier = complexityOptions.find(c => c.id === complexity)?.multiplier || 1;
-    
+
     // Apply timeline multiplier
     const timelineMultiplier = timelineOptions.find(t => t.id === timeline)?.multiplier || 1;
-    
+
     // Add-ons total
     const addonsTotal = selectedAddons.reduce((total, addonId) => {
       const addon = addonOptions.find(a => a.id === addonId);
       return total + (addon?.price || 0);
     }, 0);
-    
+
     // Calculate final price
     const baseWithMultipliers = servicesTotal * complexityMultiplier * timelineMultiplier;
     const totalEstimate = baseWithMultipliers + addonsTotal;
-    
+
     // Create price range (±15%)
     const lowerEstimate = Math.round(totalEstimate * 0.85 / 1000) * 1000;
     const upperEstimate = Math.round(totalEstimate * 1.15 / 1000) * 1000;
-    
+
     return {
       servicesTotal,
       complexityMultiplier,
@@ -125,7 +125,7 @@ export default function QuoteBuilder() {
       upperEstimate
     };
   };
-  
+
   // Format currency
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -135,18 +135,18 @@ export default function QuoteBuilder() {
       maximumFractionDigits: 0
     }).format(amount);
   };
-  
+
   // Calculate quote results
   const quoteResults = calculateQuote();
-  
+
   // Calculate progress
   const progress = (activeStep / 5) * 100;
-  
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   // Handle next step
   const handleNextStep = () => {
     if (activeStep < 5) {
@@ -154,7 +154,7 @@ export default function QuoteBuilder() {
       window.scrollTo(0, 0);
     }
   };
-  
+
   // Handle previous step
   const handlePrevStep = () => {
     if (activeStep > 1) {
@@ -162,7 +162,7 @@ export default function QuoteBuilder() {
       window.scrollTo(0, 0);
     }
   };
-  
+
   // Check if current step is valid
   const isStepValid = () => {
     switch (activeStep) {
@@ -180,25 +180,25 @@ export default function QuoteBuilder() {
         return false;
     }
   };
-  
+
   // Handle service selection
   const toggleService = (serviceId: string) => {
-    setSelectedServices(prev => 
+    setSelectedServices(prev =>
       prev.includes(serviceId)
         ? prev.filter(id => id !== serviceId)
         : [...prev, serviceId]
     );
   };
-  
+
   // Handle addon selection
   const toggleAddon = (addonId: string) => {
-    setSelectedAddons(prev => 
+    setSelectedAddons(prev =>
       prev.includes(addonId)
         ? prev.filter(id => id !== addonId)
         : [...prev, addonId]
     );
   };
-  
+
   // Handle contact info changes
   const handleContactInfoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -210,33 +210,69 @@ export default function QuoteBuilder() {
 
   return (
     <Layout>
-      <section className="py-20 bg-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl font-bold font-inter mb-4">Interactive Quote Builder</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Build a custom quote for your AI project in just a few steps.
-              Get an instant estimate based on your specific requirements.
-            </p>
-          </motion.div>
-          
-          {/* Progress Bar */}
-          <div className="mb-8">
-            <div className="flex justify-between text-sm mb-2">
-              <span>Step {activeStep} of 5</span>
-              <span>{Math.round(progress)}%</span>
-            </div>
-            <Progress value={progress} className="h-2" />
+      <section className="py-20 bg-white dark:bg-[#121212]">
+        {/* Hero Section */}
+        <div className="relative py-20 overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-16">
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+            </svg>
           </div>
-          
+
+          <div className="container mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+              >
+                <span className="flex h-2 w-2 mr-2">
+                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8a951] dark:bg-[#9f7b42]"></span>
+                </span>
+                Custom Solutions
+              </motion.div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+                Interactive <span className="text-[#c8a951] dark:text-[#9f7b42]">Quote Builder</span>
+              </h1>
+
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                Build a custom quote for your AI project in just a few steps.
+                Get an instant estimate based on your specific requirements.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Background Elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
+
+          {/* Progress Bar */}
+          <div className="mb-8 relative z-10">
+            <div className="flex justify-between text-sm mb-2 text-[#2c1a22] dark:text-white">
+              <span className="font-medium">Step {activeStep} of 5</span>
+              <span className="font-medium">{Math.round(progress)}% Complete</span>
+            </div>
+            <Progress value={progress} className="h-2 bg-gray-100 dark:bg-[#2c1a22]/50">
+              <div className="h-full bg-[#c8a951] dark:bg-[#9f7b42] rounded-full" style={{ width: `${progress}%` }} />
+            </Progress>
+          </div>
+
           {/* Quote Builder Steps */}
-          <div className="bg-card rounded-lg border border-border p-8 mb-8">
+          <div className="bg-white dark:bg-[#1a1a1a] rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50 p-8 mb-8 relative z-10">
             {/* Step 1: Select Services */}
             {activeStep === 1 && (
               <motion.div
@@ -249,7 +285,7 @@ export default function QuoteBuilder() {
                 <p className="text-muted-foreground mb-6">
                   Choose one or more AI services you're interested in implementing.
                 </p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {serviceOptions.map(service => (
                     <div
@@ -288,7 +324,7 @@ export default function QuoteBuilder() {
                 </div>
               </motion.div>
             )}
-            
+
             {/* Step 2: Project Complexity */}
             {activeStep === 2 && (
               <motion.div
@@ -301,7 +337,7 @@ export default function QuoteBuilder() {
                 <p className="text-muted-foreground mb-6">
                   Select the complexity level that best describes your project requirements.
                 </p>
-                
+
                 <RadioGroup
                   value={complexity}
                   onValueChange={setComplexity}
@@ -334,7 +370,7 @@ export default function QuoteBuilder() {
                 </RadioGroup>
               </motion.div>
             )}
-            
+
             {/* Step 3: Timeline */}
             {activeStep === 3 && (
               <motion.div
@@ -347,7 +383,7 @@ export default function QuoteBuilder() {
                 <p className="text-muted-foreground mb-6">
                   Select your preferred timeline for project completion.
                 </p>
-                
+
                 <RadioGroup
                   value={timeline}
                   onValueChange={setTimeline}
@@ -377,7 +413,7 @@ export default function QuoteBuilder() {
                 </RadioGroup>
               </motion.div>
             )}
-            
+
             {/* Step 4: Add-ons */}
             {activeStep === 4 && (
               <motion.div
@@ -390,7 +426,7 @@ export default function QuoteBuilder() {
                 <p className="text-muted-foreground mb-6">
                   Select any additional services you'd like to include (optional).
                 </p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {addonOptions.map(addon => (
                     <div
@@ -425,7 +461,7 @@ export default function QuoteBuilder() {
                 </div>
               </motion.div>
             )}
-            
+
             {/* Step 5: Contact Info & Quote Summary */}
             {activeStep === 5 && (
               <motion.div
@@ -435,7 +471,7 @@ export default function QuoteBuilder() {
                 transition={{ duration: 0.3 }}
               >
                 <h2 className="text-2xl font-bold mb-6">5. Your Custom Quote</h2>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   {/* Quote Summary */}
                   <Card>
@@ -458,7 +494,7 @@ export default function QuoteBuilder() {
                           })}
                         </ul>
                       </div>
-                      
+
                       <div>
                         <h3 className="font-medium mb-2">Project Details:</h3>
                         <ul className="space-y-1 text-sm">
@@ -472,7 +508,7 @@ export default function QuoteBuilder() {
                           </li>
                         </ul>
                       </div>
-                      
+
                       {selectedAddons.length > 0 && (
                         <div>
                           <h3 className="font-medium mb-2">Add-ons:</h3>
@@ -489,7 +525,7 @@ export default function QuoteBuilder() {
                           </ul>
                         </div>
                       )}
-                      
+
                       <div className="pt-4 border-t">
                         <div className="flex justify-between font-bold">
                           <span>Estimated Total:</span>
@@ -501,7 +537,7 @@ export default function QuoteBuilder() {
                       </div>
                     </CardContent>
                   </Card>
-                  
+
                   {/* Contact Form */}
                   <div>
                     <h3 className="font-medium mb-4">Your Information</h3>
@@ -555,7 +591,7 @@ export default function QuoteBuilder() {
                 </div>
               </motion.div>
             )}
-            
+
             {/* Navigation Buttons */}
             <div className="flex justify-between mt-8">
               {activeStep > 1 ? (
@@ -566,7 +602,7 @@ export default function QuoteBuilder() {
               ) : (
                 <div></div>
               )}
-              
+
               {activeStep < 5 ? (
                 <Button
                   onClick={handleNextStep}
@@ -585,14 +621,19 @@ export default function QuoteBuilder() {
               )}
             </div>
           </div>
-          
+
           {/* Additional Information */}
-          <div className="text-center">
-            <p className="text-muted-foreground mb-4">
-              Need help building your quote? Contact our team for assistance.
+          <div className="text-center relative z-10 mt-12">
+            <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+              Need Assistance?
+            </div>
+
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
+              Need help building your quote? Our team is ready to assist you with any questions.
             </p>
+
             <Link href="/contact">
-              <Button variant="outline">
+              <Button variant="outline" className="border-[#c8a951]/20 dark:border-[#9f7b42]/20 text-[#c8a951] dark:text-[#9f7b42] hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10">
                 <i className="fas fa-phone-alt mr-2"></i>
                 Contact Sales Team
               </Button>
