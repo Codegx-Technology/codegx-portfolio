@@ -141,17 +141,16 @@ export function ExecutiveNavbar({
         "z-50 w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
-          ? "bg-gradient-to-r from-[#0a192f] to-[#112240] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#0a192f]/90"
+          ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
           : variant === "default"
-            ? "bg-gradient-to-r from-[#0a192f] to-[#112240]"
+            ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
             : variant === "transparent"
               ? "bg-transparent"
               : variant === "elevated"
-                ? "bg-gradient-to-r from-[#0a192f] to-[#112240] shadow-xl"
+                ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] shadow-xl dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
                 : variant === "bordered"
-                  ? "bg-gradient-to-r from-[#0a192f] to-[#112240] border-b border-[#233554]"
-                  : "bg-gradient-to-r from-[#0a192f] to-[#112240]",
-        "dark:bg-gradient-to-r dark:from-[#0a192f] dark:to-[#112240]",
+                  ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] border-b border-[#4d2c35] dark:from-[#1f1a2c] dark:to-[#2a1f3d] dark:border-[#3d2a5d]"
+                  : "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]",
         className
       )}
       initial={{ y: -100, opacity: 0 }}
@@ -176,13 +175,13 @@ export function ExecutiveNavbar({
               >
                 {/* Logo monogram */}
                 <motion.div
-                  className="mr-3 bg-[#64ffda] text-[#0a192f] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
+                  className="mr-3 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 0 15px rgba(100, 255, 218, 0.5)"
+                    boxShadow: "0 0 15px rgba(200, 169, 81, 0.5)"
                   }}
                 >
                   <span className="font-extrabold text-xl sm:text-2xl tracking-tighter">CT</span>
@@ -199,7 +198,7 @@ export function ExecutiveNavbar({
                 </motion.div>
               </motion.div>
               <motion.div
-                className="absolute -bottom-1 left-0 h-0.5 bg-[#64ffda] w-0"
+                className="absolute -bottom-1 left-0 h-0.5 bg-[#c8a951] dark:bg-[#9f7b42] w-0"
                 animate={{ width: scrolled ? "100%" : "0%" }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               />
@@ -225,13 +224,15 @@ export function ExecutiveNavbar({
                           <NavigationMenuTrigger
                             className={cn(
                               "bg-transparent hover:bg-transparent px-0 gap-1.5 text-slate-200",
-                              "hover:text-[#64ffda] data-[state=open]:text-[#64ffda]",
-                              location.startsWith(link.href) ? "text-[#64ffda] font-medium" : ""
+                              "hover:text-[#c8a951] data-[state=open]:text-[#c8a951] dark:hover:text-[#9f7b42] dark:data-[state=open]:text-[#9f7b42]",
+                              location.startsWith(link.href)
+                                ? "text-[#c8a951] dark:text-[#9f7b42] font-medium"
+                                : ""
                             )}
                           >
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="ml-1 text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                              <Badge variant={link.badgeVariant} className="ml-1 text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                 {link.badge}
                               </Badge>
                             )}
@@ -254,14 +255,16 @@ export function ExecutiveNavbar({
                                       href={child.href}
                                       className={cn(
                                         "flex items-center justify-between select-none rounded-md p-2.5 text-sm leading-none no-underline outline-none transition-colors",
-                                        "hover:bg-[#233554] hover:text-[#64ffda]",
-                                        location === child.href ? "bg-[#233554] font-medium text-[#64ffda]" : "text-slate-200"
+                                        "hover:bg-[#4d2c35] hover:text-[#c8a951] dark:hover:bg-[#3d2a5d] dark:hover:text-[#9f7b42]",
+                                        location === child.href
+                                          ? "bg-[#4d2c35] font-medium text-[#c8a951] dark:bg-[#3d2a5d] dark:text-[#9f7b42]"
+                                          : "text-slate-200"
                                       )}
                                     >
                                       <span className="flex items-center gap-2">
                                         {child.label}
                                         {child.badge && (
-                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                             {child.badge}
                                           </Badge>
                                         )}
@@ -288,15 +291,15 @@ export function ExecutiveNavbar({
                       href={link.href}
                       className={cn(
                         "relative text-sm font-medium transition-colors flex items-center gap-1.5",
-                        "text-slate-200 hover:text-[#64ffda]",
-                        location === link.href ? "text-[#64ffda]" : "",
-                        "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#64ffda] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
+                        "text-slate-200 hover:text-[#c8a951] dark:hover:text-[#9f7b42]",
+                        location === link.href ? "text-[#c8a951] dark:text-[#9f7b42]" : "",
+                        "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#c8a951] dark:after:bg-[#9f7b42] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
                         location === link.href && "after:w-full"
                       )}
                     >
                       {link.label}
                       {link.badge && (
-                        <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                        <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                           {link.badge}
                         </Badge>
                       )}
@@ -360,7 +363,8 @@ export function ExecutiveNavbar({
                 variant="outline"
                 size="sm"
                 className={cn(
-                  "font-medium border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10",
+                  "font-medium border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10",
+                  "dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10",
                   "px-4 py-2 rounded-md"
                 )}
               >
@@ -406,12 +410,12 @@ export function ExecutiveNavbar({
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[280px] sm:w-[350px] pr-0 bg-[#0a192f] border-l border-[#233554] text-slate-200"
+              className="w-[280px] sm:w-[350px] pr-0 bg-[#2c1a22] border-l border-[#4d2c35] text-slate-200 dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
             >
               <div className="flex justify-between items-center mb-6 pr-6">
                 <div className="flex-shrink-0 flex items-center">
                   <motion.div
-                    className="mr-2 bg-[#64ffda] text-[#0a192f] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
+                    className="mr-2 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3 }}
@@ -445,17 +449,17 @@ export function ExecutiveNavbar({
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2, delay: index * 0.05 }}
                       >
-                        <div className="flex items-center justify-between font-medium text-sm px-3 py-2 rounded-md text-[#64ffda]">
+                        <div className="flex items-center justify-between font-medium text-sm px-3 py-2 rounded-md text-[#c8a951] dark:text-[#9f7b42]">
                           <div className="flex items-center gap-1.5">
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                 {link.badge}
                               </Badge>
                             )}
                           </div>
                         </div>
-                        <div className="pl-3 border-l border-[#233554] space-y-0.5 ml-3">
+                        <div className="pl-3 border-l border-[#4d2c35] dark:border-[#3d2a5d] space-y-0.5 ml-3">
                           {link.children.map((child) => (
                             <motion.div
                               key={child.href}
@@ -466,9 +470,9 @@ export function ExecutiveNavbar({
                                 href={child.href}
                                 className={cn(
                                   "flex items-center justify-between py-2 px-3 text-sm rounded-md",
-                                  "hover:bg-[#233554] hover:text-[#64ffda]",
+                                  "hover:bg-[#4d2c35] hover:text-[#c8a951] dark:hover:bg-[#3d2a5d] dark:hover:text-[#9f7b42]",
                                   location === child.href
-                                    ? "text-[#64ffda] font-medium bg-[#233554]/50"
+                                    ? "text-[#c8a951] font-medium bg-[#4d2c35]/50 dark:text-[#9f7b42] dark:bg-[#3d2a5d]/50"
                                     : "text-slate-200"
                                 )}
                                 onClick={() => setIsOpen(false)}
@@ -476,7 +480,7 @@ export function ExecutiveNavbar({
                                 <span className="flex items-center gap-1.5">
                                   {child.label}
                                   {child.badge && (
-                                    <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                                    <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                       {child.badge}
                                     </Badge>
                                   )}
@@ -498,9 +502,9 @@ export function ExecutiveNavbar({
                           href={link.href}
                           className={cn(
                             "flex items-center justify-between px-3 py-2.5 text-sm rounded-md font-medium",
-                            "hover:bg-[#233554] hover:text-[#64ffda]",
+                            "hover:bg-[#4d2c35] hover:text-[#c8a951] dark:hover:bg-[#3d2a5d] dark:hover:text-[#9f7b42]",
                             location === link.href
-                              ? "text-[#64ffda] bg-[#233554]/50"
+                              ? "text-[#c8a951] bg-[#4d2c35]/50 dark:text-[#9f7b42] dark:bg-[#3d2a5d]/50"
                               : "text-slate-200"
                           )}
                           onClick={() => setIsOpen(false)}
@@ -508,12 +512,12 @@ export function ExecutiveNavbar({
                           <span className="flex items-center gap-1.5">
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
+                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                 {link.badge}
                               </Badge>
                             )}
                           </span>
-                          {location === link.href && <ChevronRight className="h-4 w-4 text-[#64ffda]" />}
+                          {location === link.href && <ChevronRight className="h-4 w-4 text-[#c8a951] dark:text-[#9f7b42]" />}
                         </Link>
                       </motion.div>
                     )
@@ -521,9 +525,9 @@ export function ExecutiveNavbar({
                 </AnimatePresence>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-6 p-6 border-t border-[#233554] bg-[#0a192f] pt-6">
+              <div className="absolute bottom-0 left-0 right-6 p-6 border-t border-[#4d2c35] bg-[#2c1a22] pt-6 dark:border-[#3d2a5d] dark:bg-[#1f1a2c]">
                 <Button
-                  className="w-full border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10"
+                  className="w-full border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
                   variant="outline"
                   size="default"
                   asChild
