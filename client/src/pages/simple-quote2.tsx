@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
-import { QuoteForm } from "@/components/Forms/QuoteForm";
+import { SimpleQuoteForm2 } from "@/components/Forms/SimpleQuoteForm2";
 import { Toaster } from "sonner";
 
-export default function QuotePage() {
+export default function SimpleQuotePage() {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,7 +30,7 @@ export default function QuotePage() {
           </p>
 
           <div className="bg-card rounded-lg border border-border p-8">
-            <QuoteForm />
+            <SimpleQuoteForm2 />
           </div>
         </motion.div>
       </section>

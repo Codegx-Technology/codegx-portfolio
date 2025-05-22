@@ -158,6 +158,16 @@ function Router() {
             );
           }}
         </Route>
+        <Route path="/simple-quote2">
+          {() => {
+            const SimpleQuote2 = React.lazy(() => import("@/pages/simple-quote2"));
+            return (
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <SimpleQuote2 />
+              </React.Suspense>
+            );
+          }}
+        </Route>
         <Route path="/quote/simple-thank-you">
           {() => {
             const SimpleThankYou = React.lazy(() => import("@/pages/quote/simple-thank-you"));

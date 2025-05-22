@@ -1,19 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import confetti from "canvas-confetti";
+import { InlineWidget } from "react-calendly";
 
 export default function SimpleThankYou() {
+  const [showCalendly, setShowCalendly] = useState(false);
   // Trigger confetti effect on page load
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     // Trigger confetti
     const duration = 2 * 1000;
     const end = Date.now() + duration;
-    
+
     (function frame() {
       confetti({
         particleCount: 2,
@@ -22,7 +24,7 @@ export default function SimpleThankYou() {
         origin: { x: 0 },
         colors: ['#5D5FEF', '#3E63DD', '#7A5AF8'],
       });
-      
+
       confetti({
         particleCount: 2,
         angle: 120,
@@ -30,7 +32,7 @@ export default function SimpleThankYou() {
         origin: { x: 1 },
         colors: ['#5D5FEF', '#3E63DD', '#7A5AF8'],
       });
-      
+
       if (Date.now() < end) {
         requestAnimationFrame(frame);
       }
@@ -55,7 +57,7 @@ export default function SimpleThankYou() {
               We've received your quote request and will be in touch with you shortly.
               Our team is excited to learn more about your project and how we can help bring your AI vision to life.
             </p>
-            
+
             <div className="bg-card rounded-lg border border-border p-8 max-w-2xl mx-auto mb-12">
               <h2 className="text-2xl font-bold mb-6">What Happens Next?</h2>
               <div className="space-y-6">
@@ -70,7 +72,7 @@ export default function SimpleThankYou() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <span className="font-bold">2</span>
@@ -82,7 +84,7 @@ export default function SimpleThankYou() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <span className="font-bold">3</span>
@@ -96,7 +98,34 @@ export default function SimpleThankYou() {
                 </div>
               </div>
             </div>
-            
+
+            {/* Calendly Section */}
+            <div className="mb-12">
+              <Button
+                onClick={() => setShowCalendly(!showCalendly)}
+                variant="outline"
+                className="mb-6"
+              >
+                <i className="fas fa-calendar-alt mr-2"></i>
+                {showCalendly ? "Hide Calendar" : "Want to talk sooner? Book a free 15-min call"}
+              </Button>
+
+              {showCalendly && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-lg overflow-hidden border border-border"
+                >
+                  <InlineWidget
+                    url="https://calendly.com/codegx-technologies/ai-discovery-call"
+                    styles={{ height: '650px' }}
+                  />
+                </motion.div>
+              )}
+            </div>
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/services">
                 <Button>
