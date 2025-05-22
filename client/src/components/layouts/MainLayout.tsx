@@ -31,18 +31,24 @@ export function MainLayout({
   showNotifications = false,
 }: MainLayoutProps) {
   const [location] = useLocation();
-  
+
   // Determine if we're on the home page
-  const isHomePage = location === "/" || location === "/home";
-  
+  const isHomePage = location === "/" || location === "/home" || location === "/enhanced-home";
+
+  // Determine if we're on an agency page
+  const isAgencyPage = location.includes("/agency") || location === "/enhanced-agency";
+
   // Use transparent navbar on home page
   const effectiveNavbarVariant = isHomePage ? "transparent" : navbarVariant;
-  
+
+  // Set the appropriate logo based on the page
+  const logoAlt = isAgencyPage ? "Astella AI" : "Codegx Technologies";
+
   // Define all navigation links
   const navLinks = [
     { href: "/", label: "Home" },
-    { 
-      href: "/agency", 
+    {
+      href: "/agency",
       label: "Agency",
       children: [
         { href: "/why-astella", label: "Why Astella", icon: <i className="fas fa-chevron-right text-xs" /> },
@@ -51,16 +57,16 @@ export function MainLayout({
       ]
     },
     { href: "/services", label: "Services" },
-    { 
-      href: "/case-studies", 
+    {
+      href: "/case-studies",
       label: "Case Studies",
       children: [
         { href: "/case-studies/enterprise", label: "Enterprise", icon: <i className="fas fa-chevron-right text-xs" /> },
         { href: "/case-studies/startups", label: "Startups", icon: <i className="fas fa-chevron-right text-xs" /> },
-        { 
-          href: "/case-studies/healthcare", 
-          label: "Healthcare", 
-          badge: "New", 
+        {
+          href: "/case-studies/healthcare",
+          label: "Healthcare",
+          badge: "New",
           badgeVariant: "secondary",
           icon: <i className="fas fa-chevron-right text-xs" />
         },
@@ -73,7 +79,7 @@ export function MainLayout({
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <ExecutiveNavbar 
+      <ExecutiveNavbar
         variant={effectiveNavbarVariant}
         ctaVariant="electric"
         showSearch={showSearch}
@@ -83,10 +89,10 @@ export function MainLayout({
         logo={{
           light: "/logo-dark.svg",
           dark: "/logo-light.svg",
-          alt: "Astella AI"
+          alt: logoAlt
         }}
       />
-      
+
       <motion.main
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -111,8 +117,8 @@ export function MainLayout({
           </div>
         )}
       </motion.main>
-      
-      <Footer 
+
+      <Footer
         companyName="Astella AI"
         companyDescription="A stellar force for AI innovation in enterprise, education, and public service."
       />

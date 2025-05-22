@@ -141,23 +141,24 @@ export function ExecutiveNavbar({
         "z-50 w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
-          ? "bg-white/80 dark:bg-[#0f172a]/90 backdrop-blur shadow-sm supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-[#0f172a]/90"
+          ? "bg-gradient-to-r from-[#0a192f] to-[#112240] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#0a192f]/90"
           : variant === "default"
-            ? "bg-white dark:bg-[#0f172a]"
+            ? "bg-gradient-to-r from-[#0a192f] to-[#112240]"
             : variant === "transparent"
               ? "bg-transparent"
               : variant === "elevated"
-                ? "bg-white dark:bg-[#0f172a] shadow-md"
+                ? "bg-gradient-to-r from-[#0a192f] to-[#112240] shadow-xl"
                 : variant === "bordered"
-                  ? "bg-white dark:bg-[#0f172a] border-b border-border"
-                  : "bg-white dark:bg-[#0f172a]",
+                  ? "bg-gradient-to-r from-[#0a192f] to-[#112240] border-b border-[#233554]"
+                  : "bg-gradient-to-r from-[#0a192f] to-[#112240]",
+        "dark:bg-gradient-to-r dark:from-[#0a192f] dark:to-[#112240]",
         className
       )}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 max-w-7xl mx-auto">
+      <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-20 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center">
@@ -171,15 +172,24 @@ export function ExecutiveNavbar({
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.3 }}
+                className="flex items-center"
               >
-                {theme === "dark" ? (
-                  <img src={logo.dark} alt={logo.alt} className="h-8 sm:h-9" />
-                ) : (
-                  <img src={logo.light} alt={logo.alt} className="h-8 sm:h-9" />
-                )}
+                {/* Logo image */}
+                <div className="mr-2">
+                  {theme === "dark" ? (
+                    <img src={logo.dark} alt={logo.alt} className="h-9 sm:h-10" />
+                  ) : (
+                    <img src={logo.light} alt={logo.alt} className="h-9 sm:h-10" />
+                  )}
+                </div>
+
+                {/* Logo text */}
+                <div className="font-bold text-lg sm:text-xl tracking-tight text-white">
+                  {logo.alt}
+                </div>
               </motion.div>
               <motion.div
-                className="absolute -bottom-1 left-0 h-0.5 bg-secondary w-0"
+                className="absolute -bottom-1 left-0 h-0.5 bg-[#64ffda] w-0"
                 animate={{ width: scrolled ? "100%" : "0%" }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               />
@@ -204,13 +214,14 @@ export function ExecutiveNavbar({
                         <NavigationMenuItem>
                           <NavigationMenuTrigger
                             className={cn(
-                              "bg-transparent hover:bg-transparent px-0 gap-1.5",
-                              location.startsWith(link.href) ? "text-primary font-medium" : ""
+                              "bg-transparent hover:bg-transparent px-0 gap-1.5 text-slate-200",
+                              "hover:text-[#64ffda] data-[state=open]:text-[#64ffda]",
+                              location.startsWith(link.href) ? "text-[#64ffda] font-medium" : ""
                             )}
                           >
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="ml-1 text-[10px] px-1.5 py-0">
+                              <Badge variant={link.badgeVariant} className="ml-1 text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                                 {link.badge}
                               </Badge>
                             )}
@@ -232,14 +243,15 @@ export function ExecutiveNavbar({
                                     <Link
                                       href={child.href}
                                       className={cn(
-                                        "flex items-center justify-between select-none rounded-md p-2.5 text-sm leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground",
-                                        location === child.href ? "bg-accent/50 font-medium" : ""
+                                        "flex items-center justify-between select-none rounded-md p-2.5 text-sm leading-none no-underline outline-none transition-colors",
+                                        "hover:bg-[#233554] hover:text-[#64ffda]",
+                                        location === child.href ? "bg-[#233554] font-medium text-[#64ffda]" : "text-slate-200"
                                       )}
                                     >
                                       <span className="flex items-center gap-2">
                                         {child.label}
                                         {child.badge && (
-                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0">
+                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                                             {child.badge}
                                           </Badge>
                                         )}
@@ -265,15 +277,16 @@ export function ExecutiveNavbar({
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative text-sm font-medium transition-colors hover:text-primary flex items-center gap-1.5",
-                        location === link.href ? "text-primary" : "",
-                        "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 after:w-0 hover:after:w-full",
+                        "relative text-sm font-medium transition-colors flex items-center gap-1.5",
+                        "text-slate-200 hover:text-[#64ffda]",
+                        location === link.href ? "text-[#64ffda]" : "",
+                        "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#64ffda] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
                         location === link.href && "after:w-full"
                       )}
                     >
                       {link.label}
                       {link.badge && (
-                        <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0">
+                        <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                           {link.badge}
                         </Badge>
                       )}
@@ -334,11 +347,11 @@ export function ExecutiveNavbar({
             >
               <Button
                 asChild
-                variant={ctaVariant as any}
+                variant="outline"
                 size="sm"
                 className={cn(
-                  "font-medium shadow-sm",
-                  ctaVariant === "electric-outline" && "border-2"
+                  "font-medium border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10",
+                  "px-4 py-2 rounded-md"
                 )}
               >
                 <Link href={ctaHref}>
@@ -381,17 +394,21 @@ export function ExecutiveNavbar({
                 <Menu className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[350px] pr-0">
+            <SheetContent
+              side="right"
+              className="w-[280px] sm:w-[350px] pr-0 bg-[#0a192f] border-l border-[#233554] text-slate-200"
+            >
               <div className="flex justify-between items-center mb-6 pr-6">
-                <div className="flex-shrink-0">
-                  {theme === "dark" ? (
+                <div className="flex-shrink-0 flex items-center">
+                  <div className="mr-2">
                     <img src={logo.dark} alt={logo.alt} className="h-7" />
-                  ) : (
-                    <img src={logo.light} alt={logo.alt} className="h-7" />
-                  )}
+                  </div>
+                  <div className="font-bold text-base tracking-tight text-white">
+                    {logo.alt}
+                  </div>
                 </div>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="rounded-full h-8 w-8">
+                  <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 text-slate-200 hover:text-[#64ffda] hover:bg-[#233554]">
                     <X className="h-4 w-4" />
                   </Button>
                 </SheetTrigger>
@@ -408,17 +425,17 @@ export function ExecutiveNavbar({
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.2, delay: index * 0.05 }}
                       >
-                        <div className="flex items-center justify-between font-medium text-sm px-3 py-2 rounded-md">
+                        <div className="flex items-center justify-between font-medium text-sm px-3 py-2 rounded-md text-[#64ffda]">
                           <div className="flex items-center gap-1.5">
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0">
+                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                                 {link.badge}
                               </Badge>
                             )}
                           </div>
                         </div>
-                        <div className="pl-3 border-l border-border space-y-0.5 ml-3">
+                        <div className="pl-3 border-l border-[#233554] space-y-0.5 ml-3">
                           {link.children.map((child) => (
                             <motion.div
                               key={child.href}
@@ -428,15 +445,18 @@ export function ExecutiveNavbar({
                               <Link
                                 href={child.href}
                                 className={cn(
-                                  "flex items-center justify-between py-2 px-3 text-sm rounded-md hover:bg-accent",
-                                  location === child.href ? "text-primary font-medium bg-accent/50" : ""
+                                  "flex items-center justify-between py-2 px-3 text-sm rounded-md",
+                                  "hover:bg-[#233554] hover:text-[#64ffda]",
+                                  location === child.href
+                                    ? "text-[#64ffda] font-medium bg-[#233554]/50"
+                                    : "text-slate-200"
                                 )}
                                 onClick={() => setIsOpen(false)}
                               >
                                 <span className="flex items-center gap-1.5">
                                   {child.label}
                                   {child.badge && (
-                                    <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0">
+                                    <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                                       {child.badge}
                                     </Badge>
                                   )}
@@ -457,20 +477,23 @@ export function ExecutiveNavbar({
                         <Link
                           href={link.href}
                           className={cn(
-                            "flex items-center justify-between px-3 py-2.5 text-sm rounded-md font-medium hover:bg-accent",
-                            location === link.href ? "text-primary bg-accent/50" : ""
+                            "flex items-center justify-between px-3 py-2.5 text-sm rounded-md font-medium",
+                            "hover:bg-[#233554] hover:text-[#64ffda]",
+                            location === link.href
+                              ? "text-[#64ffda] bg-[#233554]/50"
+                              : "text-slate-200"
                           )}
                           onClick={() => setIsOpen(false)}
                         >
                           <span className="flex items-center gap-1.5">
                             {link.label}
                             {link.badge && (
-                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0">
+                              <Badge variant={link.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#64ffda] text-[#0a192f]">
                                 {link.badge}
                               </Badge>
                             )}
                           </span>
-                          {location === link.href && <ChevronRight className="h-4 w-4 text-primary" />}
+                          {location === link.href && <ChevronRight className="h-4 w-4 text-[#64ffda]" />}
                         </Link>
                       </motion.div>
                     )
@@ -478,10 +501,10 @@ export function ExecutiveNavbar({
                 </AnimatePresence>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-6 p-6 border-t border-border bg-background pt-6">
+              <div className="absolute bottom-0 left-0 right-6 p-6 border-t border-[#233554] bg-[#0a192f] pt-6">
                 <Button
-                  className="w-full"
-                  variant={ctaVariant as any}
+                  className="w-full border-[#64ffda] text-[#64ffda] hover:bg-[#64ffda]/10"
+                  variant="outline"
                   size="default"
                   asChild
                 >
