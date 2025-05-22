@@ -65,7 +65,7 @@ sustainable_city = architect.deliver_sustainable_city()`;
               Enterprise <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Solutions</span> Architect
             </h1>
             <p className="mt-6 text-xl leading-relaxed opacity-90">
-              Empowering Fortune 500 companies with cutting-edge AI, blockchain, and smart city technologies. Delivering measurable business impact through innovative digital solutions.
+              Empowering forward-thinking organizations with cutting-edge AI, blockchain, and smart city technologies. Delivering measurable business impact through innovative digital solutions.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button

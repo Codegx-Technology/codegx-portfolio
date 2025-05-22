@@ -215,6 +215,15 @@ export default function Portfolio() {
                   I build innovative solutions at the intersection of blockchain, AI, and web technologies. Explore my portfolio of projects that solve real-world problems.
                 </motion.p>
 
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="text-sm text-[#c8a951]/80 dark:text-[#9f7b42]/80 font-medium"
+                >
+                  Founder of Astella AI & Codegx Technologies
+                </motion.p>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

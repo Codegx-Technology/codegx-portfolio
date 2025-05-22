@@ -447,6 +447,14 @@ export function Footer({
             &copy; {currentYear} {activeCompanyName}. All rights reserved.
           </div>
 
+          {/* Developer attribution */}
+          <div className="mb-4 md:mb-0 text-center">
+            <span className="flex items-center justify-center">
+              <i className="fas fa-code text-[10px] mr-1 text-[#c8a951] dark:text-[#9f7b42]"></i>
+              Developed by Codegx Technology, Progressive Village
+            </span>
+          </div>
+
           {showLegal && (
             <div className="flex space-x-6">
               <Link href="/privacy">

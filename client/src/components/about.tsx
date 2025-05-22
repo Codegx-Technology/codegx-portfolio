@@ -52,10 +52,10 @@ export function About() {
           >
             <h3 className="text-2xl font-semibold font-inter mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent inline-block">Enterprise Solutions Architect</h3>
             <p className="text-lg mb-6">
-              I partner with Fortune 500 companies and innovative organizations to deliver transformative digital solutions that create measurable business impact. Specializing in AI/ML, blockchain, and emerging technologies integration for enterprise applications.
+              I partner with innovative organizations to deliver transformative digital solutions that create measurable business impact. Specializing in AI/ML, blockchain, and emerging technologies integration for enterprise applications.
             </p>
             <p className="text-lg mb-6">
-              Currently leading a landmark project to build a highly sustainable smart city using cutting-edge technologies including digital twins, AI-driven urban planning, and IoT infrastructure. My solutions have helped clients reduce operational costs by 35% while accelerating innovation cycles.
+              Currently leading a landmark project to build a highly sustainable smart city using cutting-edge technologies including digital twins, AI-driven urban planning, and IoT infrastructure. Our solutions have helped clients reduce operational costs by 35% while accelerating innovation cycles and future-proofing their technology infrastructure.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">

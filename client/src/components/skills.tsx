@@ -5,51 +5,51 @@ import { skills } from "@/lib/data";
 
 export function Skills() {
   const aiMlTechnologies = [
-    { 
+    {
       icon: "fas fa-brain",
       title: "Deep Learning",
-      description: "Neural networks & model optimization" 
+      description: "Neural networks & model optimization"
     },
-    { 
+    {
       icon: "fas fa-eye",
       title: "Computer Vision",
-      description: "Object detection & image analysis" 
+      description: "Object detection & image analysis"
     },
-    { 
+    {
       icon: "fas fa-comments",
       title: "NLP",
-      description: "Text analysis & language models" 
+      description: "Text analysis & language models"
     },
-    { 
+    {
       icon: "fas fa-robot",
       title: "Reinforcement Learning",
-      description: "Autonomous agents & optimization" 
+      description: "Autonomous agents & optimization"
     }
   ];
-  
+
   const blockchainTechnologies = [
-    { 
+    {
       icon: "fas fa-building",
       title: "Enterprise Blockchain",
-      description: "Solutions for Fortune 500 companies" 
+      description: "Solutions for industry leaders"
     },
-    { 
+    {
       icon: "fas fa-user-secret",
       title: "Zero-Knowledge Proofs",
-      description: "Privacy-preserving computation" 
+      description: "Privacy-preserving computation"
     },
-    { 
+    {
       icon: "fas fa-coins",
       title: "DeFi Architecture",
-      description: "Financial protocol design" 
+      description: "Financial protocol design"
     },
-    { 
+    {
       icon: "fas fa-shield-alt",
       title: "Quantum Resistance",
-      description: "Post-quantum cryptography" 
+      description: "Post-quantum cryptography"
     }
   ];
-  
+
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-background to-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,7 @@ export function Skills() {
             <p className="mt-4 text-lg opacity-80">Advanced technologies powering the future of enterprise solutions</p>
           </motion.div>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Column 1: Programming & Databases */}
           <motion.div
@@ -81,19 +81,19 @@ export function Skills() {
               <h3 className="text-xl font-semibold font-inter mb-6 flex items-center">
                 <i className="fas fa-code text-primary mr-2"></i> Programming Stack
               </h3>
-              
+
               {skills.programming.map((skill) => (
-                <ProgressBar 
+                <ProgressBar
                   key={skill.name}
                   label={skill.name}
                   percentage={skill.level}
                 />
               ))}
-              
+
               <h3 className="text-xl font-semibold font-inter mt-10 mb-6 flex items-center">
                 <i className="fas fa-database text-primary mr-2"></i> Data Storage
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 {skills.databases.map((db) => (
                   <div key={db} className="bg-primary/5 p-4 rounded-lg flex items-center shadow-sm hover:shadow-md transition-all hover:bg-primary/10">
@@ -104,7 +104,7 @@ export function Skills() {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Column 2: AI/ML */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,7 +117,7 @@ export function Skills() {
               <h3 className="text-xl font-semibold font-inter mb-6 flex items-center">
                 <i className="fas fa-microchip text-primary mr-2"></i> AI & Machine Learning
               </h3>
-              
+
               <div className="grid grid-cols-1 gap-4 mb-10">
                 {aiMlTechnologies.map((tech) => (
                   <div key={tech.title} className="bg-primary/5 p-5 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-primary/10">
@@ -131,7 +131,7 @@ export function Skills() {
               </div>
             </div>
           </motion.div>
-          
+
           {/* Column 3: Blockchain & Emerging Tech */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ export function Skills() {
               <h3 className="text-xl font-semibold font-inter mb-6 flex items-center">
                 <i className="fas fa-link text-primary mr-2"></i> Blockchain & DLT
               </h3>
-              
+
               <div className="grid grid-cols-1 gap-4 mb-10">
                 {blockchainTechnologies.map((tech) => (
                   <div key={tech.title} className="bg-primary/5 p-5 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-primary/10">
@@ -156,11 +156,11 @@ export function Skills() {
                   </div>
                 ))}
               </div>
-              
+
               <h3 className="text-xl font-semibold font-inter mt-10 mb-6 flex items-center">
                 <i className="fas fa-rocket text-primary mr-2"></i> Emerging Technologies
               </h3>
-              
+
               <div className="flex flex-wrap gap-3">
                 {skills.emerging_tech.map((tech) => (
                   <Badge key={tech} variant="outline" className="bg-primary/10 text-primary px-3 py-1 rounded-full shadow-sm hover:shadow-md transition-all hover:bg-primary/20">
