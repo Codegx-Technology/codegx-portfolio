@@ -130,6 +130,12 @@ function Router() {
             return <LazyRoute component={SimpleThankYou2} />;
           }}
         </Route>
+        <Route path="/ui-kit">
+          {() => {
+            const UIKit = React.lazy(() => import("@/pages/ui-kit"));
+            return <LazyRoute component={UIKit} />;
+          }}
+        </Route>
         <Route component={NotFound} />
       </Switch>
     </AnimatePresence>

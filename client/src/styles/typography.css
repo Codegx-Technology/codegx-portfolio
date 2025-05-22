@@ -1,0 +1,85 @@
+@layer components {
+  /* Enterprise-grade typography system */
+  
+  /* Headings */
+  .heading-1 {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-2 {
+    @apply font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-3 {
+    @apply font-heading text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight;
+  }
+  
+  .heading-4 {
+    @apply font-heading text-xl md:text-2xl font-semibold tracking-tight;
+  }
+  
+  .heading-5 {
+    @apply font-heading text-lg md:text-xl font-semibold;
+  }
+  
+  /* Body text */
+  .body-xl {
+    @apply font-body text-xl leading-relaxed;
+  }
+  
+  .body-lg {
+    @apply font-body text-lg leading-relaxed;
+  }
+  
+  .body-base {
+    @apply font-body text-base leading-relaxed;
+  }
+  
+  .body-sm {
+    @apply font-body text-sm leading-relaxed;
+  }
+  
+  .body-xs {
+    @apply font-body text-xs leading-normal;
+  }
+  
+  /* Display text for hero sections */
+  .display-1 {
+    @apply font-heading text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter;
+  }
+  
+  .display-2 {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter;
+  }
+  
+  /* UI text */
+  .ui-label {
+    @apply font-sans text-sm font-medium;
+  }
+  
+  .ui-value {
+    @apply font-sans text-base font-semibold;
+  }
+  
+  .ui-caption {
+    @apply font-sans text-xs text-muted-foreground;
+  }
+  
+  /* Special text styles */
+  .overline {
+    @apply font-sans text-xs uppercase tracking-widest font-medium;
+  }
+  
+  .quote {
+    @apply font-heading text-xl md:text-2xl italic font-medium leading-relaxed;
+  }
+  
+  /* Enterprise section titles */
+  .section-title {
+    @apply font-heading text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  
+  .section-subtitle {
+    @apply font-body text-lg md:text-xl text-muted-foreground;
+  }
+}

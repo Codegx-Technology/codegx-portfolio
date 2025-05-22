@@ -18,6 +18,14 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Enterprise button variants
+        sapphire: "bg-sapphire text-white hover:bg-sapphire/90 shadow-sm",
+        electric: "bg-electric text-white hover:bg-electric/90 shadow-sm",
+        emerald: "bg-emerald text-white hover:bg-emerald/90 shadow-sm",
+        amber: "bg-amber text-sapphire hover:bg-amber/90 shadow-sm",
+        soft: "bg-background border border-border hover:border-primary/50 shadow-sm",
+        "sapphire-outline": "border-2 border-sapphire text-sapphire bg-transparent hover:bg-sapphire/10",
+        "electric-outline": "border-2 border-electric text-electric bg-transparent hover:bg-electric/10",
       },
       size: {
         default: "min-h-[44px] px-6 py-3 w-full sm:w-auto",
