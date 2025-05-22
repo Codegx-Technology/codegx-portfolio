@@ -1,25 +1,76 @@
-import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
+import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Layout } from "@/components/layout";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
 import { BackToTop } from "@/components/back-to-top";
-import AgencyIntro from "@/components/Agency/AgencyIntro";
-import AgencyServices from "@/components/Agency/AgencyServices";
+import PortfolioHero from "@/components/Portfolio/PortfolioHero";
 
-export default function Home() {
+export default function Portfolio() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Animation variants for sections
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
+    <Layout className="overflow-hidden">
+      <AnimatePresence mode="wait">
+        {/* Hero Section - Personal */}
+        <PortfolioHero />
+
+        {/* About Section - Personal */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <About />
+        </motion.div>
+
+        {/* Skills Section - Personal */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <Skills />
+        </motion.div>
+
+        {/* Projects Section - Personal */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <Projects />
+        </motion.div>
+
+        {/* Contact Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={sectionVariants}
+        >
+          <Contact />
+        </motion.div>
+      </AnimatePresence>
       <BackToTop />
-    </div>
+    </Layout>
   );
 }

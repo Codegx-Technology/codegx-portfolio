@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Layout } from "@/components/layout";
-import { About } from "@/components/about";
-import { Skills } from "@/components/skills";
 import { Contact } from "@/components/contact";
 import AgencyIntro from "@/components/Agency/AgencyIntro";
 import AgencyServices from "@/components/Agency/AgencyServices";
-import HeroUnified from "@/components/Landing/HeroUnified";
 import FeaturedProjects from "@/components/Landing/FeaturedProjects";
 import CallToAction from "@/components/Landing/CallToAction";
+import HomeHero from "@/components/Landing/HomeHero";
 
 export default function Home() {
   // Scroll to top when component mounts
@@ -19,8 +17,8 @@ export default function Home() {
   // Animation variants for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6 }
     }
@@ -29,28 +27,8 @@ export default function Home() {
   return (
     <Layout className="overflow-hidden">
       <AnimatePresence mode="wait">
-        {/* Hero Section - Unified */}
-        <HeroUnified />
-
-        {/* About Section - Personal */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <About />
-        </motion.div>
-
-        {/* Skills Section - Personal */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <Skills />
-        </motion.div>
+        {/* Hero Section - Home */}
+        <HomeHero />
 
         {/* Agency Intro Section */}
         <motion.div
