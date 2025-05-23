@@ -110,23 +110,26 @@ export default function Blog() {
 
           {/* Search and Filter */}
           <div className="mb-10 relative z-10">
-            <EnterpriseCard className="p-6 mb-6">
+            <EnterpriseCard className="p-6 mb-6 border-primary/20 shadow-lg">
               <div className="flex flex-col md:flex-row gap-4 mb-6">
-                <div className="flex-1">
+                <div className="flex-1 relative">
+                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
+                    <i className="fas fa-search"></i>
+                  </div>
                   <Input
                     type="text"
                     placeholder="Search articles..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full"
+                    className="w-full pl-10 py-6 border-primary/20 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <Button
                   variant={activeTag === null ? "default" : "outline"}
                   onClick={() => setActiveTag(null)}
-                  className="whitespace-nowrap"
+                  className="whitespace-nowrap py-6 px-8 text-base font-medium"
                 >
-                  All Topics
+                  <i className="fas fa-tag mr-2"></i> All Topics
                 </Button>
               </div>
 
@@ -135,7 +138,11 @@ export default function Blog() {
                   <Badge
                     key={tag}
                     variant={activeTag === tag ? "default" : "outline"}
-                    className={`cursor-pointer ${activeTag === tag ? 'bg-primary text-white' : 'hover:bg-primary/10'}`}
+                    className={`cursor-pointer px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                      activeTag === tag
+                        ? 'bg-primary text-white'
+                        : 'hover:bg-primary/10 border-primary/20'
+                    }`}
                     onClick={() => setActiveTag(activeTag === tag ? null : tag)}
                   >
                     {tag}
@@ -146,41 +153,52 @@ export default function Blog() {
           </div>
 
           {isLoading ? (
-            <div className="text-center py-20 relative z-10">
-              <div className="animate-spin w-10 h-10 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <Paragraph className="text-muted-foreground">Loading articles...</Paragraph>
-            </div>
+            <EnterpriseCard className="py-20 text-center border-dashed relative z-10">
+              <div className="animate-spin w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-6"></div>
+              <Heading3 className="text-xl mb-2">Loading Articles</Heading3>
+              <Paragraph className="text-muted-foreground">Please wait while we fetch the latest thought leadership content...</Paragraph>
+            </EnterpriseCard>
           ) : error ? (
-            <div className="text-center py-20 relative z-10">
-              <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-exclamation-triangle text-2xl"></i>
+            <EnterpriseCard className="py-20 text-center border-red-200 dark:border-red-900/30 relative z-10">
+              <div className="w-20 h-20 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-exclamation-triangle text-3xl"></i>
               </div>
-              <Heading3 className="text-red-500 mb-2">Error Loading Data</Heading3>
-              <Paragraph className="text-muted-foreground">Unable to load articles. Please try again later.</Paragraph>
-            </div>
+              <Heading3 className="text-red-500 mb-3">Error Loading Articles</Heading3>
+              <Paragraph className="text-muted-foreground max-w-md mx-auto">
+                We encountered an issue while loading the articles. Please try again later or contact our support team.
+              </Paragraph>
+            </EnterpriseCard>
           ) : filteredPosts.length === 0 ? (
-            <div className="text-center py-20 relative z-10">
-              <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-search text-2xl"></i>
+            <EnterpriseCard className="py-20 text-center border-primary/20 relative z-10">
+              <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-search text-3xl"></i>
               </div>
-              <Heading3 className="mb-2">No Results Found</Heading3>
-              <Paragraph className="text-muted-foreground mb-4">No articles found matching your criteria.</Paragraph>
+              <Heading3 className="mb-3">No Results Found</Heading3>
+              <Paragraph className="text-muted-foreground max-w-md mx-auto mb-6">
+                No articles found matching your search criteria. Try adjusting your filters or search terms.
+              </Paragraph>
               <Button
                 variant="outline"
                 onClick={() => {
                   setSearchQuery("");
                   setActiveTag(null);
                 }}
+                className="px-6 py-2 border-primary/20 hover:bg-primary/10"
               >
-                Clear Filters
+                <i className="fas fa-times-circle mr-2"></i> Clear Filters
               </Button>
-            </div>
+            </EnterpriseCard>
           ) : (
             <>
               {/* Featured Posts */}
               {featuredPosts.length > 0 && (
                 <div className="mb-16 relative z-10">
-                  <Heading2 className="text-2xl mb-6">Featured Articles</Heading2>
+                  <div className="flex items-center mb-8">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <i className="fas fa-star text-primary"></i>
+                    </div>
+                    <Heading2 className="text-2xl font-bold">Featured Articles</Heading2>
+                  </div>
                   <EnterpriseGrid cols={2} gap="lg">
                     {featuredPosts.map((post) => (
                       <motion.div
@@ -191,7 +209,7 @@ export default function Blog() {
                       >
                         <Link href={`/blog/${post.slug}`}>
                           <a className="block group">
-                            <div className="bg-card rounded-lg overflow-hidden border border-border shadow-md hover:shadow-xl transition-all duration-300 h-full">
+                            <EnterpriseCard className="overflow-hidden h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
                               <div className="relative h-64 overflow-hidden">
                                 <img
                                   src={post.image}
@@ -204,8 +222,8 @@ export default function Blog() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                                   <div className="p-6 text-white">
                                     <div className="flex items-center gap-2 mb-2">
-                                      <Badge variant="secondary" className="bg-primary/80 text-white">
-                                        Featured
+                                      <Badge variant="secondary" className="bg-primary/80 text-white border-0">
+                                        <i className="fas fa-star mr-1"></i> Featured
                                       </Badge>
                                       <span className="text-sm opacity-80">{formatDate(post.date)}</span>
                                       <span className="text-sm opacity-80">•</span>
@@ -219,22 +237,27 @@ export default function Blog() {
                                 <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                   {post.tags.map((tag, index) => (
-                                    <Badge key={index} variant="outline" className="text-xs">
+                                    <Badge key={index} variant="outline" className="text-xs border-primary/20">
                                       {tag}
                                     </Badge>
                                   ))}
                                 </div>
-                                <div className="flex items-center justify-between">
-                                  <div>
-                                    <div className="font-medium">{post.author}</div>
-                                    <div className="text-sm text-muted-foreground">{post.authorRole}</div>
+                                <div className="flex items-center justify-between border-t border-border pt-4 mt-4">
+                                  <div className="flex items-center">
+                                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                                      <i className="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                      <div className="font-medium">{post.author}</div>
+                                      <div className="text-sm text-muted-foreground">{post.authorRole}</div>
+                                    </div>
                                   </div>
                                   <Button variant="ghost" size="sm" className="group-hover:bg-primary/10 group-hover:text-primary">
                                     Read More <i className="fas fa-arrow-right ml-2"></i>
                                   </Button>
                                 </div>
                               </div>
-                            </div>
+                            </EnterpriseCard>
                           </a>
                         </Link>
                       </motion.div>
@@ -245,7 +268,12 @@ export default function Blog() {
 
               {/* Regular Posts */}
               <div className="relative z-10">
-                <Heading2 className="text-2xl mb-6">All Articles</Heading2>
+                <div className="flex items-center mb-8">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <i className="fas fa-newspaper text-primary"></i>
+                  </div>
+                  <Heading2 className="text-2xl font-bold">All Articles</Heading2>
+                </div>
                 <EnterpriseGrid cols={3} gap="lg">
                   {regularPosts.map((post) => (
                     <motion.div
@@ -253,10 +281,11 @@ export default function Blog() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
+                      className="h-full"
                     >
                       <Link href={`/blog/${post.slug}`}>
-                        <a className="block group">
-                          <div className="bg-card rounded-lg overflow-hidden border border-border shadow-md hover:shadow-xl transition-all duration-300 h-full">
+                        <a className="block group h-full">
+                          <EnterpriseCard className="overflow-hidden h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
                             <div className="relative h-48 overflow-hidden">
                               <img
                                 src={post.image}
@@ -266,37 +295,43 @@ export default function Blog() {
                                   (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Blog+Post";
                                 }}
                               />
+                              <div className="absolute top-0 right-0 m-3">
+                                <Badge variant="secondary" className="bg-black/50 backdrop-blur-sm text-white border-0 text-xs">
+                                  {post.readTime}
+                                </Badge>
+                              </div>
                             </div>
                             <div className="p-6">
-                              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                                <span>{formatDate(post.date)}</span>
-                                <span>•</span>
-                                <span>{post.readTime}</span>
+                              <div className="text-sm text-muted-foreground mb-2">
+                                <i className="far fa-calendar-alt mr-2"></i>{formatDate(post.date)}
                               </div>
-                              <h3 className="text-xl font-bold mb-2 line-clamp-2">{post.title}</h3>
+                              <h3 className="text-xl font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">{post.title}</h3>
                               <p className="text-muted-foreground mb-4 line-clamp-2">{post.excerpt}</p>
                               <div className="flex flex-wrap gap-2 mb-4">
                                 {post.tags.slice(0, 2).map((tag, index) => (
-                                  <Badge key={index} variant="outline" className="text-xs">
+                                  <Badge key={index} variant="outline" className="text-xs border-primary/20">
                                     {tag}
                                   </Badge>
                                 ))}
                                 {post.tags.length > 2 && (
-                                  <Badge variant="outline" className="text-xs">
+                                  <Badge variant="outline" className="text-xs border-primary/20">
                                     +{post.tags.length - 2}
                                   </Badge>
                                 )}
                               </div>
-                              <div className="flex items-center justify-between mt-auto pt-2">
-                                <div className="text-sm">
-                                  <div className="font-medium">{post.author}</div>
+                              <div className="flex items-center justify-between mt-auto pt-3 border-t border-border">
+                                <div className="flex items-center">
+                                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-2 text-xs">
+                                    <i className="fas fa-user"></i>
+                                  </div>
+                                  <div className="text-sm font-medium">{post.author}</div>
                                 </div>
                                 <Button variant="ghost" size="sm" className="group-hover:bg-primary/10 group-hover:text-primary">
                                   Read <i className="fas fa-arrow-right ml-1"></i>
                                 </Button>
                               </div>
                             </div>
-                          </div>
+                          </EnterpriseCard>
                         </a>
                       </Link>
                     </motion.div>
