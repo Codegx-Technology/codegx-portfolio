@@ -5,6 +5,7 @@ import { Contact } from "@/components/contact";
 import AgencyIntro from "@/components/Agency/AgencyIntro";
 import AgencyServices from "@/components/Agency/AgencyServices";
 import FeaturedProjects from "@/components/Landing/FeaturedProjects";
+import FeaturedCaseStudies from "@/components/Landing/FeaturedCaseStudies";
 import CallToAction from "@/components/Landing/CallToAction";
 import HomeHero from "@/components/Landing/HomeHero";
 import { Heading2, Paragraph } from "@/components/ui/typography";
@@ -41,6 +42,25 @@ export default function Home() {
         {/* Featured Projects Section - Combined */}
         <PageSection>
           <FeaturedProjects />
+        </PageSection>
+
+        <PageDivider />
+
+        {/* Featured Case Studies Section */}
+        <PageSection
+          title={
+            <div className="text-center">
+              <Heading2 className="font-inter mb-4">Featured Case Studies</Heading2>
+              <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Discover how we've helped organizations solve complex challenges with innovative technology solutions.
+              </Paragraph>
+            </div>
+          }
+          withDivider
+          dividerVariant="gradient"
+          dividerPosition="top"
+        >
+          <FeaturedCaseStudies />
         </PageSection>
 
         <PageDivider />
