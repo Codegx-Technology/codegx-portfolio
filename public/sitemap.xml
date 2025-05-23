@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\ui-kit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\thank-you</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -46,7 +51,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\professional-home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\pricing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\portfolio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\modern-home</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,6 +82,46 @@
   </url>
   <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\footer-demo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\executive-navbar-demo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enterprise-layout-demo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enterprise-components-demo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enhanced-services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enhanced-navbar-demo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enhanced-home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\enhanced-agency</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -82,6 +142,11 @@
   </url>
   <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\augment-demo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
