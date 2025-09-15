@@ -66,7 +66,7 @@ export function Footer() {
           </div>
 
           <div className="mt-6 md:mt-0">
-            <p className="text-sm text-muted-foreground">&copy; {currentYear} Codegx Technology | Peter O. Oluoch. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">&copy; {currentYear} Codegx Technologies | Peter O. Oluoch. All rights reserved.</p>
           </div>
         </div>
       </div>

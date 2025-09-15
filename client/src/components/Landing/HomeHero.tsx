@@ -63,7 +63,7 @@ export function HomeHero() {
               Unified <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Homepage</span>
             </h1>
             <p className="mt-6 text-xl leading-relaxed opacity-90">
-              Welcome to the combined homepage of Codegx Technology, featuring both our personal portfolio and Astella AI agency services.
+              Welcome to the combined homepage of Codegx Technologies, featuring both our personal portfolio and Astella AI agency services.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/portfolio">

@@ -12,8 +12,8 @@ interface HeadProps {
 }
 
 export function Head({
-  title = "Codegx Technology - AI Agency & Portfolio",
-  description = "Codegx Technology is a forward-thinking software development company specializing in AI solutions and innovative digital products.",
+  title = "Codegx Technologies - AI Agency & Portfolio",
+  description = "Codegx Technologies is a forward-thinking software development company specializing in AI solutions and innovative digital products.",
   image = "/images/og-image.jpg",
   canonical,
   type = "website",
@@ -21,7 +21,7 @@ export function Head({
   structuredData,
 }: HeadProps) {
   const [location] = useLocation();
-  const siteTitle = title.includes(" - ") ? title : `${title} - Codegx Technology`;
+  const siteTitle = title.includes(" - ") ? title : `${title} - Codegx Technologies`;
   const siteUrl = "https://codegx-technology.github.io/codegx-portfolio";
   const currentUrl = canonical || location;
   const fullUrl = `${siteUrl}${currentUrl}`;
@@ -31,7 +31,7 @@ export function Head({
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Codegx Technology",
+    "name": "Codegx Technologies",
     "url": siteUrl,
     "logo": `${siteUrl}/images/logo.png`,
     "sameAs": [
@@ -63,7 +63,7 @@ export function Head({
       <meta property="og:image" content={fullImageUrl} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Codegx Technology" />
+      <meta property="og:site_name" content="Codegx Technologies" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

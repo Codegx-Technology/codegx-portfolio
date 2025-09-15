@@ -20,7 +20,7 @@ export default function UIKitPage() {
   const testimonials: Testimonial[] = [
     {
       id: "1",
-      quote: "Working with Codegx Technology transformed our business. Their AI solutions helped us increase efficiency by 40% and reduce costs significantly.",
+      quote: "Working with Codegx Technologies transformed our business. Their AI solutions helped us increase efficiency by 40% and reduce costs significantly.",
       name: "Sarah Johnson",
       title: "CTO",
       company: "TechVision Inc.",
@@ -38,7 +38,7 @@ export default function UIKitPage() {
     },
     {
       id: "3",
-      quote: "We've worked with several AI agencies, but Codegx Technology stands out for their technical expertise and strategic thinking. Highly recommended!",
+      quote: "We've worked with several AI agencies, but Codegx Technologies stands out for their technical expertise and strategic thinking. Highly recommended!",
       name: "Emily Rodriguez",
       title: "CEO",
       company: "FutureTech",
@@ -51,7 +51,7 @@ export default function UIKitPage() {
     <Layout>
       <Head
         title="Enterprise UI Kit"
-        description="Showcase of enterprise-grade UI components for Codegx Technology"
+        description="Showcase of enterprise-grade UI components for Codegx Technologies"
       />
 
       {/* Enterprise Navbar */}
@@ -349,7 +349,7 @@ export default function UIKitPage() {
       {/* CTA Section */}
       <CTASection
         title="Ready to Transform Your Business with AI?"
-        description="Get started with Codegx Technology today and discover how our enterprise-grade solutions can help you achieve your business goals."
+        description="Get started with Codegx Technologies today and discover how our enterprise-grade solutions can help you achieve your business goals."
         primaryCta={{
           text: "Get Started",
           href: "/quote",

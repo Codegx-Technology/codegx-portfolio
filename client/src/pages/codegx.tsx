@@ -31,7 +31,7 @@ export default function CodegxLanding() {
           >
             <div className="inline-block px-6 py-2 rounded-full bg-primary/10 mb-6 backdrop-blur-sm">
               <span className="text-lg font-semibold text-primary">
-                Welcome to Codegx Technology
+                Welcome to Codegx Technologies
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-inter leading-tight mb-6">
@@ -112,9 +112,9 @@ export default function CodegxLanding() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold font-inter mb-4">About Codegx Technology</h2>
+            <h2 className="text-3xl font-bold font-inter mb-4">About Codegx Technologies</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Codegx Technology is the parent company with two main wings: Peter O. Oluoch's personal portfolio and Astella AI agency.
+              Codegx Technologies is the parent company with two main wings: Peter O. Oluoch's personal portfolio and Astella AI agency.
             </p>
           </motion.div>
           
@@ -163,7 +163,7 @@ export default function CodegxLanding() {
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">Our Values</h3>
               <p className="text-muted-foreground text-center">
-                Innovation, integrity, accessibility, and sustainability guide everything we do at Codegx Technology.
+                Innovation, integrity, accessibility, and sustainability guide everything we do at Codegx Technologies.
               </p>
             </motion.div>
           </div>

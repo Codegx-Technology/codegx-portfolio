@@ -29,7 +29,7 @@ export default function Home() {
             <div className="text-center">
               <Heading2 className="font-inter mb-4">Meet Our Agency</Heading2>
               <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Astella AI is the technology wing of Codegx Technology, specializing in cutting-edge solutions for businesses.
+                Astella AI is the technology wing of Codegx Technologies, specializing in cutting-edge solutions for businesses.
               </Paragraph>
             </div>
           }

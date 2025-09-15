@@ -58,7 +58,6 @@ export function Footer({
       links: [
         { label: "About Us", href: "/about", icon: "fas fa-info-circle" },
         { label: "Our Team", href: "/team", icon: "fas fa-users" },
-        { label: "Careers", href: "/careers", icon: "fas fa-briefcase" },
         { label: "Contact", href: "/contact", icon: "fas fa-envelope" },
       ],
     },
@@ -67,7 +66,6 @@ export function Footer({
       links: [
         { label: "Enterprise Solutions", href: "/solutions/enterprise", icon: "fas fa-building" },
         { label: "Digital Transformation", href: "/solutions/digital-transformation", icon: "fas fa-sync" },
-        { label: "Cloud Services", href: "/solutions/cloud", icon: "fas fa-cloud" },
         { label: "Custom Development", href: "/solutions/custom-development", icon: "fas fa-code" },
       ],
     },
@@ -453,7 +451,7 @@ export function Footer({
               <i className="fas fa-code text-[10px] mr-1 text-[#c8a951] dark:text-[#9f7b42]"></i>
               Developed by <Link href="/">
                 <a className="mx-1 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
-                  Codegx Technology
+                  Codegx Technologies
                 </a>
               </Link>, <a href="https://progressivevillage.org" target="_blank" rel="noopener noreferrer" className="mx-1 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
                 Progressive Village

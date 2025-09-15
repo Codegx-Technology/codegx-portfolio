@@ -84,7 +84,7 @@ export default function MainHome() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Welcome to{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-                Codegx Technology
+                Codegx Technologies
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
@@ -118,12 +118,12 @@ export default function MainHome() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">About Codegx Technology</h2>
+              <h2 className="text-3xl font-bold mb-6">About Codegx Technologies</h2>
               <p className="text-muted-foreground mb-6">
                 {isLoading
                   ? "Loading..."
                   : agencyProfile?.description ||
-                    "Codegx Technology is a forward-thinking software development company specializing in creating innovative digital solutions for businesses across various industries."}
+                    "Codegx Technologies is a forward-thinking software development company specializing in creating innovative digital solutions for businesses across various industries."}
               </p>
               <p className="text-muted-foreground mb-6">
                 Our company operates through two main divisions:
@@ -163,7 +163,7 @@ export default function MainHome() {
               <div className="aspect-video bg-muted rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={isLoading ? "https://via.placeholder.com/600x400" : agencyProfile?.logo || "https://via.placeholder.com/600x400"}
-                  alt="Codegx Technology"
+                  alt="Codegx Technologies"
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = "https://via.placeholder.com/600x400?text=Codegx+Technology";

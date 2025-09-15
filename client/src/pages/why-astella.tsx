@@ -65,7 +65,7 @@ export default function WhyAstella() {
     {
       year: "2021",
       title: "Astella AI Founded",
-      description: "Officially launched Astella AI as the technology wing of Codegx Technology, with a focus on AI, blockchain, and smart city solutions."
+      description: "Officially launched Astella AI as the technology wing of Codegx Technologies, with a focus on AI, blockchain, and smart city solutions."
     },
     {
       year: "2022",
