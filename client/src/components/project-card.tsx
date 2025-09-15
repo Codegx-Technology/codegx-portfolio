@@ -20,10 +20,12 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, isVisible }: ProjectCardProps) {
   const categoryColors = {
+    ai: "bg-purple-500",
     blockchain: "bg-primary",
-    mobile: "bg-green-500",
-    data: "bg-purple-500",
-    web: "bg-blue-500"
+    data: "bg-blue-500",
+    web: "bg-green-500",
+    mobile: "bg-orange-500",
+    enterprise: "bg-red-500"
   };
   
   const getCategoryColor = (category: string) => {

@@ -2,16 +2,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ProjectCard, Project } from "@/components/project-card";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/lib/data";
+import { projects, ProjectCategory } from "@/lib/data";
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   
   const filterCategories = [
     { value: "all", label: "All" },
-    { value: "ai", label: "AI & ML" },
-    { value: "blockchain", label: "Blockchain" },
-    { value: "data", label: "Smart City" },
+    { value: ProjectCategory.AI, label: "AI & ML" },
+    { value: ProjectCategory.BLOCKCHAIN, label: "Blockchain" },
+    { value: ProjectCategory.DATA, label: "Data & Analytics" },
+    { value: ProjectCategory.WEB, label: "Web Apps" },
+    { value: ProjectCategory.MOBILE, label: "Mobile" },
   ];
   
   const filteredProjects = projects.filter(
@@ -55,9 +57,11 @@ export function Projects() {
               onClick={() => setActiveFilter(category.value)}
             >
               {category.value === "all" && <i className="fas fa-th-large mr-2"></i>}
-              {category.value === "ai" && <i className="fas fa-brain mr-2"></i>}
-              {category.value === "blockchain" && <i className="fas fa-link mr-2"></i>}
-              {category.value === "data" && <i className="fas fa-city mr-2"></i>}
+              {category.value === ProjectCategory.AI && <i className="fas fa-brain mr-2"></i>}
+              {category.value === ProjectCategory.BLOCKCHAIN && <i className="fas fa-link mr-2"></i>}
+              {category.value === ProjectCategory.DATA && <i className="fas fa-chart-line mr-2"></i>}
+              {category.value === ProjectCategory.WEB && <i className="fas fa-globe mr-2"></i>}
+              {category.value === ProjectCategory.MOBILE && <i className="fas fa-mobile-alt mr-2"></i>}
               {category.label}
             </Button>
           ))}

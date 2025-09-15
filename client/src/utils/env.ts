@@ -19,6 +19,7 @@ const serverSchema = z.object({
  */
 const clientSchema = z.object({
   VITE_SITE_URL: z.string().url().optional().default("https://codegx-technology.github.io/codegx-portfolio"),
+  VITE_API_BASE_URL: z.string().url().optional().default("http://localhost:5000"),
 });
 
 /**
@@ -36,6 +37,7 @@ const processEnv = {
 
   // Client-side env vars
   VITE_SITE_URL: import.meta.env.VITE_SITE_URL,
+  VITE_API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
 };
 
 // Don't touch the part below

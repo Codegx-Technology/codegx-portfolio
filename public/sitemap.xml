@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\test-home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\simple-quote2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

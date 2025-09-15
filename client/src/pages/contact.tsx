@@ -5,6 +5,7 @@ import ContactForm from "@/components/Forms/ContactForm";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
+import { submitContactForm } from "@/utils/api";
 import { z } from "zod";
 
 // Define the contact form schema
@@ -27,19 +28,13 @@ export default function Contact() {
   // Handle form submission
   const handleSubmit = async (data: ContactFormData) => {
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+      await submitContactForm({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        subject: 'Contact Form Submission',
+        message: data.message
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      return await response.json();
     } catch (error) {
       console.error('Error sending message:', error);
       throw error;
@@ -85,9 +80,7 @@ export default function Contact() {
       />
 
       <PageSection
-        background="pattern"
-        spacing="xl"
-        className="relative overflow-hidden"
+        className="relative overflow-hidden py-20"
       >
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>

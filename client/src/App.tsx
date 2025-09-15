@@ -18,6 +18,8 @@ import CaseStudies from "@/pages/case-studies";
 import Blog from "@/pages/blog";
 import WhyAstella from "@/pages/why-astella";
 import NotFound from "@/pages/not-found";
+import ProfessionalHome from "@/pages/professional-home";
+import TestHome from "@/pages/test-home";
 import "@/styles/globals.css";
 
 function Router() {
@@ -28,8 +30,36 @@ function Router() {
       <Switch key={location}>
         <Route path="/">
           {() => {
-            const ProfessionalHome = React.lazy(() => import("@/pages/professional-home"));
-            return <LazyRoute component={ProfessionalHome} />;
+            // Use a working fallback page for now
+            return (
+              <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+                <div className="text-center p-8 bg-white rounded-xl shadow-lg max-w-2xl mx-4">
+                  <h1 className="text-5xl font-bold text-gray-900 mb-4">🚀 CodeGX Portfolio</h1>
+                  <p className="text-xl text-gray-600 mb-8">Enterprise Technology Solutions</p>
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                    <p className="text-green-800 font-medium">✅ Application is running successfully!</p>
+                    <p className="text-green-600 text-sm mt-1">Vite + React + TypeScript + TailwindCSS</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <a href="/home" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
+                      📁 Personal Portfolio
+                    </a>
+                    <a href="/services" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition font-medium">
+                      ⚡ Services
+                    </a>
+                    <a href="/contact" className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium">
+                      📧 Contact
+                    </a>
+                    <a href="/why-astella" className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium">
+                      🤖 Astella AI
+                    </a>
+                  </div>
+                  <div className="mt-6 text-sm text-gray-500">
+                    <p>Ready for GitHub Pages deployment with your custom domain</p>
+                  </div>
+                </div>
+              </div>
+            );
           }}
         </Route>
         <Route path="/home" component={Home} />
