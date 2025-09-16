@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route, useLocation, Router } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
@@ -22,7 +22,7 @@ import ProfessionalHome from "@/pages/professional-home";
 import TestHome from "@/pages/test-home";
 import "@/styles/globals.css";
 
-function Router() {
+function AppRouter() {
   const [location] = useLocation();
 
   return (
@@ -219,6 +219,9 @@ const LoadingFallback = () => (
   </div>
 );
 
+// Get base path for GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/codegx-portfolio' : '';
+
 function App() {
   return (
     <ErrorBoundary>
@@ -227,7 +230,9 @@ function App() {
           <Head />
           <ErrorBoundary>
             <Suspense fallback={<LoadingFallback />}>
-              <Router />
+              <Router base={basePath}>
+                <AppRouter />
+              </Router>
             </Suspense>
           </ErrorBoundary>
           <Toaster />
