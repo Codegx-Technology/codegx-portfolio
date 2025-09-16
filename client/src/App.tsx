@@ -30,8 +30,8 @@ function Router() {
       <Switch key={location}>
         <Route path="/">
           {() => {
-            // Redirect root to /home
-            window.location.href = "/home";
+            // Redirect root to /home with proper base path
+            window.location.href = "/codegx-portfolio/home";
             return null;
           }}
         </Route>
@@ -40,8 +40,8 @@ function Router() {
         <Route path="/portfolio" component={PersonalPortfolio} />
         <Route path="/agency">
           {() => {
-            // Redirect from /agency to /why-astella
-            window.location.href = "/why-astella";
+            // Redirect from /agency to /why-astella with proper base path
+            window.location.href = "/codegx-portfolio/why-astella";
             return null;
           }}
         </Route>
