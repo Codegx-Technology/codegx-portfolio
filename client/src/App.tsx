@@ -29,22 +29,12 @@ function Router() {
     <AnimatePresence mode="wait" initial={false}>
       <Switch key={location}>
         <Route path="/">
-          {() => {
-            // Redirect root to /home with proper base path
-            window.location.href = "/codegx-portfolio/home";
-            return null;
-          }}
+          <ProfessionalHome />
         </Route>
         <Route path="/home" component={ProfessionalHome} />
         <Route path="/codegx-landing" component={CodegxLanding} />
         <Route path="/portfolio" component={PersonalPortfolio} />
-        <Route path="/agency">
-          {() => {
-            // Redirect from /agency to /why-astella with proper base path
-            window.location.href = "/codegx-portfolio/why-astella";
-            return null;
-          }}
-        </Route>
+        <Route path="/agency" component={WhyAstella} />
         <Route path="/agency/services">
           {() => {
             const AgencyServices = React.lazy(() => import("@/pages/agency/services"));

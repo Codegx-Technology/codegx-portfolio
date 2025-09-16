@@ -1,0 +1,26 @@
+{
+  "name": "Codegx Technologies Portfolio",
+  "short_name": "Codegx Portfolio",
+  "description": "Professional portfolio website for Codegx Technologies showcasing software and blockchain engineering services",
+  "icons": [
+    {
+      "src": "/codegx-portfolio/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/codegx-portfolio/favicon-32x32.png",
+      "sizes": "32x32", 
+      "type": "image/png"
+    },
+    {
+      "src": "/codegx-portfolio/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/codegx-portfolio/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
