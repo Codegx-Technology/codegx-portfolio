@@ -44,6 +44,8 @@ export default defineConfig(async ({ mode }) => {
     emptyOutDir: true,
     sourcemap: mode !== 'production',
     minify: mode === 'production',
+    // Copy public files to build output
+    copyPublicDir: true,
     // Optimize chunks
     rollupOptions: {
       output: {

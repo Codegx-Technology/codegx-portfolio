@@ -2,14 +2,14 @@
 # 🔧 Build Configuration
 # ========================
 [build]
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build:netlify"
   publish = "dist/public"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
-  # Optional: If using Vite with environment variables
-  VITE_API_URL = "https://your-api.com"  # <-- Customize as needed
+  # Base path for Netlify deployment
+  VITE_BASE_PATH = "/"
 
 # ========================
 # 🔄 Redirects (SPA Support)
@@ -64,3 +64,17 @@
   publish = "dist/public"
   targetPort = 3000
   framework = "#custom"
+
+# ========================
+# 🚨 Build Error Handling
+# ========================
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
