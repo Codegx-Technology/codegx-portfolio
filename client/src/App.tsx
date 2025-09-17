@@ -219,8 +219,8 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Get base path for GitHub Pages
-const basePath = process.env.NODE_ENV === 'production' ? '/codegx-portfolio' : '';
+// Get base path - empty for Netlify, can be set via env var for other deployments
+const basePath = process.env.VITE_BASE_PATH || '';
 
 function App() {
   return (

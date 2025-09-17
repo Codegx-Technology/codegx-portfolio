@@ -38,7 +38,7 @@ export default defineConfig(async ({ mode }) => {
     },
   },
   root: path.resolve(__dirname, "client"),
-  base: mode === 'production' ? "/codegx-portfolio/" : "/", // Use repo name for GitHub Pages
+  base: process.env.VITE_BASE_PATH || "/", // Flexible base path for different deployments
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
