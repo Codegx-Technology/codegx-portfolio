@@ -498,7 +498,7 @@ export default function Portfolio() {
 
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {project.technologies.map((tech, techIndex) => (
+                        {project.technologies.map((tech: any, techIndex: number) => (
                           <span
                             key={techIndex}
                             className="px-2 py-1 bg-muted rounded text-xs font-medium text-muted-foreground"
