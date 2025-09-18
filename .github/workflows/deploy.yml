@@ -38,7 +38,7 @@ jobs:
         run: npm ci
 
       - name: Type check
-        run: npm run check:client
+        run: cd client && npx tsc --noEmit
 
       - name: Build project
         run: npm run build
