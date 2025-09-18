@@ -74,7 +74,7 @@ export function MotionCard({
   );
 }
 
-interface MotionCardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+interface MotionCardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   className?: string;
   title?: React.ReactNode;
   description?: React.ReactNode;

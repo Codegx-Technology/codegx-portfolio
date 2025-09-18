@@ -281,9 +281,9 @@ export default function ServiceQuiz() {
                       
                       <div className="space-y-6 mb-8">
                         {results.map((service, index) => {
-                          const IconComponent = service.icon 
+                          const IconComponent = (service.icon
                             ? LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Sparkles
-                            : LucideIcons.Sparkles;
+                            : LucideIcons.Sparkles) as React.ComponentType<{ className?: string }>;
                             
                           return (
                             <motion.div

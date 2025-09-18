@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     await resend.emails.send({
       from: `${env.FROM_NAME} <${env.FROM_EMAIL}>`,
-      to: env.FOUNDER_INBOX,
+      to: env.FOUNDER_INBOX || "hello@codegx.tech",
       subject: `New Quote Request from ${data.name}`,
       html: `
         <h2>Quote Request</h2>

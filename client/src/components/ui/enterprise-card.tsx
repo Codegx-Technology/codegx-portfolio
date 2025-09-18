@@ -39,7 +39,7 @@ export function EnterpriseCard({
   );
 }
 
-interface EnterpriseCardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+interface EnterpriseCardHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   className?: string;
   children?: React.ReactNode;
   title?: React.ReactNode;

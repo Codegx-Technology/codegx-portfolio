@@ -9,8 +9,8 @@ export interface Project {
   image: string;
   category: string;
   technologies: string[];
-  githubUrl: string;
-  liveUrl: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 interface ProjectCardProps {

@@ -15,7 +15,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ id, slug, title, icon, description, tags = [], index = 0 }: ServiceCardProps) {
   // Dynamically get the icon component from Lucide
-  const IconComponent = LucideIcons[icon as keyof typeof LucideIcons] || LucideIcons.Sparkles;
+  const IconComponent = (LucideIcons[icon as keyof typeof LucideIcons] as React.ComponentType<{ className?: string }>) || LucideIcons.Sparkles;
 
   return (
     <motion.div

@@ -68,7 +68,7 @@ export function GlassmorphismCard({
   );
 }
 
-interface GlassmorphismFormCardProps extends GlassmorphismCardProps {
+interface GlassmorphismFormCardProps extends Omit<GlassmorphismCardProps, 'title'> {
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   footer?: React.ReactNode;

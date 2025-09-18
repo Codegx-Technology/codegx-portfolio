@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Send email via Resend
     const { data: emailData, error } = await resend.emails.send({
       from: `${env.FROM_NAME} <${env.FROM_EMAIL}>`,
-      to: env.FOUNDER_INBOX,
+      to: env.FOUNDER_INBOX || "hello@codegx.tech",
       subject: `New Simple Quote Request from ${data.name}`,
       html: `
         <h2>Quote Request</h2>
@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <p><strong>Budget:</strong> ${data.budget}</p>
         <p><strong>Urgency:</strong> ${data.urgency}</p>
       `,
-      reply_to: data.email,
+      replyTo: data.email,
     });
 
     if (error) {

@@ -155,7 +155,7 @@ export default function EnhancedServices() {
                       <i className={`${service.icon} text-xl`}></i>
                     </div>
                     {service.badge && (
-                      <Badge variant={service.badgeVariant}>{service.badge}</Badge>
+                      <Badge variant={service.badgeVariant as "default" | "secondary" | "destructive" | "outline"}>{service.badge}</Badge>
                     )}
                   </div>
                   

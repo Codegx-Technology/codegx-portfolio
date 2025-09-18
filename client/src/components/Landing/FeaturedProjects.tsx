@@ -50,8 +50,8 @@ export function FeaturedProjects() {
       category: project.category.toLowerCase(),
       technologies: project.techStack,
       techStack: project.techStack,
-      githubUrl: project.githubUrl,
-      liveUrl: project.liveUrl,
+      githubUrl: project.githubUrl || undefined,
+      liveUrl: project.liveUrl || undefined,
       projectType: "agency",
     })) || [];
 

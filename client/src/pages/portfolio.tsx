@@ -154,7 +154,7 @@ export default function Portfolio() {
   ];
 
   // Filter categories
-  const categories = ["all", ...new Set(projects.map(project => project.category))];
+  const categories = ["all", ...Array.from(new Set(projects.map(project => project.category)))];
 
   // Filtered projects
   const filteredProjects = activeFilter === "all"
