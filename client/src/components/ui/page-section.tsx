@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "framer-motion";
 
-interface PageSectionProps extends React.HTMLAttributes<HTMLElement> {
+interface PageSectionProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
@@ -12,6 +12,12 @@ interface PageSectionProps extends React.HTMLAttributes<HTMLElement> {
   spacing?: "none" | "sm" | "md" | "lg" | "xl";
   as?: "section" | "div" | "article";
   motionProps?: MotionProps;
+  // Additional props used in pages
+  id?: string;
+  title?: ReactNode;
+  withDivider?: boolean;
+  dividerVariant?: "gradient" | "solid" | "dashed";
+  dividerPosition?: "top" | "bottom" | "both";
 }
 
 /**
@@ -27,6 +33,11 @@ export function PageSection({
   spacing = "lg",
   as = "section",
   motionProps,
+  id,
+  title,
+  withDivider,
+  dividerVariant,
+  dividerPosition,
   ...props
 }: PageSectionProps) {
   // Define spacing classes
@@ -77,26 +88,27 @@ export function PageSection({
 
   // Render with motion if animate is true
   if (animate) {
-    const Component = motion[as as keyof typeof motion];
+    const MotionComponent = motion[as] as any;
     return (
-      <Component
+      <MotionComponent
         className={sectionClasses}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={variants}
+        id={id}
         {...motionProps}
         {...props}
       >
         <div className={containerClasses}>{children}</div>
-      </Component>
+      </MotionComponent>
     );
   }
 
   // Render without motion
   const Component = as;
   return (
-    <Component className={sectionClasses} {...props}>
+    <Component className={sectionClasses} id={id} {...props}>
       <div className={containerClasses}>{children}</div>
     </Component>
   );

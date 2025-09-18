@@ -5,6 +5,7 @@ import { z } from 'zod';
  * This way you can ensure the app isn't built with invalid env vars.
  */
 const serverSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   RESEND_API_KEY: z.string().min(1),
   FOUNDER_INBOX: z.string().email().optional().default("info@codegxtechnologies.com"),
   FROM_EMAIL: z.string().email().optional().default("no-reply@astella.ai"),
@@ -18,6 +19,7 @@ const serverSchema = z.object({
  * Note: All client-side variables must be prefixed with VITE_ to be accessible in the browser
  */
 const clientSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   VITE_SITE_URL: z.string().url().optional().default("https://codegx-technology.github.io/codegx-portfolio"),
   VITE_API_BASE_URL: z.string().url().optional().default("http://localhost:5000"),
 });
@@ -30,6 +32,7 @@ const clientSchema = z.object({
  */
 const processEnv = {
   // Server-side env vars
+  NODE_ENV: process.env.NODE_ENV,
   RESEND_API_KEY: process.env.RESEND_API_KEY,
   FOUNDER_INBOX: process.env.FOUNDER_INBOX,
   FROM_EMAIL: process.env.FROM_EMAIL,
@@ -75,7 +78,7 @@ if (!!process.env.SKIP_ENV_VALIDATION == false) {
             ? '❌ Attempted to access a server-side environment variable on the client'
             : `❌ Attempted to access server-side environment variable '${prop}' on the client`,
         );
-      return target[/** @type {keyof typeof target} */ (prop)];
+      return (target as any)[prop];
     },
   });
 }

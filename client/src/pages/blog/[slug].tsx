@@ -152,11 +152,12 @@ export default function BlogPost() {
                   blockquote: ({ node, ...props }) => (
                     <blockquote className="border-l-4 border-primary pl-4 italic my-4" {...props} />
                   ),
-                  code: ({ node, inline, className, children, ...props }) => {
+                  code: ({ node, className, children, ...props }: any) => {
+                    const inline = !className;
                     const match = /language-(\w+)/.exec(className || "");
                     return !inline && match ? (
                       <SyntaxHighlighter
-                        style={vscDarkPlus}
+                        style={vscDarkPlus as any}
                         language={match[1]}
                         PreTag="div"
                         className="rounded-md my-4"

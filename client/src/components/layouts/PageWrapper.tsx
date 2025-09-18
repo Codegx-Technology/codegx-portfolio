@@ -12,6 +12,9 @@ interface PageWrapperProps {
   withAnimation?: boolean;
   withContainer?: boolean;
   spacing?: "none" | "sm" | "md" | "lg" | "xl";
+  navbarVariant?: "default" | "transparent" | "elevated" | "bordered";
+  showSearch?: boolean;
+  showNotifications?: boolean;
 }
 
 /**
@@ -26,6 +29,9 @@ export function PageWrapper({
   withAnimation = true,
   withContainer = true,
   spacing = "lg",
+  navbarVariant,
+  showSearch,
+  showNotifications,
 }: PageWrapperProps) {
   // Define spacing classes
   const spacingClasses = {
@@ -59,7 +65,13 @@ export function PageWrapper({
 
   // Render with Layout component
   return (
-    <Layout withContainer={withContainer} className={className}>
+    <Layout
+      withContainer={withContainer}
+      className={className}
+      navbarVariant={navbarVariant}
+      showSearch={showSearch}
+      showNotifications={showNotifications}
+    >
       {withAnimation ? (
         <motion.div
           className={cn(spacingClasses[spacing])}
@@ -87,6 +99,11 @@ interface PageSectionProps {
   dividerVariant?: "line" | "gradient" | "dots" | "wave" | "angle" | "none";
   dividerColor?: "default" | "primary" | "secondary" | "muted";
   withAnimation?: boolean;
+  // Additional props used in pages
+  background?: "default" | "muted" | "primary" | "gradient" | "pattern" | "none";
+  spacing?: "none" | "sm" | "md" | "lg" | "xl";
+  id?: string;
+  dividerPosition?: "top" | "bottom" | "both";
 }
 
 /**
@@ -101,6 +118,10 @@ export function PageSection({
   dividerVariant = "line",
   dividerColor = "default",
   withAnimation = true,
+  background,
+  spacing,
+  id,
+  dividerPosition,
 }: PageSectionProps) {
   // Animation variants
   const sectionVariants = {
@@ -148,11 +169,12 @@ export function PageSection({
     <motion.section
       className={cn("py-8", className)}
       variants={sectionVariants}
+      id={id}
     >
       {content}
     </motion.section>
   ) : (
-    <section className={cn("py-8", className)}>
+    <section className={cn("py-8", className)} id={id}>
       {content}
     </section>
   );

@@ -7,6 +7,9 @@ interface LayoutProps {
   containerClassName?: string;
   fullWidth?: boolean;
   withContainer?: boolean;
+  navbarVariant?: "default" | "transparent" | "elevated" | "bordered";
+  showSearch?: boolean;
+  showNotifications?: boolean;
 }
 
 /**
@@ -18,7 +21,10 @@ export function Layout({
   className = "",
   containerClassName,
   fullWidth = false,
-  withContainer = true
+  withContainer = true,
+  navbarVariant,
+  showSearch,
+  showNotifications
 }: LayoutProps) {
   return (
     <MainLayout
@@ -26,6 +32,9 @@ export function Layout({
       containerClassName={containerClassName}
       fullWidth={fullWidth}
       withContainer={withContainer}
+      navbarVariant={navbarVariant}
+      showSearch={showSearch}
+      showNotifications={showNotifications}
     >
       {children}
     </MainLayout>

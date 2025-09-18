@@ -1,10 +1,12 @@
 import React, { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { motion, MotionProps } from "framer-motion";
 
-interface TypographyProps {
+interface TypographyProps extends MotionProps {
   children: ReactNode;
   className?: string;
   as?: React.ElementType;
+  animate?: boolean;
 }
 
 /**
@@ -34,7 +36,24 @@ export function Heading2({
   children,
   className,
   as: Component = "h2",
+  animate = false,
+  ...motionProps
 }: TypographyProps) {
+  if (animate) {
+    const MotionComponent = motion[Component as keyof typeof motion] as any;
+    return (
+      <MotionComponent
+        className={cn(
+          "heading-2 scroll-m-20 border-b pb-2 first:mt-0",
+          className
+        )}
+        {...motionProps}
+      >
+        {children}
+      </MotionComponent>
+    );
+  }
+
   return (
     <Component
       className={cn(
@@ -94,7 +113,24 @@ export function Paragraph({
   children,
   className,
   as: Component = "p",
+  animate = false,
+  ...motionProps
 }: TypographyProps) {
+  if (animate) {
+    const MotionComponent = motion[Component as keyof typeof motion] as any;
+    return (
+      <MotionComponent
+        className={cn(
+          "body-base leading-7 [&:not(:first-child)]:mt-6",
+          className
+        )}
+        {...motionProps}
+      >
+        {children}
+      </MotionComponent>
+    );
+  }
+
   return (
     <Component
       className={cn(
