@@ -41,8 +41,8 @@ export function FeaturedProjects() {
 
   // Convert agency projects to the unified format
   const convertedAgencyProjects: UnifiedProject[] = agencyProjectsData?.projects
-    .filter(project => project.featured)
-    .map(project => ({
+    .filter((project: any) => project.featured)
+    .map((project: any) => ({
       id: parseInt(project.id) || Math.random(),
       title: project.title,
       description: project.description,
@@ -57,8 +57,8 @@ export function FeaturedProjects() {
 
   // Convert personal projects to the unified format
   const convertedPersonalProjects: UnifiedProject[] = personalProjects
-    .filter((_, index) => index < 3) // Just take the first 3 for featured
-    .map(project => ({
+    .filter((_: any, index: number) => index < 3) // Just take the first 3 for featured
+    .map((project: any) => ({
       ...project,
       projectType: "personal",
     }));
@@ -134,7 +134,7 @@ export function FeaturedProjects() {
                     <h3 className="text-xl font-semibold mb-2 line-clamp-1">{project.title}</h3>
                     <p className="text-muted-foreground mb-4 text-sm line-clamp-2">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {(project.technologies || project.techStack || []).slice(0, 3).map((tech, index) => (
+                      {(project.technologies || project.techStack || []).slice(0, 3).map((tech: any, index: number) => (
                         <Badge key={index} variant="outline" className="text-xs">
                           {tech}
                         </Badge>

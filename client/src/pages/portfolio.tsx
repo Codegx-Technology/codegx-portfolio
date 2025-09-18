@@ -154,15 +154,15 @@ export default function Portfolio() {
   ];
 
   // Filter categories
-  const categories = ["all", ...Array.from(new Set(projects.map(project => project.category)))];
+  const categories = ["all", ...Array.from(new Set(projects.map((project: any) => project.category)))];
 
   // Filtered projects
   const filteredProjects = activeFilter === "all"
     ? projects
-    : projects.filter(project => project.category === activeFilter);
+    : projects.filter((project: any) => project.category === activeFilter);
 
   // Featured projects
-  const featuredProjects = projects.filter(project => project.featured);
+  const featuredProjects = projects.filter((project: any) => project.featured);
 
   return (
     <>
@@ -362,7 +362,7 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {skills.map((skill, index) => (
+              {skills.map((skill: any, index: number) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
@@ -435,7 +435,7 @@ export default function Portfolio() {
 
             {/* Project Filters */}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
-              {categories.map((category, index) => (
+              {categories.map((category: any, index: number) => (
                 <motion.button
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -456,7 +456,7 @@ export default function Portfolio() {
 
             {/* Projects Grid */}
             <EnterpriseGrid cols={3} gap="lg">
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project: any, index: number) => (
                 <motion.div
                   key={project.id}
                   variants={itemVariants}

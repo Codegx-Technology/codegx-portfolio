@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -9,18 +10,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": "/src"
+      "@": path.resolve(__dirname, "src")
     }
   },
-  base: "/codegx-portfolio/",
-  build: {
-    outDir: "../dist/public",
-    emptyOutDir: true,
-    sourcemap: false,
-    minify: true,
-    copyPublicDir: true,
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion'],
-  },
+  base: "/codegx-portfolio/"
 });
