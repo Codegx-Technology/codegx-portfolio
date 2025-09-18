@@ -9,6 +9,7 @@ import { Head } from "@/components/head";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import LazyRoute from "@/components/LazyRoute";
 import { ThemeProvider } from "@/components/theme-provider";
+import { HelmetProvider } from "react-helmet-async";
 import CodegxLanding from "@/pages/codegx";
 import Home from "@/pages/index";
 import PersonalPortfolio from "@/pages/home";
@@ -225,22 +226,24 @@ const basePath = process.env.VITE_BASE_PATH || '';
 function App() {
   return (
     <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
-          <Head />
-          <ErrorBoundary>
-            <Suspense fallback={<LoadingFallback />}>
-              <Router base={basePath}>
-                <AppRouter />
-              </Router>
-            </Suspense>
-          </ErrorBoundary>
-          <Toaster />
-          {process.env.NODE_ENV !== 'production' && (
-            <ReactQueryDevtools initialIsOpen={false} />
-          )}
-        </ThemeProvider>
-      </QueryClientProvider>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <Head />
+            <ErrorBoundary>
+              <Suspense fallback={<LoadingFallback />}>
+                <Router base={basePath}>
+                  <AppRouter />
+                </Router>
+              </Suspense>
+            </ErrorBoundary>
+            <Toaster />
+            {process.env.NODE_ENV !== 'production' && (
+              <ReactQueryDevtools initialIsOpen={false} />
+            )}
+          </ThemeProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
     </ErrorBoundary>
   );
 }
