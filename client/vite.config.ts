@@ -6,7 +6,8 @@ export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
   const env = loadEnv(mode, process.cwd(), '');
 
-  const basePath = process.env.NODE_ENV === 'production' && process.env.VITE_BASE_PATH ? process.env.VITE_BASE_PATH : "/";
+  // Set base path for GitHub Pages deployment
+  const basePath = process.env.NODE_ENV === 'production' ? '/codegx-portfolio/' : '/';
 
   return {
     plugins: [react()],
@@ -16,7 +17,7 @@ export default defineConfig(({ mode }) => {
         "@shared": path.resolve(__dirname, "../shared"),
       },
     },
-    base: basePath, // Flexible base path for different deployments
+    base: basePath, // GitHub Pages requires /codegx-portfolio/ for subdirectory deployment
     build: {
       outDir: "../dist/public",
       emptyOutDir: true,
