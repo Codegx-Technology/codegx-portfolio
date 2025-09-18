@@ -31,11 +31,13 @@ jobs:
       - name: Build project
         run: npm run build
         env:
+          NODE_ENV: production
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           FOUNDER_INBOX: ${{ secrets.FOUNDER_INBOX }}
           FROM_EMAIL: no-reply@astella.ai
           FROM_NAME: Astella AI
           VITE_SITE_URL: https://codegx-technology.github.io/codegx-portfolio
+          VITE_BASE_PATH: /codegx-portfolio/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

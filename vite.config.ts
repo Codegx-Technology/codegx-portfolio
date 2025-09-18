@@ -14,6 +14,8 @@ export default defineConfig(async ({ mode }) => {
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd(), '');
 
+  const basePath = process.env.NODE_ENV === 'production' && process.env.VITE_BASE_PATH ? process.env.VITE_BASE_PATH : "/";
+
   return {
   plugins: [
     react(),
@@ -38,7 +40,7 @@ export default defineConfig(async ({ mode }) => {
     },
   },
   root: path.resolve(__dirname, "client"),
-  base: process.env.VITE_BASE_PATH || "/", // Flexible base path for different deployments
+  base: basePath, // Flexible base path for different deployments
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
