@@ -1,37 +1,26 @@
-import { defineConfig, loadEnv } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig(({ mode }) => {
-  // Load env file based on `mode` in the current working directory.
-  const env = loadEnv(mode, process.cwd(), '');
-
-  // Set base path for GitHub Pages deployment
-  const basePath = process.env.NODE_ENV === 'production' ? '/codegx-portfolio/' : '/';
-
-  return {
-    plugins: [react()],
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src"),
-        "@shared": path.resolve(__dirname, "../shared"),
-      },
-    },
-    base: basePath, // GitHub Pages requires /codegx-portfolio/ for subdirectory deployment
-    build: {
-      outDir: "../dist/public",
-      emptyOutDir: true,
-      sourcemap: mode !== 'production',
-      minify: mode === 'production',
-      copyPublicDir: true,
-    },
-    // Define environment variables
-    define: {
-      'process.env': env,
-    },
-    // Optimize dependencies
-    optimizeDeps: {
-      include: ['react', 'react-dom', 'framer-motion'],
-    },
-  };
+export default defineConfig({
+  plugins: [
+    react(),
+    tsconfigPaths()
+  ],
+  resolve: {
+    alias: {
+      "@": "/src"
+    }
+  },
+  base: "/codegx-portfolio/",
+  build: {
+    outDir: "../dist/public",
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: true,
+    copyPublicDir: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion'],
+  },
 });

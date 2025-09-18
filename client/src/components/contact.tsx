@@ -17,12 +17,23 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { contactFormSchema } from "@shared/schema";
+
+// Define the contact form schema locally
+const contactFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  company: z.string().optional(),
+  position: z.string().optional(),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export function Contact() {
   const { toast } = useToast();
-  
-  const form = useForm<z.infer<typeof contactFormSchema>>({
+
+  const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
@@ -33,12 +44,12 @@ export function Contact() {
       message: ""
     },
   });
-  
-  const submitContactForm = async (data: z.infer<typeof contactFormSchema>) => {
+
+  const submitContactForm = async (data: ContactFormData) => {
     const response = await apiRequest("POST", "/api/contact", data);
     return response.json();
   };
-  
+
   const mutation = useMutation({
     mutationFn: submitContactForm,
     onSuccess: () => {
@@ -56,8 +67,8 @@ export function Contact() {
       });
     },
   });
-  
-  function onSubmit(data: z.infer<typeof contactFormSchema>) {
+
+  function onSubmit(data: ContactFormData) {
     mutation.mutate(data);
   }
   
