@@ -45,27 +45,48 @@ export default defineConfig(async ({ mode }) => {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
     sourcemap: mode !== 'production',
-    minify: mode === 'production',
+    minify: mode === 'production' ? 'esbuild' : false,
     // Copy public files to build output
     copyPublicDir: true,
-    // Optimize chunks
+    // Target modern browsers for smaller bundle
+    target: 'es2020',
+    // Increase chunk size warning limit (we're optimizing)
+    chunkSizeWarningLimit: 1000,
+    // Optimize chunks for better caching and loading
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion'],
-          ui: [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-alert-dialog',
-            '@radix-ui/react-avatar',
-            '@radix-ui/react-checkbox',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-label',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-select',
-            '@radix-ui/react-slot',
-            '@radix-ui/react-toast',
-          ],
+        manualChunks: (id) => {
+          // Vendor chunk for core React libraries
+          if (id.includes('node_modules/react') || 
+              id.includes('node_modules/react-dom') || 
+              id.includes('node_modules/scheduler')) {
+            return 'vendor';
+          }
+          
+          // Framer Motion in separate chunk (used frequently)
+          if (id.includes('node_modules/framer-motion')) {
+            return 'framer';
+          }
+          
+          // Radix UI components in separate chunk
+          if (id.includes('node_modules/@radix-ui')) {
+            return 'ui';
+          }
+          
+          // React Query in separate chunk
+          if (id.includes('node_modules/@tanstack/react-query')) {
+            return 'query';
+          }
+          
+          // Wouter (router) in separate chunk
+          if (id.includes('node_modules/wouter')) {
+            return 'router';
+          }
+          
+          // Icon map in separate chunk (now optimized)
+          if (id.includes('/lib/iconMap')) {
+            return 'icons';
+          }
         },
       },
     },
