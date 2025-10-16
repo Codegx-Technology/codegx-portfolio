@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import * as LucideIcons from "lucide-react";
+import { getIcon } from "@/lib/iconMap";
 
 interface ServiceCardProps {
   id: string;
@@ -14,8 +14,8 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ id, slug, title, icon, description, tags = [], index = 0 }: ServiceCardProps) {
-  // Dynamically get the icon component from Lucide
-  const IconComponent = (LucideIcons[icon as keyof typeof LucideIcons] as React.ComponentType<{ className?: string }>) || LucideIcons.Sparkles;
+  // Get icon component from optimized icon map
+  const IconComponent = getIcon(icon);
 
   return (
     <motion.div

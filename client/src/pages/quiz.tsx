@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import * as LucideIcons from "lucide-react";
+import { getIcon } from "@/lib/iconMap";
 
 interface Service {
   id: string;
@@ -281,9 +281,7 @@ export default function ServiceQuiz() {
                       
                       <div className="space-y-6 mb-8">
                         {results.map((service, index) => {
-                          const IconComponent = (service.icon
-                            ? LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Sparkles
-                            : LucideIcons.Sparkles) as React.ComponentType<{ className?: string }>;
+                          const IconComponent = service.icon ? getIcon(service.icon) : getIcon("Sparkles");
                             
                           return (
                             <motion.div

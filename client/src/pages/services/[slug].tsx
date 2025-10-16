@@ -5,7 +5,7 @@ import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import * as LucideIcons from "lucide-react";
+import { getIcon } from "@/lib/iconMap";
 
 interface ServiceExample {
   title: string;
@@ -62,10 +62,8 @@ export default function ServiceDetail() {
     window.scrollTo(0, 0);
   }, [slug]);
   
-  // Get the icon component
-  const IconComponent = (service?.icon
-    ? LucideIcons[service.icon as keyof typeof LucideIcons] || LucideIcons.Sparkles
-    : LucideIcons.Sparkles) as React.ComponentType<{ className?: string }>;
+  // Get the icon component from optimized icon map
+  const IconComponent = service?.icon ? getIcon(service.icon) : getIcon("Sparkles");
 
   if (isLoading) {
     return (
