@@ -152,14 +152,15 @@ export function Contact() {
             
             <div className="mt-10">
               <h4 className="font-medium mb-4">Professional Profiles</h4>
-              <div className="flex space-x-5">
+              <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
                   <a 
                     key={index}
                     href={link.url} 
-                    className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm shadow-sm border border-primary/10 flex items-center justify-center hover:bg-primary/10 transition"
+                    className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-background/80 backdrop-blur-sm shadow-sm border border-primary/10 flex items-center justify-center hover:bg-primary/10 transition"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Visit ${link.icon.includes('github') ? 'GitHub' : link.icon.includes('linkedin') ? 'LinkedIn' : link.icon.includes('twitter') ? 'Twitter' : 'Medium'} profile`}
                   >
                     <i className={`${link.icon} text-lg`}></i>
                   </a>
@@ -188,7 +189,9 @@ export function Contact() {
                       <FormLabel>Your Name</FormLabel>
                       <FormControl>
                         <Input 
+                          type="text"
                           placeholder="Enter your name" 
+                          autoComplete="name"
                           className="bg-background/50 backdrop-blur-sm border-primary/20 shadow-sm focus:border-primary focus:ring-primary"
                           {...field} 
                         />
@@ -206,7 +209,9 @@ export function Contact() {
                       <FormLabel>Your Email</FormLabel>
                       <FormControl>
                         <Input 
+                          type="email"
                           placeholder="Enter your email" 
+                          autoComplete="email"
                           className="bg-background/50 backdrop-blur-sm border-primary/20 shadow-sm focus:border-primary focus:ring-primary"
                           {...field} 
                         />
@@ -293,7 +298,7 @@ export function Contact() {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full py-6"
+                  className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full py-6 min-h-[52px]"
                   disabled={mutation.isPending}
                 >
                   {mutation.isPending ? (
