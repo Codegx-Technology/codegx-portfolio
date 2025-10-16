@@ -151,3 +151,13 @@
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+
+/* Fixed navbar spacing - prevent content from scrolling behind navbar */
+body {
+  padding-top: 0;
+}
+
+/* Ensure all main content sections have proper spacing */
+main {
+  min-height: calc(100vh - 80px);
+}
