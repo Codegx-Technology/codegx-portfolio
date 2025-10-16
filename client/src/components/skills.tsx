@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ProgressBar } from "@/components/progress-bar";
 import { Badge } from "@/components/ui/badge";
-import { skills } from "@/lib/data";
+import { skillsData } from "@/lib/data";
 
 export function Skills() {
   const aiMlTechnologies = [
@@ -82,7 +82,7 @@ export function Skills() {
                 <i className="fas fa-code text-primary mr-2"></i> Programming Stack
               </h3>
 
-              {skills.programming.map((skill) => (
+              {skillsData.programming.map((skill) => (
                 <ProgressBar
                   key={skill.name}
                   label={skill.name}
@@ -95,7 +95,7 @@ export function Skills() {
               </h3>
 
               <div className="grid grid-cols-2 gap-4">
-                {skills.databases.map((db) => (
+                {skillsData.databases.map((db: string) => (
                   <div key={db} className="bg-primary/5 p-4 rounded-lg flex items-center shadow-sm hover:shadow-md transition-all hover:bg-primary/10">
                     <i className="fas fa-database text-primary text-xl mr-3"></i>
                     <span>{db}</span>
@@ -162,7 +162,7 @@ export function Skills() {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {skills.emerging_tech.map((tech) => (
+                {skillsData.emerging_tech.map((tech) => (
                   <Badge key={tech} variant="outline" className="bg-primary/10 text-primary px-3 py-1 rounded-full shadow-sm hover:shadow-md transition-all hover:bg-primary/20">
                     {tech}
                   </Badge>

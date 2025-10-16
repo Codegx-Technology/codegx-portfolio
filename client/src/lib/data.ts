@@ -56,6 +56,27 @@ export const skills: Skill[] = [
   { name: "CI/CD", level: 85, category: "cloud" },
 ];
 
+// Extended skills data for Skills component
+export const skillsData = {
+  programming: skills.filter(s => s.category === "languages" || s.category === "web"),
+  databases: [
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "MySQL",
+    "Cassandra",
+    "Neo4j"
+  ],
+  emerging_tech: [
+    "Quantum Computing",
+    "Edge AI",
+    "5G Integration",
+    "AR/VR Development",
+    "IoT Solutions",
+    "Neuromorphic Computing"
+  ]
+};
+
 export const projects: Project[] = [
   {
     id: 1,
