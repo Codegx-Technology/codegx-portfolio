@@ -54,7 +54,7 @@
   
   /* UI text */
   .ui-label {
-    @apply font-sans text-sm font-medium;
+    @apply font-sans text-sm font-semibold;
   }
   
   .ui-value {
@@ -67,11 +67,11 @@
   
   /* Special text styles */
   .overline {
-    @apply font-sans text-xs uppercase tracking-widest font-medium;
+    @apply font-sans text-xs uppercase tracking-widest font-semibold;
   }
   
   .quote {
-    @apply font-heading text-xl md:text-2xl italic font-medium leading-relaxed;
+    @apply font-heading text-xl md:text-2xl italic font-semibold leading-relaxed;
   }
   
   /* Enterprise section titles */

@@ -2,17 +2,13 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Import fonts
-import "@fontsource/inter/300.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/plus-jakarta-sans/300.css";
-import "@fontsource/plus-jakarta-sans/400.css";
-import "@fontsource/plus-jakarta-sans/500.css";
-import "@fontsource/plus-jakarta-sans/600.css";
-import "@fontsource/plus-jakarta-sans/700.css";
+// Import fonts - Optimized: Latin subset only, essential weights
+import "@fontsource/inter/400.css"; // Normal
+import "@fontsource/inter/600.css"; // Semibold
+import "@fontsource/inter/700.css"; // Bold
+import "@fontsource/plus-jakarta-sans/400.css"; // Normal
+import "@fontsource/plus-jakarta-sans/600.css"; // Semibold
+import "@fontsource/plus-jakarta-sans/700.css"; // Bold
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
