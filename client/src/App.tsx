@@ -10,17 +10,19 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import LazyRoute from "@/components/LazyRoute";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
-import CodegxLanding from "@/pages/codegx";
-import Home from "@/pages/index";
-import PersonalPortfolio from "@/pages/home";
-import AgencyPage from "@/pages/agency";
-import Contact from "@/pages/contact";
-import CaseStudies from "@/pages/case-studies";
-import Blog from "@/pages/blog";
-import WhyAstella from "@/pages/why-astella";
-import NotFound from "@/pages/not-found";
+// Eager load only critical pages (homepage)
 import ProfessionalHome from "@/pages/professional-home";
-import TestHome from "@/pages/test-home";
+import NotFound from "@/pages/not-found";
+
+// Lazy load all other pages for better performance
+const CodegxLanding = lazy(() => import("@/pages/codegx"));
+const Home = lazy(() => import("@/pages/index"));
+const PersonalPortfolio = lazy(() => import("@/pages/home"));
+const AgencyPage = lazy(() => import("@/pages/agency"));
+const Contact = lazy(() => import("@/pages/contact"));
+const CaseStudies = lazy(() => import("@/pages/case-studies"));
+const Blog = lazy(() => import("@/pages/blog"));
+const WhyAstella = lazy(() => import("@/pages/why-astella"));
 import "@/styles/globals.css";
 
 function AppRouter() {
@@ -33,9 +35,15 @@ function AppRouter() {
           <ProfessionalHome />
         </Route>
         <Route path="/home" component={ProfessionalHome} />
-        <Route path="/codegx-landing" component={CodegxLanding} />
-        <Route path="/portfolio" component={PersonalPortfolio} />
-        <Route path="/agency" component={WhyAstella} />
+        <Route path="/codegx-landing">
+          {() => <LazyRoute component={CodegxLanding} />}
+        </Route>
+        <Route path="/portfolio">
+          {() => <LazyRoute component={PersonalPortfolio} />}
+        </Route>
+        <Route path="/agency">
+          {() => <LazyRoute component={WhyAstella} />}
+        </Route>
         <Route path="/agency/services">
           {() => {
             const AgencyServices = React.lazy(() => import("@/pages/agency/services"));
@@ -48,16 +56,24 @@ function AppRouter() {
             return <LazyRoute component={AgencyProjects} />;
           }}
         </Route>
-        <Route path="/contact" component={Contact} />
-        <Route path="/case-studies" component={CaseStudies} />
-        <Route path="/blog" component={Blog} />
+        <Route path="/contact">
+          {() => <LazyRoute component={Contact} />}
+        </Route>
+        <Route path="/case-studies">
+          {() => <LazyRoute component={CaseStudies} />}
+        </Route>
+        <Route path="/blog">
+          {() => <LazyRoute component={Blog} />}
+        </Route>
         <Route path="/blog/:slug">
           {({slug}) => {
             const BlogPost = React.lazy(() => import("@/pages/blog/[slug]"));
             return <LazyRoute component={BlogPost} />;
           }}
         </Route>
-        <Route path="/why-astella" component={WhyAstella} />
+        <Route path="/why-astella">
+          {() => <LazyRoute component={WhyAstella} />}
+        </Route>
         <Route path="/services">
           {() => {
             const Services = React.lazy(() => import("@/pages/services"));
