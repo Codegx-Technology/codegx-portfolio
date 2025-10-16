@@ -61,17 +61,17 @@ sustainable_city = architect.deliver_sustainable_city()`;
             <div className="inline-block px-4 py-1 rounded-full bg-primary/10 mb-4 backdrop-blur-sm">
               <span className="text-sm font-semibold text-primary">Currently working on sustainable smart city project</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-inter leading-tight">
               Enterprise <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Solutions</span> Architect
             </h1>
-            <p className="mt-6 text-xl leading-relaxed opacity-90">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed opacity-90">
               Empowering forward-thinking organizations with cutting-edge AI, blockchain, and smart city technologies. Delivering measurable business impact through innovative digital solutions.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Button
                 size="lg"
                 onClick={() => scrollToSection("projects")}
-                className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-8"
+                className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-8 min-h-[48px] w-full sm:w-auto"
               >
                 <i className="fas fa-briefcase mr-2"></i>Enterprise Solutions
               </Button>
@@ -79,22 +79,22 @@ sustainable_city = architect.deliver_sustainable_city()`;
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("contact")}
-                className="border-primary text-primary hover:bg-primary/10 rounded-full px-8"
+                className="border-primary text-primary hover:bg-primary/10 rounded-full px-8 min-h-[48px] w-full sm:w-auto"
               >
                 <i className="fas fa-handshake mr-2"></i>Partnerships
               </Button>
             </div>
-            <div className="mt-10 flex space-x-5">
-              <a href="https://github.com" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="GitHub" target="_blank" rel="noreferrer">
+            <div className="mt-8 sm:mt-10 flex gap-4 sm:gap-5">
+              <a href="https://github.com" className="min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="GitHub" target="_blank" rel="noreferrer">
                 <i className="fab fa-github text-lg"></i>
               </a>
-              <a href="https://linkedin.com" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+              <a href="https://linkedin.com" className="min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="LinkedIn" target="_blank" rel="noreferrer">
                 <i className="fab fa-linkedin-in text-lg"></i>
               </a>
-              <a href="https://twitter.com" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="Twitter" target="_blank" rel="noreferrer">
+              <a href="https://twitter.com" className="min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="Twitter" target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter text-lg"></i>
               </a>
-              <a href="https://medium.com" className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="Medium" target="_blank" rel="noreferrer">
+              <a href="https://medium.com" className="min-w-[44px] min-h-[44px] w-11 h-11 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary/10 text-gray-400 hover:text-primary transition" aria-label="Medium" target="_blank" rel="noreferrer">
                 <i className="fab fa-medium-m text-lg"></i>
               </a>
             </div>
