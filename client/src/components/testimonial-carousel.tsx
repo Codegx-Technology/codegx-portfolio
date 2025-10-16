@@ -135,10 +135,10 @@ export function TestimonialCarousel({
                             href={testimonials[currentIndex].linkedinUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-1 rounded-full hover:bg-blue-700 transition-colors"
-                            aria-label={`${testimonials[currentIndex].name}'s LinkedIn profile`}
+                            className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors min-w-[32px] min-h-[32px] flex items-center justify-center"
+                            aria-label={`Visit ${testimonials[currentIndex].name}'s LinkedIn profile`}
                           >
-                            <Linkedin size={14} />
+                            <Linkedin size={16} />
                           </a>
                         )}
                       </div>
