@@ -185,16 +185,21 @@ export function Navbar() {
             <ThemeToggle className="mr-2" />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="min-h-[44px] min-w-[44px]"
+                  aria-label="Open navigation menu"
+                >
                   <i className="fas fa-bars text-xl"></i>
                 </Button>
               </SheetTrigger>
-              <SheetContent>
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent className="w-[85vw] sm:w-[350px]">
+                <div className="flex flex-col space-y-2 mt-8">
                   <Link
                     href="/home"
-                    className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
-                      location === "/home" ? "text-primary" : ""
+                    className={`px-4 py-3 rounded-md font-medium hover:bg-primary/10 transition-colors min-h-[44px] flex items-center ${
+                      location === "/home" ? "text-primary bg-primary/5" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -202,8 +207,8 @@ export function Navbar() {
                   </Link>
                   <Link
                     href="/portfolio"
-                    className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
-                      location === "/portfolio" ? "text-primary" : ""
+                    className={`px-4 py-3 rounded-md font-medium hover:bg-primary/10 transition-colors min-h-[44px] flex items-center ${
+                      location === "/portfolio" ? "text-primary bg-primary/5" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -213,8 +218,8 @@ export function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`px-3 py-2 rounded-md font-medium hover:bg-primary/10 ${
-                        location === link.href ? "text-primary" : ""
+                      className={`px-4 py-3 rounded-md font-medium hover:bg-primary/10 transition-colors min-h-[44px] flex items-center ${
+                        location === link.href ? "text-primary bg-primary/5" : ""
                       }`}
                       onClick={() => setIsOpen(false)}
                     >
@@ -223,41 +228,41 @@ export function Navbar() {
                   ))}
 
                   {/* Agency Section */}
-                  <div className="px-3 py-2">
-                    <div className="font-medium mb-2">Agency</div>
-                    <div className="pl-3 border-l-2 border-muted space-y-2">
+                  <div className="px-4 py-2 mt-2">
+                    <div className="font-semibold text-sm text-muted-foreground uppercase tracking-wide mb-3">Agency</div>
+                    <div className="pl-3 border-l-2 border-muted space-y-1">
                       {agencyLinks.slice(0, 1).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className={`block py-1 px-2 rounded hover:bg-primary/10 ${
-                            location === link.href ? "text-primary font-medium" : ""
+                          className={`block py-2 px-3 rounded hover:bg-primary/10 transition-colors min-h-[40px] flex items-center ${
+                            location === link.href ? "text-primary font-medium bg-primary/5" : ""
                           }`}
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
                         </Link>
                       ))}
-                      <div className="py-1 px-2 text-xs text-muted-foreground mt-2">Services & Pricing</div>
+                      <div className="py-2 px-3 text-xs text-muted-foreground font-semibold uppercase tracking-wide mt-3">Services & Pricing</div>
                       {agencyLinks.slice(1, 3).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className={`block py-1 px-2 rounded hover:bg-primary/10 ${
-                            location === link.href ? "text-primary font-medium" : ""
+                          className={`block py-2 px-3 rounded hover:bg-primary/10 transition-colors min-h-[40px] flex items-center ${
+                            location === link.href ? "text-primary font-medium bg-primary/5" : ""
                           }`}
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
                         </Link>
                       ))}
-                      <div className="py-1 px-2 text-xs text-muted-foreground mt-2">Resources</div>
+                      <div className="py-2 px-3 text-xs text-muted-foreground font-semibold uppercase tracking-wide mt-3">Resources</div>
                       {agencyLinks.slice(3, 6).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className={`block py-1 px-2 rounded hover:bg-primary/10 ${
-                            location === link.href ? "text-primary font-medium" : ""
+                          className={`block py-2 px-3 rounded hover:bg-primary/10 transition-colors min-h-[40px] flex items-center ${
+                            location === link.href ? "text-primary font-medium bg-primary/5" : ""
                           }`}
                           onClick={() => setIsOpen(false)}
                         >
@@ -269,11 +274,11 @@ export function Navbar() {
 
                   <a
                     href="/resume.pdf"
-                    className="px-3 py-2 rounded-md font-medium text-primary hover:bg-primary/10 flex items-center gap-1"
+                    className="px-4 py-3 rounded-md font-medium text-primary hover:bg-primary/10 transition-colors min-h-[44px] flex items-center gap-2 mt-4 border border-primary/20"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fas fa-download text-sm"></i> Resume
+                    <i className="fas fa-download text-sm"></i> Download Resume
                   </a>
                 </div>
               </SheetContent>
