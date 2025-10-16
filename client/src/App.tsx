@@ -224,6 +224,8 @@ const LoadingFallback = () => (
 const basePath = process.env.VITE_BASE_PATH || '';
 
 function App() {
+  console.log("App component rendering...");
+  
   return (
     <ErrorBoundary>
       <HelmetProvider>
