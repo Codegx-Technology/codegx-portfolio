@@ -10,6 +10,9 @@
   NPM_FLAGS = "--legacy-peer-deps"
   # Base path for Netlify deployment
   VITE_BASE_PATH = "/"
+  # Disable auto-detection of frameworks
+  NETLIFY_USE_YARN = "false"
+  NETLIFY_USE_PNPM = "false"
 
 # ========================
 # 🔄 Redirects (SPA Support)
