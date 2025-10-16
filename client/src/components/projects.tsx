@@ -39,7 +39,7 @@ export function Projects() {
         
         {/* Filter tabs */}
         <motion.div 
-          className="flex justify-center flex-wrap gap-3 mb-14"
+          className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,7 +49,7 @@ export function Projects() {
             <Button
               key={category.value}
               variant={activeFilter === category.value ? "default" : "outline"}
-              className={`rounded-full shadow-sm px-6 ${
+              className={`rounded-full shadow-sm px-4 sm:px-6 min-h-[44px] text-sm sm:text-base ${
                 activeFilter === category.value 
                   ? "bg-primary text-white shadow-primary/30" 
                   : "bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/10"
@@ -68,7 +68,7 @@ export function Projects() {
         </motion.div>
         
         {/* Project grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

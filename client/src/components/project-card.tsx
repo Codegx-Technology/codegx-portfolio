@@ -57,8 +57,8 @@ export function ProjectCard({ project, isVisible }: ProjectCardProps) {
           </div>
         </div>
         <CardContent className="p-6">
-          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-          <p className="text-muted-foreground mb-4">{project.description}</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-5">
             {project.technologies.map((tech, index) => (
               <Badge key={index} variant="secondary" className="text-xs">
@@ -66,16 +66,16 @@ export function ProjectCard({ project, isVisible }: ProjectCardProps) {
               </Badge>
             ))}
           </div>
-          <div className="flex justify-between items-center">
-            <a href="#" className="text-primary hover:text-primary/80 transition flex items-center gap-1">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+            <a href="#" className="text-primary hover:text-primary/80 transition flex items-center gap-1 min-h-[44px] py-2">
               View Project <i className="fas fa-arrow-right text-xs"></i>
             </a>
-            <div className="flex gap-3">
-              <a href={project.githubUrl} className="text-muted-foreground hover:text-primary transition" target="_blank" rel="noreferrer">
-                <i className="fab fa-github"></i>
+            <div className="flex gap-4">
+              <a href={project.githubUrl} className="text-muted-foreground hover:text-primary transition min-w-[44px] min-h-[44px] flex items-center justify-center" target="_blank" rel="noreferrer" aria-label="View on GitHub">
+                <i className="fab fa-github text-lg"></i>
               </a>
-              <a href={project.liveUrl} className="text-muted-foreground hover:text-primary transition" target="_blank" rel="noreferrer">
-                <i className="fas fa-external-link-alt"></i>
+              <a href={project.liveUrl} className="text-muted-foreground hover:text-primary transition min-w-[44px] min-h-[44px] flex items-center justify-center" target="_blank" rel="noreferrer" aria-label="View live demo">
+                <i className="fas fa-external-link-alt text-lg"></i>
               </a>
             </div>
           </div>
