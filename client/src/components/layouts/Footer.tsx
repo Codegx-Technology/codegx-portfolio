@@ -336,15 +336,15 @@ export function Footer({
                   {showSocial && (
                     <div className="mt-6 relative z-10">
                       <h5 className="text-xs uppercase tracking-wider text-slate-400 mb-3">Connect With Us</h5>
-                      <div className="flex space-x-3">
+                      <div className="flex gap-3 sm:gap-4">
                         {activeSocialLinks.map((social, index) => (
                           <a
                             key={index}
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-9 h-9 rounded-full bg-[#4d2c35]/50 dark:bg-[#3d2a5d]/50 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] hover:bg-[#4d2c35] dark:hover:bg-[#3d2a5d] transition-colors"
-                            aria-label={social.platform}
+                            className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-[#4d2c35]/50 dark:bg-[#3d2a5d]/50 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] hover:bg-[#4d2c35] dark:hover:bg-[#3d2a5d] transition-colors"
+                            aria-label={`Visit ${social.platform} profile`}
                           >
                             <i className={social.icon}></i>
                           </a>
