@@ -62,6 +62,12 @@ function AppRouter() {
         <Route path="/case-studies">
           {() => <LazyRoute component={CaseStudies} />}
         </Route>
+        <Route path="/case-studies/:slug">
+          {({slug}) => {
+            const CaseStudyDetail = React.lazy(() => import("@/pages/case-studies/[slug]"));
+            return <LazyRoute component={CaseStudyDetail} />;
+          }}
+        </Route>
         <Route path="/blog">
           {() => <LazyRoute component={Blog} />}
         </Route>

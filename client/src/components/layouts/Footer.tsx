@@ -411,13 +411,14 @@ export function Footer({
                               {link.label}
                             </a>
                           ) : (
-                            <Link href={link.href}>
-                              <a className="flex items-center pl-7 text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors">
-                                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
-                                  <i className={`${link.icon || "fas fa-link"} text-xs text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>
-                                </span>
-                                {link.label}
-                              </a>
+                            <Link 
+                              href={link.href}
+                              className="flex items-center pl-7 text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
+                            >
+                              <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                                <i className={`${link.icon || "fas fa-link"} text-xs text-[#c8a951]/70 dark:text-[#9f7b42]/70`}></i>
+                              </span>
+                              {link.label}
                             </Link>
                           )}
                         </motion.li>
