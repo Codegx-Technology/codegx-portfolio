@@ -169,14 +169,13 @@ export function ExecutiveNavbar({
               className="relative"
             >
               <motion.div
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.3 }}
-                className="flex items-center"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="flex flex-col items-center gap-1"
               >
                 {/* Logo monogram */}
                 <motion.div
-                  className="mr-3 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
+                  className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -190,9 +189,9 @@ export function ExecutiveNavbar({
 
                 {/* Logo text */}
                 <motion.div
-                  className="font-extrabold text-lg sm:text-xl tracking-tight text-white"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  className="font-extrabold text-sm sm:text-base tracking-tight text-white whitespace-nowrap"
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
                   {logo.alt}
@@ -414,9 +413,9 @@ export function ExecutiveNavbar({
               className="w-[280px] sm:w-[350px] pr-0 bg-[#2c1a22] border-l border-[#4d2c35] text-slate-200 dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
             >
               <div className="flex justify-between items-center mb-6 pr-6">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex-shrink-0 flex flex-col items-center gap-1">
                   <motion.div
-                    className="mr-2 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
+                    className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3 }}
@@ -424,9 +423,9 @@ export function ExecutiveNavbar({
                     <span className="font-extrabold text-lg tracking-tighter">CT</span>
                   </motion.div>
                   <motion.div
-                    className="font-extrabold text-base tracking-tight text-white"
-                    initial={{ opacity: 0, x: -5 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className="font-extrabold text-xs tracking-tight text-white whitespace-nowrap"
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
                   >
                     {logo.alt}
