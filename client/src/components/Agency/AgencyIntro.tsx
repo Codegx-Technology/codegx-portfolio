@@ -119,13 +119,13 @@ export function AgencyIntro() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-white"
+              className="text-white max-w-3xl"
             >
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs sm:text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
                 <span className="flex h-2 w-2 mr-2">
                   <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -134,15 +134,15 @@ export function AgencyIntro() {
                 Innovation Through AI
               </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 break-words">
                 {agencyProfile.name}
               </h1>
 
-              <h2 className="text-xl md:text-2xl text-[#c8a951] dark:text-[#9f7b42] font-medium mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-[#c8a951] dark:text-[#9f7b42] font-medium mb-6 break-words">
                 {agencyProfile.tagline}
               </h2>
 
-              <p className="text-xl text-slate-300 mb-8 max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
                 {agencyProfile.description}
               </p>
 
