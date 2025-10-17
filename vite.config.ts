@@ -56,10 +56,11 @@ export default defineConfig(async ({ mode }) => {
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // Vendor chunk for core React libraries
+          // Vendor chunk for core React libraries - MUST include wouter with React
           if (id.includes('node_modules/react') || 
               id.includes('node_modules/react-dom') || 
-              id.includes('node_modules/scheduler')) {
+              id.includes('node_modules/scheduler') ||
+              id.includes('node_modules/wouter')) {
             return 'vendor';
           }
           
@@ -78,11 +79,6 @@ export default defineConfig(async ({ mode }) => {
             return 'query';
           }
           
-          // Wouter (router) in separate chunk
-          if (id.includes('node_modules/wouter')) {
-            return 'router';
-          }
-          
           // Icon map in separate chunk (now optimized)
           if (id.includes('/lib/iconMap')) {
             return 'icons';
@@ -99,11 +95,10 @@ export default defineConfig(async ({ mode }) => {
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion'],
-  },
-  // Enable server-side rendering
-  ssr: {
-    noExternal: ['@radix-ui/*'],
+    include: ['react', 'react-dom', 'react/jsx-runtime', 'framer-motion', 'wouter'],
+    esbuildOptions: {
+      target: 'es2020',
+    },
   },
   }
 });
