@@ -9,6 +9,7 @@ export default {
       heading: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       body: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       jakarta: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      inter: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
     },
     extend: {
       borderRadius: {
