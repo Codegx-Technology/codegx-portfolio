@@ -40,8 +40,8 @@ export function CaseStudyCard({
     >
       <EnterpriseCard className="relative h-full overflow-hidden" interactive>
         {featured && (
-          <div className="absolute top-3 left-3 z-10">
-            <Badge variant="default" className="bg-primary text-white">
+          <div className="absolute top-3 left-3 z-20">
+            <Badge variant="default" className="bg-[#c8a951] dark:bg-[#9f7b42] text-white shadow-lg border-0">
               Featured
             </Badge>
           </div>
@@ -88,12 +88,19 @@ export function CaseStudyCard({
 
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.slice(0, 3).map((tech, index) => (
-              <Badge key={index} variant="outline" className="text-xs">
+              <Badge 
+                key={index} 
+                variant="outline" 
+                className="text-xs bg-primary/10 border-primary/30 text-primary dark:bg-primary/20 dark:border-primary/40 dark:text-primary-foreground"
+              >
                 {tech}
               </Badge>
             ))}
             {technologies.length > 3 && (
-              <Badge variant="outline" className="text-xs">
+              <Badge 
+                variant="outline" 
+                className="text-xs bg-primary/10 border-primary/30 text-primary dark:bg-primary/20 dark:border-primary/40 dark:text-primary-foreground"
+              >
                 +{technologies.length - 3} more
               </Badge>
             )}

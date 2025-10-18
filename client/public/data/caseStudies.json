@@ -15,7 +15,7 @@
         "Deployed in 45 rural clinics across 3 countries"
       ],
       "technologies": ["TensorFlow", "React Native", "Flask", "MongoDB", "AWS"],
-      "image": "/assets/case-studies/healthcare-ai.jpg",
+      "image": "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "featured": true,
       "year": 2022,
       "testimonial": {
@@ -39,7 +39,7 @@
         "Improved customer satisfaction with fewer legitimate transactions being declined"
       ],
       "technologies": ["Python", "Apache Kafka", "TensorFlow", "Spark", "Elasticsearch", "Google Cloud"],
-      "image": "/assets/case-studies/fintech-fraud.jpg",
+      "image": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "featured": true,
       "year": 2023,
       "testimonial": {
@@ -63,7 +63,7 @@
         "Deployed in 120 schools reaching 50,000+ students"
       ],
       "technologies": ["React", "Node.js", "Python", "MongoDB", "AWS", "TensorFlow"],
-      "image": "/assets/case-studies/edtech-learning.jpg",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "featured": true,
       "year": 2022,
       "testimonial": {
@@ -87,7 +87,7 @@
         "Implemented on 200+ farms across Kenya, Tanzania, and Uganda"
       ],
       "technologies": ["IoT", "Arduino", "React Native", "Python", "TensorFlow", "AWS IoT"],
-      "image": "/assets/case-studies/agritech-monitoring.jpg",
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "featured": false,
       "year": 2023,
       "testimonial": {
@@ -111,7 +111,7 @@
         "Improved emergency vehicle response times by 42%"
       ],
       "technologies": ["Computer Vision", "TensorFlow", "Edge Computing", "Python", "React", "Google Cloud"],
-      "image": "/assets/case-studies/smart-city-traffic.jpg",
+      "image": "https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "featured": false,
       "year": 2023,
       "testimonial": {

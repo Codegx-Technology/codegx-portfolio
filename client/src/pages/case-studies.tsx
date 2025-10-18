@@ -123,7 +123,7 @@ export default function CaseStudies() {
                       <TabsTrigger
                         key={industry}
                         value={industry}
-                        className="px-4 py-2 rounded-md data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200"
+                        className="px-4 py-2 rounded-md text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200"
                       >
                         {industry === "all" ? "All Industries" : industry}
                       </TabsTrigger>
