@@ -53,7 +53,6 @@ export function MainLayout({
       children: [
         { href: "/agency", label: "Why Astella", icon: <i className="fas fa-chevron-right text-xs" /> },
         { href: "/agency/projects", label: "Projects", icon: <i className="fas fa-chevron-right text-xs" /> },
-        { href: "/agency/services", label: "Services", icon: <i className="fas fa-chevron-right text-xs" /> },
       ]
     },
     { href: "/services", label: "Services" },

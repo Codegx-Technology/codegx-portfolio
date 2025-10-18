@@ -99,7 +99,6 @@ export function Footer({
       isAgencySection: true,
       links: [
         { label: "Why Astella", href: "/why-astella", icon: "fas fa-star", isAgencyLink: true },
-        { label: "AI Services", href: "/agency/services", icon: "fas fa-cogs", isAgencyLink: true },
         { label: "AI Projects", href: "/agency/projects", icon: "fas fa-project-diagram", isAgencyLink: true },
         { label: "Contact Astella", href: "/agency/contact", icon: "fas fa-envelope", isAgencyLink: true },
       ],

@@ -202,6 +202,137 @@ export default function Services() {
         </div>
       </PageSection>
 
+      {/* Our Approach & Why Choose Us Section */}
+      <PageSection className="py-20 bg-white dark:bg-[#121212] relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Our Approach */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50"
+            >
+              <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-6 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+                Our Process
+              </div>
+
+              <Heading2 className="text-3xl font-bold mb-6 text-[#2c1a22] dark:text-white">Our Approach</Heading2>
+              <Paragraph className="text-gray-700 dark:text-gray-300 mb-8">
+                We believe in a collaborative approach to every project. Our team works closely with you to understand your unique challenges and goals, ensuring that our solutions are tailored to your specific needs.
+              </Paragraph>
+              <ul className="space-y-6">
+                <li className="flex items-start">
+                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
+                    <i className="fas fa-lightbulb text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Discovery</h3>
+                    <Paragraph className="text-gray-700 dark:text-gray-300">
+                      We begin by understanding your business, goals, and challenges through in-depth consultations.
+                    </Paragraph>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
+                    <i className="fas fa-pencil-ruler text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Planning</h3>
+                    <Paragraph className="text-gray-700 dark:text-gray-300">
+                      Our team creates a detailed roadmap and strategy tailored to your specific requirements.
+                    </Paragraph>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
+                    <i className="fas fa-code text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Development</h3>
+                    <Paragraph className="text-gray-700 dark:text-gray-300">
+                      We build your solution using cutting-edge technologies and best practices.
+                    </Paragraph>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
+                    <i className="fas fa-rocket text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Launch & Support</h3>
+                    <Paragraph className="text-gray-700 dark:text-gray-300">
+                      We ensure a smooth deployment and provide ongoing support and maintenance.
+                    </Paragraph>
+                  </div>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Why Choose Us */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50"
+            >
+              <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-6 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+                Our Strengths
+              </div>
+
+              <Heading2 className="text-3xl font-bold mb-6 text-[#2c1a22] dark:text-white">Why Choose Us</Heading2>
+              <Paragraph className="text-gray-700 dark:text-gray-300 mb-8">
+                With our expertise and dedication to excellence, we deliver solutions that drive real business results.
+              </Paragraph>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-users text-xl"></i>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Expert Team</h3>
+                  <Paragraph className="text-gray-700 dark:text-gray-300">
+                    Our team consists of experienced professionals with diverse skills and expertise.
+                  </Paragraph>
+                </div>
+                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-cogs text-xl"></i>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Cutting-edge Technology</h3>
+                  <Paragraph className="text-gray-700 dark:text-gray-300">
+                    We stay at the forefront of technological advancements to deliver innovative solutions.
+                  </Paragraph>
+                </div>
+                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-chart-line text-xl"></i>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Results-Driven</h3>
+                  <Paragraph className="text-gray-700 dark:text-gray-300">
+                    Our focus is on delivering measurable results that help your business grow.
+                  </Paragraph>
+                </div>
+                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <i className="fas fa-headset text-xl"></i>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Dedicated Support</h3>
+                  <Paragraph className="text-gray-700 dark:text-gray-300">
+                    We provide ongoing support and maintenance to ensure your solution continues to perform optimally.
+                  </Paragraph>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </PageSection>
+
       {/* CTA Section */}
       <PageSection className="py-20 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
         {/* Subtle pattern overlay */}

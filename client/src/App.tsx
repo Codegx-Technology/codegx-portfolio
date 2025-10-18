@@ -43,12 +43,7 @@ function AppRouter() {
         <Route path="/agency">
           {() => <LazyRoute component={WhyAstella} />}
         </Route>
-        <Route path="/agency/services">
-          {() => {
-            const AgencyServices = React.lazy(() => import("@/pages/agency/services"));
-            return <LazyRoute component={AgencyServices} />;
-          }}
-        </Route>
+        {/* Agency services route removed - content merged into main /services page */}
         <Route path="/agency/projects">
           {() => {
             const AgencyProjects = React.lazy(() => import("@/pages/agency/projects"));
