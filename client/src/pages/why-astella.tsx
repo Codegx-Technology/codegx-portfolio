@@ -49,33 +49,33 @@ export default function WhyAstella() {
   const journeyMilestones = [
     {
       year: "2018",
-      title: "The Beginning",
-      description: "Started as a solo consulting practice focused on enterprise architecture and blockchain solutions."
+      title: "The Spark",
+      description: "Identified a gap in accessible AI solutions for African startups and SMEs. Started experimenting with AI implementations in resource-constrained environments."
     },
     {
       year: "2019",
-      title: "First Major Project",
-      description: "Secured first major client and delivered a blockchain-based supply chain solution that demonstrated the power of emerging technologies."
-    },
-    {
-      year: "2020",
-      title: "Team Expansion",
-      description: "Grew from a solo practice to a team of five specialists, expanding capabilities in AI and smart city technologies."
+      title: "First Startup Success",
+      description: "Helped a local fintech startup implement AI-powered fraud detection, reducing fraud by 65% and validating our approach to practical AI solutions."
     },
     {
       year: "2021",
       title: "Astella AI Founded",
-      description: "Officially launched Astella AI as the technology wing of Codegx Technologies, with a focus on AI, blockchain, and smart city solutions."
+      description: "Officially launched Astella AI with a mission to democratize AI for African startups, making enterprise-grade AI accessible and affordable."
     },
     {
       year: "2022",
-      title: "International Expansion",
-      description: "Began working with clients across multiple African countries, establishing Astella as a regional technology leader."
+      title: "Startup Ecosystem Growth",
+      description: "Partnered with multiple startup accelerators across East Africa, helping early-stage companies integrate AI into their products from day one."
     },
     {
       year: "2023",
-      title: "Innovation Recognition",
-      description: "Received industry recognition for innovative approaches to AI implementation in resource-constrained environments."
+      title: "Innovation & Impact",
+      description: "Achieved 50+ startup partnerships, with clients reporting average 40% efficiency gains and 3x faster time-to-market through AI integration."
+    },
+    {
+      year: "2024",
+      title: "Scaling Solutions",
+      description: "Launched AI-as-a-Service platform specifically designed for African startups, enabling rapid AI adoption without heavy infrastructure investment."
     }
   ];
 
