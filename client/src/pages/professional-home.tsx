@@ -520,13 +520,14 @@ export default function ProfessionalHome() {
                     </Button>
                   </div>
 
-                  <div className="relative h-64 lg:h-auto">
+                  <div className="relative h-64 lg:h-auto min-h-[400px]">
                     <img
-                      src="https://images.unsplash.com/photo-1677442135968-6d89469c6409?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
+                      src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
                       alt="Enterprise AI Solutions"
                       className="absolute inset-0 w-full h-full object-cover"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#2c1a22]/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#2c1a22]/70 to-[#2c1a22]/30"></div>
 
                     {/* Stats overlay */}
                     <div className="absolute bottom-6 left-6 right-6">
