@@ -80,7 +80,7 @@ export default function WhyAstella() {
   ];
 
   return (
-    <PageWrapper withContainer={false}>
+    <PageWrapper>
       {/* Hero Section */}
       <PageSection
         className="relative overflow-hidden"
@@ -94,7 +94,7 @@ export default function WhyAstella() {
         <div className="relative z-10 text-center">
           <PageHeader
             title={
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-inter">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 We Build AI With{" "}
                 <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                   Clarity and Care
@@ -126,16 +126,16 @@ export default function WhyAstella() {
       <PageSection>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <Heading2 className="text-3xl font-bold font-inter mb-6">Our Mission</Heading2>
-            <Paragraph className="text-lg text-muted-foreground mb-6">
+            <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">Our Mission</Heading2>
+            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
               At Astella AI, our mission is to harness the power of artificial intelligence, blockchain,
               and emerging technologies to solve complex challenges and create sustainable impact across Africa.
             </Paragraph>
-            <Paragraph className="text-lg text-muted-foreground mb-6">
+            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
               We believe that technology, when thoughtfully applied, can transform industries, empower communities,
               and address some of the most pressing challenges facing our continent and the world.
             </Paragraph>
-            <Paragraph className="text-lg text-muted-foreground">
+            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               Through innovation, collaboration, and a deep understanding of local contexts, we develop solutions
               that are not just technically excellent but also socially responsible and contextually relevant.
             </Paragraph>
@@ -146,7 +146,7 @@ export default function WhyAstella() {
               <div className="text-4xl text-primary mb-4">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <blockquote className="text-xl italic mb-6">
+              <blockquote className="text-lg sm:text-xl md:text-2xl italic mb-6 leading-relaxed">
                 "Technology is most powerful when it addresses real human needs. At Astella, we're committed to
                 creating solutions that don't just showcase technical brilliance but actually improve lives and
                 create opportunities."
@@ -168,10 +168,10 @@ export default function WhyAstella() {
       <PageDivider />
 
       {/* Core Values Section */}
-      <PageSection className="bg-card -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12">
+      <PageSection className="bg-card py-12">
         <div className="text-center mb-16">
-          <Heading2 className="text-3xl font-bold font-inter mb-4">Our Core Values</Heading2>
-          <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Our Core Values</Heading2>
+          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             These principles guide everything we do, from how we develop technology to how we engage with our clients and communities.
           </Paragraph>
         </div>
@@ -185,7 +185,7 @@ export default function WhyAstella() {
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
                 <i className={value.icon}></i>
               </div>
-              <Heading3 className="text-xl font-bold mb-4 text-center">{value.title}</Heading3>
+              <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center">{value.title}</Heading3>
               <Paragraph className="text-muted-foreground text-center">{value.description}</Paragraph>
             </div>
           ))}
@@ -197,8 +197,8 @@ export default function WhyAstella() {
       {/* Founder's Vision Section */}
       <PageSection>
         <div className="text-center mb-16">
-          <Heading2 className="text-3xl font-bold font-inter mb-4">Founder's Vision</Heading2>
-          <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Founder's Vision</Heading2>
+          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             The journey from a personal career to founding Astella AI.
           </Paragraph>
         </div>
@@ -219,7 +219,7 @@ export default function WhyAstella() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                   <div className="p-6 text-white">
-                    <Heading3 className="text-2xl font-bold">Peter O. Oluoch</Heading3>
+                    <Heading3 className="text-xl sm:text-2xl md:text-3xl font-bold">Peter O. Oluoch</Heading3>
                     <Paragraph className="text-white/80">Founder & CEO, Astella AI</Paragraph>
                   </div>
                 </div>
@@ -263,15 +263,15 @@ export default function WhyAstella() {
                   <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center -translate-x-1/2">
                     <div className="w-4 h-4 rounded-full bg-primary"></div>
                   </div>
-                  <div className="text-primary font-bold text-xl mb-2">{milestone.year}</div>
-                  <Heading3 className="text-xl font-bold mb-2">{milestone.title}</Heading3>
+                  <div className="text-primary font-bold text-lg sm:text-xl mb-2">{milestone.year}</div>
+                  <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{milestone.title}</Heading3>
                   <Paragraph className="text-muted-foreground">{milestone.description}</Paragraph>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 p-6 bg-card rounded-lg border border-border">
-              <Heading3 className="text-xl font-bold mb-4">The Vision Forward</Heading3>
+              <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">The Vision Forward</Heading3>
               <Paragraph className="text-muted-foreground mb-4">
                 As we look to the future, our vision is to establish Astella AI as the leading technology
                 partner for organizations seeking to leverage AI, blockchain, and emerging technologies
@@ -290,12 +290,12 @@ export default function WhyAstella() {
       <PageDivider />
 
       {/* Call to Action */}
-      <PageSection className="bg-card -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-12">
+      <PageSection className="bg-card py-12">
         <div className="text-center">
-          <Heading2 className="text-3xl font-bold font-inter mb-6">
+          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">
             Ready to Build Something Impactful Together?
           </Heading2>
-          <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
+          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
             Whether you're looking to transform your organization with AI, develop a blockchain solution,
             or explore smart city technologies, we're here to help turn your vision into reality.
           </Paragraph>
