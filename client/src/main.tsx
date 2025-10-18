@@ -9,18 +9,8 @@ console.log("🔵 Step 3: App imported");
 import "./index.css";
 console.log("🔵 Step 4: CSS imported");
 
-// Import fonts - Optimized: Latin subset only, essential weights
-try {
-  import("@fontsource/inter/400.css"); // Normal
-  import("@fontsource/inter/600.css"); // Semibold
-  import("@fontsource/inter/700.css"); // Bold
-  import("@fontsource/plus-jakarta-sans/400.css"); // Normal
-  import("@fontsource/plus-jakarta-sans/600.css"); // Semibold
-  import("@fontsource/plus-jakarta-sans/700.css"); // Bold
-  console.log("🔵 Step 5: Fonts imported");
-} catch (error) {
-  console.error("⚠️ Font import error (non-critical):", error);
-}
+// Fonts are loaded via Google Fonts in index.html (Montserrat)
+console.log("🔵 Step 5: Fonts loaded from Google Fonts");
 
 console.log("🚀 Main.tsx loaded");
 
