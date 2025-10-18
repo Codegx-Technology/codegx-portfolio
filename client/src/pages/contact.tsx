@@ -46,7 +46,7 @@ export default function Contact() {
     {
       icon: "fas fa-envelope",
       title: "Email",
-      details: ["contact@codegx.tech", "peter@codegx.tech"]
+      details: ["info@codegxtechnologies.org", "peter@codegxtechnologies.org"]
     },
     {
       icon: "fas fa-map-marker-alt",
@@ -56,12 +56,16 @@ export default function Contact() {
     {
       icon: "fas fa-phone-alt",
       title: "Phone",
-      details: ["+254 XXX XXX XXX", "Business Hours: 9am-5pm EAT"]
+      details: ["+254 734 957 121", "Business Hours: 9am-5pm EAT"]
     },
     {
       icon: "fas fa-briefcase",
-      title: "Services",
-      details: ["AI Solutions", "Web Development", "Blockchain Development"]
+      title: "Core Services",
+      details: [
+        "🤖 AI Integration & Solutions",
+        "⚙️ Enterprise Automation",
+        "🚀 Digital Transformation"
+      ]
     }
   ];
 

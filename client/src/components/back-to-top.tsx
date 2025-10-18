@@ -39,7 +39,7 @@ export function BackToTop() {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="rounded-full bg-primary text-white shadow-lg hover:bg-primary/90"
+            className="rounded-full bg-[#c8a951] dark:bg-[#9f7b42] text-[#2c1a22] dark:text-[#1f1a2c] shadow-lg hover:bg-[#c8a951]/90 dark:hover:bg-[#9f7b42]/90"
             aria-label="Back to top"
           >
             <i className="fas fa-arrow-up"></i>
