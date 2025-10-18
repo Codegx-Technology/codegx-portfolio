@@ -78,11 +78,7 @@ export function Footer({
           icon: "fas fa-robot",
           isAgencyLink: true
         },
-        {
-          label: "Portfolio",
-          href: "/portfolio",
-          icon: "fas fa-user-tie"
-        },
+        // Portfolio link removed - available in 'portfolio' branch
       ],
     },
     {

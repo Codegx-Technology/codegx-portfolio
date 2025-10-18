@@ -47,7 +47,7 @@ export function EnterpriseNavbar() {
 
   const navLinks = [
     { href: "/home", label: "Home", isPage: true },
-    { href: "/portfolio", label: "Portfolio", isPage: true },
+    // Portfolio removed - available in 'portfolio' branch
     { href: "/contact", label: "Contact", isPage: true },
   ];
 
