@@ -168,8 +168,8 @@ export default function WhyAstella() {
       <PageDivider />
 
       {/* Core Values Section */}
-      <PageSection className="bg-card py-12">
-        <div className="text-center mb-16">
+      <PageSection className="bg-card py-6 md:py-12">
+        <div className="text-center mb-8 md:mb-16">
           <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Our Core Values</Heading2>
           <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             These principles guide everything we do, from how we develop technology to how we engage with our clients and communities.
@@ -196,7 +196,7 @@ export default function WhyAstella() {
 
       {/* Founder's Vision Section */}
       <PageSection>
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Founder's Vision</Heading2>
           <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             The journey from a personal career to founding Astella AI.
@@ -290,7 +290,7 @@ export default function WhyAstella() {
       <PageDivider />
 
       {/* Call to Action */}
-      <PageSection className="bg-card py-12">
+      <PageSection className="bg-card py-6 md:py-12">
         <div className="text-center">
           <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">
             Ready to Build Something Impactful Together?

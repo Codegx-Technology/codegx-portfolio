@@ -105,7 +105,7 @@ export function MainLayout({
       >
         {withContainer ? (
           <div className={cn(
-            "px-safe mx-auto px-4 sm:px-6 lg:px-8 py-20",
+            "px-safe mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20",
             !fullWidth && "max-w-7xl",
             containerClassName
           )}>

@@ -33,13 +33,13 @@ export function PageWrapper({
   showSearch,
   showNotifications,
 }: PageWrapperProps) {
-  // Define spacing classes
+  // Define spacing classes - mobile-first with reduced spacing
   const spacingClasses = {
     none: "space-y-0",
-    sm: "space-y-8",
-    md: "space-y-12",
-    lg: "space-y-16",
-    xl: "space-y-20",
+    sm: "space-y-4 md:space-y-8",
+    md: "space-y-6 md:space-y-12",
+    lg: "space-y-8 md:space-y-16",
+    xl: "space-y-10 md:space-y-20",
   };
 
   // Animation variants
@@ -167,14 +167,14 @@ export function PageSection({
 
   return withAnimation ? (
     <motion.section
-      className={cn("py-8", className)}
+      className={cn("py-4 md:py-8 px-4 sm:px-6 lg:px-8", className)}
       variants={sectionVariants}
       id={id}
     >
       {content}
     </motion.section>
   ) : (
-    <section className={cn("py-8", className)} id={id}>
+    <section className={cn("py-4 md:py-8 px-4 sm:px-6 lg:px-8", className)} id={id}>
       {content}
     </section>
   );
