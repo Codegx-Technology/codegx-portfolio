@@ -98,14 +98,7 @@ export function Navbar() {
             >
               Home
             </Link>
-            <Link
-              href="/portfolio"
-              className={`font-medium hover:text-primary transition ${
-                location === "/portfolio" ? "text-primary" : ""
-              }`}
-            >
-              Portfolio
-            </Link>
+            {/* Portfolio link removed - available in 'portfolio' branch */}
             {navLinks.filter(link => link.isPage).map((link) => (
               <Link
                 key={link.href}
@@ -205,15 +198,7 @@ export function Navbar() {
                   >
                     Home
                   </Link>
-                  <Link
-                    href="/portfolio"
-                    className={`px-4 py-3 rounded-md font-medium hover:bg-primary/10 transition-colors min-h-[44px] flex items-center ${
-                      location === "/portfolio" ? "text-primary bg-primary/5" : ""
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Portfolio
-                  </Link>
+                  {/* Portfolio link removed - available in 'portfolio' branch */}
                   {navLinks.filter(link => link.isPage).map((link) => (
                     <Link
                       key={link.href}
