@@ -18,7 +18,7 @@ import NotFound from "@/pages/not-found";
 // Lazy load all other pages for better performance
 const CodegxLanding = lazy(() => import("@/pages/codegx"));
 const Home = lazy(() => import("@/pages/index"));
-const PersonalPortfolio = lazy(() => import("@/pages/home"));
+// Portfolio removed - available in 'portfolio' branch
 const AgencyPage = lazy(() => import("@/pages/agency"));
 const Contact = lazy(() => import("@/pages/contact"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
@@ -39,9 +39,7 @@ function AppRouter() {
         <Route path="/codegx-landing">
           {() => <LazyRoute component={CodegxLanding} />}
         </Route>
-        <Route path="/portfolio">
-          {() => <LazyRoute component={PersonalPortfolio} />}
-        </Route>
+        {/* Portfolio route removed - available in 'portfolio' branch */}
         <Route path="/agency">
           {() => <LazyRoute component={WhyAstella} />}
         </Route>
