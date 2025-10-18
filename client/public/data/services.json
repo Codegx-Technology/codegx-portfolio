@@ -4,7 +4,7 @@
       "id": "ai-chatbots",
       "slug": "ai-chatbots",
       "title": "AI Chatbots & Assistants",
-      "icon": "MessageSquare",
+      "icon": "/assets/icons/ai-integration.svg",
       "shortDescription": "Intelligent conversational agents that enhance customer service and streamline operations.",
       "fullDescription": "Our AI chatbots and virtual assistants leverage the latest in natural language processing to deliver human-like interactions at scale. We design, develop, and deploy conversational AI solutions that can handle customer inquiries, automate routine tasks, and provide personalized assistance 24/7.",
       "benefits": [

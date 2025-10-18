@@ -1,0 +1,31 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#c8a951" opacity="0.1"/>
+  
+  <!-- Main transformation icon -->
+  <g transform="translate(32, 32)">
+    <!-- Left side - Traditional -->
+    <rect x="-14" y="-8" width="8" height="10" fill="none" stroke="#c8a951" stroke-width="1.5" rx="1"/>
+    <line x1="-14" y1="-4" x2="-6" y2="-4" stroke="#c8a951" stroke-width="0.8"/>
+    <line x1="-14" y1="-1" x2="-6" y2="-1" stroke="#c8a951" stroke-width="0.8"/>
+    <line x1="-14" y1="2" x2="-6" y2="2" stroke="#c8a951" stroke-width="0.8"/>
+    
+    <!-- Right side - Digital -->
+    <rect x="6" y="-8" width="8" height="10" fill="none" stroke="#c8a951" stroke-width="1.5" rx="1"/>
+    <circle cx="8" cy="-5" r="1" fill="#c8a951"/>
+    <circle cx="12" cy="-5" r="1" fill="#c8a951"/>
+    <circle cx="8" cy="-1" r="1" fill="#c8a951"/>
+    <circle cx="12" cy="-1" r="1" fill="#c8a951"/>
+    <circle cx="8" cy="3" r="1" fill="#c8a951"/>
+    <circle cx="12" cy="3" r="1" fill="#c8a951"/>
+    
+    <!-- Arrow/transformation flow -->
+    <path d="M -4 -2 L 4 -2" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 2 -4 L 4 -2 L 2 0" fill="none" stroke="#c8a951" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Growth indicator -->
+    <path d="M -2 6 L 0 4 L 2 6" fill="none" stroke="#c8a951" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    <line x1="0" y1="4" x2="0" y2="8" stroke="#c8a951" stroke-width="0.8" opacity="0.8"/>
+  </g>
+</svg>
+
