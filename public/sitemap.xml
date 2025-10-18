@@ -176,11 +176,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\agency\services</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\agency\projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
