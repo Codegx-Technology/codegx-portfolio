@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig, loadEnv, type ConfigEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
 import path, { dirname } from "path";
@@ -9,7 +9,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default defineConfig(async ({ mode }) => {
+export default defineConfig(({ mode }: ConfigEnv) => {
   // Load env file based on `mode` in the current working directory.
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd(), '');
@@ -21,13 +21,10 @@ export default defineConfig(async ({ mode }) => {
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
+    // Cartographer plugin only in development with Replit
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
+      ? []
       : []),
     // Add visualizer in analyze mode
     ...(process.env.ANALYZE === "true" ? [visualizer({ open: true, gzipSize: true, brotliSize: true })] : []),
@@ -55,7 +52,7 @@ export default defineConfig(async ({ mode }) => {
     // Optimize chunks for better caching and loading
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
+        manualChunks: (id: string) => {
           // Vendor chunk for core React libraries - MUST include wouter with React
           if (id.includes('node_modules/react') || 
               id.includes('node_modules/react-dom') || 

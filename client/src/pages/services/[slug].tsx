@@ -268,7 +268,7 @@ export default function ServiceDetail() {
               <h2 className="text-2xl font-bold mb-8">Related Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedServices.map((relatedService) => {
-                  const RelatedIcon = (LucideIcons[relatedService.icon as keyof typeof LucideIcons] || LucideIcons.Sparkles) as React.ComponentType<{ className?: string }>;
+                  const RelatedIcon = getIcon(relatedService.icon);
                   return (
                     <Link key={relatedService.slug} href={`/services/${relatedService.slug}`}>
                       <a className="block group">
