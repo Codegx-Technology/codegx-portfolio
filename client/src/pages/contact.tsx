@@ -128,16 +128,29 @@ export default function Contact() {
                         <Heading3 className="text-base font-medium mb-1">{info.title}</Heading3>
                         {(info as any).isCoreServices ? (
                           <div className="space-y-2">
-                            {info.details.map((detail, idx) => (
-                              <div key={idx} className="flex items-center gap-2">
-                                <img
-                                  src={`/assets/icons/${detail.toLowerCase().replace(/\s+/g, '-')}.svg`}
-                                  alt={detail}
-                                  className="w-4 h-4"
-                                />
-                                <Paragraph className="text-sm text-muted-foreground">{detail}</Paragraph>
-                              </div>
-                            ))}
+                            {info.details.map((detail, idx) => {
+                              // Map service names to SVG filenames
+                              const iconMap: { [key: string]: string } = {
+                                "AI Integration & Solutions": "ai-integration",
+                                "Enterprise Automation": "enterprise-automation",
+                                "Digital Transformation": "digital-transformation"
+                              };
+                              const iconName = iconMap[detail] || detail.toLowerCase().replace(/\s+/g, '-');
+                              return (
+                                <div key={idx} className="flex items-center gap-2">
+                                  <img
+                                    src={`/assets/icons/${iconName}.svg`}
+                                    alt={detail}
+                                    className="w-5 h-5"
+                                    onError={(e) => {
+                                      // Fallback if image fails to load
+                                      (e.target as HTMLImageElement).style.display = 'none';
+                                    }}
+                                  />
+                                  <Paragraph className="text-sm text-muted-foreground">{detail}</Paragraph>
+                                </div>
+                              );
+                            })}
                           </div>
                         ) : (
                           info.details.map((detail, idx) => (

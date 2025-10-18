@@ -37,7 +37,7 @@ export function HomeHero() {
   };
 
   return (
-    <header id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+    <header id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-20">
       {/* Abstract Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
