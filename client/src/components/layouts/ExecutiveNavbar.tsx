@@ -104,7 +104,7 @@ export function ExecutiveNavbar({
   // Navigation links
   const navLinks: NavLink[] = [
     { href: "/", label: "Home" },
-    { href: "/portfolio", label: "Portfolio" },
+    // Portfolio removed - available in 'portfolio' branch
     {
       href: "/agency",
       label: "Astella AI",
