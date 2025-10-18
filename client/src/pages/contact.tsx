@@ -62,10 +62,11 @@ export default function Contact() {
       icon: "fas fa-briefcase",
       title: "Core Services",
       details: [
-        "🤖 AI Integration & Solutions",
-        "⚙️ Enterprise Automation",
-        "🚀 Digital Transformation"
-      ]
+        "AI Integration & Solutions",
+        "Enterprise Automation",
+        "Digital Transformation"
+      ],
+      isCoreServices: true
     }
   ];
 
@@ -117,13 +118,32 @@ export default function Contact() {
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                        <i className={`${info.icon} text-primary`}></i>
+                        {(info as any).isCoreServices ? (
+                          <i className={`${info.icon} text-primary`}></i>
+                        ) : (
+                          <i className={`${info.icon} text-primary`}></i>
+                        )}
                       </div>
                       <div>
                         <Heading3 className="text-base font-medium mb-1">{info.title}</Heading3>
-                        {info.details.map((detail, idx) => (
-                          <Paragraph key={idx} className="text-sm text-muted-foreground">{detail}</Paragraph>
-                        ))}
+                        {(info as any).isCoreServices ? (
+                          <div className="space-y-2">
+                            {info.details.map((detail, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <img
+                                  src={`/assets/icons/${detail.toLowerCase().replace(/\s+/g, '-')}.svg`}
+                                  alt={detail}
+                                  className="w-4 h-4"
+                                />
+                                <Paragraph className="text-sm text-muted-foreground">{detail}</Paragraph>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          info.details.map((detail, idx) => (
+                            <Paragraph key={idx} className="text-sm text-muted-foreground">{detail}</Paragraph>
+                          ))
+                        )}
                       </div>
                     </div>
                   ))}
