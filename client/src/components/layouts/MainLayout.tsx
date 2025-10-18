@@ -77,7 +77,7 @@ export function MainLayout({
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       <ExecutiveNavbar
         variant={effectiveNavbarVariant}
         ctaVariant="electric"
@@ -98,21 +98,21 @@ export function MainLayout({
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "flex-grow pb-safe",
+          "flex-grow pb-safe overflow-x-hidden w-full",
           !isHomePage && "pt-20 pt-safe",
           className
         )}
       >
         {withContainer ? (
           <div className={cn(
-            "px-safe mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20",
+            "px-safe mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-20 w-full overflow-x-hidden",
             !fullWidth && "max-w-7xl",
             containerClassName
           )}>
             {children}
           </div>
         ) : (
-          <div className="px-safe">
+          <div className="px-safe w-full overflow-x-hidden">
             {children}
           </div>
         )}

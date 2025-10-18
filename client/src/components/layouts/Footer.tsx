@@ -163,20 +163,20 @@ export function Footer({
   return (
     <footer
       className={cn(
-        "relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8",
+        "relative overflow-hidden py-12 sm:py-16 px-3 sm:px-4 md:px-6 lg:px-8 w-full",
         variant === "default"
           ? "bg-[#2c1a22] dark:bg-[#1f1a2c] text-slate-200"
           : variant === "minimal"
             ? "bg-background border-t border-border"
-            : "bg-[#2c1a22] dark:bg-[#1f1a2c] text-slate-200 py-24",
+            : "bg-[#2c1a22] dark:bg-[#1f1a2c] text-slate-200 py-16 sm:py-24",
         className
       )}
     >
       {/* AI-themed background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
+      <div className="absolute inset-0 overflow-hidden opacity-10 w-full">
         {/* Circuit board pattern */}
-        <div className="absolute inset-0 z-0">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
               <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
               <circle cx="50" cy="50" r="3" fill="currentColor" />
@@ -190,8 +190,8 @@ export function Footer({
         </div>
 
         {/* Neural network nodes */}
-        <div className="absolute inset-0 z-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute inset-0 z-10 w-full h-full">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <g fill="currentColor" opacity="0.5">
               {Array.from({ length: 20 }).map((_, i) => (
                 <circle
@@ -207,11 +207,11 @@ export function Footer({
       </div>
 
       {/* Diagonal divider at the top */}
-      <div className="absolute top-0 left-0 right-0 h-12 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-8 sm:h-12 overflow-hidden">
         <div className="absolute inset-0 bg-background dark:bg-background transform -skew-y-2"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 w-full px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Hexagonal grid layout for main content */}
         <div className="relative">
           {/* Company Info - Centered at the top with hexagonal shape */}
@@ -276,7 +276,7 @@ export function Footer({
 
           {/* Main content in a neural network-inspired layout */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10"
+            className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8 relative z-10 w-full"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}

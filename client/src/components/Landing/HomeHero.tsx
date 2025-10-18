@@ -37,16 +37,16 @@ export function HomeHero() {
   };
 
   return (
-    <header id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <header id="hero" className="relative min-h-screen flex items-center overflow-x-hidden pt-20 w-full">
       {/* Abstract Animated Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/4 left-1/3 w-32 sm:w-48 h-32 sm:h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-40 sm:w-64 h-40 sm:h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 w-full">
         <div className="md:flex md:items-center md:justify-between">
           <motion.div
             className="md:w-1/2"
@@ -59,35 +59,35 @@ export function HomeHero() {
                 {agencyProfile?.name || "Codegx Technologies"}
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-inter leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-inter leading-tight">
               Unified <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Homepage</span>
             </h1>
-            <p className="mt-6 text-xl leading-relaxed opacity-90">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90">
               Welcome to the combined homepage of Codegx Technologies, featuring both our personal portfolio and Astella AI agency services.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Link href="/portfolio">
                 <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-8"
+                  size="sm"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-6 sm:px-8"
                 >
                   <i className="fas fa-user mr-2"></i>Personal Portfolio
                 </Button>
               </Link>
               <Link href="/agency">
                 <Button
-                  size="lg"
+                  size="sm"
                   variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10 rounded-full px-8"
+                  className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 rounded-full px-6 sm:px-8"
                 >
                   <i className="fas fa-building mr-2"></i>Astella AI Agency
                 </Button>
               </Link>
               <Button
-                size="lg"
+                size="sm"
                 variant="ghost"
                 onClick={() => scrollToSection("contact")}
-                className="text-foreground hover:bg-background/80 rounded-full px-8"
+                className="w-full sm:w-auto text-foreground hover:bg-background/80 rounded-full px-6 sm:px-8"
               >
                 <i className="fas fa-envelope mr-2"></i>Contact
               </Button>
