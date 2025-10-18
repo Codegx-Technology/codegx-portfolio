@@ -1,9 +1,19 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CodeBlock } from "@/components/code-block";
+import { useDesktop, usePrefersReducedMotion } from "@/hooks/use-desktop";
+import { DESKTOP_HOVER_EFFECTS } from "@/lib/desktop-constants";
 
 export function Hero() {
+  const isDesktop = useDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const { scrollY } = useScroll();
+  
+  // Parallax effect for desktop (disabled if user prefers reduced motion)
+  const y = useTransform(scrollY, [0, 500], [0, isDesktop && !prefersReducedMotion ? 150 : 0]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.5]);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -43,17 +53,20 @@ sustainable_city = architect.deliver_sustainable_city()`;
 
   return (
     <header className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Abstract Animated Background */}
-      <div className="absolute inset-0">
+      {/* Abstract Animated Background with Parallax */}
+      <motion.div 
+        className="absolute inset-0"
+        style={{ y: isDesktop ? y : 0, opacity: isDesktop ? opacity : 1 }}
+      >
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
         <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="md:flex md:items-center md:justify-between">
+        <div className="md:flex md:items-center md:justify-between gap-8 lg:gap-12">
           <motion.div
-            className="md:w-1/2"
+            className="md:w-1/2 max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

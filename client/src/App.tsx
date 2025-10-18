@@ -10,6 +10,7 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import LazyRoute from "@/components/LazyRoute";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
+import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
 // Eager load only critical pages (homepage)
 import ProfessionalHome from "@/pages/professional-home";
 import NotFound from "@/pages/not-found";
@@ -262,6 +263,7 @@ function App() {
               </Suspense>
             </ErrorBoundary>
             <Toaster />
+            <KeyboardShortcuts />
             {process.env.NODE_ENV !== 'production' && (
               <ReactQueryDevtools initialIsOpen={false} />
             )}
