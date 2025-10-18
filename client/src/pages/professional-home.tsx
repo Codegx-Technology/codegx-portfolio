@@ -1,20 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import { Link } from "wouter";
-import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
-import { MainLayout } from "@/components/layouts/MainLayout";
 import { Button } from "@/components/ui/button";
+import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
-import { CTASection } from "@/components/layouts/CTASection";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CaseStudyGrid } from "@/components/ui/CaseStudyCard";
-import { Badge } from "@/components/ui/badge";
+import { CTASection } from "@/components/layouts/CTASection";
 
 export default function ProfessionalHome() {
   // Refs for scroll animations
   const heroRef = useRef<HTMLDivElement>(null);
-
-  // Animation controls
-  const controls = useAnimation();
 
   // Scroll animations
   const { scrollYProgress } = useScroll({
@@ -53,7 +49,7 @@ export default function ProfessionalHome() {
     },
   ];
 
-  // Services offered
+  // Services offered (Cloud Solutions removed)
   const services = [
     {
       title: "AI & Machine Learning",
@@ -66,16 +62,23 @@ export default function ProfessionalHome() {
       icon: "fas fa-sync-alt",
     },
     {
-      title: "Cloud Solutions",
-      description: "Scalable, secure cloud infrastructure and migration services.",
-      icon: "fas fa-cloud",
-    },
-    {
       title: "Custom Software Development",
       description: "Bespoke software solutions tailored to your unique business needs.",
       icon: "fas fa-code",
     },
   ];
+
+  // Carousel state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = services.length;
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
 
   return (
     <>
@@ -547,47 +550,132 @@ export default function ProfessionalHome() {
               </div>
             </motion.div>
 
-            {/* Service Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group"
-                >
-                  {/* Service header with gradient */}
-                  <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
+            {/* Service Carousel - Desktop: 3 items, Mobile: 1 item */}
+            <div className="relative">
+              {/* Desktop View - Show all 3 */}
+              <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group"
+                  >
+                    {/* Service header with gradient */}
+                    <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
 
-                  <div className="p-8">
-                    <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
-                      <i className={`${service.icon} text-2xl`}></i>
-                    </div>
+                    <div className="p-8">
+                      <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
+                        <i className={`${service.icon} text-2xl`}></i>
+                      </div>
 
-                    <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
+                      <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
 
-                    <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
+                      <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
 
-                    <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
-                      <Link
-                        href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
-                      >
-                        Learn More
-                        <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                      </Link>
+                      <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                        <Link
+                          href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
+                        >
+                          Learn More
+                          <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
+                        </Link>
 
-                      {/* Enterprise badge */}
-                      <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
-                        Enterprise
+                        {/* Enterprise badge */}
+                        <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
+                          Enterprise
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Mobile View - Carousel with 1 item */}
+              <div className="lg:hidden relative">
+                <div className="overflow-hidden">
+                  <motion.div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {services.map((service, index) => (
+                      <div key={index} className="w-full flex-shrink-0 px-2">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6 }}
+                          className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128]"
+                        >
+                          {/* Service header with gradient */}
+                          <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
+
+                          <div className="p-8">
+                            <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
+                              <i className={`${service.icon} text-2xl`}></i>
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
+
+                            <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
+
+                            <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                              <Link
+                                href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
+                              >
+                                Learn More
+                                <i className="fas fa-arrow-right ml-2 text-xs"></i>
+                              </Link>
+
+                              {/* Enterprise badge */}
+                              <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
+                                Enterprise
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-[#2c1a22] p-2 rounded-full shadow-lg border border-gray-200 dark:border-[#3d2128] hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10 transition-colors z-10"
+                  aria-label="Previous service"
+                >
+                  <ChevronLeft className="w-5 h-5 text-[#c8a951] dark:text-[#9f7b42]" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-[#2c1a22] p-2 rounded-full shadow-lg border border-gray-200 dark:border-[#3d2128] hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10 transition-colors z-10"
+                  aria-label="Next service"
+                >
+                  <ChevronRight className="w-5 h-5 text-[#c8a951] dark:text-[#9f7b42]" />
+                </button>
+
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-2 mt-6">
+                  {services.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? 'w-8 bg-[#c8a951] dark:bg-[#9f7b42]'
+                          : 'w-2 bg-gray-300 dark:bg-gray-600 hover:bg-[#c8a951]/50 dark:hover:bg-[#9f7b42]/50'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Services illustration */}
