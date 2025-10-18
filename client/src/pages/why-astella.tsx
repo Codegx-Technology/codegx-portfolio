@@ -70,12 +70,12 @@ export default function WhyAstella() {
     {
       year: "2023",
       title: "Innovation & Impact",
-      description: "Achieved 50+ startup partnerships, with clients reporting average 40% efficiency gains and 3x faster time-to-market through AI integration."
+      description: "Achieved partnerships, with clients reporting average 40% efficiency gains and 3x faster time-to-market through AI integration."
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Scaling Solutions",
-      description: "Launched AI-as-a-Service platform specifically designed for African startups, enabling rapid AI adoption without heavy infrastructure investment."
+      description: "Launched Astella Plug, our AI-as-a-Service platform specifically designed for African startups, enabling rapid AI adoption without heavy infrastructure investment."
     }
   ];
 
@@ -209,18 +209,18 @@ export default function WhyAstella() {
               <div className="relative rounded-lg overflow-hidden mb-6">
                 <div className="aspect-w-4 aspect-h-5">
                   <img
-                    src="/assets/founder.jpg"
-                    alt="Peter O. Oluoch"
-                    className="object-cover"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
+                    alt="African Tech Team Collaboration - Innovation Together"
+                    className="object-cover w-full h-full"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x500?text=Founder";
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80";
                     }}
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                   <div className="p-6 text-white">
-                    <Heading3 className="text-xl sm:text-2xl md:text-3xl font-bold">Peter O. Oluoch</Heading3>
-                    <Paragraph className="text-white/80">Founder & CEO, Astella AI</Paragraph>
+                    <Heading3 className="text-xl sm:text-2xl md:text-3xl font-bold">Building Together</Heading3>
+                    <Paragraph className="text-white/80">Empowering African Innovation</Paragraph>
                   </div>
                 </div>
               </div>
