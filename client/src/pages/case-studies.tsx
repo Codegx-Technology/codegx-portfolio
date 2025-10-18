@@ -109,21 +109,21 @@ export default function CaseStudies() {
         </motion.div>
 
           {/* Industry Filter */}
-          <div className="mb-10 relative z-10">
+          <div className="mb-10 relative z-10 px-3 sm:px-0">
             <Tabs
               defaultValue="all"
               value={activeIndustry}
               onValueChange={setActiveIndustry}
               className="w-full"
             >
-              <div className="flex justify-center mb-6">
-                <EnterpriseCard className="p-1 shadow-md border-primary/20">
-                  <TabsList className="bg-transparent border-0 shadow-none">
+              <div className="flex justify-center mb-6 overflow-x-auto">
+                <EnterpriseCard className="p-1 shadow-md border-primary/20 min-w-max sm:min-w-0">
+                  <TabsList className="bg-transparent border-0 shadow-none flex flex-wrap sm:flex-nowrap gap-1 sm:gap-0">
                     {industries.map((industry) => (
                       <TabsTrigger
                         key={industry}
                         value={industry}
-                        className="px-4 py-2 rounded-md text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200"
+                        className="px-2 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200 whitespace-nowrap"
                       >
                         {industry === "all" ? "All Industries" : industry}
                       </TabsTrigger>
