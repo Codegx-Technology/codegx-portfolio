@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CurrentProjectProps {
@@ -14,6 +16,8 @@ interface CurrentProjectProps {
 /**
  * CurrentProjects component - Unique corporate layout for featured projects
  * Displays TendaNow, CodeCrusher, and BizGen with distinctive design
+ * Mobile: 1 item per page with pagination
+ * Desktop: 3 items per page
  */
 export function CurrentProjects({
   caseStudies,
@@ -22,6 +26,9 @@ export function CurrentProjects({
   caseStudies: Omit<CurrentProjectProps, 'index'>[];
   className?: string;
 }) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(caseStudies.length / itemsPerPage);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,110 +76,243 @@ export function CurrentProjects({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="text-center mb-8 md:mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
           Current Projects
         </h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Transforming industries with cutting-edge AI and innovative solutions
         </p>
       </motion.div>
 
-      {/* Projects Grid */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
-      >
-        {caseStudies.map((project, index) => (
-          <motion.div
-            key={project.title}
-            variants={itemVariants}
-            className="group"
-          >
-            <Link href={project.href}>
-              <div
-                className={cn(
-                  "relative h-full rounded-2xl border-2 transition-all duration-300 overflow-hidden",
-                  "backdrop-blur-sm bg-white/50 dark:bg-slate-900/50",
-                  borderColors[index],
-                  bgGradients[index],
-                  "hover:shadow-2xl hover:scale-105 cursor-pointer"
-                )}
-              >
-                {/* Accent bar at top */}
+      {/* Desktop View - 3 items per page */}
+      <div className="hidden md:block">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8"
+        >
+          {caseStudies.map((project, index) => (
+            <motion.div
+              key={project.title}
+              variants={itemVariants}
+              className="group"
+            >
+              <Link href={project.href}>
                 <div
                   className={cn(
-                    "h-1 w-full bg-gradient-to-r",
-                    accentColors[index]
+                    "relative h-full rounded-2xl border-2 transition-all duration-300 overflow-hidden",
+                    "backdrop-blur-sm bg-white/50 dark:bg-slate-900/50",
+                    borderColors[index],
+                    bgGradients[index],
+                    "hover:shadow-2xl hover:scale-105 cursor-pointer"
                   )}
-                />
+                >
+                  {/* Accent bar at top */}
+                  <div
+                    className={cn(
+                      "h-1 w-full bg-gradient-to-r",
+                      accentColors[index]
+                    )}
+                  />
 
-                {/* Content */}
-                <div className="p-8 h-full flex flex-col">
-                  {/* Number badge */}
-                  <div className="mb-6">
-                    <span
-                      className={cn(
-                        "inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-white text-sm",
-                        `bg-gradient-to-r ${accentColors[index]}`
-                      )}
+                  {/* Content */}
+                  <div className="p-6 md:p-8 h-full flex flex-col">
+                    {/* Number badge */}
+                    <div className="mb-4 md:mb-6">
+                      <span
+                        className={cn(
+                          "inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-white text-sm",
+                          `bg-gradient-to-r ${accentColors[index]}`
+                        )}
+                      >
+                        {index + 1}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300"
+                      style={{
+                        backgroundImage: `linear-gradient(to right, var(--color-start), var(--color-end))`,
+                      }}
                     >
-                      {index + 1}
-                    </span>
+                      {project.title}
+                    </h3>
+
+                    {/* Industry tag */}
+                    <div className="mb-3 md:mb-4">
+                      <span
+                        className={cn(
+                          "inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider",
+                          "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                        )}
+                      >
+                        {project.industry}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 md:mb-6 flex-grow">
+                      {project.description}
+                    </p>
+
+                    {/* CTA Link */}
+                    <div className="flex items-center text-xs md:text-sm font-semibold text-slate-900 dark:text-white group-hover:gap-2 transition-all duration-300">
+                      <span>Explore Project</span>
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
+                        →
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300"
-                    style={{
-                      backgroundImage: `linear-gradient(to right, var(--color-start), var(--color-end))`,
-                    }}
-                  >
-                    {project.title}
-                  </h3>
-
-                  {/* Industry tag */}
-                  <div className="mb-4">
-                    <span
-                      className={cn(
-                        "inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider",
-                        "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
-                      )}
-                    >
-                      {project.industry}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
-
-                  {/* CTA Link */}
-                  <div className="flex items-center text-sm font-semibold text-slate-900 dark:text-white group-hover:gap-2 transition-all duration-300">
-                    <span>Explore Project</span>
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      →
-                    </span>
-                  </div>
+                  {/* Hover glow effect */}
+                  <div
+                    className={cn(
+                      "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+                      `bg-gradient-to-r ${accentColors[index]} blur-2xl -z-10`
+                    )}
+                    style={{ filter: "blur(40px)" }}
+                  />
                 </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
 
-                {/* Hover glow effect */}
-                <div
-                  className={cn(
-                    "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
-                    `bg-gradient-to-r ${accentColors[index]} blur-2xl -z-10`
-                  )}
-                  style={{ filter: "blur(40px)" }}
-                />
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </motion.div>
+      {/* Mobile View - 1 item per page with pagination */}
+      <div className="md:hidden">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          {caseStudies.slice(currentPage, currentPage + 1).map((project, index) => {
+            const actualIndex = currentPage + index;
+            return (
+              <motion.div
+                key={project.title}
+                variants={itemVariants}
+                className="group"
+              >
+                <Link href={project.href}>
+                  <div
+                    className={cn(
+                      "relative h-full rounded-2xl border-2 transition-all duration-300 overflow-hidden",
+                      "backdrop-blur-sm bg-white/50 dark:bg-slate-900/50",
+                      borderColors[actualIndex],
+                      bgGradients[actualIndex],
+                      "hover:shadow-2xl hover:scale-105 cursor-pointer"
+                    )}
+                  >
+                    {/* Accent bar at top */}
+                    <div
+                      className={cn(
+                        "h-1 w-full bg-gradient-to-r",
+                        accentColors[actualIndex]
+                      )}
+                    />
+
+                    {/* Content */}
+                    <div className="p-6 h-full flex flex-col">
+                      {/* Number badge */}
+                      <div className="mb-4">
+                        <span
+                          className={cn(
+                            "inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-white text-sm",
+                            `bg-gradient-to-r ${accentColors[actualIndex]}`
+                          )}
+                        >
+                          {actualIndex + 1}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300">
+                        {project.title}
+                      </h3>
+
+                      {/* Industry tag */}
+                      <div className="mb-3">
+                        <span
+                          className={cn(
+                            "inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider",
+                            "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                          )}
+                        >
+                          {project.industry}
+                        </span>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4 flex-grow">
+                        {project.description}
+                      </p>
+
+                      {/* CTA Link */}
+                      <div className="flex items-center text-xs font-semibold text-slate-900 dark:text-white group-hover:gap-2 transition-all duration-300">
+                        <span>Explore Project</span>
+                        <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
+                          →
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Hover glow effect */}
+                    <div
+                      className={cn(
+                        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+                        `bg-gradient-to-r ${accentColors[actualIndex]} blur-2xl -z-10`
+                      )}
+                      style={{ filter: "blur(40px)" }}
+                    />
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Mobile Pagination Controls */}
+        <div className="flex items-center justify-between mb-8">
+          <button
+            onClick={() => setCurrentPage((prev) => (prev - 1 + caseStudies.length) % caseStudies.length)}
+            className="p-2 rounded-full bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Previous project"
+          >
+            <ChevronLeft className="w-5 h-5 text-slate-900 dark:text-white" />
+          </button>
+
+          <div className="flex gap-2">
+            {caseStudies.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index)}
+                className={cn(
+                  "h-2 rounded-full transition-all duration-300",
+                  index === currentPage
+                    ? "w-8 bg-slate-900 dark:bg-white"
+                    : "w-2 bg-gray-300 dark:bg-slate-600 hover:bg-gray-400 dark:hover:bg-slate-500"
+                )}
+                aria-label={`Go to project ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => setCurrentPage((prev) => (prev + 1) % caseStudies.length)}
+            className="p-2 rounded-full bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Next project"
+          >
+            <ChevronRight className="w-5 h-5 text-slate-900 dark:text-white" />
+          </button>
+        </div>
+      </div>
 
       {/* Bottom CTA */}
       <motion.div
@@ -182,13 +322,13 @@ export function CurrentProjects({
         transition={{ duration: 0.6, delay: 0.3 }}
         className="text-center"
       >
-        <p className="text-slate-600 dark:text-slate-400 mb-6">
+        <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-4">
           Want to see more of our work?
         </p>
         <Link href="/case-studies">
           <Button
-            size="lg"
-            className="rounded-full px-8 py-6 text-base font-semibold"
+            size="sm"
+            className="rounded-full px-6 py-2 text-xs md:text-sm font-semibold"
           >
             <i className="fas fa-briefcase mr-2"></i>
             View All Projects

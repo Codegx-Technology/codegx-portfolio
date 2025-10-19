@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\terms</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\simple-quote2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -57,6 +62,11 @@
   </url>
   <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\professional-home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\privacy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -131,6 +141,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\docs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\cookies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\contact</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -157,6 +177,11 @@
   </url>
   <url>
     <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\agency</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codegx-technology.github.io/codegx-portfolioclient\src\pages\about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -67,7 +67,7 @@ export function FeaturedCaseStudies() {
 
   const handleNext = () => {
     setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
-  };}
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -117,14 +117,15 @@ export function FeaturedCaseStudies() {
           <Paragraph>Check back soon for featured case studies.</Paragraph>
         </EnterpriseCard>
       ) : (
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {currentItems.map((caseStudy) => (
+        <>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {currentItems.map((caseStudy) => (
               <motion.div key={caseStudy.id} variants={itemVariants} className="h-full">
                 <EnterpriseCard className="h-full overflow-hidden group" interactive>
                   <div className="relative h-48 overflow-hidden">
@@ -173,12 +174,12 @@ export function FeaturedCaseStudies() {
                   </div>
                 </EnterpriseCard>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Pagination Controls - Mobile only */}
-        {isMobile && totalPages > 1 && (
+          {/* Pagination Controls - Mobile only */}
+          {isMobile && totalPages > 1 && (
           <div className="flex flex-col items-center gap-4 mt-8">
             <div className="flex items-center justify-center gap-4">
               <Button
@@ -216,18 +217,19 @@ export function FeaturedCaseStudies() {
               {currentPage + 1} of {totalPages}
             </div>
           </div>
-        )}
-      )
+          )}
 
-      <div className="mt-12 text-center">
-        <Button
-          onClick={() => window.location.href = "/case-studies"}
-          className="rounded-full px-8 py-6 text-lg"
-        >
-          <i className="fas fa-briefcase mr-2"></i>
-          View All Case Studies
-        </Button>
-      </div>
+          <div className="mt-12 text-center">
+          <Button
+            onClick={() => window.location.href = "/case-studies"}
+            className="rounded-full px-8 py-6 text-lg"
+          >
+            <i className="fas fa-briefcase mr-2"></i>
+            View All Case Studies
+          </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 }

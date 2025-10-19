@@ -95,7 +95,7 @@ export default function ProfessionalHome() {
         {/* Hero Section */}
         <motion.section
           ref={heroRef}
-          className="relative min-h-[90vh] flex items-center overflow-hidden pt-20"
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden pt-4 md:pt-8"
           style={{
             opacity: heroOpacity,
             scale: heroScale,
@@ -116,19 +116,19 @@ export default function ProfessionalHome() {
           </div>
 
           {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-7 space-y-8"
+                className="lg:col-span-7 space-y-4 md:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
                   <span className="flex h-2 w-2 mr-2">
                     <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -141,7 +141,7 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white"
                 >
                   Transforming Businesses <br />
                   Through <span className="text-[#c8a951] dark:text-[#9f7b42]">Advanced</span> Technology
@@ -151,7 +151,7 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-xl text-slate-300 max-w-2xl"
+                  className="text-xs md:text-sm text-slate-300 max-w-2xl"
                 >
                   Codegx Technologies delivers innovative solutions that drive digital transformation, operational efficiency, and sustainable growth for enterprises worldwide.
                 </motion.p>
@@ -160,20 +160,20 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 pt-4"
+                  className="flex flex-col sm:flex-row gap-3 pt-2 md:pt-4"
                 >
                   <Button
                     asChild
-                    size="lg"
-                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c]"
+                    size="sm"
+                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] text-xs md:text-sm"
                   >
                     <Link href="/contact">Schedule a Consultation</Link>
                   </Button>
                   <Button
                     asChild
-                    size="lg"
+                    size="sm"
                     variant="outline"
-                    className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
+                    className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-xs md:text-sm"
                   >
                     <Link href="/solutions">Explore Solutions</Link>
                   </Button>
@@ -222,7 +222,7 @@ export default function ProfessionalHome() {
         </motion.section>
 
         {/* About Section - Enterprise Grade */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-12 md:py-16 relative overflow-hidden">
           {/* Background elements */}
           <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-[#121212] dark:to-[#1a1a1a] z-0"></div>
 
@@ -241,13 +241,13 @@ export default function ProfessionalHome() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 translate-y-1/3 z-0"></div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
                 Our Identity
               </motion.div>
@@ -257,7 +257,7 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
+                className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white"
               >
                 Who We <span className="text-[#c8a951] dark:text-[#9f7b42]">Are</span>
               </motion.h2>
@@ -267,13 +267,13 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-16"
+                className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
               >
                 Codegx Technologies is an innovative technology startup focused on delivering cutting-edge AI, digital transformation, and custom software development solutions that help businesses thrive in the digital age.
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -306,11 +306,11 @@ export default function ProfessionalHome() {
                 </div>
 
                 {/* Mission statement */}
-                <div className="mt-8 bg-white dark:bg-[#2c1a22] p-6 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
-                  <div className="absolute top-0 left-8 transform -translate-y-1/2 bg-[#c8a951] dark:bg-[#9f7b42] text-white px-4 py-2 rounded-full text-sm font-medium">
+                <div className="mt-6 bg-white dark:bg-[#2c1a22] p-4 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
+                  <div className="absolute top-0 left-8 transform -translate-y-1/2 bg-[#c8a951] dark:bg-[#9f7b42] text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium">
                     Our Mission
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 mt-2">
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-2">
                     "To empower organizations through innovative technology solutions that drive meaningful business transformation and sustainable growth."
                   </p>
                 </div>
@@ -323,24 +323,24 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="lg:col-span-7"
               >
-                <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  <h3 className="text-2xl font-bold mb-6 text-[#2c1a22] dark:text-white">Enterprise Excellence</h3>
+                <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 shadow-xl border border-gray-100 dark:border-[#3d2128]">
+                  <h3 className="text-lg md:text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">Enterprise Excellence</h3>
 
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-700 dark:text-gray-300">
+                  <div className="space-y-4">
+                    <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">
                       As an innovative technology startup, we bring fresh perspectives and cutting-edge approaches to solving business challenges. Our agile team of talented engineers, data scientists, and creative problem-solvers is passionate about helping organizations of all sizes harness the power of technology.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-lightbulb text-xl"></i>
+                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-lightbulb text-lg"></i>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Innovation DNA</h4>
-                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                        <div className="ml-3">
+                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Innovation DNA</h4>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
                             We pioneer cutting-edge solutions that address the most complex enterprise challenges, staying ahead of technological trends.
                           </p>
                         </div>
@@ -348,13 +348,13 @@ export default function ProfessionalHome() {
 
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-shield-alt text-xl"></i>
+                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-shield-alt text-lg"></i>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Enterprise Security</h4>
-                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                        <div className="ml-3">
+                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Enterprise Security</h4>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
                             Our solutions adhere to the highest security standards, ensuring your data and systems remain protected at all times.
                           </p>
                         </div>
@@ -362,13 +362,13 @@ export default function ProfessionalHome() {
 
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-chart-line text-xl"></i>
+                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-chart-line text-lg"></i>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Measurable Results</h4>
-                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                        <div className="ml-3">
+                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Measurable Results</h4>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
                             We focus on delivering quantifiable business outcomes with clear ROI metrics that demonstrate tangible value.
                           </p>
                         </div>
@@ -376,13 +376,13 @@ export default function ProfessionalHome() {
 
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-handshake text-xl"></i>
+                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                            <i className="fas fa-handshake text-lg"></i>
                           </div>
                         </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white">Strategic Partnership</h4>
-                          <p className="text-gray-700 dark:text-gray-300 mt-1">
+                        <div className="ml-3">
+                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Strategic Partnership</h4>
+                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
                             We build long-term relationships, serving as trusted advisors who are invested in your organization's success.
                           </p>
                         </div>
@@ -390,22 +390,22 @@ export default function ProfessionalHome() {
                     </div>
 
                     {/* Core values */}
-                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="text-lg font-semibold text-[#2c1a22] dark:text-white mb-4">Our Core Values</h4>
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                    <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white mb-3">Our Core Values</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
                           <i className="fas fa-lightbulb text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
                           Innovation
                         </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
                           <i className="fas fa-users text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
                           Collaboration
                         </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
                           <i className="fas fa-rocket text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
                           Agility
                         </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1.5 rounded-lg text-sm font-medium text-gray-800 dark:text-gray-200 flex items-center">
+                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
                           <i className="fas fa-handshake text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
                           Integrity
                         </div>
@@ -419,7 +419,7 @@ export default function ProfessionalHome() {
         </section>
 
         {/* Services Section - Enterprise Grade */}
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-12 md:py-16 relative overflow-hidden">
           {/* Background elements */}
           <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-[#1a1a1a] dark:to-[#121212] z-0"></div>
 
@@ -443,13 +443,13 @@ export default function ProfessionalHome() {
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
                 Enterprise Solutions
               </motion.div>
@@ -459,7 +459,7 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white"
+                className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white"
               >
                 Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Services</span>
               </motion.h2>
@@ -469,7 +469,7 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+                className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 We deliver a comprehensive suite of enterprise-grade technology solutions designed to address your organization's most complex challenges and drive sustainable growth.
               </motion.p>
@@ -481,24 +481,24 @@ export default function ProfessionalHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-16"
+              className="mb-8 md:mb-12"
             >
               <div className="bg-white dark:bg-[#2c1a22] rounded-2xl overflow-hidden shadow-xl border border-gray-100 dark:border-[#3d2128]">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="inline-flex items-center px-3 py-1 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 self-start">
+                  <div className="p-6 lg:p-8 flex flex-col justify-center">
+                    <div className="inline-flex items-center px-3 py-1 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-3 self-start">
                       Featured Service
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-4 text-[#2c1a22] dark:text-white">
+                    <h3 className="text-lg md:text-xl font-bold mb-3 text-[#2c1a22] dark:text-white">
                       Enterprise AI Solutions
                     </h3>
 
-                    <p className="text-gray-700 dark:text-gray-300 mb-6">
+                    <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mb-4">
                       Our flagship AI solutions leverage cutting-edge machine learning, natural language processing, and computer vision technologies to transform your business operations, enhance decision-making, and create competitive advantage.
                     </p>
 
-                    <ul className="space-y-3 mb-8">
+                    <ul className="space-y-2 mb-4">
                       {[
                         "Custom AI model development and deployment",
                         "Predictive analytics and forecasting systems",
@@ -507,10 +507,10 @@ export default function ProfessionalHome() {
                         "Natural language processing for document analysis"
                       ].map((item, index) => (
                         <li key={index} className="flex items-start">
-                          <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center mt-1 mr-3">
+                          <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center mt-0.5 mr-2">
                             <i className="fas fa-check text-xs text-[#c8a951] dark:text-[#9f7b42]"></i>
                           </div>
-                          <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                          <span className="text-xs md:text-sm text-gray-700 dark:text-gray-300">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -706,7 +706,7 @@ export default function ProfessionalHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-16 bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] rounded-2xl p-8 md:p-12 relative overflow-hidden"
+              className="mt-8 md:mt-12 bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] rounded-2xl p-6 md:p-8 relative overflow-hidden"
             >
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-10">
@@ -722,12 +722,12 @@ export default function ProfessionalHome() {
                 </svg>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
                 <div className="lg:col-span-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  <h3 className="text-lg md:text-2xl font-bold text-white mb-3">
                     Ready for Enterprise-Grade Solutions?
                   </h3>
-                  <p className="text-slate-300 mb-6 lg:mb-0 max-w-2xl">
+                  <p className="text-xs md:text-sm text-slate-300 mb-4 lg:mb-0 max-w-2xl">
                     Our team of experts is ready to help you identify the right solutions for your organization's unique challenges and objectives.
                   </p>
                 </div>
@@ -748,7 +748,7 @@ export default function ProfessionalHome() {
 
 
         {/* Current Projects Section */}
-        <div className="py-20 bg-gray-50 dark:bg-[#1a1a1a]">
+        <div className="py-12 md:py-16 bg-gray-50 dark:bg-[#1a1a1a]">
           <div className="container mx-auto px-4">
             <CurrentProjects
               caseStudies={caseStudies}

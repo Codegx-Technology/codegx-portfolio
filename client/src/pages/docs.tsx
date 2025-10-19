@@ -196,16 +196,16 @@ export default function Documentation() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 md:py-24 text-center"
+          className="py-6 md:py-10 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+          <h2 className="text-lg md:text-2xl font-bold mb-3 text-slate-900 dark:text-white">
             Need Help?
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-4 max-w-2xl mx-auto">
             Can't find what you're looking for? Our support team is here to help.
           </p>
           <Link href="/contact">
-            <Button size="lg" className="rounded-full px-8 py-6 text-base font-semibold">
+            <Button size="sm" className="rounded-full px-6 py-2 text-xs md:text-sm font-semibold">
               Contact Support
             </Button>
           </Link>
