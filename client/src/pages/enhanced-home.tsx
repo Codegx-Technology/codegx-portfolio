@@ -73,55 +73,55 @@ export default function EnhancedHome() {
         showNotifications={true}
       >
         {/* Hero Section */}
-        <section className="relative min-h-[90vh] flex items-center">
+        <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center">
           <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/50 dark:from-background dark:via-background dark:to-background/80 z-0"></div>
           <div className="absolute inset-0 bg-grid-pattern-light dark:bg-grid-pattern-dark opacity-10 z-0"></div>
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6"
+                className="space-y-4 md:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-2"
+                  className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-2"
                 >
                   Enterprise AI Solutions
                 </motion.div>
-                
+
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight"
                 >
                   Transform Your Business with <span className="text-secondary">AI</span> Innovation
                 </motion.h1>
-                
+
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="text-xl text-muted-foreground max-w-lg"
+                  className="text-xs md:text-sm text-muted-foreground max-w-lg"
                 >
                   Astella AI delivers cutting-edge artificial intelligence solutions that drive real business results and ROI.
                 </motion.p>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 pt-4"
+                  className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4"
                 >
-                  <Button asChild size="lg" variant="electric">
+                  <Button asChild size="sm" variant="electric">
                     <Link href="/quote">Get Started</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline">
+                  <Button asChild size="sm" variant="outline">
                     <Link href="/case-studies">View Case Studies</Link>
                   </Button>
                 </motion.div>

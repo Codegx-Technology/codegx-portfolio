@@ -59,7 +59,7 @@ export function AgencyIntro() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-12 md:py-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] z-0"></div>
 
@@ -82,7 +82,7 @@ export function AgencyIntro() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col lg:flex-row items-center gap-12"
+          className="flex flex-col lg:flex-row items-center gap-8 md:gap-12"
         >
           {/* Logo */}
           <motion.div
@@ -125,7 +125,7 @@ export function AgencyIntro() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs sm:text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
                 <span className="flex h-2 w-2 mr-2">
                   <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -134,19 +134,19 @@ export function AgencyIntro() {
                 Innovation Through AI
               </motion.div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4 break-words">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 break-words">
                 {agencyProfile.name}
               </h1>
 
-              <h2 className="text-lg sm:text-xl md:text-2xl text-[#c8a951] dark:text-[#9f7b42] font-medium mb-6 break-words">
+              <h2 className="text-sm md:text-base text-[#c8a951] dark:text-[#9f7b42] font-medium mb-4 md:mb-6 break-words">
                 {agencyProfile.tagline}
               </h2>
 
-              <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
+              <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
                 {agencyProfile.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mb-6">
+              <div className="flex flex-wrap items-center gap-4 mb-4 md:mb-6">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}

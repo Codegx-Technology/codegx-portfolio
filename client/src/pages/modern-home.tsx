@@ -106,10 +106,10 @@ export default function ModernHome() {
         showSearch={true}
       >
         {/* Hero Section */}
-        <motion.section 
+        <motion.section
           ref={heroRef}
-          className="relative min-h-[100vh] flex items-center overflow-hidden"
-          style={{ 
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
+          style={{
             opacity: heroOpacity,
             scale: heroScale,
             y: heroY
@@ -117,7 +117,7 @@ export default function ModernHome() {
         >
           {/* Background Elements */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22]/90 dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c]/90 z-0"></div>
-          
+
           {/* Animated background grid */}
           <div className="absolute inset-0 z-0 opacity-10">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +127,7 @@ export default function ModernHome() {
               <rect width="100%" height="100%" fill="url(#grid-pattern)" />
             </svg>
           </div>
-          
+
           {/* Floating elements */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {[...Array(20)].map((_, i) => (
@@ -151,21 +151,21 @@ export default function ModernHome() {
               />
             ))}
           </div>
-          
+
           {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="space-y-8"
+                className="space-y-4 md:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
                   <span className="flex h-2 w-2 mr-2">
                     <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -173,22 +173,22 @@ export default function ModernHome() {
                   </span>
                   Pioneering Digital Transformation
                 </motion.div>
-                
+
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white"
                 >
                   Elevate Your Business with <br />
                   <span className="text-[#c8a951] dark:text-[#9f7b42]">Intelligent</span> Technology
                 </motion.h1>
-                
+
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-xl text-slate-300 max-w-lg"
+                  className="text-xs md:text-sm text-slate-300 max-w-lg"
                 >
                   Codegx Technologies delivers cutting-edge artificial intelligence solutions that drive real business results and measurable ROI.
                 </motion.p>
@@ -197,18 +197,18 @@ export default function ModernHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 pt-4"
+                  className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4"
                 >
-                  <Button 
-                    asChild 
-                    size="lg" 
+                  <Button
+                    asChild
+                    size="sm"
                     className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c]"
                   >
                     <Link href="/quote">Get Started</Link>
                   </Button>
-                  <Button 
-                    asChild 
-                    size="lg" 
+                  <Button
+                    asChild
+                    size="sm"
                     variant="outline"
                     className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
                   >

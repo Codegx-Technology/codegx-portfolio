@@ -91,40 +91,40 @@ export default function EnhancedServices() {
         showSearch={true}
       >
         {/* Hero Section */}
-        <section className="relative py-24 bg-muted/30">
+        <section className="relative py-12 md:py-16 bg-muted/30">
           <div className="absolute inset-0 bg-grid-pattern-light dark:bg-grid-pattern-dark opacity-10 z-0"></div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-6"
+                className="space-y-4 md:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-2"
+                  className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-2"
                 >
                   Our Services
                 </motion.div>
-                
+
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight"
                 >
                   Comprehensive <span className="text-secondary">AI</span> Solutions
                 </motion.h1>
-                
+
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="text-xl text-muted-foreground"
+                  className="text-xs md:text-sm text-muted-foreground"
                 >
                   From strategy to implementation, we provide end-to-end AI services tailored to your business needs.
                 </motion.p>
@@ -132,51 +132,51 @@ export default function EnhancedServices() {
             </div>
           </div>
         </section>
-        
+
         {/* Services Section */}
-        <section className="py-24">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
               {services.map((service, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
-                  className="bg-card border border-border rounded-2xl p-8 shadow-sm transition-all h-full flex flex-col"
+                  className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm transition-all h-full flex flex-col"
                 >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="bg-primary/10 text-primary rounded-full w-12 h-12 flex items-center justify-center">
-                      <i className={`${service.icon} text-xl`}></i>
+                  <div className="flex justify-between items-start mb-4 md:mb-6">
+                    <div className="bg-primary/10 text-primary rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                      <i className={`${service.icon} text-lg md:text-xl`}></i>
                     </div>
                     {service.badge && (
                       <Badge variant={service.badgeVariant as "default" | "secondary" | "destructive" | "outline"}>{service.badge}</Badge>
                     )}
                   </div>
-                  
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
+
+                  <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">{service.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">{service.description}</p>
                   
                   <div className="mt-auto">
-                    <div className="border-t border-border pt-4 mb-6">
-                      <h4 className="text-sm font-medium mb-3">Key Features</h4>
-                      <ul className="space-y-2">
+                    <div className="border-t border-border pt-3 md:pt-4 mb-4 md:mb-6">
+                      <h4 className="text-xs md:text-sm font-medium mb-2 md:mb-3">Key Features</h4>
+                      <ul className="space-y-1 md:space-y-2">
                         {service.features.map((feature, i) => (
-                          <li key={i} className="flex items-center text-sm">
+                          <li key={i} className="flex items-center text-xs md:text-sm">
                             <i className="fas fa-check text-accent mr-2 text-xs"></i>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    
+
                     <Link href={service.href}>
-                      <Button variant="outline" className="w-full">
+                      <Button variant="outline" className="w-full text-xs md:text-sm">
                         Learn More
                       </Button>
                     </Link>
@@ -186,13 +186,13 @@ export default function EnhancedServices() {
             </motion.div>
           </div>
         </section>
-        
+
         {/* Process Section */}
-        <section className="py-24 bg-muted/30">
+        <section className="py-12 md:py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Process</h2>
-              <p className="text-lg text-muted-foreground">
+            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">Our Process</h2>
+              <p className="text-xs md:text-sm text-muted-foreground">
                 We follow a proven methodology to ensure successful AI implementation and adoption.
               </p>
             </div>

@@ -103,7 +103,7 @@ export default function AgencyPage() {
           {/* Team Section */}
           {agencyProfile?.team && agencyProfile.team.length > 0 && (
             <motion.section
-              className="py-20 bg-white dark:bg-[#121212] relative overflow-hidden"
+              className="py-12 md:py-16 bg-white dark:bg-[#121212] relative overflow-hidden"
               variants={sectionVariants}
             >
               {/* Background Elements */}
@@ -116,17 +116,17 @@ export default function AgencyPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-center mb-16"
+                  className="text-center mb-8 md:mb-12"
                 >
-                  <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
                     Our Experts
                   </div>
 
-                  <h2 className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white">
                     Meet Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Team</span>
                   </h2>
 
-                  <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                     Meet the talented professionals behind our innovative solutions.
                   </p>
                 </motion.div>

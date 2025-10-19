@@ -94,7 +94,7 @@ export default function WhyAstella() {
         <div className="relative z-10 text-center">
           <PageHeader
             title={
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
                 We Build AI With{" "}
                 <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
                   Clarity and Care
@@ -105,13 +105,13 @@ export default function WhyAstella() {
             className="text-center"
           />
 
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-8">
-            <Button size="lg" className="rounded-full px-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-6 md:mt-8">
+            <Button size="sm" className="rounded-full px-6 md:px-8">
               <i className="fas fa-handshake mr-2"></i>
               Partner With Us
             </Button>
             <Link href="/case-studies">
-              <Button size="lg" variant="outline" className="rounded-full px-8">
+              <Button size="sm" variant="outline" className="rounded-full px-6 md:px-8">
                 <i className="fas fa-briefcase mr-2"></i>
                 View Our Work
               </Button>
@@ -124,18 +124,18 @@ export default function WhyAstella() {
 
       {/* Our Mission Section */}
       <PageSection>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">Our Mission</Heading2>
-            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+            <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Mission</Heading2>
+            <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               At Astella AI, our mission is to harness the power of artificial intelligence, blockchain,
               and emerging technologies to solve complex challenges and create sustainable impact across Africa.
             </Paragraph>
-            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+            <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               We believe that technology, when thoughtfully applied, can transform industries, empower communities,
               and address some of the most pressing challenges facing our continent and the world.
             </Paragraph>
-            <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <Paragraph className="text-xs md:text-sm text-muted-foreground leading-relaxed">
               Through innovation, collaboration, and a deep understanding of local contexts, we develop solutions
               that are not just technically excellent but also socially responsible and contextually relevant.
             </Paragraph>
@@ -169,24 +169,24 @@ export default function WhyAstella() {
 
       {/* Core Values Section */}
       <PageSection className="bg-card py-6 md:py-12">
-        <div className="text-center mb-8 md:mb-16">
-          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Our Core Values</Heading2>
-          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-6 md:mb-12">
+          <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Our Core Values</Heading2>
+          <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             These principles guide everything we do, from how we develop technology to how we engage with our clients and communities.
           </Paragraph>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {coreValues.map((value) => (
             <div
               key={value.title}
-              className="bg-background rounded-lg p-6 shadow-md border border-border h-full"
+              className="bg-background rounded-lg p-4 md:p-6 shadow-md border border-border h-full"
             >
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl mb-4 md:mb-6 mx-auto">
                 <i className={value.icon}></i>
               </div>
-              <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-center">{value.title}</Heading3>
-              <Paragraph className="text-muted-foreground text-center">{value.description}</Paragraph>
+              <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-center">{value.title}</Heading3>
+              <Paragraph className="text-xs md:text-sm text-muted-foreground text-center">{value.description}</Paragraph>
             </div>
           ))}
         </div>
@@ -196,17 +196,17 @@ export default function WhyAstella() {
 
       {/* Founder's Vision Section */}
       <PageSection>
-        <div className="text-center mb-8 md:mb-16">
-          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4">Founder's Vision</Heading2>
-          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-6 md:mb-12">
+          <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Founder's Vision</Heading2>
+          <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             The journey from a personal career to founding Astella AI.
           </Paragraph>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-8">
           <div className="lg:col-span-2">
             <div className="sticky top-20">
-              <div className="relative rounded-lg overflow-hidden mb-6">
+              <div className="relative rounded-lg overflow-hidden mb-4 md:mb-6">
                 <div className="aspect-w-4 aspect-h-5">
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
@@ -218,9 +218,9 @@ export default function WhyAstella() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                  <div className="p-6 text-white">
-                    <Heading3 className="text-xl sm:text-2xl md:text-3xl font-bold">Building Together</Heading3>
-                    <Paragraph className="text-white/80">Empowering African Innovation</Paragraph>
+                  <div className="p-4 md:p-6 text-white">
+                    <Heading3 className="text-lg md:text-xl font-bold">Building Together</Heading3>
+                    <Paragraph className="text-xs md:text-sm text-white/80">Empowering African Innovation</Paragraph>
                   </div>
                 </div>
               </div>
@@ -254,30 +254,30 @@ export default function WhyAstella() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {journeyMilestones.map((milestone) => (
                 <div
                   key={milestone.year}
-                  className="relative pl-10 border-l border-border"
+                  className="relative pl-8 md:pl-10 border-l border-border"
                 >
-                  <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center -translate-x-1/2">
-                    <div className="w-4 h-4 rounded-full bg-primary"></div>
+                  <div className="absolute left-0 top-0 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/20 flex items-center justify-center -translate-x-1/2">
+                    <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary"></div>
                   </div>
-                  <div className="text-primary font-bold text-lg sm:text-xl mb-2">{milestone.year}</div>
-                  <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{milestone.title}</Heading3>
-                  <Paragraph className="text-muted-foreground">{milestone.description}</Paragraph>
+                  <div className="text-primary font-bold text-base md:text-lg mb-1 md:mb-2">{milestone.year}</div>
+                  <Heading3 className="text-base md:text-lg font-bold mb-1 md:mb-2">{milestone.title}</Heading3>
+                  <Paragraph className="text-xs md:text-sm text-muted-foreground">{milestone.description}</Paragraph>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 p-6 bg-card rounded-lg border border-border">
-              <Heading3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">The Vision Forward</Heading3>
-              <Paragraph className="text-muted-foreground mb-4">
+            <div className="mt-8 md:mt-12 p-4 md:p-6 bg-card rounded-lg border border-border">
+              <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3">The Vision Forward</Heading3>
+              <Paragraph className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
                 As we look to the future, our vision is to establish Astella AI as the leading technology
                 partner for organizations seeking to leverage AI, blockchain, and emerging technologies
                 for meaningful impact across Africa.
               </Paragraph>
-              <Paragraph className="text-muted-foreground">
+              <Paragraph className="text-xs md:text-sm text-muted-foreground">
                 We aim to build a company that not only delivers exceptional technical solutions but also
                 contributes to building local capacity, fostering innovation ecosystems, and creating
                 opportunities for the next generation of African technologists.
@@ -292,22 +292,22 @@ export default function WhyAstella() {
       {/* Call to Action */}
       <PageSection className="bg-card py-6 md:py-12">
         <div className="text-center">
-          <Heading2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">
             Ready to Build Something Impactful Together?
           </Heading2>
-          <Paragraph className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+          <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
             Whether you're looking to transform your organization with AI, develop a blockchain solution,
             or explore smart city technologies, we're here to help turn your vision into reality.
           </Paragraph>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Link href="/contact">
-              <Button size="lg" className="rounded-full px-8">
+              <Button size="sm" className="rounded-full px-6 md:px-8">
                 <i className="fas fa-envelope mr-2"></i>
                 Get in Touch
               </Button>
             </Link>
             <Link href="/case-studies">
-              <Button size="lg" variant="outline" className="rounded-full px-8">
+              <Button size="sm" variant="outline" className="rounded-full px-6 md:px-8">
                 <i className="fas fa-briefcase mr-2"></i>
                 Explore Our Work
               </Button>

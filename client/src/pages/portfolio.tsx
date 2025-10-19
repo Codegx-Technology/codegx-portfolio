@@ -179,7 +179,7 @@ export default function Portfolio() {
         {/* Hero Section */}
         <motion.section
           ref={heroRef}
-          className="relative min-h-[80vh] flex items-center overflow-hidden"
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
           style={{
             opacity: heroOpacity,
             scale: heroScale,
@@ -200,19 +200,19 @@ export default function Portfolio() {
           </div>
 
           {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-7 space-y-8"
+                className="lg:col-span-7 space-y-4 md:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
                   <span className="flex h-2 w-2 mr-2">
                     <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -225,7 +225,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-white"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white"
                 >
                   Peter O. <span className="text-[#c8a951] dark:text-[#9f7b42]">Oluoch</span>
                 </motion.h1>
@@ -234,7 +234,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-xl text-slate-300 max-w-2xl"
+                  className="text-xs md:text-sm text-slate-300 max-w-2xl"
                 >
                   I build innovative solutions at the intersection of blockchain, AI, and web technologies. Explore my portfolio of projects that solve real-world problems.
                 </motion.p>
@@ -252,18 +252,18 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 pt-4"
+                  className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4"
                 >
                   <Button
                     asChild
-                    size="lg"
+                    size="sm"
                     className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c]"
                   >
                     <a href="#projects">View Projects</a>
                   </Button>
                   <Button
                     asChild
-                    size="lg"
+                    size="sm"
                     variant="outline"
                     className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
                   >
@@ -323,19 +323,19 @@ export default function Portfolio() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
           <div className="relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 border border-primary/20"
+                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-2 md:mb-3 border border-primary/20"
               >
                 Technical Expertise
               </motion.div>
 
               <Heading2
-                className="mb-6"
+                className="mb-2 md:mb-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -345,7 +345,7 @@ export default function Portfolio() {
               </Heading2>
 
               <Paragraph
-                className="text-lg max-w-3xl mx-auto mb-16"
+                className="text-xs md:text-sm max-w-3xl mx-auto mb-8 md:mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -401,19 +401,19 @@ export default function Portfolio() {
           className="relative overflow-hidden"
         >
           <div className="relative z-10">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4 border border-primary/20"
+                className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-2 md:mb-3 border border-primary/20"
               >
                 My Work
               </motion.div>
 
               <Heading2
-                className="mb-6"
+                className="mb-2 md:mb-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -423,7 +423,7 @@ export default function Portfolio() {
               </Heading2>
 
               <Paragraph
-                className="text-lg max-w-3xl mx-auto mb-8"
+                className="text-xs md:text-sm max-w-3xl mx-auto mb-6 md:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -434,7 +434,7 @@ export default function Portfolio() {
             </div>
 
             {/* Project Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
               {categories.map((category: any, index: number) => (
                 <motion.button
                   key={index}

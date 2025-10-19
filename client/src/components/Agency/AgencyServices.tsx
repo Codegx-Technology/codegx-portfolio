@@ -81,7 +81,7 @@ export function AgencyServices() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-white dark:bg-[#121212]">
+    <section className="py-12 md:py-16 relative overflow-hidden bg-white dark:bg-[#121212]">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
@@ -106,17 +106,17 @@ export function AgencyServices() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12"
         >
-          <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+          <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
             What We Offer
           </div>
 
-          <h2 className="text-4xl font-bold mb-6 text-[#2c1a22] dark:text-white">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white">
             Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Services</span>
           </h2>
 
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             We offer a comprehensive range of digital solutions to help businesses thrive in the digital landscape.
           </p>
         </motion.div>
@@ -125,25 +125,25 @@ export function AgencyServices() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {agencyProfile.services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-[#2c1a22]/50 group"
+              className="bg-gray-50 dark:bg-[#1a1a1a] p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-[#2c1a22]/50 group"
             >
-              <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:scale-110 transition-transform duration-300">
-                <i className={`${getServiceIcon(service.icon)} text-2xl`}></i>
+              <div className="w-14 h-14 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i className={`${getServiceIcon(service.icon)} text-xl`}></i>
               </div>
 
-              <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">{service.title}</h3>
+              <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">{service.title}</h3>
 
-              <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
+              <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">{service.description}</p>
 
-              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
-                <a href="#" className="inline-flex items-center text-[#c8a951] dark:text-[#9f7b42] font-medium">
+              <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-800">
+                <a href="#" className="inline-flex items-center text-[#c8a951] dark:text-[#9f7b42] font-medium text-xs md:text-sm">
                   Learn More
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -160,7 +160,7 @@ export function AgencyServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center"
+          className="mt-8 md:mt-12 text-center"
         >
           <a href="/contact" className="inline-flex items-center gap-2 bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] px-8 py-4 rounded-md font-medium transition-colors">
             <span>Get Started</span>

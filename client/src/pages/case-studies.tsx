@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CaseStudy {
   id: string;
@@ -46,6 +47,8 @@ interface CaseStudiesData {
 export default function CaseStudies() {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
   const [activeIndustry, setActiveIndustry] = useState("all");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Fetch case studies data
   const { data, isLoading, error } = useQuery<CaseStudiesData>({
@@ -58,6 +61,21 @@ export default function CaseStudies() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Detect mobile screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Reset pagination when industry changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [activeIndustry]);
+
   // Group case studies by industry
   const industries = data?.caseStudies
     ? ["all", ...Array.from(new Set(data.caseStudies.map((cs) => cs.industry)))]
@@ -69,6 +87,21 @@ export default function CaseStudies() {
       ? data.caseStudies
       : data.caseStudies.filter((cs) => cs.industry === activeIndustry)
     : [];
+
+  // Pagination logic
+  const itemsPerPage = isMobile ? 1 : 3;
+  const totalPages = Math.ceil(filteredCaseStudies.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedCaseStudies = filteredCaseStudies.slice(startIndex, endIndex);
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+  };
 
   // Open case study modal
   const openCaseStudy = (caseStudy: CaseStudy) => {
@@ -175,8 +208,8 @@ export default function CaseStudies() {
                       animate="show"
                       className="w-full"
                     >
-                      <EnterpriseGrid cols={3} gap="lg">
-                        {filteredCaseStudies.map((caseStudy) => (
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                        {paginatedCaseStudies.map((caseStudy) => (
                           <motion.div
                             key={caseStudy.id}
                             variants={{
@@ -191,8 +224,49 @@ export default function CaseStudies() {
                             />
                           </motion.div>
                         ))}
-                      </EnterpriseGrid>
+                      </div>
                     </motion.div>
+
+                    {/* Pagination Controls - Mobile only */}
+                    {isMobile && totalPages > 1 && (
+                      <div className="flex flex-col items-center gap-4 mt-8">
+                        <div className="flex items-center justify-center gap-4">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={handlePrevious}
+                            className="rounded-full p-2 h-10 w-10"
+                          >
+                            <ChevronLeft className="h-5 w-5" />
+                          </Button>
+                          <div className="flex items-center gap-2">
+                            {Array.from({ length: totalPages }).map((_, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentPage(index)}
+                                className={`transition-all ${
+                                  index === currentPage
+                                    ? "bg-primary w-6 h-2 rounded-full"
+                                    : "bg-primary/30 w-2 h-2 rounded-full hover:bg-primary/50"
+                                }`}
+                                aria-label={`Go to page ${index + 1}`}
+                              />
+                            ))}
+                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={handleNext}
+                            className="rounded-full p-2 h-10 w-10"
+                          >
+                            <ChevronRight className="h-5 w-5" />
+                          </Button>
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {currentPage + 1} of {totalPages}
+                        </div>
+                      </div>
+                    )}
                   )}
                 </TabsContent>
               ))}
