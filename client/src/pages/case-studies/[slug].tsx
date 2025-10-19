@@ -38,7 +38,8 @@ export default function CaseStudyDetail() {
   const slug = params?.slug;
 
   const { data, isLoading, error } = useQuery<CaseStudiesData>({
-    queryKey: ["/api/case-studies"],
+    queryKey: ["/data/caseStudies.json"],
+    staleTime: Infinity,
   });
 
   // Find the case study by slug (convert title to slug format)
