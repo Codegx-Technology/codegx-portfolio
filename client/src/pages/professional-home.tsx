@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { CaseStudyGrid } from "@/components/ui/CaseStudyCard";
+import { CurrentProjects } from "@/components/Landing/CurrentProjects";
 import { CTASection } from "@/components/layouts/CTASection";
 
 export default function ProfessionalHome() {
@@ -24,28 +24,28 @@ export default function ProfessionalHome() {
 
   // Removed testimonials as they're replaced by the dynamic feedback section
 
-  // Sample case studies
+  // Current Projects - TendaNow, CodeCrusher, BizGen
   const caseStudies = [
     {
-      title: "Enterprise AI Integration",
-      description: "Implemented a comprehensive AI solution that increased operational efficiency by 35% and reduced costs by 28%.",
-      industry: "Manufacturing",
-      logo: "https://via.placeholder.com/120x40?text=EnterpriseAI",
-      href: "/case-studies/enterprise-ai",
+      title: "TendaNow",
+      description: "AI-powered accountability platform with WhatsApp integration. 42% increase in goal completion rates, 29% improvement in retention.",
+      industry: "Behavioral Change / Wellness",
+      logo: "https://via.placeholder.com/120x40?text=TendaNow",
+      href: "/case-studies/tendanow",
     },
     {
-      title: "Predictive Analytics Platform",
-      description: "Developed a custom predictive analytics platform that improved decision-making accuracy by 42% and accelerated time-to-insight.",
-      industry: "Healthcare",
-      logo: "https://via.placeholder.com/120x40?text=HealthTech",
-      href: "/case-studies/predictive-analytics",
+      title: "CodeCrusher",
+      description: "AI-augmented developer productivity platform. 68% reduction in code review time, 35% improvement in code quality metrics.",
+      industry: "Developer Tools",
+      logo: "https://via.placeholder.com/120x40?text=CodeCrusher",
+      href: "/case-studies/codecrusher",
     },
     {
-      title: "Digital Transformation Initiative",
-      description: "Led a comprehensive digital transformation that modernized legacy systems and created a 65% improvement in customer satisfaction.",
-      industry: "Financial Services",
-      logo: "https://via.placeholder.com/120x40?text=FinTech",
-      href: "/case-studies/digital-transformation",
+      title: "BizGen",
+      description: "Predictive entrepreneurship platform for business validation. 52% faster ideation-to-validation cycles, 85% user satisfaction.",
+      industry: "Entrepreneurship",
+      logo: "https://via.placeholder.com/120x40?text=BizGen",
+      href: "/case-studies/bizgen",
     },
   ];
 
@@ -747,20 +747,22 @@ export default function ProfessionalHome() {
 
 
 
-        {/* Case Studies Section */}
-        <CaseStudyGrid
-          title="Current Projects"
-          description="Explore how we've helped organizations achieve their business goals with our innovative technology solutions."
-          caseStudies={caseStudies}
-          className="py-20 bg-gray-50 dark:bg-[#1a1a1a]"
-        />
+        {/* Current Projects Section */}
+        <div className="py-20 bg-gray-50 dark:bg-[#1a1a1a]">
+          <div className="container mx-auto px-4">
+            <CurrentProjects
+              caseStudies={caseStudies}
+              className="w-full"
+            />
+          </div>
+        </div>
 
         {/* CTA Section */}
         <CTASection
-          title="Ready to transform your business?"
-          description="Schedule a consultation with our experts to explore how Codegx Technologies can help you achieve your goals."
-          buttonText="Get Started Today"
-          buttonLink="/contact"
+          title="Explore Our Complete Project Portfolio"
+          description="Discover all our case studies and see how we've helped organizations across industries achieve their goals."
+          buttonText="View All Projects"
+          buttonLink="/case-studies"
           variant="gradient"
         />
       </MainLayout>

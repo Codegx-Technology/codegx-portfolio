@@ -94,12 +94,10 @@ export function ExecutiveNavbar({
     };
   }, []);
 
-  // Animation effect for navbar items
+  // Animation effect for navbar items - keep navbar visible always
   useEffect(() => {
-    if (scrolled) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [scrolled, controls]);
+    controls.start({ opacity: 1, y: 0 });
+  }, [controls]);
 
   // Navigation links
   const navLinks: NavLink[] = [
@@ -138,7 +136,7 @@ export function ExecutiveNavbar({
     <motion.header
       className={cn(
         sticky ? "sticky top-0" : "",
-        "z-50 w-full",
+        "z-[9999] w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
           ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
@@ -153,9 +151,6 @@ export function ExecutiveNavbar({
                   : "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]",
         className
       )}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="flex items-center justify-between px-4 sm:px-4 md:px-6 lg:px-8 h-20 max-w-7xl mx-auto w-full overflow-x-hidden">
         {/* Logo */}
