@@ -167,34 +167,18 @@ export function ExecutiveNavbar({
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="relative"
             >
+              {/* Logo monogram only */}
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex flex-col items-center gap-1"
+                className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(200, 169, 81, 0.5)"
+                }}
               >
-                {/* Logo monogram */}
-                <motion.div
-                  className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 15px rgba(200, 169, 81, 0.5)"
-                  }}
-                >
-                  <span className="font-extrabold text-xl sm:text-2xl tracking-tighter">CT</span>
-                </motion.div>
-
-                {/* Logo text */}
-                <motion.div
-                  className="font-extrabold text-sm sm:text-base tracking-tight text-white whitespace-nowrap"
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  {logo.alt}
-                </motion.div>
+                <span className="font-extrabold text-xl sm:text-2xl tracking-tighter">CT</span>
               </motion.div>
               <motion.div
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#c8a951] dark:bg-[#9f7b42] w-0"
@@ -207,7 +191,7 @@ export function ExecutiveNavbar({
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:space-x-6">
-          <nav className="flex space-x-6">
+          <nav className="flex items-center space-x-6">
             <AnimatePresence>
               {navLinks.map((link, index) =>
                 link.children ? (
@@ -222,10 +206,11 @@ export function ExecutiveNavbar({
                         <NavigationMenuItem>
                           <NavigationMenuTrigger
                             className={cn(
-                              "bg-transparent hover:bg-transparent px-0 gap-1.5 text-slate-200",
+                              "bg-transparent hover:bg-transparent px-0 gap-1.5 text-sm font-medium text-slate-200 h-auto py-0",
                               "hover:text-[#c8a951] data-[state=open]:text-[#c8a951] dark:hover:text-[#9f7b42] dark:data-[state=open]:text-[#9f7b42]",
+                              "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#c8a951] dark:after:bg-[#9f7b42] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
                               location.startsWith(link.href)
-                                ? "text-[#c8a951] dark:text-[#9f7b42] font-medium"
+                                ? "text-[#c8a951] dark:text-[#9f7b42] after:w-full"
                                 : ""
                             )}
                           >
