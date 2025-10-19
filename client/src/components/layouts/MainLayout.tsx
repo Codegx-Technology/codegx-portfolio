@@ -99,13 +99,13 @@ export function MainLayout({
         transition={{ duration: 0.3 }}
         className={cn(
           "flex-grow pb-safe overflow-x-hidden w-full",
-          !isHomePage && "pt-20 pt-safe",
+          !isHomePage && "pt-4 md:pt-20 pt-safe",
           className
         )}
       >
         {withContainer ? (
           <div className={cn(
-            "px-safe mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-20 w-full overflow-x-hidden",
+            "px-safe mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0 md:pt-8 pb-8 md:pb-20 w-full overflow-x-hidden",
             !fullWidth && "max-w-7xl",
             containerClassName
           )}>
