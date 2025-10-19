@@ -86,8 +86,16 @@ export function Footer({
       links: [
         { label: "Blog", href: "/blog", icon: "fas fa-rss" },
         { label: "Case Studies", href: "/case-studies", icon: "fas fa-file-alt" },
-        { label: "Documentation", href: "/docs", icon: "fas fa-book", external: true },
+        { label: "Documentation", href: "/docs", icon: "fas fa-book" },
         { label: "Support", href: "/support", icon: "fas fa-headset" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Privacy Policy", href: "/privacy", icon: "fas fa-shield-alt" },
+        { label: "Terms of Service", href: "/terms", icon: "fas fa-gavel" },
+        { label: "Cookie Policy", href: "/cookies", icon: "fas fa-cookie" },
       ],
     },
   ];

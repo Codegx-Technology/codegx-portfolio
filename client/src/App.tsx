@@ -24,6 +24,11 @@ const Contact = lazy(() => import("@/pages/contact"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
 const Blog = lazy(() => import("@/pages/blog"));
 const WhyAstella = lazy(() => import("@/pages/why-astella"));
+const About = lazy(() => import("@/pages/about"));
+const Privacy = lazy(() => import("@/pages/privacy"));
+const Terms = lazy(() => import("@/pages/terms"));
+const Cookies = lazy(() => import("@/pages/cookies"));
+const Documentation = lazy(() => import("@/pages/docs"));
 import "@/styles/globals.css";
 
 function AppRouter() {
@@ -217,6 +222,22 @@ function AppRouter() {
             const ProfessionalHome = React.lazy(() => import("@/pages/professional-home"));
             return <LazyRoute component={ProfessionalHome} />;
           }}
+        </Route>
+        {/* Legal and Information Pages */}
+        <Route path="/about">
+          {() => <LazyRoute component={About} />}
+        </Route>
+        <Route path="/privacy">
+          {() => <LazyRoute component={Privacy} />}
+        </Route>
+        <Route path="/terms">
+          {() => <LazyRoute component={Terms} />}
+        </Route>
+        <Route path="/cookies">
+          {() => <LazyRoute component={Cookies} />}
+        </Route>
+        <Route path="/docs">
+          {() => <LazyRoute component={Documentation} />}
         </Route>
         <Route component={NotFound} />
       </Switch>

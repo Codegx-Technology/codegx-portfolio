@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
 import { EnterpriseGrid } from "@/components/ui/enterprise-container";
 import { Heading2, Heading3, Paragraph } from "@/components/ui/typography";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CaseStudy {
   id: string;
@@ -33,6 +34,9 @@ interface CaseStudiesData {
 }
 
 export function FeaturedCaseStudies() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
   const { data, isLoading, error } = useQuery<CaseStudiesData>({
     queryKey: ["/data/caseStudies.json"],
     staleTime: Infinity,
@@ -40,6 +44,30 @@ export function FeaturedCaseStudies() {
 
   // Filter featured case studies
   const featuredCaseStudies = data?.caseStudies.filter(study => study.featured) || [];
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const itemsPerPage = isMobile ? 1 : 3;
+  const totalPages = Math.ceil(featuredCaseStudies.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = featuredCaseStudies.slice(startIndex, endIndex);
+
+  const handlePrevious = () => {
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+  };}
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -95,8 +123,8 @@ export function FeaturedCaseStudies() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <EnterpriseGrid cols={3} gap="lg">
-            {featuredCaseStudies.map((caseStudy) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {currentItems.map((caseStudy) => (
               <motion.div key={caseStudy.id} variants={itemVariants} className="h-full">
                 <EnterpriseCard className="h-full overflow-hidden group" interactive>
                   <div className="relative h-48 overflow-hidden">
@@ -146,9 +174,50 @@ export function FeaturedCaseStudies() {
                 </EnterpriseCard>
               </motion.div>
             ))}
-          </EnterpriseGrid>
+          </div>
         </motion.div>
-      )}
+
+        {/* Pagination Controls - Mobile only */}
+        {isMobile && totalPages > 1 && (
+          <div className="flex flex-col items-center gap-4 mt-8">
+            <div className="flex items-center justify-center gap-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handlePrevious}
+                className="rounded-full p-2 h-10 w-10"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentPage(index)}
+                    className={`transition-all ${
+                      index === currentPage
+                        ? "bg-primary w-6 h-2 rounded-full"
+                        : "bg-primary/30 w-2 h-2 rounded-full hover:bg-primary/50"
+                    }`}
+                    aria-label={`Go to page ${index + 1}`}
+                  />
+                ))}
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleNext}
+                className="rounded-full p-2 h-10 w-10"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {currentPage + 1} of {totalPages}
+            </div>
+          </div>
+        )}
+      )
 
       <div className="mt-12 text-center">
         <Button
