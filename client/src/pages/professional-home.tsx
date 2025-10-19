@@ -749,7 +749,7 @@ export default function ProfessionalHome() {
 
         {/* Case Studies Section */}
         <CaseStudyGrid
-          title="Featured Case Studies"
+          title="Current Projects"
           description="Explore how we've helped organizations achieve their business goals with our innovative technology solutions."
           caseStudies={caseStudies}
           className="py-20 bg-gray-50 dark:bg-[#1a1a1a]"

@@ -46,13 +46,13 @@ export default function Home() {
 
         <PageDivider />
 
-        {/* Featured Case Studies Section */}
+        {/* Current Projects Section */}
         <PageSection
           title={
             <div className="text-center">
-              <Heading2 className="font-inter mb-4">Featured Case Studies</Heading2>
+              <Heading2 className="font-inter mb-4">Current Projects</Heading2>
               <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Discover how we've helped organizations solve complex challenges with innovative technology solutions.
+                Explore how we've helped organizations achieve their business goals with our innovative technology solutions.
               </Paragraph>
             </div>
           }
