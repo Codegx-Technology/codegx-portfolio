@@ -74,6 +74,126 @@
         "author": "Amara Okonkwo",
         "position": "Founder, Lagos"
       }
+    },
+    {
+      "id": "healthcare-ai-diagnostics",
+      "title": "AI-Powered Diagnostic Tool for Rural Healthcare",
+      "client": "MediTech Solutions",
+      "industry": "Healthcare",
+      "summary": "Developed an AI-powered diagnostic tool that helps healthcare providers in rural areas diagnose common conditions with limited resources.",
+      "challenge": "Rural healthcare facilities in developing regions face significant challenges including limited access to specialists, diagnostic equipment, and reliable internet connectivity. MediTech Solutions needed a solution that could work in low-resource settings while providing accurate diagnostic support.",
+      "solution": "We developed an AI-powered diagnostic tool that runs on standard tablets and smartphones, with offline capabilities. The system uses computer vision and machine learning algorithms to analyze patient symptoms, vital signs, and basic test results to suggest potential diagnoses and treatment options. The solution includes a knowledge base that is regularly updated when connectivity is available.",
+      "impact": [
+        "Reduced diagnostic errors by 37%",
+        "Decreased referral time by 58%",
+        "Improved treatment outcomes for 12,000+ patients",
+        "Deployed in 45 rural clinics across 3 countries"
+      ],
+      "technologies": ["TensorFlow", "React Native", "Flask", "MongoDB", "AWS"],
+      "image": "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": true,
+      "year": 2022,
+      "testimonial": {
+        "quote": "This technology has transformed how we deliver healthcare in remote areas. Our staff now have the confidence to make better diagnostic decisions, and patients receive faster, more accurate care.",
+        "author": "Dr. Sarah Kimani",
+        "position": "Medical Director, MediTech Solutions"
+      }
+    },
+    {
+      "id": "fintech-fraud-detection",
+      "title": "Real-time Fraud Detection System for Digital Payments",
+      "client": "AfriPay",
+      "industry": "FinTech",
+      "summary": "Built a sophisticated fraud detection system that analyzes transaction patterns in real-time to identify and prevent fraudulent activities.",
+      "challenge": "AfriPay, a rapidly growing digital payment platform in Africa, was experiencing an increase in fraudulent transactions as they scaled. Their existing rule-based system couldn't keep up with evolving fraud patterns, resulting in both false positives (legitimate transactions flagged as fraud) and missed fraud cases.",
+      "solution": "We implemented a hybrid machine learning system that combines rule-based filters with advanced anomaly detection algorithms. The system analyzes over 200 transaction attributes in real-time, learning from historical patterns while adapting to new fraud techniques. A feedback loop with the security team continuously improves the model's accuracy.",
+      "impact": [
+        "Reduced fraudulent transactions by 92%",
+        "Decreased false positives by 76%",
+        "Saved an estimated $4.2M in potential fraud losses",
+        "Improved customer satisfaction with fewer legitimate transactions being declined"
+      ],
+      "technologies": ["Python", "Apache Kafka", "TensorFlow", "Spark", "Elasticsearch", "Google Cloud"],
+      "image": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": true,
+      "year": 2023,
+      "testimonial": {
+        "quote": "The fraud detection system developed by Astella AI has been a game-changer for our business. Not only has it dramatically reduced our fraud losses, but it's also improved the experience for our legitimate customers.",
+        "author": "James Ochieng",
+        "position": "CTO, AfriPay"
+      }
+    },
+    {
+      "id": "edtech-personalized-learning",
+      "title": "Personalized Learning Platform for K-12 Education",
+      "client": "EduSmart Africa",
+      "industry": "EdTech",
+      "summary": "Created an adaptive learning platform that personalizes educational content based on individual student performance and learning styles.",
+      "challenge": "EduSmart Africa wanted to address the diverse learning needs of K-12 students across different African countries, where classroom sizes are large and teacher resources are limited. They needed a solution that could provide personalized learning experiences at scale.",
+      "solution": "We developed an adaptive learning platform that uses AI to analyze student performance and behavior, creating personalized learning paths. The system adjusts difficulty levels, content formats, and pacing based on individual progress. It works across various devices and has offline capabilities for areas with limited connectivity.",
+      "impact": [
+        "Improved test scores by an average of 32%",
+        "Increased student engagement by 47%",
+        "Reduced dropout rates by 28%",
+        "Deployed in 120 schools reaching 50,000+ students"
+      ],
+      "technologies": ["React", "Node.js", "Python", "MongoDB", "AWS", "TensorFlow"],
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": true,
+      "year": 2022,
+      "testimonial": {
+        "quote": "The personalized learning platform has revolutionized how we teach. Students are more engaged, and teachers can now focus on providing targeted support where it's most needed.",
+        "author": "Grace Mwangi",
+        "position": "Education Director, EduSmart Africa"
+      }
+    },
+    {
+      "id": "agritech-crop-monitoring",
+      "title": "IoT-Based Crop Monitoring and Management System",
+      "client": "FarmTech Solutions",
+      "industry": "AgriTech",
+      "summary": "Developed an IoT-based system that monitors soil conditions, weather patterns, and crop health to optimize farming practices and increase yields.",
+      "challenge": "Small and medium-scale farmers in East Africa face challenges including unpredictable weather patterns, limited access to agricultural expertise, and inefficient resource utilization. FarmTech Solutions needed a technology solution to help farmers make data-driven decisions.",
+      "solution": "We created a comprehensive crop monitoring system using low-cost IoT sensors that track soil moisture, temperature, humidity, and other key parameters. The data is processed using machine learning algorithms to provide actionable insights through a simple mobile application. The system offers recommendations for irrigation, fertilization, and pest control based on real-time conditions.",
+      "impact": [
+        "Increased crop yields by 28-35%",
+        "Reduced water usage by 42%",
+        "Decreased fertilizer costs by 30%",
+        "Implemented on 200+ farms across Kenya, Tanzania, and Uganda"
+      ],
+      "technologies": ["IoT", "Arduino", "React Native", "Python", "TensorFlow", "AWS IoT"],
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false,
+      "year": 2023,
+      "testimonial": {
+        "quote": "This technology has transformed my farming practices. I now know exactly when to irrigate and how much fertilizer to use. My yields have increased significantly while my costs have gone down.",
+        "author": "John Kamau",
+        "position": "Farm Owner, Nakuru County"
+      }
+    },
+    {
+      "id": "smart-city-traffic-management",
+      "title": "AI-Driven Traffic Management System",
+      "client": "Nairobi Metropolitan Services",
+      "industry": "Smart City",
+      "summary": "Implemented an intelligent traffic management system that uses computer vision and predictive analytics to optimize traffic flow and reduce congestion.",
+      "challenge": "Nairobi, like many rapidly growing African cities, faces severe traffic congestion issues that impact economic productivity, air quality, and quality of life. The existing traffic management infrastructure was outdated and unable to adapt to changing traffic patterns.",
+      "solution": "We deployed a network of smart cameras with edge computing capabilities at key intersections. These cameras use computer vision to analyze traffic flow in real-time. The system predicts traffic patterns based on historical data and current conditions, dynamically adjusting traffic signal timing to optimize flow. A central dashboard provides traffic authorities with insights and allows manual intervention when needed.",
+      "impact": [
+        "Reduced average commute times by 23%",
+        "Decreased traffic congestion by 31% in pilot areas",
+        "Lowered carbon emissions from idling vehicles",
+        "Improved emergency vehicle response times by 42%"
+      ],
+      "technologies": ["Computer Vision", "TensorFlow", "Edge Computing", "Python", "React", "Google Cloud"],
+      "image": "https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "featured": false,
+      "year": 2023,
+      "testimonial": {
+        "quote": "The smart traffic management system has made a noticeable difference in our city's traffic flow. Areas that were previously gridlocked during rush hour now move much more efficiently.",
+        "author": "David Muthoni",
+        "position": "Director of Urban Planning, Nairobi Metropolitan Services"
+      }
     }
   ]
 }
