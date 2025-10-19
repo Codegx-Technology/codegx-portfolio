@@ -105,7 +105,8 @@ export function MainLayout({
       >
         {withContainer ? (
           <div className={cn(
-            "px-safe mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-0 md:pt-8 pb-8 md:pb-20 w-full overflow-x-hidden",
+            "px-safe mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pb-8 md:pb-20 w-full overflow-x-hidden",
+            isHomePage ? "pt-0" : "pt-0 md:pt-8",
             !fullWidth && "max-w-7xl",
             containerClassName
           )}>

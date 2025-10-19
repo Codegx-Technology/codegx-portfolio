@@ -190,8 +190,8 @@ export function ExecutiveNavbar({
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:space-x-3 lg:space-x-6 flex-1 overflow-x-auto">
-          <nav className="flex items-center space-x-3 lg:space-x-6 flex-shrink-0">
+        <div className="hidden md:flex md:items-center md:space-x-4 lg:space-x-6">
+          <nav className="flex items-center space-x-4 lg:space-x-6">
             <AnimatePresence>
               {navLinks.map((link, index) =>
                 link.children ? (
@@ -206,7 +206,7 @@ export function ExecutiveNavbar({
                         <NavigationMenuItem>
                           <NavigationMenuTrigger
                             className={cn(
-                              "bg-transparent hover:bg-transparent px-0 gap-1 text-xs md:text-sm font-medium text-slate-200 h-auto py-0",
+                              "bg-transparent hover:bg-transparent px-0 gap-1.5 text-sm font-medium text-slate-200 h-auto py-0",
                               "hover:text-[#c8a951] data-[state=open]:text-[#c8a951] dark:hover:text-[#9f7b42] dark:data-[state=open]:text-[#9f7b42]",
                               "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#c8a951] dark:after:bg-[#9f7b42] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
                               location.startsWith(link.href)
@@ -274,7 +274,7 @@ export function ExecutiveNavbar({
                     <Link
                       href={link.href}
                       className={cn(
-                        "relative text-xs md:text-sm font-medium transition-colors flex items-center gap-1.5",
+                        "relative text-sm font-medium transition-colors flex items-center gap-1.5",
                         "text-slate-200 hover:text-[#c8a951] dark:hover:text-[#9f7b42]",
                         location === link.href ? "text-[#c8a951] dark:text-[#9f7b42]" : "",
                         "after:absolute after:left-0 after:bottom-0 after:h-0.5 after:bg-[#c8a951] dark:after:bg-[#9f7b42] after:transition-all after:duration-300 after:w-0 hover:after:w-full",
@@ -349,7 +349,7 @@ export function ExecutiveNavbar({
                 className={cn(
                   "font-medium border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10",
                   "dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10",
-                  "px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm rounded-md whitespace-nowrap"
+                  "px-4 py-2 rounded-md whitespace-nowrap"
                 )}
               >
                 <Link href={ctaHref}>
