@@ -1,0 +1,79 @@
+{
+  "caseStudies": [
+    {
+      "id": "tendanow",
+      "title": "TendaNow",
+      "client": "TendaNow",
+      "industry": "Behavioral Change / Wellness / Productivity",
+      "category": "AI Accountability & Behavioral Transformation Platform",
+      "summary": "AI-powered accountability platform with WhatsApp integration and cultural localization in English, Swahili, and Sheng — making goal achievement 10x more affordable for African users.",
+      "challenge": "Users struggled with goal completion and long-term retention due to lack of accessible, culturally-relevant accountability support. Traditional solutions were expensive and not adapted for African markets.",
+      "solution": "Built an AI-powered behavioral transformation platform with WhatsApp-first architecture, personalized coaching, and multilingual support (English, Swahili, Sheng). Integrated cultural localization to ensure relevance and accessibility.",
+      "impact": [
+        "42% increase in goal completion rates",
+        "29% improvement in long-term retention",
+        "Scalable WhatsApp-first architecture",
+        "Series A readiness with $5M target raise"
+      ],
+      "technologies": ["AI/ML", "WhatsApp API", "NLP", "Cloud Infrastructure"],
+      "image": "https://via.placeholder.com/800x400?text=TendaNow",
+      "featured": true,
+      "year": 2024,
+      "testimonial": {
+        "quote": "TendaNow transformed how we approach goal achievement. The cultural localization made it feel personal and accessible.",
+        "author": "Jane Kariuki",
+        "position": "CEO"
+      }
+    },
+    {
+      "id": "codecrusher",
+      "title": "CodeCrusher",
+      "client": "CodeCrusher",
+      "industry": "Software Engineering / Developer Tools",
+      "category": "AI-Augmented Developer Productivity Platform",
+      "summary": "Enterprise-grade AI assistant automating intelligent code injections, reviews, and augmentations with multi-model inference, fallback logic, and real-time feedback loops.",
+      "challenge": "Development teams faced slow code review cycles, quality inconsistencies, and difficulty maintaining code standards across large projects. Manual reviews were time-consuming and error-prone.",
+      "solution": "Developed CodeCrusher with multi-model AI inference, intelligent code injection, automated reviews, and real-time analytics dashboard. Integrated model switching and fallback logic for reliability.",
+      "impact": [
+        "68% reduction in code review time",
+        "35% improvement in code quality metrics",
+        "Real-time analytics dashboard with model switching",
+        "Foundation for AugmentKiller Web Edition"
+      ],
+      "technologies": ["AI/ML", "Multi-Model Inference", "Code Analysis", "Real-time Analytics"],
+      "image": "https://via.placeholder.com/800x400?text=CodeCrusher",
+      "featured": true,
+      "year": 2024,
+      "testimonial": {
+        "quote": "CodeCrusher cut our code review time in half while improving quality. It's a game-changer for our development workflow.",
+        "author": "Alex Chen",
+        "position": "Engineering Lead"
+      }
+    },
+    {
+      "id": "bizgen",
+      "title": "BizGen",
+      "client": "BizGen",
+      "industry": "Entrepreneurship / Economic Development / SMEs",
+      "category": "Predictive Entrepreneurship & Innovation Engine",
+      "summary": "3-tier hybrid AI platform generating, validating, and localizing business ideas for the African market using predictive modeling and crowdsourced insights.",
+      "challenge": "Aspiring entrepreneurs in Africa lacked data-driven tools to validate business ideas. Existing solutions were expensive, not localized, and didn't account for regional market dynamics.",
+      "solution": "Created BizGen with predictive modeling, multilingual personalization (English, Swahili, Sheng), and crowdsourced insights. Integrated onboarding bot and revenue modeling for viable venture guidance.",
+      "impact": [
+        "52% faster ideation-to-validation cycles",
+        "85% user satisfaction in pilot markets",
+        "Predictive revenue modeling and opportunity mapping",
+        "Integrated multilingual onboarding bot"
+      ],
+      "technologies": ["Predictive Analytics", "AI/ML", "NLP", "Crowdsourcing Platform"],
+      "image": "https://via.placeholder.com/800x400?text=BizGen",
+      "featured": true,
+      "year": 2024,
+      "testimonial": {
+        "quote": "BizGen helped us validate our business idea with data-driven insights. It's exactly what African entrepreneurs need.",
+        "author": "Amara Okonkwo",
+        "position": "Founder"
+      }
+    }
+  ]
+}
