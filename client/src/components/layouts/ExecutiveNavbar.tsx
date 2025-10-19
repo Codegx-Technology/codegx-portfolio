@@ -396,31 +396,15 @@ export function ExecutiveNavbar({
               side="right"
               className="w-[280px] sm:w-[350px] pr-0 bg-[#2c1a22] border-l border-[#4d2c35] text-slate-200 dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
             >
-              <div className="flex justify-between items-center mb-6 pr-6">
-                <div className="flex-shrink-0 flex flex-col items-center gap-1">
-                  <motion.div
-                    className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md"
-                    initial={{ scale: 0.9 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <span className="font-extrabold text-lg tracking-tighter">CT</span>
-                  </motion.div>
-                  <motion.div
-                    className="font-extrabold text-xs tracking-tight text-white whitespace-nowrap"
-                    initial={{ opacity: 0, y: -5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  >
-                    {logo.alt}
-                  </motion.div>
-                </div>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="rounded-full h-8 w-8 text-slate-200 hover:text-[#64ffda] hover:bg-[#233554]">
-                    <X className="h-4 w-4" />
-                  </Button>
-                </SheetTrigger>
-              </div>
+              {/* Mobile Logo - CT only */}
+              <motion.div
+                className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md mb-6"
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <span className="font-extrabold text-lg tracking-tighter">CT</span>
+              </motion.div>
 
               <div className="flex flex-col space-y-1 pr-6 max-h-[calc(100vh-120px)] overflow-y-auto">
                 <AnimatePresence>
