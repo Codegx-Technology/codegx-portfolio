@@ -34,7 +34,7 @@ export function Projects() {
             <i className="fas fa-briefcase mr-2"></i>
             Our Work
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-foreground mb-2 md:mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold font-inter text-foreground mb-2 md:mb-3">
             Our <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">Explore our portfolio of innovative solutions that have helped businesses transform and grow.</p>

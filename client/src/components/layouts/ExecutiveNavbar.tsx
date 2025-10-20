@@ -74,25 +74,38 @@ export function ExecutiveNavbar({
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { theme } = useTheme();
   const controls = useAnimation();
 
-  // Handle scroll effect
+  // Handle scroll effect - show navbar when scrolling up, hide when scrolling down
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 10) {
-        setScrolled(true);
-      } else {
+
+      // Show navbar when scrolled to top
+      if (offset < 10) {
         setScrolled(false);
+        setIsVisible(true);
+      } else {
+        setScrolled(true);
+        // Show navbar when scrolling up, hide when scrolling down
+        if (offset < lastScrollY) {
+          setIsVisible(true);
+        } else if (offset > lastScrollY + 5) {
+          setIsVisible(false);
+        }
       }
+
+      setLastScrollY(offset);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   // Animation effect for navbar items - keep navbar visible always
   useEffect(() => {
@@ -136,7 +149,7 @@ export function ExecutiveNavbar({
   return (
     <motion.header
       className={cn(
-        sticky ? "sticky top-0" : "",
+        sticky ? "fixed top-0" : "",
         "z-[9999] w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
@@ -152,6 +165,9 @@ export function ExecutiveNavbar({
                   : "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]",
         className
       )}
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="flex items-center justify-between px-4 sm:px-4 md:px-6 lg:px-8 h-20 max-w-7xl mx-auto w-full">
         {/* Logo */}

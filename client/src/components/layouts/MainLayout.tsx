@@ -98,8 +98,8 @@ export function MainLayout({
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "flex-grow pb-safe overflow-x-hidden w-full",
-          !isHomePage && "pt-0 md:pt-2 pt-safe",
+          "flex-grow pb-safe overflow-x-hidden w-full pt-20",
+          !isHomePage && "md:pt-20 pt-safe",
           className
         )}
       >
