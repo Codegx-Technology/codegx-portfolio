@@ -154,7 +154,7 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white text-center sm:text-left"
                 >
                   Transforming Businesses <br />
                   Through <span className="text-[#c8a951] dark:text-[#9f7b42]">Advanced</span> Technology
