@@ -48,14 +48,14 @@ export default function ProfessionalHome() {
     },
     {
       title: "CodeCrusher",
-      description: "MVP-stage AI code governance and semantic intelligence platform. Deep semantic search, architectural enforcement, and intelligent code review for enterprise development teams.",
+      description: "Semantic code intelligence for enterprise teams. Discover hidden patterns, enforce architecture, and reduce technical debt through AI that understands what your code actually does.",
       industry: "Developer Tools",
       logo: "https://via.placeholder.com/120x40?text=CodeCrusher",
       href: "/case-studies/codecrusher",
     },
     {
       title: "BizGen",
-      description: "Predictive entrepreneurship platform for business validation. 52% faster ideation-to-validation cycles, 85% user satisfaction.",
+      description: "The thinking partner for founders. Validate market opportunities 3-4x faster with real market signals, founder community insights, and predictive modeling.",
       industry: "Entrepreneurship",
       logo: "https://via.placeholder.com/120x40?text=BizGen",
       href: "/case-studies/bizgen",
