@@ -6,21 +6,21 @@
       "client": "TendaNow",
       "industry": "Behavioral Change / Wellness / Productivity",
       "category": "AI Accountability & Behavioral Transformation Platform",
-      "summary": "AI-powered accountability platform with WhatsApp integration and cultural localization in English, Swahili, and Sheng — making goal achievement 10x more affordable for African users.",
-      "challenge": "Users struggled with goal completion and long-term retention due to lack of accessible, culturally-relevant accountability support. Traditional solutions were expensive and not adapted for African markets.",
-      "solution": "Built an AI-powered behavioral transformation platform with WhatsApp-first architecture, personalized coaching, and multilingual support (English, Swahili, Sheng). Integrated cultural localization to ensure relevance and accessibility.",
+      "summary": "AI-powered accountability platform currently in beta testing phase with MVP ready. WhatsApp integration and cultural localization in English, Swahili, and Sheng designed to make goal achievement 10x more affordable for African users. Onboarding phase launching soon.",
+      "challenge": "Users struggle with goal completion and long-term retention due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive and not adapted for African markets. The need for a scalable, affordable platform that understands local contexts is critical.",
+      "solution": "Developed an AI-powered behavioral transformation platform with WhatsApp-first architecture, personalized AI coaching, and multilingual support (English, Swahili, Sheng). Currently in beta testing phase with MVP complete, validating core features including cultural localization, user engagement patterns, and AI coaching effectiveness before full onboarding launch.",
       "impact": [
-        "42% increase in goal completion rates",
-        "29% improvement in long-term retention",
-        "Scalable WhatsApp-first architecture",
-        "Series A readiness with $5M target raise"
+        "MVP successfully built and in beta testing",
+        "WhatsApp-first architecture validated and scalable",
+        "Multilingual support (English, Swahili, Sheng) implemented",
+        "Ready for onboarding phase and user expansion"
       ],
-      "technologies": ["AI/ML", "WhatsApp API", "NLP", "Cloud Infrastructure"],
+      "technologies": ["AI/ML", "WhatsApp API", "NLP", "Cloud Infrastructure", "Real-time Analytics"],
       "image": "https://via.placeholder.com/800x400?text=TendaNow",
       "featured": true,
       "year": 2024,
       "testimonial": {
-        "quote": "TendaNow transformed how we approach goal achievement. The cultural localization made it feel personal and accessible.",
+        "quote": "TendaNow's beta experience shows tremendous potential. The AI coaching feels natural and the cultural localization makes it genuinely relevant to our market.",
         "author": "Jane Kariuki",
         "position": "CEO"
       }
