@@ -312,8 +312,8 @@ export default function ProfessionalHome() {
                   {/* Main image with overlay */}
                   <div className="relative rounded-xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                      alt="Codegx Team"
+                      src="https://images.unsplash.com/photo-1677442d019cecf8d2b2f52f76d2a6c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Enterprise Technology Innovation"
                       className="w-full h-auto object-cover rounded-xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>

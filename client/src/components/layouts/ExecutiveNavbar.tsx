@@ -153,7 +153,7 @@ export function ExecutiveNavbar({
         className
       )}
     >
-      <div className="flex items-center justify-between px-4 sm:px-4 md:px-6 lg:px-8 h-20 max-w-7xl mx-auto w-full overflow-x-hidden">
+      <div className="flex items-center justify-between px-4 sm:px-4 md:px-6 lg:px-8 h-20 max-w-7xl mx-auto w-full">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center">
