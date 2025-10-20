@@ -322,3 +322,103 @@ export const AITrainingIcon = () => (
   </svg>
 );
 
+// Case Study-specific icons
+
+export const HealthcareAIDiagnosticsIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Medical cross */}
+    <rect x="20" y="12" width="8" height="24" fill="currentColor" opacity="0.3" />
+    <rect x="12" y="20" width="24" height="8" fill="currentColor" opacity="0.3" />
+
+    {/* Stethoscope */}
+    <path d="M16 18C16 14 19 12 22 12C25 12 28 14 28 18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+    <circle cx="18" cy="28" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
+    <circle cx="30" cy="28" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
+    <path d="M21 21L18 28M27 21L30 28" stroke="currentColor" strokeWidth="1.5" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const FintechFraudDetectionIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Shield */}
+    <path d="M24 10L12 16V26C12 34 24 38 24 38C24 38 36 34 36 26V16L24 10Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Checkmark inside shield */}
+    <path d="M20 26L23 29L28 20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const EdtechPersonalizedLearningIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Person/Student */}
+    <circle cx="24" cy="14" r="3" stroke="currentColor" strokeWidth="1.5" fill="currentColor" />
+    <path d="M24 18L18 24L18 32H30L30 24L24 18Z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Learning path/arrows */}
+    <path d="M12 28L16 24L20 26" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+    <path d="M28 28L32 24L36 26" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const AgritechCropMonitoringIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Plant/Leaf */}
+    <path d="M24 12L20 20L24 28L28 20Z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Soil/Ground */}
+    <path d="M16 28C16 28 18 32 24 32C30 32 32 28 32 28" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+
+    {/* Water droplets */}
+    <path d="M14 34L14 36C14 37.1 13.1 38 12 38C10.9 38 10 37.1 10 36V34" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.6" />
+    <path d="M34 34L34 36C34 37.1 33.1 38 32 38C30.9 38 30 37.1 30 36V34" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.6" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const SmartCityTrafficIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Road intersection */}
+    <line x1="24" y1="10" x2="24" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.3" />
+    <line x1="10" y1="24" x2="38" y2="24" stroke="currentColor" strokeWidth="2" opacity="0.3" />
+
+    {/* Traffic lights */}
+    <circle cx="18" cy="18" r="2" fill="currentColor" />
+    <circle cx="30" cy="18" r="2" fill="currentColor" opacity="0.5" />
+    <circle cx="18" cy="30" r="2" fill="currentColor" opacity="0.5" />
+    <circle cx="30" cy="30" r="2" fill="currentColor" />
+
+    {/* Cars */}
+    <rect x="12" y="22" width="4" height="3" stroke="currentColor" strokeWidth="1" fill="none" />
+    <rect x="32" y="22" width="4" height="3" stroke="currentColor" strokeWidth="1" fill="none" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+

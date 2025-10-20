@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
 import { Heading3, Paragraph } from "@/components/ui/typography";
+import { getIcon } from "@/lib/iconMap";
 
 interface CaseStudyCardProps {
   id: string;
@@ -14,6 +15,7 @@ interface CaseStudyCardProps {
   impact: string[];
   technologies: string[];
   image: string;
+  icon?: string;
   featured?: boolean;
   year?: number;
   onClick?: () => void;
@@ -28,10 +30,13 @@ export function CaseStudyCard({
   impact,
   technologies,
   image,
+  icon,
   featured,
   year,
   onClick
 }: CaseStudyCardProps) {
+  const IconComponent = icon ? getIcon(icon) : null;
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -47,15 +52,21 @@ export function CaseStudyCard({
           </div>
         )}
 
-        <div className="relative h-48 overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Case+Study";
-            }}
-          />
+        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] flex items-center justify-center">
+          {IconComponent ? (
+            <div className="w-20 h-20 text-[#c8a951] dark:text-[#9f7b42] opacity-80 group-hover:opacity-100 transition-opacity">
+              <IconComponent className="w-full h-full" />
+            </div>
+          ) : (
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Case+Study";
+              }}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
             <div className="p-4 text-white">
               <div className="text-sm font-medium opacity-80">{industry}</div>

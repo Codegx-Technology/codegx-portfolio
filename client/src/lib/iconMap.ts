@@ -2,7 +2,7 @@
 // This reduces bundle size from 765KB to ~50KB
 
 import { ChatbotIcon, AnalyticsIcon, VisionIcon, AutomationIcon, StrategyIcon, TrainingIcon } from "@/components/icons/CorporateIcons";
-import { ChatbotServiceIcon, PredictiveAnalyticsIcon, ComputerVisionIcon, ProcessAutomationIcon, AIStrategyIcon, AITrainingIcon } from "@/components/icons/CustomSVGIcons";
+import { ChatbotServiceIcon, PredictiveAnalyticsIcon, ComputerVisionIcon, ProcessAutomationIcon, AIStrategyIcon, AITrainingIcon, HealthcareAIDiagnosticsIcon, FintechFraudDetectionIcon, EdtechPersonalizedLearningIcon, AgritechCropMonitoringIcon, SmartCityTrafficIcon } from "@/components/icons/CustomSVGIcons";
 import {
   Sparkles,
   Brain,
@@ -178,6 +178,11 @@ export const iconMap = {
   ProcessAutomationIcon,
   AIStrategyIcon,
   AITrainingIcon,
+  HealthcareAIDiagnosticsIcon,
+  FintechFraudDetectionIcon,
+  EdtechPersonalizedLearningIcon,
+  AgritechCropMonitoringIcon,
+  SmartCityTrafficIcon,
   Sparkles,
   Brain,
   Cloud,
@@ -336,7 +341,7 @@ export const iconMap = {
   BarChart3,
 };
 
-export type IconName = keyof typeof iconMap | "ChatbotIcon" | "AnalyticsIcon" | "VisionIcon" | "AutomationIcon" | "StrategyIcon" | "TrainingIcon" | "ChatbotServiceIcon" | "PredictiveAnalyticsIcon" | "ComputerVisionIcon" | "ProcessAutomationIcon" | "AIStrategyIcon" | "AITrainingIcon";
+export type IconName = keyof typeof iconMap | "ChatbotIcon" | "AnalyticsIcon" | "VisionIcon" | "AutomationIcon" | "StrategyIcon" | "TrainingIcon" | "ChatbotServiceIcon" | "PredictiveAnalyticsIcon" | "ComputerVisionIcon" | "ProcessAutomationIcon" | "AIStrategyIcon" | "AITrainingIcon" | "HealthcareAIDiagnosticsIcon" | "FintechFraudDetectionIcon" | "EdtechPersonalizedLearningIcon" | "AgritechCropMonitoringIcon" | "SmartCityTrafficIcon";
 
 // Helper function to get icon component
 export function getIcon(iconName: string): React.ComponentType<{ className?: string }> {
