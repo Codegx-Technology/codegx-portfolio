@@ -79,7 +79,7 @@ export function CurrentProjects({
         className="text-center mb-8 md:mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-          Our Core Strengths
+          Current Projects
         </h2>
         <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Delivering enterprise-grade solutions across AI, digital transformation, and custom development
@@ -171,7 +171,7 @@ export function CurrentProjects({
                   {/* Hover glow effect */}
                   <div
                     className={cn(
-                      "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+                      "absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none",
                       `bg-gradient-to-r ${accentColors[index]} blur-2xl -z-10`
                     )}
                     style={{ filter: "blur(40px)" }}
@@ -266,7 +266,7 @@ export function CurrentProjects({
                     {/* Hover glow effect */}
                     <div
                       className={cn(
-                        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",
+                        "absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none",
                         `bg-gradient-to-r ${accentColors[actualIndex]} blur-2xl -z-10`
                       )}
                       style={{ filter: "blur(40px)" }}
