@@ -92,7 +92,7 @@ export default function CaseStudyDetail() {
       
       <PageWrapper>
         {/* Hero Section */}
-        <PageSection className="py-8 md:py-16 lg:py-20">
+        <PageSection className="py-6 md:py-10 lg:py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function CaseStudyDetail() {
         </PageSection>
 
         {/* Challenge Section */}
-        <PageSection className="py-8 md:py-12 lg:py-16">
+        <PageSection className="py-6 md:py-8 lg:py-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ export default function CaseStudyDetail() {
         </PageSection>
 
         {/* Solution Section */}
-        <PageSection className="py-8 md:py-12 lg:py-16 bg-slate-50/50 dark:bg-slate-900/30">
+        <PageSection className="py-6 md:py-8 lg:py-10 bg-slate-50/50 dark:bg-slate-900/30">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ export default function CaseStudyDetail() {
         </PageSection>
 
         {/* Impact Section */}
-        <PageSection className="py-8 md:py-12 lg:py-16">
+        <PageSection className="py-6 md:py-8 lg:py-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export default function CaseStudyDetail() {
 
         {/* Testimonial Section */}
         {caseStudy.testimonial && (
-          <PageSection className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-[#c8a951]/5 to-[#9f7b42]/5 dark:from-[#9f7b42]/10 dark:to-[#c8a951]/10">
+          <PageSection className="py-6 md:py-8 lg:py-10 bg-gradient-to-br from-[#c8a951]/5 to-[#9f7b42]/5 dark:from-[#9f7b42]/10 dark:to-[#c8a951]/10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -229,7 +229,7 @@ export default function CaseStudyDetail() {
         )}
 
         {/* CTA Section */}
-        <PageSection className="py-8 md:py-12 lg:py-16 text-center">
+        <PageSection className="py-6 md:py-8 lg:py-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
