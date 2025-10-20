@@ -20,7 +20,6 @@ const CodegxLanding = lazy(() => import("@/pages/codegx"));
 const Home = lazy(() => import("@/pages/index"));
 // Portfolio removed - available in 'portfolio' branch
 const AgencyPage = lazy(() => import("@/pages/agency"));
-const Contact = lazy(() => import("@/pages/contact"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
 const Blog = lazy(() => import("@/pages/blog"));
 const WhyAstella = lazy(() => import("@/pages/why-astella"));
@@ -51,7 +50,10 @@ function AppRouter() {
           }}
         </Route>
         <Route path="/contact">
-          {() => <LazyRoute component={Contact} />}
+          {() => {
+            const Contact = React.lazy(() => import("@/pages/contact"));
+            return <LazyRoute component={Contact} />;
+          }}
         </Route>
         <Route path="/case-studies">
           {() => <LazyRoute component={CaseStudies} />}
