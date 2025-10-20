@@ -179,3 +179,146 @@ export const BizGenIcon = () => (
   </svg>
 );
 
+// Service-specific icons for Services page
+
+export const ChatbotServiceIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Chat bubbles */}
+    <path d="M10 16C10 14.9 10.9 14 12 14H28C29.1 14 30 14.9 30 16V26C30 27.1 29.1 28 28 28H14L10 32V16Z"
+          stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Second chat bubble (response) */}
+    <path d="M32 22C32 21.4 32.4 21 33 21H38C38.6 21 39 21.4 39 22V28C39 28.6 38.6 29 38 29H35L32 32V22Z"
+          stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+
+    {/* Dots inside first bubble (typing indicator) */}
+    <circle cx="16" cy="22" r="1.5" fill="currentColor" />
+    <circle cx="22" cy="22" r="1.5" fill="currentColor" />
+    <circle cx="28" cy="22" r="1.5" fill="currentColor" opacity="0.5" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const PredictiveAnalyticsIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Chart bars */}
+    <rect x="12" y="26" width="4" height="8" stroke="currentColor" strokeWidth="2" fill="none" />
+    <rect x="18" y="20" width="4" height="14" stroke="currentColor" strokeWidth="2" fill="none" />
+    <rect x="24" y="14" width="4" height="20" stroke="currentColor" strokeWidth="2" fill="none" />
+    <rect x="30" y="18" width="4" height="16" stroke="currentColor" strokeWidth="2" fill="none" />
+
+    {/* Trend line going up */}
+    <path d="M12 28L18 20L24 14L30 18L36 10" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Arrow pointing up */}
+    <path d="M36 10L34 14L38 12" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Baseline */}
+    <line x1="10" y1="34" x2="38" y2="34" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const ComputerVisionIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Eye outline */}
+    <path d="M24 14C18 14 13 19 12 25C13 31 18 36 24 36C30 36 35 31 36 25C35 19 30 14 24 14Z"
+          stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Iris */}
+    <circle cx="24" cy="25" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+
+    {/* Pupil */}
+    <circle cx="24" cy="25" r="2.5" fill="currentColor" />
+
+    {/* Light reflection */}
+    <circle cx="26" cy="23" r="1" fill="currentColor" opacity="0.6" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const ProcessAutomationIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Gear 1 */}
+    <circle cx="18" cy="20" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+    <path d="M18 14V12M18 28V26M12 20H10M24 20H26M14 16L12.5 14.5M21.5 26.5L23 28M14 24L12.5 25.5M21.5 13.5L23 12"
+          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+
+    {/* Gear 2 */}
+    <circle cx="30" cy="28" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+    <path d="M30 22V20M30 36V34M24 28H22M36 28H38M26 24L24.5 22.5M33.5 34.5L35 36M26 32L24.5 33.5M33.5 21.5L35 20"
+          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+
+    {/* Connection line */}
+    <path d="M23 23L27 25" stroke="currentColor" strokeWidth="1.5" opacity="0.5" strokeDasharray="2,2" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const AIStrategyIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Compass/Strategy symbol */}
+    <circle cx="24" cy="24" r="8" stroke="currentColor" strokeWidth="2" fill="none" />
+
+    {/* Cardinal directions */}
+    <path d="M24 14L26 18L24 20L22 18Z" fill="currentColor" />
+    <path d="M34 24L30 26L28 24L30 22Z" fill="currentColor" />
+    <path d="M24 34L22 30L24 28L26 30Z" fill="currentColor" opacity="0.6" />
+    <path d="M14 24L18 22L20 24L18 26Z" fill="currentColor" opacity="0.6" />
+
+    {/* Center point */}
+    <circle cx="24" cy="24" r="2" fill="currentColor" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const AITrainingIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Graduation cap */}
+    <path d="M12 24L24 16L36 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Cap top */}
+    <rect x="18" y="14" width="12" height="2" stroke="currentColor" strokeWidth="1.5" fill="currentColor" />
+
+    {/* Tassel */}
+    <line x1="24" y1="16" x2="24" y2="28" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="24" cy="30" r="1.5" fill="currentColor" />
+
+    {/* Books/Learning */}
+    <rect x="14" y="28" width="3" height="6" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <rect x="18" y="27" width="3" height="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    <rect x="22" y="28" width="3" height="6" stroke="currentColor" strokeWidth="1.5" fill="none" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
