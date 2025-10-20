@@ -41,7 +41,7 @@ export default function ProfessionalHome() {
   const caseStudies = [
     {
       title: "TendaNow",
-      description: "AI-powered accountability platform with WhatsApp integration. 42% increase in goal completion rates, 29% improvement in retention.",
+      description: "MVP-stage AI accountability platform making goal achievement accessible for African users. WhatsApp-first architecture with multilingual support (English, Swahili, Sheng) currently in active development.",
       industry: "Behavioral Change / Wellness",
       logo: "https://via.placeholder.com/120x40?text=TendaNow",
       href: "/case-studies/tendanow",
