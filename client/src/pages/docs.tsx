@@ -3,6 +3,14 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import {
+  RocketIcon,
+  CodeIcon,
+  BrainIcon,
+  PuzzleIcon,
+  ShieldIcon,
+  WrenchIcon,
+} from "@/components/icons/DocumentationIcons";
 
 export default function Documentation() {
   const containerVariants = {
@@ -29,7 +37,7 @@ export default function Documentation() {
     {
       title: "Getting Started",
       description: "Learn the basics of working with Codegx Technologies solutions",
-      icon: "fas fa-rocket",
+      icon: RocketIcon,
       sections: [
         "Introduction to our platform",
         "Account setup and configuration",
@@ -40,7 +48,7 @@ export default function Documentation() {
     {
       title: "API Reference",
       description: "Complete API documentation for developers",
-      icon: "fas fa-code",
+      icon: CodeIcon,
       sections: [
         "Authentication",
         "Endpoints overview",
@@ -51,7 +59,7 @@ export default function Documentation() {
     {
       title: "AI & ML Solutions",
       description: "Documentation for our AI and machine learning services",
-      icon: "fas fa-brain",
+      icon: BrainIcon,
       sections: [
         "Model deployment",
         "Training custom models",
@@ -62,7 +70,7 @@ export default function Documentation() {
     {
       title: "Integration Guides",
       description: "Step-by-step guides for integrating with popular platforms",
-      icon: "fas fa-plug",
+      icon: PuzzleIcon,
       sections: [
         "REST API integration",
         "Webhook setup",
@@ -73,7 +81,7 @@ export default function Documentation() {
     {
       title: "Security & Compliance",
       description: "Security best practices and compliance information",
-      icon: "fas fa-shield-alt",
+      icon: ShieldIcon,
       sections: [
         "Data encryption",
         "Access control",
@@ -84,7 +92,7 @@ export default function Documentation() {
     {
       title: "Troubleshooting",
       description: "Common issues and solutions",
-      icon: "fas fa-tools",
+      icon: WrenchIcon,
       sections: [
         "Common errors",
         "Performance issues",
@@ -135,7 +143,7 @@ export default function Documentation() {
                 className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="mb-3">
-                  <i className={`${doc.icon} text-2xl text-[#c8a951] dark:text-[#9f7b42]`}></i>
+                  <doc.icon size={32} className="text-[#c8a951] dark:text-[#9f7b42]" />
                 </div>
                 <h3 className="text-base md:text-lg font-semibold mb-2 text-slate-900 dark:text-white">
                   {doc.title}

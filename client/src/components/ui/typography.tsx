@@ -234,7 +234,7 @@ export function BlockQuote({
   return (
     <Component
       className={cn(
-        "mt-6 border-l-2 pl-6 italic",
+        "my-4 md:my-6 border-l-2 border-[#c8a951] dark:border-[#9f7b42] pl-4 md:pl-6 italic text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed",
         className
       )}
     >

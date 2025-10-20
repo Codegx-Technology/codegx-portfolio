@@ -79,7 +79,7 @@ export function CurrentProjects({
         className="text-center mb-8 md:mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-          Current Projects
+          Current Projectsi
         </h2>
         <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Transforming industries with cutting-edge AI and innovative solutions

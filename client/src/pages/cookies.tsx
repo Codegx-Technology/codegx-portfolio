@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
+import { Link } from "wouter";
+import { ChevronLeft } from "lucide-react";
 
 export default function Cookies() {
   const itemVariants = {
@@ -20,15 +22,31 @@ export default function Cookies() {
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+          className="mb-6 md:mb-8"
+        >
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
+          >
+            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm md:text-base">Back to Home</span>
+          </Link>
+        </motion.div>
+
         {/* Header */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="py-6 md:py-8"
+          className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-0"
         >
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-900 dark:text-white">
+          <div className="max-w-4xl mx-auto text-center sm:text-left">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-slate-900 dark:text-white leading-tight">
               Cookie Policy
             </h1>
             <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
@@ -43,7 +61,7 @@ export default function Cookies() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="py-6 md:py-8 max-w-4xl mx-auto space-y-6"
+          className="py-8 sm:py-10 md:py-12 max-w-4xl mx-auto space-y-8 sm:space-y-10 px-4 sm:px-6 md:px-0"
         >
           {[
             {
@@ -83,11 +101,11 @@ export default function Cookies() {
               content: "If you have questions about our use of cookies, please contact us at:\n\nCodegx Technologies\nEmail: cookies@codegxtechnologies.org\nWebsite: https://codegxtechnologies.org"
             },
           ].map((section, index) => (
-            <motion.div key={index} variants={itemVariants} className="space-y-2">
-              <h2 className="text-base md:text-lg font-bold text-slate-900 dark:text-white">
+            <motion.div key={index} variants={itemVariants} className="space-y-3 sm:space-y-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                 {section.title}
               </h2>
-              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 whitespace-pre-line leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 whitespace-pre-line leading-relaxed">
                 {section.content}
               </p>
             </motion.div>

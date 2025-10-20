@@ -3,6 +3,14 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import {
+  RocketIcon,
+  CodeIcon,
+  BrainIcon,
+  PuzzleIcon,
+  ShieldIcon,
+  WrenchIcon,
+} from "@/components/icons/DocumentationIcons";
 
 export default function About() {
   const containerVariants = {
@@ -38,13 +46,13 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="py-8 md:py-12"
+          className="py-6 md:py-12 px-4 sm:px-6 md:px-0"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
               About Codegx Technologies
             </h1>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400">
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 px-2">
               Pioneering digital transformation through innovative technology solutions for enterprises worldwide.
             </p>
           </div>
@@ -56,18 +64,18 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+          className="py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 sm:px-6 md:px-0"
         >
           <motion.div variants={itemVariants} className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h2>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h2>
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
               To empower organizations with cutting-edge AI and technology solutions that drive innovation, efficiency, and sustainable growth. We believe in transforming complex business challenges into opportunities for digital excellence.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-2">
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h2>
-            <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h2>
+            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
               To be the trusted partner for enterprises seeking transformative technology solutions that create lasting competitive advantages. We envision a future where AI and innovation are accessible to organizations of all sizes.
             </p>
           </motion.div>
@@ -79,49 +87,61 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="py-6 md:py-10"
+          className="py-6 md:py-10 px-4 sm:px-6 md:px-0"
         >
-          <h2 className="text-xl md:text-2xl font-bold mb-6 text-center text-slate-900 dark:text-white">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-slate-900 dark:text-white">
             Our Core Values
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {[
               {
                 title: "Innovation",
                 description: "We continuously push boundaries to deliver cutting-edge solutions that solve real-world problems.",
+                icon: RocketIcon,
               },
               {
                 title: "Excellence",
                 description: "We maintain the highest standards of quality in everything we do, from code to customer service.",
+                icon: CodeIcon,
               },
               {
                 title: "Integrity",
                 description: "We operate with transparency and honesty, building trust with our clients and partners.",
+                icon: ShieldIcon,
               },
               {
                 title: "Collaboration",
                 description: "We believe in the power of teamwork and partnerships to achieve extraordinary results.",
+                icon: PuzzleIcon,
               },
               {
                 title: "Impact",
                 description: "We measure success by the positive impact we create for our clients and their stakeholders.",
+                icon: BrainIcon,
               },
               {
                 title: "Sustainability",
                 description: "We build solutions that are not only effective today but sustainable for the future.",
+                icon: WrenchIcon,
               },
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800"
-              >
-                <h3 className="text-base md:text-lg font-semibold mb-2 text-slate-900 dark:text-white">
-                  {value.title}
-                </h3>
-                <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">{value.description}</p>
-              </motion.div>
-            ))}
+            ].map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="p-3 sm:p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-left"
+                >
+                  <div className="mb-2">
+                    <IconComponent size={28} className="text-[#c8a951] dark:text-[#9f7b42]" />
+                  </div>
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2 text-slate-900 dark:text-white">
+                    {value.title}
+                  </h3>
+                  <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">{value.description}</p>
+                </motion.div>
+              );
+            })
           </div>
         </motion.section>
 
@@ -131,35 +151,35 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="py-6 md:py-10"
+          className="py-6 md:py-10 px-4 sm:px-6 md:px-0"
         >
-          <h2 className="text-xl md:text-2xl font-bold mb-6 text-center text-slate-900 dark:text-white">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-slate-900 dark:text-white">
             What We Do
           </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
             <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
                 AI & Machine Learning Solutions
               </h3>
-              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
                 We develop intelligent systems that learn from data and make informed decisions, helping organizations automate processes and gain competitive insights.
               </p>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
                 Digital Transformation
               </h3>
-              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
                 We guide organizations through comprehensive digital transformation journeys, modernizing legacy systems and enabling new business models.
               </p>
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-base md:text-lg font-semibold text-slate-900 dark:text-white">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
                 Custom Software Development
               </h3>
-              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
                 We build bespoke software solutions tailored to your unique business needs, ensuring scalability, security, and performance.
               </p>
             </motion.div>

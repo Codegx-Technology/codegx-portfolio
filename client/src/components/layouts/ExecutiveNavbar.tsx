@@ -102,6 +102,7 @@ export function ExecutiveNavbar({
   // Navigation links
   const navLinks: NavLink[] = [
     { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     // Portfolio removed - available in 'portfolio' branch
     {
       href: "/agency",

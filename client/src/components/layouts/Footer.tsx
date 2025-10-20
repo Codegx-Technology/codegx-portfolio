@@ -90,14 +90,6 @@ export function Footer({
         { label: "Support", href: "/support", icon: "fas fa-headset" },
       ],
     },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy", icon: "fas fa-shield-alt" },
-        { label: "Terms of Service", href: "/terms", icon: "fas fa-gavel" },
-        { label: "Cookie Policy", href: "/cookies", icon: "fas fa-cookie" },
-      ],
-    },
   ];
 
   // Default footer sections for Astella AI (agency)
@@ -109,14 +101,6 @@ export function Footer({
         { label: "Why Astella", href: "/why-astella", icon: "fas fa-star", isAgencyLink: true },
         { label: "AI Projects", href: "/agency/projects", icon: "fas fa-project-diagram", isAgencyLink: true },
         { label: "Contact Astella", href: "/agency/contact", icon: "fas fa-envelope", isAgencyLink: true },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { label: "Privacy Policy", href: "/privacy", icon: "fas fa-shield-alt" },
-        { label: "Terms of Service", href: "/terms", icon: "fas fa-gavel" },
-        { label: "Cookie Policy", href: "/cookies", icon: "fas fa-cookie" },
       ],
     },
   ];
@@ -415,7 +399,7 @@ export function Footer({
                             </a>
                           ) : (
                             <Link 
-                              href={link.href}
+                              to={link.href}
                               className="flex items-center pl-7 text-slate-300 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
                             >
                               <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">

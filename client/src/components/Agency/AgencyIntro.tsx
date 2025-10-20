@@ -146,7 +146,7 @@ export function AgencyIntro() {
                 {agencyProfile.description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mb-4 md:mb-6">
+              <div className="flex flex-col gap-4 md:gap-6">
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -179,6 +179,19 @@ export function AgencyIntro() {
                     </motion.a>
                   ))}
                 </div>
+
+                {/* The Vision Forward - Under Social Icons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="mt-2 md:mt-4 p-3 md:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10"
+                >
+                  <h3 className="text-xs md:text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42] mb-2">The Vision Forward</h3>
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    Establishing Astella AI as the leading technology partner for organizations leveraging AI and emerging technologies for meaningful impact.
+                  </p>
+                </motion.div>
               </div>
             </motion.div>
           </div>
