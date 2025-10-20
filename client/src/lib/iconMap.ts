@@ -1,6 +1,7 @@
 // Icon map for dynamic icon loading without importing entire lucide-react library
 // This reduces bundle size from 765KB to ~50KB
 
+import { ChatbotIcon, AnalyticsIcon, VisionIcon, AutomationIcon, StrategyIcon, TrainingIcon } from "@/components/icons/CorporateIcons";
 import {
   Sparkles,
   Brain,
@@ -164,6 +165,12 @@ import {
 
 // Export icon map
 export const iconMap = {
+  ChatbotIcon,
+  AnalyticsIcon,
+  VisionIcon,
+  AutomationIcon,
+  StrategyIcon,
+  TrainingIcon,
   Sparkles,
   Brain,
   Cloud,
@@ -322,7 +329,7 @@ export const iconMap = {
   BarChart3,
 };
 
-export type IconName = keyof typeof iconMap;
+export type IconName = keyof typeof iconMap | "ChatbotIcon" | "AnalyticsIcon" | "VisionIcon" | "AutomationIcon" | "StrategyIcon" | "TrainingIcon";
 
 // Helper function to get icon component
 export function getIcon(iconName: string): React.ComponentType<{ className?: string }> {

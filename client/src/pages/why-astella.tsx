@@ -146,7 +146,7 @@ export default function WhyAstella() {
               <div className="text-4xl text-primary mb-4">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <blockquote className="text-lg sm:text-xl md:text-2xl italic mb-6 leading-relaxed">
+              <blockquote className="text-base sm:text-lg md:text-xl italic mb-6 leading-relaxed">
                 "Technology is most powerful when it addresses real human needs. At Astella, we're committed to
                 creating solutions that don't just showcase technical brilliance but actually improve lives and
                 create opportunities."
