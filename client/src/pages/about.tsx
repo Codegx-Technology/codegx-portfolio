@@ -141,7 +141,7 @@ export default function About() {
                   <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">{value.description}</p>
                 </motion.div>
               );
-            })
+            })}
           </div>
         </motion.section>
 

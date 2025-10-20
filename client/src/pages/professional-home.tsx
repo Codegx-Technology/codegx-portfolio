@@ -7,6 +7,19 @@ import { Head } from "@/components/head";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CurrentProjects } from "@/components/Landing/CurrentProjects";
 import { CTASection } from "@/components/layouts/CTASection";
+import {
+  InnovationDNAIcon,
+  EnterpriseSecurityIcon,
+  MeasurableResultsIcon,
+  StrategicPartnershipIcon,
+  AIMLIcon,
+  DigitalTransformationIcon,
+  CustomSoftwareIcon,
+  InnovationValueIcon,
+  CollaborationIcon,
+  AgilityIcon,
+  IntegrityIcon,
+} from "@/components/icons/CustomSVGIcons";
 
 export default function ProfessionalHome() {
   // Refs for scroll animations
@@ -54,17 +67,17 @@ export default function ProfessionalHome() {
     {
       title: "AI & Machine Learning",
       description: "Custom AI solutions that solve complex business challenges and drive innovation.",
-      icon: "fas fa-brain",
+      icon: AIMLIcon,
     },
     {
       title: "Digital Transformation",
       description: "End-to-end digital transformation strategies that modernize your business.",
-      icon: "fas fa-sync-alt",
+      icon: DigitalTransformationIcon,
     },
     {
       title: "Custom Software Development",
       description: "Bespoke software solutions tailored to your unique business needs.",
-      icon: "fas fa-code",
+      icon: CustomSoftwareIcon,
     },
   ];
 
@@ -122,7 +135,7 @@ export default function ProfessionalHome() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-7 space-y-4 md:space-y-6"
+                className="lg:col-span-7 space-y-4 md:space-y-6 flex flex-col items-center lg:items-start"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -160,12 +173,12 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-3 pt-2 md:pt-4"
+                  className="flex flex-col sm:flex-row gap-3 pt-2 md:pt-4 w-full sm:w-auto"
                 >
                   <Button
                     asChild
                     size="sm"
-                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] text-xs md:text-sm"
+                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] text-xs md:text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
                     <Link href="/contact">Schedule a Consultation</Link>
                   </Button>
@@ -173,10 +186,32 @@ export default function ProfessionalHome() {
                     asChild
                     size="sm"
                     variant="outline"
-                    className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-xs md:text-sm"
+                    className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-xs md:text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
                     <Link href="/solutions">Explore Solutions</Link>
                   </Button>
+                </motion.div>
+
+                {/* Discover More Indicator - Mobile Only */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="flex flex-col items-center pt-4 md:pt-6 lg:hidden"
+                >
+                  <span className="text-slate-400 text-xs md:text-sm mb-2">Discover More</span>
+                  <motion.svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="md:w-6 md:h-6"
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </motion.svg>
                 </motion.div>
               </motion.div>
 
@@ -207,18 +242,6 @@ export default function ProfessionalHome() {
               </motion.div>
             </div>
           </div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <span className="text-slate-400 text-sm mb-2">Discover More</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </motion.div>
         </motion.section>
 
         {/* About Section - Enterprise Grade */}
@@ -335,7 +358,7 @@ export default function ProfessionalHome() {
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
                           <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-lightbulb text-lg"></i>
+                            <InnovationDNAIcon />
                           </div>
                         </div>
                         <div className="ml-3">
@@ -349,7 +372,7 @@ export default function ProfessionalHome() {
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
                           <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-shield-alt text-lg"></i>
+                            <EnterpriseSecurityIcon />
                           </div>
                         </div>
                         <div className="ml-3">
@@ -363,7 +386,7 @@ export default function ProfessionalHome() {
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
                           <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-chart-line text-lg"></i>
+                            <MeasurableResultsIcon />
                           </div>
                         </div>
                         <div className="ml-3">
@@ -377,7 +400,7 @@ export default function ProfessionalHome() {
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
                           <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <i className="fas fa-handshake text-lg"></i>
+                            <StrategicPartnershipIcon />
                           </div>
                         </div>
                         <div className="ml-3">
@@ -394,19 +417,27 @@ export default function ProfessionalHome() {
                       <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white mb-3">Our Core Values</h4>
                       <div className="flex flex-wrap gap-2">
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-lightbulb text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
+                            <InnovationValueIcon />
+                          </div>
                           Innovation
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-users text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
+                            <CollaborationIcon />
+                          </div>
                           Collaboration
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-rocket text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
+                            <AgilityIcon />
+                          </div>
                           Agility
                         </div>
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <i className="fas fa-handshake text-[#c8a951] dark:text-[#9f7b42] mr-2"></i>
+                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
+                            <IntegrityIcon />
+                          </div>
                           Integrity
                         </div>
                       </div>
@@ -417,6 +448,34 @@ export default function ProfessionalHome() {
             </div>
           </div>
         </section>
+
+        {/* Discover More Section - Desktop Only */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="hidden lg:flex justify-center items-center py-12 md:py-16 relative overflow-hidden"
+        >
+          {/* Background elements */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-[#121212] dark:to-[#1a1a1a] z-0"></div>
+
+          <div className="relative z-10 flex flex-col items-center">
+            <span className="text-slate-400 text-sm mb-4">Discover More</span>
+            <motion.svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-slate-400"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </motion.svg>
+          </div>
+        </motion.section>
 
         {/* Services Section - Enterprise Grade */}
         <section className="py-12 md:py-16 relative overflow-hidden">
@@ -569,7 +628,7 @@ export default function ProfessionalHome() {
 
                     <div className="p-8">
                       <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
-                        <i className={`${service.icon} text-2xl`}></i>
+                        <service.icon />
                       </div>
 
                       <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
@@ -616,7 +675,7 @@ export default function ProfessionalHome() {
 
                           <div className="p-8">
                             <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
-                              <i className={`${service.icon} text-2xl`}></i>
+                              <service.icon />
                             </div>
 
                             <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>

@@ -149,14 +149,14 @@ export default function CaseStudies() {
               onValueChange={setActiveIndustry}
               className="w-full"
             >
-              <div className="flex justify-center mb-6 overflow-x-auto">
-                <EnterpriseCard className="p-1 shadow-md border-primary/20 min-w-max sm:min-w-0">
-                  <TabsList className="bg-transparent border-0 shadow-none flex flex-wrap sm:flex-nowrap gap-1 sm:gap-0">
+              <div className="flex justify-center mb-6 overflow-x-auto scrollbar-hide">
+                <EnterpriseCard className="p-2 md:p-3 shadow-md border-primary/20 w-full sm:w-auto">
+                  <TabsList className="bg-transparent border-0 shadow-none flex flex-wrap gap-2 md:gap-1 justify-center sm:justify-start">
                     {industries.map((industry) => (
                       <TabsTrigger
                         key={industry}
                         value={industry}
-                        className="px-2 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-primary data-[state=active]:text-white transition-all duration-200 whitespace-nowrap"
+                        className="px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-[#c8a951] dark:data-[state=active]:bg-[#9f7b42] data-[state=active]:text-white transition-all duration-200 whitespace-nowrap flex-shrink-0"
                       >
                         {industry === "all" ? "All Industries" : industry}
                       </TabsTrigger>

@@ -217,7 +217,7 @@ export function ExecutiveNavbar({
                               </Badge>
                             )}
                           </NavigationMenuTrigger>
-                          <NavigationMenuContent>
+                          <NavigationMenuContent className="z-[10000]">
                             <motion.ul
                               className="grid w-[240px] gap-2 p-4"
                               initial={{ opacity: 0, y: 10 }}
