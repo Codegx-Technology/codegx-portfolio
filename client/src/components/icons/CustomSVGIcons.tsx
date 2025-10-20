@@ -107,3 +107,75 @@ export const IntegrityIcon = () => (
   </svg>
 );
 
+// Project-specific icons for Current Projects section
+
+export const TendaNowIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Accountability/Goal icon - upward trending with checkmark */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Upward trending line */}
+    <path d="M12 28L18 20L24 24L36 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Checkmark overlay */}
+    <path d="M28 20L32 24L38 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Accent circle */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const CodeCrusherIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Code brackets - semantic understanding */}
+    <path d="M14 18L10 24L14 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M34 18L38 24L34 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+
+    {/* Center pattern - representing semantic connections */}
+    <circle cx="24" cy="24" r="3" fill="currentColor" />
+    <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.6" />
+    <circle cx="28" cy="20" r="2" fill="currentColor" opacity="0.6" />
+    <circle cx="20" cy="28" r="2" fill="currentColor" opacity="0.6" />
+    <circle cx="28" cy="28" r="2" fill="currentColor" opacity="0.6" />
+
+    {/* Connecting lines */}
+    <path d="M24 24L20 20M24 24L28 20M24 24L20 28M24 24L28 28" stroke="currentColor" strokeWidth="1" opacity="0.4" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+
+export const BizGenIcon = () => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Background circle */}
+    <circle cx="24" cy="24" r="22" fill="currentColor" opacity="0.1" />
+
+    {/* Lightbulb - idea/thinking */}
+    <path d="M24 10C20 10 17 13 17 17C17 20 19 22 19 25V28H29V25C29 22 31 20 31 17C31 13 28 10 24 10Z"
+          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+
+    {/* Filament inside bulb */}
+    <path d="M22 16C23 15 25 15 26 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+
+    {/* Base of bulb */}
+    <rect x="21" y="28" width="6" height="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
+
+    {/* Threads */}
+    <line x1="20" y1="30" x2="28" y2="30" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+    <line x1="20" y1="32" x2="28" y2="32" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+
+    {/* Sparkles around bulb - representing potential */}
+    <circle cx="12" cy="14" r="1.5" fill="currentColor" opacity="0.7" />
+    <circle cx="36" cy="14" r="1.5" fill="currentColor" opacity="0.7" />
+    <circle cx="10" cy="24" r="1.5" fill="currentColor" opacity="0.7" />
+    <circle cx="38" cy="24" r="1.5" fill="currentColor" opacity="0.7" />
+
+    {/* Outer ring */}
+    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+  </svg>
+);
+

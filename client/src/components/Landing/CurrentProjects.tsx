@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TendaNowIcon, CodeCrusherIcon, BizGenIcon } from "@/components/icons/CustomSVGIcons";
 
 interface CurrentProjectProps {
   title: string;
@@ -68,6 +69,20 @@ export function CurrentProjects({
     "bg-gradient-to-br from-amber-500/5 to-orange-500/5",
   ];
 
+  // Project icons
+  const projectIcons = [
+    TendaNowIcon,
+    CodeCrusherIcon,
+    BizGenIcon,
+  ];
+
+  // Icon colors matching accent colors
+  const iconColors = [
+    "text-blue-500",
+    "text-purple-500",
+    "text-amber-500",
+  ];
+
   return (
     <div className={cn("w-full", className)}>
       {/* Header */}
@@ -121,16 +136,13 @@ export function CurrentProjects({
 
                   {/* Content */}
                   <div className="p-6 md:p-8 h-full flex flex-col">
-                    {/* Number badge */}
+                    {/* Project Icon */}
                     <div className="mb-4 md:mb-6">
-                      <span
-                        className={cn(
-                          "inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-white text-sm",
-                          `bg-gradient-to-r ${accentColors[index]}`
-                        )}
-                      >
-                        {index + 1}
-                      </span>
+                      {projectIcons[index] && (
+                        <div className={cn("w-12 h-12", iconColors[index])}>
+                          {projectIcons[index]()}
+                        </div>
+                      )}
                     </div>
 
                     {/* Title */}
@@ -220,16 +232,13 @@ export function CurrentProjects({
 
                     {/* Content */}
                     <div className="p-6 h-full flex flex-col">
-                      {/* Number badge */}
+                      {/* Project Icon */}
                       <div className="mb-4">
-                        <span
-                          className={cn(
-                            "inline-flex items-center justify-center w-10 h-10 rounded-full font-bold text-white text-sm",
-                            `bg-gradient-to-r ${accentColors[actualIndex]}`
-                          )}
-                        >
-                          {actualIndex + 1}
-                        </span>
+                        {projectIcons[actualIndex] && (
+                          <div className={cn("w-12 h-12", iconColors[actualIndex])}>
+                            {projectIcons[actualIndex]()}
+                          </div>
+                        )}
                       </div>
 
                       {/* Title */}
