@@ -99,19 +99,19 @@ export default function Blog() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 relative z-10"
+          className="text-center mb-8 md:mb-12 relative z-10"
         >
-          <Heading1 className="mb-4">Thought Leadership</Heading1>
-          <Paragraph className="text-xl max-w-3xl mx-auto">
+          <Heading1 className="mb-2 md:mb-3">Thought Leadership</Heading1>
+          <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
             Insights, perspectives, and analysis on AI, blockchain, and emerging technologies
             from our team of experts.
           </Paragraph>
         </motion.div>
 
           {/* Search and Filter */}
-          <div className="mb-10 relative z-10">
-            <EnterpriseCard className="p-6 mb-6 border-primary/20 shadow-lg">
-              <div className="flex flex-col md:flex-row gap-4 mb-6">
+          <div className="mb-8 md:mb-10 relative z-10">
+            <EnterpriseCard className="p-4 md:p-6 mb-4 md:mb-6 border-primary/20 shadow-lg">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
                 <div className="flex-1 relative">
                   <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
                     <i className="fas fa-search"></i>
@@ -121,13 +121,13 @@ export default function Blog() {
                     placeholder="Search articles..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 py-6 border-primary/20 focus:border-primary focus:ring-primary"
+                    className="w-full pl-10 py-2 md:py-3 text-xs md:text-sm border-primary/20 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <Button
                   variant={activeTag === null ? "default" : "outline"}
                   onClick={() => setActiveTag(null)}
-                  className="whitespace-nowrap py-6 px-8 text-base font-medium"
+                  className="whitespace-nowrap py-2 md:py-3 px-4 md:px-6 text-xs md:text-sm font-medium"
                 >
                   <i className="fas fa-tag mr-2"></i> All Topics
                 </Button>
@@ -138,7 +138,7 @@ export default function Blog() {
                   <Badge
                     key={tag}
                     variant={activeTag === tag ? "default" : "outline"}
-                    className={`cursor-pointer px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    className={`cursor-pointer px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium transition-all duration-200 ${
                       activeTag === tag
                         ? 'bg-primary text-white'
                         : 'hover:bg-primary/10 border-primary/20'

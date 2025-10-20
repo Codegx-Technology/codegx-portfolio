@@ -190,8 +190,8 @@ export function FeatureCard({
         <div className={cn("w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary mb-4", iconClassName)}>
           {icon}
         </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-        <CardDescription className="mt-2">{description}</CardDescription>
+        <CardTitle className="text-lg sm:text-xl">{title}</CardTitle>
+        <CardDescription className="mt-2 text-xs sm:text-sm">{description}</CardDescription>
       </MotionCardHeader>
     </MotionCard>
   );

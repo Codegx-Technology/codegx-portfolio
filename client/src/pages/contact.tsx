@@ -85,7 +85,7 @@ export default function Contact() {
       />
 
       <PageSection
-        className="relative overflow-hidden py-20"
+        className="relative overflow-hidden py-12 md:py-16"
       >
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
@@ -94,16 +94,16 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 relative z-10"
+          className="text-center mb-8 md:mb-12 relative z-10"
         >
-          <Heading1 className="mb-4">Get in Touch</Heading1>
-          <Paragraph className="text-xl max-w-3xl mx-auto">
+          <Heading1 className="mb-2 md:mb-3">Get in Touch</Heading1>
+          <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
             Have a project in mind or want to collaborate? We'd love to hear from you.
             Fill out the form below and we'll get back to you as soon as possible.
           </Paragraph>
         </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 relative z-10">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -111,8 +111,8 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <EnterpriseCard className="p-6 h-full">
-                <Heading2 className="text-2xl mb-6">Contact Information</Heading2>
+              <EnterpriseCard className="p-4 md:p-6 h-full">
+                <Heading2 className="text-lg md:text-xl mb-4 md:mb-6">Contact Information</Heading2>
 
                 <div className="space-y-6">
                   {contactInfo.map((info, index) => (

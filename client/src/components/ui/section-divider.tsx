@@ -21,12 +21,12 @@ export function SectionDivider({
   width = "full",
   ...props
 }: SectionDividerProps) {
-  // Define spacing classes
+  // Define spacing classes - Mobile First
   const spacingClasses = {
     none: "",
-    sm: "my-4",
-    md: "my-8 md:my-12",
-    lg: "my-12 md:my-16",
+    sm: "my-2 md:my-4",
+    md: "my-4 md:my-8",
+    lg: "my-6 md:my-12",
   };
 
   // Define color classes

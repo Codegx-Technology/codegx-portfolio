@@ -73,7 +73,7 @@ export default function MainHome() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-8 md:py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,25 +81,25 @@ export default function MainHome() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-3">
               Welcome to{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
                 Codegx Technologies
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xs md:text-sm text-muted-foreground mb-6 md:mb-8">
               {isLoading
                 ? "Loading..."
                 : agencyProfile?.tagline || "Transforming Ideas into Digital Reality"}
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               <Link href="/agency">
-                <Button size="lg" className="rounded-full">
+                <Button size="sm" className="rounded-full">
                   Explore AI Agency
                 </Button>
               </Link>
               <Link href="/portfolio">
-                <Button size="lg" variant="outline" className="rounded-full">
+                <Button size="sm" variant="outline" className="rounded-full">
                   View Portfolio
                 </Button>
               </Link>
@@ -109,44 +109,44 @@ export default function MainHome() {
       </section>
 
       {/* About Section */}
-      <section className="py-20">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold mb-6">About Codegx Technologies</h2>
-              <p className="text-muted-foreground mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">About Codegx Technologies</h2>
+              <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                 {isLoading
                   ? "Loading..."
                   : agencyProfile?.description ||
                     "Codegx Technologies is a forward-thinking software development company specializing in creating innovative digital solutions for businesses across various industries."}
               </p>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                 Our company operates through two main divisions:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start">
-                  <div className="mr-4 mt-1 bg-primary/10 p-2 rounded-full">
-                    <i className="fas fa-robot text-primary"></i>
+                  <div className="mr-3 md:mr-4 mt-1 bg-primary/10 p-2 rounded-full shrink-0">
+                    <i className="fas fa-robot text-primary text-sm"></i>
                   </div>
                   <div>
-                    <h3 className="font-semibold">AI Agency</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-semibold text-sm md:text-base">AI Agency</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">
                       Our specialized AI division focused on developing intelligent solutions for businesses and government agencies.
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="mr-4 mt-1 bg-primary/10 p-2 rounded-full">
-                    <i className="fas fa-user-tie text-primary"></i>
+                  <div className="mr-3 md:mr-4 mt-1 bg-primary/10 p-2 rounded-full shrink-0">
+                    <i className="fas fa-user-tie text-primary text-sm"></i>
                   </div>
                   <div>
-                    <h3 className="font-semibold">Personal Portfolio</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-semibold text-sm md:text-base">Personal Portfolio</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">
                       The professional showcase of our founder's work, expertise, and achievements in software development.
                     </p>
                   </div>
@@ -193,22 +193,22 @@ export default function MainHome() {
       </section>
 
       {/* Divisions Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Our Divisions</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">Our Divisions</h2>
+            <p className="text-xs md:text-sm text-muted-foreground max-w-2xl mx-auto">
               Explore our specialized divisions, each offering unique expertise and solutions.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* AI Agency Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -217,18 +217,18 @@ export default function MainHome() {
               viewport={{ once: true }}
               className="bg-background rounded-lg overflow-hidden shadow-lg border hover:shadow-xl transition-shadow"
             >
-              <div className="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative">
+              <div className="h-40 md:h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-robot text-white text-5xl"></i>
+                  <i className="fas fa-robot text-white text-4xl md:text-5xl"></i>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">AI Agency</h3>
-                <p className="text-muted-foreground mb-6">
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">AI Agency</h3>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                   Our AI division specializes in developing intelligent solutions using machine learning, natural language processing, and data analytics to solve complex business problems.
                 </p>
                 <Link href="/agency">
-                  <Button className="w-full">
+                  <Button className="w-full text-xs md:text-sm">
                     Explore AI Agency <i className="fas fa-arrow-right ml-2"></i>
                   </Button>
                 </Link>
@@ -243,18 +243,18 @@ export default function MainHome() {
               viewport={{ once: true }}
               className="bg-background rounded-lg overflow-hidden shadow-lg border hover:shadow-xl transition-shadow"
             >
-              <div className="h-48 bg-gradient-to-r from-emerald-500 to-teal-600 relative">
+              <div className="h-40 md:h-48 bg-gradient-to-r from-emerald-500 to-teal-600 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-user-tie text-white text-5xl"></i>
+                  <i className="fas fa-user-tie text-white text-4xl md:text-5xl"></i>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3">Personal Portfolio</h3>
-                <p className="text-muted-foreground mb-6">
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Personal Portfolio</h3>
+                <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                   The professional showcase of our founder's work, featuring projects, skills, and achievements in software development, web design, and digital innovation.
                 </p>
                 <Link href="/portfolio">
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full text-xs md:text-sm">
                     View Portfolio <i className="fas fa-arrow-right ml-2"></i>
                   </Button>
                 </Link>

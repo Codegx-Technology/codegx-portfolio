@@ -36,10 +36,10 @@ export function PageWrapper({
   // Define spacing classes - mobile-first with reduced spacing
   const spacingClasses = {
     none: "space-y-0",
-    sm: "space-y-3 sm:space-y-4 md:space-y-8",
-    md: "space-y-4 sm:space-y-6 md:space-y-12",
-    lg: "space-y-6 sm:space-y-8 md:space-y-16",
-    xl: "space-y-8 sm:space-y-10 md:space-y-20",
+    sm: "space-y-2 sm:space-y-3 md:space-y-6",
+    md: "space-y-3 sm:space-y-4 md:space-y-8",
+    lg: "space-y-4 sm:space-y-6 md:space-y-12",
+    xl: "space-y-6 sm:space-y-8 md:space-y-16",
   };
 
   // Animation variants

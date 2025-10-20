@@ -80,10 +80,10 @@ export function EnterpriseCardHeader({
             )}
             <div>
               {title && (
-                <CardTitle className="text-xl font-semibold">{title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl font-semibold">{title}</CardTitle>
               )}
               {description && (
-                <CardDescription className="mt-1.5">{description}</CardDescription>
+                <CardDescription className="mt-1.5 text-xs sm:text-sm">{description}</CardDescription>
               )}
             </div>
           </div>

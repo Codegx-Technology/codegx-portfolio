@@ -40,13 +40,13 @@ export function PageSection({
   dividerPosition,
   ...props
 }: PageSectionProps) {
-  // Define spacing classes
+  // Define spacing classes - Mobile First
   const spacingClasses = {
     none: "",
-    sm: "py-6 md:py-8",
-    md: "py-10 md:py-12",
-    lg: "py-16 md:py-20",
-    xl: "py-20 md:py-28 lg:py-32",
+    sm: "py-4 md:py-6",
+    md: "py-6 md:py-10",
+    lg: "py-8 md:py-12 lg:py-16",
+    xl: "py-12 md:py-16 lg:py-20",
   };
 
   // Define background classes
@@ -137,7 +137,7 @@ export function PageSectionHeader({
   return (
     <div
       className={cn(
-        "mb-10 md:mb-12",
+        "mb-6 md:mb-8 lg:mb-10",
         {
           "text-left": align === "left",
           "text-center": align === "center",
@@ -149,7 +149,7 @@ export function PageSectionHeader({
       {title && (
         <h2
           className={cn(
-            "heading-2 mb-4",
+            "heading-2 mb-2 md:mb-3",
             titleClassName
           )}
         >

@@ -67,9 +67,9 @@ export function EnterpriseHero({
       className={cn(
         "relative overflow-hidden",
         {
-          "py-16 md:py-20": size === "sm",
-          "py-20 md:py-28": size === "md",
-          "py-24 md:py-32 lg:py-40": size === "lg",
+          "py-8 md:py-12": size === "sm",
+          "py-12 md:py-16": size === "md",
+          "py-16 md:py-20 lg:py-24": size === "lg",
         },
         className
       )}

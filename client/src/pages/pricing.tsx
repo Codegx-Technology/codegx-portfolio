@@ -46,7 +46,7 @@ export default function Pricing() {
   return (
     <PageWrapper>
       {/* Hero Section */}
-      <div className="relative py-20 overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-16">
+      <div className="relative py-8 md:py-12 overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-8 md:mb-12">
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@ export default function Pricing() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+              className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
             >
               <span className="flex h-2 w-2 mr-2">
                 <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
@@ -77,11 +77,11 @@ export default function Pricing() {
               Transparent Pricing
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
               Flexible <span className="text-[#c8a951] dark:text-[#9f7b42]">Pricing</span> for Startups and Scaleups
             </h1>
 
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-xs md:text-sm text-slate-300 max-w-3xl mx-auto">
               Transparent pricing options designed to fit your business needs and growth stage.
               From initial AI implementation to enterprise-scale solutions.
             </p>

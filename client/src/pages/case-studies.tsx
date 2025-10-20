@@ -132,17 +132,17 @@ export default function CaseStudies() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 relative z-10"
+          className="text-center mb-8 md:mb-12 relative z-10"
         >
-          <Heading1 className="mb-4">Case Studies</Heading1>
-          <Paragraph className="text-xl max-w-3xl mx-auto">
+          <Heading1 className="mb-2 md:mb-3">Case Studies</Heading1>
+          <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
             Explore our portfolio of successful projects and discover how we've helped organizations
             across various industries solve complex challenges with innovative technology solutions.
           </Paragraph>
         </motion.div>
 
           {/* Industry Filter */}
-          <div className="mb-10 relative z-10 px-3 sm:px-0">
+          <div className="mb-8 md:mb-10 relative z-10 px-3 sm:px-0">
             <Tabs
               defaultValue="all"
               value={activeIndustry}
@@ -194,6 +194,7 @@ export default function CaseStudies() {
                       </Paragraph>
                     </EnterpriseCard>
                   ) : (
+                    <>
                     <motion.div
                       variants={{
                         hidden: { opacity: 0 },
@@ -267,6 +268,7 @@ export default function CaseStudies() {
                         </div>
                       </div>
                     )}
+                  </>
                   )}
                 </TabsContent>
               ))}
