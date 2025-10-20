@@ -21,25 +21,28 @@ export function Projects() {
   );
   
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-background to-background/95">
+    <section id="projects" className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-background to-background/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold font-inter bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent inline-block">
-            Enterprise Solutions
+          <div className="inline-flex items-center px-3 py-1 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-3 md:mb-4 border border-primary/20">
+            <i className="fas fa-briefcase mr-2"></i>
+            Our Work
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-inter text-foreground mb-2 md:mb-3">
+            Our <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto mt-2"></div>
-          <p className="mt-4 text-lg opacity-80">Landmark projects delivering measurable business impact</p>
+          <p className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">Explore our portfolio of innovative solutions that have helped businesses transform and grow.</p>
         </motion.div>
         
         {/* Filter tabs */}
         <motion.div 
-          className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-14"
+          className="flex justify-center flex-wrap gap-2 sm:gap-3 mb-8 md:mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,7 +71,7 @@ export function Projects() {
         </motion.div>
         
         {/* Project grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -85,7 +88,7 @@ export function Projects() {
           ))}
         </div>
         
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 md:mt-14">
           <Button 
             variant="outline" 
             className="border-primary text-primary hover:bg-primary/10 rounded-full px-8 py-6 shadow-md hover:shadow-lg transition-all"
