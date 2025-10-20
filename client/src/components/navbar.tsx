@@ -98,6 +98,14 @@ export function Navbar() {
             >
               Home
             </Link>
+            <Link
+              href="/about"
+              className={`font-medium hover:text-primary transition ${
+                location === "/about" ? "text-primary" : ""
+              }`}
+            >
+              About
+            </Link>
             {/* Portfolio link removed - available in 'portfolio' branch */}
             {navLinks.filter(link => link.isPage).map((link) => (
               <Link
@@ -197,6 +205,15 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     Home
+                  </Link>
+                  <Link
+                    href="/about"
+                    className={`px-4 py-3 rounded-md font-medium hover:bg-primary/10 transition-colors min-h-[44px] flex items-center ${
+                      location === "/about" ? "text-primary bg-primary/5" : ""
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    About
                   </Link>
                   {/* Portfolio link removed - available in 'portfolio' branch */}
                   {navLinks.filter(link => link.isPage).map((link) => (
