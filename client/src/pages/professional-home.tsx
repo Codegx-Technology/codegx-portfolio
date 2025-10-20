@@ -65,18 +65,18 @@ export default function ProfessionalHome() {
   // Services offered (Cloud Solutions removed)
   const services = [
     {
-      title: "AI & Machine Learning",
-      description: "Custom AI solutions that solve complex business challenges and drive innovation.",
+      title: "AI Integration",
+      description: "Seamlessly embed intelligent automation into your existing systems. We integrate custom AI solutions that enhance workflows, unlock hidden data insights, and accelerate decision-making across your enterprise.",
       icon: AIMLIcon,
     },
     {
-      title: "Digital Transformation",
-      description: "End-to-end digital transformation strategies that modernize your business.",
-      icon: DigitalTransformationIcon,
+      title: "AI & Machine Learning",
+      description: "Build advanced ML models tailored to your business objectives. We develop intelligent systems that predict trends, optimize processes, and drive measurable competitive advantage through data-driven innovation.",
+      icon: AIMLIcon,
     },
     {
       title: "Custom Software Development",
-      description: "Bespoke software solutions tailored to your unique business needs.",
+      description: "Purpose-built solutions engineered for your unique challenges. We create bespoke software that scales with your growth, integrates seamlessly with existing systems, and delivers exceptional business value.",
       icon: CustomSoftwareIcon,
     },
   ];
@@ -192,12 +192,12 @@ export default function ProfessionalHome() {
                   </Button>
                 </motion.div>
 
-                {/* Discover More Indicator - Mobile Only */}
+                {/* Discover More Indicator - Centered Below Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="flex flex-col items-center pt-4 md:pt-6 lg:hidden"
+                  className="flex flex-col items-center pt-8 md:pt-12 lg:pt-16"
                 >
                   <span className="text-slate-400 text-xs md:text-sm mb-2">Discover More</span>
                   <motion.svg
@@ -449,34 +449,6 @@ export default function ProfessionalHome() {
           </div>
         </section>
 
-        {/* Discover More Section - Desktop Only */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="hidden lg:flex justify-center items-center py-12 md:py-16 relative overflow-hidden"
-        >
-          {/* Background elements */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-[#121212] dark:to-[#1a1a1a] z-0"></div>
-
-          <div className="relative z-10 flex flex-col items-center">
-            <span className="text-slate-400 text-sm mb-4">Discover More</span>
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-slate-400"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </motion.svg>
-          </div>
-        </motion.section>
-
         {/* Services Section - Enterprise Grade */}
         <section className="py-12 md:py-16 relative overflow-hidden">
           {/* Background elements */}
@@ -621,19 +593,19 @@ export default function ProfessionalHome() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group"
+                    className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group flex flex-col h-full"
                   >
                     {/* Service header with gradient */}
                     <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
 
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col flex-grow">
                       <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
                         <service.icon />
                       </div>
 
                       <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
 
-                      <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
+                      <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">{service.description}</p>
 
                       <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
                         <Link
@@ -668,19 +640,19 @@ export default function ProfessionalHome() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.6 }}
-                          className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128]"
+                          className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] flex flex-col h-full"
                         >
                           {/* Service header with gradient */}
                           <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
 
-                          <div className="p-8">
+                          <div className="p-8 flex flex-col flex-grow">
                             <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
                               <service.icon />
                             </div>
 
                             <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
 
-                            <p className="text-gray-700 dark:text-gray-300 mb-6">{service.description}</p>
+                            <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">{service.description}</p>
 
                             <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
                               <Link

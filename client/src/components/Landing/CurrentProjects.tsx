@@ -79,10 +79,10 @@ export function CurrentProjects({
         className="text-center mb-8 md:mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-          Current Projectsi
+          Our Core Strengths
         </h2>
         <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          Transforming industries with cutting-edge AI and innovative solutions
+          Delivering enterprise-grade solutions across AI, digital transformation, and custom development
         </p>
       </motion.div>
 
@@ -161,7 +161,7 @@ export function CurrentProjects({
 
                     {/* CTA Link */}
                     <div className="flex items-center text-xs md:text-sm font-semibold text-slate-900 dark:text-white group-hover:gap-2 transition-all duration-300">
-                      <span>Explore Project</span>
+                      <span>Learn More</span>
                       <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
                         →
                       </span>
@@ -323,15 +323,15 @@ export function CurrentProjects({
         className="text-center"
       >
         <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-4">
-          Want to see more of our work?
+          Ready to transform your business with our expertise?
         </p>
-        <Link href="/case-studies">
+        <Link href="/services">
           <Button
             size="sm"
             className="rounded-full px-6 py-2 text-xs md:text-sm font-semibold"
           >
-            <i className="fas fa-briefcase mr-2"></i>
-            View All Projects
+            <i className="fas fa-arrow-right mr-2"></i>
+            Explore Our Services
           </Button>
         </Link>
       </motion.div>
