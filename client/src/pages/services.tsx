@@ -373,7 +373,7 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="text-[#c8a951] dark:text-[#9f7b42]">Transform</span> Your Workflow?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Ready to <span className="text-[#c8a951] dark:text-[#9f7b42]">Transform</span> Your Workflow?</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
               Let's discuss how our AI solutions can address your specific challenges and create measurable impact for your organization.
             </p>
