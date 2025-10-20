@@ -6,23 +6,24 @@
       "client": "TendaNow",
       "industry": "Behavioral Change / Wellness / Productivity",
       "category": "AI Accountability & Behavioral Transformation Platform",
-      "summary": "AI-powered accountability platform with WhatsApp integration and cultural localization in English, Swahili, and Sheng — making goal achievement 10x more affordable for African users.",
-      "challenge": "Users struggled with goal completion and long-term retention due to lack of accessible, culturally-relevant accountability support. Traditional solutions were expensive and not adapted for African markets.",
-      "solution": "Developed an AI-powered accountability platform that integrates with WhatsApp for seamless user engagement. The platform uses culturally-localized messaging in English, Swahili, and Sheng to provide personalized goal tracking and behavioral support. The system leverages AI to send timely reminders, track progress, and provide motivational feedback.",
+      "summary": "An MVP-stage AI-powered accountability platform designed to make goal achievement accessible and affordable for African users. Currently in active development with WhatsApp integration and multilingual support in English, Swahili, and Sheng.",
+      "challenge": "Millions of people across Africa struggle with goal completion and long-term behavioral change due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive, not localized, and don't account for local communication preferences. There's a critical gap between aspiration and execution.",
+      "solution": "We're building TendaNow as a WhatsApp-first AI accountability platform that meets users where they already are. The MVP focuses on core features: personalized AI coaching through WhatsApp, culturally-adapted messaging in English, Swahili, and Sheng, and real-time progress tracking. We're currently validating user engagement patterns and refining the AI coaching experience based on early user feedback.",
       "impact": [
-        "42% increase in goal completion rates",
-        "29% improvement in long-term retention",
-        "WhatsApp-first architecture for accessibility",
-        "Culturally localized in English, Swahili, and Sheng"
+        "MVP successfully deployed with early user cohorts",
+        "WhatsApp-first architecture validated for accessibility",
+        "Multilingual support (English, Swahili, Sheng) implemented and tested",
+        "Early indicators show strong engagement potential",
+        "Positioned for scale across East Africa"
       ],
       "technologies": ["AI/ML", "WhatsApp API", "NLP", "React", "Node.js", "MongoDB"],
       "image": "https://via.placeholder.com/800x400?text=TendaNow",
       "featured": true,
       "year": 2024,
       "testimonial": {
-        "quote": "TendaNow has transformed how I approach my goals. The WhatsApp integration makes it so convenient, and the culturally-relevant messaging really resonates with me.",
-        "author": "Amina Hassan",
-        "position": "User, Kenya"
+        "quote": "TendaNow's MVP shows real promise. The WhatsApp integration is seamless, and the culturally-relevant AI coaching feels genuinely helpful. We're excited about where this is heading.",
+        "author": "Early User Group Feedback",
+        "position": "Beta Testers, East Africa"
       }
     },
     {
