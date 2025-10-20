@@ -6,22 +6,22 @@
       "client": "TendaNow",
       "industry": "Behavioral Change / Wellness / Productivity",
       "category": "AI Accountability & Behavioral Transformation Platform",
-      "summary": "An MVP-stage AI-powered accountability platform designed to make goal achievement accessible and affordable for African users. Currently in active development with WhatsApp integration and multilingual support in English, Swahili, and Sheng.",
-      "challenge": "Millions of people across Africa struggle with goal completion and long-term behavioral change due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive, not localized, and don't account for local communication preferences. There's a critical gap between aspiration and execution.",
-      "solution": "We're building TendaNow as a WhatsApp-first AI accountability platform that meets users where they already are. The MVP focuses on core features: personalized AI coaching through WhatsApp, culturally-adapted messaging in English, Swahili, and Sheng, and real-time progress tracking. We're currently validating user engagement patterns and refining the AI coaching experience based on early user feedback.",
+      "summary": "An MVP-stage AI-powered accountability platform designed to make goal achievement accessible and affordable globally, with Africa-first approach. Currently in active development with WhatsApp integration and multilingual support starting with English, Swahili, and Sheng (additional languages coming soon).",
+      "challenge": "Millions of people worldwide struggle with goal completion and long-term behavioral change due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive, not localized, and don't account for local communication preferences. There's a critical gap between aspiration and execution—particularly acute in emerging markets where users prefer messaging-first platforms.",
+      "solution": "We're building TendaNow as a WhatsApp-first AI accountability platform that meets users where they already are. The MVP focuses on core features: personalized AI coaching through WhatsApp, culturally-adapted messaging (English, Swahili, Sheng with more languages in development), and real-time progress tracking. We're currently validating user engagement patterns and refining the AI coaching experience based on early user feedback, with expansion to other messaging platforms and markets planned.",
       "impact": [
-        "MVP successfully deployed with early user cohorts",
-        "WhatsApp-first architecture validated for accessibility",
+        "MVP successfully deployed with early user cohorts in East Africa",
+        "WhatsApp-first architecture validated for accessibility and scale",
         "Multilingual support (English, Swahili, Sheng) implemented and tested",
-        "Early indicators show strong engagement potential",
-        "Positioned for scale across East Africa"
+        "Early indicators show strong engagement potential across diverse user segments",
+        "Positioned for expansion across Africa and emerging markets globally"
       ],
       "technologies": ["AI/ML", "WhatsApp API", "NLP", "React", "Node.js", "MongoDB"],
       "image": "https://via.placeholder.com/800x400?text=TendaNow",
       "featured": true,
       "year": 2025,
       "testimonial": {
-        "quote": "TendaNow's MVP shows real promise. The WhatsApp integration is seamless, and the culturally-relevant AI coaching feels genuinely helpful. We're excited about where this is heading.",
+        "quote": "TendaNow's MVP shows real promise. The WhatsApp integration is seamless, and the culturally-relevant AI coaching feels genuinely helpful. We're excited about where this is heading and the potential to reach users globally.",
         "author": "Early User Group Feedback",
         "position": "Beta Testers, East Africa"
       }
@@ -30,25 +30,26 @@
       "id": "codecrusher",
       "title": "CodeCrusher",
       "client": "CodeCrusher",
-      "industry": "Developer Tools / Productivity",
-      "category": "AI-Augmented Developer Productivity Platform",
-      "summary": "AI-augmented developer productivity platform that streamlines code review processes and improves code quality through intelligent analysis and real-time feedback.",
-      "challenge": "Development teams faced bottlenecks in code review processes, leading to slower deployment cycles and inconsistent code quality standards. Manual reviews were time-consuming and prone to human error.",
-      "solution": "Built an AI-augmented platform that integrates with development workflows to provide intelligent code analysis, automated review suggestions, and real-time quality metrics. The system uses multi-model inference to analyze code patterns, identify potential issues, and provide actionable recommendations.",
+      "industry": "Developer Tools / Enterprise Governance",
+      "category": "AI-Powered Code Governance & Semantic Intelligence Platform",
+      "summary": "An MVP-stage AI-powered platform combining intelligent code review, enterprise governance, and deep semantic search capabilities. Designed for internal development teams and enterprise organizations seeking to enforce code standards, discover patterns, and maintain architectural integrity at scale.",
+      "challenge": "Enterprise development teams struggle with code governance at scale—maintaining consistent standards across large codebases, enforcing architectural patterns, discovering code reuse opportunities, and managing technical debt. Traditional tools focus on surface-level reviews and lack semantic understanding of code intent and patterns.",
+      "solution": "We're building CodeCrusher as an intelligent code governance platform with three core pillars: (1) AI-powered code review with semantic understanding of code intent and patterns, (2) Enterprise governance engine for enforcing architectural standards and compliance rules, (3) Deep semantic search enabling developers to discover similar code patterns, reusable components, and architectural insights across the entire codebase. The MVP currently validates core semantic search capabilities and governance rule enforcement with early enterprise users.",
       "impact": [
-        "68% reduction in code review time",
-        "35% improvement in code quality metrics",
-        "Multi-model inference with real-time analytics",
-        "Seamless integration with existing development tools"
+        "MVP deployed with early enterprise cohorts for governance validation",
+        "Deep semantic search engine successfully identifies code patterns and reuse opportunities",
+        "Governance rule engine tested with architectural enforcement scenarios",
+        "Early feedback shows strong potential for reducing technical debt and improving code consistency",
+        "Positioned for enterprise adoption across development teams"
       ],
-      "technologies": ["AI/ML", "Multi-model Inference", "Python", "JavaScript", "GitHub API", "Cloud Computing"],
+      "technologies": ["AI/ML", "Semantic Search", "Code Analysis", "Python", "JavaScript", "GitHub API", "Enterprise APIs"],
       "image": "https://via.placeholder.com/800x400?text=CodeCrusher",
       "featured": true,
-      "year": 2024,
+      "year": 2025,
       "testimonial": {
-        "quote": "CodeCrusher has dramatically improved our development velocity. The AI-powered code review suggestions are incredibly accurate and save us hours every week.",
-        "author": "David Chen",
-        "position": "Engineering Lead, Tech Startup"
+        "quote": "CodeCrusher's semantic search capabilities are impressive—we're discovering code patterns we didn't know existed. The governance engine is exactly what we need to maintain consistency across our teams.",
+        "author": "Enterprise Development Team Feedback",
+        "position": "Beta Testers, Enterprise Organizations"
       }
     },
     {

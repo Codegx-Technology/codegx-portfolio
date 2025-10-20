@@ -48,7 +48,7 @@ export default function ProfessionalHome() {
     },
     {
       title: "CodeCrusher",
-      description: "AI-augmented developer productivity platform. 68% reduction in code review time, 35% improvement in code quality metrics.",
+      description: "MVP-stage AI code governance and semantic intelligence platform. Deep semantic search, architectural enforcement, and intelligent code review for enterprise development teams.",
       industry: "Developer Tools",
       logo: "https://via.placeholder.com/120x40?text=CodeCrusher",
       href: "/case-studies/codecrusher",
