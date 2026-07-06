@@ -1,144 +1,42 @@
+# Codegx Technologies Corporate Platform
 
-# Peter Oduor Oluoch - Professional Portfolio
+## Overview
+Codegx Technologies is an enterprise-grade corporate platform focused on high-performance digital solutions and AI-driven automation. This repository contains the modern, mobile-first frontend architecture and unified automation stack.
 
-A sleek, modern, and professional portfolio website built with Django, Bootstrap, Tailwind CSS, and more.
+## Mission
+To provide a premier digital experience with zero "AI-fluff," pure English grammar, and professional FAANG-grade engineering standards.
 
-## Features
-
-- Responsive design that works on all devices
-- Modern and elegant UI with corporate aesthetics
-- Dynamic content management through Django admin
-- Contact form with database storage
-- Skills and projects showcase
-- SEO optimized
-
-## Technologies Used
-
-### Backend
-- Django
-- Python
-- PostgreSQL
-
-### Frontend
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
-- Tailwind CSS
-
-### Additional Technologies
-- React (for interactive components)
-- Flutter (for mobile app development)
-- Font Awesome (for icons)
-- Google Fonts (for typography)
-
-## Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/professional-portfolio.git
-cd professional-portfolio
-```
-
-2. Create a virtual environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up the database
-```bash
-python manage.py migrate
-```
-
-5. Create a superuser
-```bash
-python manage.py createsuperuser
-```
-
-6. Run the development server
-```bash
-python manage.py runserver
-```
-
-7. Visit `http://127.0.0.1:8000/` in your browser
+## Architecture
+- **Frontend:** React + Vite + TypeScript
+- **Styling:** Tailwind CSS + Radix UI (shadcn/ui)
+- **State & Routing:** Wouter + React Query
+- **Automation Stack:** Wakala OS Integration
+- **Database:** PostgreSQL via Drizzle ORM
+- **Deployment:** Netlify (Automated CI/CD)
 
 ## Project Structure
+- `client/`: React/Vite frontend application
+- `server/`: Express backend API and automation logic
+- `shared/`: Shared TypeScript types and database schemas
+- `docs/`: Architectural assessments, transformation advisories, and roadmaps
 
-```
-professional-portfolio/
-├── portfolio/            # Django project settings
-├── core/                 # Main app for portfolio
-├── contact/              # App for contact form
-├── static/               # Static files (CSS, JS, images)
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── templates/            # HTML templates
-│   ├── core/
-│   └── contact/
-├── media/                # User-uploaded files
-├── manage.py             # Django management script
-├── requirements.txt      # Project dependencies
-└── README.md             # Project documentation
-```
+## Getting Started
 
-## Usage
+### Prerequisites
+- Node.js (v18+)
+- npm or pnpm
 
-### Admin Panel
+### Local Development
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
 
-1. Navigate to `http://127.0.0.1:8000/admin/`
-2. Log in with your superuser credentials
-3. Manage your skills, projects, and contact messages
-
-### Adding Content
-
-#### Skills
-- Go to the admin panel
-- Click on "Skills"
-- Add new skills with categories, levels, and descriptions
-
-#### Projects
-- Go to the admin panel
-- Click on "Projects"
-- Add new projects with images, descriptions, and links
-
-## Deployment
-
-This project is configured for easy deployment to various platforms:
-
-### Heroku
-```bash
-heroku create
-git push heroku main
-heroku run python manage.py migrate
-heroku run python manage.py createsuperuser
-```
-
-### PythonAnywhere
-1. Create a PythonAnywhere account
-2. Set up a new web app with Django
-3. Clone your repository
-4. Set up a virtual environment and install dependencies
-5. Configure your WSGI file
+## Governance
+This project follows a strict governance framework to maintain enterprise standards. Refer to `docs/CodegxTechnologies_TransformationAdvisory.md` for detailed guidelines on:
+- Zero "AI-fluff" aesthetics
+- Mobile-first design patterns
+- Pure English grammar requirements
+- Prohibited use of emojis in corporate content
 
 ## License
-
-This project is licensed under the MIT License with the following additional restrictions:
-
-- You may not use this code for personal portfolios without explicit permission
-- You may not redistribute this code as your own work
-- You may use this code for educational purposes
-
-## Contact
-
-Peter Oduor Oluoch - contact@peteroduor.com
-
-Project Link: [https://github.com/yourusername/professional-portfolio](https://github.com/yourusername/professional-portfolio)
-
-# codegx-portfolio
+© 2026 Codegx Technologies. All rights reserved.
