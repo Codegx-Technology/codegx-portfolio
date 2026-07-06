@@ -1,7 +1,6 @@
-import { users, type User, type InsertUser, type ContactMessage, type InsertContactMessage } from "@shared/schema";
-
-// modify the interface with any CRUD methods
-// you might need
+import { users, contactMessages, type User, type InsertUser, type ContactMessage, type InsertContactMessage } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -12,63 +11,43 @@ export interface IStorage {
   markContactMessageAsRead(id: number): Promise<ContactMessage | undefined>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contactMessages: Map<number, ContactMessage>;
-  currentUserId: number;
-  currentContactMessageId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.contactMessages = new Map();
-    this.currentUserId = 1;
-    this.currentContactMessageId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db.insert(users).values(insertUser).returning();
     return user;
   }
 
   async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
-    const id = this.currentContactMessageId++;
-    const contactMessage: ContactMessage = {
+    const [contactMessage] = await db.insert(contactMessages).values({
       ...message,
-      id,
       created_at: new Date().toISOString(),
       read: false,
-      position: message.position || null,
-      company: message.company || null
-    };
-    this.contactMessages.set(id, contactMessage);
+    }).returning();
     return contactMessage;
   }
 
   async getAllContactMessages(): Promise<ContactMessage[]> {
-    return Array.from(this.contactMessages.values());
+    return await db.select().from(contactMessages);
   }
 
   async markContactMessageAsRead(id: number): Promise<ContactMessage | undefined> {
-    const message = this.contactMessages.get(id);
-    if (message) {
-      const updatedMessage = { ...message, read: true };
-      this.contactMessages.set(id, updatedMessage);
-      return updatedMessage;
-    }
-    return undefined;
+    const [updatedMessage] = await db
+      .update(contactMessages)
+      .set({ read: true })
+      .where(eq(contactMessages.id, id))
+      .returning();
+    return updatedMessage;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
