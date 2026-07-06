@@ -140,7 +140,7 @@ export function ExecutiveNavbar({
         "z-[9999] w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
-          ? "bg-[#2c1a22] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:bg-[#1f1a2c]"
+          ? "bg-[#2c1a22]/95 backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:bg-[#1f1a2c]/95"
           : variant === "default"
             ? "bg-[#2c1a22] dark:bg-[#1f1a2c]"
             : variant === "transparent"

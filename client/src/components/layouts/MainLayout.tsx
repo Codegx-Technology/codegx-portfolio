@@ -38,21 +38,21 @@ export function MainLayout({
   // Determine if we're on an agency page
   const isAgencyPage = location.includes("/agency") || location === "/enhanced-agency";
 
-  // Use transparent navbar on home page
-  const effectiveNavbarVariant = isHomePage ? "transparent" : navbarVariant;
+  // Disable transparent navbar to prevent overlap issues
+  const effectiveNavbarVariant = "default";
 
   // Set the appropriate logo based on the page
-  const logoAlt = isAgencyPage ? "Astella AI" : "Codegx Technologies";
+  const logoAlt = isAgencyPage ? "Wakala Agency" : "Codegx Technologies";
 
   // Define all navigation links
   const navLinks = [
     { href: "/", label: "Home" },
     {
       href: "/agency",
-      label: "Astella AI",
+      label: "Wakala Agency",
       children: [
-        { href: "/agency", label: "Why Astella", icon: <i className="fas fa-chevron-right text-xs" /> },
-        { href: "/agency/projects", label: "Projects", icon: <i className="fas fa-chevron-right text-xs" /> },
+        { href: "/agency", label: "About Wakala", icon: <i className="fas fa-chevron-right text-xs" /> },
+        { href: "/agency/projects", label: "Automation Projects", icon: <i className="fas fa-chevron-right text-xs" /> },
       ]
     },
     { href: "/services", label: "Services" },
@@ -98,8 +98,7 @@ export function MainLayout({
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "flex-grow pb-safe overflow-x-hidden w-full",
-          isHomePage ? "pt-0" : "pt-20",
+          "flex-grow pb-safe overflow-x-hidden w-full pt-20",
           className
         )}
       >

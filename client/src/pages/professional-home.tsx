@@ -108,7 +108,7 @@ export default function ProfessionalHome() {
         {/* Hero Section */}
         <motion.section
           ref={heroRef}
-          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden pt-4 md:pt-8"
+          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden pt-12 md:pt-20"
           style={{
             opacity: heroOpacity,
             scale: heroScale,
