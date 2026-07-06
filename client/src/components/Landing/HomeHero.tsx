@@ -39,12 +39,7 @@ export function HomeHero() {
   return (
     <header id="hero" className="relative min-h-screen flex items-center overflow-x-hidden pt-20 w-full">
       {/* Abstract Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/3 w-32 sm:w-48 h-32 sm:h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-40 sm:w-64 h-40 sm:h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 w-full">
         <div className="md:flex md:items-center md:justify-between">
@@ -54,16 +49,16 @@ export function HomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block px-4 py-1 rounded-full bg-primary/10 mb-4 backdrop-blur-sm">
-              <span className="text-sm font-semibold text-primary">
+            <div className="inline-block px-4 py-1 rounded-full bg-gray-100 mb-4">
+              <span className="text-sm font-semibold text-gray-700">
                 {agencyProfile?.name || "Codegx Technologies"}
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-inter leading-tight">
-              Unified <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Homepage</span>
+              Unified Homepage
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-relaxed opacity-90">
-              Welcome to the combined homepage of Codegx Technologies, featuring both our personal portfolio and Astella AI agency services.
+              Welcome to the corporate homepage of Codegx Technologies, showcasing our comprehensive solutions and the specialized services of Wakala Agency.
             </p>
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Link href="/portfolio">
@@ -148,9 +143,9 @@ export function HomeHero() {
                     </div>
                     <div className="flex flex-col items-center">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
-                        <i className="fas fa-robot text-primary"></i>
+                        <i className="fas fa-cogs text-primary"></i>
                       </div>
-                      <span className="text-sm">Astella AI</span>
+                      <span className="text-sm">Wakala Agency</span>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
