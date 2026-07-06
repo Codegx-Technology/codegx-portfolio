@@ -12,8 +12,8 @@ interface HeadProps {
 }
 
 export function Head({
-  title = "Codegx Technologies - AI Agency & Portfolio",
-  description = "Codegx Technologies is a forward-thinking software development company specializing in AI solutions and innovative digital products.",
+  title = "Codegx Technologies - Enterprise Technology Solutions",
+  description = "Codegx Technologies delivers enterprise software, digital transformation, and Wakala automation services for measurable operational results.",
   image = "/images/og-image.jpg",
   canonical,
   type = "website",

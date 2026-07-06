@@ -48,7 +48,7 @@ export default function ProfessionalHome() {
     },
     {
       title: "CodeCrusher",
-      description: "Semantic code intelligence for enterprise teams. Discover hidden patterns, enforce architecture, and reduce technical debt through AI that understands what your code actually does.",
+      description: "Semantic code intelligence for enterprise teams. Discover hidden patterns, enforce architecture, and reduce technical debt through systems that map how your code actually behaves.",
       industry: "Developer Tools",
       logo: "https://via.placeholder.com/120x40?text=CodeCrusher",
       href: "/case-studies/codecrusher",
@@ -66,12 +66,12 @@ export default function ProfessionalHome() {
   const services = [
     {
       title: "AI Integration",
-      description: "Seamlessly embed intelligent automation into your existing systems. We integrate custom AI solutions that enhance workflows, unlock hidden data insights, and accelerate decision-making across your enterprise.",
+      description: "Embed governed automation into existing systems. We design integrations that improve workflows, surface useful operational data, and support faster decisions across your enterprise.",
       icon: AIMLIcon,
     },
     {
       title: "AI & Machine Learning",
-      description: "Build advanced ML models tailored to your business objectives. We develop intelligent systems that predict trends, optimize processes, and drive measurable competitive advantage through data-driven innovation.",
+      description: "Build machine learning systems tied to clear business objectives. We develop models that support forecasting, process optimization, and measurable operational improvement.",
       icon: AIMLIcon,
     },
     {
@@ -289,7 +289,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
               >
-                Codegx Technologies is an innovative technology startup focused on delivering cutting-edge AI, digital transformation, and custom software development solutions that help businesses thrive in the digital age.
+                Codegx Technologies delivers enterprise software, automation, and digital transformation solutions that help organizations improve operations and scale with confidence.
               </motion.p>
             </div>
 
@@ -348,7 +348,7 @@ export default function ProfessionalHome() {
 
                   <div className="space-y-4">
                     <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                      As an innovative technology startup, we bring fresh perspectives and cutting-edge approaches to solving business challenges. Our agile team of talented engineers, data scientists, and creative problem-solvers is passionate about helping organizations of all sizes harness the power of technology.
+                      We bring disciplined engineering, practical automation, and clear delivery methods to business challenges. Our team helps organizations of all sizes use technology where it creates measurable operational value.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -361,7 +361,7 @@ export default function ProfessionalHome() {
                         <div className="ml-3">
                           <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Innovation DNA</h4>
                           <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
-                            We pioneer cutting-edge solutions that address the most complex enterprise challenges, staying ahead of technological trends.
+                            We design practical solutions for complex enterprise challenges, with a focus on measurable outcomes and maintainable systems.
                           </p>
                         </div>
                       </div>
@@ -523,7 +523,7 @@ export default function ProfessionalHome() {
                     </h3>
 
                     <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mb-4">
-                      Our flagship AI solutions leverage cutting-edge machine learning, natural language processing, and computer vision technologies to transform your business operations, enhance decision-making, and create competitive advantage.
+                      Our automation and machine learning solutions support business operations, improve decision-making, and create measurable value through dependable implementation.
                     </p>
 
                     <ul className="space-y-2 mb-4">
@@ -722,8 +722,8 @@ export default function ProfessionalHome() {
                 />
                 <div className="absolute inset-0 bg-[#2c1a22]/80"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Transforming Ideas into Intelligent Solutions</h3>
-                  <p className="text-slate-300 max-w-2xl mb-6">Our AI-powered technologies help businesses automate processes, gain insights, and create exceptional customer experiences.</p>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Turning Process Gaps into Working Systems</h3>
+                  <p className="text-slate-300 max-w-2xl mb-6">Our automation and software delivery work helps teams reduce manual effort, improve visibility, and serve customers more reliably.</p>
                 </div>
               </div>
             </motion.div>

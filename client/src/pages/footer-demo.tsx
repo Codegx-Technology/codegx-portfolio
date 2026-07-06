@@ -52,7 +52,7 @@ export default function FooterDemo() {
                       size="sm"
                       onClick={() => setIsAgencyPage(true)}
                     >
-                      Astella AI (Agency)
+                      Wakala Agency
                     </Button>
                   </div>
                 </div>

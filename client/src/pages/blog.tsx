@@ -83,8 +83,8 @@ export default function Blog() {
   return (
     <PageWrapper>
       <Head
-        title="Blog | Astella AI"
-        description="Insights, perspectives, and analysis on AI, blockchain, and emerging technologies from our team of experts."
+        title="Blog | Codegx Technologies"
+        description="Insights, perspectives, and analysis on enterprise software, automation, and digital transformation from the Codegx Technologies team."
       />
 
       <PageSection
@@ -103,8 +103,8 @@ export default function Blog() {
         >
           <Heading1 className="mb-2 md:mb-3">Thought Leadership</Heading1>
           <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
-            Insights, perspectives, and analysis on AI, blockchain, and emerging technologies
-            from our team of experts.
+            Insights, perspectives, and analysis on enterprise software, automation,
+            and digital transformation from the Codegx Technologies team.
           </Paragraph>
         </motion.div>
 

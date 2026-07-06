@@ -53,14 +53,13 @@ sustainable_city = architect.deliver_sustainable_city()`;
 
   return (
     <header className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Abstract Animated Background with Parallax */}
+      {/* Structured Background with Parallax */}
       <motion.div 
         className="absolute inset-0"
         style={{ y: isDesktop ? y : 0, opacity: isDesktop ? opacity : 1 }}
       >
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -78,7 +77,7 @@ sustainable_city = architect.deliver_sustainable_city()`;
               Enterprise <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Solutions</span> Architect
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed opacity-90">
-              Empowering forward-thinking organizations with cutting-edge AI, blockchain, and smart city technologies. Delivering measurable business impact through innovative digital solutions.
+              Helping organizations design dependable software, automation, and smart infrastructure systems that create measurable business impact.
             </p>
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <Button

@@ -80,7 +80,7 @@ export const skillsData = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "AI-Powered Healthcare Diagnostics",
+    title: "Healthcare Diagnostic Support Platform",
     description: "Deep learning system for medical image analysis with 98% accuracy in detecting anomalies. Deployed across 50+ healthcare facilities.",
     image: "/images/projects/healthcare-ai.jpg",
     category: ProjectCategory.AI,
@@ -111,7 +111,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with AI-powered recommendations, serving 100K+ daily active users.",
+    description: "Full-stack e-commerce solution with personalized recommendations, serving 100K+ daily active users.",
     image: "/images/projects/ecommerce.jpg",
     category: ProjectCategory.WEB,
     technologies: ["React", "Node.js", "MongoDB", "AWS"],

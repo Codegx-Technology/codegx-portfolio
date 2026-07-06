@@ -18,7 +18,7 @@ interface CTASectionProps {
  */
 export function CTASection({
   title,
-  description = "Request a tailored demo and see how Astella transforms operations.",
+  description = "Request a tailored demo and see how Wakala Agency improves operational workflows.",
   buttonText = "Request Demo",
   buttonLink = "/contact",
   className,

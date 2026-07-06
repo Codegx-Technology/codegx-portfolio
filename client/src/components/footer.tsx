@@ -46,7 +46,7 @@ export function Footer() {
                 Peter<span className="text-primary">.dev</span>
               </span>
             </Link>
-            <p className="mt-2 text-sm text-muted-foreground">Founder of Astella AI | Software & Blockchain Engineer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Founder of Codegx Technologies | Wakala Agency</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">

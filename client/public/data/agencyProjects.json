@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "ai-customer-service",
-      "title": "AI-Powered Customer Service Platform",
+      "title": "Automated Customer Service Platform",
       "description": "An intelligent customer service platform that uses natural language processing to automate responses and improve customer satisfaction. The system analyzes customer inquiries, categorizes them, and provides appropriate responses or routes them to the right department. It also includes sentiment analysis to detect customer emotions and prioritize urgent issues.",
       "image": "/assets/projects/ai-customer-service.jpg",
       "category": "AI/ML",
@@ -14,7 +14,7 @@
       "client": "TechCorp International",
       "year": 2023,
       "challenge": "TechCorp was struggling with a high volume of customer inquiries, leading to long response times and customer dissatisfaction. They needed a solution that could handle routine inquiries automatically while ensuring complex issues were properly escalated.",
-      "solution": "We developed an AI-powered platform that uses natural language processing to understand customer inquiries and provide instant responses to common questions. The system learns from interactions over time, continuously improving its accuracy. For complex issues, it intelligently routes tickets to the appropriate department with relevant context.",
+      "solution": "We developed an automation platform that uses natural language processing to understand customer inquiries and provide instant responses to common questions. The system learns from interactions over time, continuously improving its accuracy. For complex issues, it routes tickets to the appropriate department with relevant context.",
       "results": [
         "85% reduction in response time for common inquiries",
         "40% decrease in support ticket volume",

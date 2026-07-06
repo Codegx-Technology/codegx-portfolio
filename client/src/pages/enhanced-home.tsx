@@ -12,21 +12,21 @@ export default function EnhancedHome() {
   // Sample testimonials
   const testimonials = [
     {
-      quote: "Astella revolutionized how we deliver AI-powered services. Their team is brilliant.",
+      quote: "Codegx Technologies helped us convert manual delivery steps into reliable operating workflows.",
       name: "Elena Park",
       title: "CTO",
       company: "Innovex Solutions",
       avatar: "https://randomuser.me/api/portraits/women/1.jpg",
     },
     {
-      quote: "The AI solutions developed by Astella have increased our operational efficiency by 40% in just three months.",
+      quote: "The automation systems developed by Codegx increased our operational efficiency by 40% in just three months.",
       name: "Michael Chen",
       title: "Director of Operations",
       company: "Global Logistics Inc.",
       avatar: "https://randomuser.me/api/portraits/men/2.jpg",
     },
     {
-      quote: "Working with Astella has been transformative. Their expertise in AI and blockchain is unmatched in the industry.",
+      quote: "Working with Codegx gave us practical engineering guidance and systems we can maintain as we scale.",
       name: "Sarah Johnson",
       title: "CEO",
       company: "TechVision Enterprises",
@@ -37,7 +37,7 @@ export default function EnhancedHome() {
   // Sample case studies
   const caseStudies = [
     {
-      title: "AI-Powered Supply Chain Optimization",
+      title: "Supply Chain Optimization",
       description: "Implemented predictive analytics to optimize inventory management and reduce costs by 30%.",
       industry: "Manufacturing",
       logo: "https://via.placeholder.com/120x40?text=ManufactureCo",
@@ -62,8 +62,8 @@ export default function EnhancedHome() {
   return (
     <>
       <Head
-        title="Astella AI | Enterprise AI Solutions"
-        description="Astella AI delivers cutting-edge artificial intelligence solutions for enterprise, education, and public service."
+        title="Codegx Technologies | Enterprise Technology Solutions"
+        description="Codegx Technologies delivers enterprise software, automation, and digital transformation solutions for measurable operational results."
       />
       
       <MainLayout 
@@ -91,7 +91,7 @@ export default function EnhancedHome() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-xs md:text-sm font-medium mb-2"
                 >
-                  Enterprise AI Solutions
+                  Enterprise Automation Solutions
                 </motion.div>
 
                 <motion.h1
@@ -100,7 +100,7 @@ export default function EnhancedHome() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight"
                 >
-                  Transform Your Business with <span className="text-secondary">AI</span> Innovation
+                  Improve Operations with <span className="text-secondary">Dependable</span> Automation
                 </motion.h1>
 
                 <motion.p
@@ -109,7 +109,7 @@ export default function EnhancedHome() {
                   transition={{ duration: 0.6, delay: 0.5 }}
                   className="text-xs md:text-sm text-muted-foreground max-w-lg"
                 >
-                  Astella AI delivers cutting-edge artificial intelligence solutions that drive real business results and ROI.
+                  Codegx Technologies delivers software and automation systems that improve operations, visibility, and measurable delivery outcomes.
                 </motion.p>
 
                 <motion.div
@@ -136,7 +136,7 @@ export default function EnhancedHome() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
                   <img 
                     src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                    alt="AI Innovation" 
+                    alt="Enterprise automation implementation" 
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
@@ -154,7 +154,7 @@ export default function EnhancedHome() {
                     </div>
                     <div>
                       <h3 className="font-medium text-sm">Proven Results</h3>
-                      <p className="text-xs text-muted-foreground">Our AI solutions deliver an average 35% ROI within the first year</p>
+                      <p className="text-xs text-muted-foreground">Our automation systems deliver an average 35% ROI within the first year</p>
                     </div>
                   </div>
                 </motion.div>
@@ -173,15 +173,15 @@ export default function EnhancedHome() {
         {/* Case Studies Section */}
         <CaseStudyGrid
           title="Featured Case Studies"
-          description="Explore how we've helped organizations achieve their business goals with AI and blockchain solutions."
+          description="Explore how we've helped organizations achieve business goals with automation, software delivery, and secure systems."
           caseStudies={caseStudies}
           className="py-20"
         />
         
         {/* CTA Section */}
         <CTASection
-          title="Ready to unlock AI for your enterprise?"
-          description="Request a tailored demo and see how Astella transforms operations."
+          title="Ready to improve enterprise operations?"
+          description="Request a tailored demo and see how Wakala Agency improves operational workflows."
           buttonText="Request Demo"
           buttonLink="/contact"
           variant="gradient"

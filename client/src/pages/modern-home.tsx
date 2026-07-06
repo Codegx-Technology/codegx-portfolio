@@ -46,21 +46,21 @@ export default function ModernHome() {
   // Sample testimonials
   const testimonials = [
     {
-      quote: "Codegx Technologies has transformed our digital infrastructure with their innovative AI solutions.",
+      quote: "Codegx Technologies helped us improve delivery workflows with dependable automation and clear implementation.",
       name: "Elena Park",
       title: "CTO",
       company: "Innovex Solutions",
       avatar: "https://randomuser.me/api/portraits/women/1.jpg",
     },
     {
-      quote: "The AI solutions developed by Codegx have increased our operational efficiency by 40% in just three months.",
+      quote: "The automation systems developed by Codegx increased our operational efficiency by 40% in just three months.",
       name: "Michael Chen",
       title: "Director of Operations",
       company: "Global Logistics Inc.",
       avatar: "https://randomuser.me/api/portraits/men/2.jpg",
     },
     {
-      quote: "Working with Codegx has been transformative. Their expertise in AI and blockchain is unmatched in the industry.",
+      quote: "Working with Codegx gave us practical engineering guidance and systems we can maintain as we scale.",
       name: "Sarah Johnson",
       title: "CEO",
       company: "TechVision Enterprises",
@@ -71,7 +71,7 @@ export default function ModernHome() {
   // Sample case studies
   const caseStudies = [
     {
-      title: "AI-Powered Supply Chain Optimization",
+      title: "Supply Chain Optimization",
       description: "Implemented predictive analytics to optimize inventory management and reduce costs by 30%.",
       industry: "Manufacturing",
       logo: "https://via.placeholder.com/120x40?text=ManufactureCo",
@@ -96,8 +96,8 @@ export default function ModernHome() {
   return (
     <>
       <Head
-        title="Codegx Technologies | Enterprise AI Solutions"
-        description="Codegx Technologies delivers cutting-edge artificial intelligence solutions for enterprise, education, and public service."
+        title="Codegx Technologies | Enterprise Technology Solutions"
+        description="Codegx Technologies delivers enterprise software, automation, and digital transformation solutions for organizations that need measurable operational results."
       />
       
       <MainLayout 
@@ -171,7 +171,7 @@ export default function ModernHome() {
                     <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8a951] dark:bg-[#9f7b42]"></span>
                   </span>
-                  Pioneering Digital Transformation
+                  Practical Digital Transformation
                 </motion.div>
 
                 <motion.h1
@@ -180,8 +180,8 @@ export default function ModernHome() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white"
                 >
-                  Elevate Your Business with <br />
-                  <span className="text-[#c8a951] dark:text-[#9f7b42]">Intelligent</span> Technology
+                  Improve Operations with <br />
+                  <span className="text-[#c8a951] dark:text-[#9f7b42]">Dependable</span> Technology
                 </motion.h1>
 
                 <motion.p
@@ -190,7 +190,7 @@ export default function ModernHome() {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="text-xs md:text-sm text-slate-300 max-w-lg"
                 >
-                  Codegx Technologies delivers cutting-edge artificial intelligence solutions that drive real business results and measurable ROI.
+                  Codegx Technologies delivers software and automation systems that improve operations, visibility, and measurable delivery outcomes.
                 </motion.p>
                 
                 <motion.div
@@ -295,7 +295,7 @@ export default function ModernHome() {
                   >
                     <img 
                       src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                      alt="AI Innovation" 
+                      alt="Enterprise automation implementation" 
                       className="w-full h-auto object-cover rounded-2xl"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 to-transparent"></div>
@@ -376,7 +376,7 @@ export default function ModernHome() {
         {/* Case Studies Section */}
         <CaseStudyGrid
           title="Featured Case Studies"
-          description="Explore how we've helped organizations achieve their business goals with AI and blockchain solutions."
+          description="Explore how we've helped organizations achieve business goals with automation, software delivery, and secure systems."
           caseStudies={caseStudies}
           className="py-20 bg-[#2c1a22]/5 dark:bg-[#1f1a2c]/5"
         />

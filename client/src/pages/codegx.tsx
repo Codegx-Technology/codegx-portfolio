@@ -14,12 +14,10 @@ export default function CodegxLanding() {
     <Layout className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Abstract Animated Background */}
+        {/* Structured background */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
           <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -35,55 +33,55 @@ export default function CodegxLanding() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold font-inter leading-tight mb-6">
-              Innovative <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Technology</span> Solutions
+              Enterprise <span className="text-primary">Technology</span> Solutions
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-muted-foreground">
-              Empowering businesses with cutting-edge AI, blockchain, and smart city technologies.
-              Choose your path to explore our offerings.
+              Codegx Technologies delivers practical software, automation, and digital transformation services
+              for organizations that need measurable operational results.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-16">
-              {/* Personal Portfolio Card */}
+              {/* Corporate Services Card */}
               <motion.div
                 whileHover={{ y: -10 }}
                 className="bg-card rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="h-48 bg-gradient-to-r from-primary/20 to-purple-600/20 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-r from-primary/15 to-primary/5 flex items-center justify-center">
                   <div className="w-24 h-24 rounded-full bg-background flex items-center justify-center">
-                    <i className="fas fa-user text-4xl text-primary"></i>
+                    <i className="fas fa-building text-4xl text-primary"></i>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-2">Personal Portfolio</h2>
+                  <h2 className="text-2xl font-bold mb-2">Codegx Services</h2>
                   <p className="text-muted-foreground mb-6">
-                    Explore Peter O. Oluoch's personal journey, skills, and individual projects.
+                    Explore the enterprise services, delivery model, and technical capabilities of Codegx Technologies.
                   </p>
-                  <Link href="/portfolio">
+                  <Link href="/services">
                     <Button className="w-full">
-                      Visit Portfolio <i className="fas fa-arrow-right ml-2"></i>
+                      View Services <i className="fas fa-arrow-right ml-2"></i>
                     </Button>
                   </Link>
                 </div>
               </motion.div>
               
-              {/* Astella AI Card */}
+              {/* Wakala Agency Card */}
               <motion.div
                 whileHover={{ y: -10 }}
                 className="bg-card rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="h-48 bg-gradient-to-r from-blue-600/20 to-primary/20 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-r from-blue-600/10 to-primary/15 flex items-center justify-center">
                   <div className="w-24 h-24 rounded-full bg-background flex items-center justify-center">
-                    <i className="fas fa-robot text-4xl text-primary"></i>
+                    <i className="fas fa-cogs text-4xl text-primary"></i>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-2">Astella AI</h2>
+                  <h2 className="text-2xl font-bold mb-2">Wakala Agency</h2>
                   <p className="text-muted-foreground mb-6">
-                    Discover our AI agency, services, case studies, and thought leadership content.
+                    Discover the Codegx automation division for lead capture, reporting, onboarding, and workflow systems.
                   </p>
                   <Link href="/agency">
                     <Button className="w-full">
-                      Explore Astella <i className="fas fa-arrow-right ml-2"></i>
+                      Explore Wakala <i className="fas fa-arrow-right ml-2"></i>
                     </Button>
                   </Link>
                 </div>
@@ -114,7 +112,8 @@ export default function CodegxLanding() {
           >
             <h2 className="text-3xl font-bold font-inter mb-4">About Codegx Technologies</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Codegx Technologies is the parent company with two main wings: Peter O. Oluoch's personal portfolio and Astella AI agency.
+              Codegx Technologies is the parent company for enterprise software delivery and Wakala Agency,
+              its specialized automation division.
             </p>
           </motion.div>
           

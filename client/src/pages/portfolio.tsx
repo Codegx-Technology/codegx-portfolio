@@ -74,7 +74,7 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       id: "1",
-      title: "AI-Powered Analytics Dashboard",
+      title: "Predictive Analytics Dashboard",
       description: "A comprehensive analytics platform with predictive capabilities and real-time data visualization.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       technologies: ["React", "TensorFlow.js", "D3.js", "Node.js"],
@@ -128,7 +128,7 @@ export default function Portfolio() {
     {
       id: "6",
       title: "E-commerce Recommendation Engine",
-      description: "An AI-powered recommendation system that increases conversion rates through personalized product suggestions.",
+      description: "A recommendation system that increases conversion rates through personalized product suggestions.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       technologies: ["Python", "TensorFlow", "Flask", "Redis"],
       category: "AI & Machine Learning",

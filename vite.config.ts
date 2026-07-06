@@ -42,7 +42,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
     sourcemap: mode !== 'production',
-    minify: mode === 'production' ? 'esbuild' : false,
+    minify: mode === 'production' ? ("esbuild" as const) : false,
     // Copy public files to build output
     copyPublicDir: true,
     // Target modern browsers for smaller bundle

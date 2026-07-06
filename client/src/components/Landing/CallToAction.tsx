@@ -28,7 +28,7 @@ export function CallToAction() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
             Whether you need a personal consultation or enterprise-level solutions, 
-            I'm here to help transform your ideas into reality with cutting-edge technology.
+            I'm here to help turn operational needs into dependable software and automation.
           </p>
 
           <motion.div
@@ -51,7 +51,7 @@ export function CallToAction() {
               className="border-primary text-primary hover:bg-primary/10 rounded-full px-8"
               onClick={() => window.location.href = "/agency"}
             >
-              <i className="fas fa-building mr-2"></i>Hire Astella
+              <i className="fas fa-building mr-2"></i>Work With Wakala
             </Button>
             <Button
               size="lg"

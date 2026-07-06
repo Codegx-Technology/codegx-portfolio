@@ -38,7 +38,7 @@ export function HomeHero() {
 
   return (
     <header id="hero" className="relative min-h-screen flex items-center overflow-x-hidden pt-20 w-full">
-      {/* Abstract Animated Background */}
+      {/* Structured background */}
 
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10 w-full">
@@ -61,12 +61,12 @@ export function HomeHero() {
               Welcome to the corporate homepage of Codegx Technologies, showcasing our comprehensive solutions and the specialized services of Wakala Agency.
             </p>
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Link href="/portfolio">
+              <Link href="/services">
                 <Button
                   size="sm"
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-primary/30 rounded-full px-6 sm:px-8"
                 >
-                  <i className="fas fa-user mr-2"></i>Personal Portfolio
+                  <i className="fas fa-building mr-2"></i>Codegx Services
                 </Button>
               </Link>
               <Link href="/agency">
@@ -75,7 +75,7 @@ export function HomeHero() {
                   variant="outline"
                   className="w-full sm:w-auto border-primary text-primary hover:bg-primary/10 rounded-full px-6 sm:px-8"
                 >
-                  <i className="fas fa-building mr-2"></i>Astella AI Agency
+                  <i className="fas fa-building mr-2"></i>Wakala Agency
                 </Button>
               </Link>
               <Button
@@ -132,14 +132,14 @@ export function HomeHero() {
                 <div className="text-center">
                   <h3 className="text-xl font-bold mb-2">Codegx Technologies</h3>
                   <p className="text-muted-foreground mb-4">
-                    Innovative technology solutions for businesses and organizations
+                    Enterprise software and automation for businesses and organizations
                   </p>
                   <div className="flex justify-center space-x-4 mb-4">
                     <div className="flex flex-col items-center">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
                         <i className="fas fa-user text-primary"></i>
                       </div>
-                      <span className="text-sm">Portfolio</span>
+                      <span className="text-sm">Services</span>
                     </div>
                     <div className="flex flex-col items-center">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">

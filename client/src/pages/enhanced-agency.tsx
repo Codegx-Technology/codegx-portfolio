@@ -31,13 +31,13 @@ export default function EnhancedAgency() {
   // Services data
   const services = [
     {
-      icon: "fas fa-robot",
-      title: "AI Strategy Consulting",
-      description: "Develop a comprehensive AI roadmap tailored to your business objectives and industry challenges.",
+      icon: "fas fa-cogs",
+      title: "Automation Strategy Consulting",
+      description: "Develop a practical automation roadmap tailored to your business objectives and operating constraints.",
       href: "/services/ai-strategy",
     },
     {
-      icon: "fas fa-brain",
+      icon: "fas fa-project-diagram",
       title: "Machine Learning Solutions",
       description: "Custom ML models that deliver actionable insights and automate complex decision processes.",
       href: "/services/machine-learning",
@@ -71,8 +71,8 @@ export default function EnhancedAgency() {
   return (
     <>
       <Head
-        title="Astella AI | Agency"
-        description="Astella AI is a premier agency delivering cutting-edge artificial intelligence solutions for enterprise clients."
+        title="Wakala Agency | Codegx Technologies"
+        description="Wakala Agency is the automation division of Codegx Technologies, delivering governed workflows, reporting, and operational systems."
       />
       
       <MainLayout 
@@ -98,7 +98,7 @@ export default function EnhancedAgency() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="inline-block px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium mb-2"
                 >
-                  Why Choose Astella
+                  Why Choose Wakala
                 </motion.div>
                 
                 <motion.h1
@@ -107,7 +107,7 @@ export default function EnhancedAgency() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight"
                 >
-                  A Stellar Force for <span className="text-secondary">AI</span> Innovation
+                  Governed Automation for <span className="text-secondary">Operational</span> Scale
                 </motion.h1>
                 
                 <motion.p
@@ -116,7 +116,7 @@ export default function EnhancedAgency() {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   className="text-xl text-muted-foreground"
                 >
-                  We combine deep technical expertise with strategic business acumen to deliver AI solutions that create measurable value.
+                  We combine technical delivery with operational context to build automation systems that create measurable value.
                 </motion.p>
               </motion.div>
             </div>
@@ -129,7 +129,7 @@ export default function EnhancedAgency() {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Approach</h2>
               <p className="text-lg text-muted-foreground">
-                We don't just implement AI – we transform businesses through a proven methodology that ensures measurable results.
+                We do not just add tools. We improve workflows through a proven delivery method that keeps outcomes measurable.
               </p>
             </div>
             
@@ -150,7 +150,7 @@ export default function EnhancedAgency() {
                 {
                   number: "02",
                   title: "Design",
-                  description: "Our experts design custom AI solutions tailored to your specific needs and constraints.",
+                  description: "Our experts design automation systems tailored to your specific needs and constraints.",
                   icon: "fas fa-pencil-ruler"
                 },
                 {
@@ -187,7 +187,7 @@ export default function EnhancedAgency() {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">Our Services</h2>
               <p className="text-lg text-muted-foreground">
-                Comprehensive AI solutions designed to address your most complex business challenges.
+                Comprehensive automation services designed to address your most complex operational challenges.
               </p>
             </div>
             
@@ -221,8 +221,8 @@ export default function EnhancedAgency() {
         
         {/* CTA Section */}
         <CTASection
-          title="Ready to transform your business with AI?"
-          description="Schedule a consultation with our experts to explore how Astella can help you achieve your goals."
+          title="Ready to improve your operations?"
+          description="Schedule a consultation with our experts to explore how Wakala Agency can help you achieve your goals."
           buttonText="Book a Consultation"
           buttonLink="/contact"
           variant="angled"

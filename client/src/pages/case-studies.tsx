@@ -116,8 +116,8 @@ export default function CaseStudies() {
   return (
     <PageWrapper>
       <Head
-        title="Case Studies | Astella AI"
-        description="Explore our portfolio of successful AI and blockchain projects across various industries."
+        title="Case Studies | Codegx Technologies"
+        description="Explore Codegx Technologies projects across automation, software delivery, and digital transformation."
       />
 
       <PageSection
@@ -137,7 +137,7 @@ export default function CaseStudies() {
           <Heading1 className="mb-2 md:mb-3">Case Studies</Heading1>
           <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
             Explore our portfolio of successful projects and discover how we've helped organizations
-            across various industries solve complex challenges with innovative technology solutions.
+            across various industries solve operational challenges with dependable technology solutions.
           </Paragraph>
         </motion.div>
 

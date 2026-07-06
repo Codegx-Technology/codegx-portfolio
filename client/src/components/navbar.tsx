@@ -34,7 +34,7 @@ export function Navbar() {
   ];
 
   const agencyLinks = [
-    { href: "/why-astella", label: "Why Astella" },
+    { href: "/why-wakala", label: "Why Wakala" },
     { href: "/services", label: "Services" },
     { href: "/pricing", label: "Pricing" },
     { href: "/quote", label: "Get a Quote" },

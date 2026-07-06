@@ -15,12 +15,10 @@ export function PortfolioHero() {
 
   return (
     <header id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Abstract Animated Background */}
+      {/* Structured background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-1/2 h-screen bg-gradient-to-bl from-primary/5 to-transparent transform -skew-x-12"></div>
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -40,11 +38,10 @@ export function PortfolioHero() {
               I'm <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Peter O. Oluoch</span>
             </h1>
             <h2 className="text-2xl sm:text-3xl mt-2 font-medium">
-              Founder of <span className="text-primary">Astella AI</span>
+              Founder of <span className="text-primary">Codegx Technologies</span>
             </h2>
             <p className="mt-6 text-xl leading-relaxed opacity-90">
-              Empowering businesses with cutting-edge AI, blockchain, and smart city technologies. 
-              Delivering measurable impact through innovative digital solutions.
+              Building dependable software, automation, and secure digital systems for organizations that need measurable operational outcomes.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button
@@ -60,7 +57,7 @@ export function PortfolioHero() {
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 rounded-full px-8"
                 >
-                  <i className="fas fa-building mr-2"></i>Explore Astella
+                  <i className="fas fa-building mr-2"></i>Explore Wakala
                 </Button>
               </Link>
               <Button

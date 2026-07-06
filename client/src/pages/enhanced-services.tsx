@@ -31,16 +31,16 @@ export default function EnhancedServices() {
   // Services data
   const services = [
     {
-      icon: "fas fa-robot",
-      title: "AI Strategy Consulting",
-      description: "Develop a comprehensive AI roadmap tailored to your business objectives and industry challenges.",
+      icon: "fas fa-cogs",
+      title: "Automation Strategy Consulting",
+      description: "Develop a practical automation roadmap tailored to your business objectives and operating constraints.",
       features: ["AI Readiness Assessment", "Technology Selection", "Implementation Roadmap", "ROI Analysis"],
       href: "/services/ai-strategy",
       badge: "Popular",
       badgeVariant: "secondary",
     },
     {
-      icon: "fas fa-brain",
+      icon: "fas fa-project-diagram",
       title: "Machine Learning Solutions",
       description: "Custom ML models that deliver actionable insights and automate complex decision processes.",
       features: ["Supervised Learning", "Unsupervised Learning", "Reinforcement Learning", "Deep Learning"],
@@ -81,8 +81,8 @@ export default function EnhancedServices() {
   return (
     <>
       <Head
-        title="Astella AI | Services"
-        description="Explore our comprehensive AI services designed to transform your business with cutting-edge technology."
+        title="Wakala Agency | Services"
+        description="Explore practical automation services designed to improve business workflows and measurable operations."
       />
       
       <MainLayout 
@@ -117,7 +117,7 @@ export default function EnhancedServices() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight"
                 >
-                  Comprehensive <span className="text-secondary">AI</span> Solutions
+                  Comprehensive <span className="text-secondary">Automation</span> Services
                 </motion.h1>
 
                 <motion.p

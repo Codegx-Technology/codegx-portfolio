@@ -43,7 +43,7 @@ export default function AgencyPage() {
 
   // Set page title based on agency name
   useEffect(() => {
-    document.title = agencyProfile ? `${agencyProfile.name} – About` : "Astella AI – About";
+    document.title = agencyProfile ? `${agencyProfile.name} - About` : "Wakala Agency - About";
   }, [agencyProfile]);
 
   // Page transition variants

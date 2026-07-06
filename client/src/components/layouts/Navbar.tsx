@@ -59,7 +59,7 @@ export function Navbar() {
 
   // Agency dropdown links
   const agencyLinks: NavLink[] = [
-    { href: "/why-astella", label: "Why Astella", isPage: true },
+    { href: "/why-wakala", label: "Why Wakala", isPage: true },
     { href: "/services", label: "Services", isPage: true },
     { href: "/pricing", label: "Pricing", isPage: true },
     { href: "/quote", label: "Get a Quote", isPage: true },

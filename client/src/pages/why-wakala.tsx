@@ -50,12 +50,12 @@ export default function AboutWakala() {
     {
       year: "2018",
       title: "The Spark",
-      description: "Identified a gap in accessible AI solutions for African startups and SMEs. Started experimenting with AI implementations in resource-constrained environments."
+      description: "Identified a gap in practical automation for African startups and SMEs. Started testing workflow systems that could operate reliably in resource-constrained environments."
     },
     {
       year: "2019",
       title: "First Startup Success",
-      description: "Helped a local fintech startup implement AI-powered fraud detection, reducing fraud by 65% and validating our approach to practical AI solutions."
+      description: "Helped a local fintech startup improve fraud review workflows, reducing fraud exposure by 65% and validating our focus on practical, measurable systems."
     },
     {
       year: "2021",
@@ -65,12 +65,12 @@ export default function AboutWakala() {
     {
       year: "2022",
       title: "Startup Ecosystem Growth",
-      description: "Partnered with multiple startup accelerators across East Africa, helping early-stage companies integrate AI into their products from day one."
+      description: "Partnered with multiple startup accelerators across East Africa, helping early-stage companies build automation into their products from day one."
     },
     {
       year: "2023",
       title: "Innovation & Impact",
-      description: "Achieved partnerships, with clients reporting average 40% efficiency gains and 3x faster time-to-market through AI integration."
+      description: "Expanded client partnerships, with teams reporting average 40% efficiency gains and 3x faster time-to-market through governed automation."
     },
     {
       year: "2025",
@@ -93,7 +93,7 @@ export default function AboutWakala() {
           <PageHeader
             title={
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                We Build AI With{" "}
+                We Build Automation With{" "}
                 <span className="text-primary">
                   Precision and Impact
                 </span>
@@ -145,9 +145,8 @@ export default function AboutWakala() {
                 <i className="fas fa-quote-left"></i>
               </div>
               <blockquote className="text-base sm:text-lg md:text-xl italic mb-6 leading-relaxed">
-                "Technology is most powerful when it addresses real human needs. At Astella, we're committed to
-                creating solutions that don't just showcase technical brilliance but actually improve lives and
-                create opportunities."
+                "Technology is most powerful when it addresses real operational needs. At Wakala Agency, we build
+                systems that improve delivery, reduce manual effort, and create measurable opportunities."
               </blockquote>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
@@ -293,8 +292,8 @@ export default function AboutWakala() {
             Ready to Build Something Impactful Together?
           </Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
-            Whether you're looking to transform your organization with AI, develop a blockchain solution,
-            or explore smart city technologies, we're here to help turn your vision into reality.
+            Whether you need lead capture automation, client reporting, operational workflows, or secure
+            system integration, we can help turn the right process into a dependable platform.
           </Paragraph>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Link href="/contact">

@@ -20,7 +20,7 @@ export default function UIKitPage() {
   const testimonials: Testimonial[] = [
     {
       id: "1",
-      quote: "Working with Codegx Technologies transformed our business. Their AI solutions helped us increase efficiency by 40% and reduce costs significantly.",
+      quote: "Working with Codegx Technologies improved our operating workflows and helped us increase efficiency by 40%.",
       name: "Sarah Johnson",
       title: "CTO",
       company: "TechVision Inc.",
@@ -38,7 +38,7 @@ export default function UIKitPage() {
     },
     {
       id: "3",
-      quote: "We've worked with several AI agencies, but Codegx Technologies stands out for their technical expertise and strategic thinking. Highly recommended!",
+      quote: "We've worked with several technology partners, but Codegx Technologies stands out for technical delivery and strategic thinking. Highly recommended.",
       name: "Emily Rodriguez",
       title: "CEO",
       company: "FutureTech",
@@ -241,20 +241,20 @@ export default function UIKitPage() {
             
             <EnterpriseGrid cols={3} gap="md">
               <FeatureCard
-                title="AI Strategy"
-                description="Develop a comprehensive AI strategy tailored to your business goals and challenges."
+                title="Automation Strategy"
+                description="Develop a practical automation strategy tailored to your business goals and constraints."
                 icon={<BarChart className="h-5 w-5" />}
               />
               
               <FeatureCard
                 title="Custom Development"
-                description="Build custom AI solutions designed specifically for your unique business needs."
+                description="Build custom software and automation systems designed for your unique business needs."
                 icon={<Code className="h-5 w-5" />}
               />
               
               <FeatureCard
                 title="Innovation Labs"
-                description="Explore cutting-edge AI technologies and concepts in our dedicated innovation labs."
+                description="Explore practical automation patterns and implementation concepts in dedicated innovation labs."
                 icon={<Lightbulb className="h-5 w-5" />}
               />
             </EnterpriseGrid>

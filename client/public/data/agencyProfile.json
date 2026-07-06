@@ -1,7 +1,7 @@
 {
-  "name": "Codegx Technology",
-  "tagline": "Transforming Ideas into Digital Reality",
-  "description": "Codegx Technology is a forward-thinking software development agency specializing in creating innovative digital solutions for businesses across various industries. We combine cutting-edge technologies with creative problem-solving to deliver exceptional products that drive growth and efficiency.",
+  "name": "Wakala Agency",
+  "tagline": "Governed automation under Codegx Technologies",
+  "description": "Wakala Agency is the automation division of Codegx Technologies. It helps organizations connect lead capture, onboarding, reporting, and workflow systems into dependable operations.",
   "logo": "/assets/logo.png",
   "website": "https://codegx.tech",
   "services": [
@@ -17,7 +17,7 @@
     },
     {
       "title": "AI & Machine Learning",
-      "description": "Intelligent solutions that leverage data analytics, predictive modeling, and automation to solve complex business problems.",
+      "description": "Machine learning and automation systems tied to clear business goals, operational data, and measurable outcomes.",
       "icon": "brain"
     },
     {
@@ -137,7 +137,7 @@
   ],
   "testimonials": [
     {
-      "quote": "Codegx Technology transformed our business with their innovative solutions. Their team's expertise and dedication exceeded our expectations.",
+      "quote": "Codegx Technologies helped us turn scattered processes into reliable operating systems. Their team's delivery discipline exceeded our expectations.",
       "author": "David Smith",
       "position": "CTO, TechCorp International",
       "photo": "/assets/testimonials/john.jpg"
@@ -149,7 +149,7 @@
       "photo": "/assets/testimonials/lisa.jpg"
     },
     {
-      "quote": "The blockchain solution developed by Codegx revolutionized our payment processing system, making it more secure and efficient.",
+      "quote": "The secure workflow solution developed by Codegx improved our payment operations and made the process easier to audit.",
       "author": "Robert Johnson",
       "position": "CEO, FinServe Solutions",
       "photo": "/assets/testimonials/robert.jpg"

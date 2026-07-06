@@ -6,7 +6,7 @@
       "client": "TendaNow",
       "industry": "Behavioral Change / Wellness / Productivity",
       "category": "AI Accountability & Behavioral Transformation Platform",
-      "summary": "An MVP-stage AI-powered accountability platform designed to make goal achievement accessible and affordable globally, with Africa-first approach. Currently in active development with WhatsApp integration and multilingual support starting with English, Swahili, and Sheng (additional languages coming soon).",
+      "summary": "An MVP-stage accountability platform designed to make goal achievement accessible and affordable globally, with an Africa-first approach. Currently in active development with WhatsApp integration and multilingual support starting with English, Swahili, and Sheng (additional languages coming soon).",
       "challenge": "Millions of people worldwide struggle with goal completion and long-term behavioral change due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive, not localized, and don't account for local communication preferences. There's a critical gap between aspiration and execution—particularly acute in emerging markets where users prefer messaging-first platforms.",
       "solution": "We're building TendaNow as a WhatsApp-first AI accountability platform that meets users where they already are. The MVP focuses on core features: personalized AI coaching through WhatsApp, culturally-adapted messaging (English, Swahili, Sheng with more languages in development), and real-time progress tracking. We're currently validating user engagement patterns and refining the AI coaching experience based on early user feedback, with expansion to other messaging platforms and markets planned.",
       "impact": [
@@ -80,13 +80,13 @@
     },
     {
       "id": "healthcare-ai-diagnostics",
-      "title": "AI-Powered Diagnostic Tool for Rural Healthcare",
+      "title": "Diagnostic Support Tool for Rural Healthcare",
       "client": "MediTech Solutions",
       "industry": "Healthcare",
       "icon": "HealthcareAIDiagnosticsIcon",
-      "summary": "Developed an AI-powered diagnostic tool that helps healthcare providers in rural areas diagnose common conditions with limited resources.",
+      "summary": "Developed a diagnostic support tool that helps healthcare providers in rural areas assess common conditions with limited resources.",
       "challenge": "Rural healthcare facilities in developing regions face significant challenges including limited access to specialists, diagnostic equipment, and reliable internet connectivity. MediTech Solutions needed a solution that could work in low-resource settings while providing accurate diagnostic support.",
-      "solution": "We developed an AI-powered diagnostic tool that runs on standard tablets and smartphones, with offline capabilities. The system uses computer vision and machine learning algorithms to analyze patient symptoms, vital signs, and basic test results to suggest potential diagnoses and treatment options. The solution includes a knowledge base that is regularly updated when connectivity is available.",
+      "solution": "We developed a diagnostic support tool that runs on standard tablets and smartphones, with offline capabilities. The system uses computer vision and machine learning algorithms to analyze patient symptoms, vital signs, and basic test results to suggest potential diagnoses and treatment options. The solution includes a knowledge base that is regularly updated when connectivity is available.",
       "impact": [
         "Reduced diagnostic errors by 37%",
         "Decreased referral time by 58%",
@@ -123,7 +123,7 @@
       "featured": true,
       "year": 2023,
       "testimonial": {
-        "quote": "The fraud detection system developed by Astella AI has been a game-changer for our business. Not only has it dramatically reduced our fraud losses, but it's also improved the experience for our legitimate customers.",
+        "quote": "The fraud detection system developed by Codegx Technologies has been a game-changer for our business. Not only has it dramatically reduced our fraud losses, but it's also improved the experience for our legitimate customers.",
         "author": "James Ochieng",
         "position": "CTO, AfriPay"
       }

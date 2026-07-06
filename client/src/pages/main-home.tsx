@@ -61,7 +61,7 @@ export default function MainHome() {
             </Link>
             <div className="flex items-center space-x-6">
               <Link href="/agency" className="hover:text-primary transition">
-                AI Agency
+                Wakala Agency
               </Link>
               <Link href="/portfolio" className="hover:text-primary transition">
                 Portfolio
@@ -95,7 +95,7 @@ export default function MainHome() {
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               <Link href="/agency">
                 <Button size="sm" className="rounded-full">
-                  Explore AI Agency
+                  Explore Wakala
                 </Button>
               </Link>
               <Link href="/portfolio">
@@ -131,12 +131,12 @@ export default function MainHome() {
               <ul className="space-y-3 md:space-y-4">
                 <li className="flex items-start">
                   <div className="mr-3 md:mr-4 mt-1 bg-primary/10 p-2 rounded-full shrink-0">
-                    <i className="fas fa-robot text-primary text-sm"></i>
+                    <i className="fas fa-cogs text-primary text-sm"></i>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sm md:text-base">AI Agency</h3>
+                    <h3 className="font-semibold text-sm md:text-base">Wakala Agency</h3>
                     <p className="text-xs md:text-sm text-muted-foreground">
-                      Our specialized AI division focused on developing intelligent solutions for businesses and government agencies.
+                      Our Codegx automation division for governed workflows, reporting, onboarding, and operating systems.
                     </p>
                   </div>
                 </li>
@@ -209,7 +209,7 @@ export default function MainHome() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {/* AI Agency Card */}
+            {/* Wakala Agency Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -219,17 +219,17 @@ export default function MainHome() {
             >
               <div className="h-40 md:h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <i className="fas fa-robot text-white text-4xl md:text-5xl"></i>
+                  <i className="fas fa-cogs text-white text-4xl md:text-5xl"></i>
                 </div>
               </div>
               <div className="p-4 md:p-6">
-                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">AI Agency</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Wakala Agency</h3>
                 <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
-                  Our AI division specializes in developing intelligent solutions using machine learning, natural language processing, and data analytics to solve complex business problems.
+                  Wakala Agency operates under Codegx Technologies to connect lead capture, onboarding, reporting, and workflow automation into dependable operations.
                 </p>
                 <Link href="/agency">
                   <Button className="w-full text-xs md:text-sm">
-                    Explore AI Agency <i className="fas fa-arrow-right ml-2"></i>
+                    Explore Wakala <i className="fas fa-arrow-right ml-2"></i>
                   </Button>
                 </Link>
               </div>

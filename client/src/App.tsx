@@ -22,7 +22,7 @@ const Home = lazy(() => import("@/pages/index"));
 const AgencyPage = lazy(() => import("@/pages/agency"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
 const Blog = lazy(() => import("@/pages/blog"));
-const WhyAstella = lazy(() => import("@/pages/why-astella"));
+const AboutWakala = lazy(() => import("@/pages/why-wakala"));
 import "@/styles/globals.css";
 
 function AppRouter() {
@@ -40,7 +40,7 @@ function AppRouter() {
         </Route>
         {/* Portfolio route removed - available in 'portfolio' branch */}
         <Route path="/agency">
-          {() => <LazyRoute component={WhyAstella} />}
+          {() => <LazyRoute component={AboutWakala} />}
         </Route>
         {/* Agency services route removed - content merged into main /services page */}
         <Route path="/agency/projects">
@@ -73,8 +73,8 @@ function AppRouter() {
             return <LazyRoute component={BlogPost} />;
           }}
         </Route>
-        <Route path="/why-astella">
-          {() => <LazyRoute component={WhyAstella} />}
+        <Route path="/why-wakala">
+          {() => <LazyRoute component={AboutWakala} />}
         </Route>
         <Route path="/services">
           {() => {

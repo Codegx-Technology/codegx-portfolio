@@ -31,7 +31,7 @@ export default function EnhancedNavbarDemo() {
         logo={{
           light: "/logo-dark.svg",
           dark: "/logo-light.svg",
-          alt: "Astella AI"
+          alt: "Codegx Technologies"
         }}
       />
 

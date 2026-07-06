@@ -36,8 +36,8 @@ export default function About() {
   return (
     <>
       <Head
-        title="About Codegx Technologies | Enterprise AI Solutions"
-        description="Learn about Codegx Technologies - pioneering digital transformation through innovative AI and technology solutions for enterprises worldwide."
+        title="About Codegx Technologies | Enterprise Technology Solutions"
+        description="Learn about Codegx Technologies, delivering enterprise software, automation, and digital transformation solutions for organizations worldwide."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
@@ -53,7 +53,7 @@ export default function About() {
               About Codegx Technologies
             </h1>
             <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 px-2">
-              Pioneering digital transformation through innovative technology solutions for enterprises worldwide.
+              Delivering enterprise software, automation, and digital transformation solutions for organizations worldwide.
             </p>
           </div>
         </motion.section>
@@ -69,14 +69,14 @@ export default function About() {
           <motion.div variants={itemVariants} className="space-y-2">
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h2>
             <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              To empower organizations with cutting-edge AI and technology solutions that drive innovation, efficiency, and sustainable growth. We believe in transforming complex business challenges into opportunities for digital excellence.
+              To help organizations improve operations with practical software, governed automation, and dependable technology delivery. We turn complex business challenges into clear systems that can be maintained and measured.
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-2">
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h2>
             <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              To be the trusted partner for enterprises seeking transformative technology solutions that create lasting competitive advantages. We envision a future where AI and innovation are accessible to organizations of all sizes.
+              To be the trusted partner for enterprises seeking technology solutions that create durable operational advantage. We envision a future where automation is governed, practical, and accessible to organizations of all sizes.
             </p>
           </motion.div>
         </motion.section>
@@ -96,7 +96,7 @@ export default function About() {
             {[
               {
                 title: "Innovation",
-                description: "We continuously push boundaries to deliver cutting-edge solutions that solve real-world problems.",
+                description: "We apply technology where it solves real operational problems and creates measurable value.",
                 icon: RocketIcon,
               },
               {
@@ -210,4 +210,3 @@ export default function About() {
     </>
   );
 }
-

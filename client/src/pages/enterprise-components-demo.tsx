@@ -11,21 +11,21 @@ export default function EnterpriseComponentsDemo() {
   // Sample testimonials
   const testimonials = [
     {
-      quote: "Astella revolutionized how we deliver AI-powered services. Their team is brilliant.",
+      quote: "Codegx Technologies helped us convert manual delivery steps into reliable operating workflows.",
       name: "Elena Park",
       title: "CTO",
       company: "Innovex Solutions",
       avatar: "https://randomuser.me/api/portraits/women/1.jpg",
     },
     {
-      quote: "The AI solutions developed by Astella have increased our operational efficiency by 40% in just three months.",
+      quote: "The automation systems developed by Codegx increased our operational efficiency by 40% in just three months.",
       name: "Michael Chen",
       title: "Director of Operations",
       company: "Global Logistics Inc.",
       avatar: "https://randomuser.me/api/portraits/men/2.jpg",
     },
     {
-      quote: "Working with Astella has been transformative. Their expertise in AI and blockchain is unmatched in the industry.",
+      quote: "Working with Codegx gave us practical engineering guidance and systems we can maintain as we scale.",
       name: "Sarah Johnson",
       title: "CEO",
       company: "TechVision Enterprises",
@@ -36,7 +36,7 @@ export default function EnterpriseComponentsDemo() {
   // Sample case studies
   const caseStudies = [
     {
-      title: "AI-Powered Supply Chain Optimization",
+      title: "Supply Chain Optimization",
       description: "Implemented predictive analytics to optimize inventory management and reduce costs by 30%.",
       industry: "Manufacturing",
       logo: "https://via.placeholder.com/120x40?text=ManufactureCo",
@@ -68,7 +68,7 @@ export default function EnterpriseComponentsDemo() {
       <PageWrapper>
         <PageHeader
           title="Enterprise Components Demo"
-          description="Showcase of enterprise-grade UI components for Astella AI"
+          description="Showcase of enterprise-grade UI components for Codegx Technologies"
         />
         
         <PageSection>
@@ -80,8 +80,8 @@ export default function EnterpriseComponentsDemo() {
           <div className="space-y-12">
             <div className="border border-border rounded-lg overflow-hidden">
               <CTASection
-                title="Ready to unlock AI for your enterprise?"
-                description="Request a tailored demo and see how Astella transforms operations."
+                title="Ready to improve enterprise operations?"
+                description="Request a tailored demo and see how Wakala Agency improves operational workflows."
                 buttonText="Request Demo"
                 buttonLink="/contact"
                 variant="default"
@@ -90,8 +90,8 @@ export default function EnterpriseComponentsDemo() {
             
             <div className="border border-border rounded-lg overflow-hidden">
               <CTASection
-                title="Transform your business with AI"
-                description="Our solutions are designed to drive real business results and ROI."
+                title="Improve your business with automation"
+                description="Our solutions are designed to support measurable operational results."
                 buttonText="Get Started"
                 buttonLink="/quote"
                 variant="gradient"
@@ -101,7 +101,7 @@ export default function EnterpriseComponentsDemo() {
             <div className="border border-border rounded-lg overflow-hidden">
               <CTASection
                 title="Ready for the next step?"
-                description="Schedule a consultation with our AI experts today."
+                description="Schedule a consultation with our automation experts today."
                 buttonText="Book a Call"
                 buttonLink="/contact"
                 variant="angled"

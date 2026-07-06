@@ -27,21 +27,21 @@ export function Testimonials({
   // Default testimonials if none provided
   const defaultTestimonials: Testimonial[] = [
     {
-      quote: "Astella revolutionized how we deliver AI-powered services. Their team is brilliant.",
+      quote: "Codegx Technologies helped us convert manual delivery steps into reliable operating workflows.",
       name: "Elena Park",
       title: "CTO",
       company: "Innovex Solutions",
       avatar: "/avatars/client1.jpg",
     },
     {
-      quote: "The AI solutions developed by Astella have increased our operational efficiency by 40% in just three months.",
+      quote: "The automation systems developed by Codegx increased our operational efficiency by 40% in just three months.",
       name: "Michael Chen",
       title: "Director of Operations",
       company: "Global Logistics Inc.",
       avatar: "/avatars/client2.jpg",
     },
     {
-      quote: "Working with Astella has been transformative. Their expertise in AI and blockchain is unmatched in the industry.",
+      quote: "Working with Codegx gave us practical engineering guidance and systems we can maintain as we scale.",
       name: "Sarah Johnson",
       title: "CEO",
       company: "TechVision Enterprises",

@@ -189,8 +189,8 @@
       "slug": "process-automation",
       "title": "Intelligent Process Automation",
       "icon": "ProcessAutomationIcon",
-      "shortDescription": "Streamline operations and reduce costs by automating complex business processes with AI-powered solutions.",
-      "fullDescription": "Our intelligent process automation solutions combine robotic process automation (RPA) with artificial intelligence to automate complex, knowledge-based business processes. We help organizations identify automation opportunities, design efficient workflows, and implement solutions that reduce manual effort, minimize errors, and accelerate operations.",
+      "shortDescription": "Streamline operations and reduce costs by automating complex business processes with governed workflows.",
+      "fullDescription": "Our process automation solutions combine workflow analysis, system integration, and governed decision support to improve complex business processes. We help organizations identify automation opportunities, design efficient workflows, and implement solutions that reduce manual effort, minimize errors, and accelerate operations.",
       "benefits": [
         "Reduce operational costs through automation",
         "Eliminate human error in repetitive tasks",
@@ -209,7 +209,7 @@
         },
         {
           "title": "Intelligent Decision Automation",
-          "description": "Implement AI-powered decision-making for routine business processes based on predefined rules and machine learning."
+          "description": "Implement governed decision support for routine business processes based on predefined rules and machine learning."
         },
         {
           "title": "Legacy System Integration",
@@ -251,7 +251,7 @@
       "title": "AI Strategy & Consulting",
       "icon": "AIStrategyIcon",
       "shortDescription": "Develop a comprehensive AI roadmap aligned with your business goals and competitive landscape.",
-      "fullDescription": "Our AI strategy and consulting services help organizations navigate the complex landscape of artificial intelligence and develop a clear roadmap for implementation. We work with you to identify high-value AI opportunities, assess technical feasibility, and create a strategic plan that aligns with your business objectives and capabilities.",
+      "fullDescription": "Our automation strategy and consulting services help organizations define a clear roadmap for practical implementation. We work with you to identify high-value automation opportunities, assess technical feasibility, and create a strategic plan that aligns with your business objectives and capabilities.",
       "benefits": [
         "Align AI initiatives with business objectives",
         "Prioritize AI investments for maximum ROI",

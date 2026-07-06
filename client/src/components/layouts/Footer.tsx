@@ -92,7 +92,7 @@ export function Footer({
     },
   ];
 
-  // Default footer sections for Astella AI (agency)
+  // Default footer sections for Wakala Agency
   const wakalaSections: FooterSection[] = [
     {
       title: "Wakala Agency",
@@ -115,9 +115,9 @@ export function Footer({
 
   // Agency social links
   const agencySocialLinks: SocialLink[] = [
-    { platform: "LinkedIn", href: "https://linkedin.com/company/astella-ai", icon: "fab fa-linkedin" },
-    { platform: "Twitter", href: "https://twitter.com/astella_ai", icon: "fab fa-twitter" },
-    { platform: "GitHub", href: "https://github.com/astella-ai", icon: "fab fa-github" },
+    { platform: "LinkedIn", href: "https://linkedin.com/company/codegx-technologies", icon: "fab fa-linkedin" },
+    { platform: "Twitter", href: "https://twitter.com/codegxtech", icon: "fab fa-twitter" },
+    { platform: "GitHub", href: "https://github.com/Codegx-Technology", icon: "fab fa-github" },
   ];
 
   // Determine which sections and company info to use based on isAgencyPage
@@ -193,7 +193,7 @@ export function Footer({
                   <div className="absolute inset-0 bg-gradient-to-br from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f] opacity-80"></div>
                   <div className="relative z-10">
                     <span className="font-extrabold text-3xl tracking-tighter text-[#2c1a22] dark:text-[#1f1a2c]">
-                      {isAgencyPage ? "AI" : "CT"}
+                      {isAgencyPage ? "WA" : "CT"}
                     </span>
                   </div>
 
@@ -332,7 +332,7 @@ export function Footer({
 
                   <div className="pt-6">
                     <h4 className="font-semibold mb-4 text-[#c8a951] dark:text-[#9f7b42] flex items-center">
-                      <i className={section.isAgencySection ? "fas fa-robot mr-2" : "fas fa-network-wired mr-2"}></i>
+                      <i className={section.isAgencySection ? "fas fa-cogs mr-2" : "fas fa-network-wired mr-2"}></i>
                       {section.title}
                     </h4>
 
@@ -439,7 +439,7 @@ export function Footer({
         {/* Parent Company Attribution (only on agency pages) */}
         {isAgencyPage && (
           <div className="mt-6 text-center text-xs text-slate-500">
-            <span>Astella AI is a division of </span>
+            <span>Wakala Agency is a division of </span>
             <Link href="/">
               <a className="text-[#c8a951] dark:text-[#9f7b42] hover:underline">
                 <i className="fas fa-building mr-1"></i>

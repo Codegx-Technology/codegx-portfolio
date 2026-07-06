@@ -89,12 +89,12 @@ export default function Services() {
             </motion.div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
-              Transform Your <span className="text-[#c8a951] dark:text-[#9f7b42]">Industry</span> with Practical AI
+              Improve Your <span className="text-[#c8a951] dark:text-[#9f7b42]">Operations</span> with Practical Automation
             </h1>
 
             <p className="text-xs md:text-sm text-slate-300 max-w-3xl mx-auto">
-              We deliver AI solutions that solve real business problems and create measurable impact.
-              Explore our services to see how we can help your organization thrive in the AI era.
+              We deliver software and automation solutions that solve real business problems and create measurable impact.
+              Explore our services to see how we can help your organization improve delivery, visibility, and scale.
             </p>
           </motion.div>
         </div>
@@ -253,7 +253,7 @@ export default function Services() {
                   <div>
                     <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Development</h3>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      We build your solution using cutting-edge technologies and best practices.
+                      We build your solution with proven technologies, clean implementation practices, and maintainable architecture.
                     </Paragraph>
                   </div>
                 </li>
@@ -301,9 +301,9 @@ export default function Services() {
                   <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
                     <i className="fas fa-cogs text-xl"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Cutting-edge Technology</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Practical Technology</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    We stay at the forefront of technological advancements to deliver innovative solutions.
+                    We choose the right tools for each business problem and keep implementation maintainable.
                   </Paragraph>
                 </div>
                 <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
