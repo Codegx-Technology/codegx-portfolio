@@ -245,7 +245,7 @@ export default function Portfolio() {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-xs text-[#c8a951]/80 dark:text-[#9f7b42]/80 font-medium"
                 >
-                  Founder of Codegx Technologies & Astella AI
+                  Founder of Codegx Technologies & Wakala Agency
                 </motion.p>
 
                 <motion.div
@@ -288,7 +288,7 @@ export default function Portfolio() {
                       alt="Peter O. Oluoch"
                       className="w-full h-auto object-cover rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
 
                     {/* Floating badge */}
                     <div className="absolute bottom-6 left-6 bg-[#c8a951]/90 dark:bg-[#9f7b42]/90 text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-lg font-medium shadow-lg">

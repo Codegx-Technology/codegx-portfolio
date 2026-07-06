@@ -8,8 +8,8 @@ const serverSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   RESEND_API_KEY: z.string().min(1),
   FOUNDER_INBOX: z.string().email().optional().default("info@codegxtechnologies.com"),
-  FROM_EMAIL: z.string().email().optional().default("no-reply@astella.ai"),
-  FROM_NAME: z.string().optional().default("Astella AI"),
+  FROM_EMAIL: z.string().email().optional().default("no-reply@codegxtechnologies.com"),
+  FROM_NAME: z.string().optional().default("Codegx Technologies"),
 });
 
 /**

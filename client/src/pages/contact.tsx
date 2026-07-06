@@ -87,8 +87,7 @@ export default function Contact() {
       <PageSection
         className="relative overflow-hidden py-12 md:py-16"
       >
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 z-0"></div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
