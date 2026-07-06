@@ -73,9 +73,9 @@ export function Footer({
       title: "Our Agencies",
       links: [
         {
-          label: "Astella AI",
+          label: "Wakala Agency",
           href: "/agency",
-          icon: "fas fa-robot",
+          icon: "fas fa-cogs",
           isAgencyLink: true
         },
         // Portfolio link removed - available in 'portfolio' branch
@@ -93,14 +93,14 @@ export function Footer({
   ];
 
   // Default footer sections for Astella AI (agency)
-  const astellaSections: FooterSection[] = [
+  const wakalaSections: FooterSection[] = [
     {
-      title: "Astella AI",
+      title: "Wakala Agency",
       isAgencySection: true,
       links: [
-        { label: "Why Astella", href: "/why-astella", icon: "fas fa-star", isAgencyLink: true },
-        { label: "AI Projects", href: "/agency/projects", icon: "fas fa-project-diagram", isAgencyLink: true },
-        { label: "Contact Astella", href: "/agency/contact", icon: "fas fa-envelope", isAgencyLink: true },
+        { label: "About Wakala", href: "/agency", icon: "fas fa-info-circle", isAgencyLink: true },
+        { label: "Automation Projects", href: "/agency/projects", icon: "fas fa-project-diagram", isAgencyLink: true },
+        { label: "Contact Agency", href: "/contact", icon: "fas fa-envelope", isAgencyLink: true },
       ],
     },
   ];
@@ -121,11 +121,11 @@ export function Footer({
   ];
 
   // Determine which sections and company info to use based on isAgencyPage
-  const activeSections = sections || (isAgencyPage ? astellaSections : codegxSections);
+  const activeSections = sections || (isAgencyPage ? wakalaSections : codegxSections);
   const activeSocialLinks = socialLinks || (isAgencyPage ? agencySocialLinks : defaultSocialLinks);
-  const activeCompanyName = isAgencyPage ? "Astella AI" : companyName;
+  const activeCompanyName = isAgencyPage ? "Wakala Agency" : companyName;
   const activeCompanyDescription = isAgencyPage
-    ? "A stellar force for AI innovation in enterprise, education, and public service."
+    ? "A specialized division of Codegx Technologies delivering advanced automation and digital transformation."
     : companyDescription;
 
   // Current year for copyright
@@ -164,38 +164,8 @@ export function Footer({
         className
       )}
     >
-      {/* AI-themed background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-10 w-full">
-        {/* Circuit board pattern */}
-        <div className="absolute inset-0 z-0 w-full h-full">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M0 50 H100 M50 0 V100 M25 25 L75 75 M75 25 L25 75" stroke="currentColor" strokeWidth="0.5" fill="none" />
-              <circle cx="50" cy="50" r="3" fill="currentColor" />
-              <circle cx="25" cy="25" r="2" fill="currentColor" />
-              <circle cx="75" cy="25" r="2" fill="currentColor" />
-              <circle cx="25" cy="75" r="2" fill="currentColor" />
-              <circle cx="75" cy="75" r="2" fill="currentColor" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
-          </svg>
-        </div>
-
-        {/* Neural network nodes */}
-        <div className="absolute inset-0 z-10 w-full h-full">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <g fill="currentColor" opacity="0.5">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <circle
-                  key={i}
-                  cx={`${Math.random() * 100}%`}
-                  cy={`${Math.random() * 100}%`}
-                  r={Math.random() * 3 + 1}
-                />
-              ))}
-            </g>
-          </svg>
-        </div>
+      {/* Clean background */}
+      <div className="absolute inset-0 overflow-hidden opacity-5 w-full bg-slate-900/50">
       </div>
 
       {/* Diagonal divider at the top */}
@@ -284,25 +254,20 @@ export function Footer({
                   {/* Neural network background */}
                   <div className="absolute inset-0 opacity-10">
                     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                      <pattern id="neural-pattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-                        <circle cx="25" cy="25" r="1" fill="currentColor" />
-                        <circle cx="12.5" cy="12.5" r="1" fill="currentColor" />
-                        <circle cx="37.5" cy="12.5" r="1" fill="currentColor" />
-                        <circle cx="12.5" cy="37.5" r="1" fill="currentColor" />
-                        <circle cx="37.5" cy="37.5" r="1" fill="currentColor" />
-                        <path d="M25 25 L12.5 12.5 M25 25 L37.5 12.5 M25 25 L12.5 37.5 M25 25 L37.5 37.5" stroke="currentColor" strokeWidth="0.5" />
+                      <pattern id="clean-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
                       </pattern>
-                      <rect width="100%" height="100%" fill="url(#neural-pattern)" />
+                      <rect width="100%" height="100%" fill="url(#clean-grid)" />
                     </svg>
                   </div>
 
                   <h4 className="font-semibold mb-3 text-[#c8a951] dark:text-[#9f7b42] relative z-10">
-                    <i className="fas fa-robot mr-2"></i>
-                    AI-Powered Updates
+                    <i className="fas fa-envelope-open-text mr-2"></i>
+                    Corporate Updates
                   </h4>
 
                   <p className="text-sm text-slate-300 mb-4 relative z-10">
-                    Subscribe to receive the latest AI insights and technology updates from our team.
+                    Subscribe to receive strategic insights and technology updates from Codegx Technologies.
                   </p>
 
                   <div className="relative z-10">

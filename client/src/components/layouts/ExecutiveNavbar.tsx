@@ -106,10 +106,10 @@ export function ExecutiveNavbar({
     // Portfolio removed - available in 'portfolio' branch
     {
       href: "/agency",
-      label: "Astella AI",
+      label: "Wakala Agency",
       children: [
-        { href: "/agency", label: "Why Astella", icon: <ChevronRight className="h-4 w-4" /> },
-        { href: "/agency/projects", label: "Projects", icon: <ChevronRight className="h-4 w-4" /> },
+        { href: "/agency", label: "About Wakala", icon: <ChevronRight className="h-4 w-4" /> },
+        { href: "/agency/projects", label: "Automation Projects", icon: <ChevronRight className="h-4 w-4" /> },
       ]
     },
     { href: "/services", label: "Services" },
@@ -140,16 +140,16 @@ export function ExecutiveNavbar({
         "z-[9999] w-full",
         "transition-all duration-300",
         variant === "default" && scrolled
-          ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
+          ? "bg-[#2c1a22] backdrop-blur shadow-lg supports-[backdrop-filter]:bg-[#2c1a22]/90 dark:bg-[#1f1a2c]"
           : variant === "default"
-            ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
+            ? "bg-[#2c1a22] dark:bg-[#1f1a2c]"
             : variant === "transparent"
               ? "bg-transparent"
               : variant === "elevated"
-                ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] shadow-xl dark:from-[#1f1a2c] dark:to-[#2a1f3d]"
+                ? "bg-[#2c1a22] shadow-xl dark:bg-[#1f1a2c]"
                 : variant === "bordered"
-                  ? "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] border-b border-[#4d2c35] dark:from-[#1f1a2c] dark:to-[#2a1f3d] dark:border-[#3d2a5d]"
-                  : "bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d]",
+                  ? "bg-[#2c1a22] border-b border-[#4d2c35] dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
+                  : "bg-[#2c1a22] dark:bg-[#1f1a2c]",
         className
       )}
     >

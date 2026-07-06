@@ -187,7 +187,7 @@ export default function Portfolio() {
           }}
         >
           {/* Background Elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] z-0"></div>
+          <div className="absolute inset-0 bg-[#2c1a22] dark:bg-[#1f1a2c] z-0"></div>
 
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 z-0 opacity-5">

@@ -116,7 +116,7 @@ export default function ProfessionalHome() {
           }}
         >
           {/* Background Elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] z-0"></div>
+          <div className="absolute inset-0 bg-[#2c1a22] dark:bg-[#1f1a2c] z-0"></div>
 
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 z-0 opacity-5">
@@ -143,11 +143,8 @@ export default function ProfessionalHome() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
-                  <span className="flex h-2 w-2 mr-2">
-                    <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8a951] dark:bg-[#9f7b42]"></span>
-                  </span>
-                  Innovation Through Technology
+                  <i className="fas fa-shield-alt mr-2"></i>
+                  Enterprise Grade Solutions
                 </motion.div>
 
                 <motion.h1
@@ -188,7 +185,7 @@ export default function ProfessionalHome() {
                     variant="outline"
                     className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-xs md:text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
-                    <Link href="/solutions">Explore Solutions</Link>
+                    <Link href="/services">Our Services</Link>
                   </Button>
                 </motion.div>
 
@@ -231,7 +228,7 @@ export default function ProfessionalHome() {
                       alt="Digital Transformation"
                       className="w-full h-auto object-cover rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
 
                     {/* Floating badge */}
                     <div className="absolute bottom-6 left-6 bg-[#c8a951]/90 dark:bg-[#9f7b42]/90 text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-lg font-medium shadow-lg">
@@ -247,7 +244,7 @@ export default function ProfessionalHome() {
         {/* About Section - Enterprise Grade */}
         <section className="py-12 md:py-16 relative overflow-hidden">
           {/* Background elements */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-[#121212] dark:to-[#1a1a1a] z-0"></div>
+          <div className="absolute inset-0 bg-white dark:bg-[#121212] z-0"></div>
 
           {/* Subtle pattern overlay */}
           <div className="absolute inset-0 z-0 opacity-5">
@@ -316,7 +313,7 @@ export default function ProfessionalHome() {
                       alt="Enterprise Technology Innovation"
                       className="w-full h-auto object-cover rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/80 via-[#2c1a22]/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
 
                     {/* Vision overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -561,7 +558,7 @@ export default function ProfessionalHome() {
                       className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#2c1a22]/70 to-[#2c1a22]/30"></div>
+                    <div className="absolute inset-0 bg-[#2c1a22]/60"></div>
 
                     {/* Stats overlay */}
                     <div className="absolute bottom-6 left-6 right-6">
@@ -596,7 +593,7 @@ export default function ProfessionalHome() {
                     className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group flex flex-col h-full"
                   >
                     {/* Service header with gradient */}
-                    <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
+                    <div className="h-3 bg-[#c8a951] dark:bg-[#9f7b42]"></div>
 
                     <div className="p-8 flex flex-col flex-grow">
                       <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
@@ -643,7 +640,7 @@ export default function ProfessionalHome() {
                           className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] flex flex-col h-full"
                         >
                           {/* Service header with gradient */}
-                          <div className="h-3 bg-gradient-to-r from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f]"></div>
+                          <div className="h-3 bg-[#c8a951] dark:bg-[#9f7b42]"></div>
 
                           <div className="p-8 flex flex-col flex-grow">
                             <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
@@ -723,7 +720,7 @@ export default function ProfessionalHome() {
                   alt="AI Technology Solutions"
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a22]/90 via-[#2c1a22]/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-[#2c1a22]/80"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Transforming Ideas into Intelligent Solutions</h3>
                   <p className="text-slate-300 max-w-2xl mb-6">Our AI-powered technologies help businesses automate processes, gain insights, and create exceptional customer experiences.</p>
@@ -737,7 +734,7 @@ export default function ProfessionalHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-8 md:mt-12 bg-gradient-to-r from-[#2c1a22] to-[#3d2128] dark:from-[#1f1a2c] dark:to-[#2a1f3d] rounded-2xl p-6 md:p-8 relative overflow-hidden"
+              className="mt-8 md:mt-12 bg-[#2c1a22] dark:bg-[#1f1a2c] rounded-2xl p-6 md:p-8 relative overflow-hidden"
             >
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-10">

@@ -16,8 +16,8 @@ interface SEOProps {
  * SEO component for managing document head metadata
  */
 export const SEO: React.FC<SEOProps> = ({
-  title = 'Codegx Technologies | AI Solutions & Development',
-  description = 'Codegx Technologies specializes in AI solutions, web development, and digital transformation. Explore our services including Astella AI agency.',
+  title = 'Codegx Technologies | Enterprise Technology Solutions',
+  description = 'Codegx Technologies delivers innovative technology solutions that drive business growth and digital transformation. Our Wakala Agency division provides advanced automation and strategic digital solutions for global enterprises.',
   canonical,
   ogImage = '/images/og-image.jpg',
   ogType = 'website',

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 
-export default function WhyAstella() {
+export default function AboutWakala() {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,8 +59,8 @@ export default function WhyAstella() {
     },
     {
       year: "2021",
-      title: "Astella AI Founded",
-      description: "Officially launched Astella AI with a mission to democratize AI for African startups, making enterprise-grade AI accessible and affordable."
+      title: "Wakala Agency Founded",
+      description: "Officially launched as the automation division of Codegx Technologies, focused on delivering enterprise-grade digital transformation."
     },
     {
       year: "2022",
@@ -74,8 +74,8 @@ export default function WhyAstella() {
     },
     {
       year: "2025",
-      title: "Scaling Solutions",
-      description: "Launched Astella Plug, our AI-as-a-Service platform specifically designed for African startups, enabling rapid AI adoption without heavy infrastructure investment."
+      title: "Scaling Automation",
+      description: "Launched Wakala OS, our comprehensive automation platform designed for enterprises to streamline operations and scale efficiently."
     }
   ];
 
@@ -87,21 +87,19 @@ export default function WhyAstella() {
         background="pattern"
         spacing="xl"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10 z-0"></div>
-        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 z-0"></div>
 
         <div className="relative z-10 text-center">
           <PageHeader
             title={
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
                 We Build AI With{" "}
-                <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                  Clarity and Care
+                <span className="text-primary">
+                  Precision and Impact
                 </span>
               </h1>
             }
-            description="Astella AI is more than a technology company. We're a team of innovators committed to creating solutions that make a meaningful difference in Africa and beyond."
+            description="Wakala Agency is a specialized division of Codegx Technologies committed to creating automation solutions that drive meaningful enterprise impact."
             className="text-center"
           />
 
@@ -128,8 +126,8 @@ export default function WhyAstella() {
           <div>
             <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Mission</Heading2>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              At Astella AI, our mission is to harness the power of artificial intelligence, blockchain,
-              and emerging technologies to solve complex challenges and create sustainable impact across Africa.
+              At Wakala Agency, our mission is to leverage advanced automation, strategic technology,
+              and enterprise-grade engineering to solve complex challenges and create sustainable impact.
             </Paragraph>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               We believe that technology, when thoughtfully applied, can transform industries, empower communities,
@@ -141,7 +139,7 @@ export default function WhyAstella() {
             </Paragraph>
           </div>
           <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-lg blur opacity-30"></div>
+            <div className="absolute -inset-0.5 bg-primary/20 rounded-lg"></div>
             <div className="relative bg-card rounded-lg p-8 shadow-xl">
               <div className="text-4xl text-primary mb-4">
                 <i className="fas fa-quote-left"></i>
@@ -157,7 +155,7 @@ export default function WhyAstella() {
                 </div>
                 <div>
                   <div className="font-bold">Peter O. Oluoch</div>
-                  <div className="text-sm text-muted-foreground">Founder & CEO, Astella AI</div>
+                  <div className="text-sm text-muted-foreground">Founder & CEO, Codegx Technologies</div>
                 </div>
               </div>
             </div>
@@ -199,7 +197,7 @@ export default function WhyAstella() {
         <div className="text-center mb-6 md:mb-12">
           <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Founder's Vision</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The journey from a personal career to founding Astella AI.
+            The journey from enterprise engineering to establishing Wakala Agency.
           </Paragraph>
         </div>
 
@@ -217,7 +215,7 @@ export default function WhyAstella() {
                     }}
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                <div className="absolute inset-0 bg-black/40 flex items-end">
                   <div className="p-4 md:p-6 text-white">
                     <Heading3 className="text-lg md:text-xl font-bold">Building Together</Heading3>
                     <Paragraph className="text-xs md:text-sm text-white/80">Empowering African Innovation</Paragraph>
@@ -273,9 +271,8 @@ export default function WhyAstella() {
             <div className="mt-8 md:mt-12 p-4 md:p-6 bg-card rounded-lg border border-border">
               <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3">The Vision Forward</Heading3>
               <Paragraph className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
-                As we look to the future, our vision is to establish Astella AI as the leading technology
-                partner for organizations seeking to leverage AI, blockchain, and emerging technologies
-                for meaningful impact across Africa.
+                As we look to the future, our vision is to establish Wakala Agency as the premier automation
+                partner for enterprises seeking to leverage strategic technology for meaningful impact.
               </Paragraph>
               <Paragraph className="text-xs md:text-sm text-muted-foreground">
                 We aim to build a company that not only delivers exceptional technical solutions but also
