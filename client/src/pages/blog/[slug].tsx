@@ -82,9 +82,14 @@ export default function BlogPost() {
     );
   }
 
+  const firstHeading = `# ${post.title}`;
+  const articleContent = post.content.startsWith(firstHeading)
+    ? post.content.slice(firstHeading.length).trimStart()
+    : post.content;
+
   return (
     <Layout>
-      <article className="bg-background py-8 md:py-12">
+      <article className="bg-background py-6 md:py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,16 +97,16 @@ export default function BlogPost() {
             transition={{ duration: 0.5 }}
           >
             {/* Header */}
-            <header className="mb-6 text-center md:mb-8">
-              <div className="mb-4 flex flex-wrap justify-center gap-2">
+            <header className="mb-5 text-center md:mb-6">
+              <div className="mb-3 flex flex-wrap justify-center gap-2">
                 {post.tags.map((tag, index) => (
                   <Badge key={index} variant="outline">
                     {tag}
                   </Badge>
                 ))}
               </div>
-              <h1 className="mb-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">{post.title}</h1>
-              <p className="mx-auto mb-5 max-w-3xl text-base text-muted-foreground md:text-lg">{post.excerpt}</p>
+              <h1 className="mb-3 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">{post.title}</h1>
+              <p className="mx-auto mb-4 max-w-3xl text-base text-muted-foreground md:text-lg">{post.excerpt}</p>
               <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
                 <span>{formatDate(post.date)}</span>
                 <span>•</span>
@@ -110,13 +115,13 @@ export default function BlogPost() {
             </header>
 
             {/* Featured Image */}
-            <div className="relative mb-8 h-[220px] overflow-hidden rounded-lg md:h-[320px] lg:h-[380px]">
+            <div data-blog-image-frame className="relative mb-6 h-[180px] overflow-hidden rounded-lg border border-border bg-card md:h-[240px] lg:h-[300px]">
               <img
                 src={post.image}
                 alt={post.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/1200x600?text=Blog+Post";
+                  (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
                 }}
               />
             </div>
@@ -168,7 +173,7 @@ export default function BlogPost() {
                   },
                 }}
               >
-                {post.content}
+                {articleContent}
               </ReactMarkdown>
             </div>
 
@@ -226,13 +231,13 @@ export default function BlogPost() {
                   <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
                     <a className="block group">
                       <div className="bg-card rounded-lg overflow-hidden border border-border shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                        <div className="relative h-40 overflow-hidden">
+                        <div data-blog-image-frame className="relative h-28 overflow-hidden border-b border-border bg-background/40">
                           <img
                             src={relatedPost.image}
                             alt={relatedPost.title}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Blog+Post";
+                              (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
                             }}
                           />
                         </div>
@@ -240,6 +245,10 @@ export default function BlogPost() {
                           <h3 className="font-bold mb-2 line-clamp-2">{relatedPost.title}</h3>
                           <div className="text-sm text-muted-foreground mb-2">{formatDate(relatedPost.date)}</div>
                           <p className="text-sm text-muted-foreground line-clamp-2">{relatedPost.excerpt}</p>
+                          <div className="mt-4 flex items-center justify-between border-t border-border pt-3 text-sm font-medium text-primary">
+                            <span>Read article</span>
+                            <i className="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                          </div>
                         </div>
                       </div>
                     </a>

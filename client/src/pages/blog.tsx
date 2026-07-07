@@ -210,13 +210,13 @@ export default function Blog() {
                         <Link href={`/blog/${post.slug}`}>
                           <a className="block group">
                             <EnterpriseCard className="overflow-hidden h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
-                              <div className="relative h-48 md:h-56 overflow-hidden">
+                              <div data-blog-image-frame className="relative h-48 md:h-56 overflow-hidden bg-background/40">
                                 <img
                                   src={post.image}
                                   alt={post.title}
                                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                   onError={(e) => {
-                                    (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Blog+Post";
+                                    (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
                                   }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
@@ -286,13 +286,13 @@ export default function Blog() {
                       <Link href={`/blog/${post.slug}`}>
                         <a className="block group h-full">
                           <EnterpriseCard className="overflow-hidden h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
-                            <div className="relative h-40 md:h-44 overflow-hidden">
+                            <div data-blog-image-frame className="relative h-40 md:h-44 overflow-hidden bg-background/40">
                               <img
                                 src={post.image}
                                 alt={post.title}
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 onError={(e) => {
-                                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Blog+Post";
+                                  (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
                                 }}
                               />
                               <div className="absolute top-0 right-0 m-3">
