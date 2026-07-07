@@ -59,8 +59,8 @@ export default function AboutWakala() {
     },
     {
       year: "2021",
-      title: "Wakala Agency Founded",
-      description: "Officially launched as the automation division of Codegx Technologies, focused on governed digital transformation for operational teams."
+      title: "Automation Practice Formalized",
+      description: "Codegx formalized Wakala as its automation practice, giving client workflow work a dedicated operating model and delivery focus."
     },
     {
       year: "2022",
@@ -69,13 +69,13 @@ export default function AboutWakala() {
     },
     {
       year: "2023",
-      title: "Innovation & Impact",
-      description: "Expanded client partnerships, with teams reporting average 40% efficiency gains and 3x faster time-to-market through governed automation."
+      title: "Operating Evidence",
+      description: "Expanded client partnerships around measurable workflow reliability, faster delivery cycles, and clearer accountability across automated processes."
     },
     {
       year: "2025",
-      title: "Scaling Automation",
-      description: "Launched Wakala OS, our comprehensive automation platform designed for enterprises to streamline operations and scale efficiently."
+      title: "Wakala OS Productized",
+      description: "Advanced Wakala OS as the operating layer for governed workflows, structured process automation, and accountable agentic execution."
     }
   ];
 
@@ -83,7 +83,7 @@ export default function AboutWakala() {
     <PageWrapper>
       {/* Hero Section */}
       <PageSection
-        className="relative overflow-hidden"
+        className="relative overflow-hidden py-10 md:py-14"
         background="pattern"
         spacing="xl"
       >
@@ -95,11 +95,11 @@ export default function AboutWakala() {
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
                 We Build Automation With{" "}
                 <span className="text-primary">
-                  Precision and Impact
+                  Precision and Control
                 </span>
               </h1>
             }
-            description="Wakala Agency is a specialized division of Codegx Technologies committed to creating automation solutions that drive meaningful enterprise impact."
+            description="Wakala Agency is the Codegx operating practice for governed automation, structured workflows, and accountable agentic execution."
             className="text-center"
           />
 
@@ -121,24 +121,24 @@ export default function AboutWakala() {
       <PageDivider />
 
       {/* Our Mission Section */}
-      <PageSection>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
+      <PageSection className="py-8 md:py-12">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 md:gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Mission</Heading2>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              At Wakala Agency, our mission is to leverage advanced automation, strategic technology,
-              and production-minded engineering to solve complex challenges and create sustainable impact.
+              Wakala exists to make automation dependable in the places where process quality, traceability,
+              and human accountability cannot be left to chance.
             </Paragraph>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              We believe that technology, when thoughtfully applied, can transform industries, empower communities,
-              and address some of the most pressing challenges facing our continent and the world.
+              The practice combines production-minded engineering, local operating context, and disciplined
+              workflow design so teams can move faster without losing control.
             </Paragraph>
             <Paragraph className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-              Through innovation, collaboration, and a deep understanding of local contexts, we develop solutions
-              that are not just technically excellent but also socially responsible and contextually relevant.
+              Our work is measured by whether the system remains useful after launch: visible, maintainable,
+              explainable, and practical for the people who run it every day.
             </Paragraph>
           </div>
-          <div className="relative">
+          <div className="relative lg:col-span-5">
             <div className="absolute -inset-0.5 bg-primary/20 rounded-lg"></div>
             <div className="relative bg-card rounded-lg p-8 shadow-xl">
               <div className="text-4xl text-primary mb-4">
@@ -165,26 +165,32 @@ export default function AboutWakala() {
       <PageDivider />
 
       {/* Core Values Section */}
-      <PageSection className="bg-card py-6 md:py-12">
+      <PageSection className="bg-card py-8 md:py-14">
         <div className="text-center mb-6 md:mb-12">
-          <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Our Core Values</Heading2>
+          <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Operating Principles</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             These principles shape how Wakala turns automation from isolated tools into governed operating capability.
           </Paragraph>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {coreValues.map((value) => (
-            <div
+          {coreValues.map((value, index) => (
+            <motion.div
               key={value.title}
-              className="bg-background rounded-lg p-4 md:p-6 shadow-md border border-border h-full"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              whileHover={{ y: -6 }}
+              className="group relative h-full overflow-hidden rounded-lg border border-border bg-background p-4 shadow-md transition-shadow duration-300 hover:shadow-xl md:p-6"
             >
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl mb-4 md:mb-6 mx-auto">
+              <div className="absolute inset-x-0 top-0 h-px bg-primary/60 opacity-70"></div>
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-xl text-primary transition-transform duration-300 group-hover:scale-105 md:mb-6">
                 <i className={value.icon}></i>
               </div>
               <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3 text-center">{value.title}</Heading3>
               <Paragraph className="text-xs md:text-sm text-muted-foreground text-center">{value.description}</Paragraph>
-            </div>
+            </motion.div>
           ))}
         </div>
       </PageSection>
@@ -192,32 +198,32 @@ export default function AboutWakala() {
       <PageDivider />
 
       {/* Founder's Vision Section */}
-      <PageSection>
+      <PageSection className="py-8 md:py-14">
         <div className="text-center mb-6 md:mb-12">
           <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Founder's Vision</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The journey from enterprise engineering to establishing Wakala Agency.
+            The operating history behind Wakala's focus on dependable automation.
           </Paragraph>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-8">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
             <div className="sticky top-20">
               <div className="relative rounded-lg overflow-hidden mb-4 md:mb-6">
                 <div className="aspect-w-4 aspect-h-5">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
-                    alt="African Tech Team Collaboration - Innovation Together"
+                    src="/assets/wakala-founder-vision.png"
+                    alt="Peter O. Oluoch working at an executive desk with two monitors"
                     className="object-cover w-full h-full"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80";
+                      (e.target as HTMLImageElement).src = "https://images.pexels.com/photos/13377869/pexels-photo-13377869.jpeg?auto=compress&cs=tinysrgb&w=900";
                     }}
                   />
                 </div>
                 <div className="absolute inset-0 bg-black/40 flex items-end">
                   <div className="p-4 md:p-6 text-white">
                     <Heading3 className="text-lg md:text-xl font-bold">Building Together</Heading3>
-                    <Paragraph className="text-xs md:text-sm text-white/80">Empowering African Innovation</Paragraph>
+                    <Paragraph className="text-xs md:text-sm text-white/80">Building governed automation from first principles</Paragraph>
                   </div>
                 </div>
               </div>
@@ -239,7 +245,7 @@ export default function AboutWakala() {
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a
-                  href="https://github.com/peteroduor"
+                  href="https://github.com/peteroluoch"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-700/10 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
@@ -247,38 +253,52 @@ export default function AboutWakala() {
                   <i className="fab fa-github"></i>
                 </a>
               </div>
+
+              <div className="mt-8 rounded-lg border border-border bg-card p-4 md:p-6">
+                <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3">The Vision Forward</Heading3>
+                <Paragraph className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
+                  Wakala is being shaped as the operating layer for teams that need automation to be traceable,
+                  maintainable, and accountable under real delivery pressure.
+                </Paragraph>
+                <Paragraph className="text-xs md:text-sm text-muted-foreground">
+                  The goal is practical capacity: systems that reduce manual drag, improve visibility, and leave
+                  organizations with stronger internal capability after implementation.
+                </Paragraph>
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-3">
-            <div className="space-y-8 md:space-y-12">
-              {journeyMilestones.map((milestone) => (
-                <div
-                  key={milestone.year}
-                  className="relative pl-8 md:pl-10 border-l border-border"
-                >
-                  <div className="absolute left-0 top-0 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/20 flex items-center justify-center -translate-x-1/2">
-                    <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary"></div>
-                  </div>
-                  <div className="text-primary font-bold text-base md:text-lg mb-1 md:mb-2">{milestone.year}</div>
-                  <Heading3 className="text-base md:text-lg font-bold mb-1 md:mb-2">{milestone.title}</Heading3>
-                  <Paragraph className="text-xs md:text-sm text-muted-foreground">{milestone.description}</Paragraph>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 md:mt-12 p-4 md:p-6 bg-card rounded-lg border border-border">
-              <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3">The Vision Forward</Heading3>
-              <Paragraph className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
-                As we look to the future, our vision is to establish Wakala Agency as the premier automation
-                partner for enterprises seeking to leverage strategic technology for meaningful impact.
-              </Paragraph>
-              <Paragraph className="text-xs md:text-sm text-muted-foreground">
-                We aim to build a company that not only delivers exceptional technical solutions but also
-                contributes to building local capacity, fostering innovation ecosystems, and creating
-                opportunities for the next generation of African technologists.
-              </Paragraph>
-            </div>
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+              className="rounded-lg border border-border bg-card/40 p-5 md:p-7"
+            >
+              <div className="space-y-8 md:space-y-10">
+                {journeyMilestones.map((milestone, index) => (
+                  <motion.div
+                    key={milestone.year}
+                    initial={{ opacity: 0, x: 28 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    whileHover={{ x: 4 }}
+                    viewport={{ once: true, margin: "-90px" }}
+                    transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
+                    className="group relative border-l border-border pl-8 md:pl-10"
+                  >
+                    <div className="absolute left-0 top-0 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full bg-primary/20 transition-colors duration-300 group-hover:bg-primary/30 md:h-8 md:w-8">
+                      <div className="h-3 w-3 rounded-full bg-primary transition-transform duration-300 group-hover:scale-125 md:h-4 md:w-4"></div>
+                    </div>
+                    <div className="mb-1 text-base font-bold text-primary md:mb-2 md:text-lg">{milestone.year}</div>
+                    <Heading3 className="mb-1 text-base font-bold transition-colors duration-300 group-hover:text-primary md:mb-2 md:text-lg">
+                      {milestone.title}
+                    </Heading3>
+                    <Paragraph className="text-xs text-muted-foreground md:text-sm">{milestone.description}</Paragraph>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </PageSection>

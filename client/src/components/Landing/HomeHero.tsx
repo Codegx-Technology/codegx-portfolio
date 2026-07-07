@@ -89,7 +89,7 @@ export function HomeHero() {
             </div>
             <div className="mt-10 flex space-x-5">
               <a
-                href="https://github.com/peteroduor"
+                href="https://github.com/peteroluoch"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-primary transition-colors"

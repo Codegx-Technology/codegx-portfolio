@@ -61,7 +61,7 @@
   "team": [
     {
       "name": "Peter O. Oluoch",
-      "position": "Founder & CEO",
+      "position": "Founder",
       "bio": "Software engineer with over 10 years of experience in building enterprise solutions and leading development teams.",
       "photo": "/assets/team/peter.jpg",
       "socials": [
@@ -71,7 +71,7 @@
         },
         {
           "platform": "GitHub",
-          "url": "https://github.com/peteroduor"
+          "url": "https://github.com/peteroluoch"
         }
       ]
     },

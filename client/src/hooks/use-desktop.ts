@@ -57,7 +57,7 @@ export function useKeyboardShortcut(
   const isDesktop = useDesktop();
 
   useEffect(() => {
-    if (!isDesktop) return;
+    if (!isDesktop || !key) return;
 
     const handleKeyPress = (event: KeyboardEvent) => {
       const { ctrl = false, meta = false, shift = false } = options;
@@ -65,9 +65,11 @@ export function useKeyboardShortcut(
       const ctrlMatch = ctrl ? event.ctrlKey : true;
       const metaMatch = meta ? event.metaKey : true;
       const shiftMatch = shift ? event.shiftKey : true;
+      const pressedKey = event.key?.toLowerCase();
+      const shortcutKey = key.toLowerCase();
 
       if (
-        event.key.toLowerCase() === key.toLowerCase() &&
+        pressedKey === shortcutKey &&
         ctrlMatch &&
         metaMatch &&
         shiftMatch
