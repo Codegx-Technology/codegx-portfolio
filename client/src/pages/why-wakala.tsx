@@ -25,23 +25,23 @@ export default function AboutWakala() {
   const coreValues = [
     {
       icon: "fas fa-lightbulb",
-      title: "Innovation",
-      description: "We constantly push the boundaries of what's possible, exploring new technologies and approaches to create solutions that drive meaningful change."
+      title: "Practical Invention",
+      description: "We turn real operational friction into usable systems, favoring clear workflows over novelty for its own sake."
     },
     {
       icon: "fas fa-shield-alt",
-      title: "Integrity",
-      description: "We operate with transparency, honesty, and ethical responsibility in all our interactions, building trust with our clients and within our communities."
+      title: "Governed Trust",
+      description: "Every workflow needs ownership, traceability, and accountable decision boundaries before it earns a place in production."
     },
     {
       icon: "fas fa-universal-access",
-      title: "Accessibility",
-      description: "We believe technology should be accessible to all. We design solutions that bridge gaps and create opportunities across diverse contexts and communities."
+      title: "Contextual Access",
+      description: "Automation should work for the teams who rely on it, including multilingual, mobile-first, and resource-constrained environments."
     },
     {
       icon: "fas fa-leaf",
-      title: "Sustainability",
-      description: "We develop solutions with long-term environmental and social impact in mind, contributing to a more sustainable and equitable future."
+      title: "Durable Impact",
+      description: "We build for long-term maintainability, local capacity, and measurable operational improvement after launch."
     }
   ];
 
@@ -60,7 +60,7 @@ export default function AboutWakala() {
     {
       year: "2021",
       title: "Wakala Agency Founded",
-      description: "Officially launched as the automation division of Codegx Technologies, focused on delivering enterprise-grade digital transformation."
+      description: "Officially launched as the automation division of Codegx Technologies, focused on governed digital transformation for operational teams."
     },
     {
       year: "2022",
@@ -127,7 +127,7 @@ export default function AboutWakala() {
             <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Mission</Heading2>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               At Wakala Agency, our mission is to leverage advanced automation, strategic technology,
-              and enterprise-grade engineering to solve complex challenges and create sustainable impact.
+              and production-minded engineering to solve complex challenges and create sustainable impact.
             </Paragraph>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
               We believe that technology, when thoughtfully applied, can transform industries, empower communities,
@@ -154,7 +154,7 @@ export default function AboutWakala() {
                 </div>
                 <div>
                   <div className="font-bold">Peter O. Oluoch</div>
-                  <div className="text-sm text-muted-foreground">Founder & CEO, Codegx Technologies</div>
+                  <div className="text-sm text-muted-foreground">Founder, Codegx Technologies</div>
                 </div>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function AboutWakala() {
         <div className="text-center mb-6 md:mb-12">
           <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Our Core Values</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            These principles guide everything we do, from how we develop technology to how we engage with our clients and communities.
+            These principles shape how Wakala turns automation from isolated tools into governed operating capability.
           </Paragraph>
         </div>
 

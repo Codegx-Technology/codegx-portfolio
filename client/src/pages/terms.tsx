@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
-import { Link } from "wouter";
-import { ChevronLeft } from "lucide-react";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 export default function Terms() {
   const itemVariants = {
@@ -29,13 +28,11 @@ export default function Terms() {
           transition={{ duration: 0.3 }}
           className="mb-6 md:mb-8"
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors group"
-          >
-            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="text-sm md:text-base">Back to Home</span>
-          </Link>
+          <IntelligentBackButton
+            fallbackHref="/"
+            label="Back"
+            className="text-slate-600 hover:text-slate-900 hover:opacity-100 dark:text-slate-400 dark:hover:text-white"
+          />
         </motion.div>
 
         {/* Header */}
@@ -115,4 +112,3 @@ export default function Terms() {
     </>
   );
 }
-

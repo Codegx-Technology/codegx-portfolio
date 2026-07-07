@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 export default function ThankYou() {
   // Scroll to top when component mounts
@@ -71,12 +72,11 @@ export default function ThankYou() {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/">
-                <Button>
-                  <i className="fas fa-home mr-2"></i>
-                  Return to Home
-                </Button>
-              </Link>
+              <IntelligentBackButton
+                fallbackHref="/"
+                label="Back"
+                className="min-h-[40px] rounded-md bg-primary px-4 py-2 text-primary-foreground hover:opacity-90"
+              />
               <Link href="/services">
                 <Button variant="outline">
                   <i className="fas fa-th-large mr-2"></i>

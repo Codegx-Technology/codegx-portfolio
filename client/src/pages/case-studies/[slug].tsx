@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 interface CaseStudy {
   id: string;
@@ -71,12 +72,7 @@ export default function CaseStudyDetail() {
             <Paragraph className="mb-8">
               The case study you're looking for doesn't exist.
             </Paragraph>
-            <Link href="/case-studies">
-              <Button>
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Case Studies
-              </Button>
-            </Link>
+            <IntelligentBackButton fallbackHref="/case-studies" label="Back to Case Studies" />
           </div>
         </PageSection>
       </PageWrapper>
@@ -100,10 +96,7 @@ export default function CaseStudyDetail() {
             className="space-y-4 md:space-y-6"
           >
             {/* Back Button */}
-            <Link href="/case-studies" className="inline-flex items-center gap-2 text-[#c8a951] dark:text-[#9f7b42] hover:opacity-80 transition-opacity text-xs md:text-sm font-medium">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Case Studies
-            </Link>
+            <IntelligentBackButton fallbackHref="/case-studies" label="Back to Case Studies" />
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2 md:gap-3">

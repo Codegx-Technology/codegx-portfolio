@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 export default function QuoteThankYouPage() {
   return (
@@ -30,9 +29,11 @@ export default function QuoteThankYouPage() {
         </div>
       </div>
 
-      <Link href="/">
-        <Button variant="default" className="w-full sm:w-auto min-h-[44px] py-3 px-4 rounded-xl">Back to Home</Button>
-      </Link>
+      <IntelligentBackButton
+        fallbackHref="/"
+        label="Back"
+        className="w-full justify-center rounded-xl bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/90 hover:opacity-100 sm:w-auto"
+      />
     </motion.div>
   );
 }

@@ -65,7 +65,7 @@ export default function ProfessionalHome() {
   // Services offered (Cloud Solutions removed)
   const services = [
     {
-      title: "Governed AI Systems",
+      title: "Trusted AI Operations",
       description: "Embed AI into enterprise operations with clear controls, traceability, observability, and accountable decision boundaries.",
       icon: AIMLIcon,
     },
@@ -162,7 +162,7 @@ export default function ProfessionalHome() {
           </div>
 
           {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -294,7 +294,7 @@ export default function ProfessionalHome() {
         </motion.section>
 
         {/* About Section - Enterprise Grade */}
-        <section className="py-12 md:py-16 relative overflow-hidden">
+        <section className="py-14 md:py-24 relative overflow-hidden">
           {/* Background elements */}
           <div className="absolute inset-0 bg-white dark:bg-[#121212] z-0"></div>
 
@@ -312,14 +312,14 @@ export default function ProfessionalHome() {
           <div className="absolute top-0 left-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 translate-y-1/3 z-0"></div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-8 md:mb-12">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="mx-auto mb-12 max-w-3xl text-center md:mb-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-5 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
                 Our Identity
               </motion.div>
@@ -329,7 +329,7 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white"
+                className="text-2xl md:text-3xl font-bold mb-5 text-[#2c1a22] dark:text-white"
               >
                 Who We <span className="text-[#c8a951] dark:text-[#9f7b42]">Are</span>
               </motion.h2>
@@ -339,50 +339,142 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+                className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 Codegx Technologies constructs dependable software platforms for organizations that require strict operational governance. The practice unites resilient engineering with practical AI governance to produce systems that are secure, scalable, and maintainable long after launch.
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="lg:col-span-5"
+                className="lg:col-span-5 lg:pt-4"
               >
                 <div className="relative">
                   {/* Background layers for depth */}
                   <div className="absolute -right-6 -bottom-6 left-6 top-6 border-2 border-[#c8a951]/20 dark:border-[#9f7b42]/20 rounded-xl"></div>
                   <div className="absolute -right-3 -bottom-3 left-9 top-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
 
-                  {/* Main image with overlay */}
-                  <div className="relative rounded-xl overflow-hidden shadow-2xl">
+                  <div
+                    className="relative min-h-[340px] overflow-hidden rounded-xl border border-[#c8a951]/20 bg-[#101014] shadow-2xl md:min-h-[420px]"
+                    aria-label="Enterprise systems architecture visual"
+                  >
                     <img
-                      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=800&fit=crop"
-                      alt="Enterprise Technology Innovation"
-                      className="w-full h-auto object-cover rounded-xl"
+                      src="https://images.unsplash.com/photo-1769147339214-076740872485?auto=format&fit=crop&w=1200&h=800&q=85"
+                      alt="Precision engineering blueprint workspace"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22]/78 via-[#2c1a22]/45 to-black/55" />
+                    <svg className="hidden absolute inset-0 h-full w-full opacity-15" viewBox="0 0 900 560" role="img" aria-hidden="true">
+                      <defs>
+                        <pattern id="identity-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                          <path d="M44 0H0V44" fill="none" stroke="rgba(200,169,81,0.12)" strokeWidth="1" />
+                        </pattern>
+                      </defs>
+                      <rect width="900" height="560" fill="url(#identity-grid)" />
+                      <g fill="none" stroke="rgba(200,169,81,0.55)" strokeWidth="2">
+                        <path d="M160 280H320" />
+                        <path d="M580 280H740" />
+                        <path d="M450 160V230" />
+                        <path d="M450 330V400" />
+                        <path d="M320 280C360 220 400 200 450 230" />
+                        <path d="M580 280C540 340 500 360 450 330" />
+                      </g>
+                      <g>
+                        <rect x="320" y="230" width="260" height="100" rx="14" fill="rgba(200,169,81,0.14)" stroke="rgba(200,169,81,0.55)" />
+                        <text x="450" y="275" textAnchor="middle" fill="#f8f3df" fontSize="20" fontWeight="700">GOVERNANCE CORE</text>
+                        <text x="450" y="302" textAnchor="middle" fill="rgba(248,243,223,0.74)" fontSize="13">policy • observability • security</text>
+                      </g>
+                      {[
+                        [86, 242, "INPUTS"],
+                        [690, 242, "SYSTEMS"],
+                        [352, 82, "CONTROL"],
+                        [350, 410, "AUDIT"],
+                      ].map(([x, y, label]) => (
+                        <g key={label as string}>
+                          <rect x={x as number} y={y as number} width="160" height="76" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)" />
+                          <circle cx={(x as number) + 28} cy={(y as number) + 38} r="8" fill="#c8a951" />
+                          <text x={(x as number) + 52} y={(y as number) + 43} fill="rgba(255,255,255,0.82)" fontSize="15" fontWeight="700">{label as string}</text>
+                        </g>
+                      ))}
+                    </svg>
+                    <div className="hidden absolute inset-x-6 top-8 bottom-28 [perspective:900px] md:inset-x-10">
+                      <div className="relative h-full w-full [transform-style:preserve-3d] [transform:rotateX(50deg)_rotateZ(-10deg)]">
+                        <div className="absolute left-[28%] top-[34%] h-28 w-[44%] rounded-xl border border-[#c8a951]/60 bg-[#c8a951]/20 shadow-[0_28px_60px_rgba(0,0,0,0.46),0_0_30px_rgba(200,169,81,0.18)] [transform:translateZ(58px)]">
+                          <div className="absolute inset-x-3 top-3 h-px bg-[#c8a951]/50" />
+                          <div className="flex h-full flex-col items-center justify-center px-4 text-center [transform:rotateZ(10deg)_rotateX(-50deg)_scale(1.14)]">
+                            <div className="text-[11px] font-semibold tracking-[0.18em] text-[#c8a951]">GOVERNANCE CORE</div>
+                            <div className="mt-1 text-base font-bold text-white md:text-lg">Controls by Design</div>
+                            <div className="mt-1 text-[10px] text-white/70 md:text-xs">Policy | Observability | Security</div>
+                          </div>
+                        </div>
 
-                    {/* Vision overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
-                        <div className="text-lg font-bold text-white mb-1">Innovative Solutions for Tomorrow's Challenges</div>
-                        <div className="text-sm text-white/80">Driving Digital Transformation</div>
+                        {[
+                          ["INPUTS", "left-[0%] top-[39%]"],
+                          ["SYSTEMS", "right-[0%] top-[39%]"],
+                          ["CONTROL", "left-[32%] top-[0%]"],
+                          ["AUDIT", "left-[32%] bottom-[0%]"],
+                        ].map(([label, position]) => (
+                          <div
+                            key={label}
+                            className={`${position} absolute h-24 w-40 rounded-lg border border-white/20 bg-white/[0.09] shadow-[0_18px_40px_rgba(0,0,0,0.36)] [transform:translateZ(32px)]`}
+                          >
+                            <div className="absolute left-4 top-4 h-2 w-2 rounded-full bg-[#c8a951]" />
+                            <div className="flex h-full items-center justify-center text-[13px] font-bold tracking-[0.12em] text-white [transform:rotateZ(10deg)_rotateX(-50deg)_scale(1.12)] md:text-sm">
+                              {label}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="hidden absolute inset-x-6 top-10 bottom-32 [perspective:1000px] md:inset-x-10 md:top-12">
+                      <div className="relative mx-auto h-full max-w-[460px] [transform-style:preserve-3d]">
+                        <div className="absolute inset-x-12 top-24 h-28 rounded-[18px] bg-black/35 blur-2xl md:top-32" />
+
+                        <div className="absolute left-[12%] right-[8%] top-[22%] h-28 rounded-2xl border border-white/14 bg-white/[0.08] shadow-[0_22px_50px_rgba(0,0,0,0.34)] [transform:rotateX(58deg)_rotateZ(-12deg)_translateZ(4px)]" />
+                        <div className="absolute left-[7%] right-[13%] top-[29%] h-28 rounded-2xl border border-[#c8a951]/25 bg-[#c8a951]/10 shadow-[0_24px_55px_rgba(0,0,0,0.38)] [transform:rotateX(58deg)_rotateZ(-12deg)_translateZ(18px)]" />
+
+                        <div className="absolute left-[3%] right-[3%] top-[36%] rounded-2xl border border-[#c8a951]/45 bg-[#2c1a22]/92 p-5 shadow-[0_30px_70px_rgba(0,0,0,0.52),0_0_34px_rgba(200,169,81,0.14)] [transform:rotateX(58deg)_rotateZ(-12deg)_translateZ(38px)]">
+                          <div className="flex items-center justify-between gap-4 [transform:rotateZ(12deg)_rotateX(-58deg)_scale(1.04)]">
+                            <div>
+                              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#c8a951]">Governance Core</div>
+                              <div className="mt-2 text-xl font-bold text-white md:text-2xl">Controls by Design</div>
+                            </div>
+                            <div className="hidden rounded-full border border-[#c8a951]/35 bg-[#c8a951]/10 px-3 py-1 text-xs font-medium text-[#e6d391] sm:block">
+                              Traceable
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="absolute left-[5%] top-[9%] rounded-full border border-white/12 bg-black/25 px-4 py-2 text-xs font-semibold text-white/85 shadow-lg backdrop-blur-sm">
+                          Secure Systems
+                        </div>
+                        <div className="absolute right-[2%] top-[18%] rounded-full border border-white/12 bg-black/25 px-4 py-2 text-xs font-semibold text-white/85 shadow-lg backdrop-blur-sm">
+                          Observability
+                        </div>
+                        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 rounded-full border border-[#c8a951]/25 bg-[#c8a951]/10 px-4 py-2 text-xs font-semibold text-[#ead89e] shadow-lg backdrop-blur-sm">
+                          Audit Trail
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                      <div className="inline-flex rounded-full border border-[#c8a951]/30 bg-[#2c1a22]/70 px-4 py-2 text-sm font-medium text-[#f0dfaa] shadow-lg backdrop-blur-sm">
+                        Dependable Systems Practice
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Mission statement */}
-                <div className="mt-6 bg-white dark:bg-[#2c1a22] p-4 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
+                <div className="mt-10 bg-white dark:bg-[#2c1a22] p-5 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
                   <div className="absolute top-0 left-8 transform -translate-y-1/2 bg-[#c8a951] dark:bg-[#9f7b42] text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium">
                     Our Mission
                   </div>
-                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-2">
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-4">
                     "To deliver dependable software platforms that sharpen decision-making, automate intricate operations, and carry enterprise and government bodies through structural digital transformation."
                   </p>
                 </div>
@@ -395,15 +487,15 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="lg:col-span-7"
               >
-                <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  <h3 className="text-lg md:text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">Governance by Design</h3>
+                <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
+                  <h3 className="text-lg md:text-xl font-bold mb-6 text-[#2c1a22] dark:text-white">Governance by Design</h3>
 
-                  <div className="space-y-4">
+                  <div className="space-y-7">
                     <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">
                       Every engagement is approached with production readiness and governance by design. The method prioritizes deterministic execution where required, alongside rigorous security, observability, and long-term maintainability.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7 mt-8">
                       <div className="flex items-start">
                         <div className="flex-shrink-0">
                           <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
@@ -462,9 +554,9 @@ export default function ProfessionalHome() {
                     </div>
 
                     {/* Core values */}
-                    <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white mb-3">Our Core Values</h4>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white mb-4">Our Core Values</h4>
+                      <div className="flex flex-wrap gap-3">
                         <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
                           <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
                             <InnovationValueIcon />
@@ -509,7 +601,7 @@ export default function ProfessionalHome() {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -568,7 +660,7 @@ export default function ProfessionalHome() {
                   </p>
                   {platform.name === "Wakala OS" && (
                     <div className="mt-4 rounded-md border border-[#c8a951]/20 bg-[#c8a951]/5 px-3 py-2 text-xs text-[#6f5823] dark:text-[#d8c179]">
-                      Endorsed platform: Wakala OS by Codegx Technologies.
+                      Flagship platform: Wakala OS anchors Codegx governed automation work.
                     </div>
                   )}
                 </motion.div>
@@ -601,7 +693,7 @@ export default function ProfessionalHome() {
             </svg>
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -630,7 +722,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
               >
-                We deliver a comprehensive suite of enterprise-grade technology solutions designed to address your organization's most complex challenges and drive sustainable growth.
+                We deliver governed technology systems designed to address your organization's most complex challenges and sustain long-term operational growth.
               </motion.p>
             </div>
 
@@ -646,7 +738,7 @@ export default function ProfessionalHome() {
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="p-6 lg:p-8 flex flex-col justify-center">
                     <div className="inline-flex items-center px-3 py-1 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-3 self-start">
-                      Featured Service
+                      Enterprise Capability
                     </div>
 
                     <h3 className="text-lg md:text-xl font-bold mb-3 text-[#2c1a22] dark:text-white">
@@ -823,18 +915,18 @@ export default function ProfessionalHome() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-16 relative overflow-hidden"
+              className="mx-auto mt-10 md:mt-12 max-w-5xl relative overflow-hidden"
             >
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+              <div className="rounded-xl overflow-hidden shadow-xl border border-white/10">
                 <img
                   src="https://images.unsplash.com/photo-1581089781785-603411fa81e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                  alt="AI Technology Solutions"
-                  className="w-full h-auto object-cover"
+                  alt="Enterprise systems delivery environment"
+                  className="h-[260px] w-full object-cover md:h-[340px] lg:h-[420px]"
                 />
                 <div className="absolute inset-0 bg-[#2c1a22]/80"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-white">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Turning Process Gaps into Working Systems</h3>
-                  <p className="text-slate-300 max-w-2xl mb-6">Our automation and software delivery work helps teams reduce manual effort, improve visibility, and serve customers more reliably.</p>
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white md:p-8">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3">Turning Process Gaps into Working Systems</h3>
+                  <p className="text-sm text-slate-300 max-w-2xl">Our automation and software delivery work helps teams reduce manual effort, improve visibility, and serve customers more reliably.</p>
                 </div>
               </div>
             </motion.div>
@@ -888,7 +980,7 @@ export default function ProfessionalHome() {
 
         {/* Current Projects Section */}
         <div className="py-12 md:py-16 bg-gray-50 dark:bg-[#1a1a1a]">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <CurrentProjects
               caseStudies={caseStudies}
               className="w-full"
