@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { PageWrapper, PageSection, PageHeader, PageDivider } from "@/components/layouts/PageWrapper";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import ServiceCard from "@/components/Services/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
@@ -27,23 +27,19 @@ export default function Services() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  // Fetch services data
   const { data, isLoading, error } = useQuery<ServicesData>({
     queryKey: ["/data/services.json"],
     staleTime: Infinity,
   });
 
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Get all unique tags
   const allTags = data?.services
     ? Array.from(new Set(data.services.flatMap(service => service.tags)))
     : [];
 
-  // Filter services by search query and tag
   const filteredServices = data?.services
     ? data.services.filter(service => {
         const matchesSearch = searchQuery === "" ||
@@ -59,9 +55,7 @@ export default function Services() {
 
   return (
     <PageWrapper>
-      {/* Hero Section */}
       <div className="relative py-8 md:py-12 overflow-hidden bg-[#2c1a22] dark:bg-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-8 md:mb-12">
-        {/* Subtle pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -85,28 +79,40 @@ export default function Services() {
               className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
             >
               <i className="fas fa-shield-alt mr-2"></i>
-              Enterprise Grade Solutions
+              Governed Delivery Catalogue
             </motion.div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
-              Improve Your <span className="text-[#c8a951] dark:text-[#9f7b42]">Operations</span> with Practical Automation
+              Software, Automation, and Intelligence Systems Built for <span className="text-[#c8a951] dark:text-[#9f7b42]">Operational Control</span>
             </h1>
 
             <p className="text-xs md:text-sm text-slate-300 max-w-3xl mx-auto">
-              We deliver software and automation solutions that solve real business problems and create measurable impact.
-              Explore our services to see how we can help your organization improve delivery, visibility, and scale.
+              We help organizations turn complex workflows into secure, traceable, and maintainable systems.
+              Services are organized around platform engineering, governed automation, operational intelligence, and capability enablement.
             </p>
           </motion.div>
         </div>
       </div>
 
-      {/* Search and Filter */}
       <PageSection className="relative overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
         <div className="relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-8">
+            {[
+              ["Control", "Decision boundaries and approval paths remain visible."],
+              ["Traceability", "Systems keep logs, evidence, and operational context."],
+              ["Maintainability", "Architecture is built to be owned after launch."],
+              ["Operational Fit", "Delivery follows the realities of each workflow."]
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-lg border border-[#c8a951]/15 dark:border-[#9f7b42]/20 bg-white/80 dark:bg-[#1a1a1a]/80 p-4">
+                <h2 className="text-sm font-semibold text-[#2c1a22] dark:text-white">{title}</h2>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{description}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="bg-white dark:bg-[#1a1a1a] rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50 p-6 mb-8">
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               <div className="flex-1">
@@ -149,7 +155,6 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Services Grid */}
           {isLoading ? (
             <div className="text-center py-20">
               <div className="animate-spin w-12 h-12 border-4 border-[#c8a951] dark:border-[#9f7b42] border-t-transparent rounded-full mx-auto mb-6"></div>
@@ -199,129 +204,131 @@ export default function Services() {
         </div>
       </PageSection>
 
-      {/* Our Approach & Why Choose Us Section */}
-      <PageSection className="py-20 bg-white dark:bg-[#121212] relative overflow-hidden">
-        {/* Background Elements */}
+      <PageSection className="py-16 md:py-20 bg-white dark:bg-[#121212] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Our Approach */}
+          <div className="mb-10 max-w-3xl">
+            <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+              Delivery Discipline
+            </div>
+            <Heading2 className="text-3xl font-bold mb-4 text-[#2c1a22] dark:text-white">
+              How We Deliver Work That Can Be Operated
+            </Heading2>
+            <Paragraph className="text-gray-700 dark:text-gray-300">
+              Services are delivered as governed systems: scoped around the workflow, designed for accountability, and prepared for ownership after launch.
+            </Paragraph>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50"
+              className="rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-[#2c1a22]/50 dark:bg-[#1a1a1a] md:p-8"
             >
-              <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-6 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
-                Our Process
+              <div className="mb-6 flex items-center justify-between gap-4 border-b border-gray-200 pb-5 dark:border-[#2c1a22]">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#9f7b42]">Delivery Model</p>
+                  <h3 className="mt-2 text-2xl font-bold text-[#2c1a22] dark:text-white">How We Deliver</h3>
+                </div>
+                <div className="hidden h-12 w-12 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42] sm:flex">
+                  <i className="fas fa-route text-lg"></i>
+                </div>
               </div>
 
-              <Heading2 className="text-3xl font-bold mb-6 text-[#2c1a22] dark:text-white">Our Approach</Heading2>
-              <Paragraph className="text-gray-700 dark:text-gray-300 mb-8">
-                We believe in a collaborative approach to every project. Our team works closely with you to understand your unique challenges and goals, ensuring that our solutions are tailored to your specific needs.
-              </Paragraph>
-              <ul className="space-y-6">
-                <li className="flex items-start">
-                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
-                    <i className="fas fa-lightbulb text-xl"></i>
-                  </div>
+              <ul className="space-y-0">
+                <li className="grid grid-cols-[3rem_1fr] gap-4 border-b border-gray-200 py-5 first:pt-0 dark:border-[#2c1a22]">
+                  <div className="text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42]">01</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Discovery</h3>
+                    <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Diagnose the Workflow</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      We begin by understanding your business, goals, and challenges through in-depth consultations.
+                      Map ownership, data movement, failure points, controls, and existing technical constraints.
                     </Paragraph>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
-                    <i className="fas fa-pencil-ruler text-xl"></i>
-                  </div>
+                <li className="grid grid-cols-[3rem_1fr] gap-4 border-b border-gray-200 py-5 dark:border-[#2c1a22]">
+                  <div className="text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42]">02</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Planning</h3>
+                    <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Design the Control Layer</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      Our team creates a detailed roadmap and strategy tailored to your specific requirements.
+                      Define decision boundaries, integration contracts, audit paths, roles, and adoption milestones.
                     </Paragraph>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
-                    <i className="fas fa-code text-xl"></i>
-                  </div>
+                <li className="grid grid-cols-[3rem_1fr] gap-4 border-b border-gray-200 py-5 dark:border-[#2c1a22]">
+                  <div className="text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42]">03</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Development</h3>
+                    <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Build the System</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      We build your solution with proven technologies, clean implementation practices, and maintainable architecture.
+                      Implement secure defaults, maintainable code, observable workflows, and clear release discipline.
                     </Paragraph>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <div className="mr-4 mt-1 w-12 h-12 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center rounded-lg text-[#c8a951] dark:text-[#9f7b42]">
-                    <i className="fas fa-rocket text-xl"></i>
-                  </div>
+                <li className="grid grid-cols-[3rem_1fr] gap-4 py-5 pb-0">
+                  <div className="text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42]">04</div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Launch & Support</h3>
+                    <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Operate and Improve</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      We ensure a smooth deployment and provide ongoing support and maintenance.
+                      Support rollout, measure reliability, tune the workflow, and transfer usable operating knowledge.
                     </Paragraph>
                   </div>
                 </li>
               </ul>
             </motion.div>
 
-            {/* Why Choose Us */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50"
+              className="rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-[#2c1a22]/50 dark:bg-[#1a1a1a] md:p-8"
             >
-              <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-6 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
-                Our Strengths
+              <div className="mb-6 border-b border-gray-200 pb-5 dark:border-[#2c1a22]">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#9f7b42]">Engineering Mandate</p>
+                <h3 className="mt-2 text-2xl font-bold text-[#2c1a22] dark:text-white">What Makes the Work Different</h3>
+                <Paragraph className="mt-3 text-gray-700 dark:text-gray-300">
+                  Automation is treated as part of the operating estate, not a detached feature. The work must be secure, explainable, and maintainable.
+                </Paragraph>
               </div>
 
-              <Heading2 className="text-3xl font-bold mb-6 text-[#2c1a22] dark:text-white">Why Choose Us</Heading2>
-              <Paragraph className="text-gray-700 dark:text-gray-300 mb-8">
-                With our expertise and dedication to excellence, we deliver solutions that drive real business results.
-              </Paragraph>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
-                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <i className="fas fa-users text-xl"></i>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
+                    <i className="fas fa-sitemap text-base"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Expert Team</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Architecture Before Automation</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    Our team consists of experienced professionals with diverse skills and expertise.
+                    We clarify system boundaries before introducing automation, agents, analytics, or integrations.
                   </Paragraph>
                 </div>
-                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
-                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <i className="fas fa-cogs text-xl"></i>
+                <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
+                    <i className="fas fa-shield-alt text-base"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Practical Technology</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Governance Built In</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    We choose the right tools for each business problem and keep implementation maintainable.
+                    Access, approvals, monitoring, and accountability are designed as first-class system behavior.
                   </Paragraph>
                 </div>
-                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
-                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <i className="fas fa-chart-line text-xl"></i>
+                <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
+                    <i className="fas fa-chart-line text-base"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Results-Driven</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Practical Intelligence</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    Our focus is on delivering measurable results that help your business grow.
+                    We use AI where it improves judgment, throughput, or visibility without weakening control.
                   </Paragraph>
                 </div>
-                <div className="bg-white dark:bg-[#2c1a22] p-6 rounded-lg shadow-md border border-gray-100 dark:border-[#3d2128] group hover:border-[#c8a951] dark:hover:border-[#9f7b42] transition-colors">
-                  <div className="w-12 h-12 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <i className="fas fa-headset text-xl"></i>
+                <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
+                    <i className="fas fa-life-ring text-base"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Dedicated Support</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Long-Term Ownership</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    We provide ongoing support and maintenance to ensure your solution continues to perform optimally.
+                    Documentation, observability, and support patterns are shaped so the system can be trusted over time.
                   </Paragraph>
                 </div>
               </div>
@@ -330,9 +337,7 @@ export default function Services() {
         </div>
       </PageSection>
 
-      {/* CTA Section */}
       <PageSection className="py-20 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        {/* Subtle pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <pattern id="grid-pattern-cta" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -342,27 +347,6 @@ export default function Services() {
           </svg>
         </div>
 
-        {/* Animated stars */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-[#c8a951] dark:bg-[#9f7b42] rounded-full"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.2, 0.8, 0.2],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-
         <div className="container mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -370,9 +354,9 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Ready to <span className="text-[#c8a951] dark:text-[#9f7b42]">Transform</span> Your Workflow?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Build Systems That Can Be <span className="text-[#c8a951] dark:text-[#9f7b42]">Governed</span></h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-              Let's discuss how our AI solutions can address your specific challenges and create measurable impact for your organization.
+              Talk to us about software, automation, or Wakala OS workflows that need traceability, security, and durable operating discipline.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <Link href="/contact">

@@ -3,10 +3,10 @@
     {
       "id": "ai-chatbots",
       "slug": "ai-chatbots",
-      "title": "AI Chatbots & Assistants",
+      "title": "Conversational Workflow Systems",
       "icon": "ChatbotServiceIcon",
-      "shortDescription": "Intelligent conversational agents that enhance customer service and streamline operations.",
-      "fullDescription": "Our AI chatbots and virtual assistants leverage the latest in natural language processing to deliver human-like interactions at scale. We design, develop, and deploy conversational AI solutions that can handle customer inquiries, automate routine tasks, and provide personalized assistance 24/7.",
+      "shortDescription": "Structured assistants for service, internal knowledge, and process handoffs with clear operating boundaries.",
+      "fullDescription": "Our conversational workflow systems use natural language interfaces to make support, knowledge retrieval, and operational handoffs easier to manage. We design, develop, and deploy assistants that work inside clear process boundaries and integrate with the systems teams already use.",
       "benefits": [
         "24/7 customer support without human intervention",
         "Reduced operational costs by automating routine inquiries",
@@ -17,7 +17,7 @@
       "useCases": [
         {
           "title": "Customer Support Automation",
-          "description": "Implement AI chatbots to handle common customer inquiries, reducing support ticket volume by up to 70% and enabling human agents to focus on complex issues."
+          "description": "Implement structured assistants to handle common customer inquiries, reduce repetitive support load, and route complex issues to the right human owners."
         },
         {
           "title": "Internal Knowledge Assistant",
@@ -58,15 +58,15 @@
           "image": "/assets/services/chatbot-ecommerce.jpg"
         }
       ],
-      "tags": ["Conversational AI", "NLP", "Customer Service", "Automation"],
-      "cta": "Transform your customer experience with intelligent AI assistants"
+      "tags": ["Workflow Assistants", "Knowledge Access", "Service Operations", "Automation"],
+      "cta": "Build conversational systems with clear ownership and controls"
     },
     {
       "id": "predictive-analytics",
       "slug": "predictive-analytics",
-      "title": "Predictive Analytics",
+      "title": "Operational Intelligence",
       "icon": "PredictiveAnalyticsIcon",
-      "shortDescription": "Turn your data into actionable insights and accurate forecasts to drive business decisions.",
+      "shortDescription": "Decision-support systems that make operational patterns, risks, and forecasts easier to act on.",
       "fullDescription": "Our predictive analytics solutions help organizations leverage historical and real-time data to forecast trends, identify opportunities, and mitigate risks. We combine advanced statistical methods, machine learning, and domain expertise to build models that deliver accurate predictions and actionable insights.",
       "benefits": [
         "Anticipate market trends and customer behavior",
@@ -120,15 +120,15 @@
           "image": "/assets/services/predictive-manufacturing.jpg"
         }
       ],
-      "tags": ["Machine Learning", "Forecasting", "Data Science", "Business Intelligence"],
+      "tags": ["Forecasting", "Operational Analytics", "Decision Support", "Business Intelligence"],
       "cta": "Unlock the power of prediction for your business"
     },
     {
       "id": "computer-vision",
       "slug": "computer-vision",
-      "title": "Computer Vision",
+      "title": "Visual Operations Intelligence",
       "icon": "ComputerVisionIcon",
-      "shortDescription": "Automate visual inspection, recognition, and analysis with AI that can see and understand images and video.",
+      "shortDescription": "Visual inspection and monitoring systems for environments where evidence, safety, and accuracy matter.",
       "fullDescription": "Our computer vision solutions enable machines to interpret and understand visual information from the world. We develop custom computer vision systems that can detect objects, recognize patterns, track movement, and extract insights from images and video streams, automating tasks that previously required human visual inspection.",
       "benefits": [
         "Automate visual inspection and quality control",
@@ -181,15 +181,15 @@
           "image": "/assets/services/vision-construction.jpg"
         }
       ],
-      "tags": ["Image Recognition", "Object Detection", "Visual Inspection", "Video Analytics"],
-      "cta": "See your business through the lens of AI"
+      "tags": ["Visual Inspection", "Object Detection", "Safety Monitoring", "Video Analytics"],
+      "cta": "Make visual operations measurable and accountable"
     },
     {
       "id": "process-automation",
       "slug": "process-automation",
-      "title": "Intelligent Process Automation",
+      "title": "Governed Process Automation",
       "icon": "ProcessAutomationIcon",
-      "shortDescription": "Streamline operations and reduce costs by automating complex business processes with governed workflows.",
+      "shortDescription": "Workflow automation for complex operations with approvals, exception handling, and audit visibility.",
       "fullDescription": "Our process automation solutions combine workflow analysis, system integration, and governed decision support to improve complex business processes. We help organizations identify automation opportunities, design efficient workflows, and implement solutions that reduce manual effort, minimize errors, and accelerate operations.",
       "benefits": [
         "Reduce operational costs through automation",
@@ -217,7 +217,7 @@
         }
       ],
       "process": [
-        "Process Assessment: We analyze your current processes to identify automation opportunities and potential ROI.",
+        "Process Assessment: We analyze your current processes to identify automation opportunities, control requirements, and operating value.",
         "Solution Design: We design automated workflows that optimize efficiency and integrate with existing systems.",
         "Development: We develop automation solutions using appropriate technologies, from RPA to custom AI components.",
         "Testing & Validation: We rigorously test automated processes to ensure accuracy, reliability, and exception handling.",
@@ -242,19 +242,19 @@
           "image": "/assets/services/automation-supply-chain.jpg"
         }
       ],
-      "tags": ["RPA", "Workflow Automation", "Document Processing", "Business Process Optimization"],
-      "cta": "Automate your way to operational excellence"
+      "tags": ["Workflow Automation", "Document Processing", "System Integration", "Process Control"],
+      "cta": "Automate workflows without losing control"
     },
     {
       "id": "ai-strategy",
       "slug": "ai-strategy",
-      "title": "AI Strategy & Consulting",
+      "title": "Automation Governance Advisory",
       "icon": "AIStrategyIcon",
-      "shortDescription": "Develop a comprehensive AI roadmap aligned with your business goals and competitive landscape.",
+      "shortDescription": "Practical advisory for automation roadmaps, AI governance, delivery risk, and operating readiness.",
       "fullDescription": "Our automation strategy and consulting services help organizations define a clear roadmap for practical implementation. We work with you to identify high-value automation opportunities, assess technical feasibility, and create a strategic plan that aligns with your business objectives and capabilities.",
       "benefits": [
-        "Align AI initiatives with business objectives",
-        "Prioritize AI investments for maximum ROI",
+        "Align automation and AI initiatives with business objectives",
+        "Prioritize investments by operating value, risk, and readiness",
         "Develop a realistic implementation roadmap",
         "Build internal AI capabilities and governance",
         "Mitigate risks associated with AI adoption"
@@ -285,10 +285,10 @@
         "Governance Design: We help you establish the necessary governance structures and processes for responsible AI.",
         "Implementation Support: We provide ongoing guidance and support as you execute your AI strategy."
       ],
-      "technologies": ["AI Readiness Frameworks", "Use Case Prioritization Models", "AI Governance Frameworks", "ROI Assessment Tools"],
+      "technologies": ["AI Readiness Frameworks", "Use Case Prioritization Models", "AI Governance Frameworks", "Operating Value Assessment"],
       "examples": [
         {
-          "title": "Retail AI Transformation",
+          "title": "Retail Automation Roadmap",
           "description": "Developed a comprehensive AI strategy for a retail chain that identified $45M in potential annual value across customer experience, supply chain, and operations.",
           "image": "/assets/services/strategy-retail.jpg"
         },
@@ -303,22 +303,22 @@
           "image": "/assets/services/strategy-finance.jpg"
         }
       ],
-      "tags": ["AI Strategy", "Digital Transformation", "Technology Consulting", "Innovation"],
-      "cta": "Chart your course to AI-driven success"
+      "tags": ["Governance", "Automation Roadmaps", "Technology Advisory", "Operating Readiness"],
+      "cta": "Plan automation with governance from the start"
     },
     {
       "id": "ai-training",
       "slug": "ai-training",
-      "title": "AI Training & Enablement",
+      "title": "Operational AI Enablement",
       "icon": "AITrainingIcon",
-      "shortDescription": "Equip your team with the knowledge and skills to leverage AI effectively in your organization.",
-      "fullDescription": "Our AI training and enablement programs help organizations build internal capabilities to understand, implement, and manage AI solutions. We offer customized training for executives, managers, and technical teams, covering everything from AI fundamentals to advanced implementation techniques, tailored to your specific industry and use cases.",
+      "shortDescription": "Enablement programs that help teams use AI-assisted systems responsibly inside real workflows.",
+      "fullDescription": "Our operational AI enablement programs help organizations build internal capability to use, manage, and govern AI-assisted systems. We offer practical sessions for executives, managers, and technical teams, tailored to the workflows and decisions they own.",
       "benefits": [
-        "Build internal AI literacy and expertise",
+        "Build internal AI literacy and operating discipline",
         "Empower teams to identify AI opportunities",
         "Reduce dependency on external consultants",
         "Accelerate AI adoption and implementation",
-        "Foster a culture of AI-driven innovation"
+        "Strengthen responsible adoption across operational teams"
       ],
       "useCases": [
         {
@@ -350,7 +350,7 @@
       "examples": [
         {
           "title": "Enterprise-wide AI Literacy Program",
-          "description": "Developed and delivered an AI literacy program for a Fortune 500 company that trained over 5,000 employees across all levels, resulting in 120+ new AI initiatives.",
+          "description": "Developed an AI literacy and governance program for a large organization, helping teams identify practical use cases, risks, and adoption responsibilities.",
           "image": "/assets/services/training-enterprise.jpg"
         },
         {
@@ -364,8 +364,8 @@
           "image": "/assets/services/training-executive.jpg"
         }
       ],
-      "tags": ["Training", "Capability Building", "Knowledge Transfer", "Skill Development"],
-      "cta": "Empower your team with AI knowledge and skills"
+      "tags": ["Enablement", "Capability Building", "Knowledge Transfer", "Responsible Use"],
+      "cta": "Build team capability around governed AI operations"
     }
   ]
 }

@@ -4,207 +4,253 @@ import { Head } from "@/components/head";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import {
-  RocketIcon,
   CodeIcon,
-  BrainIcon,
   PuzzleIcon,
   ShieldIcon,
   WrenchIcon,
 } from "@/components/icons/DocumentationIcons";
 
-export default function About() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
+const principles = [
+  {
+    title: "Operational Integrity",
+    description: "Systems must remain understandable, observable, and maintainable after launch.",
+    icon: ShieldIcon,
+  },
+  {
+    title: "Governed Automation",
+    description: "Automation is designed with clear controls, traceability, and accountable decision boundaries.",
+    icon: PuzzleIcon,
+  },
+  {
+    title: "Production Discipline",
+    description: "Engineering choices are made for resilience, security, continuity, and long-term ownership.",
+    icon: WrenchIcon,
+  },
+  {
+    title: "Practical Intelligence",
+    description: "AI is used where it improves real workflows, not where it only creates novelty.",
+    icon: CodeIcon,
+  },
+];
 
+const capabilities = [
+  {
+    label: "01",
+    title: "Dependable Software Platforms",
+    description:
+      "Purpose-built systems for organizations that need secure workflows, durable architecture, and practical operating control.",
+  },
+  {
+    label: "02",
+    title: "Wakala OS And Governed Workflows",
+    description:
+      "Structured automation for agentic workflows, onboarding, reporting, business process execution, and accountable operations.",
+  },
+  {
+    label: "03",
+    title: "Operational Intelligence",
+    description:
+      "Decision-support systems that make critical work visible, measurable, and easier to govern under pressure.",
+  },
+];
+
+export default function About() {
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 18 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.55 },
     },
   };
 
   return (
     <>
       <Head
-        title="About Codegx Technologies | Enterprise Technology Solutions"
-        description="Learn about Codegx Technologies, delivering enterprise software, automation, and digital transformation solutions for organizations worldwide."
+        title="About Codegx Technologies | Dependable Systems & Governed Automation"
+        description="Codegx Technologies builds dependable software platforms, governed automation systems, and operational intelligence for organizations that need secure, maintainable execution."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
-        {/* Hero Section */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-6 md:py-12 px-4 sm:px-6 md:px-0"
+          transition={{ duration: 0.55 }}
+          className="relative overflow-hidden px-4 py-8 sm:px-6 md:px-0 md:py-14"
         >
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-              About Codegx Technologies
-            </h1>
-            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 px-2">
-              Delivering enterprise software, automation, and digital transformation solutions for organizations worldwide.
-            </p>
+          <div className="absolute right-0 top-10 h-64 w-64 rounded-full bg-[#c8a951]/10 blur-3xl dark:bg-[#9f7b42]/10" />
+          <div className="grid items-center gap-8 lg:grid-cols-12">
+            <div className="relative z-10 lg:col-span-7">
+              <div className="mb-4 inline-flex rounded-full border border-[#c8a951]/30 bg-[#c8a951]/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#d6b464]">
+                Codegx Technologies
+              </div>
+              <h1 className="max-w-4xl text-3xl font-bold leading-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
+                Engineering Dependable Systems For Work That Must Stay Accountable
+              </h1>
+              <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
+                Codegx Technologies builds software platforms, governed automation, and operational intelligence systems
+                for organizations that need security, clarity, and long-term maintainability.
+              </p>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#c8a951] dark:text-[#d6b464] md:text-base">
+                Wakala OS sits within this mandate as the Codegx platform for structured business process automation
+                and accountable agentic workflows.
+              </p>
+            </div>
+
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              className="relative z-10 lg:col-span-5"
+            >
+              <div className="rounded-lg border border-border bg-card/70 p-5 shadow-xl backdrop-blur md:p-6">
+                <div className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Operating Mandate
+                </div>
+                <div className="space-y-4">
+                  {["Secure by design", "Governed by default", "Maintainable after launch"].map((item) => (
+                    <div key={item} className="flex items-center gap-3 border-b border-border pb-4 last:border-b-0 last:pb-0">
+                      <div className="h-2.5 w-2.5 rotate-45 bg-[#c8a951] dark:bg-[#9f7b42]" />
+                      <span className="text-sm font-medium text-slate-900 dark:text-white">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.section>
 
-        {/* Mission & Vision */}
         <motion.section
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 sm:px-6 md:px-0"
+          viewport={{ once: true, margin: "-80px" }}
+          className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <motion.div variants={itemVariants} className="space-y-2">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Mission</h2>
-            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              To help organizations improve operations with practical software, governed automation, and dependable technology delivery. We turn complex business challenges into clear systems that can be maintained and measured.
-            </p>
-          </motion.div>
+          <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+            <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Mission</div>
+              <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
+                Build systems that improve operational control.
+              </h2>
+              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Our work turns complex delivery, automation, reporting, and decision workflows into dependable
+                platforms that teams can operate with confidence.
+              </p>
+            </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-2">
-            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white">Our Vision</h2>
-            <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-              To be the trusted partner for enterprises seeking technology solutions that create durable operational advantage. We envision a future where automation is governed, practical, and accessible to organizations of all sizes.
-            </p>
-          </motion.div>
+            <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Direction</div>
+              <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
+                Make automation accountable, not ornamental.
+              </h2>
+              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                We are positioning Codegx around governed execution: systems where automation, AI assistance, and
+                human oversight work inside clear operating boundaries.
+              </p>
+            </motion.div>
+          </div>
         </motion.section>
 
-        {/* Core Values */}
         <motion.section
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="py-6 md:py-10 px-4 sm:px-6 md:px-0"
+          viewport={{ once: true, margin: "-80px" }}
+          className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-slate-900 dark:text-white">
-            Our Core Values
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {[
-              {
-                title: "Innovation",
-                description: "We apply technology where it solves real operational problems and creates measurable value.",
-                icon: RocketIcon,
-              },
-              {
-                title: "Excellence",
-                description: "We maintain the highest standards of quality in everything we do, from code to customer service.",
-                icon: CodeIcon,
-              },
-              {
-                title: "Integrity",
-                description: "We operate with transparency and honesty, building trust with our clients and partners.",
-                icon: ShieldIcon,
-              },
-              {
-                title: "Collaboration",
-                description: "We believe in the power of teamwork and partnerships to achieve extraordinary results.",
-                icon: PuzzleIcon,
-              },
-              {
-                title: "Impact",
-                description: "We measure success by the positive impact we create for our clients and their stakeholders.",
-                icon: BrainIcon,
-              },
-              {
-                title: "Sustainability",
-                description: "We build solutions that are not only effective today but sustainable for the future.",
-                icon: WrenchIcon,
-              },
-            ].map((value, index) => {
-              const IconComponent = value.icon;
+          <div className="mb-6 max-w-3xl">
+            <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">
+              Operating Principles
+            </div>
+            <h2 className="text-2xl font-bold text-slate-950 dark:text-white md:text-3xl">
+              The standards behind our engineering work
+            </h2>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-4">
+            {principles.map((principle, index) => {
+              const IconComponent = principle.icon;
               return (
                 <motion.div
-                  key={index}
+                  key={principle.title}
                   variants={itemVariants}
-                  className="p-3 sm:p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-left"
+                  transition={{ delay: index * 0.05 }}
+                  className="group rounded-lg border border-border bg-card p-5 transition-colors duration-300 hover:border-[#c8a951]/50"
                 >
-                  <div className="mb-2">
-                    <IconComponent size={28} className="text-[#c8a951] dark:text-[#9f7b42]" />
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-[#c8a951]/10 text-[#c8a951] dark:text-[#d6b464]">
+                    <IconComponent size={24} />
                   </div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2 text-slate-900 dark:text-white">
-                    {value.title}
-                  </h3>
-                  <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">{value.description}</p>
+                  <h3 className="mb-3 text-base font-bold text-slate-950 dark:text-white">{principle.title}</h3>
+                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{principle.description}</p>
                 </motion.div>
               );
             })}
           </div>
         </motion.section>
 
-        {/* What We Do */}
         <motion.section
-          variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          className="py-6 md:py-10 px-4 sm:px-6 md:px-0"
+          viewport={{ once: true, margin: "-80px" }}
+          className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center text-slate-900 dark:text-white">
-            What We Do
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
-            <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
-                AI & Machine Learning Solutions
-              </h3>
-              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
-                We develop intelligent systems that learn from data and make informed decisions, helping organizations automate processes and gain competitive insights.
-              </p>
-            </motion.div>
+          <div className="rounded-lg border border-border bg-[#111827] p-5 text-white dark:bg-[#15111a] md:p-7">
+            <div className="grid gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-4">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#d6b464]">
+                  What We Build
+                </div>
+                <h2 className="text-2xl font-bold md:text-3xl">A focused technical estate</h2>
+                <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                  We do not treat AI, automation, and software as separate buzzwords. We compose them into systems that
+                  support real operating responsibilities.
+                </p>
+              </div>
 
-            <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
-                Digital Transformation
-              </h3>
-              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
-                We guide organizations through comprehensive digital transformation journeys, modernizing legacy systems and enabling new business models.
-              </p>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="space-y-1">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 dark:text-white">
-                Custom Software Development
-              </h3>
-              <p className="text-xs sm:text-xs md:text-sm text-slate-600 dark:text-slate-400">
-                We build bespoke software solutions tailored to your unique business needs, ensuring scalability, security, and performance.
-              </p>
-            </motion.div>
+              <div className="space-y-4 lg:col-span-8">
+                {capabilities.map((capability) => (
+                  <motion.div
+                    key={capability.label}
+                    variants={itemVariants}
+                    className="grid gap-3 border-b border-white/10 pb-4 last:border-b-0 last:pb-0 md:grid-cols-[80px_1fr]"
+                  >
+                    <div className="text-sm font-semibold text-[#d6b464]">{capability.label}</div>
+                    <div>
+                      <h3 className="text-lg font-bold">{capability.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-300">{capability.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.section>
 
-        {/* CTA Section */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="py-6 md:py-10 text-center"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55 }}
+          className="px-4 py-8 text-center sm:px-6 md:px-0 md:py-12"
         >
-          <h2 className="text-lg md:text-2xl font-bold mb-3 text-slate-900 dark:text-white">
-            Ready to Transform Your Business?
+          <h2 className="text-2xl font-bold text-slate-950 dark:text-white md:text-3xl">
+            Build With Operational Confidence
           </h2>
-          <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-4 max-w-2xl mx-auto">
-            Let's discuss how Codegx Technologies can help you achieve your digital transformation goals.
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            Talk to us about software, governed automation, or Wakala OS workflows that need to remain visible,
+            secure, and accountable in production.
           </p>
-          <Link href="/contact">
-            <Button size="sm" className="rounded-full px-6 py-2 text-xs md:text-sm font-semibold">
-              Get in Touch
-            </Button>
-          </Link>
+          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href="/contact">
+              <Button size="sm" className="rounded-full px-6 py-2 text-xs font-semibold md:text-sm">
+                Start a Conversation
+              </Button>
+            </Link>
+            <Link href="/agency">
+              <Button size="sm" variant="outline" className="rounded-full px-6 py-2 text-xs font-semibold md:text-sm">
+                Explore Wakala OS
+              </Button>
+            </Link>
+          </div>
         </motion.section>
       </MainLayout>
     </>
