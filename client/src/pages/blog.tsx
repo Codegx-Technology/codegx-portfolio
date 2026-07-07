@@ -89,8 +89,8 @@ export default function Blog() {
 
       <PageSection
         background="pattern"
-        spacing="xl"
-        className="relative overflow-hidden"
+        spacing="lg"
+        className="relative overflow-hidden py-8 md:py-12"
       >
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
@@ -99,7 +99,7 @@ export default function Blog() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 md:mb-12 relative z-10"
+          className="text-center mb-6 md:mb-8 relative z-10"
         >
           <Heading1 className="mb-2 md:mb-3">Thought Leadership</Heading1>
           <Paragraph className="text-xs md:text-sm max-w-3xl mx-auto">
@@ -109,9 +109,9 @@ export default function Blog() {
         </motion.div>
 
           {/* Search and Filter */}
-          <div className="mb-8 md:mb-10 relative z-10">
-            <EnterpriseCard className="p-4 md:p-6 mb-4 md:mb-6 border-primary/20 shadow-lg">
-              <div className="flex flex-col md:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
+          <div className="mb-8 relative z-10">
+            <EnterpriseCard className="p-4 md:p-5 border-primary/20 shadow-sm">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-4 mb-4">
                 <div className="flex-1 relative">
                   <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground">
                     <i className="fas fa-search"></i>
@@ -121,13 +121,13 @@ export default function Blog() {
                     placeholder="Search articles..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 py-2 md:py-3 text-xs md:text-sm border-primary/20 focus:border-primary focus:ring-primary"
+                    className="w-full pl-10 py-2 text-xs md:text-sm border-primary/20 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <Button
                   variant={activeTag === null ? "default" : "outline"}
                   onClick={() => setActiveTag(null)}
-                  className="whitespace-nowrap py-2 md:py-3 px-4 md:px-6 text-xs md:text-sm font-medium"
+                  className="whitespace-nowrap py-2 px-4 md:px-5 text-xs md:text-sm font-medium"
                 >
                   <i className="fas fa-tag mr-2"></i> All Topics
                 </Button>
@@ -138,7 +138,7 @@ export default function Blog() {
                   <Badge
                     key={tag}
                     variant={activeTag === tag ? "default" : "outline"}
-                    className={`cursor-pointer px-3 md:px-4 py-1 md:py-2 text-xs md:text-sm font-medium transition-all duration-200 ${
+                    className={`cursor-pointer px-3 py-1 text-xs md:text-sm font-medium transition-all duration-200 ${
                       activeTag === tag
                         ? 'bg-primary text-white'
                         : 'hover:bg-primary/10 border-primary/20'
@@ -192,14 +192,14 @@ export default function Blog() {
             <>
               {/* Featured Posts */}
               {featuredPosts.length > 0 && (
-                <div className="mb-16 relative z-10">
-                  <div className="flex items-center mb-8">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                <div className="mb-10 md:mb-12 relative z-10">
+                  <div className="flex items-center mb-5 md:mb-6">
+                    <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mr-3">
                       <i className="fas fa-star text-primary"></i>
                     </div>
-                    <Heading2 className="text-2xl font-bold">Featured Articles</Heading2>
+                    <Heading2 className="text-xl md:text-2xl font-bold">Featured Articles</Heading2>
                   </div>
-                  <EnterpriseGrid cols={2} gap="lg">
+                  <EnterpriseGrid cols={2} gap="md">
                     {featuredPosts.map((post) => (
                       <motion.div
                         key={post.slug}
@@ -210,7 +210,7 @@ export default function Blog() {
                         <Link href={`/blog/${post.slug}`}>
                           <a className="block group">
                             <EnterpriseCard className="overflow-hidden h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
-                              <div className="relative h-64 overflow-hidden">
+                              <div className="relative h-48 md:h-56 overflow-hidden">
                                 <img
                                   src={post.image}
                                   alt={post.title}
@@ -220,7 +220,7 @@ export default function Blog() {
                                   }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                                  <div className="p-6 text-white">
+                                  <div className="p-4 md:p-5 text-white">
                                     <div className="flex items-center gap-2 mb-2">
                                       <Badge variant="secondary" className="bg-primary/80 text-white border-0">
                                         <i className="fas fa-star mr-1"></i> Featured
@@ -229,11 +229,11 @@ export default function Blog() {
                                       <span className="text-sm opacity-80">•</span>
                                       <span className="text-sm opacity-80">{post.readTime}</span>
                                     </div>
-                                    <h3 className="text-2xl font-bold">{post.title}</h3>
+                                    <h3 className="text-xl md:text-2xl font-bold">{post.title}</h3>
                                   </div>
                                 </div>
                               </div>
-                              <div className="p-6">
+                              <div className="p-4 md:p-5">
                                 <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                   {post.tags.map((tag, index) => (
@@ -268,13 +268,13 @@ export default function Blog() {
 
               {/* Regular Posts */}
               <div className="relative z-10">
-                <div className="flex items-center mb-8">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                <div className="flex items-center mb-5 md:mb-6">
+                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mr-3">
                     <i className="fas fa-newspaper text-primary"></i>
                   </div>
-                  <Heading2 className="text-2xl font-bold">All Articles</Heading2>
+                  <Heading2 className="text-xl md:text-2xl font-bold">All Articles</Heading2>
                 </div>
-                <EnterpriseGrid cols={3} gap="lg">
+                <EnterpriseGrid cols={3} gap="md">
                   {regularPosts.map((post) => (
                     <motion.div
                       key={post.slug}
@@ -286,7 +286,7 @@ export default function Blog() {
                       <Link href={`/blog/${post.slug}`}>
                         <a className="block group h-full">
                           <EnterpriseCard className="overflow-hidden h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
-                            <div className="relative h-48 overflow-hidden">
+                            <div className="relative h-40 md:h-44 overflow-hidden">
                               <img
                                 src={post.image}
                                 alt={post.title}
@@ -301,7 +301,7 @@ export default function Blog() {
                                 </Badge>
                               </div>
                             </div>
-                            <div className="p-6">
+                            <div className="p-4 md:p-5">
                               <div className="text-sm text-muted-foreground mb-2">
                                 <i className="far fa-calendar-alt mr-2"></i>{formatDate(post.date)}
                               </div>

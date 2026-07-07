@@ -84,25 +84,25 @@ export default function BlogPost() {
 
   return (
     <Layout>
-      <article className="py-10 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="bg-background py-8 md:py-12">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             {/* Header */}
-            <header className="mb-8 text-center">
-              <div className="flex justify-center gap-2 mb-4">
+            <header className="mb-6 text-center md:mb-8">
+              <div className="mb-4 flex flex-wrap justify-center gap-2">
                 {post.tags.map((tag, index) => (
                   <Badge key={index} variant="outline">
                     {tag}
                   </Badge>
                 ))}
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{post.title}</h1>
-              <p className="text-xl text-muted-foreground mb-6">{post.excerpt}</p>
-              <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+              <h1 className="mb-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">{post.title}</h1>
+              <p className="mx-auto mb-5 max-w-3xl text-base text-muted-foreground md:text-lg">{post.excerpt}</p>
+              <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted-foreground">
                 <span>{formatDate(post.date)}</span>
                 <span>•</span>
                 <span>{post.readTime}</span>
@@ -110,7 +110,7 @@ export default function BlogPost() {
             </header>
 
             {/* Featured Image */}
-            <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-lg overflow-hidden mb-10">
+            <div className="relative mb-8 h-[220px] overflow-hidden rounded-lg md:h-[320px] lg:h-[380px]">
               <img
                 src={post.image}
                 alt={post.title}
@@ -122,7 +122,7 @@ export default function BlogPost() {
             </div>
 
             {/* Author Info */}
-            <div className="flex items-center mb-10 p-4 bg-card rounded-lg border border-border">
+            <div className="mb-8 flex items-center rounded-lg border border-border bg-card p-4">
               <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl mr-4">
                 <i className="fas fa-user"></i>
               </div>
@@ -133,7 +133,7 @@ export default function BlogPost() {
             </div>
 
             {/* Content */}
-            <div className="prose prose-lg dark:prose-invert max-w-none">
+            <div className="prose prose-base max-w-none dark:prose-invert md:prose-lg">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
@@ -173,7 +173,7 @@ export default function BlogPost() {
             </div>
 
             {/* Tags */}
-            <div className="mt-10 pt-6 border-t border-border">
+            <div className="mt-8 border-t border-border pt-6">
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag, index) => (
                   <Link key={index} href={`/blog?tag=${tag}`}>
@@ -186,7 +186,7 @@ export default function BlogPost() {
             </div>
 
             {/* Share */}
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <span className="font-medium">Share this article:</span>
               <div className="flex gap-3">
                 <a
@@ -219,9 +219,9 @@ export default function BlogPost() {
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
-            <div className="mt-16 pt-10 border-t border-border">
-              <h2 className="text-2xl font-bold mb-6">Related Articles</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="mt-12 border-t border-border pt-8">
+              <h2 className="mb-5 text-xl font-bold md:text-2xl">Related Articles</h2>
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
                 {relatedPosts.map((relatedPost) => (
                   <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
                     <a className="block group">
@@ -250,7 +250,7 @@ export default function BlogPost() {
           )}
 
           {/* Back to Blog */}
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center">
             <IntelligentBackButton
               fallbackHref="/blog"
               label="Back to Blog"
