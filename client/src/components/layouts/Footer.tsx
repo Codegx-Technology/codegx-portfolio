@@ -42,7 +42,7 @@ interface FooterProps {
 export function Footer({
   className,
   companyName = "Codegx Technologies",
-  companyDescription = "Pioneering digital transformation through innovative technology solutions for enterprises worldwide.",
+  companyDescription = "Building Intelligent Systems. Powering the Future.",
   sections,
   socialLinks,
   showSocial = true,
@@ -73,7 +73,7 @@ export function Footer({
       title: "Our Agencies",
       links: [
         {
-          label: "Wakala Agency",
+          label: "Wakala OS",
           href: "/agency",
           icon: "fas fa-cogs",
           isAgencyLink: true
@@ -92,15 +92,15 @@ export function Footer({
     },
   ];
 
-  // Default footer sections for Wakala Agency
+  // Default footer sections for Wakala OS
   const wakalaSections: FooterSection[] = [
     {
-      title: "Wakala Agency",
+      title: "Wakala OS",
       isAgencySection: true,
       links: [
-        { label: "About Wakala", href: "/agency", icon: "fas fa-info-circle", isAgencyLink: true },
+        { label: "About Wakala OS", href: "/agency", icon: "fas fa-info-circle", isAgencyLink: true },
         { label: "Automation Projects", href: "/agency/projects", icon: "fas fa-project-diagram", isAgencyLink: true },
-        { label: "Contact Agency", href: "/contact", icon: "fas fa-envelope", isAgencyLink: true },
+        { label: "Contact Codegx", href: "/contact", icon: "fas fa-envelope", isAgencyLink: true },
       ],
     },
   ];
@@ -123,9 +123,9 @@ export function Footer({
   // Determine which sections and company info to use based on isAgencyPage
   const activeSections = sections || (isAgencyPage ? wakalaSections : codegxSections);
   const activeSocialLinks = socialLinks || (isAgencyPage ? agencySocialLinks : defaultSocialLinks);
-  const activeCompanyName = isAgencyPage ? "Wakala Agency" : companyName;
+  const activeCompanyName = isAgencyPage ? "Wakala OS" : companyName;
   const activeCompanyDescription = isAgencyPage
-    ? "A specialized division of Codegx Technologies delivering advanced automation and digital transformation."
+    ? "Wakala OS by Codegx Technologies. Governed automation for agentic workflows and structured business processes."
     : companyDescription;
 
   // Current year for copyright
@@ -189,27 +189,24 @@ export function Footer({
               variants={itemVariants}
             >
               <div className="relative">
-                <div className="bg-[#c8a951] dark:bg-[#9f7b42] w-20 h-20 mx-auto mb-6 flex items-center justify-center relative overflow-hidden shadow-lg rounded-md">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#c8a951] to-[#d4b968] dark:from-[#9f7b42] dark:to-[#b08c4f] opacity-80"></div>
-                  <div className="relative z-10">
-                    <span className="font-extrabold text-3xl tracking-tighter text-[#2c1a22] dark:text-[#1f1a2c]">
-                      {isAgencyPage ? "WA" : "CT"}
-                    </span>
-                  </div>
-
-                  {/* Pulsing effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-[#c8a951] dark:bg-[#9f7b42]"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0, 0.3, 0]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "loop"
-                    }}
-                  />
+                <div className="mx-auto mb-6 flex items-center justify-center">
+                  {isAgencyPage ? (
+                    <div className="rounded-lg border border-[#c8a951]/30 bg-[#c8a951]/10 px-5 py-3 text-left">
+                      <div className="text-lg font-bold text-white">Wakala OS</div>
+                      <div className="text-xs uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#9f7b42]">
+                        By Codegx Technologies
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-lg border border-[#c8a951]/30 bg-[#c8a951]/10 shadow-lg">
+                      <img
+                        src="/assets/brand/codegx-icon.png"
+                        alt="Codegx Technologies"
+                        className="h-11 w-11 object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Connecting lines */}
@@ -439,7 +436,7 @@ export function Footer({
         {/* Parent Company Attribution (only on agency pages) */}
         {isAgencyPage && (
           <div className="mt-6 text-center text-xs text-slate-500">
-            <span>Wakala Agency is a division of </span>
+            <span>Wakala OS is a governed automation platform by </span>
             <Link href="/">
               <a className="text-[#c8a951] dark:text-[#9f7b42] hover:underline">
                 <i className="fas fa-building mr-1"></i>

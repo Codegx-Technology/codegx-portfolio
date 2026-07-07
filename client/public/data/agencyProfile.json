@@ -1,8 +1,8 @@
 {
-  "name": "Wakala Agency",
-  "tagline": "Governed automation under Codegx Technologies",
-  "description": "Wakala Agency is the automation division of Codegx Technologies. It helps organizations connect lead capture, onboarding, reporting, and workflow systems into dependable operations.",
-  "logo": "/assets/logo.png",
+  "name": "Wakala OS",
+  "tagline": "Governed automation by Codegx Technologies",
+  "description": "Wakala OS is the Codegx automation operating system for agentic workflows, structured business process automation, reporting, onboarding, and dependable operations.",
+  "logo": "/assets/brand/codegx-icon.png",
   "website": "https://codegx.tech",
   "services": [
     {

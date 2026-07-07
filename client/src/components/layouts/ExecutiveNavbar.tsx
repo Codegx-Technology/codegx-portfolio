@@ -106,9 +106,9 @@ export function ExecutiveNavbar({
     // Portfolio removed - available in 'portfolio' branch
     {
       href: "/agency",
-      label: "Wakala Agency",
+      label: "Wakala OS",
       children: [
-        { href: "/agency", label: "About Wakala", icon: <ChevronRight className="h-4 w-4" /> },
+        { href: "/agency", label: "About Wakala OS", icon: <ChevronRight className="h-4 w-4" /> },
         { href: "/agency/projects", label: "Automation Projects", icon: <ChevronRight className="h-4 w-4" /> },
       ]
     },
@@ -163,9 +163,9 @@ export function ExecutiveNavbar({
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               className="relative"
             >
-              {/* Logo monogram only */}
+              {/* Official icon only: keeps the sticky navigation compact. */}
               <motion.div
-                className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
+                className="bg-[#c8a951]/10 border border-[#c8a951]/30 w-10 h-10 sm:w-12 sm:h-12 rounded-md flex items-center justify-center shadow-lg"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -174,7 +174,7 @@ export function ExecutiveNavbar({
                   boxShadow: "0 0 15px rgba(200, 169, 81, 0.5)"
                 }}
               >
-                <span className="font-extrabold text-xl sm:text-2xl tracking-tighter">CT</span>
+                <img src="/assets/brand/codegx-icon.png" alt={logo.alt} className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
               </motion.div>
               <motion.div
                 className="absolute -bottom-1 left-0 h-0.5 bg-[#c8a951] dark:bg-[#9f7b42] w-0"
@@ -390,19 +390,20 @@ export function ExecutiveNavbar({
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[280px] sm:w-[350px] pr-0 bg-[#2c1a22] border-l border-[#4d2c35] text-slate-200 dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
+              className="flex h-dvh w-[280px] sm:w-[350px] flex-col overflow-hidden bg-[#2c1a22] p-0 text-slate-200 border-l border-[#4d2c35] dark:bg-[#1f1a2c] dark:border-[#3d2a5d]"
             >
-              {/* Mobile Logo - CT only */}
+              {/* Mobile logo uses the same compact official icon. */}
               <motion.div
-                className="bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c] w-8 h-8 rounded-md flex items-center justify-center shadow-md mb-6"
+                className="mx-6 mt-6 mb-5 bg-[#c8a951]/10 border border-[#c8a951]/30 w-8 h-8 rounded-md flex items-center justify-center shadow-md shrink-0"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <span className="font-extrabold text-lg tracking-tighter">CT</span>
+                <img src="/assets/brand/codegx-icon.png" alt={logo.alt} className="h-6 w-6 object-contain" />
               </motion.div>
 
-              <div className="flex flex-col space-y-1 pr-6 max-h-[calc(100vh-120px)] overflow-y-auto">
+              <div className="min-h-0 flex-1 overflow-y-auto px-6 pb-4">
+                <div className="flex flex-col space-y-1">
                 <AnimatePresence>
                   {navLinks.map((link, index) =>
                     link.children ? (
@@ -487,9 +488,10 @@ export function ExecutiveNavbar({
                     )
                   )}
                 </AnimatePresence>
+                </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-6 p-6 border-t border-[#4d2c35] bg-[#2c1a22] pt-6 dark:border-[#3d2a5d] dark:bg-[#1f1a2c]">
+              <div className="shrink-0 p-6 border-t border-[#4d2c35] bg-[#2c1a22] dark:border-[#3d2a5d] dark:bg-[#1f1a2c]">
                 <Button
                   className="w-full border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10"
                   variant="outline"

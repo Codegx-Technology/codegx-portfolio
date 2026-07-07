@@ -42,16 +42,16 @@ export function MainLayout({
   const effectiveNavbarVariant = "default";
 
   // Set the appropriate logo based on the page
-  const logoAlt = isAgencyPage ? "Wakala Agency" : "Codegx Technologies";
+  const logoAlt = isAgencyPage ? "Wakala OS by Codegx Technologies" : "Codegx Technologies";
 
   // Define all navigation links
   const navLinks = [
     { href: "/", label: "Home" },
     {
       href: "/agency",
-      label: "Wakala Agency",
+      label: "Wakala OS",
       children: [
-        { href: "/agency", label: "About Wakala", icon: <i className="fas fa-chevron-right text-xs" /> },
+        { href: "/agency", label: "About Wakala OS", icon: <i className="fas fa-chevron-right text-xs" /> },
         { href: "/agency/projects", label: "Automation Projects", icon: <i className="fas fa-chevron-right text-xs" /> },
       ]
     },

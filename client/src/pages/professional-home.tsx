@@ -65,19 +65,52 @@ export default function ProfessionalHome() {
   // Services offered (Cloud Solutions removed)
   const services = [
     {
-      title: "AI Integration",
-      description: "Embed governed automation into existing systems. We design integrations that improve workflows, surface useful operational data, and support faster decisions across your enterprise.",
+      title: "Governed AI Systems",
+      description: "Embed AI into enterprise operations with clear controls, traceability, observability, and accountable decision boundaries.",
       icon: AIMLIcon,
     },
     {
-      title: "AI & Machine Learning",
-      description: "Build machine learning systems tied to clear business objectives. We develop models that support forecasting, process optimization, and measurable operational improvement.",
+      title: "Operational Intelligence",
+      description: "Build systems that sharpen decision-making, automate intricate operations, and keep critical workflows visible under pressure.",
       icon: AIMLIcon,
     },
     {
-      title: "Custom Software Development",
-      description: "Purpose-built solutions engineered for your unique challenges. We create bespoke software that scales with your growth, integrates seamlessly with existing systems, and delivers exceptional business value.",
+      title: "Enterprise Software Engineering",
+      description: "Purpose-built platforms engineered for security, scale, maintainability, and long-term operational permanence.",
       icon: CustomSoftwareIcon,
+    },
+  ];
+
+  const principalPlatforms = [
+    {
+      name: "NDII",
+      summary: "Operational intelligence for critical infrastructure, deterministic analysis, policy-governed recommendations, and traceability.",
+      type: "Operational Intelligence",
+    },
+    {
+      name: "NDII-Kernel",
+      summary: "Reusable execution and orchestration framework for governed AI systems with stringent operational requirements.",
+      type: "Execution Framework",
+    },
+    {
+      name: "RPEK-Lite",
+      summary: "Digital government platform for modern public service delivery and administrative transformation.",
+      type: "Digital Government",
+    },
+    {
+      name: "Wakala OS",
+      summary: "Automation operating system for agentic workflows and structured business process automation.",
+      type: "Governed Automation",
+    },
+    {
+      name: "CodeCrusher",
+      summary: "AI-assisted developer platform for repository transformation and systematic automated refactoring.",
+      type: "Developer Platform",
+    },
+    {
+      name: "BizGen",
+      summary: "Multilingual business intelligence platform for concept generation and entrepreneurial development.",
+      type: "Business Intelligence",
     },
   ];
 
@@ -96,8 +129,8 @@ export default function ProfessionalHome() {
   return (
     <>
       <Head
-        title="Codegx Technologies | Enterprise Technology Solutions"
-        description="Codegx Technologies delivers innovative technology solutions that drive business growth and digital transformation."
+        title="Codegx Technologies | Enterprise Software & Governed AI Systems"
+        description="Codegx Technologies builds dependable enterprise software and governed AI systems for organizations that require operational integrity, security, and production readiness."
       />
 
       <MainLayout
@@ -108,7 +141,7 @@ export default function ProfessionalHome() {
         {/* Hero Section */}
         <motion.section
           ref={heroRef}
-          className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden pt-12 md:pt-20"
+          className="relative overflow-hidden pt-6 pb-10 sm:pt-8 sm:pb-12 md:min-h-[80vh] md:flex md:items-center md:pt-20 md:pb-0"
           style={{
             opacity: heroOpacity,
             scale: heroScale,
@@ -129,42 +162,66 @@ export default function ProfessionalHome() {
           </div>
 
           {/* Hero Content */}
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-7 space-y-4 md:space-y-6 flex flex-col items-center lg:items-start"
+                className="lg:col-span-7 space-y-4 md:space-y-6 flex flex-col items-start"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+                  className="inline-flex max-w-full items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-[11px] sm:text-xs md:text-sm font-medium mb-1 md:mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
-                  <i className="fas fa-shield-alt mr-2"></i>
-                  Enterprise Grade Solutions
+                  <i className="fas fa-shield-alt mr-2 shrink-0"></i>
+                  <span className="truncate">Enterprise Software & Governed AI Systems</span>
                 </motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white text-center sm:text-left"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold tracking-tight leading-tight text-white text-left max-w-3xl"
                 >
-                  Transforming Businesses <br />
-                  Through <span className="text-[#c8a951] dark:text-[#9f7b42]">Advanced</span> Technology
+                  Engineering Judgement for Systems That{" "}
+                  <span className="text-[#c8a951] dark:text-[#9f7b42]">Cannot Fail Quietly</span>
                 </motion.h1>
 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-xs md:text-sm text-slate-300 max-w-2xl"
+                  className="text-sm md:text-base lg:text-sm text-slate-300 max-w-2xl leading-relaxed"
                 >
-                  Codegx Technologies delivers innovative solutions that drive digital transformation, operational efficiency, and sustainable growth for enterprises worldwide.
+                  Building Intelligent Systems. Powering the Future. We construct dependable platforms for organizations where system integrity, security, and operational permanence are not optional extras.
                 </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.55 }}
+                  className="text-sm md:text-base lg:text-sm text-[#c8a951] dark:text-[#9f7b42] max-w-2xl font-medium leading-relaxed"
+                >
+                  Deterministic where it must be. Adaptive where it can be.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.58 }}
+                  className="w-full lg:hidden"
+                >
+                  <div className="rounded-xl border border-[#c8a951]/20 bg-[#111827] shadow-xl overflow-hidden">
+                    <img
+                      src="/assets/brand/codegx-full-lockup.webp"
+                      alt="Codegx Technologies official logo"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -175,7 +232,7 @@ export default function ProfessionalHome() {
                   <Button
                     asChild
                     size="sm"
-                    className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] text-xs md:text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
+                    className="min-h-11 bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
                     <Link href="/contact">Schedule a Consultation</Link>
                   </Button>
@@ -183,18 +240,18 @@ export default function ProfessionalHome() {
                     asChild
                     size="sm"
                     variant="outline"
-                    className="border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-xs md:text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
+                    className="min-h-11 border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
                     <Link href="/services">Our Services</Link>
                   </Button>
                 </motion.div>
 
-                {/* Discover More Indicator - Centered Below Buttons */}
+                {/* Discover More Indicator */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="flex flex-col items-center pt-8 md:pt-12 lg:pt-16"
+                  className="hidden md:flex flex-col items-center pt-8 md:pt-12 lg:pt-16"
                 >
                   <span className="text-slate-400 text-xs md:text-sm mb-2">Discover More</span>
                   <motion.svg
@@ -218,22 +275,17 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="lg:col-span-5 relative hidden lg:block"
               >
-                {/* Hero image with overlays */}
+                {/* Spacious brand lockup: full logo belongs here, not in the navbar. */}
                 <div className="relative">
                   <div className="absolute -left-6 -top-6 right-6 bottom-6 border-2 border-[#c8a951]/20 dark:border-[#9f7b42]/20 rounded-xl"></div>
                   <div className="absolute -left-3 -top-3 right-9 bottom-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
-                  <div className="relative rounded-xl overflow-hidden shadow-2xl">
+                  <div className="relative rounded-xl overflow-hidden shadow-2xl bg-[#111827]">
                     <img
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                      alt="Digital Transformation"
-                      className="w-full h-auto object-cover rounded-xl"
+                      src="/assets/brand/codegx-full-lockup.webp"
+                      alt="Codegx Technologies official logo"
+                      className="w-full h-auto object-contain rounded-xl"
                     />
-                    <div className="absolute inset-0 bg-black/20"></div>
 
-                    {/* Floating badge */}
-                    <div className="absolute bottom-6 left-6 bg-[#c8a951]/90 dark:bg-[#9f7b42]/90 text-[#2c1a22] dark:text-[#1f1a2c] px-4 py-2 rounded-lg font-medium shadow-lg">
-                      Enterprise Solutions
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -289,7 +341,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
               >
-                Codegx Technologies delivers enterprise software, automation, and digital transformation solutions that help organizations improve operations and scale with confidence.
+                Codegx Technologies constructs dependable software platforms for organizations that require strict operational governance. The practice unites resilient engineering with practical AI governance to produce systems that are secure, scalable, and maintainable long after launch.
               </motion.p>
             </div>
 
@@ -331,7 +383,7 @@ export default function ProfessionalHome() {
                     Our Mission
                   </div>
                   <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-2">
-                    "To empower organizations through innovative technology solutions that drive meaningful business transformation and sustainable growth."
+                    "To deliver dependable software platforms that sharpen decision-making, automate intricate operations, and carry enterprise and government bodies through structural digital transformation."
                   </p>
                 </div>
               </motion.div>
@@ -344,11 +396,11 @@ export default function ProfessionalHome() {
                 className="lg:col-span-7"
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  <h3 className="text-lg md:text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">Enterprise Excellence</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">Governance by Design</h3>
 
                   <div className="space-y-4">
                     <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                      We bring disciplined engineering, practical automation, and clear delivery methods to business challenges. Our team helps organizations of all sizes use technology where it creates measurable operational value.
+                      Every engagement is approached with production readiness and governance by design. The method prioritizes deterministic execution where required, alongside rigorous security, observability, and long-term maintainability.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -446,6 +498,85 @@ export default function ProfessionalHome() {
           </div>
         </section>
 
+        {/* Principal Platforms Section */}
+        <section className="py-12 md:py-16 bg-[#f8f6f1] dark:bg-[#15111a] relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="platform-grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path d="M0 24 H48 M24 0 V48" stroke="currentColor" strokeWidth="0.5" fill="none" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#platform-grid)" />
+            </svg>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
+              >
+                Principal Platforms
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-2xl md:text-3xl font-bold mb-3 text-[#2c1a22] dark:text-white"
+              >
+                The Codegx <span className="text-[#c8a951] dark:text-[#9f7b42]">Technical Estate</span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-xs md:text-sm text-gray-700 dark:text-gray-300"
+              >
+                Six systems form the core of what Codegx builds and maintains. Wakala OS sits within this estate as the automation operating system for governed agentic workflows.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+              {principalPlatforms.map((platform, index) => (
+                <motion.div
+                  key={platform.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="bg-white dark:bg-[#2c1a22] border border-gray-100 dark:border-[#3d2128] rounded-lg p-5 shadow-sm"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <h3 className="text-lg font-bold text-[#2c1a22] dark:text-white">{platform.name}</h3>
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-[#c8a951] dark:text-[#9f7b42] mt-1">
+                        {platform.type}
+                      </p>
+                    </div>
+                    <div className="w-10 h-10 rounded-md bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] shrink-0">
+                      <i className="fas fa-layer-group text-sm"></i>
+                    </div>
+                  </div>
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {platform.summary}
+                  </p>
+                  {platform.name === "Wakala OS" && (
+                    <div className="mt-4 rounded-md border border-[#c8a951]/20 bg-[#c8a951]/5 px-3 py-2 text-xs text-[#6f5823] dark:text-[#d8c179]">
+                      Endorsed platform: Wakala OS by Codegx Technologies.
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Services Section - Enterprise Grade */}
         <section className="py-12 md:py-16 relative overflow-hidden">
           {/* Background elements */}
@@ -519,7 +650,7 @@ export default function ProfessionalHome() {
                     </div>
 
                     <h3 className="text-lg md:text-xl font-bold mb-3 text-[#2c1a22] dark:text-white">
-                      Enterprise AI Solutions
+                      Governed AI Systems
                     </h3>
 
                     <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mb-4">
@@ -528,11 +659,11 @@ export default function ProfessionalHome() {
 
                     <ul className="space-y-2 mb-4">
                       {[
-                        "Custom AI model development and deployment",
+                        "Governance controls for model-assisted workflows",
                         "Predictive analytics and forecasting systems",
-                        "Intelligent process automation",
-                        "Computer vision for quality control and monitoring",
-                        "Natural language processing for document analysis"
+                        "Structured process automation",
+                        "Observability for production AI behavior",
+                        "Document and operational intelligence systems"
                       ].map((item, index) => (
                         <li key={index} className="flex items-start">
                           <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 flex items-center justify-center mt-0.5 mr-2">
@@ -547,32 +678,19 @@ export default function ProfessionalHome() {
                       asChild
                       className="bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] self-start"
                     >
-                      <Link href="/solutions/ai">Learn More</Link>
+                      <Link href="/services">Learn More</Link>
                     </Button>
                   </div>
 
                   <div className="relative h-64 lg:h-auto min-h-[400px]">
                     <img
-                      src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
-                      alt="Enterprise AI Solutions"
+                      src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=85"
+                      alt="Enterprise systems infrastructure"
                       className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-[#2c1a22]/60"></div>
 
-                    {/* Stats overlay */}
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-white mb-1">40%</div>
-                          <div className="text-xs text-white/80">Average Efficiency Gain</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-white mb-1">3.5x</div>
-                          <div className="text-xs text-white/80">ROI Within 12 Months</div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -580,8 +698,8 @@ export default function ProfessionalHome() {
 
             {/* Service Carousel - Desktop: 3 items, Mobile: 1 item */}
             <div className="relative">
-              {/* Desktop View - Show all 3 */}
-              <div className="hidden lg:grid lg:grid-cols-3 gap-8">
+              {/* Desktop View */}
+              <div className="hidden lg:grid lg:grid-cols-3 border border-gray-200 dark:border-[#3d2128] rounded-xl overflow-hidden bg-white dark:bg-[#2c1a22]">
                 {services.map((service, index) => (
                   <motion.div
                     key={index}
@@ -589,22 +707,23 @@ export default function ProfessionalHome() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                    className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] group flex flex-col h-full"
+                    className="group flex flex-col h-full border-r last:border-r-0 border-gray-200 dark:border-[#3d2128]"
                   >
-                    {/* Service header with gradient */}
-                    <div className="h-3 bg-[#c8a951] dark:bg-[#9f7b42]"></div>
-
-                    <div className="p-8 flex flex-col flex-grow">
-                      <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6 group-hover:bg-[#c8a951]/20 dark:group-hover:bg-[#9f7b42]/20 transition-colors">
-                        <service.icon />
+                    <div className="p-7 flex flex-col flex-grow">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="text-xs uppercase tracking-[0.2em] text-[#c8a951] dark:text-[#9f7b42]">
+                          0{index + 1}
+                        </div>
+                        <div className="w-10 h-10 rounded-md bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                          <service.icon />
+                        </div>
                       </div>
 
-                      <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
+                      <h3 className="text-lg font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
 
-                      <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">{service.description}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300 mb-6 flex-grow leading-relaxed">{service.description}</p>
 
-                      <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                      <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                         <Link
                           href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                           className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
@@ -612,11 +731,6 @@ export default function ProfessionalHome() {
                           Learn More
                           <i className="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
                         </Link>
-
-                        {/* Enterprise badge */}
-                        <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
-                          Enterprise
-                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -637,21 +751,23 @@ export default function ProfessionalHome() {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.6 }}
-                          className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-[#3d2128] flex flex-col h-full"
+                          className="bg-white dark:bg-[#2c1a22] rounded-xl overflow-hidden border border-gray-200 dark:border-[#3d2128] flex flex-col h-full"
                         >
-                          {/* Service header with gradient */}
-                          <div className="h-3 bg-[#c8a951] dark:bg-[#9f7b42]"></div>
-
-                          <div className="p-8 flex flex-col flex-grow">
-                            <div className="w-16 h-16 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42] mb-6">
-                              <service.icon />
+                          <div className="p-6 flex flex-col flex-grow">
+                            <div className="flex items-center justify-between mb-5">
+                              <div className="text-xs uppercase tracking-[0.2em] text-[#c8a951] dark:text-[#9f7b42]">
+                                0{index + 1}
+                              </div>
+                              <div className="w-10 h-10 rounded-md bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
+                                <service.icon />
+                              </div>
                             </div>
 
-                            <h3 className="text-xl font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
+                            <h3 className="text-lg font-bold mb-4 text-[#2c1a22] dark:text-white">{service.title}</h3>
 
-                            <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">{service.description}</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300 mb-6 flex-grow leading-relaxed">{service.description}</p>
 
-                            <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                            <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                               <Link
                                 href={`/solutions/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
                                 className="text-[#c8a951] dark:text-[#9f7b42] font-medium text-sm hover:underline flex items-center"
@@ -659,11 +775,6 @@ export default function ProfessionalHome() {
                                 Learn More
                                 <i className="fas fa-arrow-right ml-2 text-xs"></i>
                               </Link>
-
-                              {/* Enterprise badge */}
-                              <div className="bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 px-2 py-1 rounded text-xs font-medium text-[#c8a951] dark:text-[#9f7b42]">
-                                Enterprise
-                              </div>
                             </div>
                           </div>
                         </motion.div>

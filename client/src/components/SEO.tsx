@@ -16,8 +16,8 @@ interface SEOProps {
  * SEO component for managing document head metadata
  */
 export const SEO: React.FC<SEOProps> = ({
-  title = 'Codegx Technologies | Enterprise Technology Solutions',
-  description = 'Codegx Technologies delivers innovative technology solutions that drive business growth and digital transformation. Our Wakala Agency division provides advanced automation and strategic digital solutions for global enterprises.',
+  title = 'Codegx Technologies | Enterprise Software & Governed AI Systems',
+  description = 'Codegx Technologies builds dependable enterprise software and governed AI systems. Wakala OS is the Codegx automation platform for agentic workflows and structured business process automation.',
   canonical,
   ogImage = '/images/og-image.jpg',
   ogType = 'website',
