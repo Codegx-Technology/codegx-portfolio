@@ -16,8 +16,8 @@ interface SEOProps {
  * SEO component for managing document head metadata
  */
 export const SEO: React.FC<SEOProps> = ({
-  title = 'Codegx Technologies | Enterprise Software & Governed AI Systems',
-  description = 'Codegx Technologies builds dependable enterprise software and governed AI systems. Wakala OS is the Codegx automation platform for agentic workflows and structured business process automation.',
+  title = 'Codegx Technologies | Dependable Software & Governed Systems',
+  description = 'Codegx Technologies builds dependable software platforms, governed workflow systems, and operational intelligence. Wakala OS is the Codegx platform for accountable agentic workflows and structured business process execution.',
   canonical,
   ogImage = '/images/og-image.jpg',
   ogType = 'website',
@@ -25,7 +25,7 @@ export const SEO: React.FC<SEOProps> = ({
   noindex = false,
   structuredData,
 }) => {
-  const siteUrl = process.env.SITE_URL || 'https://codegx-technology.github.io/codegx-portfolio';
+  const siteUrl = process.env.SITE_URL || 'https://www.codegxtechnologies.org';
   const fullCanonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
   const fullOgImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
   

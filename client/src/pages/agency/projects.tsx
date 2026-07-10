@@ -158,7 +158,7 @@ export default function ProjectsPage() {
             </h1>
 
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Active platform work shaping Wakala OS, governed automation, developer intelligence, and operational decision systems.
+              Active platform work shaping Wakala OS, governed operations, developer intelligence, and operational decision systems.
             </p>
           </motion.div>
         </div>

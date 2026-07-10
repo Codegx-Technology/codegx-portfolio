@@ -83,12 +83,12 @@ export default function Services() {
             </motion.div>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
-              Software, Automation, and Intelligence Systems Built for <span className="text-[#c8a951] dark:text-[#9f7b42]">Operational Control</span>
+              Software, Workflow, and Intelligence Systems Built for <span className="text-[#c8a951] dark:text-[#9f7b42]">Operational Control</span>
             </h1>
 
             <p className="text-xs md:text-sm text-slate-300 max-w-3xl mx-auto">
               We help organizations turn complex workflows into secure, traceable, and maintainable systems.
-              Services are organized around platform engineering, governed automation, operational intelligence, and capability enablement.
+              Services are organized around platform engineering, governed workflow systems, operational intelligence, and capability enablement.
             </p>
           </motion.div>
         </div>
@@ -101,10 +101,10 @@ export default function Services() {
         <div className="relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-8">
             {[
-              ["Control", "Decision boundaries and approval paths remain visible."],
-              ["Traceability", "Systems keep logs, evidence, and operational context."],
-              ["Maintainability", "Architecture is built to be owned after launch."],
-              ["Operational Fit", "Delivery follows the realities of each workflow."]
+              ["Control", "Decision boundaries, roles, and approval paths remain visible."],
+              ["State", "Systems preserve operating context across handoffs and tools."],
+              ["Traceability", "Logs, evidence, and audit paths are treated as core behavior."],
+              ["Maintainability", "Architecture is built to be owned after launch."]
             ].map(([title, description]) => (
               <div key={title} className="rounded-lg border border-[#c8a951]/15 dark:border-[#9f7b42]/20 bg-white/80 dark:bg-[#1a1a1a]/80 p-4">
                 <h2 className="text-sm font-semibold text-[#2c1a22] dark:text-white">{title}</h2>
@@ -217,7 +217,7 @@ export default function Services() {
               How We Deliver Work That Can Be Operated
             </Heading2>
             <Paragraph className="text-gray-700 dark:text-gray-300">
-              Services are delivered as governed systems: scoped around the workflow, designed for accountability, and prepared for ownership after launch.
+              Services are delivered as governed systems: scoped around the workflow, engineered for accountability, and prepared for ownership after launch.
             </Paragraph>
           </div>
 
@@ -254,7 +254,7 @@ export default function Services() {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Design the Control Layer</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      Define decision boundaries, integration contracts, audit paths, roles, and adoption milestones.
+                      Define routing, decision boundaries, integration contracts, audit paths, roles, and adoption milestones.
                     </Paragraph>
                   </div>
                 </li>
@@ -263,7 +263,7 @@ export default function Services() {
                   <div>
                     <h4 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white">Build the System</h4>
                     <Paragraph className="text-gray-700 dark:text-gray-300">
-                      Implement secure defaults, maintainable code, observable workflows, and clear release discipline.
+                      Implement secure defaults, maintainable code, state handling, observable workflows, and clear release discipline.
                     </Paragraph>
                   </div>
                 </li>
@@ -290,7 +290,7 @@ export default function Services() {
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#9f7b42]">Engineering Mandate</p>
                 <h3 className="mt-2 text-2xl font-bold text-[#2c1a22] dark:text-white">What Makes the Work Different</h3>
                 <Paragraph className="mt-3 text-gray-700 dark:text-gray-300">
-                  Automation is treated as part of the operating estate, not a detached feature. The work must be secure, explainable, and maintainable.
+                  Automation is treated as one part of the operating estate, not the whole promise. The work must preserve state, expose evidence, and remain maintainable.
                 </Paragraph>
               </div>
 
@@ -299,9 +299,9 @@ export default function Services() {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
                     <i className="fas fa-sitemap text-base"></i>
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Architecture Before Automation</h3>
+                  <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Architecture Before Execution</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    We clarify system boundaries before introducing automation, agents, analytics, or integrations.
+                    We clarify routes, state boundaries, and integration contracts before introducing automation, agents, analytics, or integrations.
                   </Paragraph>
                 </div>
                 <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
@@ -310,7 +310,7 @@ export default function Services() {
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Governance Built In</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    Access, approvals, monitoring, and accountability are designed as first-class system behavior.
+                    Access, approvals, audit trails, monitoring, and accountability are designed as first-class system behavior.
                   </Paragraph>
                 </div>
                 <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
@@ -319,7 +319,7 @@ export default function Services() {
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Practical Intelligence</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    We use AI where it improves judgment, throughput, or visibility without weakening control.
+                    We use AI where it improves judgment, throughput, or visibility without weakening routing, state, or control.
                   </Paragraph>
                 </div>
                 <div className="group rounded-lg border border-gray-100 bg-white p-5 transition-colors hover:border-[#c8a951] dark:border-[#3d2128] dark:bg-[#2c1a22] dark:hover:border-[#9f7b42]">
@@ -328,7 +328,7 @@ export default function Services() {
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">Long-Term Ownership</h3>
                   <Paragraph className="text-gray-700 dark:text-gray-300">
-                    Documentation, observability, and support patterns are shaped so the system can be trusted over time.
+                    Documentation, observability, and support routines are shaped so the system can be trusted over time.
                   </Paragraph>
                 </div>
               </div>
@@ -356,7 +356,7 @@ export default function Services() {
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Build Systems That Can Be <span className="text-[#c8a951] dark:text-[#9f7b42]">Governed</span></h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-              Talk to us about software, automation, or Wakala OS workflows that need traceability, security, and durable operating discipline.
+              Talk to us about software, governed workflows, or Wakala OS patterns that need traceability, security, and durable operating discipline.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
               <Link href="/contact">

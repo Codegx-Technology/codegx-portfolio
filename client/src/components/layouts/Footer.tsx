@@ -37,12 +37,12 @@ interface FooterProps {
 }
 
 /**
- * Enterprise-grade footer with sections: About, Links, Contact, Social
+ * Corporate footer with sections: About, Links, Contact, Social
  */
 export function Footer({
   className,
   companyName = "Codegx Technologies",
-  companyDescription = "Building Intelligent Systems. Powering the Future.",
+  companyDescription = "Dependable software systems for governed operations.",
   sections,
   socialLinks,
   showSocial = true,
@@ -109,7 +109,7 @@ export function Footer({
   const defaultSocialLinks: SocialLink[] = [
     { platform: "LinkedIn", href: "https://linkedin.com/company/codegx-technologies", icon: "fab fa-linkedin" },
     { platform: "Twitter", href: "https://twitter.com/codegxtech", icon: "fab fa-twitter" },
-    { platform: "GitHub", href: "https://github.com/Codegx-Technology", icon: "fab fa-github" },
+    { platform: "GitHub", href: "https://github.com/peteroluoch", icon: "fab fa-github" },
     { platform: "Instagram", href: "https://instagram.com/codegxtech", icon: "fab fa-instagram" },
   ];
 
@@ -117,7 +117,7 @@ export function Footer({
   const agencySocialLinks: SocialLink[] = [
     { platform: "LinkedIn", href: "https://linkedin.com/company/codegx-technologies", icon: "fab fa-linkedin" },
     { platform: "Twitter", href: "https://twitter.com/codegxtech", icon: "fab fa-twitter" },
-    { platform: "GitHub", href: "https://github.com/Codegx-Technology", icon: "fab fa-github" },
+    { platform: "GitHub", href: "https://github.com/peteroluoch", icon: "fab fa-github" },
   ];
 
   // Determine which sections and company info to use based on isAgencyPage
@@ -125,7 +125,7 @@ export function Footer({
   const activeSocialLinks = socialLinks || (isAgencyPage ? agencySocialLinks : defaultSocialLinks);
   const activeCompanyName = isAgencyPage ? "Wakala OS" : companyName;
   const activeCompanyDescription = isAgencyPage
-    ? "Wakala OS by Codegx Technologies. Governed automation for agentic workflows and structured business processes."
+    ? "Wakala OS by Codegx Technologies. Governed operating infrastructure for agentic workflows and structured business processes."
     : companyDescription;
 
   // Current year for copyright

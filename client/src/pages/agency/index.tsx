@@ -96,6 +96,134 @@ export default function AgencyPage() {
             <AgencyIntro />
           </motion.section>
 
+          <motion.section
+            className="relative overflow-hidden bg-white py-12 dark:bg-[#121212] md:py-16"
+            variants={sectionVariants}
+          >
+            <div className="absolute inset-0 z-0 opacity-5">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="wakala-operating-model" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
+                  <path d="M0 22 H44 M22 0 V44" stroke="currentColor" strokeWidth="0.5" fill="none" />
+                </pattern>
+                <rect width="100%" height="100%" fill="url(#wakala-operating-model)" />
+              </svg>
+            </div>
+
+            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto mb-8 max-w-3xl text-center md:mb-12">
+                <div className="mb-3 inline-flex items-center rounded-full border border-[#c8a951]/20 bg-[#c8a951]/10 px-4 py-1.5 text-xs font-medium text-[#c8a951] dark:border-[#9f7b42]/20 dark:bg-[#9f7b42]/10 dark:text-[#9f7b42] md:text-sm">
+                  Wakala Operating Model
+                </div>
+                <h2 className="text-2xl font-bold text-[#2c1a22] dark:text-white md:text-3xl">
+                  The governed layer between intent and execution
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-gray-700 dark:text-gray-300 md:text-sm">
+                  Wakala OS turns business intent into accountable workflow execution through routing, state, and enforcement patterns that Codegx can operate and extend.
+                </p>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+                {[
+                  {
+                    label: "01",
+                    title: "Routing Layer",
+                    body: "Defines entry points, workflow handoffs, roles, and escalation paths before execution begins.",
+                    icon: "fas fa-route",
+                  },
+                  {
+                    label: "02",
+                    title: "State Layer",
+                    body: "Preserves operating context, evidence, and provenance across people, systems, and assisted workflows.",
+                    icon: "fas fa-database",
+                  },
+                  {
+                    label: "03",
+                    title: "Enforcement Layer",
+                    body: "Applies policy, observability, and audit boundaries so work remains traceable after launch.",
+                    icon: "fas fa-shield-alt",
+                  },
+                ].map((layer) => (
+                  <motion.div
+                    key={layer.title}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45 }}
+                    viewport={{ once: true }}
+                    className="rounded-lg border border-gray-100 bg-gray-50 p-5 shadow-sm dark:border-[#2c1a22]/50 dark:bg-[#1a1a1a] md:p-6"
+                  >
+                    <div className="mb-5 flex items-center justify-between">
+                      <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#c8a951] dark:text-[#9f7b42]">{layer.label}</span>
+                      <span className="flex h-10 w-10 items-center justify-center rounded-md bg-[#c8a951]/10 text-[#c8a951] dark:bg-[#9f7b42]/10 dark:text-[#9f7b42]">
+                        <i className={layer.icon}></i>
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-[#2c1a22] dark:text-white">{layer.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{layer.body}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            className="relative overflow-hidden bg-gray-50 py-12 dark:bg-[#15111a] md:py-16"
+            variants={sectionVariants}
+          >
+            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="mb-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+                <div>
+                  <div className="mb-3 inline-flex items-center rounded-full border border-[#c8a951]/20 bg-[#c8a951]/10 px-4 py-1.5 text-xs font-medium text-[#c8a951] dark:border-[#9f7b42]/20 dark:bg-[#9f7b42]/10 dark:text-[#9f7b42] md:text-sm">
+                    Operating Patterns
+                  </div>
+                  <h2 className="text-2xl font-bold text-[#2c1a22] dark:text-white md:text-3xl">
+                    Where governed execution is becoming necessary
+                  </h2>
+                </div>
+                <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                  These are recurring operating problems Codegx sees across modern teams. Wakala OS gives them structure without making automation the whole product.
+                </p>
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-5">
+                {[
+                  {
+                    title: "Lead & Intent Operations",
+                    body: "Capture, qualify, route, and follow up on demand without losing context between channels.",
+                  },
+                  {
+                    title: "Reception & Intake",
+                    body: "Handle bookings, enquiries, triage, and escalation with visible ownership.",
+                  },
+                  {
+                    title: "Content Operations",
+                    body: "Coordinate research, drafting, review, publishing, and evidence trails.",
+                  },
+                  {
+                    title: "Internal Reporting",
+                    body: "Turn hiring, team, finance, and delivery workflows into accountable routines.",
+                  },
+                  {
+                    title: "Document & CRM Workflows",
+                    body: "Structure intake, classification, case movement, and customer records.",
+                  },
+                ].map((pattern, index) => (
+                  <motion.div
+                    key={pattern.title}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.04 }}
+                    viewport={{ once: true }}
+                    className="rounded-lg border border-gray-200 bg-white p-4 dark:border-[#2c1a22]/60 dark:bg-[#1a1a1a]"
+                  >
+                    <div className="mb-4 text-xs font-semibold text-[#c8a951] dark:text-[#9f7b42]">0{index + 1}</div>
+                    <h3 className="text-sm font-bold leading-snug text-[#2c1a22] dark:text-white">{pattern.title}</h3>
+                    <p className="mt-3 text-xs leading-relaxed text-gray-700 dark:text-gray-300">{pattern.body}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.section>
+
           <motion.section variants={sectionVariants}>
             <AgencyServices />
           </motion.section>
@@ -125,7 +253,7 @@ export default function AgencyPage() {
                   </h2>
 
                   <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-                    Wakala OS is led from the Codegx mandate: dependable software, governed automation, and operational intelligence.
+                    Wakala OS is led from the Codegx mandate: dependable software, governed operating infrastructure, and operational intelligence.
                   </p>
                 </motion.div>
 
@@ -288,7 +416,7 @@ export default function AgencyPage() {
               >
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Build Workflows That Can Be <span className="text-[#c8a951] dark:text-[#9f7b42]">Governed</span></h2>
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-                  Talk to Codegx about Wakala OS, governed automation, and operating systems that need clear ownership after launch.
+                  Talk to Codegx about Wakala OS, governed workflows, and operating systems that need clear ownership after launch.
                 </p>
                 <motion.a
                   href="/contact"

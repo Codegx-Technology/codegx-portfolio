@@ -1,28 +1,28 @@
 {
   "name": "Wakala OS",
-  "tagline": "Governed automation by Codegx Technologies",
-  "description": "Wakala OS is the Codegx automation operating system for agentic workflows, structured business process automation, reporting, onboarding, and dependable operations.",
+  "tagline": "Governed operating infrastructure by Codegx Technologies",
+  "description": "Wakala OS is the Codegx operating layer for agentic workflows, structured business process execution, reporting, onboarding, and dependable operations.",
   "logo": "/assets/brand/codegx-icon.png",
   "website": "https://codegx.tech",
   "services": [
     {
-      "title": "Governed Workflow Automation",
-      "description": "Structured automation for approvals, handoffs, reporting, and recurring operational processes.",
+      "title": "Governed Workflow Systems",
+      "description": "Structured workflow execution for approvals, handoffs, reporting, and recurring operational processes.",
       "icon": "workflow"
     },
     {
-      "title": "Agentic Process Orchestration",
-      "description": "AI-assisted workflow execution designed around clear boundaries, escalation, and audit visibility.",
+      "title": "Agentic Process Control",
+      "description": "AI-assisted execution designed around clear boundaries, escalation, and audit visibility.",
       "icon": "bot"
     },
     {
       "title": "Operational Intelligence",
-      "description": "Dashboards, reporting systems, and decision-support surfaces for teams that need accountable visibility.",
+      "description": "Dashboards, reporting systems, and decision-support surfaces that preserve context, evidence, and accountable visibility.",
       "icon": "chart"
     },
     {
       "title": "Document and Case Operations",
-      "description": "Workflow systems for intake, classification, routing, review, and controlled document processing.",
+      "description": "Workflow systems for intake, classification, routing, review, audit trails, and controlled document processing.",
       "icon": "document"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "title": "Governance and Support Layer",
-      "description": "Access control, observability, workflow support, and operating routines for long-term ownership.",
+      "description": "Access control, observability, audit paths, workflow support, and operating routines for long-term ownership.",
       "icon": "shield"
     }
   ],
@@ -47,7 +47,7 @@
     },
     {
       "platform": "GitHub",
-      "url": "https://github.com/Codegx-Technology"
+      "url": "https://github.com/peteroluoch"
     },
     {
       "platform": "Instagram",
@@ -62,7 +62,7 @@
     {
       "name": "Peter O. Oluoch",
       "position": "Founder",
-      "bio": "Founder of Codegx Technologies and Wakala OS, focused on dependable software platforms, governed automation, and operational intelligence systems.",
+      "bio": "Founder of Codegx Technologies and Wakala OS, focused on dependable software platforms, governed operating infrastructure, and operational intelligence systems.",
       "photo": "/assets/wakala-founder-vision.png",
       "socials": [
         {

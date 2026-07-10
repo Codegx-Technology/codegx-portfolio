@@ -12,8 +12,8 @@ interface HeadProps {
 }
 
 export function Head({
-  title = "Codegx Technologies - Enterprise Software & Governed AI Systems",
-  description = "Codegx Technologies builds dependable enterprise software and governed AI systems for organizations that require operational integrity, security, and production readiness.",
+  title = "Codegx Technologies - Dependable Software & Governed Systems",
+  description = "Codegx Technologies builds dependable software platforms, governed workflow systems, and operational intelligence for organizations that require integrity, security, and production discipline.",
   image = "/images/og-image.jpg",
   canonical,
   type = "website",
@@ -22,7 +22,7 @@ export function Head({
 }: HeadProps) {
   const [location] = useLocation();
   const siteTitle = title.includes(" - ") ? title : `${title} - Codegx Technologies`;
-  const siteUrl = "https://codegx-technology.github.io/codegx-portfolio";
+  const siteUrl = "https://www.codegxtechnologies.org";
   const currentUrl = canonical || location;
   const fullUrl = `${siteUrl}${currentUrl}`;
   const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
@@ -37,7 +37,8 @@ export function Head({
     "sameAs": [
       "https://twitter.com/codegxtech",
       "https://www.linkedin.com/company/codegx-technology",
-      "https://github.com/Codegx-Technology"
+      "https://github.com/peteroluoch",
+      "https://github.com/peteroduor"
     ],
     "contactPoint": {
       "@type": "ContactPoint",

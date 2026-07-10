@@ -131,7 +131,7 @@ export function AgencyIntro() {
                   <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8a951] dark:bg-[#9f7b42]"></span>
                 </span>
-                Governed Automation
+                Governed Operating Layer
               </motion.div>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 break-words">
@@ -189,7 +189,7 @@ export function AgencyIntro() {
                 >
                   <h3 className="text-xs md:text-sm font-semibold text-[#c8a951] dark:text-[#9f7b42] mb-2">The Vision Forward</h3>
                   <p className="text-xs text-slate-200 leading-relaxed">
-                    Establishing Wakala Agency as the Codegx automation division for organizations that need governed workflows, reporting, and operational systems.
+                    Establishing Wakala OS as the Codegx operating layer for organizations that need governed workflows, reporting, and accountable business execution.
                   </p>
                 </motion.div>
               </div>

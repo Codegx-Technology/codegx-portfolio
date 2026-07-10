@@ -121,7 +121,7 @@ export function AgencyServices() {
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white">
-            Governed <span className="text-[#c8a951] dark:text-[#9f7b42]">Automation Capabilities</span>
+            Governed <span className="text-[#c8a951] dark:text-[#9f7b42]">Operating Capabilities</span>
           </h2>
 
           <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">

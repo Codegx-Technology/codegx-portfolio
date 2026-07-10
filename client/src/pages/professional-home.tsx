@@ -129,8 +129,8 @@ export default function ProfessionalHome() {
   return (
     <>
       <Head
-        title="Codegx Technologies | Enterprise Software & Governed AI Systems"
-        description="Codegx Technologies builds dependable enterprise software and governed AI systems for organizations that require operational integrity, security, and production readiness."
+        title="Codegx Technologies | Dependable Software & Governed Systems"
+        description="Codegx Technologies builds dependable software platforms, governed workflow systems, and operational intelligence for organizations that require integrity, security, and production discipline."
       />
 
       <MainLayout
@@ -177,7 +177,7 @@ export default function ProfessionalHome() {
                   className="inline-flex max-w-full items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-[11px] sm:text-xs md:text-sm font-medium mb-1 md:mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
                   <i className="fas fa-shield-alt mr-2 shrink-0"></i>
-                  <span className="truncate">Enterprise Software & Governed AI Systems</span>
+                  <span className="truncate">Dependable Software & Governed Systems</span>
                 </motion.div>
 
                 <motion.h1
@@ -196,7 +196,7 @@ export default function ProfessionalHome() {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="text-sm md:text-base lg:text-sm text-slate-300 max-w-2xl leading-relaxed"
                 >
-                  Building Intelligent Systems. Powering the Future. We construct dependable platforms for organizations where system integrity, security, and operational permanence are not optional extras.
+                  Building Intelligent Systems. Powering the Future. We construct dependable software platforms for organizations where system integrity, security, and operational permanence are not optional extras.
                 </motion.p>
 
                 <motion.p
@@ -630,7 +630,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300"
               >
-                Six systems form the core of what Codegx builds and maintains. Wakala OS sits within this estate as the automation operating system for governed agentic workflows.
+                Six systems form the core of what Codegx builds and maintains. Wakala OS sits within this estate as the operating layer for governed agentic workflows.
               </motion.p>
             </div>
 
@@ -660,7 +660,7 @@ export default function ProfessionalHome() {
                   </p>
                   {platform.name === "Wakala OS" && (
                     <div className="mt-4 rounded-md border border-[#c8a951]/20 bg-[#c8a951]/5 px-3 py-2 text-xs text-[#6f5823] dark:text-[#d8c179]">
-                      Flagship platform: Wakala OS anchors Codegx governed automation work.
+                      Flagship platform: Wakala OS anchors Codegx governed operations work.
                     </div>
                   )}
                 </motion.div>

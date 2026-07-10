@@ -17,8 +17,8 @@ const principles = [
     icon: ShieldIcon,
   },
   {
-    title: "Governed Automation",
-    description: "Automation is designed with clear controls, traceability, and accountable decision boundaries.",
+    title: "Governance by Design",
+    description: "Routing, approvals, state, and audit paths are designed before execution is automated.",
     icon: PuzzleIcon,
   },
   {
@@ -28,7 +28,7 @@ const principles = [
   },
   {
     title: "Practical Intelligence",
-    description: "AI is used where it improves real workflows, not where it only creates novelty.",
+    description: "AI is used where it improves judgment, workflow visibility, or operating speed without weakening control.",
     icon: CodeIcon,
   },
 ];
@@ -42,9 +42,9 @@ const capabilities = [
   },
   {
     label: "02",
-    title: "Wakala OS And Governed Workflows",
+    title: "Wakala OS And Governed Operations",
     description:
-      "Structured automation for agentic workflows, onboarding, reporting, business process execution, and accountable operations.",
+      "Structured execution for agentic workflows, onboarding, reporting, business processes, and accountable operations.",
   },
   {
     label: "03",
@@ -67,8 +67,8 @@ export default function About() {
   return (
     <>
       <Head
-        title="About Codegx Technologies | Dependable Systems & Governed Automation"
-        description="Codegx Technologies builds dependable software platforms, governed automation systems, and operational intelligence for organizations that need secure, maintainable execution."
+        title="About Codegx Technologies | Dependable Software Systems"
+        description="Codegx Technologies builds dependable software platforms, governed workflow systems, and operational intelligence for organizations that need secure, maintainable execution."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
@@ -88,11 +88,11 @@ export default function About() {
                 Engineering Dependable Systems For Work That Must Stay Accountable
               </h1>
               <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
-                Codegx Technologies builds software platforms, governed automation, and operational intelligence systems
+                Codegx Technologies builds software platforms, governed workflow systems, and operational intelligence
                 for organizations that need security, clarity, and long-term maintainability.
               </p>
               <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#c8a951] dark:text-[#d6b464] md:text-base">
-                Wakala OS sits within this mandate as the Codegx platform for structured business process automation
+                Wakala OS sits within this mandate as the Codegx platform for structured business process execution
                 and accountable agentic workflows.
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function About() {
                 Build systems that improve operational control.
               </h2>
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                Our work turns complex delivery, automation, reporting, and decision workflows into dependable
+                Our work turns complex software delivery, reporting, and decision workflows into dependable
                 platforms that teams can operate with confidence.
               </p>
             </motion.div>
@@ -141,11 +141,11 @@ export default function About() {
             <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Direction</div>
               <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
-                Make automation accountable, not ornamental.
+                Make intelligent operations accountable, not ornamental.
               </h2>
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                We are positioning Codegx around governed execution: systems where automation, AI assistance, and
-                human oversight work inside clear operating boundaries.
+                We position Codegx around governed execution: systems where routing, state, automation, AI assistance,
+                and human oversight work inside clear operating boundaries.
               </p>
             </motion.div>
           </div>
@@ -201,7 +201,7 @@ export default function About() {
                 </div>
                 <h2 className="text-2xl font-bold md:text-3xl">A focused technical estate</h2>
                 <p className="mt-4 text-sm leading-relaxed text-slate-300">
-                  We do not treat AI, automation, and software as separate buzzwords. We compose them into systems that
+                  We do not treat AI, automation, and software as separate buzzwords. We compose them into systems with clear routing, state, and observability so they
                   support real operating responsibilities.
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function About() {
             Build With Operational Confidence
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-            Talk to us about software, governed automation, or Wakala OS workflows that need to remain visible,
+            Talk to us about software, governed operations, or Wakala OS workflows that need to remain visible,
             secure, and accountable in production.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
