@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "wouter";
 
 interface AgencyProjectCardProps {
   id: string;
@@ -19,7 +18,6 @@ interface AgencyProjectCardProps {
 }
 
 export function AgencyProjectCard({
-  id,
   title,
   description,
   image,
@@ -111,11 +109,11 @@ export function AgencyProjectCard({
 
         {/* Action Buttons */}
         <div className="flex gap-3 mt-2 pt-4 border-t border-gray-100 dark:border-gray-800">
-          <Link href={`/agency/projects/${id}`} className="flex-1">
+          <a href="/contact" className="flex-1">
             <Button className="w-full bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] font-medium" size="sm">
-              View Details
+              Discuss Work
             </Button>
-          </Link>
+          </a>
 
           <div className="flex gap-2">
             {githubUrl && (

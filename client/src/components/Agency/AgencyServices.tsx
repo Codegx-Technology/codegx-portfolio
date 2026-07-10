@@ -52,6 +52,14 @@ export function AgencyServices() {
         return "fas fa-chart-bar";
       case "bot":
         return "fas fa-robot";
+      case "workflow":
+        return "fas fa-project-diagram";
+      case "document":
+        return "fas fa-file-alt";
+      case "users":
+        return "fas fa-users-cog";
+      case "shield":
+        return "fas fa-shield-alt";
       default:
         return "fas fa-cog";
     }
@@ -109,15 +117,15 @@ export function AgencyServices() {
           className="text-center mb-8 md:mb-12"
         >
           <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
-            What We Offer
+            Wakala Operating Surfaces
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white">
-            Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Services</span>
+            Governed <span className="text-[#c8a951] dark:text-[#9f7b42]">Automation Capabilities</span>
           </h2>
 
           <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            We offer a comprehensive range of digital solutions to help businesses thrive in the digital landscape.
+            Wakala OS focuses on operating workflows that need structure, accountability, and dependable execution.
           </p>
         </motion.div>
 
@@ -143,8 +151,8 @@ export function AgencyServices() {
               <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">{service.description}</p>
 
               <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200 dark:border-gray-800">
-                <a href="#" className="inline-flex items-center text-[#c8a951] dark:text-[#9f7b42] font-medium text-xs md:text-sm">
-                  Learn More
+                <a href="/contact" className="inline-flex items-center text-[#c8a951] dark:text-[#9f7b42] font-medium text-xs md:text-sm">
+                  Discuss capability
                   <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -163,7 +171,7 @@ export function AgencyServices() {
           className="mt-8 md:mt-12 text-center"
         >
           <a href="/contact" className="inline-flex items-center gap-2 bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] px-8 py-4 rounded-md font-medium transition-colors">
-            <span>Get Started</span>
+            <span>Discuss Wakala OS</span>
             <i className="fas fa-arrow-right"></i>
           </a>
         </motion.div>

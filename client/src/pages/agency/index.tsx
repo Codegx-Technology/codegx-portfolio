@@ -100,13 +100,11 @@ export default function AgencyPage() {
             <AgencyServices />
           </motion.section>
 
-          {/* Team Section */}
           {agencyProfile?.team && agencyProfile.team.length > 0 && (
             <motion.section
               className="py-12 md:py-16 bg-white dark:bg-[#121212] relative overflow-hidden"
               variants={sectionVariants}
             >
-              {/* Background Elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
@@ -119,19 +117,19 @@ export default function AgencyPage() {
                   className="text-center mb-8 md:mb-12"
                 >
                   <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
-                    Our Experts
+                    Founder Stewardship
                   </div>
 
                   <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-[#2c1a22] dark:text-white">
-                    Meet Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Team</span>
+                    The Vision Behind <span className="text-[#c8a951] dark:text-[#9f7b42]">Wakala OS</span>
                   </h2>
 
                   <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-                    Meet the talented professionals behind our innovative solutions.
+                    Wakala OS is led from the Codegx mandate: dependable software, governed automation, and operational intelligence.
                   </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8">
                   {agencyProfile.team.map((member, index) => (
                     <motion.div
                       key={index}
@@ -139,48 +137,48 @@ export default function AgencyPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                      className="bg-gray-50 dark:bg-[#1a1a1a] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-[#2c1a22]/50 group"
+                      className="overflow-hidden rounded-xl border border-gray-100 bg-gray-50 shadow-lg transition-all duration-300 dark:border-[#2c1a22]/50 dark:bg-[#1a1a1a]"
                     >
-                      <div className="flex flex-col items-center text-center">
-                        <div className="relative mb-6">
-                          {/* Background layers for depth */}
-                          <div className="absolute -inset-1 rounded-full bg-[#c8a951]/20 dark:bg-[#9f7b42]/20 blur-sm"></div>
-
-                          <div className="w-28 h-28 rounded-full overflow-hidden relative border-2 border-[#c8a951]/30 dark:border-[#9f7b42]/30">
+                      <div className="grid gap-0 md:grid-cols-[1.15fr_0.85fr]">
+                        <div className="relative min-h-[280px]">
+                          <div className="absolute inset-0 bg-[#2c1a22]/20" />
                             <img
                               src={member.photo}
                               alt={member.name}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              className="h-full min-h-[280px] w-full object-cover"
                               onError={(e) => {
-                                (e.target as HTMLImageElement).src = "https://via.placeholder.com/150?text=Team";
+                                (e.target as HTMLImageElement).src = "/assets/brand/codegx-icon.png";
                               }}
                             />
-                          </div>
                         </div>
 
-                        <h3 className="text-xl font-bold mb-2 text-[#2c1a22] dark:text-white group-hover:text-[#c8a951] dark:group-hover:text-[#9f7b42] transition-colors">{member.name}</h3>
-                        <p className="text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4">{member.position}</p>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm mb-6">{member.bio}</p>
-
-                        {member.socials && member.socials.length > 0 && (
-                          <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800 w-full">
-                            {member.socials.map((social, idx) => (
-                              <motion.a
-                                key={idx}
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10 text-gray-600 dark:text-gray-400 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                aria-label={`${member.name}'s ${social.platform}`}
-                              >
-                                <i className={getSocialIcon(social.platform)}></i>
-                              </motion.a>
-                            ))}
+                        <div className="flex flex-col justify-center p-6 md:p-8">
+                          <div className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#c8a951] dark:text-[#9f7b42]">
+                            Founder
                           </div>
-                        )}
+                          <h3 className="text-2xl font-bold mb-2 text-[#2c1a22] dark:text-white">{member.name}</h3>
+                          <p className="text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4">{member.position}, Codegx Technologies</p>
+                          <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-6">{member.bio}</p>
+
+                          {member.socials && member.socials.length > 0 && (
+                            <div className="flex space-x-4 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800 w-full">
+                              {member.socials.map((social, idx) => (
+                                <motion.a
+                                  key={idx}
+                                  href={social.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-[#c8a951]/10 dark:hover:bg-[#9f7b42]/10 text-gray-600 dark:text-gray-400 hover:text-[#c8a951] dark:hover:text-[#9f7b42] transition-colors"
+                                  whileHover={{ scale: 1.1 }}
+                                  whileTap={{ scale: 0.95 }}
+                                  aria-label={`${member.name}'s ${social.platform}`}
+                                >
+                                  <i className={getSocialIcon(social.platform)}></i>
+                                </motion.a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -189,7 +187,6 @@ export default function AgencyPage() {
             </motion.section>
           )}
 
-          {/* Testimonials Section */}
           {agencyProfile?.testimonials && agencyProfile.testimonials.length > 0 && (
             <motion.section
               className="py-20 bg-gray-50 dark:bg-[#1a1a1a] relative overflow-hidden"
@@ -269,12 +266,10 @@ export default function AgencyPage() {
             </motion.section>
           )}
 
-          {/* CTA Section */}
           <motion.section
             className="py-20 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c]"
             variants={sectionVariants}
           >
-            {/* Subtle pattern overlay */}
             <div className="absolute inset-0 z-0 opacity-5">
               <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="grid-pattern-cta" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -291,9 +286,9 @@ export default function AgencyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to <span className="text-[#c8a951] dark:text-[#9f7b42]">Transform</span> Your Business?</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Build Workflows That Can Be <span className="text-[#c8a951] dark:text-[#9f7b42]">Governed</span></h2>
                 <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-                  Let's discuss how our innovative solutions can help you achieve your business goals.
+                  Talk to Codegx about Wakala OS, governed automation, and operating systems that need clear ownership after launch.
                 </p>
                 <motion.a
                   href="/contact"
@@ -302,7 +297,7 @@ export default function AgencyPage() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <i className="fas fa-envelope"></i>
-                  <span>Get in Touch</span>
+                  <span>Discuss Wakala OS</span>
                 </motion.a>
               </motion.div>
             </div>

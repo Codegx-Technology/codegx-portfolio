@@ -6,34 +6,34 @@
   "website": "https://codegx.tech",
   "services": [
     {
-      "title": "Web Development",
-      "description": "Custom web applications and responsive websites built with modern frameworks and best practices.",
-      "icon": "code"
+      "title": "Governed Workflow Automation",
+      "description": "Structured automation for approvals, handoffs, reporting, and recurring operational processes.",
+      "icon": "workflow"
     },
     {
-      "title": "Mobile App Development",
-      "description": "Native and cross-platform mobile applications for iOS and Android that deliver seamless user experiences.",
-      "icon": "mobile"
+      "title": "Agentic Process Orchestration",
+      "description": "AI-assisted workflow execution designed around clear boundaries, escalation, and audit visibility.",
+      "icon": "bot"
     },
     {
-      "title": "AI & Machine Learning",
-      "description": "Machine learning and automation systems tied to clear business goals, operational data, and measurable outcomes.",
-      "icon": "brain"
+      "title": "Operational Intelligence",
+      "description": "Dashboards, reporting systems, and decision-support surfaces for teams that need accountable visibility.",
+      "icon": "chart"
     },
     {
-      "title": "Blockchain Solutions",
-      "description": "Secure, transparent, and decentralized applications using blockchain technology for various use cases.",
-      "icon": "link"
+      "title": "Document and Case Operations",
+      "description": "Workflow systems for intake, classification, routing, review, and controlled document processing.",
+      "icon": "document"
     },
     {
-      "title": "UI/UX Design",
-      "description": "User-centered design that combines aesthetics with functionality to create intuitive and engaging digital experiences.",
-      "icon": "palette"
+      "title": "Onboarding and Service Flows",
+      "description": "Guided operating journeys for customers, staff, vendors, and internal service teams.",
+      "icon": "users"
     },
     {
-      "title": "DevOps & Cloud Services",
-      "description": "Streamlined development operations and cloud infrastructure management for optimal performance and scalability.",
-      "icon": "cloud"
+      "title": "Governance and Support Layer",
+      "description": "Access control, observability, workflow support, and operating routines for long-term ownership.",
+      "icon": "shield"
     }
   ],
   "socials": [
@@ -62,8 +62,8 @@
     {
       "name": "Peter O. Oluoch",
       "position": "Founder",
-      "bio": "Software engineer with over 10 years of experience in building enterprise solutions and leading development teams.",
-      "photo": "/assets/team/peter.jpg",
+      "bio": "Founder of Codegx Technologies and Wakala OS, focused on dependable software platforms, governed automation, and operational intelligence systems.",
+      "photo": "/assets/wakala-founder-vision.png",
       "socials": [
         {
           "platform": "LinkedIn",
@@ -74,85 +74,8 @@
           "url": "https://github.com/peteroluoch"
         }
       ]
-    },
-    {
-      "name": "Sarah Johnson",
-      "position": "CTO",
-      "bio": "Full-stack developer and systems architect with expertise in scalable applications and emerging technologies.",
-      "photo": "/assets/team/sarah.jpg",
-      "socials": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/sarahjohnson"
-        },
-        {
-          "platform": "GitHub",
-          "url": "https://github.com/sarahjohnson"
-        }
-      ]
-    },
-    {
-      "name": "Michael Chen",
-      "position": "Lead Designer",
-      "bio": "Creative professional with a passion for crafting beautiful and functional user interfaces and digital experiences.",
-      "photo": "/assets/team/michael.jpg",
-      "socials": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/michaelchen"
-        },
-        {
-          "platform": "Dribbble",
-          "url": "https://dribbble.com/michaelchen"
-        }
-      ]
     }
   ],
-  "clients": [
-    {
-      "name": "TechCorp International",
-      "logo": "/assets/clients/techcorp.png",
-      "industry": "Technology"
-    },
-    {
-      "name": "FinServe Solutions",
-      "logo": "/assets/clients/finserve.png",
-      "industry": "Finance"
-    },
-    {
-      "name": "HealthPlus",
-      "logo": "/assets/clients/healthplus.png",
-      "industry": "Healthcare"
-    },
-    {
-      "name": "EduLearn",
-      "logo": "/assets/clients/edulearn.png",
-      "industry": "Education"
-    },
-    {
-      "name": "RetailNow",
-      "logo": "/assets/clients/retailnow.png",
-      "industry": "Retail"
-    }
-  ],
-  "testimonials": [
-    {
-      "quote": "Codegx Technologies helped us turn scattered processes into reliable operating systems. Their team's delivery discipline exceeded our expectations.",
-      "author": "David Smith",
-      "position": "CTO, TechCorp International",
-      "photo": "/assets/testimonials/john.jpg"
-    },
-    {
-      "quote": "Working with Codegx has been a game-changer for our digital presence. Their attention to detail and commitment to quality is unmatched.",
-      "author": "Lisa Wong",
-      "position": "Marketing Director, RetailNow",
-      "photo": "/assets/testimonials/lisa.jpg"
-    },
-    {
-      "quote": "The secure workflow solution developed by Codegx improved our payment operations and made the process easier to audit.",
-      "author": "Robert Johnson",
-      "position": "CEO, FinServe Solutions",
-      "photo": "/assets/testimonials/robert.jpg"
-    }
-  ]
+  "clients": [],
+  "testimonials": []
 }

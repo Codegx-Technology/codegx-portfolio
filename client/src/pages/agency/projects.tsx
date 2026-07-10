@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { PageWrapper, PageSection, PageHeader } from "@/components/layouts/PageWrapper";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import AgencyProjectCard from "@/components/Agency/AgencyProjectCard";
 import ProjectFilterMenu from "@/components/Projects/ProjectFilterMenu";
 import { Paragraph } from "@/components/ui/typography";
@@ -34,7 +34,7 @@ interface AgencyProfile {
 }
 
 export default function ProjectsPage() {
-  const { data: agencyProfile } = useQuery<AgencyProfile>({
+  const { data: agencyProfile = { name: "Wakala OS" } } = useQuery<AgencyProfile>({
     queryKey: ["/data/agencyProfile.json"],
     staleTime: Infinity,
   });
@@ -64,6 +64,8 @@ export default function ProjectsPage() {
 
   // Set page title based on agency name
   useEffect(() => {
+    document.title = agencyProfile ? `${agencyProfile.name} - Platform Work` : "Wakala OS - Platform Work";
+    return;
     document.title = agencyProfile ? `${agencyProfile.name} – Projects` : "Agency – Projects";
   }, [agencyProfile]);
 
@@ -147,15 +149,15 @@ export default function ProjectsPage() {
                 <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#c8a951] dark:bg-[#9f7b42] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#c8a951] dark:bg-[#9f7b42]"></span>
               </span>
-              Our Work
+              Platform Work
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
-              Our <span className="text-[#c8a951] dark:text-[#9f7b42]">Projects</span>
+              Codegx <span className="text-[#c8a951] dark:text-[#9f7b42]">Technical Estate</span>
             </h1>
 
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Explore our portfolio of innovative solutions that have helped businesses transform and grow.
+              Active platform work shaping Wakala OS, governed automation, developer intelligence, and operational decision systems.
             </p>
           </motion.div>
         </div>
@@ -259,7 +261,7 @@ export default function ProjectsPage() {
             >
               <Link href="/contact">
                 <a className="inline-flex items-center gap-2 bg-[#c8a951] hover:bg-[#c8a951]/90 text-[#2c1a22] dark:bg-[#9f7b42] dark:hover:bg-[#9f7b42]/90 dark:text-[#1f1a2c] px-8 py-4 rounded-md font-medium transition-colors">
-                  <span>Start Your Project</span>
+                  <span>Discuss Platform Work</span>
                   <i className="fas fa-arrow-right"></i>
                 </a>
               </Link>
