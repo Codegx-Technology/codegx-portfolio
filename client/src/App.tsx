@@ -39,6 +39,9 @@ function AppRouter() {
           {() => <LazyRoute component={CodegxLanding} />}
         </Route>
         {/* Portfolio route removed - available in 'portfolio' branch */}
+        <Route path="/agency/agency">
+          {() => <LazyRoute component={AboutWakala} />}
+        </Route>
         <Route path="/agency">
           {() => <LazyRoute component={AboutWakala} />}
         </Route>
@@ -56,6 +59,15 @@ function AppRouter() {
           }}
         </Route>
         <Route path="/case-studies">
+          {() => <LazyRoute component={CaseStudies} />}
+        </Route>
+        <Route path="/case-studies/enterprise">
+          {() => <LazyRoute component={CaseStudies} />}
+        </Route>
+        <Route path="/case-studies/startups">
+          {() => <LazyRoute component={CaseStudies} />}
+        </Route>
+        <Route path="/case-studies/healthcare">
           {() => <LazyRoute component={CaseStudies} />}
         </Route>
         <Route path="/case-studies/:slug">
@@ -86,6 +98,18 @@ function AppRouter() {
           {({slug}) => {
             const ServiceDetail = React.lazy(() => import("@/pages/services/[slug]"));
             return <LazyRoute component={ServiceDetail} />;
+          }}
+        </Route>
+        <Route path="/solutions/:slug">
+          {() => {
+            const Services = React.lazy(() => import("@/pages/services"));
+            return <LazyRoute component={Services} />;
+          }}
+        </Route>
+        <Route path="/projects/:slug">
+          {() => {
+            const AgencyProjects = React.lazy(() => import("@/pages/agency/projects"));
+            return <LazyRoute component={AgencyProjects} />;
           }}
         </Route>
         <Route path="/quiz">

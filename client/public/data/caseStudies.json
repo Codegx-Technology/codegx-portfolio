@@ -1,207 +1,84 @@
 {
   "caseStudies": [
     {
+      "id": "wakala-os",
+      "title": "Wakala OS",
+      "client": "Codegx Technologies",
+      "industry": "Governed Automation",
+      "category": "Automation Operating System",
+      "summary": "Wakala OS is the Codegx automation operating system for agentic workflows, structured business process automation, reporting, onboarding, and dependable operations.",
+      "challenge": "Operational teams need automation that remains traceable, controlled, and maintainable after launch. Most automation initiatives fail when workflow ownership, escalation, and reporting are treated as afterthoughts.",
+      "solution": "Wakala OS structures automation around ownership, control paths, reporting, and accountable execution. It is designed for workflows where the organization must know what happened, who owns the next step, and how exceptions are handled.",
+      "impact": [
+        "Creates a governed operating layer for recurring workflows",
+        "Supports accountable agentic and human-in-the-loop execution",
+        "Improves visibility across reporting, onboarding, and process handoffs",
+        "Anchors Codegx automation work within one coherent platform estate"
+      ],
+      "technologies": ["Workflow Automation", "Agentic Operations", "Governance", "Reporting", "Operational Intelligence"],
+      "image": "/assets/wakala-founder-vision.png",
+      "featured": true,
+      "year": 2026
+    },
+    {
       "id": "tendanow",
       "title": "TendaNow",
       "client": "TendaNow",
-      "industry": "Behavioral Change / Wellness / Productivity",
-      "category": "AI Accountability & Behavioral Transformation Platform",
-      "summary": "An MVP-stage accountability platform designed to make goal achievement accessible and affordable globally, with an Africa-first approach. Currently in active development with WhatsApp integration and multilingual support starting with English, Swahili, and Sheng (additional languages coming soon).",
-      "challenge": "Millions of people worldwide struggle with goal completion and long-term behavioral change due to lack of accessible, culturally-relevant accountability support. Traditional solutions are expensive, not localized, and don't account for local communication preferences. There's a critical gap between aspiration and execution—particularly acute in emerging markets where users prefer messaging-first platforms.",
-      "solution": "We're building TendaNow as a WhatsApp-first AI accountability platform that meets users where they already are. The MVP focuses on core features: personalized AI coaching through WhatsApp, culturally-adapted messaging (English, Swahili, Sheng with more languages in development), and real-time progress tracking. We're currently validating user engagement patterns and refining the AI coaching experience based on early user feedback, with expansion to other messaging platforms and markets planned.",
+      "industry": "Behavioral Change / Wellness",
+      "category": "Accountability Platform",
+      "summary": "MVP-stage accountability platform making goal achievement accessible through a WhatsApp-first architecture with multilingual support for African users.",
+      "challenge": "Many goal-support tools assume users will adopt a new app and pay for premium coaching. That misses users who already live inside messaging platforms and need affordable, culturally aware accountability.",
+      "solution": "TendaNow brings accountability support into familiar communication flows, starting with WhatsApp-first delivery and multilingual support across English, Swahili, and Sheng.",
       "impact": [
-        "MVP successfully deployed with early user cohorts in East Africa",
-        "WhatsApp-first architecture validated for accessibility and scale",
-        "Multilingual support (English, Swahili, Sheng) implemented and tested",
-        "Early indicators show strong engagement potential across diverse user segments",
-        "Positioned for expansion across Africa and emerging markets globally"
+        "WhatsApp-first architecture for accessibility",
+        "Multilingual support path for African users",
+        "MVP under active development and validation",
+        "Designed for affordable accountability support"
       ],
-      "technologies": ["AI/ML", "WhatsApp API", "NLP", "React", "Node.js", "MongoDB"],
-      "image": "https://via.placeholder.com/800x400?text=TendaNow",
+      "technologies": ["WhatsApp-first UX", "AI Coaching", "Multilingual Support", "Progress Tracking"],
+      "image": "/assets/brand/codegx-full-lockup.webp",
       "featured": true,
-      "year": 2025,
-      "testimonial": {
-        "quote": "TendaNow's MVP shows real promise. The WhatsApp integration is seamless, and the culturally-relevant AI coaching feels genuinely helpful. We're excited about where this is heading and the potential to reach users globally.",
-        "author": "Early User Group Feedback",
-        "position": "Beta Testers, East Africa"
-      }
+      "year": 2026
     },
     {
       "id": "codecrusher",
       "title": "CodeCrusher",
       "client": "CodeCrusher",
-      "industry": "Developer Tools / Enterprise Governance",
-      "category": "Semantic Code Intelligence for Enterprise Teams",
-      "summary": "Building the semantic layer for enterprise codebases. CodeCrusher helps development teams understand what their code actually does—not just what it says—enabling smarter code governance, pattern discovery, and architectural consistency without the friction of traditional tools.",
-      "challenge": "Large engineering teams face a paradox: they have thousands of lines of code but struggle to understand what's actually happening across their codebase. Code reviews become bottlenecks, duplicate solutions get built repeatedly, and architectural patterns drift. Existing tools only catch surface-level issues—they miss the semantic intent and patterns that matter.",
-      "solution": "CodeCrusher uses semantic understanding to analyze code intent, not just syntax. Our approach: (1) Semantic code review that understands architectural patterns and intent, (2) Pattern discovery engine that finds similar solutions across your codebase so teams can reuse instead of rebuild, (3) Governance layer that enforces architectural decisions automatically. We're currently working with early enterprise teams to validate that semantic understanding actually reduces technical debt and improves team velocity.",
+      "industry": "Developer Platform",
+      "category": "Semantic Code Intelligence",
+      "summary": "Semantic code intelligence platform for teams that need architecture visibility, pattern discovery, and systematic technical-debt reduction.",
+      "challenge": "Large codebases hide architectural drift, duplicated patterns, and refactoring risk behind surface-level syntax. Teams need to understand system intent before changing critical software.",
+      "solution": "CodeCrusher focuses on semantic code understanding: identifying patterns, surfacing reusable solutions, and supporting architecture governance across evolving repositories.",
       "impact": [
-        "Early teams discovering 30-40% code reuse opportunities they didn't know existed",
-        "Semantic search reducing time to find relevant code patterns from hours to minutes",
-        "Governance rules catching architectural violations before they become technical debt",
-        "Teams reporting clearer understanding of their own codebase architecture",
-        "Building toward enterprise-scale code intelligence"
+        "Improves visibility into codebase architecture",
+        "Supports technical-debt discovery",
+        "Helps teams reason about refactoring risk",
+        "Builds toward governed software maintenance"
       ],
-      "technologies": ["AI/ML", "Semantic Analysis", "Code Intelligence", "Python", "JavaScript", "GitHub API", "Enterprise Infrastructure"],
-      "image": "https://via.placeholder.com/800x400?text=CodeCrusher",
+      "technologies": ["Semantic Analysis", "Code Intelligence", "Architecture Governance", "Repository Analysis"],
+      "image": "/assets/brand/codegx-full-lockup.webp",
       "featured": true,
-      "year": 2025,
-      "testimonial": {
-        "quote": "We didn't realize how much duplicate code we had until CodeCrusher showed us. It's like having someone who actually understands our entire codebase. That's powerful.",
-        "author": "Engineering Team Feedback",
-        "position": "Early Enterprise Users"
-      }
+      "year": 2026
     },
     {
       "id": "bizgen",
       "title": "BizGen",
       "client": "BizGen",
-      "industry": "Entrepreneurship / Innovation",
-      "category": "Founder's Intelligence Platform",
-      "summary": "The thinking partner for early-stage founders. BizGen combines market intelligence, founder community insights, and predictive modeling to help entrepreneurs move from 'I have an idea' to 'I understand my market' in weeks instead of months. Currently helping founders across Africa and emerging markets validate ideas faster.",
-      "challenge": "Most startup failures aren't about bad ideas—they're about founders making decisions with incomplete information. Entrepreneurs in emerging markets face an extra barrier: limited access to market data, investor networks, and experienced mentors. They end up spending months on validation that could take weeks, or worse, building products nobody wants.",
-      "solution": "BizGen flips the script. Instead of guessing, founders get real market signals: crowdsourced validation from actual potential customers, predictive revenue modeling based on comparable markets, and pattern matching against thousands of successful (and failed) businesses. We're building a platform that feels like having a co-founder who's seen it all. The community aspect is key—founders learn from each other's validation journeys, and the platform gets smarter with every founder who uses it.",
+      "industry": "Business Intelligence",
+      "category": "Founder Decision Support",
+      "summary": "Multilingual business intelligence platform for concept generation, entrepreneurial development, and early market validation.",
+      "challenge": "Early-stage founders often make high-cost decisions with limited market signal, weak validation structure, and fragmented advisory support.",
+      "solution": "BizGen helps founders move from broad ideas to clearer hypotheses, market questions, operating models, and validation paths.",
       "impact": [
-        "Founders validating market fit 3-4x faster than traditional methods",
-        "Community of 2000+ founders actively sharing market insights and validation data",
-        "Predictive models showing 78% accuracy in identifying viable market opportunities",
-        "Founders discovering adjacent markets they hadn't considered",
-        "Growing network effect as more founders contribute validation data"
+        "Structures concept development",
+        "Supports early market validation",
+        "Provides founder decision support",
+        "Designed for multilingual and emerging-market contexts"
       ],
-      "technologies": ["Predictive Analytics", "AI/ML", "Community Platform", "Market Intelligence", "NLP", "React", "Python", "Real-time Data"],
-      "image": "https://via.placeholder.com/800x400?text=BizGen",
-      "featured": true,
-      "year": 2025,
-      "testimonial": {
-        "quote": "BizGen showed us our initial market was too small, but helped us discover a bigger opportunity we'd completely missed. That insight alone saved us from a year of wasted effort.",
-        "author": "Founder Community Feedback",
-        "position": "Early Users, East Africa & Beyond"
-      }
-    },
-    {
-      "id": "healthcare-ai-diagnostics",
-      "title": "Diagnostic Support Tool for Rural Healthcare",
-      "client": "MediTech Solutions",
-      "industry": "Healthcare",
-      "icon": "HealthcareAIDiagnosticsIcon",
-      "summary": "Developed a diagnostic support tool that helps healthcare providers in rural areas assess common conditions with limited resources.",
-      "challenge": "Rural healthcare facilities in developing regions face significant challenges including limited access to specialists, diagnostic equipment, and reliable internet connectivity. MediTech Solutions needed a solution that could work in low-resource settings while providing accurate diagnostic support.",
-      "solution": "We developed a diagnostic support tool that runs on standard tablets and smartphones, with offline capabilities. The system uses computer vision and machine learning algorithms to analyze patient symptoms, vital signs, and basic test results to suggest potential diagnoses and treatment options. The solution includes a knowledge base that is regularly updated when connectivity is available.",
-      "impact": [
-        "Reduced diagnostic errors by 37%",
-        "Decreased referral time by 58%",
-        "Improved treatment outcomes for 12,000+ patients",
-        "Deployed in 45 rural clinics across 3 countries"
-      ],
-      "technologies": ["TensorFlow", "React Native", "Flask", "MongoDB", "AWS"],
-      "image": "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "featured": true,
-      "year": 2022,
-      "testimonial": {
-        "quote": "This technology has transformed how we deliver healthcare in remote areas. Our staff now have the confidence to make better diagnostic decisions, and patients receive faster, more accurate care.",
-        "author": "Dr. Sarah Kimani",
-        "position": "Medical Director, MediTech Solutions"
-      }
-    },
-    {
-      "id": "fintech-fraud-detection",
-      "title": "Real-time Fraud Detection System for Digital Payments",
-      "client": "AfriPay",
-      "industry": "FinTech",
-      "icon": "FintechFraudDetectionIcon",
-      "summary": "Built a sophisticated fraud detection system that analyzes transaction patterns in real-time to identify and prevent fraudulent activities.",
-      "challenge": "AfriPay, a rapidly growing digital payment platform in Africa, was experiencing an increase in fraudulent transactions as they scaled. Their existing rule-based system couldn't keep up with evolving fraud patterns, resulting in both false positives (legitimate transactions flagged as fraud) and missed fraud cases.",
-      "solution": "We implemented a hybrid machine learning system that combines rule-based filters with advanced anomaly detection algorithms. The system analyzes over 200 transaction attributes in real-time, learning from historical patterns while adapting to new fraud techniques. A feedback loop with the security team continuously improves the model's accuracy.",
-      "impact": [
-        "Reduced fraudulent transactions by 92%",
-        "Decreased false positives by 76%",
-        "Saved an estimated $4.2M in potential fraud losses",
-        "Improved customer satisfaction with fewer legitimate transactions being declined"
-      ],
-      "technologies": ["Python", "Apache Kafka", "TensorFlow", "Spark", "Elasticsearch", "Google Cloud"],
-      "image": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "featured": true,
-      "year": 2023,
-      "testimonial": {
-        "quote": "The fraud detection system developed by Codegx Technologies has been a game-changer for our business. Not only has it dramatically reduced our fraud losses, but it's also improved the experience for our legitimate customers.",
-        "author": "James Ochieng",
-        "position": "CTO, AfriPay"
-      }
-    },
-    {
-      "id": "edtech-personalized-learning",
-      "title": "Personalized Learning Platform for K-12 Education",
-      "client": "EduSmart Africa",
-      "industry": "EdTech",
-      "icon": "EdtechPersonalizedLearningIcon",
-      "summary": "Created an adaptive learning platform that personalizes educational content based on individual student performance and learning styles.",
-      "challenge": "EduSmart Africa wanted to address the diverse learning needs of K-12 students across different African countries, where classroom sizes are large and teacher resources are limited. They needed a solution that could provide personalized learning experiences at scale.",
-      "solution": "We developed an adaptive learning platform that uses AI to analyze student performance and behavior, creating personalized learning paths. The system adjusts difficulty levels, content formats, and pacing based on individual progress. It works across various devices and has offline capabilities for areas with limited connectivity.",
-      "impact": [
-        "Improved test scores by an average of 32%",
-        "Increased student engagement by 47%",
-        "Reduced dropout rates by 28%",
-        "Deployed in 120 schools reaching 50,000+ students"
-      ],
-      "technologies": ["React", "Node.js", "Python", "MongoDB", "AWS", "TensorFlow"],
-      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "featured": true,
-      "year": 2022,
-      "testimonial": {
-        "quote": "The personalized learning platform has revolutionized how we teach. Students are more engaged, and teachers can now focus on providing targeted support where it's most needed.",
-        "author": "Grace Mwangi",
-        "position": "Education Director, EduSmart Africa"
-      }
-    },
-    {
-      "id": "agritech-crop-monitoring",
-      "title": "IoT-Based Crop Monitoring and Management System",
-      "client": "FarmTech Solutions",
-      "industry": "AgriTech",
-      "icon": "AgritechCropMonitoringIcon",
-      "summary": "Developed an IoT-based system that monitors soil conditions, weather patterns, and crop health to optimize farming practices and increase yields.",
-      "challenge": "Small and medium-scale farmers in East Africa face challenges including unpredictable weather patterns, limited access to agricultural expertise, and inefficient resource utilization. FarmTech Solutions needed a technology solution to help farmers make data-driven decisions.",
-      "solution": "We created a comprehensive crop monitoring system using low-cost IoT sensors that track soil moisture, temperature, humidity, and other key parameters. The data is processed using machine learning algorithms to provide actionable insights through a simple mobile application. The system offers recommendations for irrigation, fertilization, and pest control based on real-time conditions.",
-      "impact": [
-        "Increased crop yields by 28-35%",
-        "Reduced water usage by 42%",
-        "Decreased fertilizer costs by 30%",
-        "Implemented on 200+ farms across Kenya, Tanzania, and Uganda"
-      ],
-      "technologies": ["IoT", "Arduino", "React Native", "Python", "TensorFlow", "AWS IoT"],
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "technologies": ["Market Intelligence", "Founder Workflows", "Multilingual Support", "Validation Systems"],
+      "image": "/assets/brand/codegx-full-lockup.webp",
       "featured": false,
-      "year": 2023,
-      "testimonial": {
-        "quote": "This technology has transformed my farming practices. I now know exactly when to irrigate and how much fertilizer to use. My yields have increased significantly while my costs have gone down.",
-        "author": "John Kamau",
-        "position": "Farm Owner, Nakuru County"
-      }
-    },
-    {
-      "id": "smart-city-traffic-management",
-      "title": "AI-Driven Traffic Management System",
-      "client": "Nairobi Metropolitan Services",
-      "industry": "Smart City",
-      "icon": "SmartCityTrafficIcon",
-      "summary": "Implemented an intelligent traffic management system that uses computer vision and predictive analytics to optimize traffic flow and reduce congestion.",
-      "challenge": "Nairobi, like many rapidly growing African cities, faces severe traffic congestion issues that impact economic productivity, air quality, and quality of life. The existing traffic management infrastructure was outdated and unable to adapt to changing traffic patterns.",
-      "solution": "We deployed a network of smart cameras with edge computing capabilities at key intersections. These cameras use computer vision to analyze traffic flow in real-time. The system predicts traffic patterns based on historical data and current conditions, dynamically adjusting traffic signal timing to optimize flow. A central dashboard provides traffic authorities with insights and allows manual intervention when needed.",
-      "impact": [
-        "Reduced average commute times by 23%",
-        "Decreased traffic congestion by 31% in pilot areas",
-        "Lowered carbon emissions from idling vehicles",
-        "Improved emergency vehicle response times by 42%"
-      ],
-      "technologies": ["Computer Vision", "TensorFlow", "Edge Computing", "Python", "React", "Google Cloud"],
-      "image": "https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "featured": false,
-      "year": 2023,
-      "testimonial": {
-        "quote": "The smart traffic management system has made a noticeable difference in our city's traffic flow. Areas that were previously gridlocked during rush hour now move much more efficiently.",
-        "author": "David Muthoni",
-        "position": "Director of Urban Planning, Nairobi Metropolitan Services"
-      }
+      "year": 2026
     }
   ]
 }
