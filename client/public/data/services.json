@@ -190,13 +190,13 @@
       "title": "Governed Process Automation",
       "icon": "ProcessAutomationIcon",
       "shortDescription": "Workflow automation for complex operations with approvals, exception handling, and audit visibility.",
-      "fullDescription": "Our process automation solutions combine workflow analysis, system integration, and governed decision support to improve complex business processes. We help organizations identify automation opportunities, design efficient workflows, and implement solutions that reduce manual effort, minimize errors, and accelerate operations.",
+      "fullDescription": "Our process automation work combines workflow analysis, system integration, and governed decision support for operations that need consistency, visibility, and control. We help organizations identify automation opportunities, define accountable handoffs, and implement workflows that can be monitored and maintained after launch.",
       "benefits": [
-        "Reduce operational costs through automation",
-        "Eliminate human error in repetitive tasks",
-        "Free up employees for higher-value work",
-        "Accelerate process completion times",
-        "Scale operations without proportional cost increases"
+        "Clarify ownership across recurring operational workflows",
+        "Reduce avoidable manual handoffs and process drift",
+        "Keep approvals, exceptions, and escalation paths visible",
+        "Make workflow performance easier to monitor",
+        "Support automation that remains maintainable after launch"
       ],
       "useCases": [
         {
@@ -217,28 +217,28 @@
         }
       ],
       "process": [
-        "Process Assessment: We analyze your current processes to identify automation opportunities, control requirements, and operating value.",
-        "Solution Design: We design automated workflows that optimize efficiency and integrate with existing systems.",
-        "Development: We develop automation solutions using appropriate technologies, from RPA to custom AI components.",
-        "Testing & Validation: We rigorously test automated processes to ensure accuracy, reliability, and exception handling.",
-        "Deployment & Training: We deploy solutions and train your team on monitoring and managing the automated processes.",
-        "Continuous Improvement: We help you measure results and continuously improve automation over time."
+        "Process Assessment: We map process ownership, control requirements, exception paths, and operating value.",
+        "Workflow Design: We define handoffs, approvals, data movement, integrations, and audit expectations.",
+        "System Build: We implement automation with secure defaults, maintainable architecture, and observable behavior.",
+        "Testing & Validation: We validate accuracy, reliability, exception handling, and failure recovery paths.",
+        "Deployment & Enablement: We support rollout and prepare teams to monitor and manage the automated process.",
+        "Continuous Improvement: We help measure workflow health and improve the system without weakening governance."
       ],
-      "technologies": ["UiPath", "Blue Prism", "Automation Anywhere", "Microsoft Power Automate", "Custom AI Solutions", "OCR", "NLP"],
+      "technologies": ["Workflow Automation", "System Integration", "Document Processing", "Rules Engines", "Observability", "OCR", "NLP"],
       "examples": [
         {
-          "title": "Financial Services Document Processing",
-          "description": "Automated loan application processing for a financial institution, reducing processing time from days to minutes and increasing throughput by 300%.",
+          "title": "Document Intake and Review",
+          "description": "Structured document workflows for intake, extraction, validation, review, and accountable routing.",
           "image": "/assets/services/automation-finance.jpg"
         },
         {
-          "title": "Healthcare Claims Processing",
-          "description": "Implemented an intelligent automation solution for a healthcare provider that processes insurance claims with 95% accuracy, reducing manual review by 70%.",
+          "title": "Exception-Aware Processing",
+          "description": "Automation paths that separate routine processing from cases requiring human review or escalation.",
           "image": "/assets/services/automation-healthcare.jpg"
         },
         {
-          "title": "Supply Chain Order Management",
-          "description": "Developed an end-to-end order processing automation for a distributor that handles order entry, validation, routing, and confirmation, reducing processing costs by 62%.",
+          "title": "Order and Handoff Control",
+          "description": "End-to-end operating flows for order entry, validation, routing, confirmation, and status visibility.",
           "image": "/assets/services/automation-supply-chain.jpg"
         }
       ],

@@ -11,7 +11,7 @@ import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 interface ServiceExample {
   title: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 interface UseCase {
@@ -196,7 +196,7 @@ export default function ServiceDetail() {
                 <div className="bg-card rounded-lg border border-border p-6 mb-8">
                   <h3 className="text-xl font-bold mb-4">{service.cta}</h3>
                   <p className="text-muted-foreground mb-6">
-                    Ready to explore how {service.title} can benefit your organization? Let's discuss your specific needs.
+                    Discuss where this capability fits your operating model, control requirements, and long-term ownership plan.
                   </p>
                   <Link href="/contact">
                     <Button className="w-full">
@@ -229,21 +229,14 @@ export default function ServiceDetail() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mb-16"
             >
-              <h2 className="text-2xl font-bold mb-8">Success Stories</h2>
+              <h2 className="text-2xl font-bold mb-8">Operating Patterns</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {service.examples.map((example, index) => (
-                  <div key={index} className="bg-card rounded-lg overflow-hidden border border-border">
-                    <div className="h-48 bg-primary/10 flex items-center justify-center">
-                      <img
-                        src={example.image}
-                        alt={example.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x200?text=Case+Study";
-                        }}
-                      />
+                  <div key={index} className="bg-card rounded-lg border border-border p-6">
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <span className="text-sm font-semibold">{String(index + 1).padStart(2, "0")}</span>
                     </div>
-                    <div className="p-6">
+                    <div>
                       <h3 className="text-lg font-bold mb-2">{example.title}</h3>
                       <p className="text-muted-foreground">{example.description}</p>
                     </div>
