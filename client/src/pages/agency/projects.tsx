@@ -5,6 +5,7 @@ import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import AgencyProjectCard from "@/components/Agency/AgencyProjectCard";
 import ProjectFilterMenu from "@/components/Projects/ProjectFilterMenu";
 import { Paragraph } from "@/components/ui/typography";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 import { Link } from "wouter";
 
 interface AgencyProject {
@@ -266,6 +267,10 @@ export default function ProjectsPage() {
                 </a>
               </Link>
             </motion.div>
+
+            <div className="mt-8">
+              <IntelligentBackButton fallbackHref="/agency" label="Back to Wakala OS" align="center" />
+            </div>
           </div>
         </PageSection>
       )}

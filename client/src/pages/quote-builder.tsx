@@ -11,6 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 // Service options with pricing factors
 const serviceOptions = [
@@ -638,6 +639,10 @@ export default function QuoteBuilder() {
                 Contact Sales Team
               </Button>
             </Link>
+          </div>
+
+          <div className="mt-10">
+            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
           </div>
         </div>
       </section>

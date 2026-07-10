@@ -9,6 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { getIcon } from "@/lib/iconMap";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 interface Service {
   id: string;
@@ -342,6 +343,10 @@ export default function ServiceQuiz() {
               </Tabs>
             </div>
           )}
+
+          <div className="mt-8">
+            <IntelligentBackButton fallbackHref="/services" label="Back" align="center" />
+          </div>
         </div>
       </section>
     </Layout>

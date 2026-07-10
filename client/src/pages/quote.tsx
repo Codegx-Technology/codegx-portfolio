@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { PageWrapper, PageHeader } from "@/components/layouts/PageWrapper";
 import { QuoteForm } from "@/components/Forms/QuoteForm";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 import { Toaster } from "sonner";
 
 export default function QuotePage() {
@@ -24,6 +25,10 @@ export default function QuotePage() {
 
         <div className="bg-card rounded-xl border border-border p-4 sm:p-6 md:p-8 w-full">
           <QuoteForm />
+        </div>
+
+        <div className="mt-8">
+          <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
         </div>
       </div>
     </PageWrapper>

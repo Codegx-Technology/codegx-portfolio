@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import SimpleQuoteForm from "@/components/Forms/SimpleQuoteForm";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 import { Toaster } from "sonner";
 
 export default function SimpleQuote() {
@@ -72,6 +73,10 @@ export default function SimpleQuote() {
               </p>
             </div>
           </motion.div>
+
+          <div className="mt-10">
+            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
+          </div>
         </div>
       </section>
     </Layout>

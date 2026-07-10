@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 import { AlertCircle } from "lucide-react";
 
 export default function NotFound() {
@@ -12,8 +13,12 @@ export default function NotFound() {
           </div>
 
           <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
+            The page you are looking for is unavailable or has moved.
           </p>
+
+          <div className="mt-6">
+            <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+          </div>
         </CardContent>
       </Card>
     </div>

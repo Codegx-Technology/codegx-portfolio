@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { SimpleQuoteForm2 } from "@/components/Forms/SimpleQuoteForm2";
+import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 import { Toaster } from "sonner";
 
 export default function SimpleQuotePage() {
@@ -31,6 +32,10 @@ export default function SimpleQuotePage() {
 
           <div className="bg-card rounded-lg border border-border p-8">
             <SimpleQuoteForm2 />
+          </div>
+
+          <div className="mt-8">
+            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
           </div>
         </motion.div>
       </section>
