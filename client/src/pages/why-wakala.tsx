@@ -197,6 +197,64 @@ export default function AboutWakala() {
 
       <PageDivider />
 
+      {/* Operating Patterns Section */}
+      <PageSection className="py-8 md:py-14">
+        <div className="mb-6 grid gap-4 md:mb-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <div className="mb-3 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary md:text-sm">
+              Operating Patterns
+            </div>
+            <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight">
+              Where governed execution is becoming necessary
+            </Heading2>
+          </div>
+          <Paragraph className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+            These are recurring operating problems Codegx sees across modern teams. Wakala OS gives them structure
+            without making automation the whole product.
+          </Paragraph>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+          {[
+            {
+              title: "Lead & Intent Operations",
+              description: "Capture, qualify, route, and follow up on demand without losing context between channels.",
+            },
+            {
+              title: "Reception & Intake",
+              description: "Handle bookings, enquiries, triage, and escalation with visible ownership.",
+            },
+            {
+              title: "Content Operations",
+              description: "Coordinate research, drafting, review, publishing, and evidence trails.",
+            },
+            {
+              title: "Internal Reporting",
+              description: "Turn hiring, team, finance, and delivery workflows into accountable routines.",
+            },
+            {
+              title: "Document & CRM Workflows",
+              description: "Structure intake, classification, case movement, and customer records.",
+            },
+          ].map((pattern, index) => (
+            <motion.div
+              key={pattern.title}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.4, delay: index * 0.04 }}
+              className="rounded-lg border border-border bg-card p-4 shadow-sm"
+            >
+              <div className="mb-4 text-xs font-semibold text-primary">0{index + 1}</div>
+              <Heading3 className="text-sm font-bold leading-snug">{pattern.title}</Heading3>
+              <Paragraph className="mt-3 text-xs leading-relaxed text-muted-foreground">{pattern.description}</Paragraph>
+            </motion.div>
+          ))}
+        </div>
+      </PageSection>
+
+      <PageDivider />
+
       {/* Founder's Vision Section */}
       <PageSection className="py-8 md:py-14">
         <div className="text-center mb-6 md:mb-12">
