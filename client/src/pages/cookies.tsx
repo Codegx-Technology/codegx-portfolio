@@ -3,111 +3,105 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
-export default function Cookies() {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+const cookieSections = [
+  {
+    title: "1. Purpose",
+    content:
+      "Cookies and similar browser storage help the Codegx website operate reliably, remember basic preferences, and understand site performance. We keep this use limited and operational.",
+  },
+  {
+    title: "2. Cookies We Use",
+    content:
+      "Essential cookies support basic site behavior. Preference cookies may remember display choices. Analytics or diagnostic cookies, when enabled, help us understand page performance, navigation issues, and errors.",
+  },
+  {
+    title: "3. What We Do Not Use Cookies For",
+    content:
+      "We do not use cookies to sell personal information. We also avoid cookie practices that conflict with the trust, security, and governance expectations of the organizations we serve.",
+  },
+  {
+    title: "4. Third-Party Services",
+    content:
+      "Some site functions may rely on providers for hosting, analytics, security, forms, or diagnostics. Those providers may process limited technical data under their own privacy and security terms.",
+  },
+  {
+    title: "5. Managing Cookies",
+    content:
+      "You can manage or delete cookies through your browser settings. Blocking certain cookies may affect preferences, forms, analytics accuracy, or normal site behavior.",
+  },
+  {
+    title: "6. Changes",
+    content:
+      "We may update this policy as our website and operating practices evolve. Material changes will be reflected on this page.",
+  },
+  {
+    title: "7. Contact",
+    content:
+      "Questions about cookie use can be sent to privacy@codegxtechnologies.org or through https://codegxtechnologies.org.",
+  },
+];
 
+export default function Cookies() {
   return (
     <>
       <Head
         title="Cookie Policy | Codegx Technologies"
-        description="Cookie Policy for Codegx Technologies. Learn how we use cookies and similar tracking technologies."
+        description="How Codegx Technologies uses limited cookies and browser storage for website operation, preferences, and diagnostics."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
-          className="mb-6 md:mb-8"
-        >
-          <IntelligentBackButton
-            fallbackHref="/"
-            label="Back"
-            className="text-slate-600 hover:text-slate-900 hover:opacity-100 dark:text-slate-400 dark:hover:text-white"
-          />
-        </motion.div>
-
-        {/* Header */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-0"
-        >
-          <div className="max-w-4xl mx-auto text-center sm:text-left">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-slate-900 dark:text-white leading-tight">
+        <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:px-0 md:py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="border-b border-slate-200 pb-8 dark:border-slate-800"
+          >
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#b88a3d]">
+              Browser Storage
+            </p>
+            <h1 className="text-3xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl">
               Cookie Policy
             </h1>
-            <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
+              A concise note on the limited browser storage used to keep the website functional,
+              measurable, and secure.
             </p>
-          </div>
-        </motion.section>
+            <p className="mt-4 text-sm text-slate-500 dark:text-slate-500">
+              Last reviewed: July 10, 2026
+            </p>
+          </motion.div>
 
-        {/* Content */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="py-8 sm:py-10 md:py-12 max-w-4xl mx-auto space-y-8 sm:space-y-10 px-4 sm:px-6 md:px-0"
-        >
-          {[
-            {
-              title: "1. What Are Cookies?",
-              content: "Cookies are small pieces of data stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites remember information about your visit, such as your preferences and login information."
-            },
-            {
-              title: "2. How We Use Cookies",
-              content: "Codegx Technologies uses cookies for the following purposes:\n\n• Essential Cookies: Required for the website to function properly\n• Performance Cookies: Help us understand how visitors use our website\n• Functional Cookies: Remember your preferences and settings\n• Marketing Cookies: Track your activity to show relevant advertisements\n• Analytics Cookies: Collect data about how you interact with our website"
-            },
-            {
-              title: "3. Types of Cookies We Use",
-              content: "Session Cookies: Temporary cookies that expire when you close your browser\n\nPersistent Cookies: Remain on your device for a specified period or until you delete them\n\nFirst-party Cookies: Set by Codegx Technologies\n\nThird-party Cookies: Set by our partners and service providers"
-            },
-            {
-              title: "4. Third-Party Cookies",
-              content: "We may allow third-party service providers to place cookies on your device for analytics, advertising, and other purposes. These providers include:\n\n• Google Analytics: For website traffic analysis\n• Social Media Platforms: For social sharing and tracking\n• Advertising Networks: For targeted advertising\n\nThese third parties have their own privacy policies governing their use of cookies."
-            },
-            {
-              title: "5. Your Cookie Choices",
-              content: "You can control cookies through your browser settings:\n\n• Accept all cookies\n• Reject all cookies\n• Accept only essential cookies\n• Customize which types of cookies to accept\n\nPlease note that disabling cookies may affect the functionality of our website."
-            },
-            {
-              title: "6. How to Delete Cookies",
-              content: "You can delete cookies from your device by:\n\n• Using your browser's settings to clear browsing data\n• Adjusting your privacy settings\n• Using third-party cookie management tools\n\nFor instructions specific to your browser, please visit your browser's help section."
-            },
-            {
-              title: "7. Do Not Track",
-              content: "Some browsers include a 'Do Not Track' feature. Currently, there is no industry standard for recognizing Do Not Track signals. Codegx Technologies does not currently respond to Do Not Track browser signals, but we provide you with choices regarding the collection and use of information as described in this policy."
-            },
-            {
-              title: "8. Changes to This Cookie Policy",
-              content: "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated policy on our website."
-            },
-            {
-              title: "9. Contact Us",
-              content: "If you have questions about our use of cookies, please contact us at:\n\nCodegx Technologies\nEmail: cookies@codegxtechnologies.org\nWebsite: https://codegxtechnologies.org"
-            },
-          ].map((section, index) => (
-            <motion.div key={index} variants={itemVariants} className="space-y-3 sm:space-y-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
-                {section.title}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 whitespace-pre-line leading-relaxed">
-                {section.content}
-              </p>
-            </motion.div>
-          ))}
-        </motion.section>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+            className="mt-10 divide-y divide-slate-200 dark:divide-slate-800"
+          >
+            {cookieSections.map((section) => (
+              <motion.section
+                key={section.title}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
+                className="grid gap-3 py-6 md:grid-cols-[220px_1fr] md:gap-8"
+              >
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  {section.title}
+                </h2>
+                <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+                  {section.content}
+                </p>
+              </motion.section>
+            ))}
+          </motion.div>
+
+          <div className="pt-10">
+            <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+          </div>
+        </section>
       </MainLayout>
     </>
   );

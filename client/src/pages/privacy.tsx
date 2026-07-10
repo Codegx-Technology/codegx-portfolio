@@ -3,99 +3,69 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
-export default function Privacy() {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+const sections = [
+  {
+    title: "1. Scope",
+    content:
+      "This notice explains how Codegx Technologies handles information collected through this website, contact forms, consultation requests, and related Codegx or Wakala OS communications.",
+  },
+  {
+    title: "2. Information We Collect",
+    content:
+      "We may collect contact details you submit, including name, email address, phone number, organization, role, project context, and message content. We may also collect limited technical data such as browser type, IP address, pages visited, timestamps, and cookie preferences.",
+  },
+  {
+    title: "3. How We Use Information",
+    content:
+      "We use information to respond to enquiries, prepare consultations, operate the website, maintain security, support project communication, and keep appropriate business or legal records.",
+  },
+  {
+    title: "4. Protection and Retention",
+    content:
+      "We use reasonable administrative and technical safeguards to protect information. We keep information only as long as needed for the purpose collected, operational records, support history, or legal obligations.",
+  },
+  {
+    title: "5. Sharing",
+    content:
+      "We do not sell personal information. We may share information with service providers that help us operate the website, communicate with you, secure systems, or meet legal requirements.",
+  },
+  {
+    title: "6. Your Choices",
+    content:
+      "You may contact us to request access, correction, or deletion of information you have provided, subject to legal and operational retention requirements.",
+  },
+  {
+    title: "7. Contact",
+    content:
+      "For privacy questions, contact Codegx Technologies at privacy@codegxtechnologies.org or visit https://codegxtechnologies.org.",
+  },
+];
 
+export default function Privacy() {
   return (
     <>
       <Head
         title="Privacy Policy | Codegx Technologies"
-        description="Privacy Policy for Codegx Technologies. Learn how we collect, use, and protect your personal information."
+        description="Privacy notice for Codegx Technologies website, contact data, operational communications, and security practices."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
-          className="mb-6 md:mb-8"
-        >
-          <IntelligentBackButton
-            fallbackHref="/"
-            label="Back"
-            className="text-slate-600 hover:text-slate-900 hover:opacity-100 dark:text-slate-400 dark:hover:text-white"
-          />
-        </motion.div>
-
-        {/* Header */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-0"
-        >
-          <div className="max-w-4xl mx-auto text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-slate-900 dark:text-white leading-tight">
-              Privacy Policy
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </p>
+        <motion.section initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-8 sm:px-6 md:px-0 md:py-12">
+          <div className="mx-auto max-w-4xl">
+            <h1 className="mb-4 text-3xl font-bold text-slate-950 dark:text-white md:text-5xl">Privacy Policy</h1>
+            <p className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: July 10, 2026</p>
           </div>
         </motion.section>
 
-        {/* Content */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="py-8 sm:py-10 md:py-12 max-w-4xl mx-auto space-y-8 sm:space-y-10 px-4 sm:px-6 md:px-0"
-        >
-          {[
-            {
-              title: "1. Introduction",
-              content: "Codegx Technologies ('we', 'us', 'our', or 'Company') operates the codegxtechnologies.org website. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data."
-            },
-            {
-              title: "2. Information Collection and Use",
-              content: "We collect several different types of information for various purposes to provide and improve our Service to you.\n\nTypes of Data Collected:\n• Personal Data: Name, email address, phone number, company information\n• Usage Data: Browser type, IP address, pages visited, time and date of visits\n• Cookies and Tracking: We use cookies to track activity on our Service"
-            },
-            {
-              title: "3. Use of Data",
-              content: "Codegx Technologies uses the collected data for various purposes:\n• To provide and maintain our Service\n• To notify you about changes to our Service\n• To allow you to participate in interactive features\n• To provide customer support\n• To gather analysis or valuable information to improve our Service\n• To monitor the usage of our Service\n• To detect, prevent and address technical issues"
-            },
-            {
-              title: "4. Security of Data",
-              content: "The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security."
-            },
-            {
-              title: "5. Changes to This Privacy Policy",
-              content: "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date at the top of this Privacy Policy."
-            },
-            {
-              title: "6. Contact Us",
-              content: "If you have any questions about this Privacy Policy, please contact us at:\n\nCodegx Technologies\nEmail: privacy@codegxtechnologies.org\nWebsite: https://codegxtechnologies.org"
-            },
-          ].map((section, index) => (
-            <motion.div key={index} variants={itemVariants} className="space-y-3 sm:space-y-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
-                {section.title}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 whitespace-pre-line leading-relaxed">
-                {section.content}
-              </p>
+        <section className="mx-auto max-w-4xl space-y-8 px-4 pb-12 sm:px-6 md:px-0">
+          {sections.map((section) => (
+            <motion.div key={section.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white">{section.title}</h2>
+              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{section.content}</p>
             </motion.div>
           ))}
-        </motion.section>
+          <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+        </section>
       </MainLayout>
     </>
   );

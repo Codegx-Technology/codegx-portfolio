@@ -3,111 +3,115 @@ import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
-export default function Terms() {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+const terms = [
+  {
+    title: "1. Acceptance",
+    content:
+      "By using this website or requesting services from Codegx Technologies, you agree to use the site lawfully and in line with these terms. If a signed agreement or statement of work applies, that document governs the engagement.",
+  },
+  {
+    title: "2. Website Content",
+    content:
+      "The site explains our services, Wakala OS, platform work, delivery approach, and operating principles. It is provided for general information and does not create a binding proposal, warranty, or service commitment unless confirmed in writing.",
+  },
+  {
+    title: "3. Engagements and Deliverables",
+    content:
+      "Project scope, deliverables, timelines, fees, support terms, acceptance criteria, and operational responsibilities are defined through written agreements. We avoid implied obligations where clear delivery controls are required.",
+  },
+  {
+    title: "4. Intellectual Property",
+    content:
+      "Codegx retains ownership of its pre-existing tools, methods, templates, architecture patterns, and platform assets. Client-specific deliverables and usage rights are handled under the relevant written agreement.",
+  },
+  {
+    title: "5. Acceptable Use",
+    content:
+      "You must not misuse the site, interfere with its operation, attempt unauthorized access, copy protected assets, reverse engineer restricted materials, or submit unlawful, harmful, or misleading content.",
+  },
+  {
+    title: "6. Accuracy and Availability",
+    content:
+      "We aim to keep website information accurate and useful, but the site is provided as available. Content may change as our services, products, and operating practices mature.",
+  },
+  {
+    title: "7. Liability",
+    content:
+      "To the extent permitted by law, Codegx Technologies is not liable for indirect, incidental, or consequential losses arising from use of the website or reliance on general website content.",
+  },
+  {
+    title: "8. Governing Law",
+    content:
+      "These terms are governed by the laws of Kenya unless a signed agreement states otherwise.",
+  },
+  {
+    title: "9. Contact",
+    content:
+      "Questions about these terms can be sent to legal@codegxtechnologies.org or through https://codegxtechnologies.org.",
+  },
+];
 
+export default function Terms() {
   return (
     <>
       <Head
         title="Terms of Service | Codegx Technologies"
-        description="Terms of Service for Codegx Technologies. Please read these terms carefully before using our website and services."
+        description="Terms governing use of the Codegx Technologies website and service engagement materials."
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
-          className="mb-6 md:mb-8"
-        >
-          <IntelligentBackButton
-            fallbackHref="/"
-            label="Back"
-            className="text-slate-600 hover:text-slate-900 hover:opacity-100 dark:text-slate-400 dark:hover:text-white"
-          />
-        </motion.div>
-
-        {/* Header */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-0"
-        >
-          <div className="max-w-4xl mx-auto text-center sm:text-left">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-slate-900 dark:text-white leading-tight">
+        <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:px-0 md:py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            className="border-b border-slate-200 pb-8 dark:border-slate-800"
+          >
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#b88a3d]">
+              Website Terms
+            </p>
+            <h1 className="text-3xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl">
               Terms of Service
             </h1>
-            <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
-              Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
+              Practical terms for using the Codegx website and understanding how formal delivery
+              commitments are created.
             </p>
-          </div>
-        </motion.section>
+            <p className="mt-4 text-sm text-slate-500 dark:text-slate-500">
+              Last reviewed: July 10, 2026
+            </p>
+          </motion.div>
 
-        {/* Content */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-          className="py-8 sm:py-10 md:py-12 max-w-4xl mx-auto space-y-8 sm:space-y-10 px-4 sm:px-6 md:px-0"
-        >
-          {[
-            {
-              title: "1. Agreement to Terms",
-              content: "By accessing and using the codegxtechnologies.org website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
-            },
-            {
-              title: "2. Use License",
-              content: "Permission is granted to temporarily download one copy of the materials (information or software) on Codegx Technologies' website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:\n• Modify or copy the materials\n• Use the materials for any commercial purpose or for any public display\n• Attempt to decompile or reverse engineer any software contained on the website\n• Remove any copyright or other proprietary notations from the materials\n• Transfer the materials to another person or 'mirror' the materials on any other server"
-            },
-            {
-              title: "3. Disclaimer",
-              content: "The materials on Codegx Technologies' website are provided on an 'as is' basis. Codegx Technologies makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights."
-            },
-            {
-              title: "4. Limitations",
-              content: "In no event shall Codegx Technologies or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Codegx Technologies' website."
-            },
-            {
-              title: "5. Accuracy of Materials",
-              content: "The materials appearing on Codegx Technologies' website could include technical, typographical, or photographic errors. Codegx Technologies does not warrant that any of the materials on its website are accurate, complete, or current. Codegx Technologies may make changes to the materials contained on its website at any time without notice."
-            },
-            {
-              title: "6. Links",
-              content: "Codegx Technologies has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Codegx Technologies of the site. Use of any such linked website is at the user's own risk."
-            },
-            {
-              title: "7. Modifications",
-              content: "Codegx Technologies may revise these terms of service for its website at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service."
-            },
-            {
-              title: "8. Governing Law",
-              content: "These terms and conditions are governed by and construed in accordance with the laws of Kenya, and you irrevocably submit to the exclusive jurisdiction of the courts in that location."
-            },
-            {
-              title: "9. Contact Information",
-              content: "If you have any questions about these Terms of Service, please contact us at:\n\nCodegx Technologies\nEmail: legal@codegxtechnologies.org\nWebsite: https://codegxtechnologies.org"
-            },
-          ].map((section, index) => (
-            <motion.div key={index} variants={itemVariants} className="space-y-3 sm:space-y-4">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
-                {section.title}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 whitespace-pre-line leading-relaxed">
-                {section.content}
-              </p>
-            </motion.div>
-          ))}
-        </motion.section>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+            className="mt-10 divide-y divide-slate-200 dark:divide-slate-800"
+          >
+            {terms.map((section) => (
+              <motion.section
+                key={section.title}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
+                }}
+                className="grid gap-3 py-6 md:grid-cols-[220px_1fr] md:gap-8"
+              >
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  {section.title}
+                </h2>
+                <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+                  {section.content}
+                </p>
+              </motion.section>
+            ))}
+          </motion.div>
+
+          <div className="pt-10">
+            <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+          </div>
+        </section>
       </MainLayout>
     </>
   );

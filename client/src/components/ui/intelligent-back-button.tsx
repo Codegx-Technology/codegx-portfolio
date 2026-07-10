@@ -6,12 +6,16 @@ interface IntelligentBackButtonProps {
   fallbackHref: string;
   label?: string;
   className?: string;
+  align?: "left" | "center" | "right";
+  variant?: "pill" | "plain";
 }
 
 export function IntelligentBackButton({
   fallbackHref,
   label = "Back",
   className,
+  align,
+  variant = "pill",
 }: IntelligentBackButtonProps) {
   const [, setLocation] = useLocation();
 
@@ -27,13 +31,15 @@ export function IntelligentBackButton({
     setLocation(fallbackHref);
   };
 
-  return (
+  const button = (
     <button
       type="button"
       onClick={handleBack}
       className={cn(
-        "inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-80",
-        !className && "text-[#c8a951] dark:text-[#9f7b42]",
+        "inline-flex items-center gap-2 text-sm font-semibold transition-colors",
+        variant === "plain" && "text-[#c8a951] hover:opacity-80 dark:text-[#9f7b42]",
+        variant === "pill" &&
+          "rounded-md border border-border bg-transparent px-4 py-2 text-foreground hover:bg-accent",
         className
       )}
       aria-label={label}
@@ -41,5 +47,22 @@ export function IntelligentBackButton({
       <ArrowLeft className="h-4 w-4" />
       {label}
     </button>
+  );
+
+  if (!align) {
+    return button;
+  }
+
+  return (
+    <div
+      className={cn(
+        "flex w-full",
+        align === "left" && "justify-start",
+        align === "center" && "justify-center",
+        align === "right" && "justify-end"
+      )}
+    >
+      {button}
+    </div>
   );
 }
