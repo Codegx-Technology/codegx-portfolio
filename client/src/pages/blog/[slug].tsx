@@ -7,8 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { PageBackNav } from "@/components/ui/page-back-nav";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface BlogPost {
   slug: string;
@@ -142,25 +140,19 @@ export default function BlogPost() {
                   blockquote: ({ node, ...props }) => (
                     <blockquote className="border-l-4 border-primary pl-4 italic my-4" {...props} />
                   ),
-                  code: ({ node, className, children, ...props }: any) => {
-                    const inline = !className;
-                    const match = /language-(\w+)/.exec(className || "");
-                    return !inline && match ? (
-                      <SyntaxHighlighter
-                        style={vscDarkPlus as any}
-                        language={match[1]}
-                        PreTag="div"
-                        className="rounded-md my-4"
+                  code: ({ className, children, ...props }: any) =>
+                    className ? (
+                      <code
+                        className="my-4 block overflow-x-auto rounded-md bg-slate-950 p-4 text-sm text-slate-100"
                         {...props}
                       >
-                        {String(children).replace(/\n$/, "")}
-                      </SyntaxHighlighter>
-                    ) : (
-                      <code className="bg-primary/10 px-1 py-0.5 rounded text-primary" {...props}>
                         {children}
                       </code>
-                    );
-                  },
+                    ) : (
+                      <code className="rounded bg-primary/10 px-1 py-0.5 text-primary" {...props}>
+                        {children}
+                      </code>
+                    ),
                 }}
               >
                 {articleContent}
