@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { PageWrapper, PageHeader } from "@/components/layouts/PageWrapper";
 import { QuoteForm } from "@/components/Forms/QuoteForm";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { Toaster } from "sonner";
 
 export default function QuotePage() {
@@ -17,6 +17,8 @@ export default function QuotePage() {
       <Toaster position="top-right" />
 
       <div className="max-w-2xl mx-auto">
+        <PageBackNav fallbackHref="/pricing" className="mb-8" />
+
         <PageHeader
           title="Get a Free AI Quote"
           description="Tell us about your business needs and goals. We'll send you a personalized AI solution estimate."
@@ -28,7 +30,7 @@ export default function QuotePage() {
         </div>
 
         <div className="mt-8">
-          <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
+          <PageBackNav fallbackHref="/pricing" />
         </div>
       </div>
     </PageWrapper>

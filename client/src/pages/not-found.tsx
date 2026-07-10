@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { AlertCircle } from "lucide-react";
 
 export default function NotFound() {
@@ -17,7 +17,7 @@ export default function NotFound() {
           </p>
 
           <div className="mt-6">
-            <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+            <PageBackNav fallbackHref="/" />
           </div>
         </CardContent>
       </Card>

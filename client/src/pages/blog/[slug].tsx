@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -76,7 +76,7 @@ export default function BlogPost() {
           <p className="text-muted-foreground mb-8">
             The blog post you're looking for doesn't exist or has been removed.
           </p>
-          <IntelligentBackButton fallbackHref="/blog" label="Back to Blog" />
+          <PageBackNav fallbackHref="/blog" label="Back to Blog" />
         </div>
       </Layout>
     );
@@ -91,6 +91,8 @@ export default function BlogPost() {
     <Layout>
       <article className="bg-background py-6 md:py-10">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <PageBackNav fallbackHref="/blog" label="Back to Blog" className="mb-8" />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,18 +115,6 @@ export default function BlogPost() {
                 <span>{post.readTime}</span>
               </div>
             </header>
-
-            {/* Featured Image */}
-            <div data-blog-image-frame className="relative mb-6 h-[180px] overflow-hidden rounded-lg border border-border bg-card md:h-[240px] lg:h-[300px]">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
-                }}
-              />
-            </div>
 
             {/* Author Info */}
             <div className="mb-8 flex items-center rounded-lg border border-border bg-card p-4">
@@ -231,15 +221,8 @@ export default function BlogPost() {
                   <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
                     <a className="block group">
                       <div className="bg-card rounded-lg overflow-hidden border border-border shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                        <div data-blog-image-frame className="relative h-28 overflow-hidden border-b border-border bg-background/40">
-                          <img
-                            src={relatedPost.image}
-                            alt={relatedPost.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            onError={(e) => {
-                              (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
-                            }}
-                          />
+                        <div className="relative h-16 overflow-hidden border-b border-border bg-gradient-to-br from-[#1f1a2c] via-[#2c1a22] to-[#111827]">
+                          <div className="absolute inset-x-4 bottom-3 h-px bg-primary/30" />
                         </div>
                         <div className="p-4">
                           <h3 className="font-bold mb-2 line-clamp-2">{relatedPost.title}</h3>
@@ -260,11 +243,7 @@ export default function BlogPost() {
 
           {/* Back to Blog */}
           <div className="mt-8 text-center">
-            <IntelligentBackButton
-              fallbackHref="/blog"
-              label="Back to Blog"
-              className="rounded-md border border-border px-4 py-2 text-foreground hover:bg-accent hover:opacity-100"
-            />
+            <PageBackNav fallbackHref="/blog" label="Back to Blog" />
           </div>
         </div>
       </article>

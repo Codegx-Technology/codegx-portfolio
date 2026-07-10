@@ -211,15 +211,7 @@ export default function Blog() {
                           <a className="block group">
                             <EnterpriseCard className="overflow-hidden h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
                               <div data-blog-image-frame className="relative h-48 md:h-56 overflow-hidden bg-background/40">
-                                <img
-                                  src={post.image}
-                                  alt={post.title}
-                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                  onError={(e) => {
-                                    (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
-                                  }}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div className="absolute inset-0 flex items-end bg-gradient-to-br from-[#1f1a2c] via-[#2c1a22] to-[#111827]">
                                   <div className="p-4 md:p-5 text-white">
                                     <div className="flex items-center gap-2 mb-2">
                                       <Badge variant="secondary" className="bg-primary/80 text-white border-0">
@@ -287,14 +279,7 @@ export default function Blog() {
                         <a className="block group h-full">
                           <EnterpriseCard className="overflow-hidden h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
                             <div data-blog-image-frame className="relative h-40 md:h-44 overflow-hidden bg-background/40">
-                              <img
-                                src={post.image}
-                                alt={post.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                onError={(e) => {
-                                  (e.currentTarget.closest("[data-blog-image-frame]") as HTMLElement | null)?.classList.add("hidden");
-                                }}
-                              />
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#1f1a2c] via-[#2c1a22] to-[#111827]" />
                               <div className="absolute top-0 right-0 m-3">
                                 <Badge variant="secondary" className="bg-black/50 backdrop-blur-sm text-white border-0 text-xs">
                                   {post.readTime}

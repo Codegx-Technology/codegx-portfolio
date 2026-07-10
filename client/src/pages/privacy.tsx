@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 const sections = [
   {
@@ -50,6 +50,8 @@ export default function Privacy() {
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
+        <PageBackNav fallbackHref="/" className="px-4 pt-8 sm:px-6 md:px-0" />
+
         <motion.section initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="px-4 py-8 sm:px-6 md:px-0 md:py-12">
           <div className="mx-auto max-w-4xl">
             <h1 className="mb-4 text-3xl font-bold text-slate-950 dark:text-white md:text-5xl">Privacy Policy</h1>
@@ -64,7 +66,7 @@ export default function Privacy() {
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{section.content}</p>
             </motion.div>
           ))}
-          <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+          <PageBackNav fallbackHref="/" />
         </section>
       </MainLayout>
     </>

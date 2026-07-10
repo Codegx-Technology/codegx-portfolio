@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import SimpleQuoteForm from "@/components/Forms/SimpleQuoteForm";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { Toaster } from "sonner";
 
 export default function SimpleQuote() {
@@ -16,6 +16,8 @@ export default function SimpleQuote() {
       <Toaster position="top-right" />
       <section className="py-20 bg-background">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PageBackNav fallbackHref="/pricing" className="mb-8" />
+
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ export default function SimpleQuote() {
           </motion.div>
 
           <div className="mt-10">
-            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
+            <PageBackNav fallbackHref="/pricing" />
           </div>
         </div>
       </section>

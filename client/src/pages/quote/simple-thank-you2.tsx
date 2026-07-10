@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 export default function QuoteThankYouPage() {
   return (
@@ -29,11 +29,7 @@ export default function QuoteThankYouPage() {
         </div>
       </div>
 
-      <IntelligentBackButton
-        fallbackHref="/"
-        label="Back"
-        className="w-full justify-center rounded-xl bg-primary px-4 py-3 text-primary-foreground hover:bg-primary/90 hover:opacity-100 sm:w-auto"
-      />
+      <PageBackNav fallbackHref="/" />
     </motion.div>
   );
 }

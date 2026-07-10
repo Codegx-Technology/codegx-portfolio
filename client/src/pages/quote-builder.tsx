@@ -11,7 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 // Service options with pricing factors
 const serviceOptions = [
@@ -257,6 +257,8 @@ export default function QuoteBuilder() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <PageBackNav fallbackHref="/pricing" className="mb-8" />
+
           {/* Background Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
@@ -642,7 +644,7 @@ export default function QuoteBuilder() {
           </div>
 
           <div className="mt-10">
-            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
+            <PageBackNav fallbackHref="/pricing" />
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getIcon } from "@/lib/iconMap";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 interface ServiceExample {
   title: string;
@@ -84,7 +84,7 @@ export default function ServiceDetail() {
           <p className="text-muted-foreground mb-8">
             The service you're looking for doesn't exist or has been removed.
           </p>
-          <IntelligentBackButton fallbackHref="/services" label="Back to Services" />
+          <PageBackNav fallbackHref="/services" label="Back to Services" />
         </div>
       </Layout>
     );
@@ -94,6 +94,8 @@ export default function ServiceDetail() {
     <Layout>
       <article className="py-10 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PageBackNav fallbackHref="/services" label="Back to Services" className="mb-8" />
+
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -283,11 +285,7 @@ export default function ServiceDetail() {
           
           {/* Back to Services */}
           <div className="text-center">
-            <IntelligentBackButton
-              fallbackHref="/services"
-              label="Back to All Services"
-              className="rounded-md border border-border px-4 py-2 text-foreground hover:bg-accent hover:opacity-100"
-            />
+            <PageBackNav fallbackHref="/services" label="Back to All Services" />
           </div>
         </div>
       </article>

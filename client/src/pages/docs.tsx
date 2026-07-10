@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { Button } from "@/components/ui/button";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { Link } from "wouter";
 import {
   CodeIcon,
@@ -56,6 +56,8 @@ export default function Documentation() {
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
+        <PageBackNav fallbackHref="/" className="px-4 pt-8 sm:px-6 md:px-0" />
+
         <motion.section
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -124,7 +126,7 @@ export default function Documentation() {
         </motion.section>
 
         <div className="px-4 pb-12 pt-2 sm:px-6 md:px-0">
-          <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+          <PageBackNav fallbackHref="/" />
         </div>
       </MainLayout>
     </>

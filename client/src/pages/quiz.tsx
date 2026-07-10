@@ -9,7 +9,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { getIcon } from "@/lib/iconMap";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 interface Service {
   id: string;
@@ -169,6 +169,8 @@ export default function ServiceQuiz() {
     <Layout>
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PageBackNav fallbackHref="/services" className="mb-8" />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -345,7 +347,7 @@ export default function ServiceQuiz() {
           )}
 
           <div className="mt-8">
-            <IntelligentBackButton fallbackHref="/services" label="Back" align="center" />
+            <PageBackNav fallbackHref="/services" />
           </div>
         </div>
       </section>

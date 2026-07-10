@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 export default function ThankYou() {
   // Scroll to top when component mounts
@@ -15,6 +15,8 @@ export default function ThankYou() {
     <Layout>
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <PageBackNav fallbackHref="/" className="mb-8" />
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -72,11 +74,7 @@ export default function ThankYou() {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <IntelligentBackButton
-                fallbackHref="/"
-                label="Back"
-                className="min-h-[40px] rounded-md bg-primary px-4 py-2 text-primary-foreground hover:opacity-90"
-              />
+              <PageBackNav fallbackHref="/" />
               <Link href="/services">
                 <Button variant="outline">
                   <i className="fas fa-th-large mr-2"></i>

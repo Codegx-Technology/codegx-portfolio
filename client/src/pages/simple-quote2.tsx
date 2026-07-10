@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout";
 import { SimpleQuoteForm2 } from "@/components/Forms/SimpleQuoteForm2";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { Toaster } from "sonner";
 
 export default function SimpleQuotePage() {
@@ -23,6 +23,8 @@ export default function SimpleQuotePage() {
           transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto px-4"
         >
+          <PageBackNav fallbackHref="/pricing" className="mb-8" />
+
           <h1 className="text-4xl font-bold mb-4 text-center">
             Get a Free AI Quote
           </h1>
@@ -35,7 +37,7 @@ export default function SimpleQuotePage() {
           </div>
 
           <div className="mt-8">
-            <IntelligentBackButton fallbackHref="/pricing" label="Back" align="center" />
+            <PageBackNav fallbackHref="/pricing" />
           </div>
         </motion.div>
       </section>

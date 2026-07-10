@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 const cookieSections = [
   {
@@ -50,6 +50,8 @@ export default function Cookies() {
       />
 
       <MainLayout withContainer={true} navbarVariant="default">
+        <PageBackNav fallbackHref="/" className="px-4 pt-8 sm:px-6 md:px-0" />
+
         <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 md:px-0 md:py-14">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -99,7 +101,7 @@ export default function Cookies() {
           </motion.div>
 
           <div className="pt-10">
-            <IntelligentBackButton fallbackHref="/" label="Back" align="center" />
+            <PageBackNav fallbackHref="/" />
           </div>
         </section>
       </MainLayout>

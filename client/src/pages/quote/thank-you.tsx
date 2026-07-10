@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { PageWrapper, PageHeader, PageSection } from "@/components/layouts/PageWrapper";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 import confetti from "canvas-confetti";
 import { InlineWidget } from "react-calendly";
@@ -78,6 +78,8 @@ export default function ThankYou() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
+          <PageBackNav fallbackHref="/quote" className="mb-8" />
+
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6">
             <i className="fas fa-check-circle text-4xl"></i>
           </div>
@@ -167,11 +169,7 @@ export default function ThankYou() {
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-6">
-            <IntelligentBackButton
-              fallbackHref="/quote"
-              label="Back"
-              className="min-h-[44px] rounded-xl bg-primary px-6 py-3 text-primary-foreground hover:opacity-90"
-            />
+            <PageBackNav fallbackHref="/quote" />
             <Link href="/services">
               <Button className="w-full sm:w-auto min-h-[44px] py-3 px-6 rounded-xl focus:outline-none">
                 <i className="fas fa-th-large mr-2"></i>
