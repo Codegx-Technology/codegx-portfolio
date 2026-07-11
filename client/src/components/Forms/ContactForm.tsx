@@ -14,13 +14,33 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { motion } from "framer-motion";
+
+export const enquiryTypes = [
+  "General Enquiry",
+  "Software Project",
+  "Automation / Wakala OS",
+  "AI & Operational Intelligence",
+  "Article Contribution",
+  "Partnership / Collaboration",
+  "Healthcare / Education Solution",
+  "Support / Existing Client",
+  "Sales / Commercial Enquiry",
+] as const;
 
 // Define the contact form schema
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   company: z.string().optional(),
+  enquiryType: z.enum(enquiryTypes),
   message: z.string().min(20, "Message must be at least 20 characters"),
 });
 
@@ -30,9 +50,10 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 // Define the props for the ContactForm component
 interface ContactFormProps {
   onSubmit: (data: ContactFormData) => Promise<void>;
+  initialEnquiryType?: ContactFormData["enquiryType"];
 }
 
-export function ContactForm({ onSubmit }: ContactFormProps) {
+export function ContactForm({ onSubmit, initialEnquiryType = "General Enquiry" }: ContactFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -43,6 +64,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
       name: "",
       email: "",
       company: "",
+      enquiryType: initialEnquiryType,
       message: ""
     },
   });
@@ -174,6 +196,38 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
         >
           <FormField
             control={form.control}
+            name="enquiryType"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message Type</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger className="bg-background/50 backdrop-blur-sm border-primary/20 shadow-sm focus:border-primary focus:ring-primary">
+                      <SelectValue placeholder="Select message type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {enquiryTypes.map((type) => (
+                      <SelectItem key={type} value={type}>
+                        {type}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </motion.div>
+        
+        <motion.div
+          custom={4}
+          initial="hidden"
+          animate="visible"
+          variants={formVariants}
+        >
+          <FormField
+            control={form.control}
             name="message"
             render={({ field }) => (
               <FormItem>
@@ -192,7 +246,7 @@ export function ContactForm({ onSubmit }: ContactFormProps) {
         </motion.div>
         
         <motion.div
-          custom={4}
+          custom={5}
           initial="hidden"
           animate="visible"
           variants={formVariants}

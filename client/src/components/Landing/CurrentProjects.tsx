@@ -39,7 +39,7 @@ export function CurrentProjects({
       </motion.div>
 
       <div className="overflow-x-auto pb-2">
-        <div className="grid w-full min-w-[900px] grid-cols-3 overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-[#3d2128] dark:bg-[#2c1a22]">
+        <div className="grid w-full min-w-[1120px] grid-cols-4 overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-[#3d2128] dark:bg-[#2c1a22]">
           {caseStudies.map((project, index) => (
             <motion.div
               key={project.title}

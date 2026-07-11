@@ -6,7 +6,7 @@
 const getApiBaseUrl = (): string => {
   // In production (GitHub Pages), use your deployed backend URL
   if (import.meta.env.PROD) {
-    return import.meta.env.VITE_API_BASE_URL || 'https://your-backend-url.railway.app';
+    return import.meta.env.VITE_API_BASE_URL || '';
   }
   // In development, use localhost
   return 'http://localhost:5000';

@@ -1,6 +1,26 @@
 {
   "caseStudies": [
     {
+      "id": "ndii",
+      "title": "NDII",
+      "client": "Codegx Technologies",
+      "industry": "Sovereign Intelligence Infrastructure",
+      "category": "National Digital Intelligence Infrastructure",
+      "summary": "High-assurance national digital intelligence infrastructure for consolidating critical sovereign data streams, sector intelligence, and governed operational oversight.",
+      "challenge": "National-scale digital intelligence requires strict data control, sector-level visibility, and technical autonomy. Critical systems cannot depend on opaque data movement, weak governance paths, or proprietary lock-in when public-sector decisions and infrastructure operations are involved.",
+      "solution": "NDII is structured as a governed infrastructure layer for sovereign data consolidation, operational intelligence, and sector modules across telecom, health, transport, energy, and revenue domains. The architecture emphasizes kernel isolation, interface-first validation, and traceable enforcement paths.",
+      "impact": [
+        "Consolidates critical data streams without unauthorized data egress",
+        "Supports sector intelligence across telecom, health, transport, energy, and revenue",
+        "Strengthens operational governance through locked execution boundaries",
+        "Reduces proprietary lock-in through interface-first engineering discipline"
+      ],
+      "technologies": ["Sovereign Data Controls", "Operational Intelligence", "Kernel Isolation", "Interface-first Validation", "Sector Modules"],
+      "image": "/assets/brand/codegx-full-lockup.webp",
+      "featured": true,
+      "year": 2026
+    },
+    {
       "id": "wakala-os",
       "title": "Wakala OS",
       "client": "Codegx Technologies",

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
-import ContactForm from "@/components/Forms/ContactForm";
+import ContactForm, { enquiryTypes } from "@/components/Forms/ContactForm";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
@@ -13,13 +13,28 @@ const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   company: z.string().optional(),
+  enquiryType: z.enum(enquiryTypes),
   message: z.string().min(20, "Message must be at least 20 characters"),
 });
 
 // Define the type for the form data
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
+const enquiryTypeMap: Record<string, ContactFormData["enquiryType"]> = {
+  "article-contribution": "Article Contribution",
+  automation: "Automation / Wakala OS",
+  software: "Software Project",
+  partnership: "Partnership / Collaboration",
+  healthcare: "Healthcare / Education Solution",
+  education: "Healthcare / Education Solution",
+  support: "Support / Existing Client",
+  sales: "Sales / Commercial Enquiry",
+};
+
 export default function Contact() {
+  const initialEnquiryType: ContactFormData["enquiryType"] =
+    enquiryTypeMap[new URLSearchParams(window.location.search).get("type") || ""] || "General Enquiry";
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,8 +47,8 @@ export default function Contact() {
         name: data.name,
         email: data.email,
         company: data.company,
-        subject: 'Contact Form Submission',
-        message: data.message
+        subject: `[${data.enquiryType}] Website Enquiry`,
+        message: `Message type: ${data.enquiryType}\n\n${data.message}`
       });
     } catch (error) {
       console.error('Error sending message:', error);
@@ -44,14 +59,14 @@ export default function Contact() {
   // Contact information
   const contactInfo = [
     {
-      icon: "fas fa-envelope",
-      title: "Email",
-      details: ["info@codegxtechnologies.org", "peter@codegxtechnologies.org"]
-    },
-    {
       icon: "fas fa-map-marker-alt",
       title: "Location",
       details: ["Nairobi, Kenya"]
+    },
+    {
+      icon: "fas fa-envelope",
+      title: "Email",
+      details: ["info@codegxtechnologies.org"]
     },
     {
       icon: "fas fa-phone-alt",
@@ -190,7 +205,7 @@ export default function Contact() {
             >
               <EnterpriseCard className="p-6">
                 <Heading2 className="text-2xl mb-6">Send Us a Message</Heading2>
-                <ContactForm onSubmit={handleSubmit} />
+                <ContactForm onSubmit={handleSubmit} initialEnquiryType={initialEnquiryType} />
               </EnterpriseCard>
             </motion.div>
           </div>
