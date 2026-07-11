@@ -128,13 +128,13 @@ export default function About() {
         >
           <div className="grid gap-4 md:grid-cols-2 md:gap-6">
             <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
-              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Mission</div>
+              <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Operating Philosophy</div>
               <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
-                Build systems that improve operational control.
+                Design for control, continuity, and clear ownership.
               </h2>
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                Our work turns complex software delivery, reporting, and decision workflows into dependable
-                platforms that teams can operate with confidence.
+                Our work turns complex software delivery, reporting, and decision workflows into systems teams can
+                run with confidence long after launch.
               </p>
             </motion.div>
 

@@ -79,6 +79,9 @@ export default function CaseStudyDetail() {
     );
   }
 
+  const isTendaNow = caseStudy.id === "tendanow";
+  const tendaNowMilestones = ["Goal Setting", "Task Progress", "Skill Evidence", "Verified Portfolio", "SDG Aligned"];
+
   return (
     <>
       <Head
@@ -115,11 +118,35 @@ export default function CaseStudyDetail() {
 
             {/* Featured Image */}
             <div className="rounded-lg md:rounded-xl overflow-hidden shadow-lg md:shadow-2xl mt-6 md:mt-8">
+              <div className="relative">
               <img
                 src={caseStudy.image}
                 alt={caseStudy.title}
                 className="w-full h-auto object-cover"
               />
+                {isTendaNow && (
+                  <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6 md:p-8 pointer-events-none">
+                    <div className="max-w-xs sm:max-w-sm rounded-lg border border-white/10 bg-[#101018]/55 px-4 py-3 text-white shadow-2xl backdrop-blur-sm">
+                      <p className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">
+                        TendaNow
+                      </p>
+                      <p className="mt-1 text-xs sm:text-sm text-white/75">
+                        Goals become verified growth records.
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {tendaNowMilestones.map((milestone) => (
+                        <span
+                          key={milestone}
+                          className="rounded-full border border-[#c8a951]/30 bg-[#101018]/60 px-3 py-1 text-[10px] sm:text-xs font-medium text-[#f3dfaf] backdrop-blur-sm"
+                        >
+                          {milestone}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         </PageSection>

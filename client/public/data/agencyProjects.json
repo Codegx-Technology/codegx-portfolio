@@ -22,19 +22,19 @@
     {
       "id": "tendanow",
       "title": "TendaNow",
-      "description": "MVP-stage accountability platform making goal achievement accessible through a WhatsApp-first architecture with multilingual support for African users.",
-      "image": "/assets/brand/codegx-full-lockup.webp",
-      "category": "Behavioral Change",
-      "techStack": ["WhatsApp-first", "Multilingual UX", "AI Coaching", "Progress Tracking"],
+      "description": "Accountability and digital portfolio platform turning goals, learning progress, and completed work into verifiable records of growth.",
+      "image": "/assets/projects/tendanow-growth-poster.webp",
+      "category": "Learning Journey",
+      "techStack": ["Digital Portfolio", "Multi-channel Guidance", "Learning Graph", "Skill Evidence", "SDG Alignment"],
       "featured": true,
       "order": 2,
       "year": 2026,
-      "challenge": "Goal-support tools often miss users who live primarily inside messaging platforms and multilingual contexts.",
-      "solution": "TendaNow brings accountability coaching into familiar communication flows with culturally aware support.",
+      "challenge": "Students, professionals, schools, and teams need more than goal tracking: they need progress to become visible, verifiable, and useful for learning and career growth.",
+      "solution": "TendaNow connects goal decomposition, multi-channel guidance, skill harvesting, digital portfolio generation, and SDG alignment into one growth journey.",
       "results": [
-        "WhatsApp-first operating model",
-        "Multilingual support path",
-        "MVP under active development"
+        "Active platform work with Web, WhatsApp, and Telegram support",
+        "Automated skill and achievement capture",
+        "Institutional growth layer through the Global Growth Engine"
       ]
     },
     {
