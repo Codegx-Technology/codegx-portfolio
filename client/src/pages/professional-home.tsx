@@ -41,8 +41,8 @@ export default function ProfessionalHome() {
   const caseStudies = [
     {
       title: "TendaNow",
-      description: "MVP-stage AI accountability platform making goal achievement accessible for African users. WhatsApp-first architecture with multilingual support (English, Swahili, Sheng) currently in active development.",
-      industry: "Behavioral Change / Wellness",
+      description: "Accountability and digital portfolio platform turning goals, learning progress, and completed work into verifiable records of growth across Web, WhatsApp, and Telegram.",
+      industry: "Learning Journey / Portfolio Evidence",
       logo: "https://via.placeholder.com/120x40?text=TendaNow",
       href: "/case-studies/tendanow",
     },
@@ -463,7 +463,7 @@ export default function ProfessionalHome() {
 
                     <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                       <div className="inline-flex rounded-full border border-[#c8a951]/30 bg-[#2c1a22]/70 px-4 py-2 text-sm font-medium text-[#f0dfaa] shadow-lg backdrop-blur-sm">
-                        Dependable Systems Practice
+                        Systems Engineering Practice
                       </div>
                     </div>
                   </div>
@@ -475,7 +475,7 @@ export default function ProfessionalHome() {
                     Our Mission
                   </div>
                   <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-4">
-                    "To deliver dependable software platforms that sharpen decision-making, automate intricate operations, and carry enterprise and government bodies through structural digital transformation."
+                    "We build software platforms that sharpen decisions, automate intricate operations, and strengthen operational control for enterprise, government, and growth-focused teams."
                   </p>
                 </div>
               </motion.div>
