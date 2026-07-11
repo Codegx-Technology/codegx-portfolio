@@ -37,8 +37,15 @@ export default function ProfessionalHome() {
 
   // Removed testimonials as they're replaced by the dynamic feedback section
 
-  // Current Projects - TendaNow, CodeCrusher, BizGen
+  // Current Projects - NDII, TendaNow, CodeCrusher, BizGen
   const caseStudies = [
+    {
+      title: "NDII",
+      description: "National digital intelligence infrastructure for consolidating critical sovereign data streams, sector intelligence, and governed operational oversight across telecom, health, transport, energy, and revenue domains.",
+      industry: "Sovereign Intelligence Infrastructure",
+      logo: "https://via.placeholder.com/120x40?text=NDII",
+      href: "/case-studies/ndii",
+    },
     {
       title: "TendaNow",
       description: "Accountability and digital portfolio platform turning goals, learning progress, and completed work into verifiable records of growth across Web, WhatsApp, and Telegram.",
@@ -84,12 +91,12 @@ export default function ProfessionalHome() {
   const principalPlatforms = [
     {
       name: "NDII",
-      summary: "Operational intelligence for critical infrastructure, deterministic analysis, policy-governed recommendations, and traceability.",
-      type: "Operational Intelligence",
+      summary: "National-scale intelligence infrastructure for sovereign data consolidation, sector analysis, operational enforcement, and traceable decision support.",
+      type: "Sovereign Intelligence",
     },
     {
       name: "NDII-Kernel",
-      summary: "Reusable execution and orchestration framework for governed AI systems with stringent operational requirements.",
+      summary: "Reusable execution kernel with interface-first validation, locked isolation, and governed orchestration for high-assurance systems.",
       type: "Execution Framework",
     },
     {

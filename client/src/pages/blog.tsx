@@ -209,8 +209,8 @@ export default function Blog() {
                       >
                         <Link href={`/blog/${post.slug}`}>
                           <a className="block group">
-                            <EnterpriseCard className="overflow-hidden h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
-                              <div data-blog-image-frame className="relative h-48 md:h-56 overflow-hidden bg-background/40">
+                            <EnterpriseCard className="h-full border-primary/20 hover:border-primary transition-all duration-300 shadow-md hover:shadow-xl">
+                              <div data-blog-image-frame className="hidden">
                                 <div className="absolute inset-0 flex items-end bg-gradient-to-br from-[#1f1a2c] via-[#2c1a22] to-[#111827]">
                                   <div className="p-4 md:p-5 text-white">
                                     <div className="flex items-center gap-2 mb-2">
@@ -225,7 +225,14 @@ export default function Blog() {
                                   </div>
                                 </div>
                               </div>
-                              <div className="p-4 md:p-5">
+                              <div className="p-5 md:p-6">
+                                <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                                  <Badge variant="secondary" className="border border-primary/20 bg-primary/15 text-primary">
+                                    <i className="fas fa-star mr-1"></i> Featured
+                                  </Badge>
+                                  <span className="text-xs text-muted-foreground">{formatDate(post.date)} / {post.readTime}</span>
+                                </div>
+                                <h3 className="mb-3 text-2xl font-bold leading-tight transition-colors group-hover:text-primary md:text-3xl">{post.title}</h3>
                                 <p className="text-muted-foreground mb-4 line-clamp-3">{post.excerpt}</p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                   {post.tags.map((tag, index) => (
@@ -245,7 +252,7 @@ export default function Blog() {
                                     </div>
                                   </div>
                                   <Button variant="ghost" size="sm" className="group-hover:bg-primary/10 group-hover:text-primary">
-                                    Read More <i className="fas fa-arrow-right ml-2"></i>
+                                    Read article <i className="fas fa-arrow-right ml-2"></i>
                                   </Button>
                                 </div>
                               </div>
@@ -277,8 +284,8 @@ export default function Blog() {
                     >
                       <Link href={`/blog/${post.slug}`}>
                         <a className="block group h-full">
-                          <EnterpriseCard className="overflow-hidden h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
-                            <div data-blog-image-frame className="relative h-40 md:h-44 overflow-hidden bg-background/40">
+                          <EnterpriseCard className="h-full border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg">
+                            <div data-blog-image-frame className="hidden">
                               <div className="absolute inset-0 bg-gradient-to-br from-[#1f1a2c] via-[#2c1a22] to-[#111827]" />
                               <div className="absolute top-0 right-0 m-3">
                                 <Badge variant="secondary" className="bg-black/50 backdrop-blur-sm text-white border-0 text-xs">
@@ -286,7 +293,13 @@ export default function Blog() {
                                 </Badge>
                               </div>
                             </div>
-                            <div className="p-4 md:p-5">
+                            <div className="flex h-full flex-col p-4 md:p-5">
+                              <div className="mb-4 flex items-start justify-between gap-3">
+                                <Badge variant="outline" className="border-primary/20 text-xs">
+                                  {post.tags[0]}
+                                </Badge>
+                                <span className="text-xs text-muted-foreground">{post.readTime}</span>
+                              </div>
                               <div className="text-sm text-muted-foreground mb-2">
                                 <i className="far fa-calendar-alt mr-2"></i>{formatDate(post.date)}
                               </div>
@@ -312,7 +325,7 @@ export default function Blog() {
                                   <div className="text-sm font-medium">{post.author}</div>
                                 </div>
                                 <Button variant="ghost" size="sm" className="group-hover:bg-primary/10 group-hover:text-primary">
-                                  Read <i className="fas fa-arrow-right ml-1"></i>
+                                  Read article <i className="fas fa-arrow-right ml-1"></i>
                                 </Button>
                               </div>
                             </div>
@@ -323,6 +336,21 @@ export default function Blog() {
                   ))}
                 </EnterpriseGrid>
               </div>
+              <EnterpriseCard className="relative z-10 mt-10 border-primary/20 p-5 md:p-6">
+                <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+                  <div>
+                    <Heading3 className="mb-2 text-lg md:text-xl">Contribute an Insight</Heading3>
+                    <Paragraph className="text-sm text-muted-foreground">
+                      We welcome practical essays from operators, engineers, founders, and domain experts working on software, automation, and digital operations. Submissions are reviewed before publication.
+                    </Paragraph>
+                  </div>
+                  <Link href="/contact?type=article-contribution">
+                    <Button variant="outline" className="border-primary/30 hover:bg-primary/10">
+                      Start a Conversation <i className="fas fa-arrow-right ml-2"></i>
+                    </Button>
+                  </Link>
+                </div>
+              </EnterpriseCard>
             </>
           )}
       </PageSection>

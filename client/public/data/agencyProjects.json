@@ -1,6 +1,25 @@
 {
   "projects": [
     {
+      "id": "ndii",
+      "title": "NDII",
+      "description": "National digital intelligence infrastructure for sovereign data consolidation, sector analysis, and governed operational oversight.",
+      "image": "/assets/brand/codegx-full-lockup.webp",
+      "category": "Sovereign Intelligence",
+      "techStack": ["Sovereign Data Controls", "Operational Intelligence", "Kernel Isolation", "Sector Modules"],
+      "githubUrl": "https://github.com/Codegx-Technology",
+      "featured": true,
+      "order": 1,
+      "year": 2026,
+      "challenge": "National-scale systems need sector visibility, data autonomy, and strict enforcement boundaries without unauthorized egress or proprietary lock-in.",
+      "solution": "NDII structures critical data streams through governed sector modules, locked execution boundaries, and interface-first validation.",
+      "results": [
+        "Sector modules for telecom, health, transport, energy, and revenue",
+        "Sovereign data control posture",
+        "Release-candidate infrastructure with governed kernel isolation"
+      ]
+    },
+    {
       "id": "wakala-os",
       "title": "Wakala OS",
       "description": "Automation operating system for agentic workflows, structured business process automation, reporting, onboarding, and dependable operations.",
@@ -9,7 +28,7 @@
       "techStack": ["Workflow Automation", "Agentic Operations", "Reporting", "Governance"],
       "githubUrl": "https://github.com/Codegx-Technology",
       "featured": true,
-      "order": 1,
+      "order": 2,
       "year": 2026,
       "challenge": "Operational teams need automation that remains accountable, auditable, and easy to operate after launch.",
       "solution": "Wakala OS structures workflows around ownership, escalation, reporting, and governed execution.",
@@ -27,7 +46,7 @@
       "category": "Learning Journey",
       "techStack": ["Digital Portfolio", "Multi-channel Guidance", "Learning Graph", "Skill Evidence", "SDG Alignment"],
       "featured": true,
-      "order": 2,
+      "order": 3,
       "year": 2026,
       "challenge": "Students, professionals, schools, and teams need more than goal tracking: they need progress to become visible, verifiable, and useful for learning and career growth.",
       "solution": "TendaNow connects goal decomposition, multi-channel guidance, skill harvesting, digital portfolio generation, and SDG alignment into one growth journey.",
@@ -46,7 +65,7 @@
       "techStack": ["Semantic Analysis", "Architecture Governance", "Code Intelligence", "Refactoring"],
       "githubUrl": "https://github.com/Codegx-Technology",
       "featured": true,
-      "order": 3,
+      "order": 4,
       "year": 2026,
       "challenge": "Large codebases hide duplicated patterns, architectural drift, and refactoring risk behind surface-level syntax.",
       "solution": "CodeCrusher analyzes code intent and architecture patterns so teams can understand systems before changing them.",
@@ -64,7 +83,7 @@
       "category": "Business Intelligence",
       "techStack": ["Market Signals", "Founder Workflows", "Multilingual Support", "Validation"],
       "featured": false,
-      "order": 4,
+      "order": 5,
       "year": 2026,
       "challenge": "Early-stage founders need practical market signal, concept structure, and validation support before committing major resources.",
       "solution": "BizGen helps founders move from broad ideas to clearer market hypotheses, business structure, and validation paths.",
