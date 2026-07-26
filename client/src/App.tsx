@@ -251,6 +251,12 @@ function AppRouter() {
             return <LazyRoute component={About} />;
           }}
         </Route>
+        <Route path="/team">
+          {() => {
+            const Team = React.lazy(() => import("@/pages/team"));
+            return <LazyRoute component={Team} />;
+          }}
+        </Route>
         <Route path="/privacy">
           {() => {
             const Privacy = React.lazy(() => import("@/pages/privacy"));
