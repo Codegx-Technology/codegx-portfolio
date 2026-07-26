@@ -33,6 +33,42 @@ interface BlogPostsData {
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const normalise = (value: string) => value.toLowerCase().trim();
+  const query = normalise(searchQuery);
+
+  const selectTag = (tag: string | null) => {
+    setSearchQuery("");
+    setActiveTag(tag);
+    const nextUrl = tag ? `/blog?tag=${encodeURIComponent(tag)}` : "/blog";
+    window.history.replaceState(null, "", nextUrl);
+  };
+
+  const matchesQuery = (post: BlogPost) => {
+    if (!query) return true;
+
+    const searchable = [
+      post.title,
+      post.excerpt,
+      post.author,
+      post.authorRole,
+      ...post.tags,
+    ].map(normalise);
+
+    return searchable.some((value) =>
+      value.includes(query) || value.split(/\s+/).some((word) => word.startsWith(query))
+    );
+  };
+
+  const getSearchRank = (post: BlogPost) => {
+    if (!query) return 0;
+    const title = normalise(post.title);
+    const tags = post.tags.map(normalise);
+
+    if (title.startsWith(query)) return 0;
+    if (title.split(/\s+/).some((word) => word.startsWith(query))) return 1;
+    if (tags.some((tag) => tag.startsWith(query))) return 2;
+    return 3;
+  };
 
   // Fetch blog posts data
   const { data, isLoading, error } = useQuery<BlogPostsData>({
@@ -42,6 +78,8 @@ export default function Blog() {
 
   // Scroll to top when component mounts
   useEffect(() => {
+    const tag = new URLSearchParams(window.location.search).get("tag");
+    if (tag) setActiveTag(tag);
     window.scrollTo(0, 0);
   }, []);
 
@@ -59,20 +97,14 @@ export default function Blog() {
   // Filter blog posts by search query and tag
   const filteredPosts = data?.blogPosts
     ? data.blogPosts.filter(post => {
-        const matchesSearch = searchQuery === "" ||
-          post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-
         const matchesTag = activeTag === null || post.tags.includes(activeTag);
-
-        return matchesSearch && matchesTag;
+        return matchesQuery(post) && matchesTag;
       })
     : [];
 
   // Sort posts by date (newest first)
   const sortedPosts = [...(filteredPosts || [])].sort((a, b) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
+    getSearchRank(a) - getSearchRank(b) || new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   // Featured posts
@@ -123,14 +155,21 @@ export default function Blog() {
                     type="text"
                     placeholder="Search articles..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setActiveTag(null);
+                    }}
                     className="w-full pl-10 py-2 text-xs md:text-sm border-primary/20 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <Button
-                  variant={activeTag === null ? "default" : "outline"}
-                  onClick={() => setActiveTag(null)}
-                  className="whitespace-nowrap py-2 px-4 md:px-5 text-xs md:text-sm font-medium"
+                  variant="outline"
+                  onClick={() => selectTag(null)}
+                  className={`whitespace-nowrap py-2 px-4 md:px-5 text-xs md:text-sm font-medium ${
+                    activeTag === null
+                      ? "border-[#c8a951] bg-[#c8a951]/20 text-[#f5d58b] hover:bg-[#c8a951]/25"
+                      : "border-primary/20 hover:bg-primary/10"
+                  }`}
                 >
                   <i className="fas fa-tag mr-2"></i> All Topics
                 </Button>
@@ -140,13 +179,21 @@ export default function Blog() {
                 {allTags.map(tag => (
                   <Badge
                     key={tag}
-                    variant={activeTag === tag ? "default" : "outline"}
+                    variant="outline"
                     className={`cursor-pointer px-3 py-1 text-xs md:text-sm font-medium transition-all duration-200 ${
                       activeTag === tag
-                        ? 'bg-primary text-white'
+                        ? 'border-[#c8a951] bg-[#c8a951]/20 text-[#f5d58b] hover:bg-[#c8a951]/25'
                         : 'hover:bg-primary/10 border-primary/20'
                     }`}
-                    onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                    onClick={() => selectTag(activeTag === tag ? null : tag)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        selectTag(activeTag === tag ? null : tag);
+                      }
+                    }}
                   >
                     {tag}
                   </Badge>
