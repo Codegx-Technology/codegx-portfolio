@@ -24,6 +24,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 const enquiryTypeMap: Record<string, ContactFormData["enquiryType"]> = {
   "article-contribution": "Article Contribution",
   automation: "Automation / Wakala OS",
+  project: "Software Project",
   software: "Software Project",
   partnership: "Partnership / Collaboration",
   healthcare: "Healthcare / Education Solution",
@@ -33,8 +34,11 @@ const enquiryTypeMap: Record<string, ContactFormData["enquiryType"]> = {
 };
 
 export default function Contact() {
+  const searchParams = new URLSearchParams(window.location.search);
   const initialEnquiryType: ContactFormData["enquiryType"] =
-    enquiryTypeMap[new URLSearchParams(window.location.search).get("type") || ""] || "General Enquiry";
+    enquiryTypeMap[searchParams.get("type") || ""] || "General Enquiry";
+  const projectName = searchParams.get("project");
+  const initialMessage = projectName ? `I would like to discuss ${projectName}.` : "";
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -208,7 +212,11 @@ export default function Contact() {
             >
               <EnterpriseCard className="p-6">
                 <Heading2 className="text-2xl mb-6">Send Us a Message</Heading2>
-                <ContactForm onSubmit={handleSubmit} initialEnquiryType={initialEnquiryType} />
+                <ContactForm
+                  onSubmit={handleSubmit}
+                  initialEnquiryType={initialEnquiryType}
+                  initialMessage={initialMessage}
+                />
               </EnterpriseCard>
             </motion.div>
           </div>
