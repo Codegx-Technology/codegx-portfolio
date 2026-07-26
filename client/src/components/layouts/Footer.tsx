@@ -85,6 +85,7 @@ export function Footer({
       title: "Resources",
       links: [
         { label: "Blog", href: "/blog", icon: "fas fa-rss" },
+        { label: "Publications", href: "/publications", icon: "fas fa-book-open" },
         { label: "Case Studies", href: "/case-studies", icon: "fas fa-file-alt" },
         { label: "Documentation", href: "/docs", icon: "fas fa-book" },
         { label: "Support", href: "/support", icon: "fas fa-headset" },
