@@ -5,6 +5,7 @@ import ContactForm, { enquiryTypes } from "@/components/Forms/ContactForm";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import { submitContactForm } from "@/utils/api";
 import { z } from "zod";
 
@@ -103,6 +104,8 @@ export default function Contact() {
         className="relative overflow-hidden py-12 md:py-16"
       >
         <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900/50 z-0"></div>
+
+        <PageBackNav fallbackHref="/" className="relative z-10 mb-8" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

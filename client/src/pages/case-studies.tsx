@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
+import { useLocation } from "wouter";
 import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { Button } from "@/components/ui/button";
 import { Head } from "@/components/head";
 import { Heading1, Heading2, Heading3, Paragraph } from "@/components/ui/typography";
-import { EnterpriseGrid } from "@/components/ui/enterprise-container";
 import { EnterpriseCard } from "@/components/ui/enterprise-card";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +18,13 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CaseStudy {
@@ -49,6 +56,8 @@ export default function CaseStudies() {
   const [activeIndustry, setActiveIndustry] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [location] = useLocation();
+  const showCategoryBackNav = ["/case-studies/enterprise", "/case-studies/startups", "/case-studies/healthcare"].includes(location);
 
   // Fetch case studies data
   const { data, isLoading, error } = useQuery<CaseStudiesData>({
@@ -128,6 +137,10 @@ export default function CaseStudies() {
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
 
+        {showCategoryBackNav && (
+          <PageBackNav fallbackHref="/case-studies" label="Back to Case Studies" className="relative z-10 mb-8" />
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -143,136 +156,124 @@ export default function CaseStudies() {
 
           {/* Industry Filter */}
           <div className="mb-8 md:mb-10 relative z-10 px-3 sm:px-0">
-            <Tabs
-              defaultValue="all"
-              value={activeIndustry}
-              onValueChange={setActiveIndustry}
-              className="w-full"
-            >
-              <div className="mb-6 w-full overflow-x-auto scrollbar-hide">
-                <EnterpriseCard className="mx-auto max-w-full p-2 md:p-3 shadow-md border-primary/20">
-                  <TabsList className="bg-transparent border-0 shadow-none flex w-max min-w-full flex-nowrap gap-2 justify-start">
-                    {industries.map((industry) => (
-                      <TabsTrigger
-                        key={industry}
-                        value={industry}
-                        className="px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary data-[state=active]:bg-[#c8a951] dark:data-[state=active]:bg-[#9f7b42] data-[state=active]:text-white transition-all duration-200 whitespace-nowrap shrink-0"
-                      >
-                        {industry === "all" ? "All Industries" : industry}
-                      </TabsTrigger>
-                    ))}
-                  </TabsList>
-                </EnterpriseCard>
-              </div>
+            <EnterpriseCard className="mx-auto mb-6 max-w-xl p-3 shadow-md border-primary/20">
+              <Select value={activeIndustry} onValueChange={setActiveIndustry}>
+                <SelectTrigger className="h-12 rounded-md border-primary/20 bg-background/50 px-4 text-left font-medium">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {industries.map((industry) => (
+                    <SelectItem key={industry} value={industry}>
+                      {industry === "all" ? "All Industries" : industry}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </EnterpriseCard>
 
-              {industries.map((industry) => (
-                <TabsContent key={industry} value={industry} className="mt-0">
-                  {isLoading ? (
-                    <EnterpriseCard className="py-20 text-center border-dashed">
-                      <div className="animate-spin w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-6"></div>
-                      <Heading3 className="text-xl mb-2">Loading Case Studies</Heading3>
-                      <Paragraph className="text-muted-foreground">Please wait while we fetch the latest case studies...</Paragraph>
-                    </EnterpriseCard>
-                  ) : error ? (
-                    <EnterpriseCard className="py-20 text-center border-red-200 dark:border-red-900/30">
-                      <div className="w-20 h-20 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i className="fas fa-exclamation-triangle text-3xl"></i>
-                      </div>
-                      <Heading3 className="text-red-500 mb-3">Error Loading Data</Heading3>
-                      <Paragraph className="text-muted-foreground max-w-md mx-auto">
-                        We encountered an issue while loading the case studies. Please try again later or contact our support team.
-                      </Paragraph>
-                    </EnterpriseCard>
-                  ) : filteredCaseStudies.length === 0 ? (
-                    <EnterpriseCard className="py-20 text-center border-primary/20">
-                      <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i className="fas fa-search text-3xl"></i>
-                      </div>
-                      <Heading3 className="mb-3">No Results Found</Heading3>
-                      <Paragraph className="text-muted-foreground max-w-md mx-auto">
-                        No case studies found for this industry. Try selecting a different industry from the filters above.
-                      </Paragraph>
-                    </EnterpriseCard>
-                  ) : (
-                    <>
-                    <motion.div
-                      variants={{
-                        hidden: { opacity: 0 },
-                        show: {
-                          opacity: 1,
-                          transition: {
-                            staggerChildren: 0.1,
-                          },
-                        },
-                      }}
-                      initial="hidden"
-                      animate="show"
-                      className="w-full"
-                    >
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        {paginatedCaseStudies.map((caseStudy) => (
-                          <motion.div
-                            key={caseStudy.id}
-                            variants={{
-                              hidden: { opacity: 0, y: 20 },
-                              show: { opacity: 1, y: 0 },
-                            }}
-                            className="h-full"
-                          >
-                            <CaseStudyCard
-                              {...caseStudy}
-                              onClick={() => openCaseStudy(caseStudy)}
-                            />
-                          </motion.div>
+            {isLoading ? (
+              <EnterpriseCard className="py-20 text-center border-dashed">
+                <div className="animate-spin w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-6"></div>
+                <Heading3 className="text-xl mb-2">Loading Case Studies</Heading3>
+                <Paragraph className="text-muted-foreground">Please wait while we fetch the latest case studies...</Paragraph>
+              </EnterpriseCard>
+            ) : error ? (
+              <EnterpriseCard className="py-20 text-center border-red-200 dark:border-red-900/30">
+                <div className="w-20 h-20 bg-red-100 dark:bg-red-900/20 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-exclamation-triangle text-3xl"></i>
+                </div>
+                <Heading3 className="text-red-500 mb-3">Error Loading Data</Heading3>
+                <Paragraph className="text-muted-foreground max-w-md mx-auto">
+                  We encountered an issue while loading the case studies. Please try again later or contact our support team.
+                </Paragraph>
+              </EnterpriseCard>
+            ) : filteredCaseStudies.length === 0 ? (
+              <EnterpriseCard className="py-20 text-center border-primary/20">
+                <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-search text-3xl"></i>
+                </div>
+                <Heading3 className="mb-3">No Results Found</Heading3>
+                <Paragraph className="text-muted-foreground max-w-md mx-auto">
+                  No case studies found for this industry. Try selecting a different industry from the filters above.
+                </Paragraph>
+              </EnterpriseCard>
+            ) : (
+              <>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.1,
+                      },
+                    },
+                  }}
+                  initial="hidden"
+                  animate="show"
+                  className="w-full"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    {paginatedCaseStudies.map((caseStudy) => (
+                      <motion.div
+                        key={caseStudy.id}
+                        variants={{
+                          hidden: { opacity: 0, y: 20 },
+                          show: { opacity: 1, y: 0 },
+                        }}
+                        className="h-full"
+                      >
+                        <CaseStudyCard
+                          {...caseStudy}
+                          onClick={() => openCaseStudy(caseStudy)}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Pagination Controls - Mobile only */}
+                {isMobile && totalPages > 1 && (
+                  <div className="flex flex-col items-center gap-4 mt-8">
+                    <div className="flex items-center justify-center gap-4">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handlePrevious}
+                        className="rounded-full p-2 h-10 w-10"
+                      >
+                        <ChevronLeft className="h-5 w-5" />
+                      </Button>
+                      <div className="flex items-center gap-2">
+                        {Array.from({ length: totalPages }).map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentPage(index)}
+                            className={`transition-all ${
+                              index === currentPage
+                                ? "bg-primary w-6 h-2 rounded-full"
+                                : "bg-primary/30 w-2 h-2 rounded-full hover:bg-primary/50"
+                            }`}
+                            aria-label={`Go to page ${index + 1}`}
+                          />
                         ))}
                       </div>
-                    </motion.div>
-
-                    {/* Pagination Controls - Mobile only */}
-                    {isMobile && totalPages > 1 && (
-                      <div className="flex flex-col items-center gap-4 mt-8">
-                        <div className="flex items-center justify-center gap-4">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={handlePrevious}
-                            className="rounded-full p-2 h-10 w-10"
-                          >
-                            <ChevronLeft className="h-5 w-5" />
-                          </Button>
-                          <div className="flex items-center gap-2">
-                            {Array.from({ length: totalPages }).map((_, index) => (
-                              <button
-                                key={index}
-                                onClick={() => setCurrentPage(index)}
-                                className={`transition-all ${
-                                  index === currentPage
-                                    ? "bg-primary w-6 h-2 rounded-full"
-                                    : "bg-primary/30 w-2 h-2 rounded-full hover:bg-primary/50"
-                                }`}
-                                aria-label={`Go to page ${index + 1}`}
-                              />
-                            ))}
-                          </div>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={handleNext}
-                            className="rounded-full p-2 h-10 w-10"
-                          >
-                            <ChevronRight className="h-5 w-5" />
-                          </Button>
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {currentPage + 1} of {totalPages}
-                        </div>
-                      </div>
-                    )}
-                  </>
-                  )}
-                </TabsContent>
-              ))}
-            </Tabs>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleNext}
+                        className="rounded-full p-2 h-10 w-10"
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </Button>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {currentPage + 1} of {totalPages}
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
           </div>
       </PageSection>
 

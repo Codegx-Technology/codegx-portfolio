@@ -92,39 +92,41 @@ export default function ServiceDetail() {
 
   return (
     <Layout>
-      <article className="py-10 bg-background">
+      <article className="bg-background py-6 sm:py-8 md:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <PageBackNav fallbackHref="/services" label="Back to Services" className="mb-8" />
+          <PageBackNav fallbackHref="/services" label="Back to Services" className="mb-6 md:mb-8" />
 
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-16"
+            className="mb-10 md:mb-14"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                <IconComponent className="w-8 h-8" />
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary sm:h-16 sm:w-16">
+                <IconComponent className="h-7 w-7 sm:h-8 sm:w-8" />
               </div>
-              <div>
-                <div className="flex gap-2 mb-2">
+              <div className="min-w-0">
+                <div className="mb-3 flex flex-wrap gap-2">
                   {service.tags.map((tag, index) => (
-                    <Badge key={index} variant="outline">
+                    <Badge key={index} variant="outline" className="max-w-full whitespace-normal text-xs leading-tight">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-                <h1 className="text-3xl md:text-4xl font-bold">{service.title}</h1>
+                <h1 className="max-w-4xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
+                  {service.title}
+                </h1>
               </div>
             </div>
-            <p className="text-xl text-muted-foreground max-w-4xl">
+            <p className="mt-5 max-w-4xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
               {service.shortDescription}
             </p>
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+          <div className="mb-12 grid grid-cols-1 gap-8 lg:mb-16 lg:grid-cols-3 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -132,24 +134,24 @@ export default function ServiceDetail() {
               className="lg:col-span-2"
             >
               {/* What It Is Section */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-4">What It Is</h2>
-                <p className="text-muted-foreground mb-6">{service.fullDescription}</p>
+              <section className="mb-10 md:mb-12">
+                <h2 className="mb-4 text-xl font-bold leading-tight md:text-2xl">What It Is</h2>
+                <p className="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{service.fullDescription}</p>
                 
-                <h3 className="text-xl font-semibold mb-3">Key Benefits</h3>
-                <ul className="space-y-2 mb-6">
+                <h3 className="mb-3 text-lg font-semibold leading-tight md:text-xl">Key Benefits</h3>
+                <ul className="mb-6 space-y-3">
                   {service.benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-primary mr-2 mt-1"><i className="fas fa-check-circle"></i></span>
-                      <span>{benefit}</span>
+                    <li key={index} className="flex items-start gap-3 text-sm md:text-base">
+                      <span className="mt-1 shrink-0 text-primary"><i className="fas fa-check-circle"></i></span>
+                      <span className="leading-relaxed">{benefit}</span>
                     </li>
                   ))}
                 </ul>
                 
-                <h3 className="text-xl font-semibold mb-3">Technologies We Use</h3>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <h3 className="mb-3 text-lg font-semibold leading-tight md:text-xl">Technologies We Use</h3>
+                <div className="mb-6 flex flex-wrap gap-2">
                   {service.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary">
+                    <Badge key={index} variant="secondary" className="whitespace-normal">
                       {tech}
                     </Badge>
                   ))}
@@ -157,21 +159,21 @@ export default function ServiceDetail() {
               </section>
               
               {/* Use Cases Section */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <section className="mb-10 md:mb-12">
+                <h2 className="mb-4 text-xl font-bold leading-tight md:text-2xl">Use Cases</h2>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                   {service.useCases.map((useCase, index) => (
-                    <div key={index} className="bg-card rounded-lg p-6 border border-border">
-                      <h3 className="text-lg font-semibold mb-2">{useCase.title}</h3>
-                      <p className="text-muted-foreground">{useCase.description}</p>
+                    <div key={index} className="rounded-lg border border-border bg-card p-5 md:p-6">
+                      <h3 className="mb-2 text-base font-semibold leading-tight md:text-lg">{useCase.title}</h3>
+                      <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{useCase.description}</p>
                     </div>
                   ))}
                 </div>
               </section>
               
               {/* How We Work Section */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold mb-4">How We Work</h2>
+              <section className="mb-10 md:mb-12">
+                <h2 className="mb-4 text-xl font-bold leading-tight md:text-2xl">How We Work</h2>
                 <div className="relative pl-8 border-l border-border">
                   {service.process.map((step, index) => (
                     <div key={index} className="mb-8 relative">
@@ -179,7 +181,7 @@ export default function ServiceDetail() {
                         <div className="w-4 h-4 rounded-full bg-primary"></div>
                       </div>
                       <div className="pl-4">
-                        <p className="text-lg">{step}</p>
+                        <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{step}</p>
                       </div>
                     </div>
                   ))}
@@ -194,10 +196,10 @@ export default function ServiceDetail() {
               className="lg:col-span-1"
             >
               {/* CTA Card */}
-              <div className="sticky top-24">
-                <div className="bg-card rounded-lg border border-border p-6 mb-8">
-                  <h3 className="text-xl font-bold mb-4">{service.cta}</h3>
-                  <p className="text-muted-foreground mb-6">
+              <div className="lg:sticky lg:top-24">
+                <div className="mb-6 rounded-lg border border-border bg-card p-5 md:mb-8 md:p-6">
+                  <h3 className="mb-4 text-lg font-bold leading-tight md:text-xl">{service.cta}</h3>
+                  <p className="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
                     Discuss where this capability fits your operating model, control requirements, and long-term ownership plan.
                   </p>
                   <Link href="/contact">
@@ -209,11 +211,11 @@ export default function ServiceDetail() {
                 </div>
                 
                 {/* Technologies Card */}
-                <div className="bg-card rounded-lg border border-border p-6">
-                  <h3 className="text-lg font-bold mb-4">Our Expertise</h3>
+                <div className="rounded-lg border border-border bg-card p-5 md:p-6">
+                  <h3 className="mb-4 text-base font-bold leading-tight md:text-lg">Our Expertise</h3>
                   <div className="flex flex-wrap gap-2">
                     {service.technologies.map((tech, index) => (
-                      <Badge key={index} variant="outline">
+                      <Badge key={index} variant="outline" className="whitespace-normal">
                         {tech}
                       </Badge>
                     ))}
@@ -229,18 +231,18 @@ export default function ServiceDetail() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-16"
+              className="mb-12 md:mb-16"
             >
-              <h2 className="text-2xl font-bold mb-8">Operating Patterns</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <h2 className="mb-6 text-xl font-bold leading-tight md:mb-8 md:text-2xl">Operating Patterns</h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:gap-8">
                 {service.examples.map((example, index) => (
-                  <div key={index} className="bg-card rounded-lg border border-border p-6">
+                  <div key={index} className="rounded-lg border border-border bg-card p-5 md:p-6">
                     <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                       <span className="text-sm font-semibold">{String(index + 1).padStart(2, "0")}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2">{example.title}</h3>
-                      <p className="text-muted-foreground">{example.description}</p>
+                      <h3 className="mb-2 text-base font-bold leading-tight md:text-lg">{example.title}</h3>
+                      <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">{example.description}</p>
                     </div>
                   </div>
                 ))}
@@ -254,23 +256,23 @@ export default function ServiceDetail() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mb-16"
+              className="mb-12 md:mb-16"
             >
-              <h2 className="text-2xl font-bold mb-8">Related Services</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <h2 className="mb-6 text-xl font-bold leading-tight md:mb-8 md:text-2xl">Related Services</h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:gap-8">
                 {relatedServices.map((relatedService) => {
                   const RelatedIcon = getIcon(relatedService.icon);
                   return (
                     <Link key={relatedService.slug} href={`/services/${relatedService.slug}`}>
                       <a className="block group">
-                        <div className="bg-card rounded-lg p-6 border border-border hover:border-primary/50 hover:shadow-md transition-all h-full">
+                        <div className="h-full rounded-lg border border-border bg-card p-5 transition-all hover:border-primary/50 hover:shadow-md md:p-6">
                           <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                               <RelatedIcon className="w-5 h-5" />
                             </div>
-                            <h3 className="font-bold">{relatedService.title}</h3>
+                            <h3 className="text-sm font-bold leading-tight md:text-base">{relatedService.title}</h3>
                           </div>
-                          <p className="text-muted-foreground text-sm mb-4">{relatedService.shortDescription}</p>
+                          <p className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{relatedService.shortDescription}</p>
                           <div className="text-primary text-sm font-medium group-hover:underline">
                             Learn more <i className="fas fa-arrow-right ml-1"></i>
                           </div>

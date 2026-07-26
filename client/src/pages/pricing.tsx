@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { PageWrapper, PageSection, PageHeader, PageDivider } from "@/components/layouts/PageWrapper";
+import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import PricingCard from "@/components/Pricing/PricingCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heading2, Paragraph } from "@/components/ui/typography";
+import { Paragraph } from "@/components/ui/typography";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 interface PricingData {
   plans: {
@@ -46,18 +47,21 @@ export default function Pricing() {
   return (
     <PageWrapper>
       {/* Hero Section */}
-      <div className="relative py-8 md:py-12 overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-8 md:mb-12">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 z-0 opacity-5">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-          </svg>
-        </div>
+      <PageSection className="relative overflow-hidden pt-8 pb-6 md:pt-10 md:pb-8">
+        <PageBackNav fallbackHref="/" className="relative z-10 mb-6" />
 
-        <div className="container mx-auto relative z-10">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-lg border border-border/40 bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] px-4 py-10 sm:px-6 md:py-12 lg:px-8 dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c]">
+          {/* Subtle pattern overlay */}
+          <div className="absolute inset-0 z-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 20 H40 M20 0 V40" stroke="currentColor" strokeWidth="0.5" fill="none" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,17 +91,18 @@ export default function Pricing() {
             </p>
           </motion.div>
         </div>
-      </div>
+        </div>
+      </PageSection>
 
       {/* Pricing Section */}
-      <PageSection className="relative overflow-hidden">
+      <PageSection className="relative overflow-hidden pt-2 md:pt-4">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full translate-x-1/3 -translate-y-1/3 z-0"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c8a951]/5 dark:bg-[#9f7b42]/5 rounded-full -translate-x-1/3 translate-y-1/3 z-0"></div>
 
         <div className="relative z-10">
           {/* Billing Cycle Toggle */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8 md:mb-10">
             <div className="bg-white dark:bg-[#1a1a1a] p-2 rounded-xl shadow-md border border-gray-100 dark:border-[#2c1a22]/50">
               <Tabs
                 value={billingCycle}
@@ -133,7 +138,7 @@ export default function Pricing() {
               <Paragraph className="text-red-500">Error loading pricing data. Please try again later.</Paragraph>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
               {data?.plans.map((plan, index) => (
                 <PricingCard
                   key={plan.id}
@@ -151,7 +156,7 @@ export default function Pricing() {
           )}
 
           {/* Custom Quote CTA */}
-          <div className="bg-white dark:bg-[#1a1a1a] rounded-xl shadow-lg border border-gray-100 dark:border-[#2c1a22]/50 p-8 text-center mb-16">
+          <div className="bg-white dark:bg-[#1a1a1a] rounded-lg shadow-lg border border-gray-100 dark:border-[#2c1a22]/50 p-6 md:p-8 text-center mb-12 md:mb-16">
             <div className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-sm font-medium mb-4 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
               Custom Solutions
             </div>
@@ -182,7 +187,7 @@ export default function Pricing() {
       </PageSection>
 
       {/* FAQ Section */}
-      <PageSection className="bg-gray-50 dark:bg-[#121212] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 relative overflow-hidden">
+      <PageSection className="bg-gray-50 dark:bg-[#121212] py-12 md:py-16 relative overflow-hidden">
         {/* Circuit pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -232,7 +237,7 @@ export default function Pricing() {
       </PageSection>
 
       {/* CTA Section */}
-      <PageSection className="py-20 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c] -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+      <PageSection className="py-12 md:py-16 relative overflow-hidden bg-gradient-to-br from-[#2c1a22] via-[#3d2128] to-[#2c1a22] dark:from-[#1f1a2c] dark:via-[#2a1f3d] dark:to-[#1f1a2c]">
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

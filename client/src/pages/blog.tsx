@@ -10,6 +10,7 @@ import { EnterpriseGrid } from "@/components/ui/enterprise-container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PageBackNav } from "@/components/ui/page-back-nav";
 
 interface BlogPost {
   slug: string;
@@ -94,6 +95,8 @@ export default function Blog() {
       >
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+
+        <PageBackNav fallbackHref="/" className="relative z-10 mb-8" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
