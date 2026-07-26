@@ -51,9 +51,10 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 interface ContactFormProps {
   onSubmit: (data: ContactFormData) => Promise<void>;
   initialEnquiryType?: ContactFormData["enquiryType"];
+  initialMessage?: string;
 }
 
-export function ContactForm({ onSubmit, initialEnquiryType = "General Enquiry" }: ContactFormProps) {
+export function ContactForm({ onSubmit, initialEnquiryType = "General Enquiry", initialMessage = "" }: ContactFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -65,7 +66,7 @@ export function ContactForm({ onSubmit, initialEnquiryType = "General Enquiry" }
       email: "",
       company: "",
       enquiryType: initialEnquiryType,
-      message: ""
+      message: initialMessage
     },
   });
   

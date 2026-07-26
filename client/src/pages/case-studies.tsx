@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { PageWrapper, PageSection } from "@/components/layouts/PageWrapper";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { Button } from "@/components/ui/button";
@@ -297,16 +297,15 @@ export default function CaseStudies() {
 
               <div className="mt-4">
                 <EnterpriseCard className="p-0 overflow-hidden mb-6 border-0">
-                  <div className="relative h-64 md:h-80 overflow-hidden">
+                  <div className="relative flex max-h-[52vh] min-h-56 items-center justify-center overflow-hidden bg-slate-100 dark:bg-[#080d18]">
                     <img
                       src={selectedCaseStudy.image}
                       alt={selectedCaseStudy.title}
-                      className="w-full h-full object-cover"
+                      className="max-h-[52vh] w-full object-contain"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x400?text=Case+Study";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
                 </EnterpriseCard>
 
@@ -376,9 +375,11 @@ export default function CaseStudies() {
                 <Button variant="outline" onClick={closeCaseStudy} className="w-full sm:w-auto order-2 sm:order-1">
                   <i className="fas fa-times mr-2"></i> Close
                 </Button>
-                <Button className="w-full sm:w-auto order-1 sm:order-2">
-                  <i className="fas fa-envelope mr-2"></i>
-                  Contact Us About This Project
+                <Button asChild className="w-full sm:w-auto order-1 sm:order-2">
+                  <Link href={`/contact?type=project&project=${encodeURIComponent(selectedCaseStudy.title)}`}>
+                    <i className="fas fa-envelope mr-2"></i>
+                    Contact Us About This Project
+                  </Link>
                 </Button>
               </DialogFooter>
             </DialogContent>

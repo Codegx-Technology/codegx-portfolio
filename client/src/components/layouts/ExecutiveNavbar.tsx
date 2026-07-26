@@ -235,16 +235,16 @@ export function ExecutiveNavbar({
                                       href={child.href}
                                       className={cn(
                                         "flex items-center justify-between select-none rounded-md p-2.5 text-sm leading-none no-underline outline-none transition-colors",
-                                        "hover:bg-[#4d2c35] hover:text-[#c8a951] dark:hover:bg-[#3d2a5d] dark:hover:text-[#9f7b42]",
+                                        "text-slate-700 hover:bg-slate-100 hover:text-[#9f7b42] dark:text-slate-200 dark:hover:bg-[#3d2a5d] dark:hover:text-[#c8a951]",
                                         location === child.href
-                                          ? "bg-[#4d2c35] font-medium text-[#c8a951] dark:bg-[#3d2a5d] dark:text-[#9f7b42]"
-                                          : "text-slate-200"
+                                          ? "bg-[#c8a951]/10 font-medium text-[#8a672b] dark:bg-[#3d2a5d] dark:text-[#c8a951]"
+                                          : ""
                                       )}
                                     >
                                       <span className="flex items-center gap-2">
                                         {child.label}
                                         {child.badge && (
-                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951] text-[#2c1a22] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
+                                          <Badge variant={child.badgeVariant} className="text-[10px] px-1.5 py-0 bg-[#c8a951]/20 text-[#6b4e16] dark:bg-[#9f7b42] dark:text-[#1f1a2c]">
                                             {child.badge}
                                           </Badge>
                                         )}

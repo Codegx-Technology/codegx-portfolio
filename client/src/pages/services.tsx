@@ -366,7 +366,7 @@ export default function Services() {
                 </Button>
               </Link>
               <Link href="/case-studies">
-                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-md">
+              <Button size="lg" variant="outline" className="border-white/25 bg-transparent !text-white hover:bg-white/10 hover:!text-white px-8 py-4 rounded-md">
                   <i className="fas fa-briefcase mr-2"></i>
                   View Our Case Studies
                 </Button>
