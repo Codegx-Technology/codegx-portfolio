@@ -45,6 +45,7 @@ const books = [
       "A reflective work on identity, transition, and rebuilding purpose when formal structures, roles, and titles fall away.",
     excerpt: "What nobody tells you about who you are when the structure stops.",
     icon: BookOpen,
+    href: "/publications/the-unwritten-life",
   },
 ];
 
@@ -129,6 +130,16 @@ export default function Publications() {
                   <blockquote className="mt-6 border-l-2 border-[#c8a951] pl-4 text-sm font-medium text-slate-800 dark:text-slate-100">
                     "{book.excerpt}"
                   </blockquote>
+
+                  {book.href && (
+                    <Link
+                      href={book.href}
+                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#9f7b42] transition-colors hover:text-[#7a5d31] dark:text-[#d6b464] dark:hover:text-[#f0d48a]"
+                    >
+                      Learn More
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
                 </motion.article>
               );
             })}

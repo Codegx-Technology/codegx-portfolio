@@ -257,6 +257,12 @@ function AppRouter() {
             return <LazyRoute component={Team} />;
           }}
         </Route>
+        <Route path="/publications/the-unwritten-life">
+          {() => {
+            const TheUnwrittenLife = React.lazy(() => import("@/pages/publications/the-unwritten-life"));
+            return <LazyRoute component={TheUnwrittenLife} />;
+          }}
+        </Route>
         <Route path="/publications">
           {() => {
             const Publications = React.lazy(() => import("@/pages/publications"));
