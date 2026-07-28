@@ -257,17 +257,23 @@ function AppRouter() {
             return <LazyRoute component={Team} />;
           }}
         </Route>
-        <Route path="/publications/the-unwritten-life">
-          {() => {
-            const TheUnwrittenLife = React.lazy(() => import("@/pages/publications/the-unwritten-life"));
-            return <LazyRoute component={TheUnwrittenLife} />;
-          }}
-        </Route>
-        <Route path="/publications">
-          {() => {
-            const Publications = React.lazy(() => import("@/pages/publications"));
-            return <LazyRoute component={Publications} />;
-          }}
+      <Route path="/publications/the-unwritten-life">
+        {() => {
+          const TheUnwrittenLife = React.lazy(() => import("@/pages/publications/the-unwritten-life"));
+          return <LazyRoute component={TheUnwrittenLife} />;
+        }}
+      </Route>
+      <Route path="/publications/ai-for-young-thinkers">
+        {() => {
+          const AIForYoungThinkers = React.lazy(() => import("@/pages/publications/ai-for-young-thinkers"));
+          return <LazyRoute component={AIForYoungThinkers} />;
+        }}
+      </Route>
+      <Route path="/publications">
+        {() => {
+          const Publications = React.lazy(() => import("@/pages/publications"));
+          return <LazyRoute component={Publications} />;
+        }}
         </Route>
         <Route path="/privacy">
           {() => {

@@ -25,6 +25,7 @@ const books = [
       "A clear introduction to AI for young readers, parents, and teachers, centred on responsible curiosity, human judgement, and active digital citizenship.",
     excerpt: "The machine has the gears, but you have the soul.",
     icon: GraduationCap,
+    href: "/publications/ai-for-young-thinkers",
   },
   {
     title: "The Architecture of Resilience",
