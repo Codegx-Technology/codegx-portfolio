@@ -37,7 +37,7 @@ export default function AIForYoungThinkers() {
 
       <main className="px-safe mx-auto w-full overflow-hidden max-w-7xl">
         <section className="px-4 py-8 sm:px-6 md:py-14">
-          <div className="flex w-full justify-center">
+          <div className="mb-8 flex w-full justify-center sm:mb-10">
             <IntelligentBackButton fallbackHref="/publications" label="Back to Publications" />
           </div>
 
