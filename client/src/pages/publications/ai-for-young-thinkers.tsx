@@ -38,7 +38,7 @@ export default function AIForYoungThinkers() {
       <main className="px-safe mx-auto w-full overflow-hidden max-w-7xl">
         <section className="px-4 py-8 sm:px-6 md:py-14">
           <div className="flex w-full justify-center">
-            <IntelligentBackButton fallbackPath="/publications" fallbackLabel="Back to Publications" />
+            <IntelligentBackButton fallbackHref="/publications" label="Back to Publications" />
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
