@@ -1,0 +1,3 @@
+[submodule "governance/gp"]
+	path = governance/gp
+	url = https://github.com/peteroluoch/governance-principles.git
