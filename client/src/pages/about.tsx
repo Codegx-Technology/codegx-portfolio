@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { Button } from "@/components/ui/button";
@@ -55,6 +56,9 @@ const capabilities = [
 ];
 
 export default function About() {
+  const [activePrinciple, setActivePrinciple] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
   const itemVariants = {
     hidden: { opacity: 0, y: 18 },
     visible: {
@@ -103,7 +107,7 @@ export default function About() {
               animate="visible"
               className="relative z-10 lg:col-span-5"
             >
-              <div className="rounded-lg border border-border bg-card/70 p-5 shadow-xl backdrop-blur md:p-6">
+              <div className="border-l border-border pl-5 md:pl-6">
                 <div className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Operating Mandate
                 </div>
@@ -126,8 +130,8 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-            <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
+          <div className="grid gap-8 md:grid-cols-2 md:gap-0">
+            <motion.div variants={itemVariants} className="md:border-r md:border-border md:pr-8">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Operating Philosophy</div>
               <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
                 Design for control, continuity, and clear ownership.
@@ -138,7 +142,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="rounded-lg border border-border bg-card p-5 md:p-6">
+            <motion.div variants={itemVariants} className="md:pl-8">
               <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">Direction</div>
               <h2 className="mb-3 text-xl font-bold text-slate-950 dark:text-white md:text-2xl">
                 Make intelligent operations accountable, not ornamental.
@@ -157,7 +161,7 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <div className="mb-6 max-w-3xl">
+          <div className="mb-8 max-w-3xl">
             <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">
               Operating Principles
             </div>
@@ -166,24 +170,77 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-4">
-            {principles.map((principle, index) => {
-              const IconComponent = principle.icon;
-              return (
-                <motion.div
-                  key={principle.title}
-                  variants={itemVariants}
-                  transition={{ delay: index * 0.05 }}
-                  className="group rounded-lg border border-border bg-card p-5 transition-colors duration-300 hover:border-[#c8a951]/50"
-                >
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-[#c8a951]/10 text-[#c8a951] dark:text-[#d6b464]">
-                    <IconComponent size={24} />
-                  </div>
-                  <h3 className="mb-3 text-base font-bold text-slate-950 dark:text-white">{principle.title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{principle.description}</p>
-                </motion.div>
-              );
-            })}
+          <div className="grid gap-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] md:gap-12">
+            <div role="tablist" aria-label="Operating principles" className="border-l border-border">
+              {principles.map((principle, index) => {
+                const isActive = activePrinciple === index;
+                return (
+                  <button
+                    key={principle.title}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`principle-panel-${index}`}
+                    tabIndex={isActive ? 0 : -1}
+                    onClick={() => setActivePrinciple(index)}
+                    onFocus={() => setActivePrinciple(index)}
+                    onKeyDown={(event) => {
+                      if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+                        event.preventDefault();
+                        const nextIndex = (index + 1) % principles.length;
+                        setActivePrinciple(nextIndex);
+                        document.getElementById(`principle-tab-${nextIndex}`)?.focus();
+                      }
+                      if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+                        event.preventDefault();
+                        const previousIndex = (index - 1 + principles.length) % principles.length;
+                        setActivePrinciple(previousIndex);
+                        document.getElementById(`principle-tab-${previousIndex}`)?.focus();
+                      }
+                    }}
+                    id={`principle-tab-${index}`}
+                    className={`group relative flex w-full items-center gap-4 border-b border-border px-5 py-4 text-left transition-colors duration-300 first:border-t md:py-5 ${
+                      isActive ? "text-slate-950 dark:text-white" : "text-muted-foreground hover:text-slate-950 dark:hover:text-white"
+                    }`}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`absolute -left-px top-0 h-full w-0.5 origin-center bg-[#c8a951] transition-transform duration-300 ${
+                        isActive ? "scale-y-100" : "scale-y-0"
+                      }`}
+                    />
+                    <span className="text-xs font-semibold tracking-[0.2em] text-[#c8a951]">{`0${index + 1}`}</span>
+                    <span className="text-sm font-semibold md:text-base">{principle.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="min-h-[220px] md:min-h-[260px]" aria-live="polite">
+              {principles.map((principle, index) => {
+                if (activePrinciple !== index) return null;
+                const IconComponent = principle.icon;
+                return (
+                  <motion.div
+                    key={principle.title}
+                    id={`principle-panel-${index}`}
+                    role="tabpanel"
+                    aria-labelledby={`principle-tab-${index}`}
+                    initial={{ opacity: 0, x: 16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3, ease: "easeOut" }}
+                    className="border-b border-border pb-8 md:border-b-0 md:pb-0"
+                  >
+                    <div className="mb-6 flex h-12 w-12 items-center justify-start text-[#c8a951] dark:text-[#d6b464]">
+                      <IconComponent size={28} />
+                    </div>
+                    <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#c8a951]">{`0${index + 1}`}</div>
+                    <h3 className="text-2xl font-bold text-slate-950 dark:text-white md:text-3xl">{principle.title}</h3>
+                    <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">{principle.description}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.section>
 
@@ -193,7 +250,7 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           className="px-4 py-8 sm:px-6 md:px-0 md:py-12"
         >
-          <div className="rounded-lg border border-border bg-[#111827] p-5 text-white dark:bg-[#15111a] md:p-7">
+          <div className="border-y border-border bg-[#111827] px-5 py-7 text-white dark:bg-[#15111a] md:px-7 md:py-9">
             <div className="grid gap-8 lg:grid-cols-12">
               <div className="lg:col-span-4">
                 <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#d6b464]">
