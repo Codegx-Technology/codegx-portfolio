@@ -107,18 +107,59 @@ export default function About() {
               animate="visible"
               className="relative z-10 lg:col-span-5"
             >
-              <div className="border-l border-border pl-5 md:pl-6">
-                <div className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Operating Mandate
-                </div>
-                <div className="space-y-4">
-                  {["Secure by design", "Governed by default", "Maintainable after launch"].map((item) => (
-                    <div key={item} className="flex items-center gap-3 border-b border-border pb-4 last:border-b-0 last:pb-0">
-                      <div className="h-2.5 w-2.5 rotate-45 bg-[#c8a951] dark:bg-[#9f7b42]" />
-                      <span className="text-sm font-medium text-slate-900 dark:text-white">{item}</span>
-                    </div>
-                  ))}
-                </div>
+              <div className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Operating Mandate
+              </div>
+              <div className="relative flex min-h-[300px] flex-col items-center justify-center gap-7 py-4 md:block md:min-h-[270px] md:py-0">
+                <motion.div
+                  aria-hidden="true"
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, delay: 0.1 }}
+                  className="absolute left-1/2 top-5 h-3 w-3 -translate-x-1/2 rotate-45 border border-[#c8a951] bg-[#c8a951]/20 dark:border-[#d6b464] md:top-1/2 md:-translate-y-1/2"
+                />
+
+                <motion.div
+                  aria-hidden="true"
+                  initial={{ scaleY: 0, opacity: 0 }}
+                  animate={{ scaleY: 1, opacity: 1 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, delay: 0.25 }}
+                  className="pointer-events-none absolute bottom-4 left-1/2 top-4 w-px origin-top bg-[#c8a951]/35 md:bottom-auto md:left-1/2 md:top-[16%] md:h-[34%] md:w-px md:-translate-x-1/2"
+                />
+                <motion.div
+                  aria-hidden="true"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: 1 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, delay: 0.4 }}
+                  className="pointer-events-none absolute left-[23%] top-[62%] hidden h-px w-[27%] origin-right rotate-[20deg] bg-[#c8a951]/35 md:block"
+                />
+                <motion.div
+                  aria-hidden="true"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: 1 }}
+                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, delay: 0.55 }}
+                  className="pointer-events-none absolute right-[23%] top-[62%] hidden h-px w-[27%] origin-left -rotate-[20deg] bg-[#c8a951]/35 md:block"
+                />
+
+                {["Secure by design", "Governed by default", "Maintainable after launch"].map((item, index) => (
+                  <motion.div
+                    key={item}
+                    initial="hidden"
+                    animate="visible"
+                    variants={itemVariants}
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, delay: 0.35 + index * 0.12 }}
+                    className={`relative z-10 flex w-full items-center gap-3 pl-6 md:absolute md:w-auto md:max-w-[180px] md:pl-0 ${
+                      index === 0
+                        ? "md:left-1/2 md:top-[8%] md:-translate-x-1/2 md:text-center"
+                        : index === 1
+                          ? "md:bottom-[7%] md:left-0"
+                          : "md:bottom-[7%] md:right-0 md:text-right"
+                    }`}
+                  >
+                    <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rotate-45 bg-[#c8a951] dark:bg-[#9f7b42]" />
+                    <span className="text-sm font-medium text-slate-900 dark:text-white">{item}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
