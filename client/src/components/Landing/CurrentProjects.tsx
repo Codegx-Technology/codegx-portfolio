@@ -39,8 +39,10 @@ export function CurrentProjects({
         transition={{ duration: 0.5 }}
         className="mb-8 md:mb-10"
       >
-        <div className="mx-auto inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
-          Active Platform Work
+        <div className="text-center">
+          <div className="mx-auto inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-2 md:mb-3 border border-[#c8a951]/20 dark:border-[#9f7b42]/20">
+            Active Platform Work
+          </div>
         </div>
         <div className="mt-3 grid grid-cols-1 items-end gap-4 lg:grid-cols-12 lg:gap-10">
           <h2 className="text-2xl font-bold text-[#2c1a22] dark:text-white md:text-3xl lg:col-span-5">
