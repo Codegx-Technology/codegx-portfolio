@@ -19,7 +19,7 @@ export function CurrentProjects({
   className?: string;
 }) {
   const [mobilePage, setMobilePage] = useState(0);
-  const mobilePageSize = 2;
+  const mobilePageSize = 1;
   const mobilePageCount = Math.ceil(caseStudies.length / mobilePageSize);
   const mobileProjects = caseStudies.slice(
     mobilePage * mobilePageSize,
@@ -115,8 +115,8 @@ export function CurrentProjects({
                     <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#c8a951] dark:text-[#9f7b42]">
                       {String(projectIndex + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-xs font-medium uppercase tracking-[0.16em] text-[#2c1a22] transition-transform group-hover:translate-x-1 dark:text-white">
-                      Open <span aria-hidden="true">-&gt;</span>
+                    <span className="text-sm font-medium text-[#c8a951] transition-colors group-hover:underline dark:text-[#9f7b42]">
+                      Learn More <span aria-hidden="true">-&gt;</span>
                     </span>
                   </div>
 
@@ -129,7 +129,7 @@ export function CurrentProjects({
                   <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     {project.description}
                   </p>
-                  <span className="sr-only">Open {project.title}</span>
+                  <span className="sr-only">Learn More about {project.title}</span>
                 </Link>
               </motion.div>
             );
