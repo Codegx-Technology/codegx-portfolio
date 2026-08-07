@@ -89,7 +89,7 @@ export default function About() {
                 Codegx Technologies
               </div>
               <h1 className="max-w-4xl text-3xl font-bold leading-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
-                Engineering Dependable Systems For Work That Must Stay Accountable
+                {"Engineering Dependable Systems "}
               </h1>
               <p className="mt-5 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-300 md:text-base">
                 Codegx Technologies builds software platforms, governed workflow systems, and operational intelligence
