@@ -25,64 +25,57 @@ export function CurrentProjects({
         transition={{ duration: 0.5 }}
         className="mb-8 md:mb-10"
       >
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#c8a951]/20 bg-[#c8a951]/10 text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-3">
+        <div className="inline-flex items-center rounded-full border border-[#c8a951]/20 bg-[#c8a951]/10 px-4 py-1.5 text-xs font-medium text-[#c8a951] dark:text-[#9f7b42] md:text-sm">
           Active Platform Work
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-10 items-end">
-          <h2 className="lg:col-span-5 text-2xl md:text-3xl font-bold text-[#2c1a22] dark:text-white">
+        <div className="mt-3 grid grid-cols-1 items-end gap-4 lg:grid-cols-12 lg:gap-10">
+          <h2 className="text-2xl font-bold text-[#2c1a22] dark:text-white md:text-3xl lg:col-span-5">
             Current Projects
           </h2>
-          <p className="lg:col-span-7 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="max-w-2xl text-sm leading-relaxed text-gray-600 dark:text-gray-300 lg:col-span-7">
             Selected platform work currently shaping the Codegx technical estate and its operating mandate.
           </p>
         </div>
       </motion.div>
 
-      <div className="overflow-x-auto pb-2">
-        <div className="grid w-full min-w-[1120px] grid-cols-4 overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-[#3d2128] dark:bg-[#2c1a22]">
-          {caseStudies.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.05 }}
-              className="border-r border-gray-200 last:border-r-0 dark:border-[#3d2128]"
+      <div className="border-t border-[#2c1a22]/15 dark:border-white/15">
+        {caseStudies.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: index * 0.05 }}
+            className="group border-b border-[#2c1a22]/15 dark:border-white/15"
+          >
+            <Link
+              href={project.href}
+              className="grid gap-5 py-6 transition-colors hover:bg-[#c8a951]/5 focus-visible:bg-[#c8a951]/5 focus-visible:outline-none md:grid-cols-[72px_minmax(180px,0.85fr)_minmax(0,1.55fr)_auto] md:items-center md:gap-6 md:py-7"
             >
-              <Link
-                href={project.href}
-                className="group flex h-full min-h-[310px] flex-col p-5 transition-colors hover:bg-[#c8a951]/5 md:p-6"
-              >
-                <div className="mb-8 flex items-start justify-between gap-4">
-                  <span className="text-xs uppercase tracking-[0.22em] text-[#c8a951] dark:text-[#9f7b42]">
-                    0{index + 1}
-                  </span>
-                  <span className="max-w-[160px] text-right text-xs uppercase tracking-[0.16em] text-gray-500 dark:text-gray-400">
-                    {project.industry}
-                  </span>
-                </div>
+              <span className="text-xs font-medium uppercase tracking-[0.22em] text-[#c8a951] dark:text-[#9f7b42]">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-                <h3 className="text-xl font-bold text-[#2c1a22] dark:text-white">
+              <div>
+                <span className="mb-1 block text-[0.68rem] font-medium uppercase tracking-[0.18em] text-[#c8a951]/90 dark:text-[#9f7b42]">
+                  {project.industry}
+                </span>
+                <h3 className="text-xl font-bold text-[#2c1a22] transition-colors group-hover:text-[#8f7130] dark:text-white dark:group-hover:text-[#c8a951]">
                   {project.title}
                 </h3>
+              </div>
 
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                  {project.description}
-                </p>
+              <p className="max-w-2xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                {project.description}
+              </p>
 
-                <div className="mt-6 border-t border-gray-200 pt-4 text-sm font-medium text-[#c8a951] dark:border-[#3d2128] dark:text-[#9f7b42]">
-                  <span className="sr-only">Open {project.title}</span>
-                  <span
-                    aria-hidden="true"
-                    className="inline-flex items-center gap-2 transition-transform group-hover:translate-x-1"
-                  >
-                    Open <span>-&gt;</span>
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+              <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#2c1a22] transition-transform group-hover:translate-x-1 dark:text-white">
+                Open <span aria-hidden="true">-&gt;</span>
+                <span className="sr-only">{project.title}</span>
+              </span>
+            </Link>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
