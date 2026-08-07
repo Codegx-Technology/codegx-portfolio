@@ -84,9 +84,9 @@ export function CurrentProjects({
                   {project.description}
                 </p>
 
-                <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[#2c1a22] transition-transform group-hover:translate-x-1 dark:text-white">
-                  Open <span aria-hidden="true">-&gt;</span>
-                  <span className="sr-only">{project.title}</span>
+                <span className="text-sm font-medium text-[#c8a951] transition-colors group-hover:underline dark:text-[#9f7b42]">
+                  Learn More <i className="fas fa-arrow-right ml-1" aria-hidden="true"></i>
+                  <span className="sr-only">about {project.title}</span>
                 </span>
               </Link>
             </motion.div>
@@ -116,7 +116,7 @@ export function CurrentProjects({
                       {String(projectIndex + 1).padStart(2, "0")}
                     </span>
                     <span className="text-sm font-medium text-[#c8a951] transition-colors group-hover:underline dark:text-[#9f7b42]">
-                      Learn More <span aria-hidden="true">-&gt;</span>
+                      Learn More <i className="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                     </span>
                   </div>
 
