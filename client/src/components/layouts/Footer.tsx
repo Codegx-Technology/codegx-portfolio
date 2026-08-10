@@ -218,19 +218,7 @@ export function Footer({
                 </svg>
               </div>
 
-              <motion.h3
-                className="text-2xl font-bold text-white mt-2"
-                variants={itemVariants}
-              >
-                {activeCompanyName}
-              </motion.h3>
 
-              <motion.p
-                className="text-sm text-slate-300 mt-3 max-w-lg mx-auto"
-                variants={itemVariants}
-              >
-                {activeCompanyDescription}
-              </motion.p>
             </motion.div>
           </motion.div>
 

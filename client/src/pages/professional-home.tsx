@@ -931,9 +931,9 @@ export default function ProfessionalHome() {
                   className="h-[260px] w-full object-cover md:h-[340px] lg:h-[420px]"
                 />
                 <div className="absolute inset-0 bg-[#2c1a22]/80"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white md:p-8">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-5 text-white md:p-8 text-center">
                   <h3 className="text-xl md:text-2xl font-bold mb-3">Turning Process Gaps into Working Systems</h3>
-                  <p className="text-sm text-slate-300 max-w-2xl">Our automation and software delivery work helps teams reduce manual effort, improve visibility, and serve customers more reliably.</p>
+                  <p className="text-sm text-slate-300 max-w-2xl mx-auto">Our automation and software delivery work helps teams reduce manual effort, improve visibility, and serve customers more reliably.</p>
                 </div>
               </div>
             </motion.div>
