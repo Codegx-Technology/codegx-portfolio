@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { Compass, Download, Eye, FileText, Mountain, Scale, ShieldCheck, Target } from "lucide-react";
-import { Link } from "wouter";
+import { BookOpen, Compass, Download, Eye, Mountain, Scale, ShieldCheck, Target } from "lucide-react";
 import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+
+const fullBookUrl = "https://petersolver.gumroad.com/l/ydbpmw";
+const sampleUrl = "https://petersolver.gumroad.com/l/ktqvi";
 
 const gains = [
   "Stronger judgement under pressure",
@@ -275,24 +277,30 @@ export default function TheArchitectureOfResilience() {
                   <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Access</h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                     Full Edition: $24.90. Launch allocation (25%) currently active. 365 daily reflections,
-                    instant download. A free sampler is available on request.
+                    instant download. International readers can pay by card via Gumroad, and a free sampler
+                    is available to review the writing style, reflection format and structure before
+                    purchasing.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-                  <Link
-                    href="/contact"
+                  <a
+                    href={fullBookUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-[#c8a951] px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[#d8ba66]"
                   >
-                    <Download className="h-4 w-4" />
-                    Request Access
-                  </Link>
-                  <Link
-                    href="/contact"
+                    <BookOpen className="h-4 w-4" />
+                    Buy Full Book
+                  </a>
+                  <a
+                    href={sampleUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-md border border-[#c8a951]/60 px-5 py-3 text-sm font-semibold text-[#9f7b42] transition-colors hover:bg-[#c8a951]/10 dark:text-[#d6b464]"
                   >
-                    <FileText className="h-4 w-4" />
-                    Request the Free Sampler
-                  </Link>
+                    <Download className="h-4 w-4" />
+                    Read Free Sample
+                  </a>
                 </div>
               </div>
             </section>
