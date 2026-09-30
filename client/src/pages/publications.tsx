@@ -15,6 +15,7 @@ const books = [
       "A systems-level field guide on engineering judgement, AI governance, code review, prompt interfaces, and technical autonomy in the age of autonomous tools.",
     excerpt: "AI produces code, not reliability.",
     icon: ShieldCheck,
+    href: "/publications/engineering-in-the-age-of-ai",
   },
   {
     title: "AI for Young Thinkers",

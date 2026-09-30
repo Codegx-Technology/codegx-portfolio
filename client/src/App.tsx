@@ -263,6 +263,12 @@ function AppRouter() {
           return <LazyRoute component={TheUnwrittenLife} />;
         }}
       </Route>
+      <Route path="/publications/engineering-in-the-age-of-ai">
+        {() => {
+          const EngineeringInTheAgeOfAI = React.lazy(() => import("@/pages/publications/engineering-in-the-age-of-ai"));
+          return <LazyRoute component={EngineeringInTheAgeOfAI} />;
+        }}
+      </Route>
       <Route path="/publications/ai-for-young-thinkers">
         {() => {
           const AIForYoungThinkers = React.lazy(() => import("@/pages/publications/ai-for-young-thinkers"));
