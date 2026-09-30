@@ -37,6 +37,7 @@ const books = [
       "A daily practice of reflection for leaders, builders, and professionals who need steadiness, discipline, and clarity under pressure.",
     excerpt: "A way of standing inside difficulty without being destroyed by it.",
     icon: Compass,
+    href: "/publications/the-architecture-of-resilience",
   },
   {
     title: "The Unwritten Life",
