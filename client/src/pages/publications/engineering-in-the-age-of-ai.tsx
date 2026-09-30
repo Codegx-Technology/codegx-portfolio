@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { BookOpen, Download, FileText, ShieldCheck } from "lucide-react";
-import { Link } from "wouter";
 import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+
+const fullBookUrl = "https://petersolver.gumroad.com/l/hkklkck";
+const sampleUrl = "https://petersolver.gumroad.com/l/ibmrnv";
 
 const gains = [
   "Design systems that tolerate LLM variability",
@@ -222,25 +224,29 @@ export default function EngineeringInTheAgeOfAI() {
                 <div>
                   <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Access</h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                    $79 — full access. Launch allocation (25%) currently active. A technical sampler is
-                    available on request.
+                    $79 — full access. Launch allocation (25%) currently active. International readers can
+                    pay by card via Gumroad, and a free technical sampler is available.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-                  <Link
-                    href="/contact"
+                  <a
+                    href={fullBookUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-[#c8a951] px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[#d8ba66]"
                   >
-                    <Download className="h-4 w-4" />
-                    Request Access
-                  </Link>
-                  <Link
-                    href="/contact"
+                    <BookOpen className="h-4 w-4" />
+                    Buy Full Book
+                  </a>
+                  <a
+                    href={sampleUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-md border border-[#c8a951]/60 px-5 py-3 text-sm font-semibold text-[#9f7b42] transition-colors hover:bg-[#c8a951]/10 dark:text-[#d6b464]"
                   >
-                    <FileText className="h-4 w-4" />
-                    Request the Technical Sampler
-                  </Link>
+                    <Download className="h-4 w-4" />
+                    Read Free Sample
+                  </a>
                 </div>
               </div>
             </section>
