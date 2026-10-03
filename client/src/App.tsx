@@ -281,6 +281,12 @@ function AppRouter() {
           return <LazyRoute component={AIForYoungThinkers} />;
         }}
       </Route>
+      <Route path="/publications/biblical-african-flourishing">
+        {() => {
+          const BiblicalAfricanFlourishing = React.lazy(() => import("@/pages/publications/biblical-african-flourishing"));
+          return <LazyRoute component={BiblicalAfricanFlourishing} />;
+        }}
+      </Route>
       <Route path="/publications">
         {() => {
           const Publications = React.lazy(() => import("@/pages/publications"));

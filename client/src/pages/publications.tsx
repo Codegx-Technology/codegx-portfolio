@@ -1,11 +1,22 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Compass, GraduationCap, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Compass, GraduationCap, Landmark, ShieldCheck } from "lucide-react";
 import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
 const books = [
+  {
+    title: "Biblical African Flourishing",
+    subtitle: "Dignity, Vocation, and the Institutional Architecture of Intergenerational Shalom",
+    category: "Dignity, Vocation & Institutions",
+    year: "2026",
+    description:
+      "A treatise on human dignity, vocation, and the institutions that turn either into lasting flourishing, reading Genesis, institutional economics, and systems thinking together.",
+    excerpt: "Dignity is given. Flourishing is built.",
+    icon: Landmark,
+    href: "/publications/biblical-african-flourishing",
+  },
   {
     title: "Engineering in the Age of AI",
     subtitle: "The sovereign engineering mandate for the era of autonomous systems",
