@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, BookOpen, Compass, GraduationCap, Landmark, ShieldCheck } from "lucide-react";
 import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const books = [
   {
@@ -69,11 +79,27 @@ const threads = [
   "Learning systems that preserve clarity and ownership",
 ];
 
+const DESKTOP_BOOKS_PER_PAGE = 4;
+const MOBILE_BOOKS_PER_PAGE = 1;
+
 export default function Publications() {
+  const isMobile = useIsMobile();
+  const [currentPage, setCurrentPage] = useState(1);
+
   const itemVariants = {
     hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const booksPerPage = isMobile ? MOBILE_BOOKS_PER_PAGE : DESKTOP_BOOKS_PER_PAGE;
+  const totalPages = Math.max(1, Math.ceil(books.length / booksPerPage));
+  const firstBookIndex = (currentPage - 1) * booksPerPage;
+  const visibleBooks = books.slice(firstBookIndex, firstBookIndex + booksPerPage);
+
+  // The page size changes with the viewport, so keep the current page inside the new range.
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(page, totalPages));
+  }, [totalPages]);
 
   return (
     <>
@@ -107,7 +133,7 @@ export default function Publications() {
 
         <section className="px-4 py-6 sm:px-6 md:px-0 md:py-10">
           <div className="grid gap-4 md:grid-cols-2">
-            {books.map((book, index) => {
+            {visibleBooks.map((book, index) => {
               const Icon = book.icon;
               return (
                 <motion.article
@@ -154,11 +180,46 @@ export default function Publications() {
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   )}
-                </motion.article>
-              );
-            })}
-          </div>
-        </section>
+                 </motion.article>
+               );
+             })}
+           </div>
+
+           {totalPages > 1 && (
+             <Pagination className="mt-8">
+               <PaginationContent className="flex-wrap">
+                 {currentPage > 1 && (
+                   <PaginationItem>
+                     <PaginationPrevious
+                       onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                       className="cursor-pointer [&>span]:hidden sm:[&>span]:inline"
+                     />
+                   </PaginationItem>
+                 )}
+                 {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                   <PaginationItem key={page}>
+                     <PaginationLink
+                       isActive={page === currentPage}
+                       onClick={() => setCurrentPage(page)}
+                       className="cursor-pointer"
+                     >
+                       {page}
+                     </PaginationLink>
+                   </PaginationItem>
+                 ))}
+                 {currentPage < totalPages && (
+                   <PaginationItem>
+                     <PaginationNext
+                       onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                       className="cursor-pointer [&>span]:hidden sm:[&>span]:inline"
+                     />
+                   </PaginationItem>
+                 )}
+               </PaginationContent>
+             </Pagination>
+           )}
+         </section>
+
 
         <section className="px-4 py-8 sm:px-6 md:px-0 md:py-12">
           <motion.div
