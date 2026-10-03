@@ -5,6 +5,8 @@ import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { IntelligentBackButton } from "@/components/ui/intelligent-back-button";
 
+const fullBookUrl = "https://petersolver.gumroad.com/l/gyakjk";
+
 const explorations = [
   "Why human dignity is grounded in the image of God, and what that does to every imperial claim on it",
   "The difference between blessing and guaranteed prosperity",
@@ -260,19 +262,21 @@ export default function BiblicalAfricanFlourishing() {
                 <div>
                   <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Access</h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                    The PDF edition is available direct. Enquiries about the edition, institutional reading
-                    copies, or review access can be sent to Codegx Technologies.
+                    The PDF edition is available on Gumroad, where international readers can pay by card and
+                    download instantly. Institutional reading and review copies can be requested directly from
+                    Codegx Technologies.
                   </p>
                 </div>
-                {/* Purchase links for this title are pending; the contact route is the interim access path. */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
-                  <Link
-                    href="/contact"
+                  <a
+                    href={fullBookUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-md bg-[#c8a951] px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[#d8ba66]"
                   >
                     <BookOpen className="h-4 w-4" />
-                    Request Access
-                  </Link>
+                    Buy Full Book
+                  </a>
                   <Link
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-md border border-[#c8a951]/60 px-5 py-3 text-sm font-semibold text-[#9f7b42] transition-colors hover:bg-[#c8a951]/10 dark:text-[#d6b464]"
