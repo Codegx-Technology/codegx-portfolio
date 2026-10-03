@@ -263,8 +263,7 @@ export default function BiblicalAfricanFlourishing() {
                   <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Access</h2>
                   <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                     The PDF edition is available on Gumroad, where international readers can pay by card and
-                    download instantly. Institutional reading and review copies can be requested directly from
-                    Codegx Technologies.
+                    download instantly.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
