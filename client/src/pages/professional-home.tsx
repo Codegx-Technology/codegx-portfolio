@@ -191,7 +191,7 @@ export default function ProfessionalHome() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold tracking-tight leading-tight text-white text-left max-w-3xl"
+                  className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-slate-950 dark:text-white text-left max-w-3xl"
                 >
                   Engineering Judgement for Systems That{" "}
                   <span className="text-[#c8a951] dark:text-[#9f7b42]">Cannot Fail Quietly</span>

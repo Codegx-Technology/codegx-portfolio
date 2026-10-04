@@ -244,7 +244,7 @@ export default function QuoteBuilder() {
                 Custom Solutions
               </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-white">
                 Interactive <span className="text-[#c8a951] dark:text-[#9f7b42]">Quote Builder</span>
               </h1>
 

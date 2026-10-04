@@ -92,7 +92,7 @@ export default function AboutWakala() {
         <div className="relative z-10 text-center">
           <PageHeader
             title={
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
                 We Build Automation With{" "}
                 <span className="text-primary">
                   Precision and Control

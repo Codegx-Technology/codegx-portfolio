@@ -82,7 +82,7 @@ export default function Services() {
               Governed Delivery Catalogue
             </motion.div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
               Software, Workflow, and Intelligence Systems Built for <span className="text-[#c8a951] dark:text-[#9f7b42]">Operational Control</span>
             </h1>
 

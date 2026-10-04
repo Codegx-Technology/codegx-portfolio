@@ -81,7 +81,7 @@ export default function Pricing() {
               Transparent Pricing
             </motion.div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-2 md:mb-3 text-slate-950 dark:text-white">
               Flexible <span className="text-[#c8a951] dark:text-[#9f7b42]">Pricing</span> for Startups and Scaleups
             </h1>
 
