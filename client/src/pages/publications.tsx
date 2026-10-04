@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Compass, GraduationCap, Landmark, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Compass, GraduationCap, Landmark, Scale, ShieldCheck } from "lucide-react";
 import { Head } from "@/components/head";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import {
@@ -59,6 +59,17 @@ const books = [
     excerpt: "A way of standing inside difficulty without being destroyed by it.",
     icon: Compass,
     href: "/publications/the-architecture-of-resilience",
+  },
+  {
+    title: "Enterprise AI Governance",
+    subtitle: "Building Responsible AI Systems with NIST AI RMF, ISO/IEC 42001, ISO/IEC 23894, and the EU AI Act",
+    category: "AI Governance & Assurance",
+    year: "2026",
+    description:
+      "A governance reference for probabilistic systems, reading NIST AI RMF, ISO/IEC 42001, ISO/IEC 23894, and the EU AI Act against one another, and against the engineering decisions that create the obligation.",
+    excerpt: "Determinism can be certified. Probability has to be governed.",
+    icon: Scale,
+    href: "/publications/enterprise-ai-governance",
   },
   {
     title: "The Unwritten Life",
