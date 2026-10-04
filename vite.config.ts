@@ -11,8 +11,10 @@ const __dirname = dirname(__filename);
 
 export default defineConfig(({ mode }: ConfigEnv) => {
   // Load env file based on `mode` in the current working directory.
-  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
-  const env = loadEnv(mode, process.cwd(), '');
+  // The third parameter is the prefix filter and must NOT be ''. Passing '' loads every
+  // build-time variable, and the define below then inlines all of them into the public
+  // bundle -- which is how a Resend API key and a Vercel OIDC token were being shipped.
+  const env = loadEnv(mode, process.cwd(), 'VITE_');
 
   const basePath = process.env.NODE_ENV === 'production' && process.env.VITE_BASE_PATH ? process.env.VITE_BASE_PATH : "/";
 
@@ -86,9 +88,17 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     // Optimize CSS
     cssMinify: mode === 'production',
   },
-  // Define environment variables
+  // Define environment variables.
+  // Allowlist only: the VITE_-prefixed variables (public by convention), plus NODE_ENV
+  // and the SITE_URL alias the client reads. Never spread the raw environment here --
+  // client/src/utils/env.ts is a server schema but is imported by client code, so a
+  // blanket define pulls server secrets straight into the browser bundle.
   define: {
-    'process.env': env,
+    'process.env': JSON.stringify({
+      NODE_ENV: mode === 'production' ? 'production' : 'development',
+      SITE_URL: env.VITE_SITE_URL ?? '',
+      ...env,
+    }),
   },
   // Optimize dependencies
   optimizeDeps: {
