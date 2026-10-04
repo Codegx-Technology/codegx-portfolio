@@ -205,7 +205,7 @@ export function PageHeader({
       }}
     >
       {typeof title === "string" ? (
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight mb-4">
           {title}
         </h1>
       ) : (
