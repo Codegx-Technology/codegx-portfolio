@@ -63,24 +63,24 @@ export default function AIForYoungThinkers() {
               transition={{ duration: 0.45, delay: 0.08 }}
               className="space-y-7"
             >
-              <div className="inline-flex rounded-full border border-[#c8a951]/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#c8a951]">
+              <div className="inline-flex rounded-full border border-[#c8a951]/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[#9f7b42] dark:text-[#d6b464]">
                 Education & AI Literacy
               </div>
 
               <div>
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <h1 className="text-3xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
                   AI for Young Thinkers
                 </h1>
-                <p className="mt-4 text-xl leading-relaxed text-slate-200">
+                <p className="mt-4 text-xl leading-relaxed text-slate-600 dark:text-slate-300">
                   A Journey Into the World of Thinking Machines
                 </p>
               </div>
 
               <section className="rounded-lg border border-border/70 bg-background/40 p-5 md:p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#c8a951]">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9f7b42] dark:text-[#d6b464]">
                   Position
                 </p>
-                <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-200">
+                <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                   <p>Most books about AI teach children how to use technology.</p>
                   <p>This book teaches them how to think about it.</p>
                 </div>
@@ -91,8 +91,8 @@ export default function AIForYoungThinkers() {
           <div className="mt-10 space-y-10">
             <div className="divide-y divide-border/80 border-y border-border/80">
               <section className="grid gap-8 py-8 lg:grid-cols-[0.85fr_1.15fr]">
-                <h2 className="text-2xl font-bold text-white">What This Is</h2>
-                <div className="space-y-4 text-lg leading-relaxed text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">What This Is</h2>
+                <div className="space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                   <p>A story-led book for children aged 8 to 14, set in a Kenyan village school.</p>
                   <p>Not a coding course. Not a tech tutorial.</p>
                   <p>A thinking curriculum built around story, conversation, and honest questions.</p>
@@ -100,8 +100,8 @@ export default function AIForYoungThinkers() {
               </section>
 
               <section className="grid gap-8 py-8 lg:grid-cols-[0.85fr_1.15fr]">
-                <h2 className="text-2xl font-bold text-white">The Story</h2>
-                <div className="space-y-4 text-lg leading-relaxed text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">The Story</h2>
+                <div className="space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                   <p>
                     Amina and Brian sit in their classroom with Teacher Njeri and begin to understand
                     what a thinking machine actually is, how it learns, how it gets things wrong, and
@@ -114,11 +114,11 @@ export default function AIForYoungThinkers() {
 
             <section className="grid gap-8 py-8 lg:grid-cols-3">
               <div className="lg:col-span-1">
-                <h2 className="text-2xl font-bold text-white">What Young Readers Explore</h2>
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">What Young Readers Explore</h2>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
                 {explorationPoints.map((point) => (
-                  <div key={point} className="border-l border-[#c8a951]/50 pl-5 text-slate-300">
+                  <div key={point} className="border-l border-[#c8a951]/50 pl-5 text-slate-700 dark:text-slate-300">
                     {point}
                   </div>
                 ))}
@@ -127,8 +127,8 @@ export default function AIForYoungThinkers() {
 
             <div className="divide-y divide-border/80 border-y border-border/80">
               <section className="grid gap-8 py-8 lg:grid-cols-[0.85fr_1.15fr]">
-                <h2 className="text-2xl font-bold text-white">How It Works</h2>
-                <div className="space-y-4 text-lg leading-relaxed text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">How It Works</h2>
+                <div className="space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                   <p>Each chapter follows the same structure.</p>
                   <p>
                     A story. A big idea. An activity that needs no devices or special equipment. And
@@ -142,8 +142,8 @@ export default function AIForYoungThinkers() {
               </section>
 
               <section className="grid gap-8 py-8 lg:grid-cols-[0.85fr_1.15fr]">
-                <h2 className="text-2xl font-bold text-white">The Goal</h2>
-                <div className="space-y-4 text-lg leading-relaxed text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">The Goal</h2>
+                <div className="space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                   <p>Not to raise children who merely consume technology.</p>
                   <p>To raise children capable of guiding it wisely.</p>
                 </div>
@@ -152,8 +152,8 @@ export default function AIForYoungThinkers() {
 
             <section className="grid gap-8 py-8 lg:grid-cols-2">
               <div className="border-l border-[#c8a951]/50 pl-5">
-                <h2 className="text-2xl font-bold text-white">Who This Is For</h2>
-                <ul className="mt-5 space-y-3 text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Who This Is For</h2>
+                <ul className="mt-5 space-y-3 text-slate-700 dark:text-slate-300">
                   {audiences.map((audience) => (
                     <li key={audience}>{audience}</li>
                   ))}
@@ -161,8 +161,8 @@ export default function AIForYoungThinkers() {
               </div>
 
               <div className="border-l border-border pl-5">
-                <h2 className="text-2xl font-bold text-white">What You Get</h2>
-                <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-300">
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">What You Get</h2>
+                <div className="mt-5 space-y-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
                   <p>High-quality PDF, ready to read on any device.</p>
                   <p>Paperback edition available separately on Amazon.</p>
                 </div>
@@ -172,10 +172,10 @@ export default function AIForYoungThinkers() {
             <section className="rounded-lg border border-[#c8a951]/30 bg-[#c8a951]/10 p-5 md:p-6">
               <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#c8a951]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9f7b42] dark:text-[#d6b464]">
                     Reading Options
                   </p>
-                  <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-300">
+                  <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-700 dark:text-slate-300">
                     International readers can pay by card via Gumroad. Kenyan and East African
                     readers can use M-Pesa via Selar. A free sample chapter is available on Gumroad,
                     and the paperback is available on Amazon.
@@ -195,7 +195,7 @@ export default function AIForYoungThinkers() {
                     href={sampleUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md border border-[#c8a951]/50 px-5 py-3 font-semibold text-[#c8a951] transition hover:bg-[#c8a951]/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-[#c8a951]/50 px-5 py-3 font-semibold text-[#9f7b42] dark:text-[#d6b464] transition hover:bg-[#c8a951]/10"
                   >
                     <Download className="h-4 w-4" />
                     Read Free Sample
@@ -204,7 +204,7 @@ export default function AIForYoungThinkers() {
                     href={selarUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/40 px-5 py-3 font-semibold text-white transition hover:bg-background/70"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/40 px-5 py-3 font-semibold text-slate-950 dark:text-white transition hover:bg-background/70"
                   >
                     <CreditCard className="h-4 w-4" />
                     Pay With M-Pesa
@@ -213,7 +213,7 @@ export default function AIForYoungThinkers() {
                     href={paperbackUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/40 px-5 py-3 font-semibold text-white transition hover:bg-background/70"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/40 px-5 py-3 font-semibold text-slate-950 dark:text-white transition hover:bg-background/70"
                   >
                     <ShoppingBag className="h-4 w-4" />
                     Paperback on Amazon
@@ -223,8 +223,8 @@ export default function AIForYoungThinkers() {
             </section>
 
             <section className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              <p>Written by Peter Oduor Oluoch, Software Engineer, AI Architect, and Author.</p>
-              <p className="mt-4 text-base italic text-slate-300">
+              <p>Written by Peter Oduor Oluoch, Software Engineer, AI Solutions Architect, and Author.</p>
+              <p className="mt-4 text-base italic text-slate-700 dark:text-slate-300">
                 "The machine has the gears, but you have the soul."
               </p>
             </section>

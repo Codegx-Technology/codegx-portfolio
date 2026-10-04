@@ -133,7 +133,7 @@ export default function EngineeringInTheAgeOfAI() {
               <section className="grid gap-8 py-8 lg:grid-cols-3">
                 <div className="lg:col-span-1">
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9f7b42] dark:text-[#d6b464]">
-                    What You Will Gain
+                    What You Will Explore
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
@@ -212,7 +212,7 @@ export default function EngineeringInTheAgeOfAI() {
               </section>
 
               <section className="grid gap-8 py-8 lg:grid-cols-[0.85fr_1.15fr]">
-                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">Core Position</h2>
+                <h2 className="text-2xl font-bold text-slate-950 dark:text-white">The Goal</h2>
                 <blockquote className="border-l-2 border-[#c8a951] pl-4 text-base font-medium text-slate-800 dark:text-slate-100">
                   "This is not about using AI. It is about engineering systems that use AI."
                 </blockquote>

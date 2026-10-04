@@ -227,7 +227,7 @@ export default function TheUnwrittenLife() {
             </section>
 
             <section className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              <p>Written by Peter Oduor Oluoch, Software Engineer, AI Architect, and Author.</p>
+              <p>Written by Peter Oduor Oluoch, Software Engineer, AI Solutions Architect, and Author.</p>
             </section>
           </motion.div>
         </section>
