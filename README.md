@@ -19,6 +19,19 @@ To provide a premier digital experience with zero "AI-fluff," pure English gramm
 - `server/`: Express backend API and automation logic
 - `shared/`: Shared TypeScript types and database schemas
 - `docs/`: Architectural assessments, transformation advisories, and roadmaps
+- **[`docs/ROADMAP.md`](docs/ROADMAP.md)**: platform defect register, the order fixes land in, and the mandatory change gate
+
+## Roadmap & Change Gate
+
+All pending platform work lives in **[`docs/ROADMAP.md`](docs/ROADMAP.md)** — the defect
+register (`D-01`…`D-10`), the fix sequence (`R-0`…`R-7`), and the evidence each item must
+demonstrate before it closes.
+
+**Before you open a PR: never commit or push to `main` until the change has been verified
+as _effected_ and checked for _collateral damage_ to unrelated features, files and code.**
+Push-then-verify is forbidden. The full gate, the evidence a PR must carry, and the
+governance rules it binds to (`GP-VER-001`…`GP-VER-004`, `governance/gp/principles/`) are
+in §2 of the roadmap. Read it before your first change.
 
 ## Getting Started
 
