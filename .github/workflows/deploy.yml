@@ -43,7 +43,11 @@ jobs:
         run: cd client && npx tsc --noEmit
 
       - name: Build project
-        run: cd client && npm run build
+        # Build from the repo root: the only tailwind.config.ts lives there and
+        # its content globs are written relative to root. Building from client/
+        # leaves Tailwind with an empty content list, so utilities such as
+        # border-border are never generated and the CSS build fails.
+        run: npm run build
         env:
           NODE_ENV: production
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
