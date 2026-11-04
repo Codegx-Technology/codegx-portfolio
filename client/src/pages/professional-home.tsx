@@ -48,20 +48,21 @@ const identityArtifacts: IdentityArtifact[] = [
   },
   {
     name: "Teaching practice",
-    detail: "Computational thinking for young people in Kibera.",
+    detail: "Computational thinking for young people, Nairobi, Kenya.",
     status: "Ongoing",
   },
   {
-    name: "GEIA research programme",
+    name: "Research programme",
     detail:
-      "Governed AI-assisted engineering. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
+      "General Engineering Intelligence Architecture. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
     status: "Active",
+    href: "/research",
   },
   {
-    name: "NDII platform",
+    name: "Reference platform",
     detail:
-      "Natural Distributed Intelligence Infrastructure. The experimental platform in which GEIA's architectural claims are implemented and evaluated.",
-    status: "Reference implementation",
+      "Natural Distributed Intelligence Infrastructure. The experimental platform in which the architectural claims are implemented and evaluated.",
+    status: "Experimental",
   },
 ];
 
@@ -406,7 +407,7 @@ export default function ProfessionalHome() {
                   >
                     <svg
                       className="absolute inset-0 h-full w-full"
-                      viewBox="0 0 420 420"
+                      viewBox="0 0 420 400"
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       aria-label="Governance core diagram: inputs and systems connect through a policy, observability and security control layer, with audit beneath"
@@ -416,7 +417,7 @@ export default function ProfessionalHome() {
                           <path d="M28 0H0V28" fill="none" stroke="rgba(200,169,81,0.10)" strokeWidth="1" />
                         </pattern>
                       </defs>
-                      <rect width="420" height="420" fill="url(#identity-grid)" />
+                      <rect width="420" height="400" fill="url(#identity-grid)" />
 
                       <g fill="none" stroke="rgba(200,169,81,0.55)" strokeWidth="1.5">
                         <path d="M110 200h8" />
@@ -447,12 +448,11 @@ export default function ProfessionalHome() {
                       <text x="210" y="222" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">observability</text>
                       <text x="210" y="240" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">security</text>
                     </svg>
-                    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                      <div className="inline-flex rounded-full border border-[#c8a951]/30 bg-[#2c1a22]/70 px-4 py-2 text-sm font-medium text-[#f0dfaa] shadow-lg backdrop-blur-sm">
-                        Systems Engineering Practice
-                      </div>
-                    </div>
                   </div>
+
+                  <p className="mt-3 px-1 text-xs text-slate-500 dark:text-slate-400">
+                    Control layer between inputs and systems, with audit beneath.
+                  </p>
                 </div>
 
               </motion.div>

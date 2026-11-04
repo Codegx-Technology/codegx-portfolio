@@ -274,6 +274,12 @@ function AppRouter() {
           return <LazyRoute component={Publications} />;
         }}
         </Route>
+        <Route path="/research">
+          {() => {
+            const Research = React.lazy(() => import("@/pages/research"));
+            return <LazyRoute component={Research} />;
+          }}
+        </Route>
         <Route path="/privacy">
           {() => {
             const Privacy = React.lazy(() => import("@/pages/privacy"));
