@@ -171,12 +171,6 @@ function AppRouter() {
             return <LazyRoute component={SimpleThankYou2} />;
           }}
         </Route>
-        <Route path="/ui-kit">
-          {() => {
-            const UIKit = React.lazy(() => import("@/pages/ui-kit"));
-            return <LazyRoute component={UIKit} />;
-          }}
-        </Route>
         <Route path="/augment-demo">
           {() => {
             const AugmentDemo = React.lazy(() => import("@/pages/augment-demo"));
@@ -229,12 +223,6 @@ function AppRouter() {
           {() => {
             const FooterDemo = React.lazy(() => import("@/pages/footer-demo"));
             return <LazyRoute component={FooterDemo} />;
-          }}
-        </Route>
-        <Route path="/modern-home">
-          {() => {
-            const ModernHome = React.lazy(() => import("@/pages/modern-home"));
-            return <LazyRoute component={ModernHome} />;
           }}
         </Route>
         <Route path="/professional-home">
