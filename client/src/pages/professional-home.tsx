@@ -449,11 +449,11 @@ export default function ProfessionalHome() {
                       <text x="210" y="240" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">security</text>
                     </svg>
                   </div>
-
-                  <p className="mt-3 px-1 text-xs text-slate-500 dark:text-slate-400">
-                    Control layer between inputs and systems, with audit beneath.
-                  </p>
                 </div>
+
+                <p className="mt-8 px-1 text-xs text-slate-500 dark:text-slate-400">
+                  Control layer between inputs and systems, with audit beneath.
+                </p>
 
               </motion.div>
 
