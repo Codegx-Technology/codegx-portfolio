@@ -189,22 +189,10 @@ function AppRouter() {
             return <LazyRoute component={ExecutiveNavbarDemo} />;
           }}
         </Route>
-        <Route path="/enterprise-components-demo">
-          {() => {
-            const EnterpriseComponentsDemo = React.lazy(() => import("@/pages/enterprise-components-demo"));
-            return <LazyRoute component={EnterpriseComponentsDemo} />;
-          }}
-        </Route>
         <Route path="/enhanced-navbar-demo">
           {() => {
             const EnhancedNavbarDemo = React.lazy(() => import("@/pages/enhanced-navbar-demo"));
             return <LazyRoute component={EnhancedNavbarDemo} />;
-          }}
-        </Route>
-        <Route path="/enhanced-home">
-          {() => {
-            const EnhancedHome = React.lazy(() => import("@/pages/enhanced-home"));
-            return <LazyRoute component={EnhancedHome} />;
           }}
         </Route>
         <Route path="/enhanced-agency">
