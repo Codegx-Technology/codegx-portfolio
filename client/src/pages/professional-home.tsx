@@ -214,7 +214,7 @@ export default function ProfessionalHome() {
                 >
                   <div className="rounded-xl border border-[#c8a951]/20 bg-[#111827] shadow-xl overflow-hidden">
                     <img
-                      src="/assets/brand/codegx-full-lockup.webp"
+                      src="/assets/brand/codegx-lockup-2026.webp"
                       alt="Codegx Technologies official logo"
                       className="w-full h-auto object-contain"
                     />
@@ -279,7 +279,7 @@ export default function ProfessionalHome() {
                   <div className="absolute -left-3 -top-3 right-9 bottom-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
                   <div className="relative rounded-xl overflow-hidden shadow-2xl bg-[#111827]">
                     <img
-                      src="/assets/brand/codegx-full-lockup.webp"
+                      src="/assets/brand/codegx-lockup-2026.webp"
                       alt="Codegx Technologies official logo"
                       className="w-full h-auto object-contain rounded-xl"
                     />
