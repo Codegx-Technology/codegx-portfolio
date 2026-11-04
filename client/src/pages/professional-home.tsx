@@ -394,7 +394,7 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="lg:col-span-5 lg:pt-4"
+                className="order-2 lg:order-1 lg:col-span-5 lg:pt-4"
               >
                 <div className="relative">
                   {/* Background layers for depth */}
@@ -402,7 +402,7 @@ export default function ProfessionalHome() {
                   <div className="absolute -right-3 -bottom-3 left-9 top-9 border-2 border-[#c8a951]/10 dark:border-[#9f7b42]/10 rounded-xl"></div>
 
                   <div
-                    className="relative min-h-[340px] overflow-hidden rounded-xl border border-[#c8a951]/20 bg-[#101014] shadow-2xl md:min-h-[420px]"
+                    className="relative min-h-[240px] overflow-hidden rounded-xl border border-[#c8a951]/20 bg-[#101014] shadow-2xl md:min-h-[420px]"
                     aria-label="Enterprise systems architecture visual"
                   >
                     <svg
@@ -462,14 +462,14 @@ export default function ProfessionalHome() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="lg:col-span-7"
+                className="order-1 lg:order-2 lg:col-span-7"
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
                   <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
                     {identityArtifacts.map((item) => (
-                      <div key={item.name} className="py-4 first:pt-0 last:pb-0">
-                        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                          <h3 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">
+                      <div key={item.name} className="py-3.5 first:pt-0 last:pb-0 md:py-4">
+                        <div className="flex flex-col items-start gap-y-1 md:flex-row md:flex-wrap md:items-baseline md:justify-between md:gap-x-4">
+                          <h3 className="order-2 text-sm font-semibold text-[#2c1a22] dark:text-white md:order-1 md:text-base">
                             {item.external ? (
                               <a
                                 href={item.href}
@@ -490,11 +490,11 @@ export default function ProfessionalHome() {
                               item.name
                             )}
                           </h3>
-                          <span className="text-[11px] uppercase tracking-[0.14em] text-[#c8a951] dark:text-[#9f7b42]">
+                          <span className="order-1 text-[11px] uppercase tracking-[0.14em] text-[#c8a951] dark:text-[#9f7b42] md:order-2">
                             {item.status}
                           </span>
                         </div>
-                        <p className="mt-1 text-xs md:text-sm text-gray-700 dark:text-gray-300">{item.detail}</p>
+                        <p className="mt-1 text-[13px] text-gray-700 dark:text-gray-300 md:text-sm">{item.detail}</p>
                       </div>
                     ))}
                   </div>
