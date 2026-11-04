@@ -136,7 +136,7 @@ export default function ProfessionalHome() {
   return (
     <>
       <Head
-        title="Codegx Technologies | Dependable Software & Governed Systems"
+        title="Codegx Technologies | Governed Systems Engineering"
         description="Codegx Technologies builds dependable software platforms, governed workflow systems, and operational intelligence for organizations that require integrity, security, and production discipline."
       />
 
