@@ -52,9 +52,10 @@ const identityArtifacts: IdentityArtifact[] = [
     status: "Ongoing",
   },
   {
-    name: "Formation",
-    detail: "MSc Artificial Intelligence, University of Colorado Boulder.",
-    status: "In progress",
+    name: "GEIA research programme",
+    detail:
+      "Governed AI-assisted engineering. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
+    status: "Ongoing",
   },
 ];
 
