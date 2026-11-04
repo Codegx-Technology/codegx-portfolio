@@ -360,12 +360,49 @@ export default function ProfessionalHome() {
                     className="relative min-h-[340px] overflow-hidden rounded-xl border border-[#c8a951]/20 bg-[#101014] shadow-2xl md:min-h-[420px]"
                     aria-label="Enterprise systems architecture visual"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1769147339214-076740872485?auto=format&fit=crop&w=1200&h=800&q=85"
-                      alt="Precision engineering blueprint workspace"
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2c1a22]/78 via-[#2c1a22]/45 to-black/55" />
+                    <svg
+                      className="absolute inset-0 h-full w-full"
+                      viewBox="0 0 420 420"
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      aria-label="Governance core diagram: inputs and systems connect through a policy, observability and security control layer, with audit beneath"
+                    >
+                      <defs>
+                        <pattern id="identity-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                          <path d="M28 0H0V28" fill="none" stroke="rgba(200,169,81,0.10)" strokeWidth="1" />
+                        </pattern>
+                      </defs>
+                      <rect width="420" height="420" fill="url(#identity-grid)" />
+
+                      <g fill="none" stroke="rgba(200,169,81,0.55)" strokeWidth="1.5">
+                        <path d="M110 200h8" />
+                        <path d="M302 200h8" />
+                        <path d="M210 96v44" />
+                        <path d="M210 260v44" />
+                      </g>
+
+                      <rect x="140" y="36" width="140" height="60" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
+                      <circle cx="162" cy="66" r="4" fill="#c8a951" />
+                      <text x="176" y="71" fill="rgba(255,255,255,0.86)" fontSize="13" fontWeight="600">Control</text>
+
+                      <rect x="10" y="170" width="100" height="60" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
+                      <circle cx="30" cy="200" r="4" fill="#c8a951" />
+                      <text x="44" y="205" fill="rgba(255,255,255,0.86)" fontSize="13" fontWeight="600">Inputs</text>
+
+                      <rect x="310" y="170" width="100" height="60" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
+                      <circle cx="330" cy="200" r="4" fill="#c8a951" />
+                      <text x="344" y="205" fill="rgba(255,255,255,0.86)" fontSize="13" fontWeight="600">Systems</text>
+
+                      <rect x="140" y="304" width="140" height="60" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" />
+                      <circle cx="162" cy="334" r="4" fill="#c8a951" />
+                      <text x="176" y="339" fill="rgba(255,255,255,0.86)" fontSize="13" fontWeight="600">Audit</text>
+
+                      <rect x="118" y="140" width="184" height="120" rx="14" fill="rgba(200,169,81,0.14)" stroke="rgba(200,169,81,0.55)" strokeWidth="1.5" />
+                      <text x="210" y="176" fill="#f8f3df" fontSize="15" fontWeight="700" textAnchor="middle">Governance core</text>
+                      <text x="210" y="204" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">policy</text>
+                      <text x="210" y="222" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">observability</text>
+                      <text x="210" y="240" fill="rgba(248,243,223,0.70)" fontSize="11" textAnchor="middle">security</text>
+                    </svg>
                     <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                       <div className="inline-flex rounded-full border border-[#c8a951]/30 bg-[#2c1a22]/70 px-4 py-2 text-sm font-medium text-[#f0dfaa] shadow-lg backdrop-blur-sm">
                         Systems Engineering Practice
