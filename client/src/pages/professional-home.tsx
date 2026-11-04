@@ -55,10 +55,15 @@ const identityArtifacts: IdentityArtifact[] = [
     name: "GEIA research programme",
     detail:
       "Governed AI-assisted engineering. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
-    status: "Ongoing",
+    status: "Active",
+  },
+  {
+    name: "NDII platform",
+    detail:
+      "Natural Distributed Intelligence Infrastructure. The experimental platform in which GEIA's architectural claims are implemented and evaluated.",
+    status: "Reference implementation",
   },
 ];
-
 
 export default function ProfessionalHome() {
   // Refs for scroll animations
@@ -494,9 +499,6 @@ export default function ProfessionalHome() {
                     ))}
                   </div>
 
-                  <p className="mt-6 border-t border-gray-200 dark:border-[#3d2128] pt-5 text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                    Everything here can be opened, cloned, installed, or read. Anything that cannot be is not claimed.
-                  </p>
                 </div>
               </motion.div>
             </div>
