@@ -400,7 +400,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-2xl md:text-3xl font-bold mb-5 text-[#2c1a22] dark:text-white"
               >
-                One named <span className="text-[#c8a951] dark:text-[#9f7b42]">owner</span>
+                Verifiable by <span className="text-[#c8a951] dark:text-[#9f7b42]">default</span>
               </motion.h2>
 
               <motion.p
@@ -410,7 +410,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
               >
-                Codegx Technologies is the engineering practice of Peter Oduor Oluoch. The person who designs the control model is the person who builds and operates it. There is no layer between you and the engineer accountable for the system.
+                Codegx Technologies designs, builds and operates governed systems for organizations that cannot afford silent failure. The practice is based in Nairobi, Kenya and is owned and operated by Peter Oduor Oluoch.
               </motion.p>
             </div>
 
