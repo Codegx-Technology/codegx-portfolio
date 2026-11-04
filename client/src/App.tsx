@@ -17,7 +17,6 @@ import NotFound from "@/pages/not-found";
 
 // Lazy load all other pages for better performance
 const CodegxLanding = lazy(() => import("@/pages/codegx"));
-const Home = lazy(() => import("@/pages/index"));
 // Portfolio removed - available in 'portfolio' branch
 const AgencyPage = lazy(() => import("@/pages/agency"));
 const CaseStudies = lazy(() => import("@/pages/case-studies"));
