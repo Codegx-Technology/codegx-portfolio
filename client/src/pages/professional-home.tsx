@@ -184,7 +184,7 @@ export default function ProfessionalHome() {
                   className="inline-flex max-w-full items-center px-3 sm:px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-[11px] sm:text-xs md:text-sm font-medium mb-1 md:mb-2 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
                 >
                   <i className="fas fa-shield-alt mr-2 shrink-0"></i>
-                  <span className="truncate">Dependable Software & Governed Systems</span>
+                  <span className="truncate">Governed systems engineering</span>
                 </motion.div>
 
                 <motion.h1
@@ -203,16 +203,7 @@ export default function ProfessionalHome() {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="text-sm md:text-base lg:text-sm text-slate-300 max-w-2xl leading-relaxed"
                 >
-                  Building Intelligent Systems. Powering the Future. We construct dependable software platforms for organizations where system integrity, security, and operational permanence are not optional extras.
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.55 }}
-                  className="text-sm md:text-base lg:text-sm text-[#c8a951] dark:text-[#9f7b42] max-w-2xl font-medium leading-relaxed"
-                >
-                  Deterministic where it must be. Adaptive where it can be.
+                  We build systems where every decision has a named owner, a visible control path, and an audit trail that survives scrutiny. Deterministic where the stakes demand it. Probabilistic only where it can be governed.
                 </motion.p>
 
                 <motion.div
@@ -249,7 +240,7 @@ export default function ProfessionalHome() {
                     variant="outline"
                     className="min-h-11 border-[#c8a951] text-[#c8a951] hover:bg-[#c8a951]/10 dark:border-[#9f7b42] dark:text-[#9f7b42] dark:hover:bg-[#9f7b42]/10 text-sm rounded-full px-6 md:px-8 w-full sm:w-auto"
                   >
-                    <Link href="/services">Our Services</Link>
+                    <Link href="/publications/enterprise-ai-governance">Read the governance position</Link>
                   </Button>
                 </motion.div>
 
