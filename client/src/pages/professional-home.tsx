@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Head } from "@/components/head";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { CurrentProjects } from "@/components/Landing/CurrentProjects";
 import { CTASection } from "@/components/layouts/CTASection";
 import { AIMLIcon, CustomSoftwareIcon } from "@/components/icons/CustomSVGIcons";
@@ -185,6 +186,11 @@ export default function ProfessionalHome() {
       type: "Business Intelligence",
     },
   ];
+
+  // Identity list: collapsed to group headings on phones, where seven rows
+  // otherwise take a full screen before the diagram is reached.
+  const isMobile = useIsMobile();
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -485,15 +491,50 @@ export default function ProfessionalHome() {
                 className="order-1 lg:order-2 lg:col-span-7"
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  {identityGroups.map((group) => (
-                    <div
-                      key={group.label}
-                      className="mt-7 border-t border-gray-200 pt-5 first:mt-0 first:border-t-0 first:pt-0 dark:border-[#47303a]"
-                    >
-                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6a2f] dark:text-[#d4b56a]">
-                        {group.label}
-                      </h4>
-                      <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
+                  {identityGroups.map((group, groupIndex) => {
+                    const panelId = `identity-group-${groupIndex}`;
+                    const isOpen = !isMobile || openGroup === group.label;
+                    return (
+                      <div
+                        key={group.label}
+                        className="mt-7 border-t border-gray-200 pt-5 first:mt-0 first:border-t-0 first:pt-0 dark:border-[#47303a]"
+                      >
+                        {isMobile ? (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenGroup(openGroup === group.label ? null : group.label)
+                            }
+                            aria-expanded={openGroup === group.label}
+                            aria-controls={panelId}
+                            className="flex min-h-11 w-full items-center justify-between gap-3 text-left"
+                          >
+                            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6a2f] dark:text-[#d4b56a]">
+                              {group.label}
+                            </span>
+                            <span className="flex shrink-0 items-center gap-2">
+                              <span className="text-[11px] text-gray-500 dark:text-gray-400">
+                                {group.items.length}
+                              </span>
+                              <i
+                                className={`fas fa-chevron-down text-[10px] text-[#8a6a2f] transition-transform dark:text-[#d4b56a] ${
+                                  isOpen ? "rotate-180" : ""
+                                }`}
+                                aria-hidden="true"
+                              />
+                            </span>
+                          </button>
+                        ) : (
+                          <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6a2f] dark:text-[#d4b56a]">
+                            {group.label}
+                          </h4>
+                        )}
+                        <div
+                          id={panelId}
+                          className={`${isOpen ? "" : "hidden "}divide-y divide-gray-200 dark:divide-[#3d2128]${
+                            isMobile ? " mt-2" : ""
+                          }`}
+                        >
                         {group.items.map((item) => (
                           <div key={item.name} className="py-3 first:pt-0 last:pb-0 md:py-3.5">
                             <h3 className="text-sm font-semibold text-[#2c1a22] dark:text-white md:text-base">
@@ -524,10 +565,11 @@ export default function ProfessionalHome() {
                               {item.detail}
                             </p>
                           </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
 
                 </div>
               </motion.div>
