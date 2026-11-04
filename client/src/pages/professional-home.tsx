@@ -7,19 +7,57 @@ import { Head } from "@/components/head";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CurrentProjects } from "@/components/Landing/CurrentProjects";
 import { CTASection } from "@/components/layouts/CTASection";
-import {
-  InnovationDNAIcon,
-  EnterpriseSecurityIcon,
-  MeasurableResultsIcon,
-  StrategicPartnershipIcon,
-  AIMLIcon,
-  DigitalTransformationIcon,
-  CustomSoftwareIcon,
-  InnovationValueIcon,
-  CollaborationIcon,
-  AgilityIcon,
-  IntegrityIcon,
-} from "@/components/icons/CustomSVGIcons";
+import { AIMLIcon, CustomSoftwareIcon } from "@/components/icons/CustomSVGIcons";
+
+type IdentityArtifact = {
+  name: string;
+  detail: string;
+  status: string;
+  href?: string;
+  external?: boolean;
+};
+
+const identityArtifacts: IdentityArtifact[] = [
+  {
+    name: "RPEK",
+    detail:
+      "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
+    status: "rpek-lite 1.0.1",
+    href: "https://pypi.org/project/rpek-lite/",
+    external: true,
+  },
+  {
+    name: "Supervisor Bootstrap Protocol",
+    detail:
+      "Governance runtime. Verify, plan and apply against hash-verified managed files and a pinned canonical commit.",
+    status: "v1.3.7",
+    href: "https://github.com/peteroluoch/supervisor-bootstrap-protocol",
+    external: true,
+  },
+  {
+    name: "Enterprise AI Governance",
+    detail: "Maps NIST AI RMF, ISO/IEC 42001, ISO/IEC 23894 and the EU AI Act onto operating controls.",
+    status: "Forthcoming",
+    href: "/publications/enterprise-ai-governance",
+  },
+  {
+    name: "Published titles",
+    detail: "Engineering, governance, and education.",
+    status: "Published",
+    href: "/publications",
+  },
+  {
+    name: "Teaching practice",
+    detail: "Computational thinking for young people in Kibera.",
+    status: "Ongoing",
+  },
+  {
+    name: "Formation",
+    detail: "MSc Artificial Intelligence, University of Colorado Boulder.",
+    status: "In progress",
+  },
+];
+
 
 export default function ProfessionalHome() {
   // Refs for scroll animations
@@ -319,7 +357,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center px-4 py-1.5 bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 rounded-full text-[#c8a951] dark:text-[#9f7b42] text-xs md:text-sm font-medium mb-5 border border-[#c8a951]/20 dark:border-[#9f7b42]/20"
               >
-                Our Identity
+                The practice
               </motion.div>
 
               <motion.h2
@@ -329,7 +367,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-2xl md:text-3xl font-bold mb-5 text-[#2c1a22] dark:text-white"
               >
-                Who We <span className="text-[#c8a951] dark:text-[#9f7b42]">Are</span>
+                One named <span className="text-[#c8a951] dark:text-[#9f7b42]">owner</span>
               </motion.h2>
 
               <motion.p
@@ -339,7 +377,7 @@ export default function ProfessionalHome() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xs md:text-sm text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
               >
-                Codegx Technologies constructs dependable software platforms for organizations that require strict operational governance. The practice unites resilient engineering with practical AI governance to produce systems that are secure, scalable, and maintainable long after launch.
+                Codegx Technologies is the engineering practice of Peter Oduor Oluoch. The person who designs the control model is the person who builds and operates it. There is no layer between you and the engineer accountable for the system.
               </motion.p>
             </div>
 
@@ -411,15 +449,6 @@ export default function ProfessionalHome() {
                   </div>
                 </div>
 
-                {/* Mission statement */}
-                <div className="mt-10 bg-white dark:bg-[#2c1a22] p-5 rounded-xl shadow-lg border border-gray-100 dark:border-[#3d2128] relative">
-                  <div className="absolute top-0 left-8 transform -translate-y-1/2 bg-[#c8a951] dark:bg-[#9f7b42] text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium">
-                    Our Mission
-                  </div>
-                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-4">
-                    "We build software platforms that sharpen decisions, automate intricate operations, and strengthen operational control for enterprise, government, and growth-focused teams."
-                  </p>
-                </div>
               </motion.div>
 
               <motion.div
@@ -430,102 +459,43 @@ export default function ProfessionalHome() {
                 className="lg:col-span-7"
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  <h3 className="text-lg md:text-xl font-bold mb-6 text-[#2c1a22] dark:text-white">Governance by Design</h3>
-
-                  <div className="space-y-7">
-                    <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300">
-                      Every engagement is approached with production readiness and governance by design. The method prioritizes deterministic execution where required, alongside rigorous security, observability, and long-term maintainability.
-                    </p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7 mt-8">
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <InnovationDNAIcon />
-                          </div>
+                  <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
+                    {identityArtifacts.map((item) => (
+                      <div key={item.name} className="py-4 first:pt-0 last:pb-0">
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                          <h3 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">
+                            {item.external ? (
+                              <a
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                              >
+                                {item.name}
+                              </a>
+                            ) : item.href ? (
+                              <Link
+                                href={item.href}
+                                className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                              >
+                                {item.name}
+                              </Link>
+                            ) : (
+                              item.name
+                            )}
+                          </h3>
+                          <span className="text-[11px] uppercase tracking-[0.14em] text-[#c8a951] dark:text-[#9f7b42]">
+                            {item.status}
+                          </span>
                         </div>
-                        <div className="ml-3">
-                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Innovation DNA</h4>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
-                            We design practical solutions for complex enterprise challenges, with a focus on measurable outcomes and maintainable systems.
-                          </p>
-                        </div>
+                        <p className="mt-1 text-xs md:text-sm text-gray-700 dark:text-gray-300">{item.detail}</p>
                       </div>
-
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <EnterpriseSecurityIcon />
-                          </div>
-                        </div>
-                        <div className="ml-3">
-                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Enterprise Security</h4>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
-                            Our solutions adhere to the highest security standards, ensuring your data and systems remain protected at all times.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <MeasurableResultsIcon />
-                          </div>
-                        </div>
-                        <div className="ml-3">
-                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Measurable Results</h4>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
-                            We focus on delivering quantifiable business outcomes with clear ROI metrics that demonstrate tangible value.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start">
-                        <div className="flex-shrink-0">
-                          <div className="w-10 h-10 rounded-lg bg-[#c8a951]/10 dark:bg-[#9f7b42]/10 flex items-center justify-center text-[#c8a951] dark:text-[#9f7b42]">
-                            <StrategicPartnershipIcon />
-                          </div>
-                        </div>
-                        <div className="ml-3">
-                          <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white">Strategic Partnership</h4>
-                          <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 mt-1">
-                            We build long-term relationships, serving as trusted advisors who are invested in your organization's success.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Core values */}
-                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="text-sm md:text-base font-semibold text-[#2c1a22] dark:text-white mb-4">Our Core Values</h4>
-                      <div className="flex flex-wrap gap-3">
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
-                            <InnovationValueIcon />
-                          </div>
-                          Innovation
-                        </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
-                            <CollaborationIcon />
-                          </div>
-                          Collaboration
-                        </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
-                            <AgilityIcon />
-                          </div>
-                          Agility
-                        </div>
-                        <div className="bg-gray-100 dark:bg-[#1a1a1a] px-3 py-1 rounded-lg text-xs font-medium text-gray-800 dark:text-gray-200 flex items-center">
-                          <div className="w-4 h-4 text-[#c8a951] dark:text-[#9f7b42] mr-2 flex items-center justify-center">
-                            <IntegrityIcon />
-                          </div>
-                          Integrity
-                        </div>
-                      </div>
-                    </div>
+                    ))}
                   </div>
+
+                  <p className="mt-6 border-t border-gray-200 dark:border-[#3d2128] pt-5 text-xs md:text-sm text-gray-700 dark:text-gray-300">
+                    Everything here can be opened, cloned, installed, or read. Anything that cannot be is not claimed.
+                  </p>
                 </div>
               </motion.div>
             </div>
