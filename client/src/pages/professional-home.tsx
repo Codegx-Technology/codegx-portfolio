@@ -17,52 +17,72 @@ type IdentityArtifact = {
   external?: boolean;
 };
 
-const identityArtifacts: IdentityArtifact[] = [
+type IdentityGroup = {
+  label: string;
+  items: IdentityArtifact[];
+};
+
+const identityGroups: IdentityGroup[] = [
   {
-    name: "RPEK",
-    detail:
-      "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
-    status: "rpek-lite 1.0.1",
-    href: "https://pypi.org/project/rpek-lite/",
-    external: true,
+    label: "Governance tooling",
+    items: [
+      {
+        name: "RPEK",
+        detail:
+          "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
+        status: "rpek-lite 1.0.1",
+        href: "https://pypi.org/project/rpek-lite/",
+        external: true,
+      },
+      {
+        name: "Supervisor Bootstrap Protocol",
+        detail:
+          "Governance runtime. Verify, plan and apply against hash-verified managed files and a pinned canonical commit.",
+        status: "v1.3.7",
+        href: "https://github.com/peteroluoch/supervisor-bootstrap-protocol",
+        external: true,
+      },
+    ],
   },
   {
-    name: "Supervisor Bootstrap Protocol",
-    detail:
-      "Governance runtime. Verify, plan and apply against hash-verified managed files and a pinned canonical commit.",
-    status: "v1.3.7",
-    href: "https://github.com/peteroluoch/supervisor-bootstrap-protocol",
-    external: true,
+    label: "Published work",
+    items: [
+      {
+        name: "Enterprise AI Governance",
+        detail: "Maps NIST AI RMF, ISO/IEC 42001, ISO/IEC 23894 and the EU AI Act onto operating controls.",
+        status: "Forthcoming",
+        href: "/publications/enterprise-ai-governance",
+      },
+      {
+        name: "Published titles",
+        detail: "Engineering, governance, and education.",
+        status: "Published",
+        href: "/publications",
+      },
+    ],
   },
   {
-    name: "Enterprise AI Governance",
-    detail: "Maps NIST AI RMF, ISO/IEC 42001, ISO/IEC 23894 and the EU AI Act onto operating controls.",
-    status: "Forthcoming",
-    href: "/publications/enterprise-ai-governance",
-  },
-  {
-    name: "Published titles",
-    detail: "Engineering, governance, and education.",
-    status: "Published",
-    href: "/publications",
-  },
-  {
-    name: "Teaching practice",
-    detail: "Computational thinking for young people, Nairobi, Kenya.",
-    status: "Ongoing",
-  },
-  {
-    name: "Research programme",
-    detail:
-      "General Engineering Intelligence Architecture. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
-    status: "Active",
-    href: "/research",
-  },
-  {
-    name: "Reference platform",
-    detail:
-      "Natural Distributed Intelligence Infrastructure. The experimental platform in which the architectural claims are implemented and evaluated.",
-    status: "Experimental",
+    label: "Research and practice",
+    items: [
+      {
+        name: "Research programme",
+        detail:
+          "General Engineering Intelligence Architecture. Five themes: engineering governance, execution, reasoning, infrastructure, and architectural integration.",
+        status: "Active",
+        href: "/research",
+      },
+      {
+        name: "Reference platform",
+        detail:
+          "Natural Distributed Intelligence Infrastructure. The experimental platform in which the architectural claims are implemented and evaluated.",
+        status: "Experimental",
+      },
+      {
+        name: "Teaching practice",
+        detail: "Computational thinking for young people, Nairobi, Kenya.",
+        status: "Ongoing",
+      },
+    ],
   },
 ];
 
@@ -465,39 +485,46 @@ export default function ProfessionalHome() {
                 className="order-1 lg:order-2 lg:col-span-7"
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
-                  <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
-                    {identityArtifacts.map((item) => (
-                      <div key={item.name} className="py-3.5 first:pt-0 last:pb-0 md:py-4">
-                        <div className="flex flex-col items-start gap-y-1 md:flex-row md:flex-wrap md:items-baseline md:justify-between md:gap-x-4">
-                          <h3 className="order-2 text-sm font-semibold text-[#2c1a22] dark:text-white md:order-1 md:text-base">
-                            {item.external ? (
-                              <a
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
-                              >
-                                {item.name}
-                              </a>
-                            ) : item.href ? (
-                              <Link
-                                href={item.href}
-                                className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
-                              >
-                                {item.name}
-                              </Link>
-                            ) : (
-                              item.name
-                            )}
-                          </h3>
-                          <span className="order-1 text-[11px] uppercase tracking-[0.14em] text-[#c8a951] dark:text-[#9f7b42] md:order-2">
-                            {item.status}
-                          </span>
-                        </div>
-                        <p className="mt-1 text-[13px] text-gray-700 dark:text-gray-300 md:text-sm">{item.detail}</p>
+                  {identityGroups.map((group) => (
+                    <div key={group.label} className="pt-5 first:pt-0">
+                      <h4 className="mb-1 text-[11px] uppercase tracking-[0.16em] text-[#c8a951] dark:text-[#9f7b42]">
+                        {group.label}
+                      </h4>
+                      <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
+                        {group.items.map((item) => (
+                          <div key={item.name} className="py-3 first:pt-0 last:pb-0 md:py-3.5">
+                            <h3 className="text-sm font-semibold text-[#2c1a22] dark:text-white md:text-base">
+                              {item.external ? (
+                                <a
+                                  href={item.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                                >
+                                  {item.name}
+                                </a>
+                              ) : item.href ? (
+                                <Link
+                                  href={item.href}
+                                  className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                                >
+                                  {item.name}
+                                </Link>
+                              ) : (
+                                item.name
+                              )}
+                              <span className="ml-1.5 text-xs font-normal text-[#c8a951] dark:text-[#9f7b42]">
+                                · {item.status}
+                              </span>
+                            </h3>
+                            <p className="mt-1 text-[13px] text-gray-700 dark:text-gray-300 md:text-sm">
+                              {item.detail}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
 
                 </div>
               </motion.div>
