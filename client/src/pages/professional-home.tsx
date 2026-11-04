@@ -486,8 +486,11 @@ export default function ProfessionalHome() {
               >
                 <div className="bg-white dark:bg-[#2c1a22] rounded-xl p-6 md:p-8 shadow-xl border border-gray-100 dark:border-[#3d2128]">
                   {identityGroups.map((group) => (
-                    <div key={group.label} className="pt-5 first:pt-0">
-                      <h4 className="mb-1 text-[11px] uppercase tracking-[0.16em] text-[#c8a951] dark:text-[#9f7b42]">
+                    <div
+                      key={group.label}
+                      className="mt-7 border-t border-gray-200 pt-5 first:mt-0 first:border-t-0 first:pt-0 dark:border-[#47303a]"
+                    >
+                      <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#8a6a2f] dark:text-[#d4b56a]">
                         {group.label}
                       </h4>
                       <div className="divide-y divide-gray-200 dark:divide-[#3d2128]">
