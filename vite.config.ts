@@ -89,15 +89,19 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     cssMinify: mode === 'production',
   },
   // Define environment variables.
-  // Allowlist only: the VITE_-prefixed variables (public by convention), plus NODE_ENV
-  // and the SITE_URL alias the client reads. Never spread the raw environment here --
-  // client/src/utils/env.ts is a server schema but is imported by client code, so a
-  // blanket define pulls server secrets straight into the browser bundle.
+  // Explicit allowlist. client/src/utils/env.ts is a server schema but is imported
+  // by client code, so a blanket define would pull server secrets into the bundle.
+  // Spreading `env` here inlined every VITE_-prefixed build
+  // variable into the public bundle, and Vercel mirrors its own build metadata
+  // (commit message, author, OIDC config) as VITE_VERCEL_* -- so the spread
+  // published it. These three keys are the complete set client code reads via
+  // process.env: ErrorBoundary.tsx and App.tsx (NODE_ENV), SEO.tsx (SITE_URL),
+  // App.tsx (VITE_BASE_PATH). Everything else uses import.meta.env natively.
   define: {
     'process.env': JSON.stringify({
       NODE_ENV: mode === 'production' ? 'production' : 'development',
       SITE_URL: env.VITE_SITE_URL ?? '',
-      ...env,
+      VITE_BASE_PATH: env.VITE_BASE_PATH ?? '',
     }),
   },
   // Optimize dependencies
