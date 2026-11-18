@@ -31,7 +31,7 @@ const identityGroups: IdentityGroup[] = [
         name: "RPEK",
         detail:
           "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
-        status: "rpek-lite 1.0.1",
+        status: "rpek-lite 1.0.3",
         href: "https://pypi.org/project/rpek-lite/",
         external: true,
       },
@@ -167,8 +167,8 @@ export default function ProfessionalHome() {
     },
     {
       name: "RPEK-Lite",
-      summary: "Digital government platform for modern public service delivery and administrative transformation.",
-      type: "Digital Government",
+      summary: "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
+      type: "Governance tooling",
     },
     {
       name: "Wakala OS",
