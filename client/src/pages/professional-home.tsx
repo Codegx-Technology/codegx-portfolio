@@ -23,6 +23,14 @@ type IdentityGroup = {
   items: IdentityArtifact[];
 };
 
+type PrincipalPlatform = {
+  name: string;
+  summary: string;
+  type: string;
+  href?: string;
+  external?: boolean;
+};
+
 const identityGroups: IdentityGroup[] = [
   {
     label: "Governance tooling",
@@ -154,7 +162,7 @@ export default function ProfessionalHome() {
     },
   ];
 
-  const principalPlatforms = [
+  const principalPlatforms: PrincipalPlatform[] = [
     {
       name: "NDII",
       summary: "National-scale intelligence infrastructure for sovereign data consolidation, sector analysis, operational enforcement, and traceable decision support.",
@@ -169,6 +177,8 @@ export default function ProfessionalHome() {
       name: "RPEK-Lite",
       summary: "Prompt execution kernel published on PyPI. Governed task definition, prompt build, admission, and execution evidence.",
       type: "Governance tooling",
+      href: "https://pypi.org/project/rpek-lite/",
+      external: true,
     },
     {
       name: "Wakala OS",
@@ -633,7 +643,27 @@ export default function ProfessionalHome() {
                 >
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <h3 className="text-lg font-bold text-[#2c1a22] dark:text-white">{platform.name}</h3>
+                      <h3 className="text-lg font-bold text-[#2c1a22] dark:text-white">
+                        {platform.external ? (
+                          <a
+                            href={platform.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                          >
+                            {platform.name}
+                          </a>
+                        ) : platform.href ? (
+                          <Link
+                            href={platform.href}
+                            className="transition-colors hover:text-[#c8a951] dark:hover:text-[#9f7b42]"
+                          >
+                            {platform.name}
+                          </Link>
+                        ) : (
+                          platform.name
+                        )}
+                      </h3>
                       <p className="text-[11px] uppercase tracking-[0.18em] text-[#c8a951] dark:text-[#9f7b42] mt-1">
                         {platform.type}
                       </p>
