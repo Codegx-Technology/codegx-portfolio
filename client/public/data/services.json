@@ -8,10 +8,10 @@
       "shortDescription": "Structured assistants for service, internal knowledge, and process handoffs with clear operating boundaries.",
       "fullDescription": "Our conversational workflow systems use natural language interfaces to make support, knowledge retrieval, and operational handoffs easier to manage. We design, develop, and deploy assistants that work inside clear process boundaries and integrate with the systems teams already use.",
       "benefits": [
-        "24/7 customer support without human intervention",
+        "Support coverage that scales with demand, with escalation to human owners on defined triggers",
         "Reduced operational costs by automating routine inquiries",
-        "Consistent user experience across all customer touchpoints",
-        "Scalable solution that can handle thousands of conversations simultaneously",
+        "Consistent behavior across web, messaging, and internal channels",
+        "Concurrency headroom sized during load testing rather than assumed",
         "Continuous improvement through machine learning"
       ],
       "useCases": [
@@ -44,17 +44,17 @@
       "examples": [
         {
           "title": "Financial Services Chatbot",
-          "description": "Developed an AI assistant for a leading bank that handles account inquiries, transaction history, and basic financial advice, reducing call center volume by 45%.",
+          "description": "Account-service assistant: handles account inquiries, transaction history, and guided self-service, with escalation to a human adviser at defined boundaries.",
           "image": "/assets/services/chatbot-finance.jpg"
         },
         {
           "title": "Healthcare Patient Assistant",
-          "description": "Created a HIPAA-compliant virtual assistant that helps patients schedule appointments, access medical records, and receive medication reminders.",
+          "description": "Patient intake assistant: supports appointment scheduling, record access requests, and medication reminders, with access bounded by the deploying organization's existing authorization and audit controls.",
           "image": "/assets/services/chatbot-healthcare.jpg"
         },
         {
           "title": "E-commerce Shopping Assistant",
-          "description": "Built a conversational shopping assistant that helps customers find products, compare options, and complete purchases, increasing conversion rates by 28%.",
+          "description": "Product-discovery assistant: helps customers locate and compare products through to checkout, with catalog and pricing read from the existing commerce system.",
           "image": "/assets/services/chatbot-ecommerce.jpg"
         }
       ],
@@ -106,17 +106,17 @@
       "examples": [
         {
           "title": "Retail Inventory Optimization",
-          "description": "Implemented a demand forecasting system for a retail chain that reduced stockouts by 32% and excess inventory by 21%, saving millions in carrying costs.",
+          "description": "Demand forecasting: produces SKU-level forecasts from historical sales and seasonality, with exception flags for planner review before replenishment orders commit.",
           "image": "/assets/services/predictive-retail.jpg"
         },
         {
           "title": "Telecom Churn Reduction",
-          "description": "Developed a customer churn prediction model for a telecom provider that identified at-risk customers with 85% accuracy, enabling targeted retention campaigns that reduced churn by 18%.",
+          "description": "Churn risk scoring: ranks accounts by attrition risk and routes them to retention owners, exposed as advisory input rather than an automatic action.",
           "image": "/assets/services/predictive-telecom.jpg"
         },
         {
           "title": "Manufacturing Predictive Maintenance",
-          "description": "Created a predictive maintenance system for a manufacturing plant that reduced unplanned downtime by 37% and maintenance costs by 25%.",
+          "description": "Predictive maintenance: turns sensor and maintenance-log signals into ranked intervention recommendations for engineering review.",
           "image": "/assets/services/predictive-manufacturing.jpg"
         }
       ],
@@ -167,17 +167,17 @@
       "examples": [
         {
           "title": "Manufacturing Defect Detection",
-          "description": "Implemented an automated visual inspection system for a electronics manufacturer that detects defects with 99.2% accuracy, reducing manual inspection costs by 65%.",
+          "description": "Visual inspection: flags candidate defects against a defined tolerance, with flagged items routed to human review before release.",
           "image": "/assets/services/vision-manufacturing.jpg"
         },
         {
           "title": "Retail Shelf Analytics",
-          "description": "Developed a computer vision system that monitors product placement, stock levels, and planogram compliance in retail stores, improving restocking efficiency by 40%.",
+          "description": "Shelf and planogram compliance: reports placement, stock-level, and compliance state per store for replenishment planning.",
           "image": "/assets/services/vision-retail.jpg"
         },
         {
           "title": "Construction Safety Monitoring",
-          "description": "Created a real-time safety monitoring system for construction sites that detects PPE compliance and unsafe behaviors, reducing safety incidents by 32%.",
+          "description": "Site safety monitoring: detects PPE and unsafe-behavior conditions and raises alerts to site supervisors, treated as a supervisory aid rather than a disciplinary record.",
           "image": "/assets/services/vision-construction.jpg"
         }
       ],
@@ -289,7 +289,7 @@
       "examples": [
         {
           "title": "Retail Automation Roadmap",
-          "description": "Developed a comprehensive AI strategy for a retail chain that identified $45M in potential annual value across customer experience, supply chain, and operations.",
+          "description": "Automation roadmap: maps candidate automation across customer experience, supply chain, and operations, and sequences them by evidence strength and control maturity.",
           "image": "/assets/services/strategy-retail.jpg"
         },
         {
