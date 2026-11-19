@@ -64,7 +64,7 @@ export default function CodegxLanding() {
                 </div>
               </motion.div>
               
-              {/* Wakala Agency Card */}
+              {/* Wakala OS Card */}
               <motion.div
                 whileHover={{ y: -10 }}
                 className="bg-card rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all duration-300"
