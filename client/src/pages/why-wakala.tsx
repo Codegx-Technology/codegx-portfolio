@@ -60,7 +60,7 @@ export default function AboutWakala() {
     {
       year: "2021",
       title: "Automation Practice Formalized",
-      description: "Codegx formalized Wakala as its automation practice, giving client workflow work a dedicated operating model and delivery focus."
+      description: "Codegx built Wakala OS as the platform behind its automation practice, giving client workflow work a dedicated operating model and delivery focus."
     },
     {
       year: "2022",
@@ -126,7 +126,7 @@ export default function AboutWakala() {
           <div className="lg:col-span-7">
             <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 md:mb-6">Our Mission</Heading2>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
-              Wakala exists to make automation dependable in the places where process quality, traceability,
+              The practice exists to make automation dependable in the places where process quality, traceability,
               and human accountability cannot be left to chance.
             </Paragraph>
             <Paragraph className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 leading-relaxed">
@@ -169,7 +169,7 @@ export default function AboutWakala() {
         <div className="text-center mb-6 md:mb-12">
           <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Operating Principles</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            These principles shape how Wakala turns automation from isolated tools into governed operating capability.
+            These principles shape how Wakala OS turns automation from isolated tools into governed operating capability.
           </Paragraph>
         </div>
 
@@ -260,7 +260,7 @@ export default function AboutWakala() {
         <div className="text-center mb-6 md:mb-12">
           <Heading2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 md:mb-3">Founder's Vision</Heading2>
           <Paragraph className="text-xs md:text-sm text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The operating history behind Wakala's focus on dependable automation.
+            The operating history behind Wakala OS's focus on dependable automation.
           </Paragraph>
         </div>
 
@@ -315,7 +315,7 @@ export default function AboutWakala() {
               <div className="mt-8 rounded-lg border border-border bg-card p-4 md:p-6">
                 <Heading3 className="text-base md:text-lg font-bold mb-2 md:mb-3">The Vision Forward</Heading3>
                 <Paragraph className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4">
-                  Wakala is being shaped as the operating layer for teams that need automation to be traceable,
+                  Wakala OS is being shaped as the operating layer for teams that need automation to be traceable,
                   maintainable, and accountable under real delivery pressure.
                 </Paragraph>
                 <Paragraph className="text-xs md:text-sm text-muted-foreground">

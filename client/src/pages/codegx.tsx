@@ -81,7 +81,7 @@ export default function CodegxLanding() {
                   </p>
                   <Link href="/agency">
                     <Button className="w-full">
-                      Explore Wakala <i className="fas fa-arrow-right ml-2"></i>
+                      Explore Wakala OS <i className="fas fa-arrow-right ml-2"></i>
                     </Button>
                   </Link>
                 </div>
