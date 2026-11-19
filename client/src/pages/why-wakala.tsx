@@ -55,7 +55,7 @@ export default function AboutWakala() {
     {
       year: "2019",
       title: "First Startup Success",
-      description: "Helped a local fintech startup improve fraud review workflows, reducing fraud exposure by 65% and validating our focus on practical, measurable systems."
+      description: "Early work on fraud-review workflows for a local fintech startup, which set the focus on practical, measurable systems."
     },
     {
       year: "2021",
