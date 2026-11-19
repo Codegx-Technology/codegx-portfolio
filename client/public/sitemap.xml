@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Codegx Technologies - real routes only. Generated from App.tsx route table. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core -->
+  <url><loc>https://www.codegxtechnologies.org/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/about</loc><priority>0.9</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services</loc><priority>0.9</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/case-studies</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications</loc><priority>0.9</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/research</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/team</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/agency</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/why-wakala</loc><priority>0.5</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/docs</loc><priority>0.5</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.codegxtechnologies.org/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/terms</loc><priority>0.3</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/cookies</loc><priority>0.3</priority></url>
+
+  <!-- Services detail (6) -->
+  <url><loc>https://www.codegxtechnologies.org/services/ai-chatbots</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services/predictive-analytics</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services/computer-vision</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services/process-automation</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services/ai-strategy</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/services/ai-training</loc><priority>0.8</priority></url>
+
+  <!-- Case studies detail (5) - slug = title, lowercased, non-alphanumerics to hyphen -->
+  <url><loc>https://www.codegxtechnologies.org/case-studies/ndii</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/case-studies/wakala-os</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/case-studies/tendanow</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/case-studies/codecrusher</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/case-studies/bizgen</loc><priority>0.7</priority></url>
+
+  <!-- Blog detail (6) -->
+  <url><loc>https://www.codegxtechnologies.org/blog/what-automation-really-does-to-work</loc><priority>0.6</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog/automation-is-moving-from-tasks-to-operating-systems</loc><priority>0.6</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog/future-of-ai-in-africa</loc><priority>0.6</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog/blockchain-for-land-registry</loc><priority>0.6</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog/smart-cities-sustainable-urban-development</loc><priority>0.6</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/blog/ai-ethics-african-perspective</loc><priority>0.6</priority></url>
+
+  <!-- Publications detail (6) -->
+  <url><loc>https://www.codegxtechnologies.org/publications/enterprise-ai-governance</loc><priority>0.9</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications/engineering-in-the-age-of-ai</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications/ai-for-young-thinkers</loc><priority>0.8</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications/the-architecture-of-resilience</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications/biblical-african-flourishing</loc><priority>0.7</priority></url>
+  <url><loc>https://www.codegxtechnologies.org/publications/the-unwritten-life</loc><priority>0.7</priority></url>
+
+</urlset>

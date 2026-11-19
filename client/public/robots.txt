@@ -1,0 +1,33 @@
+# Codegx Technologies - https://www.codegxtechnologies.org
+# Served from client/public/robots.txt -> /robots.txt
+
+User-agent: *
+Allow: /
+
+# Duplicate mounts of the homepage (same component as /)
+Disallow: /home
+Disallow: /professional-home
+
+# Duplicate route
+Disallow: /agency/agency
+
+# Transactional and thank-you pages
+Disallow: /quote
+Disallow: /quote-builder
+Disallow: /simple-quote
+Disallow: /simple-quote2
+Disallow: /thank-you
+
+# Renders the /services index for every slug; not distinct pages
+Disallow: /solutions/
+
+# Demo routes - scheduled for removal in Track C
+Disallow: /augment-demo
+Disallow: /enhanced-agency
+Disallow: /enhanced-services
+Disallow: /enhanced-navbar-demo
+Disallow: /enterprise-layout-demo
+Disallow: /executive-navbar-demo
+Disallow: /footer-demo
+
+Sitemap: https://www.codegxtechnologies.org/sitemap.xml
