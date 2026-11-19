@@ -75,7 +75,7 @@ export default function CodegxLanding() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-2">Wakala Agency</h2>
+                  <h2 className="text-2xl font-bold mb-2">Wakala OS</h2>
                   <p className="text-muted-foreground mb-6">
                     Discover the Codegx automation division for lead capture, reporting, onboarding, and workflow systems.
                   </p>
@@ -112,8 +112,8 @@ export default function CodegxLanding() {
           >
             <h2 className="text-3xl font-bold font-inter mb-4">About Codegx Technologies</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Codegx Technologies is the parent company for enterprise software delivery and Wakala Agency,
-              its specialized automation division.
+              Codegx Technologies is the parent company for enterprise software delivery and Wakala OS,
+              its governed automation platform.
             </p>
           </motion.div>
           

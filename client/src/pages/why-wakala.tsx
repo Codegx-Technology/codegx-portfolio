@@ -99,7 +99,7 @@ export default function AboutWakala() {
                 </span>
               </h1>
             }
-            description="Wakala Agency is the Codegx operating practice for governed automation, structured workflows, and accountable agentic execution."
+            description="Wakala OS is the Codegx operating layer for governed automation, structured workflows, and accountable agentic execution."
             className="text-center"
           />
 
@@ -145,7 +145,7 @@ export default function AboutWakala() {
                 <i className="fas fa-quote-left"></i>
               </div>
               <blockquote className="text-base sm:text-lg md:text-xl italic mb-6 leading-relaxed">
-                "Technology is most powerful when it addresses real operational needs. At Wakala Agency, we build
+                "Technology is most powerful when it addresses real operational needs. At Codegx, we build
                 systems that improve delivery, reduce manual effort, and create measurable opportunities."
               </blockquote>
               <div className="flex items-center">
