@@ -21,7 +21,8 @@ Disallow: /thank-you
 # Renders the /services index for every slug; not distinct pages
 Disallow: /solutions/
 
-# Demo routes - scheduled for removal in Track C
+# Demo routes removed in Track C. Kept disallowed so their soft-404 shell
+# (SPA catch-all rewrite) cannot be indexed.
 Disallow: /augment-demo
 Disallow: /enhanced-agency
 Disallow: /enhanced-services

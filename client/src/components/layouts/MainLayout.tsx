@@ -36,7 +36,7 @@ export function MainLayout({
   const isHomePage = location === "/" || location === "/home" || location === "/enhanced-home";
 
   // Determine if we're on an agency page
-  const isAgencyPage = location.includes("/agency") || location === "/enhanced-agency";
+  const isAgencyPage = location.includes("/agency");
 
   // Disable transparent navbar to prevent overlap issues
   const effectiveNavbarVariant = "default";

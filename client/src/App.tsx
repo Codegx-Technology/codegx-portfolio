@@ -171,48 +171,6 @@ function AppRouter() {
             return <LazyRoute component={SimpleThankYou2} />;
           }}
         </Route>
-        <Route path="/augment-demo">
-          {() => {
-            const AugmentDemo = React.lazy(() => import("@/pages/augment-demo"));
-            return <LazyRoute component={AugmentDemo} />;
-          }}
-        </Route>
-        <Route path="/enterprise-layout-demo">
-          {() => {
-            const EnterpriseLayoutDemo = React.lazy(() => import("@/pages/enterprise-layout-demo"));
-            return <LazyRoute component={EnterpriseLayoutDemo} />;
-          }}
-        </Route>
-        <Route path="/executive-navbar-demo">
-          {() => {
-            const ExecutiveNavbarDemo = React.lazy(() => import("@/pages/executive-navbar-demo"));
-            return <LazyRoute component={ExecutiveNavbarDemo} />;
-          }}
-        </Route>
-        <Route path="/enhanced-navbar-demo">
-          {() => {
-            const EnhancedNavbarDemo = React.lazy(() => import("@/pages/enhanced-navbar-demo"));
-            return <LazyRoute component={EnhancedNavbarDemo} />;
-          }}
-        </Route>
-        <Route path="/enhanced-agency">
-          {() => {
-            const EnhancedAgency = React.lazy(() => import("@/pages/enhanced-agency"));
-            return <LazyRoute component={EnhancedAgency} />;
-          }}
-        </Route>
-        <Route path="/enhanced-services">
-          {() => {
-            const EnhancedServices = React.lazy(() => import("@/pages/enhanced-services"));
-            return <LazyRoute component={EnhancedServices} />;
-          }}
-        </Route>
-        <Route path="/footer-demo">
-          {() => {
-            const FooterDemo = React.lazy(() => import("@/pages/footer-demo"));
-            return <LazyRoute component={FooterDemo} />;
-          }}
-        </Route>
         <Route path="/professional-home">
           {() => {
             const ProfessionalHome = React.lazy(() => import("@/pages/professional-home"));
