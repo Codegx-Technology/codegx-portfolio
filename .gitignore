@@ -61,8 +61,6 @@ yarn-error.log
 .env.development.local
 .env.test.local
 .env.production.local
-# Local Netlify folder
-.netlify
 
 # Local working artifacts — generated tooling output, not build inputs.
 # Vite root is client/, so nothing here is read by the production build.

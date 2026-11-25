@@ -8,7 +8,6 @@
     "dev": "vite --config vite.config.ts",
     "build": "vite build --config vite.config.ts",
     "build:sitemap": "vite build --config vite.config.ts && node scripts/generate-sitemap.js",
-    "build:netlify": "vite build --config vite.config.ts && (node scripts/generate-sitemap.js || echo 'Sitemap generation failed, continuing...') && node scripts/verify-build.js",
     "build:analyze": "ANALYZE=true vite build --config vite.config.ts",
     "preview": "vite preview --config vite.config.ts",
     "check": "tsc",
@@ -18,8 +17,7 @@
     "db:push": "drizzle-kit push",
     "sitemap": "node scripts/generate-sitemap.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist/public",
-    "deploy:netlify": "npm run build:netlify"
+    "deploy": "gh-pages -d dist/public"
   },
   "dependencies": {
     "postgres": "^3.4.4",
