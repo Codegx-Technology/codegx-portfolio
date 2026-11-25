@@ -343,7 +343,7 @@ text-4xl   → lg:text-6xl    (36px → 60px)
 npm run dev
 
 # Build for production
-npm run build:netlify
+npm run build
 
 # Preview build
 npm run preview

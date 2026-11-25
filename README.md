@@ -12,7 +12,7 @@ To provide a premier digital experience with zero "AI-fluff," pure English gramm
 - **State & Routing:** Wouter + React Query
 - **Automation Stack:** Wakala OS Integration
 - **Database:** PostgreSQL via Drizzle ORM
-- **Deployment:** Netlify (Automated CI/CD)
+- **Deployment:** Vercel (Automated CI/CD)
 
 ## Project Structure
 - `client/`: React/Vite frontend application

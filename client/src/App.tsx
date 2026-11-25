@@ -279,7 +279,7 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Get base path - empty for Netlify, can be set via env var for other deployments
+// Get base path - empty at the domain root, can be set via env var for sub-path deployments
 const basePath = process.env.VITE_BASE_PATH || '';
 
 function App() {

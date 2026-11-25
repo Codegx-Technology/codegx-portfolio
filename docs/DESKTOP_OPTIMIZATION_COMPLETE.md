@@ -330,7 +330,7 @@ onMouseEnter={() => setScale(1.05)} // ❌ Avoid
 ### **1. Pre-Deployment:**
 ```bash
 # Verify build
-npm run build:netlify
+npm run build
 
 # Check bundle size
 npm run analyze
@@ -344,7 +344,7 @@ npm test
 # Already pushed to main
 git push origin main
 
-# Netlify will auto-deploy
+# Vercel will auto-deploy
 # URL: https://codegxtechnologies.org
 ```
 
