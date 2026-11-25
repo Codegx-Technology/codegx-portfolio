@@ -63,3 +63,17 @@ yarn-error.log
 .env.production.local
 # Local Netlify folder
 .netlify
+
+# Local working artifacts — generated tooling output, not build inputs.
+# Vite root is client/, so nothing here is read by the production build.
+verification/
+media-output/
+exports/
+image_generate/
+temp/
+
+# SBP (Supervisor Bootstrap Protocol) is a separate governance repository with
+# its own remote: peteroluoch/supervisor-bootstrap-protocol. It is nested here
+# for local use and is intentionally not part of this repository. Ignoring it
+# prevents `git add -A` from writing a gitlink pointer into this repo's history.
+sbp/
