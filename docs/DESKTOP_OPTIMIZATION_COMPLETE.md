@@ -413,8 +413,6 @@ git push origin main
 ## 📚 Resources & Documentation
 
 ### **Internal Documentation:**
-- [Mobile Optimization Plan](./MOBILE_DESKTOP_OPTIMIZATION_PLAN.md)
-- [Branch Sync Status](./BRANCH_SYNC_STATUS.md)
 - [Performance Summary](../PERFORMANCE_SUMMARY.md)
 - [Bundle Analysis](../BUNDLE_ANALYSIS.md)
 
